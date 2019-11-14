@@ -1,3 +1,29 @@
 // Place all the styles related to the Attendances controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+input, textarea{
+  width: 100%;
+}
+
+h1, .new-data{
+  text-align: center;
+}
+
+.input, .form-inputs{
+  width: 100%;
+}
+
+.form-actions{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
