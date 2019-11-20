@@ -30,4 +30,13 @@ ActiveRecord::Schema.define(version: 2019_11_14_163205) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table :credenciamento do |t|
+    t.boolean :aproved, default: false
+    t.boolean :rejected , default: false
+    t.integer :iduser, null: false
+  end
+  
+  add_index :credenciamento, :id
+  add_foreign_key :credenciamento, :users, column: :iduser
+  
 end
