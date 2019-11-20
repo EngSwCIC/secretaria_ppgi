@@ -27,6 +27,10 @@
   <% end %>
 </div>  
 
+<% if not Faq.exists? %>
+  <h3>Não Há Tópicos Cadastrados</h3>
+<% end %>
+
 <% if user_signed_in? && current_user.role == 'administrator' %>
-  <%= link_to 'New Faq', new_faq_path %>
+  <button><%= link_to 'New Faq', new_faq_path %></button>
 <% end %>
