@@ -6,6 +6,9 @@
   <p><strong>Nome: </strong><%= current_user.full_name %></p>
   <p><strong>Email: </strong><%= current_user.email %></p>
   <p><strong>Cargo: </strong><%= current_user.role %></p>
+  <% if current_user.role == "professor"%>
+    <%= link_to "Pedido de Credenciamento", 'credenciamento' %><br />
+  <% end %>
   <%= link_to "Sair", destroy_user_session_path, method: :delete %>
 <% else %>
   <h3>Entre para acessar o sistema!</h3>

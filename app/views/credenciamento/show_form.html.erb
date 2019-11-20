@@ -1,0 +1,11 @@
+<% if user_signed_in? %>
+  <% if current_user.role == "professor"%>
+    <form method="post" action="credenciamento/create_credenciamento">
+
+        <input type="submit" value="Pedir Cadastro" />
+
+    </form>
+
+  <% end %>
+  <%= link_to "Sair", destroy_user_session_path, method: :delete %>
+<% end %>

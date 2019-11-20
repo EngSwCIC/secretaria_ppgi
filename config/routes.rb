@@ -2,8 +2,9 @@
 
 Rails.application.routes.draw do
   get 'home/index'
+  get 'credenciamento' => 'credenciamento#show_form'
+  post 'credenciamento/create_credenciamento' => 'credenciamento#create_credenciamento'
   devise_for :users
-  devise_for :credenciamentos
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'home#index'
 end

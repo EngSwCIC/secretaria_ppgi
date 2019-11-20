@@ -1,0 +1,6 @@
+<% if user_signed_in? %>
+  <% if current_user.role == "professor"%>
+    <p>Você já fez solicitação de credenciamento</p>
+  <% end %>
+  <%= link_to "Sair", destroy_user_session_path, method: :delete %>
+<% end %>
