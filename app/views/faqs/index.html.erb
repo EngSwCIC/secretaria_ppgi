@@ -4,7 +4,7 @@
 
 <div class="wrap-collabsible">
   <% all_faqs = Faq.all %>
-  <% @topicos = all_faqs.group_by(&:topico) %>
+  <% @topicos = all_faqs.group_by{|i| i.topico.downcase} %>
   <% @topicos.each_pair do |topic_name, data| %>
 
     <input id="<%=topic_name%>" class="toggle" type="checkbox">
@@ -15,11 +15,13 @@
         <% data.each do |info| %>
             <h3>  <%= info.pergunta %> </h3>
             <p>  <%= info.resposta %> </p>
-            <tr>
-              <th><%= link_to 'Show', info %></th>
-              <th><%= link_to 'Edit', edit_faq_path(info) %></th>
-              <th><%= link_to 'Destroy', info, method: :delete, data: { confirm: 'Are you sure?' } %></th>
-            </tr>
+            <button><th><%= link_to 'Expandir', info %></th></button>
+            <% if user_signed_in? && current_user.role == 'administrator' %>
+              <tr>
+                <button><th><%= link_to 'Editar', edit_faq_path(info) %></th></button>
+                <button><th><%= link_to 'Excluir', info, method: :delete, data: { confirm: 'Você Tem Certeza que Deseja Excluir?' } %></th></button>
+              </tr>
+            <% end %>
         <% end %>
       </div>
     </div>
@@ -32,5 +34,5 @@
 <% end %>
 
 <% if user_signed_in? && current_user.role == 'administrator' %>
-  <button><%= link_to 'New Faq', new_faq_path %></button>
+  <button><%= link_to 'Nova Entrada no FAQ', new_faq_path %></button>
 <% end %>
