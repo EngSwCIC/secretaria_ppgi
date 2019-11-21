@@ -7,7 +7,22 @@
   <p><strong>Email: </strong><%= current_user.email %></p>
   <p><strong>Cargo: </strong><%= current_user.role %></p>
   <% if current_user.role == "professor"%>
-    <%= link_to "Pedido de Credenciamento", 'credenciamento' %><br />
+    <% credenciamento = Credenciamento.where(:iduser => current_user.id).first
+      if credenciamento != nil
+        if credenciamento.rejected == true%>
+        Seu pedido foi rejeitado<br>
+        <%end
+        if credenciamento.aproved == true%>
+        Seu pedido foi aprovado<br>
+        <%else%>
+        Seu pedido está em processo<br>
+        <%end%>
+        <%else%>
+        <%= link_to "Pedido de Credenciamento", 'credenciamento' %><br />
+      <%end%>
+  <% end %>
+  <% if current_user.role == "administrator" %>
+    <%= link_to "Lista de Pedidos de Credenciamento", 'credenciamento/show_pedidos' %><br />
   <% end %>
   <%= link_to "Sair", destroy_user_session_path, method: :delete %>
 <% else %>

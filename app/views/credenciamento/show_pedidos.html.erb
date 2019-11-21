@@ -1,0 +1,27 @@
+<% if user_signed_in? %>
+  <% if current_user.role == "administrator"%>
+  PEDIDOS
+    <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Usuario</th>
+                <th>Aprovado</th>
+                <th>Reprovado</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <% Credenciamento.where(:aproved => false,:rejected => false).each do |credenciamento| %>
+                <tr>
+                  <td><%= credenciamento.id %></td>
+                  <td><%= user = User.find(credenciamento.iduser); user.full_name %></td>
+                  <td><%= link_to 'Approve?', {:controller => "credenciamento", :action => "aproved", :id => credenciamento.id} %></td>
+                  <td><%= link_to 'Reject?', {:controller => "credenciamento", :action => "rejected", :id => credenciamento.id} %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+  <% end %>
+  <%= link_to "Sair", destroy_user_session_path, method: :delete %>
+<% end %>

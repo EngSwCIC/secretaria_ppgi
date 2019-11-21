@@ -34,6 +34,8 @@ ActiveRecord::Schema.define(version: 2019_11_14_163205) do
     t.boolean :aproved, default: false
     t.boolean :rejected , default: false
     t.integer :iduser, null: false
+    t.datetime :created_at, null: false
+    t.datetime :updated_at, null: false
   end
   
   add_index :credenciamentos, :id

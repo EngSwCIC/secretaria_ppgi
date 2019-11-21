@@ -14,4 +14,24 @@ class CredenciamentoController < ApplicationController
         Credenciamento.create(iduser: current_user.id)
         redirect_to '/'
     end
+
+    def show_pedidos
+        render 'credenciamento/show_pedidos'
+    end
+
+    def aproved
+        @credencial = Credenciamento.find(params[:id])
+        @credencial.aproved = true
+        @credencial.rejected = false
+        @credencial.save
+        render 'credenciamento/show_pedidos'
+    end
+
+    def rejected
+        @credencial = Credenciamento.find(params[:id])
+        @credencial.rejected = true
+        @credencial.aproved = false
+        @credencial.save
+        render 'credenciamento/show_pedidos'
+    end
 end
