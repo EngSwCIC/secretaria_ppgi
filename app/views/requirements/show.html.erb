@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Requerimento:</strong>
+  <%= @requirement.name %>
+</p>
+
+<p>
+  <strong>Descrição:</strong>
+  <%= @requirement.description %>
+</p>
+
+<%= link_to 'Editar', edit_requirement_path(@requirement) %> |
+<body>
+
+<button onclick="goBack()">Voltar</button>
+
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
+
+</body>
+

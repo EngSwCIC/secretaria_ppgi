@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Solicitações</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Tipo</th>
+    <th>Data de ida</th>
+    <th>Data de retorno</th>
+    <th>Origem</th>
+    <th>Destino</th>
+    <th>Descrição</th>
+    <th>Usuário</th>
+    <th>Status</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+
+  <% if user_signed_in? %>
+    <tbody>
+    <% @solicitations.each do |solicitation| %>
+      <tr>
+        <td><%= map_kind solicitation %></td>
+        <td><%= formatted_date solicitation.departure %></td>
+        <td><%= formatted_date solicitation.return %></td>
+        <td><%= solicitation.origin %></td>
+        <td><%= solicitation.destination %></td>
+        <td><%= solicitation.description %></td>
+        <td><%= solicitation.user.full_name %></td>
+        <td><%= map_status solicitation %></td>
+
+        <td><%= link_to 'Mostrar', solicitation %></td>
+        <td><%= link_to 'Editar', edit_solicitation_path(solicitation) %></td>
+        <td><%= link_to 'Deletar', solicitation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+
+
+    </tbody>
+  <%end%>
+</table>
+
+<br>
+<% if user_signed_in? and current_user.role == 'administrator' %>
+<%= button_to 'Nova Solicitação', new_solicitation_path, :method => :get %>
+<%= button_to 'Definir prazo para criar solicitações', setups_path, :method => :get %>
+  <%end%>
+<br/>
+<%= button_to 'Voltar', home_index_path, :method => :get %>

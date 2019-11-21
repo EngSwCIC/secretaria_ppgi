@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= map_kind @solicitation %>
+</p>
+
+<p>
+  <strong>Ida:</strong>
+  <%= formatted_date @solicitation.departure %>
+</p>
+
+<p>
+  <strong>Retorno:</strong>
+  <%= formatted_date @solicitation.return %>
+</p>
+
+<p>
+  <strong>Origem:</strong>
+  <%= @solicitation.origin %>
+</p>
+
+<p>
+  <strong>Destino:</strong>
+  <%= @solicitation.destination %>
+</p>
+
+<p>
+  <strong>Descrição:</strong>
+  <%= @solicitation.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_solicitation_path(@solicitation) %> |
+<%= link_to 'Voltar', solicitations_path %>

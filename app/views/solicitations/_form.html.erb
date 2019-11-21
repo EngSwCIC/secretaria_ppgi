@@ -1,0 +1,47 @@
+<%= form_with(model: solicitation, local: true) do |form| %>
+  <% if solicitation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(solicitation.errors.count, "error") %> prohibited this solicitation from being saved:</h2>
+
+      <ul>
+      <% solicitation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :Tipo %>
+    <%= form.select :kind, [['Passagem', 'passagem'], ['Diária', 'diaria']] %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Ida %>
+    <%= form.date_select :departure, :order => [:day, :month, :year] %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Retorno %>
+    <%= form.date_select :return, :order => [:day, :month, :year] %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Origem %>
+    <%= form.text_field :origin %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Destino %>
+    <%= form.text_field :destination %>
+  </div>
+
+  <div class="field">
+    <%= form.label "Descrição" %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Criar Solicitação" %>
+  </div>
+<% end %>

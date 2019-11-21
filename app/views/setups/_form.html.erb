@@ -1,0 +1,27 @@
+<%= form_with(model: setup, local: true) do |form| %>
+  <% if setup.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(setup.errors.count, "error") %> prohibited this setup from being saved:</h2>
+
+      <ul>
+      <% setup.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :inicio %>
+    <%= form.datetime_select :inicio %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fim %>
+    <%= form.datetime_select :fim %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
