@@ -14,7 +14,8 @@
         <%end
         if credenciamento.aproved == true%>
         Seu pedido foi aprovado<br>
-        <%else%>
+        <%end
+        if (credenciamento.aproved == false) && (credenciamento.rejected == false)%>
         Seu pedido está em processo<br>
         <%end%>
         <%else%>
