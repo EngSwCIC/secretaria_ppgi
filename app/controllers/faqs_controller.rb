@@ -1,6 +1,6 @@
 class FaqsController < ApplicationController
     before_action :set_faq, only: [:show, :edit, :update, :destroy]
-    before_action :must_be_admin, only:  [:create, :edit, :update, :destroy]
+    # before_action :must_be_admin, only:  [:create, :edit, :update, :destroy]
     # GET /faqs
     # GET /faqs.json
     def index
