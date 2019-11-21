@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Título:</strong>
+  <%= @activity.title %>
+</p>
+
+<p>
+  <strong>Descrição:</strong>
+  <%= @activity.description %>
+</p>
+
+<p>
+  <strong>Data final:</strong>
+  <%= @activity.date.strftime("%d %b %Y") %>
+</p>
+
+
+<%= link_to 'Voltar', activities_path, class: "btn btn-success m-2" %>

@@ -1,0 +1,55 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="http://localhost:3000">Home</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <span></span></a>
+        </a>
+      </li>
+       <form class="form-inline my-2 my-lg-0">
+      <%= link_to "Editar Perfil", edit_admin_registration_path, class: "navbar-brand" %>
+    </form>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <%= link_to "Sair", destroy_admin_session_path, :method => :delete, class: "btn btn-danger my-2 my-sm-0" %>
+    </form>
+  </div>
+</nav>
+
+
+<p id="notice"><%= notice %></p>
+
+<h1>Painel do Administrador</h1>
+
+
+<div class="container">
+  <table class="table table-striped">
+      <thead style="background-color: #17a2b8; color: white;">
+        <tr>
+          <th>Título</th>
+          <th>Descrição</th>
+          <th>Data final</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @activities.each do |activity| %>
+              <tr>
+                <td><%= activity.title %></td>
+                <td><%= activity.description %></td>
+                <td><%= activity.date.strftime("%d %b %Y") %></td>   
+                <td><%= link_to 'Ver detalhes', activity,class:"btn btn-warning m-2" %></td>
+                <td><%= link_to 'Editar', edit_activity_path(activity), class:"btn btn-primary m-2" %></td>
+                <td><%= link_to 'Excluir', activity, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger m-2" %></td>
+              </tr>
+        <% end %>
+      </tbody>
+  </table>
+</div>
+
+<%= link_to 'Nova Atividade', new_activity_path, class:"btn btn-primary" %>
