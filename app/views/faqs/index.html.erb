@@ -1,31 +1,38 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Faqs</h1>
+<h1> Perguntas Frequentes </h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Topico</th>
-      <th>Pergunta</th>
-      <th>Resposta</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="wrap-collabsible">
+  <% all_faqs = Faq.all %>
+  <% @topicos = all_faqs.group_by{|i| i.topico.downcase} %>
+  <% @topicos.each_pair do |topic_name, data| %>
 
-  <tbody>
-    <% @faqs.each do |faq| %>
-      <tr>
-        <td><%= faq.topico %></td>
-        <td><%= faq.pergunta %></td>
-        <td><%= faq.resposta %></td>
-        <td><%= link_to 'Show', faq %></td>
-        <td><%= link_to 'Edit', edit_faq_path(faq) %></td>
-        <td><%= link_to 'Destroy', faq, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <input id="<%=topic_name%>" class="toggle" type="checkbox">
+    <label for="<%=topic_name%>" class="lbl-toggle"><%=topic_name%></label>
 
-<br>
+    <div class="collapsible-content">
+      <div class="content-inner">
+        <% data.each do |info| %>
+            <h3>  <%= info.pergunta %> </h3>
+            <p>  <%= info.resposta %> </p>
+            <button><th><%= link_to 'Expandir', info %></th></button>
+            <% if user_signed_in? && current_user.role == 'administrator' %>
+              <tr>
+                <button><th><%= link_to 'Editar', edit_faq_path(info) %></th></button>
+                <button><th><%= link_to 'Excluir', info, method: :delete, data: { confirm: 'Você Tem Certeza que Deseja Excluir?' } %></th></button>
+              </tr>
+            <% end %>
+        <% end %>
+      </div>
+    </div>
 
-<%= link_to 'New Faq', new_faq_path %>
+  <% end %>
+</div>  
+
+<% if not Faq.exists? %>
+  <h3>Não Há Tópicos Cadastrados</h3>
+<% end %>
+
+<% if user_signed_in? && current_user.role == 'administrator' %>
+  <button><%= link_to 'Nova Entrada no FAQ', new_faq_path %></button>
+<% end %>
