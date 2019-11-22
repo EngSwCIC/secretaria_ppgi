@@ -1,3 +1,14 @@
+
+Dado /^que meu banco de daos está inicializado$/ do
+    User.destroy_all
+    User.create(full_name: "Secretário", email: "secretary@secretary.com", password: "admin123", role: "secretary", registration: "000000000")
+    User.create(full_name: "Administrador", email: "admin@admin.com", password: "admin123", role: "administrator", registration: "000000000")
+    User.create(full_name: "Aluno", email: "student@student.com", password: "admin123", role: "student", registration: "000000000")
+    User.create(full_name: "Professor", email: "professor@professor.com", password: "admin123", role: "professor", registration: "000000000")
+    Requirement.destroy_all
+    Requirement.create(name: "Nome", description: "Nome nome nome nome")
+end
+
 Dado /^que eu estou na "([^\"]+)"$/ do |path|
     if path == "home"
         visit root_path
@@ -6,15 +17,18 @@ Dado /^que eu estou na "([^\"]+)"$/ do |path|
     end
 end
 
-
 Dado /^que eu estou logado como "([^\"]+)"$/ do |user|
-    # User.destroy_all
-    # User.create(full_name: "Secretário", email: "secretary@secretary.com", password: "admin123", role: "secretary", registration: "000000000")
-    # User.create(full_name: "Professor", email: "professor@professor.com", password: "admin123", role: "professor", registration: "000000000")
-    # User.create(full_name: "Aluno", email: "student@student.com", password: "admin123", role: "student", registration: "000000000")
     if user == "administrador"
-        User.create(full_name: "Administrador", email: "admin@admin.com", password: "admin123", role: "administrator", registration: "000000000")
         email = "admin@admin.com"
+        senha = "admin123"
+    elsif user == "estudante"
+        email = "student@student.com"
+        senha = "admin123"
+    elsif user == "professor"
+        email = "professor@professor.com"
+        senha = "admin123"
+    elsif user == "secretário"
+        email = "secretary@secretary.com"
         senha = "admin123"
     end
     steps %Q{
@@ -46,4 +60,17 @@ end
 
 Então /^eu espero ver "([^\"]+)"$/ do |texto|
     expect(page).to have_content texto
+end
+
+
+Dado /^que eu criei um requisito com o nome "([^\"]+)" e com o valor "([^\"]+)" como administrador$/ do |nome, description|
+    steps %Q{
+        Dado que eu estou na \"home\" e eu estou logado como \"administrador\"
+        Quando eu clico no link \"Requerimentos\"
+        Quando eu aperto no botão \"Novo requerimento\"
+        E eu preencho o campo \"requirement_name\" com o valor \"#{nome}\"
+        E eu preencho o campo \"requirement_description\" com o valor \"#{description}\"
+        Quando eu aperto no botão \"Criar Requirement\"
+        Então eu espero ver \"Requirement was successfully created.\"
+    }
 end
