@@ -29,7 +29,7 @@ class SetupsController < ApplicationController
 
     respond_to do |format|
       if @setup.save
-        format.html { redirect_to @setup, notice: 'Setup was successfully created.' }
+        format.html { redirect_to @setup, notice: 'Prazo criado com sucesso.' }
         format.json { render :show, status: :created, location: @setup }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class SetupsController < ApplicationController
   def update
     respond_to do |format|
       if @setup.update(setup_params)
-        format.html { redirect_to @setup, notice: 'Setup was successfully updated.' }
+        format.html { redirect_to @setup, notice: 'Prazo atualizado com sucesso.' }
         format.json { render :show, status: :ok, location: @setup }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class SetupsController < ApplicationController
   def destroy
     @setup.destroy
     respond_to do |format|
-      format.html { redirect_to setups_url, notice: 'Setup was successfully destroyed.' }
+      format.html { redirect_to setups_url, notice: 'Prazo deletado com sucesso.' }
       format.json { head :no_content }
     end
   end

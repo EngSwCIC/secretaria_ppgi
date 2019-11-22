@@ -1,6 +1,13 @@
-<h1>Editing Solicitation</h1>
+<h1>Editar Solicitação</h1>
 
 <%= render 'form', solicitation: @solicitation %>
 
-<%= link_to 'Show', @solicitation %> |
-<%= link_to 'Back', solicitations_path %>
+
+
+
+<div style="display: flex; flex-direction: row">
+  <%= button_to 'Voltar', solicitations_path, :method => :get %>
+  <div style="margin-left: 50px">
+    <%= button_to 'Mostrar', @solicitation, :method => :get %>
+  </div>
+</div>

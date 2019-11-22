@@ -23,7 +23,5 @@ module SolicitationsHelper
     end
   end
 
-  def formatted_date date
-    date.strftime '%d/%m/%y'
-  end
+
 end

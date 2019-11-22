@@ -33,7 +33,7 @@
 
         <td><%= link_to 'Mostrar', solicitation %></td>
         <td><%= link_to 'Editar', edit_solicitation_path(solicitation) %></td>
-        <td><%= link_to 'Deletar', solicitation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Deletar', solicitation, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
       </tr>
     <% end %>
 
@@ -43,9 +43,13 @@
 </table>
 
 <br>
+<div style="display: flex; flex-direction: row">
 <% if user_signed_in? and current_user.role == 'administrator' %>
-<%= button_to 'Nova Solicitação', new_solicitation_path, :method => :get %>
-<%= button_to 'Definir prazo para criar solicitações', setups_path, :method => :get %>
+    <div style="margin-right: 50px"><%= button_to 'Nova Solicitação', new_solicitation_path, :method => :get %></div>
+<%= button_to 'Prazos', setups_path, :method => :get %>
   <%end%>
 <br/>
+
+</div>
+</br>
 <%= button_to 'Voltar', home_index_path, :method => :get %>

@@ -30,7 +30,7 @@ class SolicitationsController < ApplicationController
 
     respond_to do |format|
       if @solicitation.save
-        format.html { redirect_to @solicitation, notice: 'Solicitation was successfully created.' }
+        format.html { redirect_to @solicitation, notice: 'Solicitação criada com sucesso.' }
         format.json { render :show, status: :created, location: @solicitation }
       else
         format.html { render :new }
@@ -44,7 +44,7 @@ class SolicitationsController < ApplicationController
   def update
     respond_to do |format|
       if @solicitation.update(solicitation_params)
-        format.html { redirect_to @solicitation, notice: 'Solicitation was successfully updated.' }
+        format.html { redirect_to @solicitation, notice: 'Solicitação atualizada com sucesso.' }
         format.json { render :show, status: :ok, location: @solicitation }
       else
         format.html { render :edit }
@@ -58,7 +58,7 @@ class SolicitationsController < ApplicationController
   def destroy
     @solicitation.destroy
     respond_to do |format|
-      format.html { redirect_to solicitations_url, notice: 'Solicitation was successfully destroyed.' }
+      format.html { redirect_to solicitations_url, notice: 'Solicitação deletada com sucesso.' }
       format.json { head :no_content }
     end
   end
@@ -75,8 +75,9 @@ class SolicitationsController < ApplicationController
   end
 
   def check_deadline
+
     if !Setup.last.blank?
-      unless Time.now.to_i === Setup.last.inicio..Setup.last.fim
+      unless (Setup.last.inicio..Setup.last.fim).cover? Time.now
         redirect_to root_path, notice: 'O prazo para criar solicitações expirou'
       end
     end

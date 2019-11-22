@@ -30,6 +30,12 @@
   <%= @solicitation.description %>
 </p>
 
+<div style="display: flex; flex-direction: row">
+  <%= button_to 'Voltar', solicitations_path, :method => :get %>
+  <% if user_signed_in? and current_user.role == 'administrator'%>
+    <div style="margin-left: 50px">
+      <%= button_to 'Editar', edit_solicitation_path(@solicitation), :method => :get %>
+    </div>
+  <%end%>
 
-<%= link_to 'Edit', edit_solicitation_path(@solicitation) %> |
-<%= link_to 'Voltar', solicitations_path %>
+</div>
