@@ -9,17 +9,12 @@
   <strong>Descrição:</strong>
   <%= @requirement.description %>
 </p>
+<div style="display: flex; flex-direction: row">
+<%= button_to 'Voltar', requirements_path, :method => :get%>
+  <% if user_signed_in? and current_user.role == 'administrator' %>
+    <div style="margin-left: 50px">
+      <%= button_to 'Editar', edit_requirement_path(@requirement) %>
+    </div>
+  <%end%>
 
-<%= link_to 'Editar', edit_requirement_path(@requirement) %> |
-<body>
-
-<button onclick="goBack()">Voltar</button>
-
-<script>
-    function goBack() {
-        window.history.back();
-    }
-</script>
-
-</body>
-
+</div>

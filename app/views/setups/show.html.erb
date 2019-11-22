@@ -1,14 +1,24 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Inicio:</strong>
-  <%= @setup.inicio %>
+  <strong>Início:</strong>
+  <%= formatted_datetime @setup.inicio %>
 </p>
 
 <p>
   <strong>Fim:</strong>
-  <%= @setup.fim %>
+  <%= formatted_datetime @setup.fim %>
 </p>
 
-<%= link_to 'Edit', edit_setup_path(@setup) %> |
-<%= link_to 'Back', setups_path %>
+
+
+
+<div style="display: flex; flex-direction: row">
+  <%= button_to 'Voltar', setups_path, :method => :get %>
+  <% if user_signed_in? and current_user.role == 'administrator'%>
+    <div style="margin-left: 50px">
+      <%= button_to 'Editar', edit_setup_path(@setup), :method => :get %>
+    </div>
+  <%end%>
+
+</div>

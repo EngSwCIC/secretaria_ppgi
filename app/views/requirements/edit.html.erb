@@ -1,6 +1,7 @@
-<h1>Editing Requirement</h1>
+<h1>Editar Requerimento</h1>
 
 <%= render 'form', requirement: @requirement %>
 
-<%= link_to 'Show', @requirement %> |
-<%= link_to 'Back', requirements_path %>
+<%= button_to 'Mostrar', @requirement, :method => :get %>
+<br/>
+<%= button_to 'Voltar', requirements_path, :method => :get %>

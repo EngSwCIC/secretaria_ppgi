@@ -1,11 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Setups</h1>
+<h1>Prazos</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Inicio</th>
+      <th>Início</th>
       <th>Fim</th>
       <th colspan="3"></th>
     </tr>
@@ -14,11 +14,11 @@
   <tbody>
     <% @setups.each do |setup| %>
       <tr>
-        <td><%= setup.inicio %></td>
-        <td><%= setup.fim %></td>
-        <td><%= link_to 'Show', setup %></td>
-        <td><%= link_to 'Edit', edit_setup_path(setup) %></td>
-        <td><%= link_to 'Destroy', setup, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= formatted_datetime setup.inicio %></td>
+        <td><%= formatted_datetime setup.fim %></td>
+        <td><%= link_to 'Mostrar', setup %></td>
+        <td><%= link_to 'Editar', edit_setup_path(setup) %></td>
+        <td><%= link_to 'Deletar', setup, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,6 @@
 
 <br>
 
-<%= link_to 'New Setup', new_setup_path %>
+<%= button_to 'Novo prazo', new_setup_path, :method => :get %>
+</br>
+<%= button_to 'Voltar', solicitations_path, :method => :get %>

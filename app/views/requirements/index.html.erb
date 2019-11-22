@@ -24,7 +24,7 @@
 
       <% if user_signed_in?  and current_user.role == 'administrator'%>
         <td><%= link_to 'Editar', edit_requirement_path(requirement) %></td>
-        <td><%= link_to 'Deletar', requirement, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Deletar', requirement, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
       <% end %>
     </tr>
   <% end %>
@@ -34,14 +34,15 @@
 
 <% if user_signed_in?%>
   <div style="display: flex; flex-direction: row;">
-    <div style="margin-right: 50px">
-      <%= button_to 'Solicitações', solicitations_path, :method => :get %>
-    </div>
     <% if current_user.role == 'administrator' %>
       <div>
         <%= button_to 'Novo requerimento', new_requirement_path, :method => :get %>
       </div>
     <% end %>
+    <div style="margin-left: 50px">
+      <%= button_to 'Solicitações', solicitations_path, :method => :get %>
+    </div>
+
   </div>
 <% end %>
 <br/>
