@@ -14,5 +14,5 @@ User.create(full_name: "Professor", email: "professor@professor.com", password: 
 User.create(full_name: "Aluno", email: "student@student.com", password: "admin123", role: "student", registration: "000000000")
 
 
-# Requirement.destroy_all
-# Requirement.create(name: "Nome", description: "Nome nome nome")
+Requirement.destroy_all
+Requirement.create(name: "Nome", description: "Nome nome nome")

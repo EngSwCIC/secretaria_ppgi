@@ -23,7 +23,6 @@ Funcionalidade: Criar um requisito
             Então eu espero ver "Nome"
             E eu espero ver "Nome nome nome"
 
-
         Cenário: Vizualizar os requisitos como um usuário
             Dado que eu estou na "home"
             Quando eu clico no link "Requerimentos"
@@ -53,3 +52,12 @@ Funcionalidade: Criar um requisito
             Quando eu clico no link "Requerimentos"
             Então eu espero ver "Nome"
             E eu espero ver "Nome nome nome nome"
+
+        Cenário: Editar os requisitos como um administrador
+            Dado que eu estou na "home" e eu estou logado como "administrador"
+            Quando eu clico no link "Requerimentos"
+            Quando eu aperto no botão "Novo requerimento"
+            E eu preencho o campo "requirement_name" com o valor "Nome"
+            E eu preencho o campo "requirement_description" com o valor "Nome nome nome"
+            Quando eu aperto no botão "Criar Requirement"
+            Então eu espero ver "Requirement was successfully created."
