@@ -30,26 +30,32 @@
         <td><%= solicitation.description %></td>
         <td><%= solicitation.user.full_name %></td>
         <td><%= map_status solicitation %></td>
-
         <td><%= link_to 'Mostrar', solicitation %></td>
-        <td><%= link_to 'Editar', edit_solicitation_path(solicitation) %></td>
-        <td><%= link_to 'Deletar', solicitation, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
+        <% if current_user.role == 'administrator' %>
+          <td><%= link_to 'Editar', edit_solicitation_path(solicitation) %></td>
+          <td><%= link_to 'Deletar', solicitation, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
+        <%end %>
       </tr>
     <% end %>
 
+    <div style=""></div>
 
     </tbody>
-  <%end%>
-</table>
 
-<br>
-<div style="display: flex; flex-direction: row">
-<% if user_signed_in? and current_user.role == 'administrator' %>
-    <div style="margin-right: 50px"><%= button_to 'Nova Solicitação', new_solicitation_path, :method => :get %></div>
-<%= button_to 'Prazos', setups_path, :method => :get %>
-  <%end%>
-<br/>
+    </table>
 
-</div>
-</br>
-<%= button_to 'Voltar', home_index_path, :method => :get %>
+    <br>
+    <div style="display: flex; flex-direction: row">
+      <% if current_user.role == 'administrator' or 'student'%>
+        <div style="margin-right: 50px"><%= button_to 'Nova Solicitação', new_solicitation_path, :method => :get %></div>
+      <%end%>
+
+      <% if current_user.role == 'administrator' %>
+      <%= button_to 'Prazos', setups_path, :method => :get %>
+      <% end %>
+  <%end %>
+  <br/>
+
+  </div>
+  </br>
+  <%= button_to 'Voltar', home_index_path, :method => :get %>
