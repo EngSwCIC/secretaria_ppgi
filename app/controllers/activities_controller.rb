@@ -16,7 +16,7 @@ class ActivitiesController < ApplicationController
         if @activity.save
             render :json => {message: "Processo criado com êxito"}
         else
-            render :json => {message: "Não foi possível criar o Processo"}
+            render :json => {message: "Não foi possivel criar o Processo"}
         end
     end
 
@@ -33,7 +33,7 @@ class ActivitiesController < ApplicationController
         if @activity.destroy
             render :json => {message: "Processo apagado com êxito"}
         else
-            render :json => {message: "Não foi possível apagar o Processo"}
+            render :json => {message: "Não foi possivel apagar o Processo"}
         end
     end
 
