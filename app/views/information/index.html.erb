@@ -30,6 +30,7 @@
 
 <% if user_signed_in? and current_user.role == 'administrator' %>
   <%= link_to 'Criar Informação', new_information_path %>
+  <%= link_to 'Adicionar Fonte', new_source_path %>
 <% end %>
 
 <%= link_to 'Voltar', home_index_path %>
