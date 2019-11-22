@@ -13,6 +13,6 @@ User.create(full_name: "Secretário", email: "secretary@secretary.com", password
 User.create(full_name: "Professor", email: "professor@professor.com", password: "admin123", role: "professor", registration: "000000000")
 User.create(full_name: "Aluno", email: "student@student.com", password: "admin123", role: "student", registration: "000000000")
 
-
+# Requirements
 Requirement.destroy_all
-Requirement.create(name: "Nome", description: "Nome nome nome")
+Requirement.create(name: "Lorem Ipsum", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam consectetur fringilla dui at pulvinar.")
