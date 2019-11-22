@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Título:</strong>
+  <%= @attendance.title %>
+</p>
+
+<p>
+  <strong>Conteúdo:</strong>
+  <%= @attendance.content %>
+</p>
+
+<div class='form-actions'>
+  <%= link_to 'Editar', edit_attendance_path(@attendance) %> |
+  <%= link_to 'Voltar', attendances_path %>
+</div>

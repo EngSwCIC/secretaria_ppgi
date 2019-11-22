@@ -9,6 +9,7 @@ Bundler.require(*Rails.groups)
 module SecretariaPpgi
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
+    config.i18n.default_locale = 'pt-BR'
     config.load_defaults 5.2
 
     # Settings in config/environments/* take precedence over those specified here.
