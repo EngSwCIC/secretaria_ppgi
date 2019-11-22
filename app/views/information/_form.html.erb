@@ -21,6 +21,11 @@
     <%= form.text_area :info %>
   </div>
 
+  <div class="field">
+    <%= form.label :fonte %>
+    <%= form.collection_select(:source, Source.all,:id , :title) %>
+  </div>
+  
   <div class="actions">
     <%= form.submit %>
   </div>
