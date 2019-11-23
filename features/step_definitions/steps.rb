@@ -82,3 +82,7 @@ end
 Quando /^eu não preencho o campo "([^\"]+)"$/ do |texto|
     
 end
+
+Quando /^eu seleciono o valor "([^\"]+)" na lista "([^\"]+)"$/ do |value, lista|
+    find(:select, lista).first(:option, value).select_option
+end

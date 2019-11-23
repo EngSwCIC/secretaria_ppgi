@@ -6,24 +6,21 @@ Funcionalidade: Prazo
     Contexto:
         Dado que meu banco de dados está inicializado
 
-        Cenário: Definir um prazo como um usuário
-            Dado que eu estou na "home" 
-            Então eu não espero ver "Solicitações"
-
-        Cenário: Definir um prazo como um professor
-            Dado que eu estou na "home" e eu estou logado como "professor"
+        Cenário: Definir um prazo como um administrador
+            Dado que eu estou na "home" e eu estou logado como "administrador"
             Quando eu aperto no botão "Solicitações"
-            Então eu não espero ver "Nova Solicitação"
-            E eu não espero ver "Definir prazo para criar solicitações"
+            E eu aperto no botão "Prazos"
+            E eu aperto no botão "Novo prazo"
+            Quando eu seleciono o valor "28" na lista "setup_inicio_3i"
+            Quando eu seleciono o valor "Dezembro" na lista "setup_inicio_2i"
+            Quando eu seleciono o valor "2019" na lista "setup_inicio_1i"
+            Quando eu seleciono o valor "07" na lista "setup_inicio_4i"
+            Quando eu seleciono o valor "30" na lista "setup_inicio_5i"
 
-        Cenário: Definir um prazo como um estudante
-            Dado que eu estou na "home" e eu estou logado como "estudante"
-            Quando eu aperto no botão "Solicitações"
-            Então eu não espero ver "Nova Solicitação"
-            E eu não espero ver "Definir prazo para criar solicitações"
-
-        Cenário: Definir um prazo como um secretário
-            Dado que eu estou na "home" e eu estou logado como "secretário"
-            Quando eu aperto no botão "Solicitações"
-            Então eu não espero ver "Nova Solicitação"
-            E eu não espero ver "Definir prazo para criar solicitações"
+            Quando eu seleciono o valor "29" na lista "setup_fim_3i"
+            Quando eu seleciono o valor "Dezembro" na lista "setup_fim_2i"
+            Quando eu seleciono o valor "2019" na lista "setup_fim_1i"
+            Quando eu seleciono o valor "07" na lista "setup_fim_4i"
+            Quando eu seleciono o valor "30" na lista "setup_fim_5i"
+            Quando eu aperto no botão "Criar Prazo"
+            Então eu espero ver "Prazo criado com sucesso."
