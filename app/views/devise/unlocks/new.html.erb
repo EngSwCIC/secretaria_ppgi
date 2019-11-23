@@ -1,4 +1,8 @@
-<h2>Resend unlock instructions</h2>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Calistoga&display=swap&effect=outline  " rel="stylesheet">
+</head>
+<body>
+<div class="font-effect-outline" ><h2>Resend unlock instructions</h2></div>
 
 <%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>

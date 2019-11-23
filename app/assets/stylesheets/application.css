@@ -12,4 +12,14 @@
  *
  *= require_tree .
  *= require_self
+
  */
+
+.font-effect-outline{
+    display: flex; justify-content: center;
+    background-color: seagreen;
+    width: 100%;
+
+    padding: 0;
+    margin: 0;
+}
