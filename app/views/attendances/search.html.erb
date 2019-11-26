@@ -1,36 +1,41 @@
 <h1>Resultados</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Título</th>
-      <th>Contéudo</th>
-      <th>Criado em</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @attendances.each do |attendance| %>
+<% if @attendances.empty? %>
+  <h2> Nenhuma wiki encontrada </h2>
+<% else  %>
+  <table>
+    <thead>
       <tr>
-        <td><%= attendance.title %></td>
-        <td><%= attendance.content %></td>
-        <td><%= attendance.created_at.strftime("%d/%m/%Y às %R") %></td>
-        <td><%= link_to 'Mais Detalhes', attendance %></td>
-        <td><%= link_to 'Editar', edit_attendance_path(attendance) %></td>
-        <% if false %>
-        <td><%= link_to 'Excluir', attendance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
+        <th>Título</th>
+        <th>Contéudo</th>
+        <th>Criado em</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-<%= form_tag(search_page_path, :method => "get",   
-    class: 'navbar-form navbar-left') do %>  
-  <div class="input-group">  
-    <%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control" %>  
-    <div class="input-group-btn">  
-      <%= button_tag "Pesquisar", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>  
-    </div>  
-  </div>  
+    </thead>
+
+    <tbody>
+      <% @attendances.each do |attendance| %>
+        <tr>
+          <td><%= attendance.title %></td>
+          <td><%= attendance.content %></td>
+          <td><%= attendance.created_at.strftime("%d/%m/%Y às %R") %></td>
+          <td><%= link_to 'Mais Detalhes', attendance %></td>
+          <td><%= link_to 'Editar', edit_attendance_path(attendance) %></td>
+          <% if false %>
+          <td><%= link_to 'Excluir', attendance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 <% end %>
+  <%= form_tag(search_page_path, :method => "get",   
+      class: 'navbar-form navbar-left') do %>  
+    <div class="input-group">  
+      <%= search_field_tag :search, params[:search], placeholder: "Procure aqui", class: "form-control" %>  
+      <div class="input-group-btn">  
+        <%= button_tag "Pesquisar", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>  
+      </div>  
+    </div>  
+  <% end %>
+
