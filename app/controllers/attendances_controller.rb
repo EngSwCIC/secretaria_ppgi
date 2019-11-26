@@ -69,6 +69,12 @@ class AttendancesController < ApplicationController
     end
   end
 
+  def delete_file_attachment
+    @file = ActiveStorage::Blob.find_signed(params[:id])
+    @file.attachments.first.purge
+    redirect_back(fallback_location: attendances_path)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_attendance
@@ -77,6 +83,6 @@ class AttendancesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def attendance_params
-      params.require(:attendance).permit(:title, :content)
+      params.require(:attendance).permit(:title, :content, :files)
     end
 end

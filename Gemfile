@@ -63,3 +63,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'simple_form'
+gem 'poppler'
+gem 'image_processing', '~> 1.2'
+gem 'mini_magick'
+gem 'jquery-rails'

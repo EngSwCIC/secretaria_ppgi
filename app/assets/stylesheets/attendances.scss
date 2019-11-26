@@ -17,6 +17,11 @@ h1, .new-data{
   text-align: center;
 }
 
+a{
+  margin-left: 12px;
+
+}
+
 .input, .form-inputs{
   width: 100%;
 }
@@ -26,4 +31,41 @@ h1, .new-data{
   flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+
+#input_files{
+  display: none;
+}
+
+#attached_files{
+  margin-bottom: 2em;
+}
+
+#attach_files_label, #attached_files_label{
+  border: 1px solid black;
+  padding: 5px;
+  width: 65%;
+  margin-top: 3px;
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+.show-files{
+  display: flex;
+  flex-direction: column;
+
+  .files-row{
+    display: flex;
+    flex-direction: row;
+
+    .file{
+      display: flex;
+      flex-direction: column;
+
+      strong{
+        margin-left: 12px;
+      }
+    }
+  }
+
 }

@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<h1>Mais detalhes da Wiki selecionada</h1>
+
 <p>
   <strong>Título:</strong>
   <%= @attendance.title %>
@@ -9,6 +11,24 @@
   <strong>Conteúdo:</strong>
   <%= @attendance.content %>
 </p>
+
+<% if @attendance.files.attached? %>
+  <div  class="show-files">
+    <p>
+      <strong>Arquivos anexados:</strong>
+      <div class="files-row">
+        <% @attendance.files.each do|file| %>
+          <div class="file">
+            <%  if file.previewable?  %>
+              <%= link_to(image_tag(file.preview(resize: "200x200")),  rails_blob_path(file, disposition: "attachment")) %>
+              <strong> <%= file.filename %> </strong>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </p>
+  </div>
+<% end %>
 
 <div class='form-actions'>
   <%= link_to 'Editar', edit_attendance_path(@attendance) %> |

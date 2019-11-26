@@ -6,6 +6,21 @@
   <div class="form-inputs">
     <%= f.input :title %>
     <%= f.input :content %>
+    <% if @attendance.files.attached? %>
+      <%= f.label 'Arquivos anexados', id:'attached_files' %>
+      <% @attendance.files.each do|file| %>
+        <%  if file.previewable?  %>
+          <%= link_to image_tag(file.preview(resize: "200x200")), rails_blob_path(file, disposition: "attachment"), class:'file_preview' %>
+          <%= link_to 'Remover', delete_file_attachment_attendance_path(file.signed_id),
+                method: :delete,
+                data: { confirm: 'Você tem certeza?' } %>
+        <% end %>
+      <% end %>
+          <%= f.label 'Adicionar mais arquivos', for:'input_files', id:'attached_files_label' %>
+          <%= f.input :files, multiple: true, as: :file, label: false, input_html: {id:'input_files'} %>
+    <% else %>
+      <%= f.input :files, multiple: true, as: :file, label: false , input_html: {id:'attach_files_label'} %>
+    <% end %>
   </div>
 
   <div class="form-actions">
