@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Wikis de Atendimento</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Título</th>
+      <th>Contéudo</th>
+      <th>Criado em</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @attendances.each do |attendance| %>
+      <tr>
+        <td><%= attendance.title %></td>
+        <td><%= attendance.content %></td>
+        <td><%= attendance.created_at.strftime("%d/%m/%Y às %R") %></td>
+        <td><%= link_to 'Mais Detalhes', attendance %></td>
+        <td><%= link_to 'Editar', edit_attendance_path(attendance) %></td>
+        <% if false %>
+        <td><%= link_to 'Excluir', attendance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<div class='new-data'>
+  <%= link_to 'Nova Wiki de Atendimento', new_attendance_path %>
+</div>
