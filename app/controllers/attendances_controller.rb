@@ -1,6 +1,6 @@
 class AttendancesController < ApplicationController
   before_action :set_attendance, only: [:show, :edit, :update, :destroy]
-
+# comentario
   # GET /attendances
   # GET /attendances.json
   def index
