@@ -21,11 +21,11 @@
       <tr>
         <td><%= announcement.title %></td>
         <td><%= announcement.body %></td>
-        <td><%= link_to 'Mostrar', announcement %></td>
+        <td><%= button_to 'Mostrar', announcement, :method => :get %></td>
 
         <% if user_signed_in?  and current_user.role == 'administrator'%>
-          <td><%= link_to 'Editar', edit_announcement_path(announcement) %></td>
-          <td><%= link_to 'Deletar', announcement, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
+          <td><%= button_to 'Editar', edit_announcement_path(announcement), :method => :get %></td>
+          <td><%= button_to 'Deletar', announcement, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
         <% end %>
         
       </tr>

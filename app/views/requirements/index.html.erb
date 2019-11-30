@@ -22,13 +22,13 @@
     <tr>
       <td><%= requirement.name %></td>
       <td><%= requirement.description %></td>
-      <td><%= link_to 'Mostrar', requirement %></td>
+      <td><%= button_to 'Mostrar', requirement, :method => :get %></td>
 
 
 
       <% if user_signed_in?  and current_user.role == 'administrator'%>
-        <td><%= link_to 'Editar', edit_requirement_path(requirement) %></td>
-        <td><%= link_to 'Deletar', requirement, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
+        <td><%= button_to 'Editar', edit_requirement_path(requirement), :method => :get %></td>
+        <td><%= button_to 'Deletar', requirement, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
       <% end %>
     </tr>
   <% end %>

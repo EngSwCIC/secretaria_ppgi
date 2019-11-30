@@ -35,10 +35,10 @@
         <td><%= solicitation.description %></td>
         <td><%= solicitation.user.full_name %></td>
         <td><%= map_status solicitation %></td>
-        <td><%= link_to 'Mostrar', solicitation %></td>
+        <td><%= button_to 'Mostrar', solicitation, :method => :get %></td>
         <% if current_user.role == 'administrator' %>
-          <td><%= link_to 'Editar', edit_solicitation_path(solicitation) %></td>
-          <td><%= link_to 'Deletar', solicitation, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
+          <td><%= button_to 'Editar', edit_solicitation_path(solicitation), :method => :get %></td>
+          <td><%= button_to 'Deletar', solicitation, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
         <%end %>
       </tr>
     <% end %>

@@ -2,5 +2,5 @@
 
 <%= render 'form', announcement: @announcement %>
 
-<%= link_to 'Show', @announcement %> |
-<%= link_to 'Back', announcements_path %>
+<%= button_to 'Show', @announcement, :method => :get %> |
+<%= button_to 'Back', announcements_path, :method => :get %>
