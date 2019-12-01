@@ -64,10 +64,4 @@ Funcionalidade: Prazo
             Quando eu aperto no botão "Criar Prazo"
             Então eu espero ver "Prazo criado com sucesso."
 
-        Cenário: Deletar um prazo sendo um administrador
-            Dado que eu estou na "home" e eu estou logado como "administrador"
-            Quando eu aperto no botão "Solicitações"
-            E eu aperto no botão "Prazos"
-            E eu aperto no botão "Deletar"
-            E eu confirmo o popup
-            Então eu espero ver "Prazo deletado com sucesso."
+
