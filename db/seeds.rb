@@ -16,3 +16,8 @@ User.create(full_name: "Aluno", email: "student@student.com", password: "admin12
 # Requirements
 Requirement.destroy_all
 Requirement.create(name: "Lorem Ipsum", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam consectetur fringilla dui at pulvinar.")
+
+# Setups
+Setup.destroy_all
+Setup.create(inicio: DateTime.new(2020, 10, 16, 22, 35, 0), fim:DateTime.new(2020, 10, 25, 22, 35, 0))
+Setup.create(inicio: DateTime.new(2020, 11, 16, 22, 35, 0), fim:DateTime.new(2020, 11, 25, 22, 35, 0))
