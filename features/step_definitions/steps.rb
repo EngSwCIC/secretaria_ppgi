@@ -86,3 +86,7 @@ end
 Quando /^eu seleciono o valor "([^\"]+)" na lista "([^\"]+)"$/ do |value, lista|
     find(:select, lista).first(:option, value).select_option
 end
+
+E /^eu confirmo o popup$/ do
+    page.driver.browser.switch_to.alert.accept
+end
