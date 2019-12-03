@@ -238,7 +238,9 @@ pt-BR:
         #commissions_subscription: 'Comissão Pgto Inscrição'
       attendance:
         title: Título
-        content: Conteúdo 
+        content: Conteúdo
+      comment:
+        content: Comentário
     errors:
       <<: *errors
       models:

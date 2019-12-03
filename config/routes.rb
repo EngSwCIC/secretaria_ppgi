@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :attendances do
+    resources :comments
     member do
       delete :delete_file_attachment
     end
