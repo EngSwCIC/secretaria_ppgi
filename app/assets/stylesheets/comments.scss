@@ -1,0 +1,24 @@
+// Place all the styles related to the comments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.field{
+  width: 100%;
+}
+
+.media{
+  margin-top: 1em;
+  border: 1px;
+  border-style: dotted;
+  display: flex;
+  flex-direction: row;
+}
+
+.media-content{
+  width: 100%;
+  margin-left: 10px;
+}
+textarea {
+  resize: none;
+  height: 10em;
+}
