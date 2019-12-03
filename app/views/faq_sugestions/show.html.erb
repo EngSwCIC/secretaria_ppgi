@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Topico:</strong>
+  <%= @faq_sugestion.topico %>
+</p>
+
+<p>
+  <strong>Pergunta:</strong>
+  <%= @faq_sugestion.pergunta %>
+</p>
+
+<p>
+  <strong>Resposta:</strong>
+  <%= @faq_sugestion.resposta %>
+</p>
+
+<p>
+  <strong>Faq:</strong>
+  <%= @faq_sugestion.faq %>
+</p>
+
+<%= link_to 'Edit', edit_faq_sugestion_path(@faq_sugestion) %> |
+<%= link_to 'Back', faq_sugestions_path %>

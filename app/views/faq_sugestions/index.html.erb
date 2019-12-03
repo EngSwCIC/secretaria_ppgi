@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Faq Sugestions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Topico</th>
+      <th>Pergunta</th>
+      <th>Resposta</th>
+      <th>Faq</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @faq_sugestions.each do |faq_sugestion| %>
+      <tr>
+        <td><%= faq_sugestion.topico %></td>
+        <td><%= faq_sugestion.pergunta %></td>
+        <td><%= faq_sugestion.resposta %></td>
+        <td><%= faq_sugestion.faq %></td>
+        <td><%= link_to 'Show', faq_sugestion %></td>
+        <td><%= link_to 'Edit', edit_faq_sugestion_path(faq_sugestion) %></td>
+        <td><%= link_to 'Destroy', faq_sugestion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Faq Sugestion', new_faq_sugestion_path %>
