@@ -1,0 +1,11 @@
+admin_user:
+  full_name: "Administrador"
+  email: "admin@admin.com"
+  role: "administrator"
+  registration: "000000000"
+
+regular_user:
+  full_name: "Aluno"
+  email: "student@student.com"
+  role: "student"
+  registration: "000000000"
