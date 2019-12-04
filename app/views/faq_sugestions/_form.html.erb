@@ -10,25 +10,36 @@
       </ul>
     </div>
   <% end %>
+  
+  <% if :faq_id == nil %>
+    <div class="field">
+      <%= form.label :topico %>
+      <%= form.text_area :topico %>
+    </div>
 
-  <div class="field">
-    <%= form.label :topico %>
-    <%= form.text_area :topico %>
-  </div>
+    <div class="field">
+      <%= form.label :pergunta %>
+      <%= form.text_area :pergunta %>
+    </div>
+  <% else %>
+    <div class="field">
+      <%= form.label :topico %>
+      <%= form.text_area :topico, readonly: true %>
+    </div>
 
-  <div class="field">
-    <%= form.label :pergunta %>
-    <%= form.text_area :pergunta %>
-  </div>
+    <div class="field">
+      <%= form.label :pergunta %>
+      <%= form.text_area :pergunta, readonly: true %>
+    </div>
+  <% end %>
 
   <div class="field">
     <%= form.label :resposta %>
     <%= form.text_area :resposta %>
   </div>
 
-  <div class="field">
-    <%= form.label :faq_id %>
-    <%= form.text_field :faq_id %>
+  <div class="actions">
+    <%= form.hidden_field :faq_id %>
   </div>
 
   <div class="actions">

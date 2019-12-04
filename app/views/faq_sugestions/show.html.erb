@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Topico:</strong>
+  <strong>Tópico:</strong>
   <%= @faq_sugestion.topico %>
 </p>
 
@@ -15,10 +15,18 @@
   <%= @faq_sugestion.resposta %>
 </p>
 
-<p>
-  <strong>Faq:</strong>
-  <%= @faq_sugestion.faq %>
-</p>
+<% if @faq_sugestion.faq != nil %>
+  <p>
+    <strong>Resposta Original:</strong>
+    <%= Faq.find(@faq_sugestion.faq_id).resposta %>
+  </p>
+<% end %>
 
-<%= link_to 'Edit', edit_faq_sugestion_path(@faq_sugestion) %> |
-<%= link_to 'Back', faq_sugestions_path %>
+<% if user_signed_in? && current_user.role != 'administrator' %>
+  <%= link_to 'Editar', edit_faq_sugestion_path(@faq_sugestion) %>
+  <%= link_to 'Voltar', faqs_path %>
+<% end %>
+<% if user_signed_in? && current_user.role == 'administrator' %>
+  <%= link_to 'Voltar', faq_sugestions_path %>
+  <%= link_to 'Aceitar', accept_faq_sugestion_path %>
+<% end %>

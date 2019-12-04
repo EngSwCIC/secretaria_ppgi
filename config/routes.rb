@@ -1,7 +1,11 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :faq_sugestions
+  resources :faq_sugestions do
+    member do
+      get 'accept'
+    end
+  end
   resources :faqs
   get 'home/index'
   devise_for :users

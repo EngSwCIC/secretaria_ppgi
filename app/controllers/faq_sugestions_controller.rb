@@ -1,5 +1,7 @@
 class FaqSugestionsController < ApplicationController
   before_action :set_faq_sugestion, only: [:show, :edit, :update, :destroy]
+  before_action :must_be_admin, only:  [:destroy, :index]
+  before_action :must_not_be_admin, only:  [:create, :edit, :update]
 
   # GET /faq_sugestions
   # GET /faq_sugestions.json
@@ -15,6 +17,9 @@ class FaqSugestionsController < ApplicationController
   # GET /faq_sugestions/new
   def new
     @faq_sugestion = FaqSugestion.new
+    @faq_sugestion.pergunta = params[:pergunta]
+    @faq_sugestion.topico = params[:topico]
+    @faq_sugestion.faq_id = params[:faq_id]
   end
 
   # GET /faq_sugestions/1/edit
@@ -61,6 +66,24 @@ class FaqSugestionsController < ApplicationController
     end
   end
 
+  def accept
+    sugestion = FaqSugestion.find(params[:id])
+    if sugestion.faq_id == nil
+      new_faq = Faq.create(:topico => sugestion.topico, :pergunta => sugestion.pergunta, :resposta => sugestion.resposta)
+      sugestion.destroy
+    else
+      old_faq = Faq.find(sugestion.faq_id)
+      new_faq = Faq.create(:topico => sugestion.topico, :pergunta => sugestion.pergunta, :resposta => sugestion.resposta)
+      sugestion.destroy
+      old_faq.destroy
+    end
+
+    respond_to do |format|
+      format.html { redirect_to faq_sugestions_url, notice: 'Faq sugestion was successfully accepted.' }
+      format.json { head :no_content }
+    end
+  end
+
   private
     def set_faq_sugestion
       @faq_sugestion = FaqSugestion.find(params[:id])
@@ -68,5 +91,21 @@ class FaqSugestionsController < ApplicationController
 
     def faq_sugestion_params
       params.require(:faq_sugestion).permit(:topico, :pergunta, :resposta, :faq_id)
+    end
+
+    def update_faq_params
+      params.require(:faq).permit(:topico, :pergunta, :resposta)
+    end
+
+    def must_be_admin
+      unless current_user && current_user.role == "administrator"
+        redirect_to faqs_url, alert: "Essa função é restrita a administradores"
+      end
+    end
+
+    def must_not_be_admin
+      unless current_user && current_user.role != "administrator"
+        redirect_to faqs_url, alert: "Essa função é restrita a usuários cadastrados"
+      end
     end
 end

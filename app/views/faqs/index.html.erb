@@ -22,6 +22,9 @@
                 <button><th><%= link_to 'Excluir', info, method: :delete, data: { confirm: 'Você Tem Certeza que Deseja Excluir?' } %></th></button>
               </tr>
             <% end %>
+            <% if user_signed_in? && current_user.role != 'administrator' %>
+              <button><th><%= link_to 'Nova Sugestão de Resposta', new_faq_sugestion_path(:pergunta => info.pergunta, :topico => info.topico, :faq_id => info.id) %></th></button>
+            <% end %>
         <% end %>
       </div>
     </div>
@@ -35,4 +38,9 @@
 
 <% if user_signed_in? && current_user.role == 'administrator' %>
   <button><%= link_to 'Nova Entrada no FAQ', new_faq_path %></button>
+  <button><%= link_to 'Verificar Sugestões de FAQ', faq_sugestions_path %></button>
+<% end %>
+
+<% if user_signed_in? && current_user.role != 'administrator' %>
+  <button><%= link_to 'Sugerir um FAQ', new_faq_sugestion_path %></button>
 <% end %>
