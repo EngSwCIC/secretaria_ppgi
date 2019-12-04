@@ -1,5 +1,5 @@
 class SolicitationsController < ApplicationController
-  before_action :set_solicitation, only: [:show, :edit, :update, :destroy]
+  before_action :set_solicitation, only: [:show, :edit, :update, :destroy, :accept, :refuse]
   before_action :authenticate_user!
   before_action :check_deadline, only: [:new]
   # GET /solicitations
@@ -60,6 +60,30 @@ class SolicitationsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to solicitations_url, notice: 'Solicitação deletada com sucesso.' }
       format.json { head :no_content }
+    end
+  end
+
+  def accept
+    if !not_admin(solicitations_path)
+      respond_to do |format|
+        if @solicitation.update_attribute(:status, "aprovado")
+          format.html { redirect_to solicitations_path, notice: 'Solicitação aprovada com sucesso.' }
+        else
+          format.html { render :index }
+        end
+      end
+    end
+  end
+
+  def refuse
+    if !not_admin(solicitations_path)
+      respond_to do |format|
+        if @solicitation.update_attribute(:status, "reprovado")
+          format.html { redirect_to solicitations_path, notice: 'Solicitação aprovada com sucesso.' }
+        else
+          format.html { render :index }
+        end
+      end
     end
   end
 

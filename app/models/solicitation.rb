@@ -11,4 +11,16 @@ class Solicitation < ApplicationRecord
 
   enum kind: { passagem: 0, diaria: 1 }
   enum status: { reprovado: 0, analise: 1, aprovado: 2 }
+
+  def isAccepted
+    return status == "aprovado"
+  end
+
+  def isRefused
+    return status == "reprovado"
+  end
+
+  def isAnalysing
+    return status == "analise"
+  end
 end
