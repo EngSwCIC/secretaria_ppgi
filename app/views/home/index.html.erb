@@ -9,16 +9,13 @@
   <% if current_user.role == "professor"%>
     <% credenciamento = Credenciamento.where(:iduser => current_user.id).first
       if credenciamento != nil
-        if credenciamento.rejected == true%>
-        Seu pedido foi rejeitado<br>
-        <%end
-        if credenciamento.aproved == true%>
-        Seu pedido foi aprovado<br>
+        if ((credenciamento.rejected == true) || (credenciamento.aproved == true))%>
+        <%= link_to "Ver resultado do Credenciamento", 'credenciamento/show_status' %><br /><br>
         <%end
         if (credenciamento.aproved == false) && (credenciamento.rejected == false)%>
-        Seu pedido está em processo<br>
+        Seu pedido de credenciamento está em processo<br>
         <%end%>
-        <%else%>
+      <%else%>
         <%= link_to "Pedido de Credenciamento", 'credenciamento' %><br />
       <%end%>
   <% end %>

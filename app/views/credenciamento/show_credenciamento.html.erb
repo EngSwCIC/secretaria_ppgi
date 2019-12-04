@@ -1,0 +1,32 @@
+<% if user_signed_in? %>
+  <% if current_user.role == "professor"%>
+    <% credenciamento = Credenciamento.where(:iduser => current_user.id).first
+        if credenciamento.rejected == true
+            status = "Rejeitado"
+        end
+        if credenciamento.aproved == true
+            status = "Aprovado"
+        end%>
+        SEU CREDENCIAMENTO
+          <table>
+            <thead>
+              <tr>
+                <th>ID do <br>Pedido</th>
+                <th>Usuario</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                  <td><%= credenciamento.id %></td>
+                  <td><%= current_user.full_name %></td>
+                  <td><%= status %></td>
+                </tr>
+            </tbody>
+          </table>
+          <br>
+          <%= link_to "Requisitar Recredenciamento", 'show_recredenciamento' %><br /><br>
+  <% end %>
+  <%= link_to "Sair", destroy_user_session_path, method: :delete %>
+<% end %>
