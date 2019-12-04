@@ -10,12 +10,16 @@ class CredenciamentoController < ApplicationController
         end
     end
 
-    def show_form
+    def show_formrecredenciamento
         if Credenciamento.where(:iduser => current_user.id).exists?
             render 'credenciamento/show_recredenciamento'
         else
             render 'credenciamento/show_form'
         end
+    end
+
+    def show_formperiodos
+        render 'credenciamento/show_formperiodos'
     end
 
     def show_status
@@ -27,6 +31,11 @@ class CredenciamentoController < ApplicationController
 
     def create_credenciamento
         Credenciamento.create(iduser: current_user.id)
+        redirect_to '/'
+    end
+
+    def create_periodocredenciamento
+        Periodo_Credenciamento.create(comeco: params[:começo],fim: params[:fim],idadmin: current_user.id)
         redirect_to '/'
     end
 

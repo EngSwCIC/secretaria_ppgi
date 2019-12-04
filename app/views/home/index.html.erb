@@ -16,11 +16,14 @@
         Seu pedido de credenciamento está em processo<br>
         <%end%>
       <%else%>
-        <%= link_to "Pedido de Credenciamento", 'credenciamento' %><br />
+        <% if Periodo_Credenciamento.where("DATE(comeco) <= ? AND DATE(fim) >= ? ", Date.today,Date.today).count > 0 %>
+          <%= link_to "Fazer pedido de Credenciamento", 'credenciamento' %><br />
+        <%end%>
       <%end%>
   <% end %>
   <% if current_user.role == "administrator" %>
     <%= link_to "Lista de Pedidos de Credenciamento", 'credenciamento/show_pedidos' %><br />
+    <%= link_to "Criar Periodo de Credenciamento", 'credenciamento/show_formperiodos' %><br />
   <% end %>
   <%= link_to "Sair", destroy_user_session_path, method: :delete %>
 <% else %>

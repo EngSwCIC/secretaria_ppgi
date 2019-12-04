@@ -1,0 +1,14 @@
+<% if user_signed_in? %>
+  <% if current_user.role == "administrator"%>
+    <form method="post" action="create_periodocredenciamento">
+
+        <label for="começo">Data de Começo</label>
+        <input type="date" name="começo"/><br>
+        <label for="fim">Data final</label>
+        <input type="date" name="fim"/><br>
+        <input type="submit" value="Criar Novo Periodo" />
+
+    </form>
+  <% end %>
+  <%= link_to "Sair", destroy_user_session_path, method: :delete %>
+<% end %>

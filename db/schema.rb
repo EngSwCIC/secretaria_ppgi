@@ -37,8 +37,19 @@ ActiveRecord::Schema.define(version: 2019_11_14_163205) do
     t.datetime :created_at, null: false
     t.datetime :updated_at, null: false
   end
-  
+
   add_index :credenciamentos, :id
   add_foreign_key :credenciamentos, :users, column: :iduser
+
+  create_table :periodo_credenciamentos, force: :cascade do |t|
+    t.datetime :comeco, null: false
+    t.datetime :fim , null: false
+    t.integer :idadmin, null: false
+    t.datetime :created_at, null: false
+    t.datetime :updated_at, null: false
+  end
+
+  add_index :periodo_credenciamentos, :id
+  add_foreign_key :periodo_credenciamentos, :users, column: :idadmin
   
 end

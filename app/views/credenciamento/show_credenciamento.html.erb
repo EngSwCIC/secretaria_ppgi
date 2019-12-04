@@ -13,6 +13,8 @@
               <tr>
                 <th>ID do <br>Pedido</th>
                 <th>Usuario</th>
+                <th>Data de <br>Requisitação</th>
+                <th>Data de <br>Resposta</th>
                 <th>Status</th>
               </tr>
             </thead>
@@ -21,12 +23,16 @@
                 <tr>
                   <td><%= credenciamento.id %></td>
                   <td><%= current_user.full_name %></td>
+                  <td><%= credenciamento.created_at%></td>
+                  <td><%= credenciamento.updated_at%></td>
                   <td><%= status %></td>
                 </tr>
             </tbody>
           </table>
           <br>
-          <%= link_to "Requisitar Recredenciamento", 'show_recredenciamento' %><br /><br>
+          <% if Periodo_Credenciamento.where("DATE(comeco) <= ? AND DATE(fim) >= ? ", Date.today,Date.today).count > 0 %>
+            <%= link_to "Requisitar Recredenciamento", 'show_recredenciamento' %><br /><br>
+          <%end%>
   <% end %>
   <%= link_to "Sair", destroy_user_session_path, method: :delete %>
 <% end %>
