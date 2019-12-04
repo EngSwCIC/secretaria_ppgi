@@ -1,6 +1,6 @@
 class FaqSugestionsController < ApplicationController
   before_action :set_faq_sugestion, only: [:show, :edit, :update, :destroy]
-  before_action :must_be_admin, only:  [:destroy, :index]
+  before_action :must_be_admin, only:  [:destroy, :index, :accept]
   before_action :must_not_be_admin, only:  [:create, :edit, :update]
 
   # GET /faq_sugestions
@@ -72,12 +72,12 @@ class FaqSugestionsController < ApplicationController
       new_faq = Faq.create(:topico => sugestion.topico, :pergunta => sugestion.pergunta, :resposta => sugestion.resposta)
       sugestion.destroy
     else
-      old_faq = Faq.find(sugestion.faq_id)
-      new_faq = Faq.create(:topico => sugestion.topico, :pergunta => sugestion.pergunta, :resposta => sugestion.resposta)
-      sugestion.destroy
-      old_faq.destroy
+      faq_update = Faq.find(sugestion.faq_id)
+      faq_update.resposta = sugestion.resposta
+      faq_update.update(update_faq_params)
     end
-
+    
+    sugestion.destroy
     respond_to do |format|
       format.html { redirect_to faq_sugestions_url, notice: 'Faq sugestion was successfully accepted.' }
       format.json { head :no_content }
@@ -94,7 +94,7 @@ class FaqSugestionsController < ApplicationController
     end
 
     def update_faq_params
-      params.require(:faq).permit(:topico, :pergunta, :resposta)
+      params.permit(:topico, :pergunta, :resposta)
     end
 
     def must_be_admin
