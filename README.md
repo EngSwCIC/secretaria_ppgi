@@ -1,9 +1,9 @@
 # Calendario de Atividades
 
-Andreia de Freitas Novais - 15/0005628
-Yero Távora - 14/0166378
-Fernando Sobral Nóbrega - 15/0034911
-César Augusti Vilela Borges - 16/0116341
+* Andreia de Freitas Novais - 15/0005628
+* Yero Távora - 14/0166378
+* Fernando Sobral Nóbrega - 15/0034911
+* César Augusti Vilela Borges - 16/0116341
 
 Sobre o projeto:
 
