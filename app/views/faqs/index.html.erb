@@ -19,7 +19,7 @@
             <% if user_signed_in? && current_user.role == 'administrator' %>
               <tr>
                 <button><th><%= link_to 'Editar', edit_faq_path(info) %></th></button>
-                <button><th><%= link_to 'Excluir', info, method: :delete, data: { confirm: 'Você Tem Certeza que Deseja Excluir?' } %></th></button>
+                <button><th><%= link_to 'Excluir', info, method: :delete, data: { confirm: 'Você Tem Certeza que Deseja Excluir? Todas as sugestões associadas a esse FAQ tambḿe serão excluidas.' } %></th></button>
               </tr>
             <% end %>
             <% if user_signed_in? && current_user.role != 'administrator' %>
