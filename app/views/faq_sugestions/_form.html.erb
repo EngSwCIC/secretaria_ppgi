@@ -11,7 +11,7 @@
     </div>
   <% end %>
   
-  <% if :faq_id == nil %>
+  <% unless params.has_key?(:faq_id) %>
     <div class="field">
       <%= form.label :topico %>
       <%= form.text_area :topico %>
