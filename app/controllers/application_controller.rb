@@ -22,7 +22,7 @@ class ApplicationController < ActionController::Base
   end
 
   def not_admin(path)
-    if current_user.role != 'administrator'
+     if (user_signed_in? == false) or (current_user.role != 'administrator')
         redirect_to path
     end
   end

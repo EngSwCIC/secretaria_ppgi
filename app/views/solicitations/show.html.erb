@@ -30,6 +30,16 @@
   <%= @solicitation.description %>
 </p>
 
+<p>
+  <strong>Criado em:</strong>
+  <%= formatted_datetime @solicitation.created_at %>
+</p>
+
+<p>
+  <strong>Atualizado em:</strong>
+  <%= formatted_datetime @solicitation.updated_at %>
+</p>
+
 <div style="display: flex; flex-direction: row">
   <%= button_to 'Voltar', solicitations_path, :method => :get %>
   <% if user_signed_in? and current_user.role == 'administrator'%>
