@@ -23,8 +23,7 @@ end
 When("I fill the form with:") do |table|
     table.rows_hash.each {|field, value| fill_in field, :with => value}
 end
-  
-  
+    
 Given("exists a source on the database") do
     Source.create(title: "TestSource")
 end
@@ -40,3 +39,8 @@ end
 When("I click on the {string} link") do |string|
     page.click_link(string)
 end
+
+Given("exists an information in the database") do
+    Information.create(title: "test_title", info: "test_info")
+end
+  
