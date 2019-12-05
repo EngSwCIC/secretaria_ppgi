@@ -45,13 +45,25 @@ class FaqSugestionsController < ApplicationController
   # PATCH/PUT /faq_sugestions/1
   # PATCH/PUT /faq_sugestions/1.json
   def update
-    respond_to do |format|
-      if @faq_sugestion.update(faq_sugestion_params)
-        format.html { redirect_to @faq_sugestion, notice: 'Faq sugestion was successfully updated.' }
-        format.json { render :show, status: :ok, location: @faq_sugestion }
-      else
-        format.html { render :edit }
-        format.json { render json: @faq_sugestion.errors, status: :unprocessable_entity }
+    if @faq_sugestion.faq_id == nil
+      respond_to do |format|
+        if @faq_sugestion.update(faq_sugestion_params)
+          format.html { redirect_to @faq_sugestion, notice: 'Faq sugestion was successfully updated.' }
+          format.json { render :show, status: :ok, location: @faq_sugestion }
+        else
+          format.html { render :edit }
+          format.json { render json: @faq_sugestion.errors, status: :unprocessable_entity }
+        end
+      end
+    else
+      respond_to do |format|
+        if @faq_sugestion.update(faq_sugestion_updtae_params)
+          format.html { redirect_to @faq_sugestion, notice: 'Faq sugestion was successfully updated.' }
+          format.json { render :show, status: :ok, location: @faq_sugestion }
+        else
+          format.html { render :edit }
+          format.json { render json: @faq_sugestion.errors, status: :unprocessable_entity }
+        end
       end
     end
   end
@@ -93,6 +105,10 @@ class FaqSugestionsController < ApplicationController
       params.require(:faq_sugestion).permit(:topico, :pergunta, :resposta, :faq_id)
     end
 
+    def faq_sugestion_updtae_params
+      params.require(:faq_sugestion).permit(:resposta)
+    end
+
     def update_faq_params
       params.permit(:topico, :pergunta, :resposta)
     end
@@ -105,7 +121,7 @@ class FaqSugestionsController < ApplicationController
 
     def must_be_authenticated_user
       unless current_user && current_user.role != "administrator"
-        redirect_to faqs_url, alert: "Essa função é restrita a usuários cadastrados e logged-in"
+        redirect_to faqs_url, alert: "Essa função é restrita a usuários cadastrados e logged-in não administradores"
       end
     end
 end

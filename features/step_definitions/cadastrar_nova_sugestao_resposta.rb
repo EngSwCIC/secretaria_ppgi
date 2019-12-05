@@ -41,3 +41,7 @@ Given("Que o usuario esta logado com as credenciais {string} e {string}") do |st
   Then("Um nova sugestao foi adicionada") do
     page.should have_content("Faq sugestion was successfully created.")
   end
+
+  Then("O usuario deve ver a resposta como {string}") do |string|
+    page.should have_content("Resposta: " + string)
+  end
