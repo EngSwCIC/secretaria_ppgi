@@ -1,10 +1,10 @@
 require 'rails_helper'
 RSpec.describe FaqsController, type: :controller do
   fixtures :users
+
   let(:valid_attributes) {
     {topico: 'topico', pergunta: 'pergunta', resposta: 'resposta'}
   }
-
 
   let(:invalid_attributes) {
     {topico: nil, pergunta: nil, resposta: nil}

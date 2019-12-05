@@ -1,7 +1,7 @@
 class FaqSugestionsController < ApplicationController
   before_action :set_faq_sugestion, only: [:show, :edit, :update, :destroy]
   before_action :must_be_admin, only:  [:destroy, :index, :accept]
-  before_action :must_not_be_admin, only:  [:create, :edit, :update]
+  before_action :must_be_authenticated_user, only:  [:create, :edit, :update]
 
   # GET /faq_sugestions
   # GET /faq_sugestions.json
@@ -103,9 +103,9 @@ class FaqSugestionsController < ApplicationController
       end
     end
 
-    def must_not_be_admin
+    def must_be_authenticated_user
       unless current_user && current_user.role != "administrator"
-        redirect_to faqs_url, alert: "Essa função é restrita a usuários cadastrados"
+        redirect_to faqs_url, alert: "Essa função é restrita a usuários cadastrados e logged-in"
       end
     end
 end
