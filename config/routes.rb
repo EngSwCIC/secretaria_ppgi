@@ -1,15 +1,16 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  # resources :activities
   get 'home/index'
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'home#index'
-
-  # Rotas p Processos
-  get     "/processos",               to: "processos#index"
-  get     "/processos/:id",           to: "processos#show"
-  post    "/processos/cadastro",      to: "processos#create"
-  put     "/processos/:id/atualizar", to: "processos#update"
-  delete  "/processos/:id/excluir",   to: "processos#delete"  
+  # Rotas p processo
+  get     "/processos",               to: "activities#index"
+  get     "/processo/new",            to: "activities#new"
+  get     "/processo/:id",            to: "activities#show"
+  post    "/processo/cadastro",       to: "activities#create"
+  put     "/processo/:id/atualizar",  to: "activities#update"
+  delete  "/processo/:id/excluir",    to: "activities#delete"  
 end
