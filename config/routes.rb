@@ -6,8 +6,13 @@ Rails.application.routes.draw do
   root to: 'home#index'
   devise_for :users
 
-  resources :setups
-  resources :solicitations
+  resources :setups 
+  resources :solicitations do 
+    member do 
+      get "accept"
+      get "refuse"
+    end
+  end
   resources :requirements
   get 'home/index'
 end
