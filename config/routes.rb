@@ -7,10 +7,10 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'home#index'
   # Rotas p processo
-  get     "/processos",               to: "activities#index"
-  get     "/processo/new",            to: "activities#new"
-  get     "/processo/:id",            to: "activities#show"
-  post    "/processo/cadastro",       to: "activities#create"
-  put     "/processo/:id/atualizar",  to: "activities#update"
-  delete  "/processo/:id/excluir",    to: "activities#delete"  
+  get     "/processos",                to: "activities#index"
+  get     "/processos/new",            to: "activities#new"
+  get     "/processos/:id",            to: "activities#show"
+  post    "/processos/cadastro",       to: "activities#create"
+  put     "/processos/:id/atualizar",  to: "activities#update"
+  delete  "/processos/:id/excluir",    to: "activities#delete"  
 end
