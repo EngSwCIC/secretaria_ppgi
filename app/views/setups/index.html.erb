@@ -20,9 +20,9 @@
       <tr>
         <td><%= formatted_datetime setup.inicio %></td>
         <td><%= formatted_datetime setup.fim %></td>
-        <td><%= link_to 'Mostrar', setup %></td>
-        <td><%= link_to 'Editar', edit_setup_path(setup) %></td>
-        <td><%= button_to 'Deletar', setup, method: :delete, data: { confirm: 'Você tem certeza?'} %></td>
+        <td><%= button_to 'Mostrar', setup, :method => :get %></td>
+        <td><%= button_to 'Editar', edit_setup_path(setup), :method => :get %></td>
+        <td><%= button_to 'Deletar', setup, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
       </tr>
     <% end %>
   </tbody>

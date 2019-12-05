@@ -35,25 +35,24 @@
         <td><%= solicitation.description %></td>
         <td><%= solicitation.user.full_name %></td>
         <td><%= map_status solicitation %></td>
-        <td><%= link_to 'Mostrar', solicitation %></td>
+        <td><%= button_to 'Mostrar', solicitation, :method => :get %></td>
         <% if current_user.role == 'administrator' %>
           <td><%= link_to 'Editar', edit_solicitation_path(solicitation) %></td>
           <td><%= link_to 'Deletar', solicitation, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
           <% if !solicitation.isAccepted %>
             <td><%= link_to 'Aprovar', accept_solicitation_path(solicitation), data: { confirm: 'Você tem certeza?' } %></td>
           <% else %>
-            <td></td>
-          <%end %>
+            <td><!-- Blank cell --></td>
+          <% end %>
           <% if !solicitation.isRefused %>
             <td><%= link_to 'Reprovar', refuse_solicitation_path(solicitation), data: { confirm: 'Você tem certeza?' }  %></td>
           <% else %>
-            <td></td>
+            <td><!-- Blank cell --></td>
           <%end %>
         <% else %>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td><!-- Blank cell --></td>
+          <td><!-- Blank cell --></td>
+          <td><!-- Blank cell --></td>
         <%end %>
 
       </tr>
