@@ -41,6 +41,7 @@
           <td><%= button_to 'Deletar', solicitation, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
         <%end %>
       </tr>
+
     <% end %>
 
     <div style=""></div>
@@ -54,9 +55,10 @@
       <% if current_user.role == 'administrator' or 'student'%>
         <div style="margin-right: 50px"><%= button_to 'Nova Solicitação', new_solicitation_path, :method => :get %></div>
       <%end%>
+      <div style="margin-right: 50px"> <%= button_to 'Prazos', setups_path, :method => :get %></div>
 
       <% if current_user.role == 'administrator' %>
-      <%= button_to 'Prazos', setups_path, :method => :get %>
+
       <% end %>
   <%end %>
   <br/>

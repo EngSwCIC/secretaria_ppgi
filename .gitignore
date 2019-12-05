@@ -28,3 +28,9 @@
 
 # solargraph config file
 .solargraph.yml
+
+
+.generators
+.idea/
+.rakeTasks
+.rake_tasks~

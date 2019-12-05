@@ -1,6 +1,9 @@
 class RequirementsController < ApplicationController
   include Devise::Controllers::Helpers
   before_action :set_requirement, only: [:show, :edit, :update, :destroy]
+  before_action except: [:index, :show] do
+    not_admin(requirements_path)
+  end
 
   # GET /requirements
   # GET /requirements.json

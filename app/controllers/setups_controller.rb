@@ -1,7 +1,9 @@
 class SetupsController < ApplicationController
   before_action :set_setup, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
-  before_action :not_admin
+  before_action except: [:index, :show] do
+    not_admin(setups_path)
+  end
 
   # GET /setups
   # GET /setups.json

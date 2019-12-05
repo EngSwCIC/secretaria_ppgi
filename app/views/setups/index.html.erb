@@ -21,15 +21,18 @@
         <td><%= formatted_datetime setup.inicio %></td>
         <td><%= formatted_datetime setup.fim %></td>
         <td><%= button_to 'Mostrar', setup, :method => :get %></td>
+        <%if current_user.role == 'administrator' %>
         <td><%= button_to 'Editar', edit_setup_path(setup), :method => :get %></td>
         <td><%= button_to 'Deletar', setup, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
+          <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
+<% if current_user.role == 'administrator'%>
 <%= button_to 'Novo prazo', new_setup_path, :method => :get %>
+    <% end %>
 </br>
 <%= button_to 'Voltar', solicitations_path, :method => :get %>

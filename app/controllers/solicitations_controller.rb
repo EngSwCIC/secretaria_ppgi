@@ -2,6 +2,9 @@ class SolicitationsController < ApplicationController
   before_action :set_solicitation, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
   before_action :check_deadline, only: [:new]
+  before_action except: [:index, :show, :new, :create] do
+    not_admin(solicitations_path)
+  end
   # GET /solicitations
   # GET /solicitations.json
   def index
