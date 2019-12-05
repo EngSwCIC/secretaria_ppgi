@@ -1,0 +1,70 @@
+[
+  {
+    "uri": "features/specs/cria.feature",
+    "id": "inserir-os-dados-no-banco",
+    "keyword": "Funcionalidade",
+    "name": "Inserir os dados no banco",
+    "description": "",
+    "line": 5,
+    "elements": [
+      {
+        "id": "inserir-os-dados-no-banco;inserção-de-um-novo-dados-no-banco-com-sucesso",
+        "keyword": "Cenario",
+        "name": "Inserção de um novo dados no banco com sucesso",
+        "description": "",
+        "line": 8,
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Dado ",
+            "name": "que acesso o banco e tem-se  informações a inserir",
+            "line": 9,
+            "match": {
+              "location": "features/step_definitions/cria.rb:8"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 649677000
+            }
+          },
+          {
+            "keyword": "Quando ",
+            "name": "insere-se \"funcionariooo\" e \"Proativoo!!\"",
+            "line": 10,
+            "match": {
+              "location": "features/step_definitions/cria.rb:12"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 535974000
+            }
+          },
+          {
+            "keyword": "Entao ",
+            "name": "deve inserir com sucesso os dados no banco",
+            "line": 11,
+            "match": {
+              "location": "features/step_definitions/cria.rb:20"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 29000
+            }
+          },
+          {
+            "keyword": "E ",
+            "name": "receber a seguinte mensagem \"Attendance was successfully created.\"",
+            "line": 12,
+            "match": {
+              "location": "features/step_definitions/cria.rb:24"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 132901000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
