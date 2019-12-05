@@ -4,10 +4,11 @@ Feature: Edit Source
 
     Background: 
         Given I'm an administrator
-        And I'm on the "Sources" page
+        And exists a source on the database
+        And I'm on the "sources" page
 
     Scenario: Editing Source
-        When I click on the "Edit" button
+        When I click on the "Edit" link
         Then I should see "Editing Source"
         When I fill the form with:
         |Title | Test |

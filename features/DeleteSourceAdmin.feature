@@ -5,19 +5,11 @@ Feature: Delete a Source
     Background:
         Given I'm an administrator
         And exists a source on the database
-        And I'm on the "Source" page
+        And I'm on the "sources" page
 
     Scenario: Deleting Source
-        When I click on the "Destroy" button
-        Then I should see "Are you sure?"
-        When I click on the "Ok" button
+        When I click on the "Destroy" link
         Then I should see "Source was successfully destroyed."
-    
-    Scenario: Not Deleting a Source
-        When I click on the "Destroy" button
-        Then I should see "Are you sure?"
-        When I click on the "Cancelar" button
-        Then I should not see "Source was successfully destroyed."
 
 
       
