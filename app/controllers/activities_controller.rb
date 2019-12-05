@@ -24,7 +24,7 @@ class ActivitiesController < ApplicationController
         @activity = Activity.find(params[:id])
         @activity = update.(activity_params)
 
-        render :json = @activity
+        render json: @activity
     end
 
     def delete
@@ -41,4 +41,5 @@ class ActivitiesController < ApplicationController
 
     def activity_params
         params.permit(:name, :description)
+    end
 end
