@@ -1,5 +1,6 @@
 require 'rails_helper'
-
+require 'devise
+'
 RSpec.describe "Setups", type: :request do
   describe "GET /setups" do
     it "works! (now write some real specs)" do

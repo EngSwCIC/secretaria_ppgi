@@ -12,8 +12,8 @@ RSpec.describe 'solicitations/show', type: :view do
                                                                description: 'MyText',
                                                                status: 'analise',
                                                                user: person,
-                                                               created_at: '2012-02-02',
-                                                               updated_at: '2012-02-02'))
+                                                               created_at: '2012-02-02 12:00:00',
+                                                               updated_at: '2012-02-02 13:00:00'))
   end
 
   it 'renders attributes in <p>' do
@@ -24,6 +24,8 @@ RSpec.describe 'solicitations/show', type: :view do
     expect(rendered).to match(/Origin/)
     expect(rendered).to match(/Destination/)
     expect(rendered).to match(/MyText/)
+    expect(rendered).to match('02/02/12 12:00 PM')
+    expect(rendered).to match('02/02/12 13:00 PM')
   end
 
   context 'when admin is not signed in' do

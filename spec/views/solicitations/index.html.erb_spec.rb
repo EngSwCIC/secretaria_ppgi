@@ -5,7 +5,7 @@ RSpec.describe "solicitations/index", type: :view do
   let(:admin) {FactoryGirl.create :admin}
 
   before(:each) do
-    sign_in person
+
     @solicitation = assign(:solicitations, [
         Solicitation.create!(
             kind: 'passagem',
@@ -16,8 +16,8 @@ RSpec.describe "solicitations/index", type: :view do
             description: "MyText",
             status: 'analise',
             user: person,
-            created_at: '2012-02-02',
-            updated_at: '2012-02-02'
+            created_at: '2012-02-02 12:00:00',
+            updated_at: '2012-02-03 12:00:00'
         ),
         Solicitation.create!(
             kind: 'passagem',
@@ -28,22 +28,47 @@ RSpec.describe "solicitations/index", type: :view do
             description: "MyText",
             status: 'analise',
             user: person,
-            created_at: '2012-02-02',
-            updated_at: '2012-02-02'
+            created_at: '2012-02-02 12:00:00',
+            updated_at: '2012-02-03 12:00:00'
         )
     ])
   end
+  context 'when admin is logged in' do
+    before do
+      sign_in admin
+    end
+    it "renders a list of solicitations" do
+      render
+      assert_select "tr>td", text: 'Passagem'.to_s, count: 2
+      assert_select "tr>td", text: '02/02/13'.to_s, count: 2
+      assert_select "tr>td", text: '03/02/13'.to_s, count: 2
+      assert_select "tr>td", text: "Origin".to_s, count: 2
+      assert_select "tr>td", text: "Destination".to_s, count: 2
+      assert_select "tr>td", text: "MyText".to_s, count: 2
+      assert_select "tr>td", text: person.full_name.to_s, count: 2
+      assert_select "tr>td", text: "Em Análise".to_s, count: 2
+      assert_select "tr>td", text: '02/02/12 12:00 PM'.to_s, count: 2
+      assert_select "tr>td", text: '03/02/12 12:00 PM'.to_s, count: 2
+    end
+  end
 
-  it "renders a list of solicitations" do
-    render
-    assert_select "tr>td", text: 'Passagem'.to_s, count: 2
-    assert_select "tr>td", text: '02/02/13'.to_s, count: 2
-    assert_select "tr>td", text: '03/02/13'.to_s, count: 2
-    assert_select "tr>td", text: "Origin".to_s, count: 2
-    assert_select "tr>td", text: "Destination".to_s, count: 2
-    assert_select "tr>td", text: "MyText".to_s, count: 2
-    assert_select "tr>td", text: person.full_name.to_s, count: 2
-    assert_select "tr>td", text: "Em Análise".to_s, count: 2
+  context 'when user is logged in' do
+    before do
+      sign_in person
+    end
+    it "renders a list of solicitations" do
+      render
+      assert_select "tr>td", text: 'Passagem'.to_s, count: 2
+      assert_select "tr>td", text: '02/02/13'.to_s, count: 2
+      assert_select "tr>td", text: '03/02/13'.to_s, count: 2
+      assert_select "tr>td", text: "Origin".to_s, count: 2
+      assert_select "tr>td", text: "Destination".to_s, count: 2
+      assert_select "tr>td", text: "MyText".to_s, count: 2
+      assert_select "tr>td", text: person.full_name.to_s, count: 2
+      assert_select "tr>td", text: "Em Análise".to_s, count: 2
+      assert_select "tr>td", text: '02/02/12 12:00 PM'.to_s, count: 2
+      assert_select "tr>td", text: '03/02/12 12:00 PM'.to_s, count: 2
+    end
   end
 
   context 'when user is signed in as admin' do

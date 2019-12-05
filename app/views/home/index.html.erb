@@ -16,7 +16,6 @@
   <div style="display: flex; flex-direction: row;">
     <div style="margin-right: 50px"><%= button_to "Requerimentos", requirements_path, :method => :get %></div>
     <div style="margin-right: 50px"><%= button_to "Solicitações", solicitations_path, :method => :get %></div>
-    <div style="margin-right: 50px"><%= button_to "Informações", announcements_path, :method => :get %></div>
   </div>
 <% else %>
   <h3>Entre para acessar o sistema!</h3>
@@ -25,7 +24,6 @@
   <div  style="display: flex; flex-direction: row">
     <div style="margin-right: 50px"><%= button_to "Entrar", new_user_session_path, :method => :get %></div>
     <div style="margin-right: 50px"><%= button_to "Requerimentos", requirements_path, :method => :get %></div>
-    <div style="margin-right: 50px"><%= button_to "Informações", announcements_path, :method => :get %></div>
   </div>
 <% end %>
 </body>

@@ -27,7 +27,7 @@ require 'devise'
 # `rails-controller-testing` gem.
 
 RSpec.describe RequirementsController, type: :controller do
-  let(:admin) { FactoryGirl.build :admin }
+  let(:admin) { FactoryGirl.create :admin }
   let(:user) { FactoryGirl.create :user }
 
   # This should return the minimal set of attributes required to create a valid
@@ -180,7 +180,7 @@ RSpec.describe RequirementsController, type: :controller do
 
         it ' does not redirect to the created requirement' do
           post :create, params: { requirement: valid_attributes }, session: user_session
-          expect(response).not_to redirect_to(Requirement.last)
+          expect(response).to redirect_to(requirements_path)
         end
       end
 
@@ -202,7 +202,7 @@ RSpec.describe RequirementsController, type: :controller do
 
         it ' does not redirect to the created requirement' do
           post :create, params: { requirement: valid_attributes }, session: guest_session
-          expect(response).not_to redirect_to(Requirement.last)
+          expect(response).to redirect_to(requirements_path)
         end
       end
 
@@ -318,7 +318,7 @@ RSpec.describe RequirementsController, type: :controller do
         requirement = Requirement.create! valid_attributes
         expect do
           delete :destroy, params: { id: requirement.to_param }, session: user_session
-        end.to change(Requirement, :count).by(-1)
+        end.to change(Requirement, :count).by(0)
       end
 
       it 'does not redirect to the requirements list' do
@@ -333,7 +333,7 @@ RSpec.describe RequirementsController, type: :controller do
         requirement = Requirement.create! valid_attributes
         expect do
           delete :destroy, params: { id: requirement.to_param }, session: guest_session
-        end.to change(Requirement, :count).by(-1)
+        end.to change(Requirement, :count).by(0)
       end
 
       it 'does not redirect to the requirements list' do
