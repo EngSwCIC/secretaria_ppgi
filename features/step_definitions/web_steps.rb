@@ -6,6 +6,33 @@ Given("I'm an administrator") do
     click_on 'Log in'
     page.should have_content("Signed in successfully.")
 end
+
+Given("I'm an student") do
+    visit '/users/sign_in'
+    User.create(full_name: "Student", email: "fake@student.com", password: "student123", role: "student", registration: "000000000")
+    fill_in 'user_email', with: 'fake@student.com'
+    fill_in 'user_password', with: 'student123'
+    click_on 'Log in'
+    page.should have_content("Signed in successfully.")
+end
+
+Given("I'm an professor") do
+    visit '/users/sign_in'
+    User.create(full_name: "Professor", email: "fake@professor.com", password: "professor123", role: "professor", registration: "000000000")
+    fill_in 'user_email', with: 'fake@professor.com'
+    fill_in 'user_password', with: 'professor123'
+    click_on 'Log in'
+    page.should have_content("Signed in successfully.")
+end
+
+Given("I'm an secretary") do
+    visit '/users/sign_in'
+    User.create(full_name: "secretary", email: "fake@secretary.com", password: "secretary123", role: "secretary", registration: "000000000")
+    fill_in 'user_email', with: 'fake@secretary.com'
+    fill_in 'user_password', with: 'secretary123'
+    click_on 'Log in'
+    page.should have_content("Signed in successfully.")
+end
   
 Given("I'm on the {string} page") do |string|
     visit '/' + string
