@@ -6,7 +6,7 @@ class AttendancesController < ApplicationController
   def index
     @attendances = Attendance.all
   end
-
+  # POST /attendances/search
   def search
     if params[:search].blank?  
       redirect_to(attendances_path, alert: "Empty field!") and return  
