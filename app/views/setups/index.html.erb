@@ -22,7 +22,7 @@
         <td><%= formatted_datetime setup.fim %></td>
         <td><%= link_to 'Mostrar', setup %></td>
         <td><%= link_to 'Editar', edit_setup_path(setup) %></td>
-        <td><%= link_to 'Deletar', setup, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
+        <td><%= button_to 'Deletar', setup, method: :delete, data: { confirm: 'Você tem certeza?'} %></td>
       </tr>
     <% end %>
   </tbody>

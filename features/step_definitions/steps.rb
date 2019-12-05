@@ -7,6 +7,15 @@ Dado /^que meu banco de dados está inicializado$/ do
     User.create(full_name: "Professor", email: "professor@professor.com", password: "admin123", role: "professor", registration: "000000000")
     Requirement.destroy_all
     Requirement.create(name: "Nome", description: "Nome nome nome nome")
+    # Setup.destroy_all
+    # Setup.create(inicio: DateTime.new(2020, 10, 16, 22, 35, 0), fim:DateTime.new(2020, 10, 25, 22, 35, 0))
+    # Setup.create(inicio: DateTime.new(2020, 11, 16, 22, 35, 0), fim:DateTime.new(2020, 11, 25, 22, 35, 0))
+end
+
+Dado /^que meu banco de dados está inicializado com os prazos das solicitações$/ do
+    Setup.destroy_all
+    Setup.create(inicio: DateTime.new(2020, 10, 16, 22, 35, 0), fim:DateTime.new(2020, 10, 25, 22, 35, 0))
+    Setup.create(inicio: DateTime.new(2020, 11, 16, 22, 35, 0), fim:DateTime.new(2020, 11, 25, 22, 35, 0))
 end
 
 Dado /^que eu estou na "([^\"]+)"$/ do |path|
@@ -85,4 +94,22 @@ end
 
 Quando /^eu seleciono o valor "([^\"]+)" na lista "([^\"]+)"$/ do |value, lista|
     find(:select, lista).first(:option, value).select_option
+end
+
+E /^eu confirmo o popup$/ do
+    # page.driver.browser.switch_to().alert.accept
+    # page.driver.accept_js_confirms!
+    # selenium.confirmation
+    # page.execute_script 'window.confirm = function () { return true }'
+    begin
+        main, popup = page.driver.browser.window_handles
+        within_window(popup) do
+            click_on("Ok")
+        end
+        rescue
+    end
+end
+
+E /^eu aperto no botão "([^\"]+)" na linha "([^\"]+)"$/ do |botao, linha|
+    page.find(:xpath, "//tbody/tr[#{linha}]").click_button(botao)
 end
