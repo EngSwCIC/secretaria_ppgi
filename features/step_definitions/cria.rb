@@ -18,14 +18,14 @@ Dado("que acesso o banco e tem-se  informações a inserir") do
   end
   
   Entao("deve inserir com sucesso os dados no banco") do
-    #expect(page).to have_content @string
+    
   end
   
   Entao("receber a seguinte mensagem {string}") do |string|
-    #expect(page).to have_content string
+    
     driver.navigate.to "http://localhost:3000/attendances/38"
-    driver.find_element(:id , 'notice') # clica no botao cadastrar
-    sleep 10
+    driver.find_element(:id , 'notice') # Procura a mensagem esperada de insercao bem sucedida
+    sleep 2
     
     
   end

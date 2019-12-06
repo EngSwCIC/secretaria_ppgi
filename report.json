@@ -24,7 +24,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 649677000
+              "duration": 1363119000
             }
           },
           {
@@ -36,7 +36,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 535974000
+              "duration": 785222000
             }
           },
           {
@@ -48,7 +48,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 29000
+              "duration": 40000
             }
           },
           {
@@ -60,7 +60,75 @@
             },
             "result": {
               "status": "passed",
-              "duration": 132901000
+              "duration": 2273860000
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "uri": "features/specs/search.feature",
+    "id": "buscar-um-dado-no-banco",
+    "keyword": "Funcionalidade",
+    "name": "Buscar um dado no banco",
+    "description": "",
+    "line": 3,
+    "elements": [
+      {
+        "id": "buscar-um-dado-no-banco;realização-de-uma-busca-de-dados-já-existente-no-banco-de-dados",
+        "keyword": "Cenario",
+        "name": "Realização de uma busca de dados já existente no Banco de dados",
+        "description": "",
+        "line": 6,
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Dado ",
+            "name": "que acesso o banco e tem-se  informações a buscar",
+            "line": 7,
+            "match": {
+              "location": "features/step_definitions/search.rb:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 799245000
+            }
+          },
+          {
+            "keyword": "Quando ",
+            "name": "digita-se na barra de Busca o dado \"funcionariooo\"",
+            "line": 8,
+            "match": {
+              "location": "features/step_definitions/search.rb:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 699132000
+            }
+          },
+          {
+            "keyword": "Entao ",
+            "name": "deve encontrar com sucesso",
+            "line": 9,
+            "match": {
+              "location": "features/step_definitions/search.rb:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 115780000
+            }
+          },
+          {
+            "keyword": "E ",
+            "name": "ser capaz de identificar todos os resultados possíveis da busca",
+            "line": 10,
+            "match": {
+              "location": "features/step_definitions/search.rb:22"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5001027000
             }
           }
         ]
