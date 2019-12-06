@@ -23,11 +23,9 @@ class InformationController < ApplicationController
 
   # POST /information
   # POST /information.json
-  def create
-    @information = Information.new(information_params)
-    @origin = params["source"]
-    
+  def create    
     respond_to do |format|
+      @information = Information.new information_params
       if @information.save
         format.html { redirect_to @information, notice: 'Informação foi criada com sucesso.' }
         format.json { render :show, status: :created, location: @information }
@@ -70,6 +68,6 @@ class InformationController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def information_params
-      params.require(:information).permit(:title, :info, :origin)
+      params.require(:information).permit(:title, :info, :fonte)
     end
 end

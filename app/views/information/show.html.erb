@@ -10,6 +10,11 @@
   <%= @information.info %>
 </p>
 
+<p>
+  <strong>Fonte:</strong>
+  <%= @information.fonte %>
+</p>
+
 <% if user_signed_in? and current_user.role == 'administrator' %>
 	<%= link_to 'Alterar', edit_information_path(@information) %> |
 <% else %>

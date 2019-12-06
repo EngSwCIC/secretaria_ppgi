@@ -17,7 +17,7 @@
       <tr>
         <td><%= information.title %></td>
         <td><%= information.info %></td>
-        <td><%= information.origin %></td>
+        <td><%= information.fonte %></td>
         <td><%= link_to 'Ver', information %></td>
         <% if user_signed_in? and current_user.role == 'administrator' %>
           <td><%= link_to 'Editar', edit_information_path(information) %></td>
