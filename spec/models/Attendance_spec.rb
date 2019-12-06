@@ -1,13 +1,6 @@
 require 'rails_helper'
-#Funcionalidade: Verificacao de insercao dos dados no banco
-     
-# Cenario "Inserção de um novo dados no banco com sucesso" 
-#Dado que eu tenho novas informações 
-#|titulo|        Problemas conexão                       |
-#|conteudo|Usuario não consegue se conectar na nossa rede|
-#Quando eu insiro esses dados
-#Entao verifico se ocorreu inserção desses dados no banco.
-
+#
+#
 # testes que permitem que a estrutura do banco estejam corretas
 	RSpec.feature Attendance , type: :model do
 		context 'validation tests' do
@@ -36,36 +29,36 @@ require 'rails_helper'
 				expect(at.content).to eq("conexao")
 			end
 
-		#	it "is valid the title and content generate random" do
-		#		Attendance = build(:title , :content)
-		#		expect(Attendance).to_not be_valid
-		#	end
 		end
 
 		# Teste de edicao no banco de dados
-		
-		it "edit of the title is successfully" do
-			at = Attendance.create(title: "Rede" , content: "conexao")
-			at.update(title: "novo titulo")
-			expect(at.title).to eq("novo titulo")
+		context 'when data exists' do
+			it "edit of the title was successfully" do
+				at = Attendance.create(title: "Rede" , content: "conexao")
+				at.update(title: "novo titulo")
+				expect(at.title).to eq("novo titulo")
+			end
+
+			it "edit of the content was successfully " do
+				at = Attendance.create(title: "Rede" , content: "conexao")
+				at.update(content: "conexao reporter")
+				expect(at.content).to eq("conexao reporter")
+			end
+
+			it "edit of the title and content was successfully " do
+				at = Attendance.create(title: "Rede" , content: "conexao")
+				at.update(title: "funcionario" ,content: "proativo")
+				expect(at.title).to eq("funcionario")
+				expect(at.content).to eq("proativo")
+			end
 		end
+		# exclusao de dados
+		context 'when datas exists' do
+			it "destroy of the data was successfully " do
+				at = Attendance.create(title: "casa" , content: "boa")
+				at.destroy
+				expect(at.title).to eq("casa")
 
-		it "edit of the content is successfully " do
-			at = Attendance.create(title: "Rede" , content: "conexao")
-			at.update(content: "conexao reporter")
-			expect(at.content).to eq("conexao reporter")
+			end
 		end
-
-		it "edit of the data was successfully " do
-			at = Attendance.create(title: "Rede" , content: "conexao")
-			at.update(title: "funcionario" ,content: "proativo")
-			expect(at.title).to eq("funcionario")
-			expect(at.content).to eq("proativo")
-		end
-
-		# Teste sobre busca de dados no banco de dados
-
-		
-	
-
 	end
