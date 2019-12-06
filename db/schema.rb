@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_19_195310) do
+ActiveRecord::Schema.define(version: 2019_12_03_200152) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "faq_sugestions", force: :cascade do |t|
+    t.text "topico"
+    t.text "pergunta"
+    t.text "resposta"
+    t.bigint "faq_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["faq_id"], name: "index_faq_sugestions_on_faq_id"
+  end
 
   create_table "faqs", force: :cascade do |t|
     t.text "topico"
@@ -38,4 +48,5 @@ ActiveRecord::Schema.define(version: 2019_11_19_195310) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "faq_sugestions", "faqs"
 end

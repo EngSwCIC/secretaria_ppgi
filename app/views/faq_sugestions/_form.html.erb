@@ -1,0 +1,48 @@
+<%= form_with(model: faq_sugestion, local: true) do |form| %>
+  <% if faq_sugestion.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(faq_sugestion.errors.count, "error") %> prohibited this faq_sugestion from being saved:</h2>
+
+      <ul>
+      <% faq_sugestion.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <% unless params.has_key?(:faq_id) %>
+    <div class="field">
+      <%= form.label :topico %>
+      <%= form.text_area :topico %>
+    </div>
+
+    <div class="field">
+      <%= form.label :pergunta %>
+      <%= form.text_area :pergunta %>
+    </div>
+  <% else %>
+    <div class="field">
+      <%= form.label :topico %>
+      <%= form.text_area :topico, readonly: true %>
+    </div>
+
+    <div class="field">
+      <%= form.label :pergunta %>
+      <%= form.text_area :pergunta, readonly: true %>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :resposta %>
+    <%= form.text_area :resposta %>
+  </div>
+
+  <div class="actions">
+    <%= form.hidden_field :faq_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
