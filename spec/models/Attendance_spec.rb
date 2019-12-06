@@ -58,7 +58,8 @@ require 'rails_helper'
 				at = Attendance.create(title: "casa" , content: "boa")
 				at.destroy
 				expect(at.title).to eq("casa")
-
+			end
+		end
 		# Teste sobre busca de dados no banco de dados
 
 		context "files attachment" do
@@ -68,8 +69,6 @@ require 'rails_helper'
 				attendance.files.attach(create_file_blob) 
 				expect(attendance.files.any?).to eq(true)
 			end
-			
 		end
-		
 	end
 
