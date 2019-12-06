@@ -1,27 +1,25 @@
 module SolicitationsHelper
-  def map_status solicitation
+  def map_status(solicitation)
     case solicitation.status
-    when 'analise'
+    when "analise"
       "Em Análise"
-    when 'reprovado'
+    when "reprovado"
       "Reprovado"
-    when 'aprovado'
+    when "aprovado"
       "Aprovado"
     else
       "Análise"
     end
   end
 
-  def map_kind solicitation
+  def map_kind(solicitation)
     case solicitation.kind
-    when 'passagem'
+    when "passagem"
       "Passagem"
-    when 'diaria'
+    when "diaria"
       "Diária"
     else
       "Error"
     end
   end
-
-
 end

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Valor:</strong>
+  R$ <%= @log.value %>
+</p>
+
+<p>
+  <strong>Descrição:</strong>
+  <%= @log.description %>
+</p>
+
+<p>
+  <strong>Feita em:</strong>
+  <%= formatted_datetime @log.created_at %>
+</p>
+
+<p>
+  <strong>Atualizada em:</strong>
+  <%= formatted_datetime @log.updated_at %>
+</p>
+
+<div style="display: flex; flex-direction: row">
+  <%= button_to 'Voltar', budgets_path, :method => :get %>
+  <div style="margin-left: 50px">
+    <%= button_to 'Editar', edit_log_path(@log), :method => :get %>
+  </div>
+
+</div>

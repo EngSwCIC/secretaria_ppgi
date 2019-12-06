@@ -40,4 +40,4 @@
 
 <p>Unhappy? <%= button_to "Cancelar minha conta", registration_path(resource_name), data: { confirm: "Você tem certeza?" }, method: :delete %></p>
 
-<%= link_to "Voltar", :back %>
+<%= button_to "Voltar", :back, :method => :get %>

@@ -21,9 +21,9 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def not_admin
-    if current_user.role != 'administrator'
-        redirect_to root_path
+  def not_admin(path)
+     if (user_signed_in? == false) or (current_user.role != 'administrator')
+        redirect_to path
     end
   end
 

@@ -1,7 +1,10 @@
 class SetupsController < ApplicationController
   before_action :set_setup, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
-  before_action :not_admin
+  before_action except: [:index, :show] do
+    not_admin(setups_path)
+  end
+
   # GET /setups
   # GET /setups.json
   def index
@@ -29,7 +32,7 @@ class SetupsController < ApplicationController
 
     respond_to do |format|
       if @setup.save
-        format.html { redirect_to @setup, notice: 'Prazo criado com sucesso.' }
+        format.html { redirect_to @setup, notice: "Prazo criado com sucesso." }
         format.json { render :show, status: :created, location: @setup }
       else
         format.html { render :new }
@@ -43,7 +46,7 @@ class SetupsController < ApplicationController
   def update
     respond_to do |format|
       if @setup.update(setup_params)
-        format.html { redirect_to @setup, notice: 'Prazo atualizado com sucesso.' }
+        format.html { redirect_to @setup, notice: "Prazo atualizado com sucesso." }
         format.json { render :show, status: :ok, location: @setup }
       else
         format.html { render :edit }
@@ -57,19 +60,20 @@ class SetupsController < ApplicationController
   def destroy
     @setup.destroy
     respond_to do |format|
-      format.html { redirect_to setups_url, notice: 'Prazo deletado com sucesso.' }
+      format.html { redirect_to setups_url, notice: "Prazo deletado com sucesso." }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_setup
-      @setup = Setup.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def setup_params
-      params.require(:setup).permit(:inicio, :fim)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_setup
+    @setup = Setup.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def setup_params
+    params.require(:setup).permit(:inicio, :fim)
+  end
 end

@@ -1,7 +1,10 @@
 class SolicitationsController < ApplicationController
-  before_action :set_solicitation, only: [:show, :edit, :update, :destroy]
+  before_action :set_solicitation, only: [:show, :edit, :update, :destroy, :accept, :refuse]
   before_action :authenticate_user!
   before_action :check_deadline, only: [:new]
+  before_action except: [:index, :show, :new, :create] do
+    not_admin(solicitations_path)
+  end
   # GET /solicitations
   # GET /solicitations.json
   def index
@@ -61,6 +64,44 @@ class SolicitationsController < ApplicationController
       format.html { redirect_to solicitations_url, notice: 'Solicitação deletada com sucesso.' }
       format.json { head :no_content }
     end
+  end
+
+  def accept
+
+    respond_to do |format|
+      if @solicitation.kind == 'diaria' && Budget.first.value < 800
+        format.html {redirect_to solicitations_path, notice: 'Orçamento insuficiente para realizar operação.' }
+
+      elsif @solicitation.kind == 'passagem' && Budget.first.value < 2000
+        format.html {redirect_to solicitations_path, notice: 'Orçamento insuficiente para realizar operação.'}
+      else
+        if @solicitation.update_attribute(:status, "aprovado")
+          if @solicitation.kind == 'diaria'
+            BudgetsController.add_value(-800)
+            Log.create(value: -800, description: "Aprovação de solicitação do #{@solicitation.user.full_name}", budget_id: Budget.first.id )
+
+          else
+            BudgetsController.add_value(-2000)
+            Log.create(value: -2000, description: "Aprovação de solicitação do #{@solicitation.user.full_name}", budget_id: Budget.first.id )
+          end
+          format.html { redirect_to solicitations_path, notice: 'Solicitação aprovada com sucesso.' }
+        else
+          format.html { render :index }
+        end
+      end
+    end
+  end
+
+  def refuse
+
+    respond_to do |format|
+      if @solicitation.update_attribute(:status, "reprovado")
+        format.html { redirect_to solicitations_path, notice: 'Solicitação reprovada com sucesso.' }
+      else
+        format.html { render :index }
+      end
+    end
+
   end
 
   private
