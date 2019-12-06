@@ -65,7 +65,14 @@ require 'rails_helper'
 
 		# Teste sobre busca de dados no banco de dados
 
+		context "files attachment" do
+			it "creates a attendance with a file" do
+				attendance = create(:Attendance)
+				# how to create this file?
+				attendance.files.attach(create_file_blob) 
+				expect(attendance.files.any?).to eq(true)
+			end
+			
+		end
 		
-	
-
 	end

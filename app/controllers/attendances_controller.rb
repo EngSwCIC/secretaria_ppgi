@@ -4,7 +4,7 @@ class AttendancesController < ApplicationController
   # GET /attendances
   # GET /attendances.json
   def index
-    @attendances = Attendance.all
+    @attendances = Attendance.includes(:comments).all
   end
   # POST /attendances/search
   def search
@@ -78,7 +78,7 @@ class AttendancesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_attendance
-      @attendance = Attendance.find(params[:id])
+      @attendance = Attendance.with_attached_files.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
