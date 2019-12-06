@@ -5,6 +5,7 @@ Funcionalidade: Passagens
 
     Contexto: 
         Dado que meu banco de dados está inicializado
+        E que meu banco de dados está inicializado com os prazos das solicitações
 
         Cenário: Solicitar o benefício de passagem sendo um estudante sem informar a data
             Dado que eu estou na "home" e eu estou logado como "estudante"

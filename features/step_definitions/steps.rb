@@ -14,13 +14,16 @@ end
 
 Dado /^que meu banco de dados está inicializado com os prazos das solicitações$/ do
     Setup.destroy_all
-    Setup.create(inicio: DateTime.new(2020, 10, 16, 22, 35, 0), fim:DateTime.new(2020, 10, 25, 22, 35, 0))
-    Setup.create(inicio: DateTime.new(2020, 11, 16, 22, 35, 0), fim:DateTime.new(2020, 11, 25, 22, 35, 0))
+    Setup.create(inicio: DateTime.new(2015, 10, 16, 22, 35, 0), fim: DateTime.new(2020, 10, 25, 22, 35, 0))
 end
 
 Dado /^que eu estou na "([^\"]+)"$/ do |path|
     if path == "home"
         visit root_path
+    elsif path == "página de prazos"
+        visit setups_path
+    elsif path == "página de requerimentos"
+        visit requirements_path
     elsif path == "página de login"
         visit new_user_session_path
     end
@@ -112,4 +115,9 @@ end
 
 E /^eu aperto no botão "([^\"]+)" na linha "([^\"]+)"$/ do |botao, linha|
     page.find(:xpath, "//tbody/tr[#{linha}]").click_button(botao)
+
+end
+
+E /^eu espero ver o botão "([^\"]+)"$/ do |botao|
+  find_button(botao).should_not be_nil
 end

@@ -23,6 +23,15 @@ Setup.create(inicio: DateTime.new(2020, 10, 16, 22, 35, 0), fim:DateTime.new(202
 Setup.create(inicio: DateTime.new(2020, 11, 16, 22, 35, 0), fim:DateTime.new(2020, 11, 25, 22, 35, 0))
 
 # Solicitation
-Solicitation.destroy_all
-Solicitation.create(kind: 0, departure: DateTime.new(2020, 10, 16, 22, 35, 0), return: DateTime.new(2020, 10, 25, 22, 35, 0), origin: "Brasília", destination: "Tokyo", description: "bla_bla_bla_bla", status: "analise", user_id: user.id)
-Solicitation.create(kind: 1, departure: DateTime.new(2020, 10, 16, 22, 35, 0), return: DateTime.new(2020, 10, 25, 22, 35, 0), origin: "Brasília", destination: "Tokyo", description: "bla_bla_bla_bla", status: "analise", user_id: user.id)
+#Solicitation.destroy_all
+#Solicitation.create(kind: 0, departure: DateTime.new(2020, 10, 16, 22, 35, 0), return: DateTime.new(2020, 10, 25, 22, 35, 0), origin: "Brasília", destination: "Tokyo", description: "bla_bla_bla_bla", status: "analise", user_id: user.id)
+#Solicitation.create(kind: 1, departure: DateTime.new(2020, 10, 16, 22, 35, 0), return: DateTime.new(2020, 10, 25, 22, 35, 0), origin: "Brasília", destination: "Tokyo", description: "bla_bla_bla_bla", status: "analise", user_id: user.id)
+
+# Budgets
+Budget.destroy_all
+budget = Budget.create(value: +0.0)
+
+# Log
+Log.destroy_all
+log = Log.create(value: +0.0, description: 'Ola mundo', budget_id: budget.id)
+
