@@ -1,6 +1,7 @@
 require 'rails_helper'
 RSpec.feature AttendancesController , type: :controller do
 
+
       let(:valid_attributes) {
     skip("Add a hash of attributes valid for your model")
   }
@@ -9,6 +10,7 @@ RSpec.feature AttendancesController , type: :controller do
     skip("Add a hash of attributes invalid for your model")
   }
 
+
     let(:valid_attributes_search) {
         {search: "Nada"}
     }
@@ -16,8 +18,8 @@ RSpec.feature AttendancesController , type: :controller do
         {search: ""}
     }
 
-    let(:valid_session) { {} }
 
+    let(:valid_session) { {} }
 
     describe "GET #index" do
         it "sucess on index" do
@@ -69,5 +71,13 @@ RSpec.feature AttendancesController , type: :controller do
     end
   end
   
+    context 'redirects' do
+        describe 'GET #search' do
+            before { get :search }
+
+            it { should redirect_to(attendances_path) }
+            it { should redirect_to(action: :index) }
+        end
+    end
 
 end

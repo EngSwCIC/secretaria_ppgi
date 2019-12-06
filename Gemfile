@@ -66,6 +66,7 @@ group :test do
   gem 'site_prism', '2.15.1'
   gem 'fastri'
   gem 'rcodetools'
+  gem 'shoulda-matchers'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
