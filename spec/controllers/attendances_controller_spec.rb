@@ -32,4 +32,13 @@ RSpec.feature AttendancesController , type: :controller do
         end
     end
 
+    context 'redirects' do
+        describe 'GET #search' do
+            before { get :search }
+
+            it { should redirect_to(attendances_path) }
+            it { should redirect_to(action: :index) }
+        end
+    end
+
 end

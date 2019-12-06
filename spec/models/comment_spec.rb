@@ -1,5 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe Comment, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'association with attendance' do
+    it { should belong_to(:attendance).class_name('Attendance') }
+  end
+
+  describe 'validations' do
+    it { should validate_presence_of(:content) }
+  end
 end
