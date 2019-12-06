@@ -1,5 +1,5 @@
 class Activity < ApplicationRecord
-    belongs_to: Status
+    belongs_to :statuses
 
     validates :name, presence: true
     validates :description, presence: true

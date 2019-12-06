@@ -1,6 +1,6 @@
 class Status < ApplicationRecord
-    has_many: Activities 
+    has_many :activities
 
-    validates :name presence: true
+    validates :name, presence: true
 
 end

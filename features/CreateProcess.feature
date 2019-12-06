@@ -5,7 +5,7 @@ Feature: User can create a process by entering his name, type and description of
   I want to create a new process entering my name, type and description
 
   Background: Start from the Criar Processo page
-    Given I am on the Processo home page
+    Given I am on the Processos home page
     Then I press "Criar Processo"
 
   Scenario: Try to create a process (happy path)
