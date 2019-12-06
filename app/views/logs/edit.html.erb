@@ -1,6 +1,16 @@
-<h1>Editing Log</h1>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Calistoga&display=swap&effect=outline  " rel="stylesheet">
+</head>
+<body>
+<div class="font-effect-outline" >
+  <h1>Editar Movimentação</h1></div>
+</body>
 
 <%= render 'form', log: @log %>
 
-<%= link_to 'Show', @log %> |
-<%= link_to 'Back', logs_path %>
+<div style="display: flex; flex-direction: row">
+  <%= button_to 'Voltar', budgets_path, :method => :get %>
+  <div style="margin-left: 50px">
+    <%= button_to 'Mostrar', @log, :method => :get %>
+  </div>
+</div>

@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_05_213922) do
+ActiveRecord::Schema.define(version: 2019_12_06_204315) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "budgets", force: :cascade do |t|
-    t.decimal "value"
+    t.decimal "value", default: "0.0"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,6 +1,9 @@
 class BudgetsController < ApplicationController
   before_action :set_budget, only: [:show, :edit, :update, :destroy]
   before_action {not_admin(root_path)}
+  before_action except: [:index] do
+    redirect_to(budgets_path)
+  end
   # GET /budgets
   # GET /budgets.json
   def index
@@ -9,11 +12,8 @@ class BudgetsController < ApplicationController
     @logs = @budget.logs
   end
 
-  def self.add_value(value, path)
+  def self.add_value(value)
     Budget.first.update_attribute( :value, Budget.first.value + value)
-    #respond_to do |format|
-    #  format.html {redirect_to path}
-    #  end
   end
   # GET /budgets/1
   # GET /budgets/1.json

@@ -1,5 +1,9 @@
 class LogsController < ApplicationController
   before_action :set_log, only: [:show, :edit, :update, :destroy]
+  before_action {not_admin(root_path)}
+  before_action only: [:index] do
+    redirect_to(budgets_path)
+  end
 
   # GET /logs
   # GET /logs.json
@@ -28,8 +32,8 @@ class LogsController < ApplicationController
     @log.budget = Budget.first
     respond_to do |format|
       if @log.save
-        BudgetsController.add_value(@log.value, budgets_path)
-        format.html { redirect_to budgets_path, notice: 'Log was successfully created.' }
+        BudgetsController.add_value(@log.value)
+        format.html { redirect_to budgets_path, notice: 'Movimentação criada com sucesso.' }
         format.json { render :show, status: :created, location: @log }
       else
         format.html { render :new }
@@ -42,8 +46,10 @@ class LogsController < ApplicationController
   # PATCH/PUT /logs/1.json
   def update
     respond_to do |format|
+      old_value = @log.value
       if @log.update(log_params)
-        format.html { redirect_to @log, notice: 'Log was successfully updated.' }
+        BudgetsController.add_value(@log.value - old_value)
+        format.html { redirect_to @log, notice: 'Movimentação atualizada com sucesso.' }
         format.json { render :show, status: :ok, location: @log }
       else
         format.html { render :edit }
@@ -57,7 +63,7 @@ class LogsController < ApplicationController
   def destroy
     @log.destroy
     respond_to do |format|
-      format.html { redirect_to logs_url, notice: 'Log was successfully destroyed.' }
+      format.html { redirect_to budgets_url, notice: 'Movimentação deletada com sucesso.' }
       format.json { head :no_content }
     end
   end

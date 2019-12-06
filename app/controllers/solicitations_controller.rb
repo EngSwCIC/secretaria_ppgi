@@ -77,11 +77,11 @@ class SolicitationsController < ApplicationController
       else
         if @solicitation.update_attribute(:status, "aprovado")
           if @solicitation.kind == 'diaria'
-            BudgetsController.add_value(-800, nil)
+            BudgetsController.add_value(-800)
             Log.create(value: -800, description: "Aprovação de solicitação do #{@solicitation.user.full_name}", budget_id: Budget.first.id )
 
           else
-            BudgetsController.add_value(-2000, nil)
+            BudgetsController.add_value(-2000)
             Log.create(value: -2000, description: "Aprovação de solicitação do #{@solicitation.user.full_name}", budget_id: Budget.first.id )
           end
           format.html { redirect_to solicitations_path, notice: 'Solicitação aprovada com sucesso.' }

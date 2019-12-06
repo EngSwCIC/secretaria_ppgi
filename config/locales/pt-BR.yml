@@ -12,6 +12,8 @@ pt-BR:
       setup: "Prazo"
       solicitation: "Solicitação"
       user: "Usuário"
+      log: "Movimentação"
+      budget: "Orçamento"
 
   date:
     abbr_day_names:

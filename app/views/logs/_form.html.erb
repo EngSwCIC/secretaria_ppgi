@@ -4,20 +4,23 @@
       <h2><%= pluralize(log.errors.count, "error") %> prohibited this log from being saved:</h2>
 
       <ul>
-      <% log.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% log.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
 
   <div class="field">
-    <%= form.label :value %>
-    <%= form.text_field :value %>
+    <%= form.label :Valor %>
+    <div style="display: flex; flex-direction: row">
+      <%= form.text_field :value %>
+      <div style="margin-left: 15px"><strong>Reais</strong></div>
+    </div>
   </div>
 
   <div class="field">
-    <%= form.label :description %>
+    <%= form.label :Descrição %>
     <%= form.text_area :description %>
   </div>
 
