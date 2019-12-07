@@ -1,0 +1,21 @@
+<!-- <p id="notice"><%= notice %></p> -->
+
+<p>
+  <strong>Título:</strong>
+  <%= @information.title %>
+</p>
+
+<p>
+  <strong>Texto:</strong>
+  <%= @information.info %>
+</p>
+
+<p>
+  <strong>Fonte:</strong>
+  <%= @information.fonte %>
+</p>
+
+<% if user_signed_in? and current_user.role == 'administrator' %>
+	<%= link_to 'Alterar', edit_information_path(@information) %> |
+<% end %>
+<%= link_to 'Voltar', information_index_path %>
