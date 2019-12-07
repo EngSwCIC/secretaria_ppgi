@@ -96,7 +96,7 @@ class SolicitationsController < ApplicationController
 
     respond_to do |format|
       if @solicitation.update_attribute(:status, "reprovado")
-        format.html { redirect_to solicitations_path, notice: 'Solicitação aprovada com sucesso.' }
+        format.html { redirect_to solicitations_path, notice: 'Solicitação reprovada com sucesso.' }
       else
         format.html { render :index }
       end

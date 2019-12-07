@@ -1,7 +1,7 @@
 
 Dado /^que meu banco de dados está inicializado$/ do
     User.destroy_all
-    User.create(full_name: "Secretário", email: "secretary@secretary.com", password: "admin123", role: "secretary", registration: "000000000")
+    user = User.create(full_name: "Secretário", email: "secretary@secretary.com", password: "admin123", role: "secretary", registration: "000000000")
     User.create(full_name: "Administrador", email: "admin@admin.com", password: "admin123", role: "administrator", registration: "000000000")
     User.create(full_name: "Aluno", email: "student@student.com", password: "admin123", role: "student", registration: "000000000")
     User.create(full_name: "Professor", email: "professor@professor.com", password: "admin123", role: "professor", registration: "000000000")
@@ -10,22 +10,67 @@ Dado /^que meu banco de dados está inicializado$/ do
     # Setup.destroy_all
     # Setup.create(inicio: DateTime.new(2020, 10, 16, 22, 35, 0), fim:DateTime.new(2020, 10, 25, 22, 35, 0))
     # Setup.create(inicio: DateTime.new(2020, 11, 16, 22, 35, 0), fim:DateTime.new(2020, 11, 25, 22, 35, 0))
+    Budget.destroy_all
+    budget = Budget.create(value: +0.0)
+
+    Solicitation.destroy_all
+    Solicitation.create(kind: 0, departure: DateTime.new(2020, 10, 16, 22, 35, 0), return: DateTime.new(2020, 10, 25, 22, 35, 0), origin: "Brasília", destination: "Tokyo", description: "bla_bla_bla_bla", status: "analise", user_id: user.id)
+    Solicitation.create(kind: 1, departure: DateTime.new(2020, 10, 16, 22, 35, 0), return: DateTime.new(2020, 10, 25, 22, 35, 0), origin: "Brasília", destination: "Tokyo", description: "bla_bla_bla_bla", status: "analise", user_id: user.id)
+    # Log
+    Log.destroy_all
+    log = Log.create(value: +0.0, description: 'Ola mundo', budget_id: budget.id)
 end
 
 Dado /^que meu banco de dados está inicializado com os prazos das solicitações$/ do
     Setup.destroy_all
     Setup.create(inicio: DateTime.new(2015, 10, 16, 22, 35, 0), fim: DateTime.new(2020, 10, 25, 22, 35, 0))
 end
+Dado /^que eu tenha "([^\"]+)" de orçamento$/ do |valor|
+    steps %Q{
+        Dado que eu estou na "página de orçamentos"
+        Quando eu aperto no botão "Nova Movimentação"
+        E eu preencho o campo "log_value" com o valor "#{valor}"
+        E eu preencho o campo "log_description" com o valor "Tá na Disney"
+        E eu aperto no botão "Criar Movimentação"
+    }
+    visit root_path
+end
 
 Dado /^que eu estou na "([^\"]+)"$/ do |path|
-    if path == "home"
+    case path
+    when "home"
         visit root_path
-    elsif path == "página de prazos"
+    when "página de orçamentos"
+        visit budgets_path
+    when "página de prazos"
         visit setups_path
-    elsif path == "página de requerimentos"
+    when "página de requerimentos"
         visit requirements_path
-    elsif path == "página de login"
+    when "página de solicitações"
+        visit solicitations_path
+    when "página de login"
         visit new_user_session_path
+    else
+        visit root_path
+    end
+end
+
+Quando /^eu vou para "([^\"]+)"$/ do |path|
+    case path
+    when "home"
+        visit root_path
+    when "página de orçamentos"
+        visit budgets_path
+    when "página de prazos"
+        visit setups_path
+    when "página de requerimentos"
+        visit requirements_path
+    when "página de solicitações"
+        visit solicitations_path
+    when "página de login"
+        visit new_user_session_path
+    else
+        visit root_path
     end
 end
 
@@ -118,6 +163,17 @@ E /^eu aperto no botão "([^\"]+)" na linha "([^\"]+)"$/ do |botao, linha|
 
 end
 
+E /^eu clico no link "([^\"]+)" na linha "([^\"]+)"$/ do |link, linha|
+    page.find(:xpath, "//tbody/tr[#{linha}]").click_link(link)
+
+end
+
 E /^eu espero ver o botão "([^\"]+)"$/ do |botao|
-  find_button(botao).should_not be_nil
+#   find_button(botao).should_not be_nil
+    expect(page).to have_button botao
+end
+
+E /^eu não espero ver o botão "([^\"]+)"$/ do |botao|
+    expect(page).should_not have_button botao
+#   page_button(botao).should be_nil
 end
