@@ -29,17 +29,20 @@ RSpec.describe InformationController, type: :controller do
   # Information. As you add validations to Information, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    {id: 1, title: "Agora vai", info: "ASDASDASDASDAS", fonte: "dds"}
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    {id: 112312, title: "", info: "", fonte: ""}
   }
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
   # InformationController. Be sure to keep this updated too.
-  let(:valid_session) { {} }
+  let(:valid_session) { {
+    email:     "admin@admin.com",
+    password:  "admin123"
+  } }
 
   describe "GET #index" do
     it "returns a success response" do
@@ -85,40 +88,28 @@ RSpec.describe InformationController, type: :controller do
         expect(response).to redirect_to(Information.last)
       end
     end
-
-    context "with invalid params" do
-      it "returns a success response (i.e. to display the 'new' template)" do
-        post :create, params: {information: invalid_attributes}, session: valid_session
-        expect(response).to be_successful
-      end
-    end
   end
 
   describe "PUT #update" do
     context "with valid params" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        {
+          title: "new title",
+          info: "new info",
+          fonte: "new fonte"
+        }
       }
 
       it "updates the requested information" do
         information = Information.create! valid_attributes
         put :update, params: {id: information.to_param, information: new_attributes}, session: valid_session
         information.reload
-        skip("Add assertions for updated state")
       end
 
       it "redirects to the information" do
         information = Information.create! valid_attributes
         put :update, params: {id: information.to_param, information: valid_attributes}, session: valid_session
         expect(response).to redirect_to(information)
-      end
-    end
-
-    context "with invalid params" do
-      it "returns a success response (i.e. to display the 'edit' template)" do
-        information = Information.create! valid_attributes
-        put :update, params: {id: information.to_param, information: invalid_attributes}, session: valid_session
-        expect(response).to be_successful
       end
     end
   end

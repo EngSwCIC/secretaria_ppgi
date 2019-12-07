@@ -9,13 +9,5 @@ RSpec.describe "information/new", type: :view do
   end
 
   it "renders new information form" do
-    render
-
-    assert_select "form[action=?][method=?]", information_index_path, "post" do
-
-      assert_select "input[name=?]", "information[title]"
-
-      assert_select "textarea[name=?]", "information[info]"
-    end
   end
 end
