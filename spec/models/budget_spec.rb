@@ -12,7 +12,6 @@ RSpec.describe Budget, type: :model do
     expect(budget.errors[:value]).to include("não pode ficar em branco")
   end
 
-
   it "só permite um budget" do
     budget = Budget.create(value: 42)
     expect(Budget.count).to eq 1
