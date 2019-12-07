@@ -54,4 +54,15 @@ Funcionalidade: Criar um requisito
             E eu espero ver "Nome nome nome nome"
 
 
-        
+        Cenário: Editar os requisitos como administrador
+            Dado que eu estou na "página de requerimentos" e eu estou logado como "administrador"
+            E eu aperto no botão "Editar"
+            E eu preencho o campo "requirement_name" com o valor "Dora a Aventureira"
+            Quando eu aperto no botão "Atualizar Requerimento"
+            Então eu espero ver "Requerimento atualizado com sucesso."
+
+        Cenário: Deletar os requisitos como administrador
+            Dado que eu estou na "página de requerimentos" e eu estou logado como "administrador"
+            E eu aperto no botão "Deletar"
+            E eu confirmo o popup
+            Então eu espero ver "Requerimento deletado com sucesso."

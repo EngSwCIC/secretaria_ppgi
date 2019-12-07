@@ -1,0 +1,80 @@
+<p id="notice"><%= notice %></p>
+<!--
+
+<h1>Budgets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Value</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    < @b.each do |budget| %>
+      <tr>
+        <td><= budget.value %></td>
+        <td><= link_to 'Show', budget %></td>
+        <td><= link_to 'Edit', edit_budget_path(budget) %></td>
+        <td><= link_to 'Destroy', budget, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    < end %>
+  </tbody>
+</table>
+
+<br>
+<= link_to 'New Budget', new_budget_path %>
+-->
+
+<!-- <p id="notice"><%= notice %></p>-->
+
+
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Calistoga&display=swap&effect=outline  " rel="stylesheet">
+</head>
+<body>
+<div class="font-effect-outline" > <h1>Orçamento</h1></div>
+</body>
+
+<h2>R$  <%= @value %></h2>
+
+
+
+
+
+<table>
+  <thead>
+  <tr>
+    <th>Histórico</th>
+    <th>Descrição</th>
+    <th>Feita em</th>
+    <th>Atualizada em</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @logs.each do |log| %>
+    <tr>
+      <td>R$ <%= log.value %></td>
+      <td><%= truncate log.description, length: 100 %></td>
+      <td><%= formatted_datetime log.created_at %></td>
+      <td><%= formatted_datetime log.updated_at %></td>
+      <td><%= button_to 'Mostrar', log, method: :get %></td>
+      <td><%= button_to 'Editar', edit_log_path(log), method: :get %></td>
+      <td><%= button_to 'Deletar', log, method: :delete, data: {confirm: 'Você tem certeza? Deletar uma movimentação não irá alterar a quantia total'} %></td>
+
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= button_to 'Nova Movimentação', new_log_path, method: :get %>
+</br>
+
+<%= button_to 'Voltar', home_index_path, :method => :get %>
+
+

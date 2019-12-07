@@ -5,6 +5,7 @@ Funcionalidade: Diárias
 
     Contexto: 
         Dado que meu banco de dados está inicializado
+        E que meu banco de dados está inicializado com os prazos das solicitações
 
         Cenário: Solicitar o benefício de diárias sendo um estudante sem informar a data, destino e descrição
             Dado que eu estou na "home" e eu estou logado como "estudante"

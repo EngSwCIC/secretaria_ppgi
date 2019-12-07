@@ -67,9 +67,23 @@ class SolicitationsController < ApplicationController
   end
 
   def accept
-    if !not_admin(solicitations_path)
-      respond_to do |format|
+    tipo = @solicitation.kind
+    respond_to do |format|
+      if @solicitation.kind == 'diaria' && Budget.first.value < 800
+        format.html {redirect_to solicitations_path, notice: 'Orçamento insuficiente para realizar operação.' }
+
+      elsif @solicitation.kind == 'passagem' && Budget.first.value < 2000
+        format.html {redirect_to solicitations_path, notice: 'Orçamento insuficiente para realizar operação.'}
+      else
         if @solicitation.update_attribute(:status, "aprovado")
+          if @solicitation.kind == 'diaria'
+            add_value(-800)
+            Log.create(value: -800, description: "Aprovação de solicitação do #{@solicitation.user.full_name}", budget_id: Budget.first.id )
+
+          else
+            add_value(-2000)
+            Log.create(value: -2000, description: "Aprovação de solicitação do #{@solicitation.user.full_name}", budget_id: Budget.first.id )
+          end
           format.html { redirect_to solicitations_path, notice: 'Solicitação aprovada com sucesso.' }
         else
           format.html { render :index }
@@ -79,15 +93,15 @@ class SolicitationsController < ApplicationController
   end
 
   def refuse
-    if !not_admin(solicitations_path)
-      respond_to do |format|
-        if @solicitation.update_attribute(:status, "reprovado")
-          format.html { redirect_to solicitations_path, notice: 'Solicitação aprovada com sucesso.' }
-        else
-          format.html { render :index }
-        end
+
+    respond_to do |format|
+      if @solicitation.update_attribute(:status, "reprovado")
+        format.html { redirect_to solicitations_path, notice: 'Solicitação reprovada com sucesso.' }
+      else
+        format.html { render :index }
       end
     end
+
   end
 
   private
