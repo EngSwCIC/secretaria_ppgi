@@ -87,15 +87,14 @@ RSpec.describe SolicitationsController, type: :controller do
         expect(response).to be_successful
       end
     end
-  end
-  context 'when user is a guest' do
-    it 'it does not return a success response' do
-      Solicitation.create! valid_attributes
-      get :index, params: {}, session: guest_session
-      expect(response).not_to be_successful
+    context 'when user is a guest' do
+      it 'it does not return a success response' do
+        Solicitation.create! valid_attributes
+        get :index, params: {}, session: guest_session
+        expect(response).not_to be_successful
+      end
     end
   end
-
   describe 'GET #show' do
     context 'when admin is logged in' do
       it 'returns a success response' do

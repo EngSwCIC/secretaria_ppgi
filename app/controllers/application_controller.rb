@@ -22,8 +22,14 @@ class ApplicationController < ActionController::Base
   end
 
   def not_admin(path)
-     if (user_signed_in? == false) or (current_user.role != 'administrator')
-        redirect_to path
+    if (user_signed_in? == false) or (current_user.role != 'administrator')
+      redirect_to path
+    end
+  end
+
+  def add_value(value)
+    if current_user.role == 'administrator'
+      Budget.first.update_attribute( :value, Budget.first.value + value)
     end
   end
 
