@@ -14,6 +14,5 @@ Feature: Information Interaction
         When I click on the "Ver" link
         Then I should see "Título"
         And I should see "Texto"
-        And I should not see "Você não tem permissão para acessar essa página"
         When I click on the "Voltar" link
         Then I should see "Informações"

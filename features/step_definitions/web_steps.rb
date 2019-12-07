@@ -68,6 +68,6 @@ When("I click on the {string} link") do |string|
 end
 
 Given("exists an information in the database") do
-    Information.create(title: "test_title", info: "test_info")
+    Information.create(title: "test_title", info: "test_info", fonte: "test_fonte")
 end
   

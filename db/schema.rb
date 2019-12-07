@@ -23,6 +23,12 @@ ActiveRecord::Schema.define(version: 2019_12_06_223758) do
     t.string "fonte"
   end
 
+  create_table "information_source", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "sources", force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", null: false
