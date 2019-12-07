@@ -67,7 +67,7 @@ class SolicitationsController < ApplicationController
   end
 
   def accept
-
+    tipo = @solicitation.kind
     respond_to do |format|
       if @solicitation.kind == 'diaria' && Budget.first.value < 800
         format.html {redirect_to solicitations_path, notice: 'Orçamento insuficiente para realizar operação.' }
@@ -77,11 +77,11 @@ class SolicitationsController < ApplicationController
       else
         if @solicitation.update_attribute(:status, "aprovado")
           if @solicitation.kind == 'diaria'
-            BudgetsController.add_value(-800)
+            add_value(-800)
             Log.create(value: -800, description: "Aprovação de solicitação do #{@solicitation.user.full_name}", budget_id: Budget.first.id )
 
           else
-            BudgetsController.add_value(-2000)
+            add_value(-2000)
             Log.create(value: -2000, description: "Aprovação de solicitação do #{@solicitation.user.full_name}", budget_id: Budget.first.id )
           end
           format.html { redirect_to solicitations_path, notice: 'Solicitação aprovada com sucesso.' }

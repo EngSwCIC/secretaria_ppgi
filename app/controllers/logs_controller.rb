@@ -32,7 +32,7 @@ class LogsController < ApplicationController
     @log.budget = Budget.first
     respond_to do |format|
       if @log.save
-        BudgetsController.add_value(@log.value)
+        add_value(@log.value)
         format.html { redirect_to budgets_path, notice: 'Movimentação criada com sucesso.' }
         format.json { render :show, status: :created, location: @log }
       else
@@ -48,7 +48,7 @@ class LogsController < ApplicationController
     respond_to do |format|
       old_value = @log.value
       if @log.update(log_params)
-        BudgetsController.add_value(@log.value - old_value)
+        add_value(@log.value - old_value)
         format.html { redirect_to @log, notice: 'Movimentação atualizada com sucesso.' }
         format.json { render :show, status: :ok, location: @log }
       else

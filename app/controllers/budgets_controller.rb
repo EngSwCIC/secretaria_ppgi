@@ -7,14 +7,13 @@ class BudgetsController < ApplicationController
   # GET /budgets
   # GET /budgets.json
   def index
+    @b = Budget.all
     @budget = Budget.first
     @value = @budget.value
     @logs = @budget.logs
   end
 
-  def self.add_value(value)
-    Budget.first.update_attribute( :value, Budget.first.value + value)
-  end
+
   # GET /budgets/1
   # GET /budgets/1.json
   def show
@@ -70,13 +69,13 @@ class BudgetsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_budget
-      @budget = Budget.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_budget
+    @budget = Budget.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def budget_params
-      params.require(:budget).permit(:value)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def budget_params
+    params.require(:budget).permit(:value)
+  end
 end

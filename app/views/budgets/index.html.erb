@@ -12,7 +12,7 @@
   </thead>
 
   <tbody>
-    < @budgets.each do |budget| %>
+    < @b.each do |budget| %>
       <tr>
         <td><= budget.value %></td>
         <td><= link_to 'Show', budget %></td>
@@ -38,6 +38,11 @@
 </body>
 
 <h2>R$  <%= @value %></h2>
+
+
+
+
+
 <table>
   <thead>
   <tr>
@@ -59,6 +64,7 @@
       <td><%= button_to 'Mostrar', log, method: :get %></td>
       <td><%= button_to 'Editar', edit_log_path(log), method: :get %></td>
       <td><%= button_to 'Deletar', log, method: :delete, data: {confirm: 'Você tem certeza? Deletar uma movimentação não irá alterar a quantia total'} %></td>
+
     </tr>
   <% end %>
   </tbody>
