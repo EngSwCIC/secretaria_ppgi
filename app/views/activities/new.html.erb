@@ -2,7 +2,7 @@
 
 <p>Entre com as informações do processo</p>
 
-<%= form_tag("/processo/cadastro", method: "post") do %>
+<%= form_tag("/processos/cadastro", method: "post") do %>
     Nome: <%= text_field_tag(:name) %><br>
     Descrição: <%= text_field_tag(:description) %><br>
     Tipo de processo: <%= text_field_tag(:type_activity) %><br>
