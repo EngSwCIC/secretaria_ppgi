@@ -1,6 +1,6 @@
-<h2 class="text-align-center">Log in</h2>
+<h1 class="text-align-center padding-bottom-3">Log in</h1>
 
-<div class="container jumbotron text-align-center">
+<div class="container jumbotron text-align-center padding-bottom-0 padding-top-3">
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <%#= form_with url: user_session_path, local: true do |f| %>
 
@@ -21,9 +21,12 @@
       </div>
     <% end %>
 
-    <div class="actions">
+    <div class="actions padding-bottom-3 padding-top-1">
       <%= f.submit "Log in" %>
     </div>
   <% end %>
+
+  <%= render "devise/shared/links" %>
+
 </div>
-<%= render "devise/shared/links" %>
+

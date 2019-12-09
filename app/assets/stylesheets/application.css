@@ -18,12 +18,24 @@
     text-align: center;
 }
 
+.padding-top-1{
+    padding-top: 1vw;
+}
+
 .padding-top-3{
     padding-top: 3vw;
 }
 
+.padding-bottom-0{
+    padding-bottom: 0vw;
+}
+
 .padding-bottom-0-5{
     padding-bottom: 0.5vw;
+}
+
+.padding-bottom-1{
+    padding-bottom: 1vw;
 }
 
 .padding-bottom-3{
