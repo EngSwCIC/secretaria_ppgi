@@ -1,0 +1,18 @@
+<div class="text-align-center">
+  <ul class="list-group">
+    <li class="list-group-item">
+      <h3>Título:</h3>
+      <p> <%= @activity.title %></p>
+    </li>
+    <li class="list-group-item">
+      <h3>Descrição:</h3>
+      <p> <%= @activity.description %></p>
+    </li>
+    <li class="list-group-item">
+      <h3>Prazo:</h3>
+      <p>
+        <%= @activity.date.strftime("%d %b %Y")%>
+      </p>
+    </li>
+  </ul>
+</div>

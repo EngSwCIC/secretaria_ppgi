@@ -5,11 +5,41 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+  <% if user_signed_in?%>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="">
+        SECRETARIA
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li>
+            <a class="nav-link" href="http://localhost:3000/activities">Atividades<span class="sr-only">(current)</span></a>
+            <% current_user.role %>
+          </li>
+          <% if current_user.role == "administrator" %>
+            <li>
+              <a class="nav-link" href="http://localhost:3000/activities/new">Nova Atividade<span class="sr-only">(current)</span></a>
+            </li>
+          <% end %>
+          <a class="nav-link" href="http://localhost:3000/users/edit">Editar Perfil<span class="sr-only">(current)</span></a>
+        </ul>
+      </div>
+        <%= link_to "Sair", destroy_user_session_path, :method => :delete, class: "btn btn-danger my-2 my-sm-0" %>
+    </nav>
+  <% end %>
+
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>

@@ -1,0 +1,42 @@
+<h1 class="text-align-center">Atividades</h1>
+
+<ul class="list-group padding-top-3">
+  <table class="table table-striped">
+    <thead style="background-color: #17a2b8; color: white;">
+      <tr>
+        <th>Título</th>
+        <th>Descrição</th>
+        <th>Data final</th>
+        <th>Ação</th>
+      </tr>
+    </thead>
+  </table>
+  <% @activities.each do |activity| %>
+    <li class="list-group-item">
+      <div class="row">
+        <div class="col">
+          <%= activity.title %>
+        </div>
+        <div class="col">
+          <%= activity.description %>
+        </div>
+        <div class="col">
+          <% if activity.date > Date.today %>
+            <%= activity.date.strftime("%d %b %Y") %>
+          <% else %>
+            <button type="button" class="btn btn-danger">Expirada em <%= activity.date.strftime("%d %b %Y") %> </button>
+          <% end %>
+        </div>
+        <div class="col">
+          <%= link_to('Ver detalhes', activity_path(activity), class:"btn btn-info") %>
+          <% if current_user.role == "administrator" %>
+            <%= link_to('Editar', edit_activity_path(activity), class:"btn btn-success") %>
+            <%#= link_to('Apagar', activity_path(activity), class:"btn btn-danger", method: :delete) %>
+            <%= link_to('Excluir', activity_path(activity), method: :delete, data: { confirm: 'Are you sure?' },
+                        class:"btn btn-danger m-2") %>
+        <% end %>
+        </div>
+      </div>
+    </li>
+  <% end %>
+</ul>
