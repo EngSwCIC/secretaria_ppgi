@@ -1,32 +1,47 @@
 require 'rubygems'
+require 'capybara/cucumber'
+require 'capybara/dsl'
 require 'selenium-webdriver'
+require "chromedriver-helper"
 
 
 #
 driver = Selenium::WebDriver.for :chrome
 
 Dado("que acesso o banco e tem-se  informações a inserir") do
-    driver.navigate.to "http://localhost:3000/attendances/new" # abre a pagina de insercao de dados
+   visit 'http://localhost:3000/attendances/new'
+   
   end
   
-  Quando("insere-se {string} e {string}") do |string, string2|
-    @string = string
-    driver.find_element(:id , 'attendance_title').send_keys string # insere titulo    
-    driver.find_element(:id , 'attendance_content').send_keys string2 # insere conteudo
-    driver.find_element(:name , 'commit').click # clica no botao cadastrar
-    #sleep 10
+  Quando("insere-se {string} e {string}") do |titulo, conteudo|
+    find('#attendance_title').set titulo # insere o dado no campo Titulo
+    find('#attendance_content').set conteudo # insere o dado no campo content
+    click_button 'Cadastrar' # Clica no botao cadastrar
   end
   
   Entao("deve inserir com sucesso os dados no banco") do
     
   end
   
-  Entao("receber a seguinte mensagem {string}") do |string|
-    
-    driver.navigate.to "http://localhost:3000/attendances/38"
-    driver.find_element(:id , 'notice') # Procura a mensagem esperada de insercao bem sucedida
-    sleep 2
-    
-    
+  Entao("receber a seguinte mensagem {string}") do |mensagem|
+    expect(page).to have_content mensagem # receber a mensagem Attendance was successfully created.
+    sleep 3
   end
   
+
+
+# Sad path
+
+Dado ("que acesso a pagina principal") do
+  visit 'http://localhost:3000/attendances/new'
+end
+
+Quando("insere-se um titulo já existente {string}") do |titulo|
+    find('#attendance_title').set titulo # insere um titulo ja existente
+    click_button 'Cadastrar'
+end
+
+Entao("deve aparecer a mensagem {string}") do |mensagem|
+  expect(page).to have_content mensagem # receber a mensagem Já está em uso
+  sleep 3
+end 
