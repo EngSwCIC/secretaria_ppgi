@@ -8,6 +8,7 @@
       <tr>
         <th>Título</th>
         <th>Contéudo</th>
+        <th>Comentários</th>
         <th>Criado em</th>
         <th colspan="3"></th>
       </tr>
@@ -18,6 +19,7 @@
         <tr>
           <td><%= attendance.title %></td>
           <td><%= attendance.content %></td>
+          <td><strong><%= attendance.comments.count %> Comentários</strong></td>
           <td><%= attendance.created_at.strftime("%d/%m/%Y às %R") %></td>
           <td><%= link_to 'Mais Detalhes', attendance %></td>
           <td><%= link_to 'Editar', edit_attendance_path(attendance) %></td>

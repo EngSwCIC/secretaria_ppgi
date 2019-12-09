@@ -4,14 +4,14 @@ class AttendancesController < ApplicationController
   # GET /attendances
   # GET /attendances.json
   def index
-    @attendances = Attendance.includes(:comments).all
+    @attendances = Attendance.includes(:comments)
   end
   # POST /attendances/search
   def search
     if params[:search].blank?  
       redirect_to(attendances_path, alert: "Empty field!") and return  
     else
-      @attendances = Attendance.all.where("title LIKE?","%" + params[:search] + "%").order("created_at DESC")
+      @attendances = Attendance.includes(:comments).where("title LIKE?","%" + params[:search] + "%").order("created_at DESC")
     end
   end
 
