@@ -5,5 +5,9 @@ Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'home#index'
-  resources :activities
+  resources :activities do
+    member do
+      get :toggle_interest
+    end
+  end
 end

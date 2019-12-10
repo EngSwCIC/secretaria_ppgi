@@ -8,11 +8,17 @@
         <th>Descrição</th>
         <th>Data final</th>
         <th>Ação</th>
+        <% if current_user.role != "administrator" %>
+          <th>Interesse</th>
+        <% end %>
       </tr>
     </thead>
   </table>
   <% @activities.each do |activity| %>
-    <li class="list-group-item">
+    <% if activity.interesting %>
+      <% current_user.interest_array.push(activity.title) %>
+    <% end %>
+      <li class="list-group-item">
       <div class="row">
         <div class="col">
           <%= activity.title %>
@@ -31,11 +37,19 @@
           <%= link_to('Ver detalhes', activity_path(activity), class:"btn btn-info") %>
           <% if current_user.role == "administrator" %>
             <%= link_to('Editar', edit_activity_path(activity), class:"btn btn-success") %>
-            <%#= link_to('Apagar', activity_path(activity), class:"btn btn-danger", method: :delete) %>
             <%= link_to('Excluir', activity_path(activity), method: :delete, data: { confirm: 'Are you sure?' },
                         class:"btn btn-danger m-2") %>
         <% end %>
         </div>
+        <% if current_user.role != "administrator" %>
+          <div class="col">
+            <% if !current_user.interest_array.include?(activity.title) %>
+              <%= link_to 'Não', toggle_interest_activity_path(activity), class: "btn btn-warning" %>
+            <% else %>
+              <%= link_to 'Sim', toggle_interest_activity_path(activity), class: "btn btn-success" %>
+          <% end %>
+          </div>
+        <% end %>
       </div>
     </li>
   <% end %>

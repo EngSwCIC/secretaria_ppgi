@@ -1,14 +1,14 @@
 class ActivitiesController < ApplicationController
   before_action :require_login     # Eh necessario estar logado para ver o calendario
   before_action :admin_privileges  # Eh necessario ser admin para criar, editar e deletar uma atividade
-  skip_before_action :admin_privileges, only: [:index, :show]   # permite que usuarios nao admins consigam ver as atividades e detalhes
+  skip_before_action :admin_privileges, only: [:index, :show, :toggle_interest]   # permite que usuarios nao admins consigam ver as atividades e detalhes
 
   def new
     @activity = Activity.new
   end
 
   def create
-    @activity = Activity.new(task_params)
+    @activity = Activity.new(activity_params)
     # Melhorar condição para salvar quando terminar o show do usuário
     if @activity.save
       flash[:created] = 'Activity created successfully!'
@@ -34,7 +34,7 @@ class ActivitiesController < ApplicationController
   def update
     @activity = Activity.find(params[:id])
 
-    if @activity.update(task_params)
+    if @activity.update(activity_params)
       flash[:updated] = "Activity updated successfully!"
       redirect_to activity_path(params[:id])
     else
@@ -53,8 +53,19 @@ class ActivitiesController < ApplicationController
     redirect_to activities_path
   end
 
+  def toggle_interest
+    @activity = Activity.find(params[:id])
+
+    if @activity.interesting == true
+       @activity.update({:interesting => false})
+    else
+      @activity.update({:interesting => true})
+    end
+    redirect_to activities_path
+  end
+
   private
-  def task_params
+  def activity_params
     params.require(:activity).permit(:title, :description, :date)
   end
 
