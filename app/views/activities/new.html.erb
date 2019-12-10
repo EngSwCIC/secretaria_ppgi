@@ -6,5 +6,6 @@
     Nome: <%= text_field_tag(:name) %><br>
     Descrição: <%= text_field_tag(:description) %><br>
     Tipo de processo: <%= text_field_tag(:type_activity) %><br>
-    <%= submit_tag("Criar Processo") %>
+    Função: <%= text_field_tag(:role) %><br>
+    <%= link_to '<button type="button">Cancelar</button>'.html_safe, processos_path %>  <%= submit_tag("Criar Processo") %>
 <% end %>

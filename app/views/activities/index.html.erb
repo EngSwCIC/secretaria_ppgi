@@ -1,14 +1,24 @@
 <h1>Página de Processos</h1><br>
 <p>Bem-vindo a página de processos aqui é possível criar, modificar ou excluir um processo.</p><br>
-
 <table>
     <tr>
+        <th>ID</th>
         <th>Processo</th>
         <th>Descrição</th>
+        <th>Tipo de processo</th>
+        <th>Função</th>
     </tr>
-</table>
+    <% @activity.each do |processo| %>
+        <tr>
+            <td><%= link_to processo.id, controller: "activities", action: "show", id: processo.id %></td>
+            <td><%= processo.name %></td>
+            <td><%= processo.description %></td>
+            <td><%= processo.type_activity %></td>
+            <td><%= processo.role %></td>
+        </tr>
+    <% end %>
+</table><br>
 <%= link_to 'Criar', controller: "activities", action: "new" %><br>
-<%= link_to "Processo", processos_path(@activity) %>
+<%# <%= link_to "Processo", processos_path(@activity) %>
 <%# <%= link_to "Activities", processos_path %>
-<%# <%= link_to 'Editar', controller: "activities", action: "update" %>
 <%# <%= link_to 'Deletar', controller: "activities", action: "delete" %>

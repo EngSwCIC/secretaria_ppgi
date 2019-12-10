@@ -1,1 +1,11 @@
 <h1>Editar processo</h1>
+
+<p>Entre com as informações do processo</p>
+
+<%= form_tag("/processos/:id/atualizar", method: "put") do %>
+    Nome: <%= text_field_tag(:name) %><br>
+    Descrição: <%= text_field_tag(:description) %><br>
+    Tipo de processo: <%= text_field_tag(:type_activity) %><br>
+    Função: <%= text_field_tag(:role) %><br>
+    <%= link_to '<button type="button">Cancelar</button>'.html_safe, processos_path %>  <%= submit_tag("Editar Processo") %>
+<% end %>

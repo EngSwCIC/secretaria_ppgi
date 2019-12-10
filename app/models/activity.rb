@@ -1,7 +1,8 @@
 class Activity < ApplicationRecord
     has_one :status
 
-    validates :name, :description, presence: true
+    validates :name, presence: true
+    validates :description, presence: true
     validates :role, presence: false
     validates :type_activity, presence: false
 

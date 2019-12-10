@@ -1,0 +1,6 @@
+<h1>Visualização de Processo</h1><br>
+<strong>Nome</strong>: <%= @activity.name %><br>
+<strong>Descrição</strong>: <%= @activity.description %><br>
+<strong>Tipo de processo</strong>: <%= @activity.type_activity %><br>
+<strong>Função</strong>: <%= @activity.role %><br><br>
+<%= link_to '<button type="button">Voltar</button>'.html_safe, processos_path %>
