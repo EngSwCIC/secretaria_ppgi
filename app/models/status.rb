@@ -1,5 +1,5 @@
 class Status < ApplicationRecord
-    has_many :activities
+    belongs_to :activities 
 
     validates :name, presence: true
 
