@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2019_12_08_181624) do
     t.date "date"
     t.boolean "interesting", default: false
     t.boolean "interesting_filter", default: false
+    t.integer "interested_users", default: [], array: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -28,7 +29,7 @@ ActiveRecord::Schema.define(version: 2019_12_08_181624) do
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.string "interest_array", default: [], array: true
+    t.integer "interest_array", default: [], array: true
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

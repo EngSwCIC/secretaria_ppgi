@@ -28,16 +28,31 @@
 
   <% @activities.each do |activity| %>
 
+    <% if activity.interesting %>
+
       <!-- Adiciona a atividade como interesse do usuario -->
-      <% if activity.interesting %>
-      <% if !current_user.interest_array.include?(activity.title) %>
-          <% current_user.interest_array.push(activity.title) %>
+      <% if !current_user.interest_array.include?(activity.id) %>
+          <% current_user.interest_array.push(activity.id) %>
           <% current_user.update({:interest_array => current_user.interest_array}) %>
-        <% end %>
-      <% else %>
-        <% current_user.interest_array.delete(activity.title) %>
+        <!-- Remove a atividade como interesse do usuario -->
+      <% end %>
+    <% else %>
+      <% if current_user.interest_array.include?(activity.id) %>
+        <% current_user.interest_array.delete(activity.id) %>
         <% current_user.update({:interest_array => current_user.interest_array}) %>
       <% end %>
+
+      <!-- Adiciona o usuario na lista de interessados da atividade -->
+      <%# if !activity.interested_users.include?(current_user) %>
+        <%# activity.interested_users.push(current_user.full_name) %>
+        <%# activity.update({:interested_users => activity.interested_users}) %>
+        <!-- Adiciona o usuario na lista de interessados da atividade -->
+      <%# else %>
+        <%# activity.interested_users.delete(current_user.full_name) %>
+        <%# activity.update({:interested_users => activity.interested_users}) %>
+      <%# end %>
+
+    <% end %>
 
 
     <!-- Filtro de interesse desligado -->
@@ -67,7 +82,7 @@
             </div>
             <% if current_user.role != "administrator" %>
               <div class="col">
-                <% if !current_user.interest_array.include?(activity.title) %>
+                <% if !current_user.interest_array.include?(activity.id) %>
                   <%= link_to 'Não', toggle_interest_activity_path(activity), class: "btn btn-warning" %>
                 <% else %>
                   <%= link_to 'Sim', toggle_interest_activity_path(activity), class: "btn btn-success" %>
@@ -80,7 +95,7 @@
       <!-- Filtro de interesse ligado -->
       <% else %>
 
-        <% if current_user.interest_array.include?(activity.title) %>
+        <% if current_user.interest_array.include?(activity.id) %>
           <li class="list-group-item">
             <div class="row">
               <div class="col">
@@ -106,7 +121,7 @@
               </div>
               <% if current_user.role != "administrator" %>
                 <div class="col">
-                  <% if !current_user.interest_array.include?(activity.title) %>
+                  <% if !current_user.interest_array.include?(activity.id) %>
                     <%= link_to 'Não', toggle_interest_activity_path(activity), class: "btn btn-warning" %>
                   <% else %>
                     <%= link_to 'Sim', toggle_interest_activity_path(activity), class: "btn btn-success" %>

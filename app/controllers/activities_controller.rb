@@ -61,7 +61,7 @@ class ActivitiesController < ApplicationController
     @activity = Activity.find(params[:id])
 
     if @activity.interesting == true
-       @activity.update({:interesting => false})
+      @activity.update({:interesting => false})
     else
       @activity.update({:interesting => true})
     end
@@ -72,11 +72,21 @@ class ActivitiesController < ApplicationController
   def index_interests
     @activities = Activity.all
 
-    if @activities[0].interesting_filter
-      @activities.update({:interesting_filter => false})
-    else
-      @activities.update({:interesting_filter => true})
+    @activities.each do |activity|
+      if activity.interesting_filter
+        @activities.update({:interesting_filter => false})
+        break
+      else
+        @activities.update({:interesting_filter => true})
+        break
+      end
     end
+
+    #if @activities[0].interesting_filter
+    #  @activities.update({:interesting_filter => false})
+    #else
+    #  @activities.update({:interesting_filter => true})
+    #end
 
     redirect_to activities_path
   end
@@ -85,11 +95,12 @@ class ActivitiesController < ApplicationController
   def reset_interests
     @activities = Activity.all
     @activities.update({:interesting => false})
+    @activities.update({:interesting_filter => false})
 
     if user_signed_in?
       @user = current_user
       @activities.each do |activity|
-        if @user.interest_array.include?(activity.title)
+        if @user.interest_array.include?(activity.id)
           activity.update({:interesting => true})
         end
       end

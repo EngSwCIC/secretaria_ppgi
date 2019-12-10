@@ -10,11 +10,22 @@
     </li>
     <li class="list-group-item">
       <h3>Prazo:</h3>
-      <p>
-        <%= @activity.date.strftime("%d %b %Y")%>
-      </p>
+      <p><%= @activity.date.strftime("%d %b %Y")%></p>
+    </li>
+    <li class="list-group-item">
+      <h3>Usuários Interessados:</h3>
+      <%# if @activity.interested_users.empty? %>
+<!--        <p>Nenhum usuário demonstrou interesse nessa atividadae ainda</p>-->
+      <%# else %>
+<!--        <p><%#= @activity.interested_users %></p>-->
+      <% @activity.interested_users.each do |user| %>
+        <%= user + " "%>
+      <% end %>
+      <%# end %>
     </li>
   </ul>
 </div>
+<%= current_user.interest_array %>
+
 
 
