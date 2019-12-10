@@ -1,5 +1,5 @@
 class StatusesController < ApplicationController
-    def inde
+    def index
         @status = Status.All
         render json: @status
     end

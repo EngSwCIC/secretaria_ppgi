@@ -28,3 +28,5 @@
 
 # solargraph config file
 .solargraph.yml
+
+coverage/
