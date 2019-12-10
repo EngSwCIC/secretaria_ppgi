@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   # Rotas p processo
   get     "/processos",                to: "activities#index"
   get     "/processos/new",            to: "activities#new"
-  get     "/processos/:id",            to: "activities#show"
+  get     "/processos/:id",            to: "activities#show", as: 'activity'
   post    "/processos/cadastro",       to: "activities#create"
   put     "/processos/:id/atualizar",  to: "activities#update"
   delete  "/processos/:id/excluir",    to: "activities#delete"  

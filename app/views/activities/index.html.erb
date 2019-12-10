@@ -1,10 +1,14 @@
 <h1>Página de Processos</h1><br>
 <p>Bem-vindo a página de processos aqui é possível criar, modificar ou excluir um processo.</p><br>
 
-<%# <table>
+<table>
     <tr>
-        <th></th>
+        <th>Processo</th>
+        <th>Descrição</th>
     </tr>
-</table> %>
-<%= link_to 'Criar', controller: "activities", action: "new" %>
+</table>
+<%= link_to 'Criar', controller: "activities", action: "new" %><br>
+<%= link_to "Processo", processos_path(@activity) %>
+<%# <%= link_to "Activities", processos_path %>
 <%# <%= link_to 'Editar', controller: "activities", action: "update" %>
+<%# <%= link_to 'Deletar', controller: "activities", action: "delete" %>

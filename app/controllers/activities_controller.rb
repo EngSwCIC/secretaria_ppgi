@@ -1,7 +1,7 @@
 class ActivitiesController < ApplicationController
 
     def index
-        # @activity = Activity.All
+        @activity = Activity.All
         # render json: @activity
         render :index
     end
@@ -31,6 +31,7 @@ class ActivitiesController < ApplicationController
         @activity = update.(activity_params)
 
         render json: @activity
+        # render :update
     end
 
     def delete

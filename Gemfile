@@ -64,12 +64,9 @@ group :test do
   # database_cleaner is not required, but highly recommended
   gem 'database_cleaner'
   gem 'shoulda-matchers'
-end
-
-group :metric do
+  gem 'simplecov', require: false
   gem 'metric_fu-Saikuro'
   gem 'rubycritic'
-  gem 'simplecov'
   gem 'rdoc'
 end
 
