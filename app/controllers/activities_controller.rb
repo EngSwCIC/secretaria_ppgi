@@ -1,7 +1,10 @@
 class ActivitiesController < ApplicationController
   before_action :require_login     # Eh necessario estar logado para ver o calendario
   before_action :admin_privileges  # Eh necessario ser admin para criar, editar e deletar uma atividade
-  skip_before_action :admin_privileges, only: [:index, :show, :toggle_interest]   # permite que usuarios nao admins consigam ver as atividades e detalhes
+
+  # permite que usuarios nao admins consigam ver as atividades e detalhes
+  skip_before_action :admin_privileges, only: [:index, :show, :toggle_interest, :index_interests, :reset_interests]
+  skip_before_action :require_login, only: [:reset_interests]
 
   def new
     @activity = Activity.new
@@ -20,7 +23,7 @@ class ActivitiesController < ApplicationController
   end
 
   def index
-    @activities = Activity.all
+    @activities =  Activity.all
   end
 
   def show
@@ -53,6 +56,7 @@ class ActivitiesController < ApplicationController
     redirect_to activities_path
   end
 
+  # Metodo para um usuario definir interesse ou desinteresse em uma atividade
   def toggle_interest
     @activity = Activity.find(params[:id])
 
@@ -62,6 +66,38 @@ class ActivitiesController < ApplicationController
       @activity.update({:interesting => true})
     end
     redirect_to activities_path
+  end
+
+  # Metodo para filtrar as atividades de acordo com o interesse do usuario
+  def index_interests
+    @activities = Activity.all
+
+    if @activities[0].interesting_filter
+      @activities.update({:interesting_filter => false})
+    else
+      @activities.update({:interesting_filter => true})
+    end
+
+    redirect_to activities_path
+  end
+
+  # Metodo para garantir que os interesses de um usuario sejam soh dele
+  def reset_interests
+    @activities = Activity.all
+    @activities.update({:interesting => false})
+
+    if user_signed_in?
+      @user = current_user
+      @activities.each do |activity|
+        if @user.interest_array.include?(activity.title)
+          activity.update({:interesting => true})
+        end
+      end
+      redirect_to activities_path
+    else
+      redirect_to new_user_session_path
+    end
+
   end
 
   private

@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2019_12_08_181624) do
     t.text "description"
     t.date "date"
     t.boolean "interesting", default: false
+    t.boolean "interesting_filter", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

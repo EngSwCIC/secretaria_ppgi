@@ -5,6 +5,7 @@ class CreateActivities < ActiveRecord::Migration[5.2]
       t.text :description
       t.date :date
       t.boolean :interesting, default: false
+      t.boolean :interesting_filter, default: false
 
       t.timestamps
     end

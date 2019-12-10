@@ -9,5 +9,9 @@ Rails.application.routes.draw do
     member do
       get :toggle_interest
     end
+    collection do
+      get :index_interests
+      get :reset_interests
+    end
   end
 end

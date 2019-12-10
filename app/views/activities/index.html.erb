@@ -1,6 +1,17 @@
 <h1 class="text-align-center">Atividades</h1>
 
-<ul class="list-group padding-top-3">
+<% if current_user.role != "administrator" %>
+  <div class="text-align-right padding-top-3 padding-bottom-1 padding-right-0-5">
+  <!-- Botao de filtro por interesse -->
+  <%= link_to 'Filtrar por Interesse', index_interests_activities_path , class: "btn btn-primary" %>
+
+  </div>
+
+<% else %>
+  <div class="text-align-right padding-top-3 padding-bottom-1 padding-right-0-5"></div>
+<% end %>
+
+<ul class="list-group">
   <table class="table table-striped">
     <thead style="background-color: #17a2b8; color: white;">
       <tr>
@@ -14,43 +25,99 @@
       </tr>
     </thead>
   </table>
+
   <% @activities.each do |activity| %>
-    <% if activity.interesting %>
-      <% current_user.interest_array.push(activity.title) %>
-    <% end %>
-      <li class="list-group-item">
-      <div class="row">
-        <div class="col">
-          <%= activity.title %>
-        </div>
-        <div class="col">
-          <%= activity.description %>
-        </div>
-        <div class="col">
-          <% if activity.date > Date.today %>
-            <%= activity.date.strftime("%d %b %Y") %>
-          <% else %>
-            <button type="button" class="btn btn-danger">Expirada em <%= activity.date.strftime("%d %b %Y") %> </button>
-          <% end %>
-        </div>
-        <div class="col">
-          <%= link_to('Ver detalhes', activity_path(activity), class:"btn btn-info") %>
-          <% if current_user.role == "administrator" %>
-            <%= link_to('Editar', edit_activity_path(activity), class:"btn btn-success") %>
-            <%= link_to('Excluir', activity_path(activity), method: :delete, data: { confirm: 'Are you sure?' },
-                        class:"btn btn-danger m-2") %>
+
+      <!-- Adiciona a atividade como interesse do usuario -->
+      <% if activity.interesting %>
+      <% if !current_user.interest_array.include?(activity.title) %>
+          <% current_user.interest_array.push(activity.title) %>
+          <% current_user.update({:interest_array => current_user.interest_array}) %>
         <% end %>
-        </div>
-        <% if current_user.role != "administrator" %>
-          <div class="col">
-            <% if !current_user.interest_array.include?(activity.title) %>
-              <%= link_to 'Não', toggle_interest_activity_path(activity), class: "btn btn-warning" %>
-            <% else %>
-              <%= link_to 'Sim', toggle_interest_activity_path(activity), class: "btn btn-success" %>
-          <% end %>
+      <% else %>
+        <% current_user.interest_array.delete(activity.title) %>
+        <% current_user.update({:interest_array => current_user.interest_array}) %>
+      <% end %>
+
+
+    <!-- Filtro de interesse desligado -->
+      <% if !activity.interesting_filter%>
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col">
+              <%= activity.title %>
+            </div>
+            <div class="col">
+              <%= activity.description %>
+            </div>
+            <div class="col">
+              <% if activity.date > Date.today %>
+                <%= activity.date.strftime("%d %b %Y") %>
+              <% else %>
+                <button type="button" class="btn btn-danger">Expirada em <%= activity.date.strftime("%d %b %Y") %> </button>
+              <% end %>
+            </div>
+            <div class="col">
+              <%= link_to('Ver detalhes', activity_path(activity), class:"btn btn-info") %>
+              <% if current_user.role == "administrator" %>
+                <%= link_to('Editar', edit_activity_path(activity), class:"btn btn-success") %>
+                <%= link_to('Excluir', activity_path(activity), method: :delete, data: { confirm: 'Are you sure?' },
+                            class:"btn btn-danger m-2") %>
+            <% end %>
+            </div>
+            <% if current_user.role != "administrator" %>
+              <div class="col">
+                <% if !current_user.interest_array.include?(activity.title) %>
+                  <%= link_to 'Não', toggle_interest_activity_path(activity), class: "btn btn-warning" %>
+                <% else %>
+                  <%= link_to 'Sim', toggle_interest_activity_path(activity), class: "btn btn-success" %>
+              <% end %>
+              </div>
+            <% end %>
           </div>
+        </li>
+
+      <!-- Filtro de interesse ligado -->
+      <% else %>
+
+        <% if current_user.interest_array.include?(activity.title) %>
+          <li class="list-group-item">
+            <div class="row">
+              <div class="col">
+                <%= activity.title %>
+              </div>
+              <div class="col">
+                <%= activity.description %>
+              </div>
+              <div class="col">
+                <% if activity.date > Date.today %>
+                  <%= activity.date.strftime("%d %b %Y") %>
+                <% else %>
+                  <button type="button" class="btn btn-danger">Expirada em <%= activity.date.strftime("%d %b %Y") %> </button>
+                <% end %>
+              </div>
+              <div class="col">
+                <%= link_to('Ver detalhes', activity_path(activity), class:"btn btn-info") %>
+                <% if current_user.role == "administrator" %>
+                  <%= link_to('Editar', edit_activity_path(activity), class:"btn btn-success") %>
+                  <%= link_to('Excluir', activity_path(activity), method: :delete, data: { confirm: 'Are you sure?' },
+                              class:"btn btn-danger m-2") %>
+                <% end %>
+              </div>
+              <% if current_user.role != "administrator" %>
+                <div class="col">
+                  <% if !current_user.interest_array.include?(activity.title) %>
+                    <%= link_to 'Não', toggle_interest_activity_path(activity), class: "btn btn-warning" %>
+                  <% else %>
+                    <%= link_to 'Sim', toggle_interest_activity_path(activity), class: "btn btn-success" %>
+                  <% end %>
+                </div>
+              <% end %>
+            </div>
+          </li>
+
         <% end %>
-      </div>
-    </li>
-  <% end %>
+      <% end %>
+    <% end %>
+
 </ul>
