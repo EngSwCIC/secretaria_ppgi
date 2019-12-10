@@ -7,9 +7,9 @@ Rails.application.routes.draw do
   root to: 'home#index'
 
   # Rotas p Processos
-  get     "/processos",               to: "processos#index"
-  get     "/processos/:id",           to: "processos#show"
-  post    "/processos/cadastro",      to: "processos#create"
-  put     "/processos/:id/atualizar", to: "processos#update"
-  delete  "/processos/:id/excluir",   to: "processos#delete"  
+  get     "/processos",               to: "activities#index"
+  get     "/processos/:id",           to: "activities#show"
+  post    "/processos/cadastro",      to: "activities#create"
+  put     "/processos/:id/atualizar", to: "activities#update"
+  delete  "/processos/:id/excluir",   to: "activities#delete"  
 end

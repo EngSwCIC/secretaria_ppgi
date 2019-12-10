@@ -1,7 +1,8 @@
 class Activity < ApplicationRecord
-    belongs_to: Status
+    has_one :status
 
     validates :name, :description, presence: true
+    validates :role, presence: false
 
     enum type_activity: %i[trancamento_de_matrícula trancamento_de_semestre]
 end

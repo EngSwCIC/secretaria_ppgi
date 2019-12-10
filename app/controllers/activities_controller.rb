@@ -1,7 +1,8 @@
 class ActivitiesController < ApplicationController
+    skip_before_action :verify_authenticity_token
 
     def index
-        @activity = Activity.All
+        @activity = Activity.all
         render json: @activity
     end
 
@@ -11,18 +12,19 @@ class ActivitiesController < ApplicationController
     end
 
     def create
-        @activity = Activity.new(activity_params)
+        @activity = Activity.create(activity_params) 
 
-        if @activity.save
-            render :json => {message: "Processo criado com êxito"}
+        if @activity.save #byebug
+            render :json => {message: "Processo criado com êxito", status: 200}
         else
-            render :json => {message: "Não foi possivel criar o Processo"}
+            render :json => {message: "Não foi possivel criar o Processo", status: 500}
         end
     end
 
     def update 
+        byebug
         @activity = Activity.find(params[:id])
-        @activity = update.(activity_params)
+        @activity.update(activity_params)
 
         render json: @activity
     end
@@ -40,6 +42,6 @@ class ActivitiesController < ApplicationController
     private
 
     def activity_params
-        params.permit(:name, :description)
+        params.permit(:name, :description, :type_activity, :role)
     end
 end
