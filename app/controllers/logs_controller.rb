@@ -38,7 +38,7 @@ class LogsController < ApplicationController
           format.html { redirect_to budgets_path, notice: 'Movimentação criada com sucesso.' }
           format.json { render :show, status: :created, location: @log }
         else
-          format.html {redirect_to budgets_path, notice: 'Não foi possível criar histórico.'}
+          format.html {render :new, notice: 'Não foi possível criar histórico.'}
         end
       else
         format.html { redirect_to budgets_path , notice: retorno[1] }

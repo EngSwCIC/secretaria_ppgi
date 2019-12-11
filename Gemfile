@@ -35,7 +35,10 @@ gem "jbuilder", "~> 2.5"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem "rubycritic", require: false
+gem "metric_fu-Saikuro", require: false
 gem 'simplecov', require: false, group: :test
+gem 'rdoc'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", ">= 1.1.0", require: false

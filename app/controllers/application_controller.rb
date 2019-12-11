@@ -29,7 +29,9 @@ class ApplicationController < ActionController::Base
 
   def add_value(value)
     if current_user.role == 'administrator'
-
+      if value == nil
+        value = 0
+      end
       if (Budget.first.value + value) < 0
         mensagem =  "Orçamento insuficiente para realizar operação."
         return [false, mensagem]
