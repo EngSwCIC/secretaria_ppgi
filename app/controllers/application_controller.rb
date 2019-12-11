@@ -29,7 +29,15 @@ class ApplicationController < ActionController::Base
 
   def add_value(value)
     if current_user.role == 'administrator'
-      Budget.first.update_attribute( :value, Budget.first.value + value)
+
+      if (Budget.first.value + value) < 0
+        mensagem =  "Orçamento insuficiente para realizar operação."
+        return [false, mensagem]
+
+      else
+        Budget.first.update_attribute( :value, Budget.first.value + value)
+        return [true, nil]
+      end
     end
   end
 

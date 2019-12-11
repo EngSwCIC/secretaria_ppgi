@@ -34,3 +34,6 @@
 .idea/
 .rakeTasks
 .rake_tasks~
+
+
+/coverage/

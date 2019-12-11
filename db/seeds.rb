@@ -33,5 +33,5 @@ budget = Budget.create(value: +0.0)
 
 # Log
 Log.destroy_all
-log = Log.create(value: +0.0, description: 'Ola mundo', budget_id: budget.id)
+log = Log.create(value: +0.0, description: 'Ola mundo', budget_id: budget)
 

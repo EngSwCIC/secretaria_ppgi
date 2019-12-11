@@ -31,12 +31,17 @@ class LogsController < ApplicationController
     @log = Log.new(log_params)
     @log.budget = Budget.first
     respond_to do |format|
-      if @log.save
-        add_value(@log.value)
-        format.html { redirect_to budgets_path, notice: 'Movimentação criada com sucesso.' }
-        format.json { render :show, status: :created, location: @log }
+
+      retorno = add_value(@log.value)
+      if retorno[0]
+        if @log.save
+          format.html { redirect_to budgets_path, notice: 'Movimentação criada com sucesso.' }
+          format.json { render :show, status: :created, location: @log }
+        else
+          format.html {redirect_to budgets_path, notice: 'Não foi possível criar histórico.'}
+        end
       else
-        format.html { render :new }
+        format.html { redirect_to budgets_path , notice: retorno[1] }
         format.json { render json: @log.errors, status: :unprocessable_entity }
       end
     end
@@ -69,13 +74,13 @@ class LogsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_log
-      @log = Log.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_log
+    @log = Log.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def log_params
-      params.require(:log).permit(:value, :description)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def log_params
+    params.require(:log).permit(:value, :description)
+  end
 end
