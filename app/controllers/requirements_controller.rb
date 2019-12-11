@@ -1,3 +1,4 @@
+# O módulo RequirementsController controla os requerimentos
 class RequirementsController < ApplicationController
   include Devise::Controllers::Helpers
   before_action :set_requirement, only: [:show, :edit, :update, :destroy]
@@ -5,14 +6,17 @@ class RequirementsController < ApplicationController
     not_admin(requirements_path)
   end
 
+  def initialize
+    super
+    @requirement = nil
+  end
+
   # GET /requirements
-  # GET /requirements.json
   def index
     @requirements = Requirement.all
   end
 
   # GET /requirements/1
-  # GET /requirements/1.json
   def show
   end
 
@@ -26,42 +30,36 @@ class RequirementsController < ApplicationController
   end
 
   # POST /requirements
-  # POST /requirements.json
+  # :reek:DuplicateMethodCall
   def create
     @requirement = Requirement.new(requirement_params)
 
     respond_to do |format|
       if @requirement.save
         format.html { redirect_to @requirement, notice: "Requerimento criado com sucesso." }
-        format.json { render :show, status: :created, location: @requirement }
       else
         format.html { render :new }
-        format.json { render json: @requirement.errors, status: :unprocessable_entity }
       end
     end
   end
 
   # PATCH/PUT /requirements/1
-  # PATCH/PUT /requirements/1.json
+  # :reek:DuplicateMethodCall
   def update
     respond_to do |format|
       if @requirement.update(requirement_params)
         format.html { redirect_to @requirement, notice: "Requerimento atualizado com sucesso." }
-        format.json { render :show, status: :ok, location: @requirement }
       else
         format.html { render :edit }
-        format.json { render json: @requirement.errors, status: :unprocessable_entity }
       end
     end
   end
 
   # DELETE /requirements/1
-  # DELETE /requirements/1.json
   def destroy
     @requirement.destroy
     respond_to do |format|
       format.html { redirect_to requirements_url, notice: "Requerimento deletado com sucesso." }
-      format.json { head :no_content }
     end
   end
 
