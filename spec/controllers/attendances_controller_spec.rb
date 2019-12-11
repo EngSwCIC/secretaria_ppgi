@@ -29,4 +29,27 @@ RSpec.feature AttendancesController , type: :controller do
         
         end
     end
+    #Fazer update de uma attendance
+    describe "PUT #update" do
+        context "check successfully update" do
+            let(:new_attributes) {
+                {
+                    title:"tes",content:"te"
+                }
+            }
+
+            it "updates the requested attendance" do
+            attendance = Attendance.create! valid_attributes
+            put :update, params: {id: attendance.to_param, attendance: new_attributes}, session: valid_session
+            attendance.reload
+            expect(controller.notice).to eq("Attendance was successfully updated.")
+            end
+
+            it "redirects to the attendance" do
+            attendance = Attendance.create! valid_attributes
+            put :update, params: {id: attendance.to_param, attendance: valid_attributes}, session: valid_session
+            expect(response).to redirect_to(attendance)
+            end
+        end
+    end
 end
