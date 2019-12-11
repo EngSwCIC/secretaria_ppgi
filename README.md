@@ -1,24 +1,17 @@
-# README
+# Calendario de Atividades
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Andreia de Freitas Novais - 15/0005628
+* Fernando Sobral Nóbrega - 15/0034911
 
-Things you may want to cover:
+Sobre o projeto:
 
-* Ruby version
+* Scrum Master - Andreia de Freitas Novais
 
-* System dependencies
+* Funcionalidades desenvolvidas:
 
-* Configuration
+* Como um usuário, para que eu possa me informar, eu gostaria de ver as atividades que eu demonstrei interesse
+* Como um usuário, para que eu possa me informar, eu gostaria de ver as atividades que eu demonstrei interesse
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Funcionalidades que serão desenvolvidas:
+* Testes com o uso do Cucumber
+* Testes com o uso do RSpec
