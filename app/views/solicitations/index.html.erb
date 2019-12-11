@@ -44,8 +44,8 @@
           <td><%= button_to 'Editar', edit_solicitation_path(solicitation), method: :get %></td>
           <td><%= button_to'Deletar', solicitation, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
           <% if solicitation.isAnalysing %>
-            <td><%= link_to 'Aprovar', accept_solicitation_path(solicitation), data: { confirm: 'Você tem certeza?' } %></td>
-            <td><%= link_to 'Reprovar', refuse_solicitation_path(solicitation), data: { confirm: 'Você tem certeza?' }  %></td>
+            <td><%= button_to 'Aprovar', accept_solicitation_path(solicitation), method: :get, data: { confirm: 'Você tem certeza?' } %></td>
+            <td><%= button_to 'Reprovar', refuse_solicitation_path(solicitation), method: :get, data: { confirm: 'Você tem certeza?' }  %></td>
           <% else %>
             <td><!-- Blank cell --></td>
             <td><!-- Blank cell --></td>

@@ -20,7 +20,7 @@ Requirement.create(name: "Lorem Ipsum", description: "Lorem ipsum dolor sit amet
 # Setups
 Setup.destroy_all
 Setup.create(inicio: DateTime.new(2020, 10, 16, 22, 35, 0), fim:DateTime.new(2020, 10, 25, 22, 35, 0))
-Setup.create(inicio: DateTime.new(2020, 11, 16, 22, 35, 0), fim:DateTime.new(2020, 11, 25, 22, 35, 0))
+Setup.create(inicio: DateTime.new(2015, 11, 16, 22, 35, 0), fim:DateTime.new(2020, 11, 25, 22, 35, 0))
 
 # Solicitation
 Solicitation.destroy_all
@@ -33,5 +33,5 @@ budget = Budget.create(value: +0.0)
 
 # Log
 Log.destroy_all
-log = Log.create(value: +0.0, description: 'Ola mundo', budget_id: budget)
+log = Log.create(value: +0.0, description: 'Ola mundo', budget: budget)
 

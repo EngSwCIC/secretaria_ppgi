@@ -29,11 +29,9 @@ class ApplicationController < ActionController::Base
 
   def add_value(value)
     if current_user.role == 'administrator'
-      if value == nil
-        value = 0
-      end
+      value ||= 0
       if (Budget.first.value + value) < 0
-        mensagem =  "Orçamento insuficiente para realizar operação."
+        mensagem =  "Orçamento insuficiente para realizar essa operação."
         return [false, mensagem]
 
       else
@@ -43,4 +41,23 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def update_with_params(db, db_params, msg)
+    respond_to do |format|
+      if db.update(db_params)
+        format.html { redirect_to db, notice:  msg}
+      else
+        format.html { render :edit }
+      end
+    end
+  end
+
+  def create_confirm(db, msg, path)
+    respond_to do |format|
+      if db.save
+        format.html { redirect_to path, notice: msg }
+      else
+        format.html { render :new }
+      end
+    end
+  end
 end

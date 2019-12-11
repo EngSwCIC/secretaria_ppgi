@@ -1,3 +1,4 @@
+# O módulo LogsController cuida do histírico das movimentações de valores
 class LogsController < ApplicationController
   before_action :set_log, only: [:show, :edit, :update, :destroy]
   before_action {not_admin(root_path)}
@@ -5,14 +6,17 @@ class LogsController < ApplicationController
     redirect_to(budgets_path)
   end
 
+  def initialize
+    super
+    @log = nil
+  end
+
   # GET /logs
-  # GET /logs.json
   def index
     @logs = Log.all
   end
 
   # GET /logs/1
-  # GET /logs/1.json
   def show
   end
 
@@ -26,50 +30,40 @@ class LogsController < ApplicationController
   end
 
   # POST /logs
-  # POST /logs.json
+  # :reek:DuplicateMethodCall
   def create
     @log = Log.new(log_params)
     @log.budget = Budget.first
-    respond_to do |format|
 
-      retorno = add_value(@log.value)
-      if retorno[0]
-        if @log.save
-          format.html { redirect_to budgets_path, notice: 'Movimentação criada com sucesso.' }
-          format.json { render :show, status: :created, location: @log }
-        else
-          format.html {render :new, notice: 'Não foi possível criar histórico.'}
-        end
-      else
-        format.html { redirect_to budgets_path , notice: retorno[1] }
-        format.json { render json: @log.errors, status: :unprocessable_entity }
-      end
+    retorno = add_value(@log.value)
+    if retorno[0]
+      create_confirm(@log, 'Movimentação criada com sucesso.', budgets_path)
+    else
+      format.html { redirect_to budgets_path , notice: retorno[1] }
     end
+
   end
 
   # PATCH/PUT /logs/1
-  # PATCH/PUT /logs/1.json
+  # :reek:DuplicateMethodCall
   def update
     respond_to do |format|
       old_value = @log.value
       if @log.update(log_params)
         add_value(@log.value - old_value)
         format.html { redirect_to @log, notice: 'Movimentação atualizada com sucesso.' }
-        format.json { render :show, status: :ok, location: @log }
       else
         format.html { render :edit }
-        format.json { render json: @log.errors, status: :unprocessable_entity }
       end
     end
   end
 
   # DELETE /logs/1
-  # DELETE /logs/1.json
+  # :reek:DuplicateMethodCall
   def destroy
     @log.destroy
     respond_to do |format|
       format.html { redirect_to budgets_url, notice: 'Movimentação deletada com sucesso.' }
-      format.json { head :no_content }
     end
   end
 

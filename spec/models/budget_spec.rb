@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Budget, type: :model do
   it "é válido se tiver um valor" do
     budget = if Budget.count < 1
-               Budget.create! valid_attributes
+               Budget.create!(value: 0.0)
              else
                Budget.first
              end

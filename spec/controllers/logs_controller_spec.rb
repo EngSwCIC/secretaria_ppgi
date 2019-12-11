@@ -28,24 +28,23 @@ RSpec.describe LogsController, type: :controller do
   let(:user) { FactoryGirl.create :user }
 
 
-  budget = if Budget.count < 1
-             Budget.create! valid_attributes
-           else
-             Budget.first
-           end
-
-
+  before do
+    if Budget.count < 1
+      Budget.create!(value: 0.0)
+    end
+  end
   # This should return the minimal set of attributes required to create a valid
   # Log. As you add validations to Log, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) do
 
-    { value: 100, description: 'MyText', budget: budget }
+    { value: 100, description: 'MyText', budget: Budget.first }
   end
 
   let(:invalid_attributes) do
-    { value: nil, description: 'MyText', budget: budget }
+    { value: nil, description: 'MyText', budget: Budget.first }
   end
+
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
@@ -118,7 +117,7 @@ RSpec.describe LogsController, type: :controller do
     describe "PUT #update" do
       context "with valid params" do
         let(:new_attributes) do
-          { value: 500, description: 'text', budget: budget }
+          { value: 500, description: 'text', budget: Budget.first }
         end
 
         it "updates the requested log" do

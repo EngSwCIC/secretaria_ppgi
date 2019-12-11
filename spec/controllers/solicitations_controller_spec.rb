@@ -57,6 +57,10 @@ RSpec.describe SolicitationsController, type: :controller do
       updated_at: '2012-02-02' }
   end
 
+  before do
+    Budget.create!(value: 0.0) if Budget.count < 1
+  end
+
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
   # SolicitationsController. Be sure to keep this updated too.
@@ -70,7 +74,7 @@ RSpec.describe SolicitationsController, type: :controller do
   now = Time.parse('2012-01-01 12:00:00 -0300')
   after = Time.parse('2040-01-01 12:00:00 -0300')
   let(:covered) { allow(Time).to receive(:now) { now } }
-  let(:not_covered) { allow(Time).to receive(:now) { after }}
+  let(:not_covered) { allow(Time).to receive(:now) { after } }
 
   describe 'GET #index' do
     context 'when user  or admin is logged in' do
@@ -186,7 +190,6 @@ RSpec.describe SolicitationsController, type: :controller do
   describe 'POST #create' do
     context 'when admin is logged in' do
       context 'with valid params' do
-
         it 'creates a new Solicitation' do
           expect do
             post :create, params: { solicitation: valid_attributes }, session: admin_session
@@ -254,16 +257,16 @@ RSpec.describe SolicitationsController, type: :controller do
 
   describe 'PUT #update' do
     let(:new_attributes) do
-      {kind: 'diaria',
-       departure: '2013-02-02',
-       return: '2013-02-03',
-       origin: "Origem",
-       destination: "Destino",
-       description: "Textinho",
-       status: 'analise',
-       user: user,
-       created_at: '2012-02-02',
-       updated_at: '2012-02-02'}
+      { kind: 'diaria',
+        departure: '2013-02-02',
+        return: '2013-02-03',
+        origin: 'Origem',
+        destination: 'Destino',
+        description: 'Textinho',
+        status: 'analise',
+        user: user,
+        created_at: '2012-02-02',
+        updated_at: '2012-02-02' }
     end
     context 'when admin is logged in' do
       context 'with valid params' do
@@ -349,8 +352,6 @@ RSpec.describe SolicitationsController, type: :controller do
 
   describe 'DELETE #destroy' do
     context 'when admin is logged in' do
-
-
       it 'destroys the requested solicitation' do
         solicitation = Solicitation.create! valid_attributes
         expect do
@@ -395,4 +396,112 @@ RSpec.describe SolicitationsController, type: :controller do
       end
     end
   end
+
+  describe 'ACCEPT #accept' do
+    context 'when user is logged as admin' do
+      context 'when there is enough money'  do
+        it 'changes Budget value, changes status to aprovado and redirects to solicitations path' do
+          solicitation = Solicitation.create! valid_attributes
+          Budget.first.update_attribute(:value, 1000)
+          get :accept , params: {id: solicitation.to_param }, session: admin_session
+          solicitation.reload
+          expect(response).to redirect_to(solicitations_url)
+          expect(Budget.first.value).to eq(200)
+          expect(solicitation.status).to eq('aprovado')
+        end
+      end
+      context 'when there is not enough money' do
+        it 'does not change Budget value and change status to aprovado redirects to solicitations path' do
+          solicitation = Solicitation.create! valid_attributes
+          Budget.first.update_attribute(:value, 100)
+          get :accept , params: {id: solicitation.to_param }, session: admin_session
+          solicitation.reload
+          expect(response).to redirect_to(solicitations_url)
+          expect(Budget.first.value).to eq(100)
+          expect(solicitation.status).not_to eq('aprovado')
+
+        end
+      end
+    end
+
+    context 'when user is logged in' do
+      context 'when there is enough money' do
+        it 'does not change Budget value or status to aprovado and redirects to solicitations path' do
+          solicitation = Solicitation.create! valid_attributes
+          Budget.first.update_attribute(:value, 1000)
+          get :accept , params: {id: solicitation.to_param }, session: user_session
+          solicitation.reload
+          expect(response).to redirect_to(solicitations_url)
+          expect(Budget.first.value).to eq(1000)
+        end
+      end
+      context 'when there is not enough money' do
+        it 'does not change Budget value and change status to aprovado redirects to solicitations path' do
+          solicitation = Solicitation.create! valid_attributes
+          Budget.first.update_attribute(:value, 100)
+          get :accept , params: {id: solicitation.to_param }, session: user_session
+          solicitation.reload
+          expect(response).to redirect_to(solicitations_url)
+          expect(Budget.first.value).to eq(100)
+        end
+      end
+    end
+
+    context 'when user is a guest' do
+      context 'when there is enough money' do
+        it 'does not change Budget value or status to aprovado and redirects to solicitations path' do
+          solicitation = Solicitation.create! valid_attributes
+          Budget.first.update_attribute(:value, 1000)
+          get :accept , params: {id: solicitation.to_param }, session: guest_session
+          solicitation.reload
+          expect(response).to redirect_to(new_user_session_path)
+          expect(Budget.first.value).to eq(1000)
+        end
+      end
+      context 'when there is not enough money' do
+        it 'does not change Budget value and change status to aprovado redirects to solicitations path' do
+          solicitation = Solicitation.create! valid_attributes
+          Budget.first.update_attribute(:value, 100)
+          get :accept , params: {id: solicitation.to_param }, session: guest_session
+          solicitation.reload
+          expect(response).to redirect_to(new_user_session_path)
+          expect(Budget.first.value).to eq(100)
+        end
+      end
+    end
+  end
+
+  describe 'REFUSE #refuse' do
+    context 'when user is logged as admin' do
+      it 'updates status to Reprovado and redirects to solicitations page' do
+        solicitation = Solicitation.create! valid_attributes
+        get :refuse , params: {id: solicitation.to_param }, session: admin_session
+        solicitation.reload
+        expect(response).to redirect_to(solicitations_url)
+        expect(solicitation.status).to eq('reprovado')
+      end
+    end
+
+    context 'when user is logged' do
+      it 'does not update status to Reprovado and redirects to sign in page' do
+        solicitation = Solicitation.create! valid_attributes
+        get :refuse , params: {id: solicitation.to_param }, session: user_session
+        solicitation.reload
+        expect(response).to redirect_to(solicitations_url)
+        expect(solicitation.status).not_to eq('reprovado')
+      end
+    end
+
+    context 'when user is a guest' do
+      it 'does not update status to Reprovado and redirects to sign in page' do
+        solicitation = Solicitation.create! valid_attributes
+        get :refuse , params: {id: solicitation.to_param }, session: guest_session
+        solicitation.reload
+        expect(response).to redirect_to(new_user_session_path)
+        expect(solicitation.status).not_to eq('reprovado')
+      end
+    end
+  end
+
+
 end
