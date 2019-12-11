@@ -14,18 +14,33 @@
     </li>
     <li class="list-group-item">
       <h3>Usuários Interessados:</h3>
-      <%# if @activity.interested_users.empty? %>
-<!--        <p>Nenhum usuário demonstrou interesse nessa atividadae ainda</p>-->
-      <%# else %>
-<!--        <p><%#= @activity.interested_users %></p>-->
-      <% @activity.interested_users.each do |user| %>
-        <%= user + " "%>
+      <% if @activity.interested_users.empty? %>
+        <p>Nenhum usuário demonstrou interesse nessa atividadae ainda</p>
+      <% else %>
+        <% @activity.interested_users.each do |userID| %>
+          <p><%= User.find(userID).full_name %></p>
+        <% end %>
       <% end %>
-      <%# end %>
+    </li>
+    <li class="list-group-item">
+      <h3>Usuários Em Atividade:</h3>
+      <% if @activity.users_in_activity.empty? %>
+        <p>Nenhum usuário nessa atividadae ainda</p>
+      <% else %>
+        <% @activity.users_in_activity.each do |userID| %>
+          <p><%= User.find(userID).full_name %></p>
+        <% end %>
+      <% end %>
     </li>
   </ul>
 </div>
-<%= current_user.interest_array %>
+
+<% if current_user.role == "administrator" %>
+  <div class="text-align-center padding-top-3 padding-bottom-3">
+    <%= link_to('Editar', edit_activity_path(@activity), class:"btn btn-success") %>
+  </div>
+<% end %>
+
 
 
 

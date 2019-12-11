@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2019_12_08_181624) do
     t.boolean "interesting", default: false
     t.boolean "interesting_filter", default: false
     t.integer "interested_users", default: [], array: true
+    t.integer "users_in_activity", default: [], array: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

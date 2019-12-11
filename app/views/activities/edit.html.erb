@@ -3,3 +3,8 @@
 
 <!-- Renderiza o layout parcial -->
 <%= render "form", activity: @activity%>
+
+<!-- Botao que coloca os usuarios interessados na atividade -->
+<div class="padding-bottom-3 text-align-center">
+  <%= link_to('Atualizar usuários na atividade', add_interested_activity_path(@activity), class:"btn btn-info") %>
+</div>

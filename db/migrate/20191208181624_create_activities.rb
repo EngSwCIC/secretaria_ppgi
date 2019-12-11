@@ -7,6 +7,7 @@ class CreateActivities < ActiveRecord::Migration[5.2]
       t.boolean :interesting, default: false
       t.boolean :interesting_filter, default: false
       t.integer :interested_users, array: true, default: []
+      t.integer :users_in_activity, array: true, default: []
 
       t.timestamps
     end

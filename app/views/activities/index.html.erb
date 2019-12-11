@@ -32,23 +32,33 @@
 
       <!-- Adiciona a atividade como interesse do usuario -->
       <% if !current_user.interest_array.include?(activity.id) %>
+<!--        and !activity.interested_users.include?(current_user.id)%>-->
           <% current_user.interest_array.push(activity.id) %>
           <% current_user.update({:interest_array => current_user.interest_array}) %>
+
+          <!-- Adiciona o usuario na lista de interessados da atividade -->
+          <% activity.interested_users.push(current_user.id) %>
+          <% activity.update({:interested_users => activity.interested_users}) %>
         <!-- Remove a atividade como interesse do usuario -->
       <% end %>
     <% else %>
       <% if current_user.interest_array.include?(activity.id) %>
+<!--        and activity.interested_users.include?(current_user.id) %>-->
         <% current_user.interest_array.delete(activity.id) %>
         <% current_user.update({:interest_array => current_user.interest_array}) %>
+
+        <!-- Adiciona o usuario na lista de interessados da atividade -->
+        <% activity.interested_users.delete(current_user.id) %>
+        <% activity.update({:interested_users => activity.interested_users}) %>
       <% end %>
 
       <!-- Adiciona o usuario na lista de interessados da atividade -->
-      <%# if !activity.interested_users.include?(current_user) %>
-        <%# activity.interested_users.push(current_user.full_name) %>
+      <%# if !activity.interested_users.include?(current_user.id) %>
+        <%# activity.interested_users.push(current_user..id) %>
         <%# activity.update({:interested_users => activity.interested_users}) %>
         <!-- Adiciona o usuario na lista de interessados da atividade -->
       <%# else %>
-        <%# activity.interested_users.delete(current_user.full_name) %>
+        <%# activity.interested_users.delete(current_user.id) %>
         <%# activity.update({:interested_users => activity.interested_users}) %>
       <%# end %>
 
@@ -56,7 +66,48 @@
 
 
     <!-- Filtro de interesse desligado -->
-      <% if !activity.interesting_filter%>
+    <% if !activity.interesting_filter%>
+      <li class="list-group-item">
+        <div class="row">
+          <div class="col">
+            <%= activity.title %>
+          </div>
+          <div class="col">
+            <%= activity.description %>
+          </div>
+          <div class="col">
+            <% if activity.date > Date.today %>
+              <%= activity.date.strftime("%d %b %Y") %>
+            <% else %>
+              <button type="button" class="btn btn-danger">Expirada em <%= activity.date.strftime("%d %b %Y") %> </button>
+            <% end %>
+          </div>
+          <div class="col">
+            <%= link_to('Ver detalhes', activity_path(activity), class:"btn btn-info") %>
+
+            <!-- Checa se o usuario atual eh admin para mostrar Editar e Excluir-->
+            <% if current_user.role == "administrator" %>
+              <%= link_to('Editar', edit_activity_path(activity), class:"btn btn-success") %>
+              <%= link_to('Excluir', activity_path(activity), method: :delete, data: { confirm: 'Are you sure?' },
+                          class:"btn btn-danger m-2") %>
+            <% end %>
+          </div>
+          <% if current_user.role != "administrator" %>
+            <div class="col">
+              <% if !current_user.interest_array.include?(activity.id) %>
+                <%= link_to 'Não', toggle_interest_activity_path(activity), class: "btn btn-warning" %>
+              <% else %>
+                <%= link_to 'Sim', toggle_interest_activity_path(activity), class: "btn btn-success" %>
+            <% end %>
+            </div>
+          <% end %>
+        </div>
+      </li>
+
+    <!-- Filtro de interesse ligado -->
+    <% else %>
+
+      <% if current_user.interest_array.include?(activity.id) %>
         <li class="list-group-item">
           <div class="row">
             <div class="col">
@@ -78,7 +129,7 @@
                 <%= link_to('Editar', edit_activity_path(activity), class:"btn btn-success") %>
                 <%= link_to('Excluir', activity_path(activity), method: :delete, data: { confirm: 'Are you sure?' },
                             class:"btn btn-danger m-2") %>
-            <% end %>
+              <% end %>
             </div>
             <% if current_user.role != "administrator" %>
               <div class="col">
@@ -86,53 +137,14 @@
                   <%= link_to 'Não', toggle_interest_activity_path(activity), class: "btn btn-warning" %>
                 <% else %>
                   <%= link_to 'Sim', toggle_interest_activity_path(activity), class: "btn btn-success" %>
-              <% end %>
+                <% end %>
               </div>
             <% end %>
           </div>
         </li>
 
-      <!-- Filtro de interesse ligado -->
-      <% else %>
-
-        <% if current_user.interest_array.include?(activity.id) %>
-          <li class="list-group-item">
-            <div class="row">
-              <div class="col">
-                <%= activity.title %>
-              </div>
-              <div class="col">
-                <%= activity.description %>
-              </div>
-              <div class="col">
-                <% if activity.date > Date.today %>
-                  <%= activity.date.strftime("%d %b %Y") %>
-                <% else %>
-                  <button type="button" class="btn btn-danger">Expirada em <%= activity.date.strftime("%d %b %Y") %> </button>
-                <% end %>
-              </div>
-              <div class="col">
-                <%= link_to('Ver detalhes', activity_path(activity), class:"btn btn-info") %>
-                <% if current_user.role == "administrator" %>
-                  <%= link_to('Editar', edit_activity_path(activity), class:"btn btn-success") %>
-                  <%= link_to('Excluir', activity_path(activity), method: :delete, data: { confirm: 'Are you sure?' },
-                              class:"btn btn-danger m-2") %>
-                <% end %>
-              </div>
-              <% if current_user.role != "administrator" %>
-                <div class="col">
-                  <% if !current_user.interest_array.include?(activity.id) %>
-                    <%= link_to 'Não', toggle_interest_activity_path(activity), class: "btn btn-warning" %>
-                  <% else %>
-                    <%= link_to 'Sim', toggle_interest_activity_path(activity), class: "btn btn-success" %>
-                  <% end %>
-                </div>
-              <% end %>
-            </div>
-          </li>
-
-        <% end %>
       <% end %>
     <% end %>
+  <% end %>
 
 </ul>

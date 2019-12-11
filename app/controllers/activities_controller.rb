@@ -3,7 +3,7 @@ class ActivitiesController < ApplicationController
   before_action :admin_privileges  # Eh necessario ser admin para criar, editar e deletar uma atividade
 
   # permite que usuarios nao admins consigam ver as atividades e detalhes
-  skip_before_action :admin_privileges, only: [:index, :show, :toggle_interest, :index_interests, :reset_interests]
+  skip_before_action :admin_privileges, only: [:index, :show, :toggle_interest, :index_interests, :reset_interests, :add_interested]
   skip_before_action :require_login, only: [:reset_interests]
 
   def new
@@ -108,8 +108,15 @@ class ActivitiesController < ApplicationController
     else
       redirect_to new_user_session_path
     end
-
   end
+
+  # Metodo para adicionar usuarios interessados na atividade
+  def add_interested
+    @activity = Activity.find(params[:id])
+    @activity.update(:users_in_activity => @activity.interested_users)
+    redirect_to activity_path
+  end
+
 
   private
   def activity_params

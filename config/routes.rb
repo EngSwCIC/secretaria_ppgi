@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :activities do
     member do
       get :toggle_interest
+      get :add_interested
     end
     collection do
       get :index_interests
