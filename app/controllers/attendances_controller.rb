@@ -1,17 +1,17 @@
 class AttendancesController < ApplicationController
   before_action :set_attendance, only: [:show, :edit, :update, :destroy]
-
+# comentario
   # GET /attendances
   # GET /attendances.json
   def index
-    @attendances = Attendance.all
+    @attendances = Attendance.includes(:comments)
   end
-
+  # POST /attendances/search
   def search
     if params[:search].blank?  
       redirect_to(attendances_path, alert: "Empty field!") and return  
     else
-      @attendances = Attendance.all.where("title LIKE?","%" + params[:search] + "%").order("created_at DESC")
+      @attendances = Attendance.includes(:comments).where("title LIKE?","%" + params[:search] + "%").order("created_at DESC")
     end
   end
 
@@ -78,7 +78,7 @@ class AttendancesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_attendance
-      @attendance = Attendance.find(params[:id])
+      @attendance = Attendance.with_attached_files.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
