@@ -7,7 +7,7 @@ class FaqSugestionsController < ApplicationController
   before_action :must_be_authenticated_user, only:  [:create, :edit, :update]
 
   ##
-  # Lista todos os objetos da classe, para o index.
+  # Lista todos os objetos da classe.
 
   def index
     @faq_sugestions = FaqSugestion.all
@@ -95,18 +95,18 @@ class FaqSugestionsController < ApplicationController
 
   def accept
     sugestion = FaqSugestion.find(params[:id])
-    # Sugestão não associada a um FAQ
+    # Sugestão não associada a um FAQ.
     if sugestion.faq_id == nil
-      # Novo FAQ é criado com os campos da sugestão
+      # Novo FAQ é criado com os campos da sugestão.
       new_faq = Faq.create(:topico => sugestion.topico, :pergunta => sugestion.pergunta, :resposta => sugestion.resposta)
     else
-      # FAQ associado é encontrada e atualizado com a nova resposta
+      # FAQ associado é encontrada e atualizado com a nova resposta.
       faq_update = Faq.find(sugestion.faq_id)
       faq_update.resposta = sugestion.resposta
       faq_update.update(update_faq_params)
     end
     
-    # Sugestão é excluida e mensgaem de sucesso é mostrada 
+    # Sugestão é excluida e mensgaem de sucesso é mostrada.
     sugestion.destroy
     respond_to do |format|
       format.html { redirect_to faq_sugestions_url, notice: 'Faq sugestion was successfully accepted.' }
@@ -115,26 +115,27 @@ class FaqSugestionsController < ApplicationController
   end
 
   private
+  
     def set_faq_sugestion
       @faq_sugestion = FaqSugestion.find(params[:id])
     end
 
     ##
-    # Parâmetros permitidos para criar uma sugestão ou atualizar sem um FAQ associado
+    # Parâmetros permitidos para criar uma sugestão ou atualizar sem um FAQ associado.
 
     def faq_sugestion_params
       params.require(:faq_sugestion).permit(:topico, :pergunta, :resposta, :faq_id)
     end
 
     ##
-    # Parâmetros permitdos para atualizar uma sugestão com um FAQ associado
+    # Parâmetros permitdos para atualizar uma sugestão com um FAQ associado.
 
     def faq_sugestion_update_params
       params.require(:faq_sugestion).permit(:resposta)
     end
 
     ##
-    # Parâmetros permitdos para atualizar um FAQ
+    # Parâmetros permitdos para atualizar um FAQ.
 
     def update_faq_params
       params.permit(:topico, :pergunta, :resposta)
