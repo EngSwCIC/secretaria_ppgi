@@ -31,12 +31,12 @@ class CredenciamentoController < ApplicationController
 
     def create_credenciamento
         Credenciamento.create(iduser: current_user.id)
-        redirect_to '/'
+        render 'credenciamento/success_createcredenciamento'
     end
 
     def create_periodocredenciamento
         Periodo_Credenciamento.create(comeco: params[:começo],fim: params[:fim],idadmin: current_user.id)
-        redirect_to '/'
+        render 'credenciamento/success_createperiodo'
     end
 
     def alter_credenciamento
@@ -44,7 +44,7 @@ class CredenciamentoController < ApplicationController
         @credencial.aproved = false
         @credencial.rejected = false
         @credencial.save
-        redirect_to '/'
+        render 'credenciamento/success_altercredenciamento'
     end
 
     def show_pedidos
