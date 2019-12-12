@@ -1,3 +1,4 @@
+# This class handles crud operations for informations.
 class InformationController < ApplicationController
   before_action :set_information, only: [:show, :edit, :update, :destroy]
 
@@ -21,33 +22,30 @@ class InformationController < ApplicationController
   def edit
   end
 
+  def operation msg, symbol
+    respond_to do |format|
+      format.html { redirect_to @information, notice: msg }
+      format.json { render :show, status: symbol.to_sym , location: @information }
+    end
+  end
+
+  def not_operation symbol
+    respond_to do |format|
+      format.html { render symbol.to_sym }
+      format.json { render json: @information.errors, status: :unprocessable_entity }
+    end
+  end
   # POST /information
   # POST /information.json
   def create    
-    respond_to do |format|
       @information = Information.new information_params
-      if @information.save
-        format.html { redirect_to @information, notice: 'Informação foi criada com sucesso.' }
-        format.json { render :show, status: :created, location: @information }
-      else
-        format.html { render :new }
-        format.json { render json: @information.errors, status: :unprocessable_entity }
-      end
-    end
+      @information.save ? operation("Informação foi criada com sucesso.", "created") : not_operation("new")
   end
 
   # PATCH/PUT /information/1
   # PATCH/PUT /information/1.json
   def update
-    respond_to do |format|
-      if @information.update(information_params)
-        format.html { redirect_to @information, notice: 'Informação foi atualizada com sucesso.' }
-        format.json { render :show, status: :ok, location: @information }
-      else
-        format.html { render :edit }
-        format.json { render json: @information.errors, status: :unprocessable_entity }
-      end
-    end
+    @information.update(information_params) ? operation("Informação foi atualizada com sucesso.", "ok") : not_operation("edit")
   end
 
   # DELETE /information/1

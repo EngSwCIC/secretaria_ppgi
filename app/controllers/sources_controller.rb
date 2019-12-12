@@ -1,3 +1,4 @@
+# This class hangle crud operations for information source.
 class SourcesController < ApplicationController
   before_action :set_source, only: [:show, :edit, :update, :destroy]
 
@@ -21,34 +22,31 @@ class SourcesController < ApplicationController
   def edit
   end
 
+  def operation msg, symbol
+    respond_to do |format|
+      format.html { redirect_to @source, notice: msg }
+      format.json { render :show, status: symbol.to_sym , location: @source }
+    end
+  end
+
+  def not_operation symbol
+    respond_to do |format|
+      format.html { render symbol.to_sym }
+      format.json { render json: @source.errors, status: :unprocessable_entity }
+    end
+  end
+
   # POST /sources
   # POST /sources.json
   def create
-    @source = Source.new(source_params)
-
-    respond_to do |format|
-      if @source.save
-        format.html { redirect_to @source, notice: 'Source was successfully created.' }
-        format.json { render :show, status: :created, location: @source }
-      else
-        format.html { render :new }
-        format.json { render json: @source.errors, status: :unprocessable_entity }
-      end
-    end
+    @source = Source.new source_params
+    @source.save ? operation("Source was successfully created.", "created") : not_operation("new")
   end
 
   # PATCH/PUT /sources/1
   # PATCH/PUT /sources/1.json
   def update
-    respond_to do |format|
-      if @source.update(source_params)
-        format.html { redirect_to @source, notice: 'Source was successfully updated.' }
-        format.json { render :show, status: :ok, location: @source }
-      else
-        format.html { render :edit }
-        format.json { render json: @source.errors, status: :unprocessable_entity }
-      end
-    end
+    @source.update(source_params) ? operation("Source was successfully updated.", "ok") : not_operation("edit")
   end
 
   # DELETE /sources/1
