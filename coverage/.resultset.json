@@ -1,14 +1,14 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/evandrothalles/Documents/documentos/Estudos/Eng_Software/secretaria_ppgi-develop/config/environment.rb": [
+      "/home/filipe/Documentos/secretaria_ppgi/config/environment.rb": [
         null,
         1,
         null,
         null,
         1
       ],
-      "/Users/evandrothalles/Documents/documentos/Estudos/Eng_Software/secretaria_ppgi-develop/config/application.rb": [
+      "/home/filipe/Documentos/secretaria_ppgi/config/application.rb": [
         1,
         null,
         1,
@@ -30,13 +30,13 @@
         null,
         null
       ],
-      "/Users/evandrothalles/Documents/documentos/Estudos/Eng_Software/secretaria_ppgi-develop/config/boot.rb": [
+      "/home/filipe/Documentos/secretaria_ppgi/config/boot.rb": [
         1,
         null,
         1,
         1
       ],
-      "/Users/evandrothalles/Documents/documentos/Estudos/Eng_Software/secretaria_ppgi-develop/config/environments/test.rb": [
+      "/home/filipe/Documentos/secretaria_ppgi/config/environments/test.rb": [
         1,
         null,
         null,
@@ -84,7 +84,7 @@
         null,
         null
       ],
-      "/Users/evandrothalles/Documents/documentos/Estudos/Eng_Software/secretaria_ppgi-develop/config/initializers/application_controller_renderer.rb": [
+      "/home/filipe/Documentos/secretaria_ppgi/config/initializers/application_controller_renderer.rb": [
         null,
         null,
         null,
@@ -94,7 +94,7 @@
         null,
         null
       ],
-      "/Users/evandrothalles/Documents/documentos/Estudos/Eng_Software/secretaria_ppgi-develop/config/initializers/assets.rb": [
+      "/home/filipe/Documentos/secretaria_ppgi/config/initializers/assets.rb": [
         null,
         null,
         null,
@@ -110,7 +110,7 @@
         null,
         null
       ],
-      "/Users/evandrothalles/Documents/documentos/Estudos/Eng_Software/secretaria_ppgi-develop/config/initializers/backtrace_silencers.rb": [
+      "/home/filipe/Documentos/secretaria_ppgi/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -119,7 +119,7 @@
         null,
         null
       ],
-      "/Users/evandrothalles/Documents/documentos/Estudos/Eng_Software/secretaria_ppgi-develop/config/initializers/content_security_policy.rb": [
+      "/home/filipe/Documentos/secretaria_ppgi/config/initializers/content_security_policy.rb": [
         null,
         null,
         null,
@@ -146,20 +146,20 @@
         null,
         null
       ],
-      "/Users/evandrothalles/Documents/documentos/Estudos/Eng_Software/secretaria_ppgi-develop/config/initializers/cookies_serializer.rb": [
+      "/home/filipe/Documentos/secretaria_ppgi/config/initializers/cookies_serializer.rb": [
         null,
         null,
         null,
         null,
         1
       ],
-      "/Users/evandrothalles/Documents/documentos/Estudos/Eng_Software/secretaria_ppgi-develop/config/initializers/filter_parameter_logging.rb": [
+      "/home/filipe/Documentos/secretaria_ppgi/config/initializers/filter_parameter_logging.rb": [
         null,
         null,
         null,
         1
       ],
-      "/Users/evandrothalles/Documents/documentos/Estudos/Eng_Software/secretaria_ppgi-develop/config/initializers/inflections.rb": [
+      "/home/filipe/Documentos/secretaria_ppgi/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -177,13 +177,13 @@
         null,
         null
       ],
-      "/Users/evandrothalles/Documents/documentos/Estudos/Eng_Software/secretaria_ppgi-develop/config/initializers/mime_types.rb": [
+      "/home/filipe/Documentos/secretaria_ppgi/config/initializers/mime_types.rb": [
         null,
         null,
         null,
         null
       ],
-      "/Users/evandrothalles/Documents/documentos/Estudos/Eng_Software/secretaria_ppgi-develop/config/initializers/simple_form.rb": [
+      "/home/filipe/Documentos/secretaria_ppgi/config/initializers/simple_form.rb": [
         null,
         null,
         null,
@@ -348,189 +348,6 @@
         null,
         null,
         1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/evandrothalles/Documents/documentos/Estudos/Eng_Software/secretaria_ppgi-develop/config/initializers/wrap_parameters.rb": [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        2,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/evandrothalles/Documents/documentos/Estudos/Eng_Software/secretaria_ppgi-develop/spec/factories/attendances.rb": [
-        1,
-        1,
-        2,
-        2,
-        null,
-        null
-      ],
-      "/Users/evandrothalles/Documents/documentos/Estudos/Eng_Software/secretaria_ppgi-develop/config/routes.rb": [
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        null,
-        null
-      ],
-      "/Users/evandrothalles/Documents/documentos/Estudos/Eng_Software/secretaria_ppgi-develop/app/helpers/application_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/evandrothalles/Documents/documentos/Estudos/Eng_Software/secretaria_ppgi-develop/app/helpers/attendances_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/evandrothalles/Documents/documentos/Estudos/Eng_Software/secretaria_ppgi-develop/app/helpers/comments_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/evandrothalles/Documents/documentos/Estudos/Eng_Software/secretaria_ppgi-develop/app/controllers/attendances_controller.rb": [
-        1,
-        1,
-        null,
-        null,
-        null,
-        1,
-        2,
-        null,
-        null,
-        1,
-        2,
-        2,
-        null,
-        0,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        null,
-        null,
-        null,
-        1,
-        1,
-        null,
-        null,
-        null,
-        1,
-        null,
-        null,
-        null,
-        null,
-        1,
-        2,
-        null,
-        2,
-        2,
-        2,
-        1,
-        null,
-        2,
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        2,
-        2,
-        4,
-        2,
-        null,
-        0,
-        0,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        2,
-        2,
-        4,
-        2,
-        null,
-        null,
-        null,
-        1,
-        0,
-        0,
-        0,
-        null,
-        null,
-        1,
-        null,
-        1,
-        4,
-        null,
-        null,
-        null,
-        1,
-        4,
-        null,
-        null
-      ],
-      "/Users/evandrothalles/Documents/documentos/Estudos/Eng_Software/secretaria_ppgi-develop/app/controllers/application_controller.rb": [
-        1,
-        null
-      ],
-      "/Users/evandrothalles/Documents/documentos/Estudos/Eng_Software/secretaria_ppgi-develop/spec/controllers/comments_controller_spec.rb": [
-        1,
-        null,
-        1,
-        null,
-        null,
-        null
-      ],
-      "/Users/evandrothalles/Documents/documentos/Estudos/Eng_Software/secretaria_ppgi-develop/app/controllers/comments_controller.rb": [
-        1,
-        1,
-        0,
-        0,
-        0,
-        null,
-        null,
-        1,
-        0,
-        0,
-        0,
-        0,
-        null,
-        null
-      ],
-      "/Users/evandrothalles/Documents/documentos/Estudos/Eng_Software/secretaria_ppgi-develop/spec/helpers/comments_helper_spec.rb": [
-        1,
-        null,
-        null,
         null,
         null,
         null,
@@ -544,126 +361,73 @@
         null,
         null
       ],
-      "/Users/evandrothalles/Documents/documentos/Estudos/Eng_Software/secretaria_ppgi-develop/spec/models/Attendance_spec.rb": [
-        1,
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
-        null,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
+      "/home/filipe/Documentos/secretaria_ppgi/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
         null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
-        null,
-        1,
-        1,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/evandrothalles/Documents/documentos/Estudos/Eng_Software/secretaria_ppgi-develop/app/models/attendance.rb": [
-        1,
-        1,
-        1,
-        1,
-        null
-      ],
-      "/Users/evandrothalles/Documents/documentos/Estudos/Eng_Software/secretaria_ppgi-develop/app/models/application_record.rb": [
-        1,
-        1,
-        null
-      ],
-      "/Users/evandrothalles/Documents/documentos/Estudos/Eng_Software/secretaria_ppgi-develop/spec/models/comment_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        2,
         null,
         null,
         1,
         2,
         null,
+        null,
+        null,
+        null,
+        null,
         null
       ],
-      "/Users/evandrothalles/Documents/documentos/Estudos/Eng_Software/secretaria_ppgi-develop/app/models/comment.rb": [
+      "/home/filipe/Documentos/secretaria_ppgi/spec/factories/attendances.rb": [
+        1,
+        1,
+        2,
+        2,
+        null,
+        null
+      ],
+      "/home/filipe/Documentos/secretaria_ppgi/config/routes.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/home/filipe/Documentos/secretaria_ppgi/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/home/filipe/Documentos/secretaria_ppgi/app/helpers/attendances_helper.rb": [
+        1,
+        null
+      ],
+      "/home/filipe/Documentos/secretaria_ppgi/app/helpers/comments_helper.rb": [
+        1,
+        null
+      ],
+      "/home/filipe/Documentos/secretaria_ppgi/app/models/attendance.rb": [
+        1,
         1,
         1,
         1,
         null
       ],
-      "/Users/evandrothalles/Documents/documentos/Estudos/Eng_Software/secretaria_ppgi-develop/spec/requests/attendances_spec.rb": [
-        1,
-        null,
+      "/home/filipe/Documentos/secretaria_ppgi/app/models/application_record.rb": [
         1,
         1,
+        null
+      ],
+      "/home/filipe/Documentos/secretaria_ppgi/app/models/comment.rb": [
         1,
         1,
         1,
-        null,
-        null,
         null
       ]
     },
-    "timestamp": 1575911736
+    "timestamp": 1576113744
   }
 }

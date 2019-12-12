@@ -1,12 +1,29 @@
+##
+# Esta Classe controla o funcionamento da aplicacao web.
+
 class AttendancesController < ApplicationController
   before_action :set_attendance, only: [:show, :edit, :update, :destroy]
-# comentario
+  # comentario
   # GET /attendances
   # GET /attendances.json
+
+  ##
+  # Cria a pagina incial .
+  #
+  # @attendances - variavel global responsavel por carregar os elementos na pagina
+  #
+
   def index
     @attendances = Attendance.includes(:comments)
   end
+  
+  ##
+  # Realiza uma busca do elemento no banco de dados.
+  #
+  # @attendances - retorna o elemento resultado da busca na pagina
+  #
   # POST /attendances/search
+
   def search
     if params[:search].blank?  
       redirect_to(attendances_path, alert: "Empty field!") and return  
@@ -20,6 +37,11 @@ class AttendancesController < ApplicationController
   def show
   end
 
+  ##
+  # Cria um novo objeto do tipo attendance.
+  #
+  # @attendances - gera um objeto do tipo attendance.
+  #
   # GET /attendances/new
   def new
     @attendance = Attendance.new
@@ -29,8 +51,14 @@ class AttendancesController < ApplicationController
   def edit
   end
 
+  ##
+  # Solicita a criacao de um objeto formulario passando os parametros para attendance.new
+  # e mostra na tela que o objeto foi criado com sucesso.
+  # @attendances - recebe os parametros para criacao de objeto
+  #
   # POST /attendances
   # POST /attendances.json
+
   def create
     @attendance = Attendance.new(attendance_params)
 
@@ -45,6 +73,11 @@ class AttendancesController < ApplicationController
     end
   end
 
+  ##
+  # Atualiza um objeto ja criado com novos parametros passados.
+  #
+  # @attendances - tem seus valores alterados de acordo com os parametros passados.
+  #
   # PATCH/PUT /attendances/1
   # PATCH/PUT /attendances/1.json
   def update
@@ -59,8 +92,14 @@ class AttendancesController < ApplicationController
     end
   end
 
+  ##
+  # Deleta um elemento do banco de dados.
+  #
+  # @attendances - variavel deletada do banco de dados
+  #
   # DELETE /attendances/1
   # DELETE /attendances/1.json
+
   def destroy
     @attendance.destroy
     respond_to do |format|
@@ -68,6 +107,12 @@ class AttendancesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  ##
+  # Deleta o arquivo anexado.
+  #
+  # @attendances - variavel global responsavel por carregar os elementos na pagina
+  #
 
   def delete_file_attachment
     @file = ActiveStorage::Blob.find_signed(params[:id])

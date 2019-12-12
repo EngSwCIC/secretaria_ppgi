@@ -3,8 +3,23 @@ require 'rails_helper'
 #
 # testes que permitem que a estrutura do banco estejam corretas
 	RSpec.feature Attendance , type: :model do
-
 		context 'validation tests' do
+			it 'ensures title presence' do
+				at = Attendance.new(content: 'casa legal').save
+				expect(at).to eq(false) 
+			end
+		
+			# new gera instancia do attendance sem salvar no Banco
+			it 'ensures content presence' do
+				at = Attendance.new(title:'filme').save
+				expect(at).to eq(false) 
+			end
+			it 'should save successfully' do
+				at = Attendance.new(title:'duro de matar' , content:'acao' ).save
+				expect(at).to eq(true) 
+			end
+
+
 			it "return the correct name of title" do 
 				at = Attendance.new(title: "Funcionario")
 				expect(at.title).to eq("Funcionario") 
