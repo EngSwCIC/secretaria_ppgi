@@ -9,26 +9,3 @@ RSpec.describe "Attendances", type: :request do
   end
 end
 
-#
-#
-# testes que permitem que a estrutura do banco estejam corretas
-RSpec.feature Attendance , type: :model do
-  # exclusao de dados
-  context 'when datas exists' do
-    it "destroy of the data was successfully " do
-      at = Attendance.create(title: "casa" , content: "boa")
-      at.destroy
-      expect(at.title).to eq("casa")
-    end
-  end
-
-  # Teste sobre busca de dados no banco de dados
-  context "files attachment" do
-    it "creates a attendance with a file" do
-      attendance = create(:Attendance)
-      # how to create this file?
-      attendance.files.attach(create_file_blob) 
-      expect(attendance.files.any?).to eq(true)
-    end
-  end
-end
