@@ -16,6 +16,11 @@ class ActivitiesController < ApplicationController
         render :new
     end
 
+    def edit
+        @activity = Activity.find(params[:id])
+        render :edit
+    end
+
     def create
         @activity = Activity.create(activity_params) 
 
@@ -28,7 +33,7 @@ class ActivitiesController < ApplicationController
     end
 
     def update 
-        byebug
+        # byebug
         @activity = Activity.find(params[:id])
         @activity.update(activity_params)
         redirect_to action: "show", id: @activity
@@ -41,7 +46,8 @@ class ActivitiesController < ApplicationController
         @activity = Activity.find(params[:id])
     
         if @activity.destroy
-            render :json => {message: "Processo apagado com êxito"}
+            # render :json => {message: "Processo apagado com êxito"}
+            redirect_to action: "index"
         else
             render :json => {message: "Não foi possivel apagar o Processo"}
         end

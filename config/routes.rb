@@ -10,7 +10,8 @@ Rails.application.routes.draw do
   get     "/processos",                to: "activities#index"
   get     "/processos/new",            to: "activities#new"
   get     "/processos/:id",            to: "activities#show", as: 'activity'
+  get     "/processos/editar/:id",     to: "activities#edit"
   post    "/processos/cadastro",       to: "activities#create"
-  put     "/processos/:id/atualizar",  to: "activities#update", as: 'editar'
-  delete  "/processos/:id/excluir",    to: "activities#delete"  
+  put     "/processos/:id/atualizar",  to: "activities#update"
+  delete  "/processos/:id/excluir",    to: "activities#delete"
 end
