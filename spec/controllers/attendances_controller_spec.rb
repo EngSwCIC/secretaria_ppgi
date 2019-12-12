@@ -13,6 +13,26 @@ RSpec.feature AttendancesController , type: :controller do
             expect(response).to have_http_status(:success)
         end
     end
+
+    #Criar uma attendance
+    describe "POST #create" do
+    context "check successfully creation" do 
+        it "creates a new Attendance" do
+        expect {
+            post :create, params: {attendance: valid_attributes}, session: valid_session
+        }.to change(Attendance, :count).by(1)
+        end
+
+        it "redirects to the new attendance " do
+        attendance = Attendance.create! valid_attributes
+        post :create, params: {attendance: valid_attributes}, session: valid_session
+        expect(response).to redirect_to(Attendance.last)
+        
+            end
+        end
+    end
+
+
     #Deletar uma attendance
     describe "DELETE #destroy" do
         it "destroys the requested datas" do
