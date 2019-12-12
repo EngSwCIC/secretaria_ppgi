@@ -1,3 +1,6 @@
+##
+# Essa classe representa a model para as sugestões do FAQ
+
 class FaqSugestion < ApplicationRecord
   validates :topico, presence: true
   validates :pergunta, presence: true
