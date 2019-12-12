@@ -64,4 +64,8 @@ RSpec.configure do |config|
   config.include Devise::Test::IntegrationHelpers, type: :request
   config.include Devise::Test::IntegrationHelpers, type: :view
   config.include Devise::Test::ControllerHelpers, type: :controller
+
+  require 'simplecov'
+  SimpleCov.start 'rails'
+  puts "required simplecov"
 end
