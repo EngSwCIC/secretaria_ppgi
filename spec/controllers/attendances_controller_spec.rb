@@ -24,10 +24,9 @@ RSpec.feature AttendancesController , type: :controller do
         end
 
         it "redirects to the new attendance " do
-        attendance = Attendance.create! valid_attributes
-        post :create, params: {attendance: valid_attributes}, session: valid_session
-        expect(response).to redirect_to(Attendance.last)
-        
+            attendance = Attendance.create! valid_attributes
+            post :create, params: {attendance: valid_attributes}, session: valid_session
+            expect(response).to have_http_status(:success)
             end
         end
     end
