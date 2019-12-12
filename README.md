@@ -9,9 +9,20 @@ Sobre o projeto:
 
 * Funcionalidades desenvolvidas:
 
-* Como um usuário, para que eu possa me informar, eu gostaria de ver as atividades que eu demonstrei interesse
-* Como um usuário, para que eu possa me informar, eu gostaria de ver as atividades que eu demonstrei interesse
+* Testes para sign up de novo usuário
 
-* Funcionalidades que serão desenvolvidas:
-* Testes com o uso do Cucumber
-* Testes com o uso do RSpec
+* Testes para log in de usuário
+
+* Testes para log out de novo usuário
+
+* Testes para criação de tarefas
+
+* Testes para visualização de tarefas
+
+* Testes para funcionalidades de alunos
+
+* Testes para funcionalidades de secretários
+
+* Testes para funcionalidades de professores
+
+* Testes para funcionalidades de administradores
