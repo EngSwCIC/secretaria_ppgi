@@ -70,3 +70,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "rubycritic", require: false
+
+gem 'simplecov', require: false#, group: :test
