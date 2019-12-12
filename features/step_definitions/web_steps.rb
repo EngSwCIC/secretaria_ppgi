@@ -41,9 +41,22 @@ When /^(.*) within (.*[^:]):$/ do |step, parent, table_or_string|
   with_scope(parent) { When "#{step}:", table_or_string }
 end
 
-Given /^(?:|I )am on (.+)$/ do |page_name|
-  visit path_to(page_name)
+
+Given("I am on the Processos home page") do
+  visit("/processos")
 end
+
+Given("I am on the Criar Processo home page") do
+  visit("/processos/new")
+end
+
+Then ("I should be on the Criado Processo home page") do
+  visit("/processos/#{@activity.id}")
+end
+
+# Given /^(?:|I )am on (.+)$/ do |page_name|
+  # visit path_to(page_name)
+# end
 
 When /^(?:|I )go to (.+)$/ do |page_name|
   visit path_to(page_name)
@@ -101,6 +114,7 @@ end
 When /^(?:|I )attach the file "([^"]*)" to "([^"]*)"$/ do |path, field|
   attach_file(field, File.expand_path(path))
 end
+
 
 Then /^(?:|I )should see "([^"]*)"$/ do |text|
   if page.respond_to? :should
@@ -227,14 +241,14 @@ Then /^the "([^"]*)" checkbox(?: within (.*))? should not be checked$/ do |label
   end
 end
  
-Then /^(?:|I )should be on (.+)$/ do |page_name|
-  current_path = URI.parse(current_url).path
-  if current_path.respond_to? :should
-    current_path.should == path_to(page_name)
-  else
-    assert_equal path_to(page_name), current_path
-  end
-end
+# Then /^(?:|I )should be on (.+)$/ do |page_name|
+#   current_path = URI.parse(current_url).path
+#   if current_path.respond_to? :should
+#     current_path.should == path_to(page_name)
+#   else
+#     assert_equal path_to(page_name), current_path
+#   end
+# end
 
 Then /^(?:|I )should have the following query string:$/ do |expected_pairs|
   query = URI.parse(current_url).query

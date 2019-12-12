@@ -1,4 +1,5 @@
 require 'rails_helper'
+# require File.expand_path(File.dirname(__FILE__) + '/helpers/statuses_helper_spec')
 
 RSpec.describe Activity, type: :model do
   subject { described_class.new }
