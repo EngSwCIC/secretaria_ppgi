@@ -46,24 +46,19 @@ class FaqSugestionsController < ApplicationController
   # PATCH/PUT /faq_sugestions/1.json
   def update
     if @faq_sugestion.faq_id == nil
-      respond_to do |format|
-        if @faq_sugestion.update(faq_sugestion_params)
-          format.html { redirect_to @faq_sugestion, notice: 'Faq sugestion was successfully updated.' }
-          format.json { render :show, status: :ok, location: @faq_sugestion }
-        else
-          format.html { render :edit }
-          format.json { render json: @faq_sugestion.errors, status: :unprocessable_entity }
-        end
-      end
+      #Params for the update when there is no associated faq
+      params = faq_sugestion_params
     else
-      respond_to do |format|
-        if @faq_sugestion.update(faq_sugestion_updtae_params)
-          format.html { redirect_to @faq_sugestion, notice: 'Faq sugestion was successfully updated.' }
-          format.json { render :show, status: :ok, location: @faq_sugestion }
-        else
-          format.html { render :edit }
-          format.json { render json: @faq_sugestion.errors, status: :unprocessable_entity }
-        end
+      #Params for the update when there is an associated faq
+      param = faq_sugestion_updtae_params
+    end
+    respond_to do |format|
+      if @faq_sugestion.update(faq_sugestion_params)
+        format.html { redirect_to @faq_sugestion, notice: 'Faq sugestion was successfully updated.' }
+        format.json { render :show, status: :ok, location: @faq_sugestion }
+      else
+        format.html { render :edit }
+        format.json { render json: @faq_sugestion.errors, status: :unprocessable_entity }
       end
     end
   end
