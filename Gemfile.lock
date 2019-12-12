@@ -207,6 +207,7 @@ GEM
     rb-inotify (0.10.0)
       ffi (~> 1.0)
     rcodetools (0.8.5.0)
+    rdoc (6.2.0)
     rspec-core (3.9.0)
       rspec-support (~> 3.9.0)
     rspec-expectations (3.9.0)
@@ -316,6 +317,7 @@ DEPENDENCIES
   rails (~> 5.2.3)
   rails-controller-testing
   rcodetools
+  rdoc
   rspec-rails
   sass-rails (~> 5.0)
   selenium-webdriver
