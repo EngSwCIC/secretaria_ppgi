@@ -1,5 +1,5 @@
 ##
-# Esta Classe controla o funcionamento da aplicacao web.
+# Esta Classe controla o funcionamento dos processos de Atendimento da aplicacao web da secretaria de Pós Graduação.
 
 class AttendancesController < ApplicationController
   before_action :set_attendance, only: [:show, :edit, :update, :destroy]

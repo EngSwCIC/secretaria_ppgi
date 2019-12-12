@@ -1,10 +1,10 @@
 ##
-# Esta Classe controla o funcionamento dos comentarios na aplicacao web.
+# Esta Classe controla o funcionamento dos comentarios em um processo de atendimento na aplicacao web.
 
 class CommentsController < ApplicationController
 
   ##
-  # Criar um comentario a respeito do elemento apresentado na pagina.
+  # Criar um comentario relacionado ao processo de atendimento em sua página de mais detalhes.
   #
 
   def create
@@ -14,7 +14,7 @@ class CommentsController < ApplicationController
   end
 
   ##
-  # Deleta um comentario a respeito do elemento apresentado na pagina.
+  # Deleta um comentario relacionado ao processo de atencimento em sua página de mais detalhes.
   #
 
   def destroy
