@@ -5,10 +5,6 @@
 <%= form_tag("/processos/#{@activity.id}/atualizar", method: "put") do %>
     Nome: <%= text_field_tag(:name) %><br>
     Descrição: <%= text_field_tag(:description) %><br>
-    <% if current_user.role == 'administrator' or current_user.role == 'secretary' %>
-       Status: <%= text_field_tag(:estado) %><br>
-    <% else %>
-        Status: <%= select_tag(:estado, raw("<option>Em espera</option><option>Em andamento</option><option>Concluido</option>"), disabled: true) %><br>
-    <% end %>
+    Status: <%= select_tag(:estado, raw("<option>Em espera</option><option>Em andamento</option><option>Concluido</option>")) %><br>
     <%= link_to '<button type="button">Cancelar</button>'.html_safe, processos_path %>  <%= submit_tag("Editar Processo") %>
 <% end %>

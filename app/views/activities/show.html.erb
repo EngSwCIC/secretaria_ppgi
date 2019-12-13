@@ -3,9 +3,5 @@
 <strong>Descrição</strong>: <%= @activity.description %><br>
 <strong>Status</strong>: <%= @activity.estado %><br><br>
 
-<% if current_user.role == 'administrator' or current_user.role == 'secretary' %>
-    <%= link_to '<button type="button">Voltar</button>'.html_safe, processos_path %> <%= link_to '<button type="button">Editar</button>'.html_safe, controller: "activities", action: "edit", id: @activity.id %>
-    <%= button_to('Deletar', { controller: "activities", action: "delete", id: @activity.id }, method: :delete, data: { confirm: 'Tem certeza?', disable_with: 'carregando...' }) %>
-<% else %>
-    <%= link_to '<button type="button">Voltar</button>'.html_safe, processos_path %>
-<% end %>
+<%= link_to '<button type="button">Voltar</button>'.html_safe, processos_path %> <%= link_to '<button type="button">Editar</button>'.html_safe, controller: "activities", action: "edit", id: @activity.id %>
+<%= button_to('Deletar', { controller: "activities", action: "delete", id: @activity.id }, method: :delete, data: { confirm: 'Tem certeza?', disable_with: 'carregando...' }) %>
