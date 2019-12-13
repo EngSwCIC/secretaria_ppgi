@@ -11,6 +11,11 @@ class ActivitiesController < ApplicationController
         render json: @activity
     end
 
+    def showthis
+        @activity = Activity.where(:status_id => params[:status_id])
+        render json: @activity
+    end
+
     def create
         @activity = Activity.create(activity_params) 
 
@@ -41,6 +46,6 @@ class ActivitiesController < ApplicationController
     private
 
     def activity_params
-        params.permit(:name, :description, :type_activity, :role)
+        params.permit(:name, :description, :type_activity, :role, :status_id)
     end
 end
