@@ -60,7 +60,7 @@
   <h3>Parent</h3>
 
   
-  <p class="link"><a href="ApplicationController.html">ApplicationController</a>
+  <p class="link">ApplicationController
   
 </div>
 
@@ -99,6 +99,10 @@
 
   <section class="description">
     
+<h1 id="class-SourcesController-label-Classe+responsavel+pelas+fontes+de+infoma-C3-A7oes+do+sistema.">Classe responsavel pelas fontes de infomaçoes do sistema.<span><a href="#class-SourcesController-label-Classe+responsavel+pelas+fontes+de+infoma-C3-A7oes+do+sistema.">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<p>Nessa controller estao todas as operaçoes de criaçao, deleçao e atualizaçao das fontes de informaçoes. Operaçoes CRUD</p>
+
   </section>
 
   
@@ -131,25 +135,18 @@
 
         <div class="method-description">
           
-          <p>POST /sources POST /sources.json</p>
+          <p>Metodo responsavel por criar uma nova fonte de informaçao.</p>
+
+<p>POST /sources POST /sources.json</p>
           
           
 
           
           <div class="method-source-code" id="create-source">
-            <pre><span class="ruby-comment"># File app/controllers/sources_controller.rb, line 26</span>
+            <pre><span class="ruby-comment"># File app/controllers/sources_controller.rb, line 57</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">create</span>
-  <span class="ruby-ivar">@source</span> = <span class="ruby-constant">Source</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">source_params</span>)
-
-  <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
-    <span class="ruby-keyword">if</span> <span class="ruby-ivar">@source</span>.<span class="ruby-identifier">save</span>
-      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">redirect_to</span> <span class="ruby-ivar">@source</span>, <span class="ruby-value">notice:</span> <span class="ruby-string">&#39;Source was successfully created.&#39;</span> }
-      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span> { <span class="ruby-identifier">render</span> <span class="ruby-value">:show</span>, <span class="ruby-value">status:</span> <span class="ruby-value">:created</span>, <span class="ruby-value">location:</span> <span class="ruby-ivar">@source</span> }
-    <span class="ruby-keyword">else</span>
-      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">render</span> <span class="ruby-value">:new</span> }
-      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span> { <span class="ruby-identifier">render</span> <span class="ruby-value">json:</span> <span class="ruby-ivar">@source</span>.<span class="ruby-identifier">errors</span>, <span class="ruby-value">status:</span> <span class="ruby-value">:unprocessable_entity</span> }
-    <span class="ruby-keyword">end</span>
-  <span class="ruby-keyword">end</span>
+  <span class="ruby-ivar">@source</span> = <span class="ruby-constant">Source</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">source_params</span>
+  <span class="ruby-ivar">@source</span>.<span class="ruby-identifier">save</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">operation</span>(<span class="ruby-string">&quot;Source was successfully created.&quot;</span>, <span class="ruby-string">&quot;created&quot;</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">not_operation</span>(<span class="ruby-string">&quot;new&quot;</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
           
@@ -174,13 +171,15 @@
 
         <div class="method-description">
           
-          <p>DELETE /sources/1 DELETE /sources/1.json</p>
+          <p>Metodo responsavel por deletar/destruir uma fonte de informaçao.</p>
+
+<p>DELETE /sources/1 DELETE /sources/1.json</p>
           
           
 
           
           <div class="method-source-code" id="destroy-source">
-            <pre><span class="ruby-comment"># File app/controllers/sources_controller.rb, line 56</span>
+            <pre><span class="ruby-comment"># File app/controllers/sources_controller.rb, line 74</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">destroy</span>
   <span class="ruby-ivar">@source</span>.<span class="ruby-identifier">destroy</span>
   <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
@@ -211,13 +210,15 @@
 
         <div class="method-description">
           
-          <p>GET /sources/1/edit</p>
+          <p>Metodo responsavel por chamar o formulario de ediçao.</p>
+
+<p>GET /sources/1/edit</p>
           
           
 
           
           <div class="method-source-code" id="edit-source">
-            <pre><span class="ruby-comment"># File app/controllers/sources_controller.rb, line 21</span>
+            <pre><span class="ruby-comment"># File app/controllers/sources_controller.rb, line 35</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">edit</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
@@ -243,13 +244,15 @@
 
         <div class="method-description">
           
-          <p>GET /sources GET /sources.json</p>
+          <p>Metodo responsavel por exibir todas as fontes de infomaçoes cadastradas.</p>
+
+<p>GET /sources GET /sources.json</p>
           
           
 
           
           <div class="method-source-code" id="index-source">
-            <pre><span class="ruby-comment"># File app/controllers/sources_controller.rb, line 6</span>
+            <pre><span class="ruby-comment"># File app/controllers/sources_controller.rb, line 14</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">index</span>
   <span class="ruby-ivar">@sources</span> = <span class="ruby-constant">Source</span>.<span class="ruby-identifier">all</span>
 <span class="ruby-keyword">end</span></pre>
@@ -276,13 +279,15 @@
 
         <div class="method-description">
           
-          <p>GET /sources/new</p>
+          <p>Metodo responsavel por receber os dados do formulario e armazenar na variavel e passar para o metodo create.</p>
+
+<p>GET /sources/new</p>
           
           
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File app/controllers/sources_controller.rb, line 16</span>
+            <pre><span class="ruby-comment"># File app/controllers/sources_controller.rb, line 28</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">new</span>
   <span class="ruby-ivar">@source</span> = <span class="ruby-constant">Source</span>.<span class="ruby-identifier">new</span>
 <span class="ruby-keyword">end</span></pre>
@@ -309,13 +314,15 @@
 
         <div class="method-description">
           
-          <p>GET /sources/1 GET /sources/1.json</p>
+          <p>Metodo responsavel por exibir uma fonte de infomaçoes selecionada.</p>
+
+<p>GET /sources/1 GET /sources/1.json</p>
           
           
 
           
           <div class="method-source-code" id="show-source">
-            <pre><span class="ruby-comment"># File app/controllers/sources_controller.rb, line 12</span>
+            <pre><span class="ruby-comment"># File app/controllers/sources_controller.rb, line 22</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">show</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
@@ -341,23 +348,17 @@
 
         <div class="method-description">
           
-          <p>PATCH/PUT /sources/1 PATCH/PUT /sources/1.json</p>
+          <p>Metodo responsavel por atualizar uma fonte de informaçao.</p>
+
+<p>PATCH/PUT /sources/1 PATCH/PUT /sources/1.json</p>
           
           
 
           
           <div class="method-source-code" id="update-source">
-            <pre><span class="ruby-comment"># File app/controllers/sources_controller.rb, line 42</span>
+            <pre><span class="ruby-comment"># File app/controllers/sources_controller.rb, line 66</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">update</span>
-  <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
-    <span class="ruby-keyword">if</span> <span class="ruby-ivar">@source</span>.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">source_params</span>)
-      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">redirect_to</span> <span class="ruby-ivar">@source</span>, <span class="ruby-value">notice:</span> <span class="ruby-string">&#39;Source was successfully updated.&#39;</span> }
-      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span> { <span class="ruby-identifier">render</span> <span class="ruby-value">:show</span>, <span class="ruby-value">status:</span> <span class="ruby-value">:ok</span>, <span class="ruby-value">location:</span> <span class="ruby-ivar">@source</span> }
-    <span class="ruby-keyword">else</span>
-      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">render</span> <span class="ruby-value">:edit</span> }
-      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span> { <span class="ruby-identifier">render</span> <span class="ruby-value">json:</span> <span class="ruby-ivar">@source</span>.<span class="ruby-identifier">errors</span>, <span class="ruby-value">status:</span> <span class="ruby-value">:unprocessable_entity</span> }
-    <span class="ruby-keyword">end</span>
-  <span class="ruby-keyword">end</span>
+  <span class="ruby-ivar">@source</span>.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">source_params</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">operation</span>(<span class="ruby-string">&quot;Source was successfully updated.&quot;</span>, <span class="ruby-string">&quot;ok&quot;</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">not_operation</span>(<span class="ruby-string">&quot;edit&quot;</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
           

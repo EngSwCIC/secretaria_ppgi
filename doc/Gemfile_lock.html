@@ -68,52 +68,6 @@
   
     <li><a href="./Rakefile.html">Rakefile</a>
   
-    <li><a href="./app/assets/config/manifest_js.html">manifest.js</a>
-  
-    <li><a href="./app/assets/javascripts/application_js.html">application.js</a>
-  
-    <li><a href="./app/assets/javascripts/cable_js.html">cable.js</a>
-  
-    <li><a href="./app/assets/javascripts/home_coffee.html">home.coffee</a>
-  
-    <li><a href="./app/assets/javascripts/information_coffee.html">information.coffee</a>
-  
-    <li><a href="./app/assets/javascripts/sources_coffee.html">sources.coffee</a>
-  
-    <li><a href="./app/assets/stylesheets/application_css.html">application.css</a>
-  
-    <li><a href="./app/assets/stylesheets/home_scss.html">home.scss</a>
-  
-    <li><a href="./app/assets/stylesheets/information_scss.html">information.scss</a>
-  
-    <li><a href="./app/assets/stylesheets/scaffolds_scss.html">scaffolds.scss</a>
-  
-    <li><a href="./app/assets/stylesheets/sources_scss.html">sources.scss</a>
-  
-    <li><a href="./app/controllers/application_controller_rb_cyclo_html.html">application_controller.rb_cyclo.html</a>
-  
-    <li><a href="./app/views/information/_information_json_jbuilder.html">_information.json.jbuilder</a>
-  
-    <li><a href="./app/views/information/index_json_jbuilder.html">index.json.jbuilder</a>
-  
-    <li><a href="./app/views/information/show_json_jbuilder.html">show.json.jbuilder</a>
-  
-    <li><a href="./app/views/sources/_source_json_jbuilder.html">_source.json.jbuilder</a>
-  
-    <li><a href="./app/views/sources/index_json_jbuilder.html">index.json.jbuilder</a>
-  
-    <li><a href="./app/views/sources/show_json_jbuilder.html">show.json.jbuilder</a>
-  
-    <li><a href="./config_ru.html">config.ru</a>
-  
-    <li><a href="./config/credentials_yml_enc.html">credentials.yml.enc</a>
-  
-    <li><a href="./coverage/assets/0_10_2/application_css.html">application.css</a>
-  
-    <li><a href="./coverage/assets/0_10_2/application_js.html">application.js</a>
-  
-    <li><a href="./coverage/index_html.html">index.html</a>
-  
     <li><a href="./features/AddInformationAdmin_feature.html">AddInformationAdmin.feature</a>
   
     <li><a href="./features/AddSourceAdmin_feature.html">AddSourceAdmin.feature</a>
@@ -128,27 +82,7 @@
   
     <li><a href="./features/InformationUser_feature.html">InformationUser.feature</a>
   
-    <li><a href="./index_cyclo_html.html">index_cyclo.html</a>
-  
-    <li><a href="./lib/tasks/cucumber_rake.html">cucumber.rake</a>
-  
     <li><a href="./log/development_log.html">development.log</a>
-  
-    <li><a href="./log/test_log.html">test.log</a>
-  
-    <li><a href="./package_json.html">package.json</a>
-  
-    <li><a href="./public/404_html.html">404.html</a>
-  
-    <li><a href="./public/422_html.html">422.html</a>
-  
-    <li><a href="./public/500_html.html">500.html</a>
-  
-    <li><a href="./public/apple-touch-icon-precomposed_png.html">apple-touch-icon-precomposed.png</a>
-  
-    <li><a href="./public/apple-touch-icon_png.html">apple-touch-icon.png</a>
-  
-    <li><a href="./public/favicon_ico.html">favicon.ico</a>
   
     <li><a href="./public/robots_txt.html">robots</a>
   
@@ -212,6 +146,11 @@ specs:
   addressable (2.7.0)
     public_suffix (&gt;= 2.0.2, &lt; 5.0)
   arel (9.0.0)
+  ast (2.4.0)
+  axiom-types (0.1.1)
+    descendants_tracker (~&gt; 0.0.4)
+    ice_nine (~&gt; 0.11.0)
+    thread_safe (~&gt; 0.3, &gt;= 0.3.1)
   backports (3.15.0)
   bcrypt (3.1.13)
   bindex (0.8.1)
@@ -228,6 +167,10 @@ specs:
     regexp_parser (~&gt; 1.5)
     xpath (~&gt; 3.2)
   childprocess (3.0.0)
+  codeclimate-engine-rb (0.4.1)
+    virtus (~&gt; 1.0)
+  coercible (1.0.0)
+    descendants_tracker (~&gt; 0.0.1)
   coffee-rails (4.2.2)
     coffee-script (&gt;= 2.2.0)
     railties (&gt;= 4.0.0)
@@ -260,6 +203,8 @@ specs:
   cucumber-tag_expressions (1.1.1)
   cucumber-wire (0.0.1)
   database_cleaner (1.7.0)
+  descendants_tracker (0.0.4)
+    thread_safe (~&gt; 0.3, &gt;= 0.3.1)
   devise (4.7.1)
     bcrypt (~&gt; 3.0)
     orm_adapter (~&gt; 0.1)
@@ -268,17 +213,32 @@ specs:
     warden (~&gt; 1.2.3)
   diff-lcs (1.3)
   docile (1.3.2)
+  equalizer (0.0.11)
   erubi (1.9.0)
+  erubis (2.7.0)
   execjs (2.7.0)
   ffi (1.11.1)
+  flay (2.12.1)
+    erubis (~&gt; 2.7.0)
+    path_expander (~&gt; 1.0)
+    ruby_parser (~&gt; 3.0)
+    sexp_processor (~&gt; 4.0)
+  flog (4.6.3)
+    path_expander (~&gt; 1.0)
+    ruby_parser (~&gt; 3.1, &gt; 3.1.0)
+    sexp_processor (~&gt; 4.8)
   gherkin (5.1.0)
   globalid (0.4.2)
     activesupport (&gt;= 4.2.0)
   i18n (1.7.0)
     concurrent-ruby (~&gt; 1.0)
+  ice_nine (0.11.2)
   jbuilder (2.9.1)
     activesupport (&gt;= 4.2.0)
   json (2.3.0)
+  kwalify (0.7.2)
+  launchy (2.4.3)
+    addressable (~&gt; 2.3)
   listen (3.1.5)
     rb-fsevent (~&gt; 0.9, &gt;= 0.9.4)
     rb-inotify (~&gt; 0.9, &gt;= 0.9.7)
@@ -305,7 +265,11 @@ specs:
   nokogiri (1.10.5)
     mini_portile2 (~&gt; 2.4.0)
   orm_adapter (0.5.0)
+  parser (2.6.5.0)
+    ast (~&gt; 2.4.0)
+  path_expander (1.1.0)
   pg (1.1.4)
+  psych (3.1.0)
   public_suffix (4.0.1)
   puma (3.12.1)
   rack (2.0.7)
@@ -335,10 +299,17 @@ specs:
     method_source
     rake (&gt;= 0.8.7)
     thor (&gt;= 0.19.0, &lt; 2.0)
+  rainbow (3.0.0)
   rake (13.0.0)
   rb-fsevent (0.10.3)
   rb-inotify (0.10.0)
     ffi (~&gt; 1.0)
+  reek (5.5.0)
+    codeclimate-engine-rb (~&gt; 0.4.0)
+    kwalify (~&gt; 0.7.0)
+    parser (&gt;= 2.5.0.0, &lt; 2.7, != 2.5.1.1)
+    psych (~&gt; 3.1.0)
+    rainbow (&gt;= 2.0, &lt; 4.0)
   regexp_parser (1.6.0)
   responders (3.0.0)
     actionpack (&gt;= 5.0)
@@ -361,6 +332,19 @@ specs:
     rspec-support (~&gt; 3.9.0)
   rspec-support (3.9.0)
   ruby_dep (1.5.0)
+  ruby_parser (3.14.1)
+    sexp_processor (~&gt; 4.9)
+  rubycritic (4.2.2)
+    flay (~&gt; 2.8)
+    flog (~&gt; 4.4)
+    launchy (= 2.4.3)
+    parser (~&gt; 2.6.0)
+    rainbow (~&gt; 3.0)
+    reek (~&gt; 5.0, &lt; 6.0)
+    ruby_parser (~&gt; 3.8)
+    simplecov (~&gt; 0.17.0)
+    tty-which (~&gt; 0.4.0)
+    virtus (~&gt; 1.0)
   rubyzip (2.0.0)
   sass (3.7.4)
     sass-listen (~&gt; 4.0.0)
@@ -376,6 +360,7 @@ specs:
   selenium-webdriver (3.142.6)
     childprocess (&gt;= 0.5, &lt; 4.0)
     rubyzip (&gt;= 1.2.2)
+  sexp_processor (4.13.0)
   shoulda-matchers (4.1.2)
     activesupport (&gt;= 4.2.0)
   simplecov (0.17.1)
@@ -397,6 +382,7 @@ specs:
   thor (0.20.3)
   thread_safe (0.3.6)
   tilt (2.0.10)
+  tty-which (0.4.1)
   turbolinks (5.2.1)
     turbolinks-source (~&gt; 5.2)
   turbolinks-source (5.2.0)
@@ -404,6 +390,11 @@ specs:
     thread_safe (~&gt; 0.1)
   uglifier (4.2.0)
     execjs (&gt;= 0.3.0, &lt; 3)
+  virtus (1.0.5)
+    axiom-types (~&gt; 0.1)
+    coercible (~&gt; 1.0)
+    descendants_tracker (~&gt; 0.0, &gt;= 0.0.3)
+    equalizer (~&gt; 0.0, &gt;= 0.0.9)
   warden (1.2.8)
     rack (&gt;= 2.0.6)
   web-console (3.7.0)
@@ -441,6 +432,7 @@ pg (&gt;= 0.18, &lt; 2.0)
 puma (~&gt; 3.11)
 rails (~&gt; 5.2.3)
 rspec-rails
+rubycritic
 sass-rails (~&gt; 5.0)
 selenium-webdriver
 shoulda-matchers

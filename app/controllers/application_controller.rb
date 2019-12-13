@@ -1,6 +1,7 @@
-# frozen_string_literal: true
+##
+#:nodoc:
 
-class ApplicationController < ActionController::Base
+class ApplicationController < ActionController::Base #:nodoc:
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   protected

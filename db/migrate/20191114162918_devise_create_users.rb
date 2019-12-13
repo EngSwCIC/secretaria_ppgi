@@ -1,7 +1,9 @@
-# frozen_string_literal: true
+##
+# = Criacao da Tabela Users para usar no db:migrate
 
 class DeviseCreateUsers < ActiveRecord::Migration[5.2]
-  def change
+  # Informaçoes Para Criaçao da Tabela 
+  def change #:nodoc:
     create_table :users do |t|
       ## Database authenticatable
       t.string :email,              null: false, default: ""

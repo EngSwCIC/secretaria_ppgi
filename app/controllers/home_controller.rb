@@ -1,4 +1,7 @@
+##
+# = Metodo responsavel da index.
 class HomeController < ApplicationController
-  def index
+  #Index
+  def index 
   end
 end

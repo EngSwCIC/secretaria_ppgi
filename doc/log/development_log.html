@@ -68,52 +68,6 @@
   
     <li><a href="../Rakefile.html">Rakefile</a>
   
-    <li><a href="../app/assets/config/manifest_js.html">manifest.js</a>
-  
-    <li><a href="../app/assets/javascripts/application_js.html">application.js</a>
-  
-    <li><a href="../app/assets/javascripts/cable_js.html">cable.js</a>
-  
-    <li><a href="../app/assets/javascripts/home_coffee.html">home.coffee</a>
-  
-    <li><a href="../app/assets/javascripts/information_coffee.html">information.coffee</a>
-  
-    <li><a href="../app/assets/javascripts/sources_coffee.html">sources.coffee</a>
-  
-    <li><a href="../app/assets/stylesheets/application_css.html">application.css</a>
-  
-    <li><a href="../app/assets/stylesheets/home_scss.html">home.scss</a>
-  
-    <li><a href="../app/assets/stylesheets/information_scss.html">information.scss</a>
-  
-    <li><a href="../app/assets/stylesheets/scaffolds_scss.html">scaffolds.scss</a>
-  
-    <li><a href="../app/assets/stylesheets/sources_scss.html">sources.scss</a>
-  
-    <li><a href="../app/controllers/application_controller_rb_cyclo_html.html">application_controller.rb_cyclo.html</a>
-  
-    <li><a href="../app/views/information/_information_json_jbuilder.html">_information.json.jbuilder</a>
-  
-    <li><a href="../app/views/information/index_json_jbuilder.html">index.json.jbuilder</a>
-  
-    <li><a href="../app/views/information/show_json_jbuilder.html">show.json.jbuilder</a>
-  
-    <li><a href="../app/views/sources/_source_json_jbuilder.html">_source.json.jbuilder</a>
-  
-    <li><a href="../app/views/sources/index_json_jbuilder.html">index.json.jbuilder</a>
-  
-    <li><a href="../app/views/sources/show_json_jbuilder.html">show.json.jbuilder</a>
-  
-    <li><a href="../config_ru.html">config.ru</a>
-  
-    <li><a href="../config/credentials_yml_enc.html">credentials.yml.enc</a>
-  
-    <li><a href="../coverage/assets/0_10_2/application_css.html">application.css</a>
-  
-    <li><a href="../coverage/assets/0_10_2/application_js.html">application.js</a>
-  
-    <li><a href="../coverage/index_html.html">index.html</a>
-  
     <li><a href="../features/AddInformationAdmin_feature.html">AddInformationAdmin.feature</a>
   
     <li><a href="../features/AddSourceAdmin_feature.html">AddSourceAdmin.feature</a>
@@ -128,27 +82,7 @@
   
     <li><a href="../features/InformationUser_feature.html">InformationUser.feature</a>
   
-    <li><a href="../index_cyclo_html.html">index_cyclo.html</a>
-  
-    <li><a href="../lib/tasks/cucumber_rake.html">cucumber.rake</a>
-  
     <li><a href="../log/development_log.html">development.log</a>
-  
-    <li><a href="../log/test_log.html">test.log</a>
-  
-    <li><a href="../package_json.html">package.json</a>
-  
-    <li><a href="../public/404_html.html">404.html</a>
-  
-    <li><a href="../public/422_html.html">422.html</a>
-  
-    <li><a href="../public/500_html.html">500.html</a>
-  
-    <li><a href="../public/apple-touch-icon-precomposed_png.html">apple-touch-icon-precomposed.png</a>
-  
-    <li><a href="../public/apple-touch-icon_png.html">apple-touch-icon.png</a>
-  
-    <li><a href="../public/favicon_ico.html">favicon.ico</a>
   
     <li><a href="../public/robots_txt.html">robots</a>
   
@@ -164,770 +98,276 @@
 
 <main role="main" aria-label="Page log/development.log">
 
-<pre>[1m[35m (1762.7ms)[0m  [1m[35mCREATE DATABASE &quot;secretaria_ppgi_development&quot; ENCODING = &#39;unicode&#39;[0m
-↳ bin/rails:9
-[1m[35m (665.3ms)[0m  [1m[35mCREATE DATABASE &quot;secretaria_ppgi_test&quot; ENCODING = &#39;unicode&#39;[0m
-↳ bin/rails:9
-[1m[35m (200.4ms)[0m  [1m[35mCREATE TABLE &quot;schema_migrations&quot; (&quot;version&quot; character varying NOT NULL PRIMARY KEY)[0m
-↳ bin/rails:9
-[1m[35m (92.9ms)[0m  [1m[35mCREATE TABLE &quot;ar_internal_metadata&quot; (&quot;key&quot; character varying NOT NULL PRIMARY KEY, &quot;value&quot; character varying, &quot;created_at&quot; timestamp NOT NULL, &quot;updated_at&quot; timestamp NOT NULL)[0m
-↳ bin/rails:9
-[1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4984091022903843270)[0m
-↳ bin/rails:9
-[1m[35m (1.0ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.&quot;version&quot; FROM &quot;schema_migrations&quot; ORDER BY &quot;schema_migrations&quot;.&quot;version&quot; ASC[0m
-↳ bin/rails:9</pre>
+<p>Started GET “/” for ::1 at 2019-12-12 23:06:03 -0300</p>
 
-<p>Migrating to <a href="../DeviseCreateUsers.html"><code>DeviseCreateUsers</code></a> (20191114162918)</p>
-
-<pre>[1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
-↳ bin/rails:9
-[1m[35m (99.9ms)[0m  [1m[35mCREATE TABLE &quot;users&quot; (&quot;id&quot; bigserial primary key, &quot;email&quot; character varying DEFAULT &#39;&#39; NOT NULL, &quot;encrypted_password&quot; character varying DEFAULT &#39;&#39; NOT NULL, &quot;reset_password_token&quot; character varying, &quot;reset_password_sent_at&quot; timestamp, &quot;remember_created_at&quot; timestamp, &quot;created_at&quot; timestamp NOT NULL, &quot;updated_at&quot; timestamp NOT NULL)[0m
-↳ db/migrate/20191114162918_devise_create_users.rb:5
-[1m[35m (119.0ms)[0m  [1m[35mCREATE UNIQUE INDEX  &quot;index_users_on_email&quot; ON &quot;users&quot;  (&quot;email&quot;)[0m
-↳ db/migrate/20191114162918_devise_create_users.rb:39
-[1m[35m (75.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  &quot;index_users_on_reset_password_token&quot; ON &quot;users&quot;  (&quot;reset_password_token&quot;)[0m
-↳ db/migrate/20191114162918_devise_create_users.rb:40
-[1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO &quot;schema_migrations&quot; (&quot;version&quot;) VALUES ($1) RETURNING &quot;version&quot;[0m  [[&quot;version&quot;, &quot;20191114162918&quot;]]
-↳ bin/rails:9
-[1m[35m (28.3ms)[0m  [1m[35mCOMMIT[0m
-↳ bin/rails:9</pre>
-
-<p>Migrating to <a href="../AddInfoToUsers.html"><code>AddInfoToUsers</code></a> (20191114163205)</p>
-
-<pre>[1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
-↳ bin/rails:9
-[1m[35m (0.6ms)[0m  [1m[35mALTER TABLE &quot;users&quot; ADD &quot;full_name&quot; character varying[0m
-↳ db/migrate/20191114163205_add_info_to_users.rb:3
-[1m[35m (0.3ms)[0m  [1m[35mALTER TABLE &quot;users&quot; ADD &quot;registration&quot; character varying[0m
-↳ db/migrate/20191114163205_add_info_to_users.rb:4
-[1m[35m (0.2ms)[0m  [1m[35mALTER TABLE &quot;users&quot; ADD &quot;role&quot; integer[0m
-↳ db/migrate/20191114163205_add_info_to_users.rb:5
-[1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO &quot;schema_migrations&quot; (&quot;version&quot;) VALUES ($1) RETURNING &quot;version&quot;[0m  [[&quot;version&quot;, &quot;20191114163205&quot;]]
-↳ bin/rails:9
-[1m[35m (23.5ms)[0m  [1m[35mCOMMIT[0m
-↳ bin/rails:9
-[1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  &quot;ar_internal_metadata&quot;.* FROM &quot;ar_internal_metadata&quot; WHERE &quot;ar_internal_metadata&quot;.&quot;key&quot; = $1 LIMIT $2[0m  [[&quot;key&quot;, &quot;environment&quot;], [&quot;LIMIT&quot;, 1]]
-↳ bin/rails:9
-[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-↳ bin/rails:9
-[1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO &quot;ar_internal_metadata&quot; (&quot;key&quot;, &quot;value&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3, $4) RETURNING &quot;key&quot;[0m  [[&quot;key&quot;, &quot;environment&quot;], [&quot;value&quot;, &quot;development&quot;], [&quot;created_at&quot;, &quot;2019-11-21 18:01:59.372699&quot;], [&quot;updated_at&quot;, &quot;2019-11-21 18:01:59.372699&quot;]]
-↳ bin/rails:9
-[1m[35m (16.7ms)[0m  [1m[35mCOMMIT[0m
-↳ bin/rails:9
-[1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(4984091022903843270)[0m
-↳ bin/rails:9
-[1m[35m (0.2ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.&quot;version&quot; FROM &quot;schema_migrations&quot; ORDER BY &quot;schema_migrations&quot;.&quot;version&quot; ASC[0m
-↳ bin/rails:9
-[1m[35m (1.1ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.&quot;version&quot; FROM &quot;schema_migrations&quot; ORDER BY &quot;schema_migrations&quot;.&quot;version&quot; ASC[0m
-↳ bin/rails:9
-[1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT &quot;users&quot;.* FROM &quot;users&quot;[0m
-↳ db/seeds.rb:10
-[1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
-↳ db/seeds.rb:11
-[1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;email&quot; = $1 LIMIT $2[0m  [[&quot;email&quot;, &quot;admin@admin.com&quot;], [&quot;LIMIT&quot;, 1]]
-↳ db/seeds.rb:11
-[1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO &quot;users&quot; (&quot;email&quot;, &quot;encrypted_password&quot;, &quot;created_at&quot;, &quot;updated_at&quot;, &quot;full_name&quot;, &quot;registration&quot;, &quot;role&quot;) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING &quot;id&quot;[0m  [[&quot;email&quot;, &quot;admin@admin.com&quot;], [&quot;encrypted_password&quot;, &quot;$2a$11$Q0Qc2ZAgZp765HaGBon22eaQVoIQYYqaeRDdfzKpCYJJCeo/Iirle&quot;], [&quot;created_at&quot;, &quot;2019-11-21 18:02:04.579425&quot;], [&quot;updated_at&quot;, &quot;2019-11-21 18:02:04.579425&quot;], [&quot;full_name&quot;, &quot;Administrador&quot;], [&quot;registration&quot;, &quot;000000000&quot;], [&quot;role&quot;, 0]]
-↳ db/seeds.rb:11
-[1m[35m (12.8ms)[0m  [1m[35mCOMMIT[0m
-↳ db/seeds.rb:11
-[1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
-↳ db/seeds.rb:12
-[1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;email&quot; = $1 LIMIT $2[0m  [[&quot;email&quot;, &quot;secretary@secretary.com&quot;], [&quot;LIMIT&quot;, 1]]
-↳ db/seeds.rb:12
-[1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO &quot;users&quot; (&quot;email&quot;, &quot;encrypted_password&quot;, &quot;created_at&quot;, &quot;updated_at&quot;, &quot;full_name&quot;, &quot;registration&quot;, &quot;role&quot;) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING &quot;id&quot;[0m  [[&quot;email&quot;, &quot;secretary@secretary.com&quot;], [&quot;encrypted_password&quot;, &quot;$2a$11$ZZxXbU3R6quFFT69YVH1..lcIkCJtnv6x6HAa3q9PjESQoSk5W9RO&quot;], [&quot;created_at&quot;, &quot;2019-11-21 18:02:04.740214&quot;], [&quot;updated_at&quot;, &quot;2019-11-21 18:02:04.740214&quot;], [&quot;full_name&quot;, &quot;Secretário&quot;], [&quot;registration&quot;, &quot;000000000&quot;], [&quot;role&quot;, 1]]
-↳ db/seeds.rb:12
-[1m[35m (7.3ms)[0m  [1m[35mCOMMIT[0m
-↳ db/seeds.rb:12
-[1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
-↳ db/seeds.rb:13
-[1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;email&quot; = $1 LIMIT $2[0m  [[&quot;email&quot;, &quot;professor@professor.com&quot;], [&quot;LIMIT&quot;, 1]]
-↳ db/seeds.rb:13
-[1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO &quot;users&quot; (&quot;email&quot;, &quot;encrypted_password&quot;, &quot;created_at&quot;, &quot;updated_at&quot;, &quot;full_name&quot;, &quot;registration&quot;, &quot;role&quot;) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING &quot;id&quot;[0m  [[&quot;email&quot;, &quot;professor@professor.com&quot;], [&quot;encrypted_password&quot;, &quot;$2a$11$DmUSkox.DlKklIyHk9Shau02ABVodD/mrVsbjuLBaFLKg55MMULZK&quot;], [&quot;created_at&quot;, &quot;2019-11-21 18:02:04.896841&quot;], [&quot;updated_at&quot;, &quot;2019-11-21 18:02:04.896841&quot;], [&quot;full_name&quot;, &quot;Professor&quot;], [&quot;registration&quot;, &quot;000000000&quot;], [&quot;role&quot;, 2]]
-↳ db/seeds.rb:13
-[1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
-↳ db/seeds.rb:13
-[1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
-↳ db/seeds.rb:14
-[1m[36mUser Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;email&quot; = $1 LIMIT $2[0m  [[&quot;email&quot;, &quot;student@student.com&quot;], [&quot;LIMIT&quot;, 1]]
-↳ db/seeds.rb:14
-[1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO &quot;users&quot; (&quot;email&quot;, &quot;encrypted_password&quot;, &quot;created_at&quot;, &quot;updated_at&quot;, &quot;full_name&quot;, &quot;registration&quot;, &quot;role&quot;) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING &quot;id&quot;[0m  [[&quot;email&quot;, &quot;student@student.com&quot;], [&quot;encrypted_password&quot;, &quot;$2a$11$S.b388LVsBE8USM1FlKP3eeM5gsxK1798HT6Hj1NwysYT0BAelvEW&quot;], [&quot;created_at&quot;, &quot;2019-11-21 18:02:05.061086&quot;], [&quot;updated_at&quot;, &quot;2019-11-21 18:02:05.061086&quot;], [&quot;full_name&quot;, &quot;Aluno&quot;], [&quot;registration&quot;, &quot;000000000&quot;], [&quot;role&quot;, 3]]
-↳ db/seeds.rb:14
-[1m[35m (7.9ms)[0m  [1m[35mCOMMIT[0m
-↳ db/seeds.rb:14
-[1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4984091022903843270)[0m
-↳ bin/rails:9
-[1m[35m (0.7ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.&quot;version&quot; FROM &quot;schema_migrations&quot; ORDER BY &quot;schema_migrations&quot;.&quot;version&quot; ASC[0m
-↳ bin/rails:9
-[1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  &quot;ar_internal_metadata&quot;.* FROM &quot;ar_internal_metadata&quot; WHERE &quot;ar_internal_metadata&quot;.&quot;key&quot; = $1 LIMIT $2[0m  [[&quot;key&quot;, &quot;environment&quot;], [&quot;LIMIT&quot;, 1]]
-↳ bin/rails:9
-[1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
-↳ bin/rails:9
-[1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-↳ bin/rails:9
-[1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4984091022903843270)[0m
-↳ bin/rails:9
-[1m[35m (0.3ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.&quot;version&quot; FROM &quot;schema_migrations&quot; ORDER BY &quot;schema_migrations&quot;.&quot;version&quot; ASC[0m
-↳ bin/rails:9</pre>
-
-<p>Started GET “/” for ::1 at 2019-11-21 15:02:34 -0300</p>
-
-<pre>[1m[35m (0.8ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.&quot;version&quot; FROM &quot;schema_migrations&quot; ORDER BY &quot;schema_migrations&quot;.&quot;version&quot; ASC[0m
-↳ /home/jose/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98</pre>
+<pre>[1m[35m (0.6ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.&quot;version&quot; FROM &quot;schema_migrations&quot; ORDER BY &quot;schema_migrations&quot;.&quot;version&quot; ASC[0m
+↳ /usr/local/rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98</pre>
 
 <p>Processing by <a href="../HomeController.html#method-i-index"><code>HomeController#index</code></a> as HTML</p>
 
 <pre>Rendering home/index.html.erb within layouts/application
-Rendered home/index.html.erb within layouts/application (29.0ms)</pre>
-
-<p>Completed 200 OK in 1745ms (Views: 1604.1ms | ActiveRecord: 0.0ms)</p>
-
-<p>Started GET “/app/views/home/index.html.erb” for ::1 at 2019-11-21 15:02:51 -0300</p>
-
-<p>ActionController::RoutingError (No route matches [GET] “/app/views/home/index.html.erb”):</p>
-
-<p>actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call&#39; web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app&#39; web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call&#39; web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch&#39; web-console (3.7.0) lib/web_console/middleware.rb:20:in `call&#39; actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call&#39; railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app&#39; railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call&#39; activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged&#39; activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged&#39; activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged&#39; railties (5.2.3) lib/rails/rack/logger.rb:26:in `call&#39; sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call&#39; actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call&#39; actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call&#39; rack (2.0.7) lib/rack/method_override.rb:22:in `call&#39; rack (2.0.7) lib/rack/runtime.rb:22:in `call&#39; activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call&#39; actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call&#39; actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call&#39; rack (2.0.7) lib/rack/sendfile.rb:111:in `call&#39; railties (5.2.3) lib/rails/engine.rb:524:in `call&#39; puma (3.12.1) lib/puma/configuration.rb:227:in `call&#39; puma (3.12.1) lib/puma/server.rb:660:in `handle_request&#39; puma (3.12.1) lib/puma/server.rb:474:in `process_client&#39; puma (3.12.1) lib/puma/server.rb:334:in `block in run&#39; puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread&#39; Started GET “/users/sign_in” for ::1 at 2019-11-21 15:02:55 -0300 Processing by Devise::SessionsController#new as HTML</p>
-
-<pre>Rendering devise/sessions/new.html.erb within layouts/application
-Rendered devise/shared/_links.html.erb (1.6ms)
-Rendered devise/sessions/new.html.erb within layouts/application (211.7ms)</pre>
-
-<p>Completed 200 OK in 287ms (Views: 253.9ms | ActiveRecord: 4.8ms)</p>
-
-<p>Started GET “/users/sign_up” for ::1 at 2019-11-21 15:05:08 -0300 Processing by Devise::RegistrationsController#new as HTML</p>
-
-<pre>Rendering devise/registrations/new.html.erb within layouts/application
-Rendered devise/shared/_error_messages.html.erb (0.7ms)
-Rendered devise/shared/_links.html.erb (1.4ms)
-Rendered devise/registrations/new.html.erb within layouts/application (15.7ms)</pre>
-
-<p>Completed 200 OK in 57ms (Views: 55.2ms | ActiveRecord: 0.0ms)</p>
-
-<p>Started POST “/users” for ::1 at 2019-11-21 15:05:27 -0300 Processing by Devise::RegistrationsController#create as HTML</p>
-
-<pre>Parameters: {&quot;utf8&quot;=&gt;&quot;✓&quot;, &quot;authenticity_token&quot;=&gt;&quot;96b2F9pvfUjQ1BgkKatilgDhaZcwTsa1LI2VhGEf6gV/hOHFYwKYPpjVvDlMlMZuf7MBfoqN7xN6kAsfjbbtfw==&quot;, &quot;user&quot;=&gt;{&quot;email&quot;=&gt;&quot;asd@qwe.com&quot;, &quot;full_name&quot;=&gt;&quot;asd&quot;, &quot;role&quot;=&gt;&quot;administrator&quot;, &quot;password&quot;=&gt;&quot;[FILTERED]&quot;, &quot;password_confirmation&quot;=&gt;&quot;[FILTERED]&quot;}, &quot;commit&quot;=&gt;&quot;Sign up&quot;}
-[1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
-↳ /home/jose/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
-[1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;email&quot; = $1 LIMIT $2[0m  [[&quot;email&quot;, &quot;asd@qwe.com&quot;], [&quot;LIMIT&quot;, 1]]
-↳ /home/jose/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
-[1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO &quot;users&quot; (&quot;email&quot;, &quot;encrypted_password&quot;, &quot;created_at&quot;, &quot;updated_at&quot;, &quot;full_name&quot;, &quot;role&quot;) VALUES ($1, $2, $3, $4, $5, $6) RETURNING &quot;id&quot;[0m  [[&quot;email&quot;, &quot;asd@qwe.com&quot;], [&quot;encrypted_password&quot;, &quot;$2a$11$Newn4okBIhM9SY7yC1b6ReHdBtj5vABJM5calA6rJx7.gBNz3j1wq&quot;], [&quot;created_at&quot;, &quot;2019-11-21 18:05:28.200256&quot;], [&quot;updated_at&quot;, &quot;2019-11-21 18:05:28.200256&quot;], [&quot;full_name&quot;, &quot;asd&quot;], [&quot;role&quot;, 0]]
-↳ /home/jose/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
-[1m[35m (12.9ms)[0m  [1m[35mCOMMIT[0m
-↳ /home/jose/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98</pre>
-
-<p>Redirected to <a href="http://localhost:3000">localhost:3000</a>/ Completed 302 Found in 263ms (ActiveRecord: 14.5ms)</p>
-
-<p>Started GET “/” for ::1 at 2019-11-21 15:05:28 -0300 Processing by <a href="../HomeController.html#method-i-index"><code>HomeController#index</code></a> as HTML</p>
-
-<pre>Rendering home/index.html.erb within layouts/application
-[1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = $1 ORDER BY &quot;users&quot;.&quot;id&quot; ASC LIMIT $2[0m  [[&quot;id&quot;, 5], [&quot;LIMIT&quot;, 1]]
-↳ app/views/home/index.html.erb:4
 Rendered home/index.html.erb within layouts/application (2.8ms)</pre>
 
-<p>Completed 200 OK in 31ms (Views: 29.9ms | ActiveRecord: 0.4ms)</p>
+<p>Completed 200 OK in 961ms (Views: 941.2ms | ActiveRecord: 0.0ms)</p>
 
-<p>Started GET “/” for ::1 at 2019-11-22 21:53:58 -0300</p>
+<p>Started GET “/users/sign_in” for ::1 at 2019-12-12 23:06:06 -0300 Processing by Devise::SessionsController#new as HTML</p>
 
-<pre>[1m[35m (1.1ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.&quot;version&quot; FROM &quot;schema_migrations&quot; ORDER BY &quot;schema_migrations&quot;.&quot;version&quot; ASC[0m
-↳ /home/jose/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98</pre>
+<pre>Rendering devise/sessions/new.html.erb within layouts/application
+Rendered devise/shared/_links.html.erb (0.7ms)
+Rendered devise/sessions/new.html.erb within layouts/application (12.8ms)</pre>
 
-<p>ActiveRecord::PendingMigrationError (</p>
+<p>Completed 200 OK in 44ms (Views: 25.2ms | ActiveRecord: 5.3ms)</p>
 
-<p>Migrations are pending. To resolve this issue, run:</p>
+<p>Started POST “/users/sign_in” for ::1 at 2019-12-12 23:06:09 -0300 Processing by Devise::SessionsController#create as HTML</p>
 
-<pre>bin/rails db:migrate RAILS_ENV=development</pre>
+<pre>Parameters: {&quot;utf8&quot;=&gt;&quot;✓&quot;, &quot;authenticity_token&quot;=&gt;&quot;MLHxcjfQACYGw4QxtcIg2AU+qNbHJBNq9VCaCNrI7H1Fi7+BvOPzVVtk9csLahQI7vOuEkdFxllm1kDs1XqYPA==&quot;, &quot;user&quot;=&gt;{&quot;email&quot;=&gt;&quot;admin@admin.com&quot;, &quot;password&quot;=&gt;&quot;[FILTERED]&quot;, &quot;remember_me&quot;=&gt;&quot;0&quot;}, &quot;commit&quot;=&gt;&quot;Entre&quot;}
+[1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;email&quot; = $1 ORDER BY &quot;users&quot;.&quot;id&quot; ASC LIMIT $2[0m  [[&quot;email&quot;, &quot;admin@admin.com&quot;], [&quot;LIMIT&quot;, 1]]
+↳ /usr/local/rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98</pre>
 
-<p>):</p>
+<p>Redirected to <a href="http://localhost:3000">localhost:3000</a>/ Completed 302 Found in 119ms (ActiveRecord: 0.7ms)</p>
 
-<p>activerecord (5.2.3) lib/active_record/migration.rb:579:in `check_pending!&#39; activerecord (5.2.3) lib/active_record/migration.rb:556:in `call&#39; actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call&#39; activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks&#39; actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call&#39; actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call&#39; actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call&#39; web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app&#39; web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call&#39; web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch&#39; web-console (3.7.0) lib/web_console/middleware.rb:20:in `call&#39; actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call&#39; railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app&#39; railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call&#39; activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged&#39; activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged&#39; activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged&#39; railties (5.2.3) lib/rails/rack/logger.rb:26:in `call&#39; sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call&#39; actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call&#39; actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call&#39; rack (2.0.7) lib/rack/method_override.rb:22:in `call&#39; rack (2.0.7) lib/rack/runtime.rb:22:in `call&#39; activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call&#39; actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call&#39; actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call&#39; rack (2.0.7) lib/rack/sendfile.rb:111:in `call&#39; railties (5.2.3) lib/rails/engine.rb:524:in `call&#39; puma (3.12.1) lib/puma/configuration.rb:227:in `call&#39; puma (3.12.1) lib/puma/server.rb:660:in `handle_request&#39; puma (3.12.1) lib/puma/server.rb:474:in `process_client&#39; puma (3.12.1) lib/puma/server.rb:334:in `block in run&#39; puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread&#39;</p>
-
-<pre>[1m[35m (11.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4984091022903843270)[0m
-↳ bin/rails:9
-[1m[35m (1.1ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.&quot;version&quot; FROM &quot;schema_migrations&quot; ORDER BY &quot;schema_migrations&quot;.&quot;version&quot; ASC[0m
-↳ bin/rails:9</pre>
-
-<p>Migrating to <a href="../CreateInformation.html"><code>CreateInformation</code></a> (20191121183016)</p>
-
-<pre>[1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
-↳ bin/rails:9
-[1m[35m (155.3ms)[0m  [1m[35mCREATE TABLE &quot;information&quot; (&quot;id&quot; bigserial primary key, &quot;title&quot; character varying, &quot;info&quot; text, &quot;created_at&quot; timestamp NOT NULL, &quot;updated_at&quot; timestamp NOT NULL)[0m
-↳ db/migrate/20191121183016_create_information.rb:3
-[1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO &quot;schema_migrations&quot; (&quot;version&quot;) VALUES ($1) RETURNING &quot;version&quot;[0m  [[&quot;version&quot;, &quot;20191121183016&quot;]]
-↳ bin/rails:9
-[1m[35m (18.9ms)[0m  [1m[35mCOMMIT[0m
-↳ bin/rails:9</pre>
-
-<p>Migrating to <a href="../CreateSources.html"><code>CreateSources</code></a> (20191122165609)</p>
-
-<pre>[1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
-↳ bin/rails:9
-[1m[35m (89.2ms)[0m  [1m[35mCREATE TABLE &quot;sources&quot; (&quot;id&quot; bigserial primary key, &quot;title&quot; character varying, &quot;created_at&quot; timestamp NOT NULL, &quot;updated_at&quot; timestamp NOT NULL)[0m
-↳ db/migrate/20191122165609_create_sources.rb:3
-[1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO &quot;schema_migrations&quot; (&quot;version&quot;) VALUES ($1) RETURNING &quot;version&quot;[0m  [[&quot;version&quot;, &quot;20191122165609&quot;]]
-↳ bin/rails:9
-[1m[35m (10.8ms)[0m  [1m[35mCOMMIT[0m
-↳ bin/rails:9
-[1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  &quot;ar_internal_metadata&quot;.* FROM &quot;ar_internal_metadata&quot; WHERE &quot;ar_internal_metadata&quot;.&quot;key&quot; = $1 LIMIT $2[0m  [[&quot;key&quot;, &quot;environment&quot;], [&quot;LIMIT&quot;, 1]]
-↳ bin/rails:9
-[1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
-↳ bin/rails:9
-[1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-↳ bin/rails:9
-[1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4984091022903843270)[0m
-↳ bin/rails:9
-[1m[35m (0.4ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.&quot;version&quot; FROM &quot;schema_migrations&quot; ORDER BY &quot;schema_migrations&quot;.&quot;version&quot; ASC[0m
-↳ bin/rails:9</pre>
-
-<p>Started GET “/” for ::1 at 2019-11-22 21:54:33 -0300</p>
-
-<pre>[1m[35m (0.5ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.&quot;version&quot; FROM &quot;schema_migrations&quot; ORDER BY &quot;schema_migrations&quot;.&quot;version&quot; ASC[0m
-↳ /home/jose/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98</pre>
-
-<p>Processing by <a href="../HomeController.html#method-i-index"><code>HomeController#index</code></a> as HTML</p>
+<p>Started GET “/” for ::1 at 2019-12-12 23:06:09 -0300 Processing by <a href="../HomeController.html#method-i-index"><code>HomeController#index</code></a> as HTML</p>
 
 <pre>Rendering home/index.html.erb within layouts/application
-[1m[36mUser Load (13.7ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = $1 ORDER BY &quot;users&quot;.&quot;id&quot; ASC LIMIT $2[0m  [[&quot;id&quot;, 5], [&quot;LIMIT&quot;, 1]]
-↳ app/views/home/index.html.erb:4
-Rendered home/index.html.erb within layouts/application (36.5ms)</pre>
-
-<p>Completed 200 OK in 661ms (Views: 634.6ms | ActiveRecord: 17.2ms)</p>
-
-<p>Started GET “/information” for ::1 at 2019-11-22 21:54:40 -0300 Processing by <a href="../InformationController.html#method-i-index"><code>InformationController#index</code></a> as HTML</p>
-
-<pre>Rendering information/index.html.erb within layouts/application
-[1m[36mInformation Load (0.8ms)[0m  [1m[34mSELECT &quot;information&quot;.* FROM &quot;information&quot;[0m
-↳ app/views/information/index.html.erb:15
-[1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = $1 ORDER BY &quot;users&quot;.&quot;id&quot; ASC LIMIT $2[0m  [[&quot;id&quot;, 5], [&quot;LIMIT&quot;, 1]]
-↳ app/views/information/index.html.erb:31
-Rendered information/index.html.erb within layouts/application (9.4ms)</pre>
-
-<p>Completed 200 OK in 34ms (Views: 25.5ms | ActiveRecord: 3.9ms)</p>
-
-<p>Started GET “/information” for ::1 at 2019-11-22 21:55:24 -0300 Processing by <a href="../InformationController.html#method-i-index"><code>InformationController#index</code></a> as HTML</p>
-
-<pre>Rendering information/index.html.erb within layouts/application
-[1m[36mInformation Load (0.4ms)[0m  [1m[34mSELECT &quot;information&quot;.* FROM &quot;information&quot;[0m
-↳ app/views/information/index.html.erb:15
-[1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = $1 ORDER BY &quot;users&quot;.&quot;id&quot; ASC LIMIT $2[0m  [[&quot;id&quot;, 5], [&quot;LIMIT&quot;, 1]]
-↳ app/views/information/index.html.erb:31
-Rendered information/index.html.erb within layouts/application (4.3ms)</pre>
-
-<p>Completed 200 OK in 24ms (Views: 22.8ms | ActiveRecord: 0.8ms)</p>
-
-<p>Started GET “/information/new” for ::1 at 2019-11-22 21:59:50 -0300 Processing by <a href="../InformationController.html#method-i-new"><code>InformationController#new</code></a> as HTML</p>
-
-<pre>Rendering information/new.html.erb within layouts/application
-[1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = $1 ORDER BY &quot;users&quot;.&quot;id&quot; ASC LIMIT $2[0m  [[&quot;id&quot;, 5], [&quot;LIMIT&quot;, 1]]
-↳ app/views/information/new.html.erb:1
-[1m[36mSource Load (0.5ms)[0m  [1m[34mSELECT &quot;sources&quot;.* FROM &quot;sources&quot;[0m
-↳ app/views/information/_form.html.erb:26
-Rendered information/_form.html.erb (177.7ms)
-Rendered information/new.html.erb within layouts/application (180.0ms)</pre>
-
-<p>Completed 200 OK in 211ms (Views: 196.6ms | ActiveRecord: 5.6ms)</p>
-
-<p>Started POST “/information” for ::1 at 2019-11-22 22:00:30 -0300 Processing by <a href="../InformationController.html#method-i-create"><code>InformationController#create</code></a> as HTML</p>
-
-<pre>Parameters: {&quot;utf8&quot;=&gt;&quot;✓&quot;, &quot;authenticity_token&quot;=&gt;&quot;wTQM7qJeuC4ZB41VXz74DFchNyBcWKbdJSZCj78yXXZeumOj0/+E3UvhWBYJFE7xeapdzahyrR1l9TDr0Yrgjw==&quot;, &quot;information&quot;=&gt;{&quot;title&quot;=&gt;&quot;&quot;, &quot;info&quot;=&gt;&quot;&quot;}, &quot;commit&quot;=&gt;&quot;Create Information&quot;}
-[1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
-↳ app/controllers/information_controller.rb:30
-[1m[36mInformation Create (14.5ms)[0m  [1m[32mINSERT INTO &quot;information&quot; (&quot;title&quot;, &quot;info&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3, $4) RETURNING &quot;id&quot;[0m  [[&quot;title&quot;, &quot;&quot;], [&quot;info&quot;, &quot;&quot;], [&quot;created_at&quot;, &quot;2019-11-23 01:00:30.833731&quot;], [&quot;updated_at&quot;, &quot;2019-11-23 01:00:30.833731&quot;]]
-↳ app/controllers/information_controller.rb:30
-[1m[35m (13.9ms)[0m  [1m[35mCOMMIT[0m
-↳ app/controllers/information_controller.rb:30</pre>
-
-<p>Redirected to <a href="http://localhost:3000/information/1">localhost:3000/information/1</a> Completed 302 Found in 32ms (ActiveRecord: 28.6ms)</p>
-
-<p>Started GET “/information/1” for ::1 at 2019-11-22 22:00:30 -0300 Processing by <a href="../InformationController.html#method-i-show"><code>InformationController#show</code></a> as HTML</p>
-
-<pre>Parameters: {&quot;id&quot;=&gt;&quot;1&quot;}
-[1m[36mInformation Load (0.2ms)[0m  [1m[34mSELECT  &quot;information&quot;.* FROM &quot;information&quot; WHERE &quot;information&quot;.&quot;id&quot; = $1 LIMIT $2[0m  [[&quot;id&quot;, 1], [&quot;LIMIT&quot;, 1]]
-↳ app/controllers/information_controller.rb:67
-Rendering information/show.html.erb within layouts/application
-[1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = $1 ORDER BY &quot;users&quot;.&quot;id&quot; ASC LIMIT $2[0m  [[&quot;id&quot;, 5], [&quot;LIMIT&quot;, 1]]
-↳ app/views/information/show.html.erb:13
-Rendered information/show.html.erb within layouts/application (2.0ms)</pre>
-
-<p>Completed 200 OK in 35ms (Views: 32.1ms | ActiveRecord: 0.6ms)</p>
-
-<p>Started GET “/information” for ::1 at 2019-11-22 22:00:50 -0300 Processing by <a href="../InformationController.html#method-i-index"><code>InformationController#index</code></a> as HTML</p>
-
-<pre>Rendering information/index.html.erb within layouts/application
-[1m[36mInformation Load (0.3ms)[0m  [1m[34mSELECT &quot;information&quot;.* FROM &quot;information&quot;[0m
-↳ app/views/information/index.html.erb:15
 [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = $1 ORDER BY &quot;users&quot;.&quot;id&quot; ASC LIMIT $2[0m  [[&quot;id&quot;, 5], [&quot;LIMIT&quot;, 1]]
-↳ app/views/information/index.html.erb:20
-Rendered information/index.html.erb within layouts/application (3.0ms)</pre>
+↳ app/views/home/index.html.erb:3
+Rendered home/index.html.erb within layouts/application (1.8ms)</pre>
 
-<p>Completed 200 OK in 21ms (Views: 19.9ms | ActiveRecord: 0.5ms)</p>
+<p>Completed 200 OK in 15ms (Views: 13.9ms | ActiveRecord: 0.2ms)</p>
 
-<p>Started GET “/information/new” for ::1 at 2019-11-22 22:00:52 -0300 Processing by <a href="../InformationController.html#method-i-new"><code>InformationController#new</code></a> as HTML</p>
-
-<pre>Rendering information/new.html.erb within layouts/application
-[1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = $1 ORDER BY &quot;users&quot;.&quot;id&quot; ASC LIMIT $2[0m  [[&quot;id&quot;, 5], [&quot;LIMIT&quot;, 1]]
-↳ app/views/information/new.html.erb:1
-[1m[36mSource Load (0.5ms)[0m  [1m[34mSELECT &quot;sources&quot;.* FROM &quot;sources&quot;[0m
-↳ app/views/information/_form.html.erb:26
-Rendered information/_form.html.erb (7.3ms)
-Rendered information/new.html.erb within layouts/application (11.7ms)</pre>
-
-<p>Completed 200 OK in 40ms (Views: 36.6ms | ActiveRecord: 1.0ms)</p>
-
-<p>Started POST “/information” for ::1 at 2019-11-22 22:01:01 -0300 Processing by <a href="../InformationController.html#method-i-create"><code>InformationController#create</code></a> as HTML</p>
-
-<pre>Parameters: {&quot;utf8&quot;=&gt;&quot;✓&quot;, &quot;authenticity_token&quot;=&gt;&quot;QHKV7V8zeGck2+Wv3xkGgrPqI8PS5nS6pXytjvSpnuff/PqgLpJElHY9MOyJM7B/nWFJLibMf3rlr9/qmhEjHg==&quot;, &quot;information&quot;=&gt;{&quot;title&quot;=&gt;&quot;&quot;, &quot;info&quot;=&gt;&quot;&quot;}, &quot;commit&quot;=&gt;&quot;Create Information&quot;}
-[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-↳ app/controllers/information_controller.rb:30
-[1m[36mInformation Create (0.3ms)[0m  [1m[32mINSERT INTO &quot;information&quot; (&quot;title&quot;, &quot;info&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3, $4) RETURNING &quot;id&quot;[0m  [[&quot;title&quot;, &quot;&quot;], [&quot;info&quot;, &quot;&quot;], [&quot;created_at&quot;, &quot;2019-11-23 01:01:01.390862&quot;], [&quot;updated_at&quot;, &quot;2019-11-23 01:01:01.390862&quot;]]
-↳ app/controllers/information_controller.rb:30
-[1m[35m (45.3ms)[0m  [1m[35mCOMMIT[0m
-↳ app/controllers/information_controller.rb:30</pre>
-
-<p>Redirected to <a href="http://localhost:3000/information/2">localhost:3000/information/2</a> Completed 302 Found in 49ms (ActiveRecord: 45.7ms)</p>
-
-<p>Started GET “/information/2” for ::1 at 2019-11-22 22:01:01 -0300 Processing by <a href="../InformationController.html#method-i-show"><code>InformationController#show</code></a> as HTML</p>
-
-<pre>Parameters: {&quot;id&quot;=&gt;&quot;2&quot;}
-[1m[36mInformation Load (0.2ms)[0m  [1m[34mSELECT  &quot;information&quot;.* FROM &quot;information&quot; WHERE &quot;information&quot;.&quot;id&quot; = $1 LIMIT $2[0m  [[&quot;id&quot;, 2], [&quot;LIMIT&quot;, 1]]
-↳ app/controllers/information_controller.rb:67
-Rendering information/show.html.erb within layouts/application
-[1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = $1 ORDER BY &quot;users&quot;.&quot;id&quot; ASC LIMIT $2[0m  [[&quot;id&quot;, 5], [&quot;LIMIT&quot;, 1]]
-↳ app/views/information/show.html.erb:13
-Rendered information/show.html.erb within layouts/application (2.5ms)</pre>
-
-<p>Completed 200 OK in 22ms (Views: 20.0ms | ActiveRecord: 0.5ms)</p>
-
-<pre>[1m[35m (1.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4984091022903843270)[0m
-↳ /home/jose/.rvm/gems/ruby-2.6.3/bin/rake:23
-[1m[35m (82.2ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.&quot;version&quot; FROM &quot;schema_migrations&quot; ORDER BY &quot;schema_migrations&quot;.&quot;version&quot; ASC[0m
-↳ /home/jose/.rvm/gems/ruby-2.6.3/bin/rake:23
-[1m[36mActiveRecord::InternalMetadata Load (38.4ms)[0m  [1m[34mSELECT  &quot;ar_internal_metadata&quot;.* FROM &quot;ar_internal_metadata&quot; WHERE &quot;ar_internal_metadata&quot;.&quot;key&quot; = $1 LIMIT $2[0m  [[&quot;key&quot;, &quot;environment&quot;], [&quot;LIMIT&quot;, 1]]
-↳ /home/jose/.rvm/gems/ruby-2.6.3/bin/rake:23
-[1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
-↳ /home/jose/.rvm/gems/ruby-2.6.3/bin/rake:23
-[1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
-↳ /home/jose/.rvm/gems/ruby-2.6.3/bin/rake:23
-[1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(4984091022903843270)[0m
-↳ /home/jose/.rvm/gems/ruby-2.6.3/bin/rake:23
-[1m[35m (0.5ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.&quot;version&quot; FROM &quot;schema_migrations&quot; ORDER BY &quot;schema_migrations&quot;.&quot;version&quot; ASC[0m
-↳ /home/jose/.rvm/gems/ruby-2.6.3/bin/rake:23</pre>
-
-<p>Started GET “/” for ::1 at 2019-12-05 22:16:02 -0300</p>
-
-<pre>[1m[35m (1.4ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.&quot;version&quot; FROM &quot;schema_migrations&quot; ORDER BY &quot;schema_migrations&quot;.&quot;version&quot; ASC[0m
-↳ /home/jose/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98</pre>
-
-<p>Processing by <a href="../HomeController.html#method-i-index"><code>HomeController#index</code></a> as HTML</p>
-
-<pre>Rendering home/index.html.erb within layouts/application
-[1m[36mUser Load (65.2ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = $1 ORDER BY &quot;users&quot;.&quot;id&quot; ASC LIMIT $2[0m  [[&quot;id&quot;, 5], [&quot;LIMIT&quot;, 1]]
-↳ app/views/home/index.html.erb:4
-Rendered home/index.html.erb within layouts/application (110.9ms)</pre>
-
-<p>Completed 200 OK in 1338ms (Views: 1250.4ms | ActiveRecord: 70.8ms)</p>
-
-<p>Started GET “/information” for ::1 at 2019-12-05 22:18:02 -0300 Processing by <a href="../InformationController.html#method-i-index"><code>InformationController#index</code></a> as HTML</p>
+<p>Started GET “/information” for ::1 at 2019-12-12 23:06:10 -0300 Processing by <a href="../InformationController.html#method-i-index"><code>InformationController#index</code></a> as HTML</p>
 
 <pre>Rendering information/index.html.erb within layouts/application
-[1m[36mInformation Load (38.1ms)[0m  [1m[34mSELECT &quot;information&quot;.* FROM &quot;information&quot;[0m
-↳ app/views/information/index.html.erb:16
-Rendered information/index.html.erb within layouts/application (119.8ms)</pre>
-
-<p>Completed 500 Internal Server Error in 126ms (ActiveRecord: 44.5ms)</p>
-
-<p>ActionView::Template::Error (undefined method `origin&#39; for #&lt;Information:0x00007f10712307c0&gt;):</p>
-
-<pre>17:       &lt;tr&gt;
-18:         &lt;td&gt;&lt;%= information.title %&gt;&lt;/td&gt;
-19:         &lt;td&gt;&lt;%= information.info %&gt;&lt;/td&gt;
-20:         &lt;td&gt;&lt;%= information.origin %&gt;&lt;/td&gt;
-21:         &lt;td&gt;&lt;%= link_to &#39;Ver&#39;, information %&gt;&lt;/td&gt;
-22:         &lt;% if user_signed_in? and current_user.role == &#39;administrator&#39; %&gt;
-23:           &lt;td&gt;&lt;%= link_to &#39;Editar&#39;, edit_information_path(information) %&gt;&lt;/td&gt;</pre>
-
-<p>app/views/information/index.html.erb:20:in `block in _app_views_information_index_html_erb___3334958092044737526_69854296757940&#39; app/views/information/index.html.erb:16:in `_app_views_information_index_html_erb___3334958092044737526_69854296757940&#39; Started GET “/information” for ::1 at 2019-12-05 22:19:49 -0300 Processing by <a href="../InformationController.html#method-i-index"><code>InformationController#index</code></a> as HTML</p>
-
-<pre>Rendering information/index.html.erb within layouts/application
-[1m[36mInformation Load (0.3ms)[0m  [1m[34mSELECT &quot;information&quot;.* FROM &quot;information&quot;[0m
-↳ app/views/information/index.html.erb:16
-[1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = $1 ORDER BY &quot;users&quot;.&quot;id&quot; ASC LIMIT $2[0m  [[&quot;id&quot;, 5], [&quot;LIMIT&quot;, 1]]
-↳ app/views/information/index.html.erb:21
-Rendered information/index.html.erb within layouts/application (4.6ms)</pre>
-
-<p>Completed 200 OK in 28ms (Views: 24.9ms | ActiveRecord: 0.8ms)</p>
-
-<p>Started GET “/information” for ::1 at 2019-12-05 22:19:53 -0300 Processing by <a href="../InformationController.html#method-i-index"><code>InformationController#index</code></a> as HTML</p>
-
-<pre>Rendering information/index.html.erb within layouts/application
-[1m[36mInformation Load (0.3ms)[0m  [1m[34mSELECT &quot;information&quot;.* FROM &quot;information&quot;[0m
-↳ app/views/information/index.html.erb:16
-Rendered information/index.html.erb within layouts/application (12.5ms)</pre>
-
-<p>Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.3ms)</p>
-
-<p>ActionView::Template::Error (undefined method `origin&#39; for #&lt;Information:0x00007f10789a9108&gt;):</p>
-
-<pre>17:       &lt;tr&gt;
-18:         &lt;td&gt;&lt;%= information.title %&gt;&lt;/td&gt;
-19:         &lt;td&gt;&lt;%= information.info %&gt;&lt;/td&gt;
-20:         &lt;td&gt;&lt;%= information.origin %&gt;&lt;/td&gt;
-21:         &lt;td&gt;&lt;%= link_to &#39;Ver&#39;, information %&gt;&lt;/td&gt;
-22:         &lt;% if user_signed_in? and current_user.role == &#39;administrator&#39; %&gt;
-23:           &lt;td&gt;&lt;%= link_to &#39;Editar&#39;, edit_information_path(information) %&gt;&lt;/td&gt;</pre>
-
-<p>app/views/information/index.html.erb:20:in `block in _app_views_information_index_html_erb___3334958092044737526_69854359725820&#39; app/views/information/index.html.erb:16:in `_app_views_information_index_html_erb___3334958092044737526_69854359725820&#39; Started GET “/information” for ::1 at 2019-12-05 22:21:08 -0300</p>
-
-<pre>[1m[35m (0.7ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.&quot;version&quot; FROM &quot;schema_migrations&quot; ORDER BY &quot;schema_migrations&quot;.&quot;version&quot; ASC[0m
-↳ /home/jose/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98</pre>
-
-<p>Processing by <a href="../InformationController.html#method-i-index"><code>InformationController#index</code></a> as HTML</p>
-
-<pre>Rendering information/index.html.erb within layouts/application
-[1m[36mInformation Load (0.5ms)[0m  [1m[34mSELECT &quot;information&quot;.* FROM &quot;information&quot;[0m
-↳ app/views/information/index.html.erb:16
-Rendered information/index.html.erb within layouts/application (18.0ms)</pre>
-
-<p>Completed 500 Internal Server Error in 30ms (ActiveRecord: 3.5ms)</p>
-
-<p>ActionView::Template::Error (undefined method `source&#39; for #&lt;Information:0x000000000179a558&gt;):</p>
-
-<pre>17:       &lt;tr&gt;
-18:         &lt;td&gt;&lt;%= information.title %&gt;&lt;/td&gt;
-19:         &lt;td&gt;&lt;%= information.info %&gt;&lt;/td&gt;
-20:         &lt;td&gt;&lt;%= information.source %&gt;&lt;/td&gt;
-21:         &lt;td&gt;&lt;%= link_to &#39;Ver&#39;, information %&gt;&lt;/td&gt;
-22:         &lt;% if user_signed_in? and current_user.role == &#39;administrator&#39; %&gt;
-23:           &lt;td&gt;&lt;%= link_to &#39;Editar&#39;, edit_information_path(information) %&gt;&lt;/td&gt;</pre>
-
-<p>app/views/information/index.html.erb:20:in `block in _app_views_information_index_html_erb__1830171686668076965_35773820&#39; app/views/information/index.html.erb:16:in `_app_views_information_index_html_erb__1830171686668076965_35773820&#39; Started GET “/information” for ::1 at 2019-12-05 22:21:18 -0300 Processing by <a href="../InformationController.html#method-i-index"><code>InformationController#index</code></a> as HTML</p>
-
-<pre>Rendering information/index.html.erb within layouts/application
-[1m[36mInformation Load (0.3ms)[0m  [1m[34mSELECT &quot;information&quot;.* FROM &quot;information&quot;[0m
-↳ app/views/information/index.html.erb:16
-[1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = $1 ORDER BY &quot;users&quot;.&quot;id&quot; ASC LIMIT $2[0m  [[&quot;id&quot;, 5], [&quot;LIMIT&quot;, 1]]
-↳ app/views/information/index.html.erb:22
-Rendered information/index.html.erb within layouts/application (24.8ms)</pre>
-
-<p>Completed 200 OK in 370ms (Views: 365.6ms | ActiveRecord: 3.6ms)</p>
-
-<p>Started GET “/information” for ::1 at 2019-12-05 22:21:25 -0300 Processing by <a href="../InformationController.html#method-i-index"><code>InformationController#index</code></a> as HTML</p>
-
-<pre>Rendering information/index.html.erb within layouts/application
-[1m[36mInformation Load (0.5ms)[0m  [1m[34mSELECT &quot;information&quot;.* FROM &quot;information&quot;[0m
-↳ app/views/information/index.html.erb:16
-[1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = $1 ORDER BY &quot;users&quot;.&quot;id&quot; ASC LIMIT $2[0m  [[&quot;id&quot;, 5], [&quot;LIMIT&quot;, 1]]
-↳ app/views/information/index.html.erb:22
-Rendered information/index.html.erb within layouts/application (7.1ms)</pre>
-
-<p>Completed 200 OK in 37ms (Views: 34.8ms | ActiveRecord: 0.9ms)</p>
-
-<p>Started GET “/information” for ::1 at 2019-12-05 22:23:34 -0300 Processing by <a href="../InformationController.html#method-i-index"><code>InformationController#index</code></a> as HTML</p>
-
-<pre>Rendering information/index.html.erb within layouts/application
-Rendered information/index.html.erb within layouts/application (20.6ms)</pre>
-
-<p>Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.0ms)</p>
-
-<p>SyntaxError (/home/jose/Documents/es/secretaria_ppgi/app/views/information/index.html.erb:21: syntax error, unexpected &#39;&lt;&#39;</p>
-
-<pre>&lt;td&gt;&#39;.freeze;@output_buffer.ap...
-^</pre>
-
-<p>/home/jose/Documents/es/secretaria_ppgi/app/views/information/index.html.erb:21: syntax error, unexpected tCONSTANT, expecting &#39;)&#39; …ut_buffer.append=( link_to &#39;Ver&#39;, information );@output_buff… …                            ^~~ /home/jose/Documents/es/secretaria_ppgi/app/views/information/index.html.erb:23: unknown regexp options - td /home/jose/Documents/es/secretaria_ppgi/app/views/information/index.html.erb:24: syntax error, unexpected &#39;&lt;&#39;</p>
-
-<pre>&lt;td&gt;&#39;.freeze;@output_buffer.ap...
-^</pre>
-
-<p>/home/jose/Documents/es/secretaria_ppgi/app/views/information/index.html.erb:24: syntax error, unexpected tCONSTANT, expecting &#39;)&#39; …ffer.append=( link_to &#39;Destruir&#39;, information, method: :dele… …                       ^~~~~~~~ /home/jose/Documents/es/secretaria_ppgi/app/views/information/index.html.erb:24: syntax error, unexpected tCONSTANT, expecting &#39;)&#39; …delete, data: { confirm: &#39;Você tem certeza?&#39; } );@output_bu… …                          ^~~~~ /home/jose/Documents/es/secretaria_ppgi/app/views/information/index.html.erb:26: unknown regexp options - tr /home/jose/Documents/es/secretaria_ppgi/app/views/information/index.html.erb:29: unknown regexp options - tabl /home/jose/Documents/es/secretaria_ppgi/app/views/information/index.html.erb:31: syntax error, unexpected &#39;&lt;&#39; /home/jose/Documents/es/secretaria_ppgi/app/views/information/index.html.erb:33: syntax error, unexpected tIDENTIFIER, expecting &#39;)&#39; …ent_user.role == &#39;administrator&#39;  …                  ^~~~~~~~~~~~~ /home/jose/Documents/es/secretaria_ppgi/app/views/information/index.html.erb:34: syntax error, unexpected tCONSTANT, expecting &#39;)&#39; …_buffer.append=( link_to &#39;Criar Informação&#39;, new_informati… …                          ^~~~~ /home/jose/Documents/es/secretaria_ppgi/app/views/information/index.html.erb:35: syntax error, unexpected tCONSTANT, expecting &#39;)&#39; …fer.append=( link_to &#39;Adicionar Fonte&#39;, new_source_path );@o… …                      ^~~~~~~~~ /home/jose/Documents/es/secretaria_ppgi/app/views/information/index.html.erb:38: syntax error, unexpected tCONSTANT, expecting &#39;)&#39; …buffer.append=( link_to &#39;Voltar&#39;, home_index_path ); …                         ^~~~~~ /home/jose/Documents/es/secretaria_ppgi/app/views/information/index.html.erb:42: unterminated string meets end of file</p>
-
-<pre>end
-    ^</pre>
-
-<p>/home/jose/Documents/es/secretaria_ppgi/app/views/information/index.html.erb:42: syntax error, unexpected end-of-input, expecting &#39;)&#39;):</p>
-
-<p>app/views/information/index.html.erb:21: syntax error, unexpected &#39;&lt;&#39; app/views/information/index.html.erb:21: syntax error, unexpected tCONSTANT, expecting &#39;)&#39; app/views/information/index.html.erb:23: unknown regexp options - td app/views/information/index.html.erb:24: syntax error, unexpected &#39;&lt;&#39; app/views/information/index.html.erb:24: syntax error, unexpected tCONSTANT, expecting &#39;)&#39; app/views/information/index.html.erb:24: syntax error, unexpected tCONSTANT, expecting &#39;)&#39; app/views/information/index.html.erb:26: unknown regexp options - tr app/views/information/index.html.erb:29: unknown regexp options - tabl app/views/information/index.html.erb:31: syntax error, unexpected &#39;&lt;&#39; app/views/information/index.html.erb:33: syntax error, unexpected tIDENTIFIER, expecting &#39;)&#39; app/views/information/index.html.erb:34: syntax error, unexpected tCONSTANT, expecting &#39;)&#39; app/views/information/index.html.erb:35: syntax error, unexpected tCONSTANT, expecting &#39;)&#39; app/views/information/index.html.erb:38: syntax error, unexpected tCONSTANT, expecting &#39;)&#39; app/views/information/index.html.erb:42: unterminated string meets end of file app/views/information/index.html.erb:42: syntax error, unexpected end-of-input, expecting &#39;)&#39; Started GET “/information” for ::1 at 2019-12-05 22:23:53 -0300 Processing by <a href="../InformationController.html#method-i-index"><code>InformationController#index</code></a> as HTML</p>
-
-<pre>Rendering information/index.html.erb within layouts/application
-[1m[36mInformation Load (0.4ms)[0m  [1m[34mSELECT &quot;information&quot;.* FROM &quot;information&quot;[0m
+[1m[36mInformation Load (0.6ms)[0m  [1m[34mSELECT &quot;information&quot;.* FROM &quot;information&quot;[0m
 ↳ app/views/information/index.html.erb:16
 [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = $1 ORDER BY &quot;users&quot;.&quot;id&quot; ASC LIMIT $2[0m  [[&quot;id&quot;, 5], [&quot;LIMIT&quot;, 1]]
 ↳ app/views/information/index.html.erb:22
-Rendered information/index.html.erb within layouts/application (6.0ms)</pre>
+Rendered information/index.html.erb within layouts/application (34.9ms)</pre>
 
-<p>Completed 200 OK in 34ms (Views: 32.3ms | ActiveRecord: 0.8ms)</p>
+<p>Completed 200 OK in 55ms (Views: 46.1ms | ActiveRecord: 4.9ms)</p>
 
-<p>Started GET “/information/new” for ::1 at 2019-12-05 22:24:46 -0300 Processing by <a href="../InformationController.html#method-i-new"><code>InformationController#new</code></a> as HTML</p>
-
-<pre>Rendering information/new.html.erb within layouts/application
-[1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = $1 ORDER BY &quot;users&quot;.&quot;id&quot; ASC LIMIT $2[0m  [[&quot;id&quot;, 5], [&quot;LIMIT&quot;, 1]]
-↳ app/views/information/new.html.erb:1
-[1m[36mSource Load (15.3ms)[0m  [1m[34mSELECT &quot;sources&quot;.* FROM &quot;sources&quot;[0m
-↳ app/views/information/_form.html.erb:26
-Rendered information/_form.html.erb (229.1ms)
-Rendered information/new.html.erb within layouts/application (234.6ms)</pre>
-
-<p>Completed 200 OK in 271ms (Views: 249.6ms | ActiveRecord: 18.2ms)</p>
-
-<p>Started GET “/information” for ::1 at 2019-12-05 22:24:50 -0300 Processing by <a href="../InformationController.html#method-i-index"><code>InformationController#index</code></a> as HTML</p>
-
-<pre>Rendering information/index.html.erb within layouts/application
-[1m[36mInformation Load (0.4ms)[0m  [1m[34mSELECT &quot;information&quot;.* FROM &quot;information&quot;[0m
-↳ app/views/information/index.html.erb:16
-[1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = $1 ORDER BY &quot;users&quot;.&quot;id&quot; ASC LIMIT $2[0m  [[&quot;id&quot;, 5], [&quot;LIMIT&quot;, 1]]
-↳ app/views/information/index.html.erb:22
-Rendered information/index.html.erb within layouts/application (8.0ms)</pre>
-
-<p>Completed 200 OK in 54ms (Views: 51.3ms | ActiveRecord: 1.0ms)</p>
-
-<p>Started GET “/sources/new” for ::1 at 2019-12-05 22:24:51 -0300 Processing by <a href="../SourcesController.html#method-i-new"><code>SourcesController#new</code></a> as HTML</p>
-
-<pre>Rendering sources/new.html.erb within layouts/application
-Rendered sources/_form.html.erb (2.7ms)
-Rendered sources/new.html.erb within layouts/application (4.1ms)</pre>
-
-<p>Completed 200 OK in 41ms (Views: 30.8ms | ActiveRecord: 2.0ms)</p>
-
-<p>Started POST “/sources” for ::1 at 2019-12-05 22:24:57 -0300 Processing by <a href="../SourcesController.html#method-i-create"><code>SourcesController#create</code></a> as HTML</p>
-
-<pre>Parameters: {&quot;utf8&quot;=&gt;&quot;✓&quot;, &quot;authenticity_token&quot;=&gt;&quot;ZhP7OR/O4PjukI3N6Ag8Ri3zWADDdoQoKOZMUBewxsi8LqzFDrvzW++8nNU9qTZsNO9blGIBHHnoKLoocTrsJw==&quot;, &quot;source&quot;=&gt;{&quot;title&quot;=&gt;&quot;fakkke&quot;}, &quot;commit&quot;=&gt;&quot;Create Source&quot;}
-[1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
-↳ app/controllers/sources_controller.rb:30
-[1m[36mSource Create (162.4ms)[0m  [1m[32mINSERT INTO &quot;sources&quot; (&quot;title&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3) RETURNING &quot;id&quot;[0m  [[&quot;title&quot;, &quot;fakkke&quot;], [&quot;created_at&quot;, &quot;2019-12-06 01:24:57.304843&quot;], [&quot;updated_at&quot;, &quot;2019-12-06 01:24:57.304843&quot;]]
-↳ app/controllers/sources_controller.rb:30
-[1m[35m (45.0ms)[0m  [1m[35mCOMMIT[0m
-↳ app/controllers/sources_controller.rb:30</pre>
-
-<p>Redirected to <a href="http://localhost:3000/sources/1">localhost:3000/sources/1</a> Completed 302 Found in 213ms (ActiveRecord: 207.6ms)</p>
-
-<p>Started GET “/sources/1” for ::1 at 2019-12-05 22:24:57 -0300 Processing by <a href="../SourcesController.html#method-i-show"><code>SourcesController#show</code></a> as HTML</p>
-
-<pre>Parameters: {&quot;id&quot;=&gt;&quot;1&quot;}
-[1m[36mSource Load (0.4ms)[0m  [1m[34mSELECT  &quot;sources&quot;.* FROM &quot;sources&quot; WHERE &quot;sources&quot;.&quot;id&quot; = $1 LIMIT $2[0m  [[&quot;id&quot;, 1], [&quot;LIMIT&quot;, 1]]
-↳ app/controllers/sources_controller.rb:67
-Rendering sources/show.html.erb within layouts/application
-Rendered sources/show.html.erb within layouts/application (1.0ms)</pre>
-
-<p>Completed 200 OK in 29ms (Views: 25.7ms | ActiveRecord: 0.4ms)</p>
-
-<p>Started GET “/sources” for ::1 at 2019-12-05 22:24:59 -0300 Processing by <a href="../SourcesController.html#method-i-index"><code>SourcesController#index</code></a> as HTML</p>
-
-<pre>Rendering sources/index.html.erb within layouts/application
-[1m[36mSource Load (0.4ms)[0m  [1m[34mSELECT &quot;sources&quot;.* FROM &quot;sources&quot;[0m
-↳ app/views/sources/index.html.erb:14
-Rendered sources/index.html.erb within layouts/application (2.8ms)</pre>
-
-<p>Completed 200 OK in 32ms (Views: 29.7ms | ActiveRecord: 0.4ms)</p>
-
-<p>Started GET “/information” for ::1 at 2019-12-05 22:25:01 -0300 Processing by <a href="../InformationController.html#method-i-index"><code>InformationController#index</code></a> as HTML</p>
-
-<pre>Rendering information/index.html.erb within layouts/application
-[1m[36mInformation Load (0.5ms)[0m  [1m[34mSELECT &quot;information&quot;.* FROM &quot;information&quot;[0m
-↳ app/views/information/index.html.erb:16
-[1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = $1 ORDER BY &quot;users&quot;.&quot;id&quot; ASC LIMIT $2[0m  [[&quot;id&quot;, 5], [&quot;LIMIT&quot;, 1]]
-↳ app/views/information/index.html.erb:22
-Rendered information/index.html.erb within layouts/application (7.4ms)</pre>
-
-<p>Completed 200 OK in 33ms (Views: 30.5ms | ActiveRecord: 0.9ms)</p>
-
-<p>Started GET “/information/new” for ::1 at 2019-12-05 22:25:02 -0300 Processing by <a href="../InformationController.html#method-i-new"><code>InformationController#new</code></a> as HTML</p>
-
-<pre>Rendering information/new.html.erb within layouts/application
-[1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = $1 ORDER BY &quot;users&quot;.&quot;id&quot; ASC LIMIT $2[0m  [[&quot;id&quot;, 5], [&quot;LIMIT&quot;, 1]]
-↳ app/views/information/new.html.erb:1
-[1m[36mSource Load (0.3ms)[0m  [1m[34mSELECT &quot;sources&quot;.* FROM &quot;sources&quot;[0m
-↳ app/views/information/_form.html.erb:26
-Rendered information/_form.html.erb (5.3ms)
-Rendered information/new.html.erb within layouts/application (8.1ms)</pre>
-
-<p>Completed 200 OK in 33ms (Views: 31.4ms | ActiveRecord: 0.6ms)</p>
-
-<p>Started POST “/information” for ::1 at 2019-12-05 22:25:14 -0300 Processing by <a href="../InformationController.html#method-i-create"><code>InformationController#create</code></a> as HTML</p>
-
-<pre>Parameters: {&quot;utf8&quot;=&gt;&quot;✓&quot;, &quot;authenticity_token&quot;=&gt;&quot;PzCH9TWLGiBYzdOWM27vCqK8KGkihycGAmkuTg/giK+gvui4RCom0worBtVlRFn3jDdChNatLMZCulwqYVg1Vg==&quot;, &quot;information&quot;=&gt;{&quot;title&quot;=&gt;&quot;qweqew&quot;, &quot;info&quot;=&gt;&quot;sdasd&quot;, &quot;source&quot;=&gt;&quot;fakkke&quot;}, &quot;commit&quot;=&gt;&quot;Create Information&quot;}</pre>
-
-<p>Unpermitted parameter: :source</p>
-
-<pre>[1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
-↳ app/controllers/information_controller.rb:31
-[1m[36mInformation Create (10.6ms)[0m  [1m[32mINSERT INTO &quot;information&quot; (&quot;title&quot;, &quot;info&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3, $4) RETURNING &quot;id&quot;[0m  [[&quot;title&quot;, &quot;qweqew&quot;], [&quot;info&quot;, &quot;sdasd&quot;], [&quot;created_at&quot;, &quot;2019-12-06 01:25:14.413946&quot;], [&quot;updated_at&quot;, &quot;2019-12-06 01:25:14.413946&quot;]]
-↳ app/controllers/information_controller.rb:31
-[1m[35m (117.8ms)[0m  [1m[35mCOMMIT[0m
-↳ app/controllers/information_controller.rb:31</pre>
-
-<p>Redirected to <a href="http://localhost:3000/information/3">localhost:3000/information/3</a> Completed 302 Found in 133ms (ActiveRecord: 128.5ms)</p>
-
-<p>Started GET “/information/3” for ::1 at 2019-12-05 22:25:14 -0300 Processing by <a href="../InformationController.html#method-i-show"><code>InformationController#show</code></a> as HTML</p>
+<p>Started GET “/information/3/edit” for ::1 at 2019-12-12 23:06:12 -0300 Processing by <a href="../InformationController.html#method-i-edit"><code>InformationController#edit</code></a> as HTML</p>
 
 <pre>Parameters: {&quot;id&quot;=&gt;&quot;3&quot;}
-[1m[36mInformation Load (1.1ms)[0m  [1m[34mSELECT  &quot;information&quot;.* FROM &quot;information&quot; WHERE &quot;information&quot;.&quot;id&quot; = $1 LIMIT $2[0m  [[&quot;id&quot;, 3], [&quot;LIMIT&quot;, 1]]
-↳ app/controllers/information_controller.rb:68
-Rendering information/show.html.erb within layouts/application
-[1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = $1 ORDER BY &quot;users&quot;.&quot;id&quot; ASC LIMIT $2[0m  [[&quot;id&quot;, 5], [&quot;LIMIT&quot;, 1]]
-↳ app/views/information/show.html.erb:13
-Rendered information/show.html.erb within layouts/application (3.4ms)</pre>
-
-<p>Completed 200 OK in 35ms (Views: 29.8ms | ActiveRecord: 1.4ms)</p>
-
-<p>Started GET “/information” for ::1 at 2019-12-05 22:25:16 -0300 Processing by <a href="../InformationController.html#method-i-index"><code>InformationController#index</code></a> as HTML</p>
-
-<pre>Rendering information/index.html.erb within layouts/application
-[1m[36mInformation Load (0.5ms)[0m  [1m[34mSELECT &quot;information&quot;.* FROM &quot;information&quot;[0m
-↳ app/views/information/index.html.erb:16
+[1m[36mInformation Load (0.6ms)[0m  [1m[34mSELECT  &quot;information&quot;.* FROM &quot;information&quot; WHERE &quot;information&quot;.&quot;id&quot; = $1 LIMIT $2[0m  [[&quot;id&quot;, 3], [&quot;LIMIT&quot;, 1]]
+↳ app/controllers/information_controller.rb:82
+Rendering information/edit.html.erb within layouts/application
 [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = $1 ORDER BY &quot;users&quot;.&quot;id&quot; ASC LIMIT $2[0m  [[&quot;id&quot;, 5], [&quot;LIMIT&quot;, 1]]
-↳ app/views/information/index.html.erb:22
-Rendered information/index.html.erb within layouts/application (31.1ms)</pre>
+↳ app/views/information/edit.html.erb:1
+[1m[36mSource Load (0.5ms)[0m  [1m[34mSELECT &quot;sources&quot;.* FROM &quot;sources&quot;[0m
+↳ app/views/information/_form.html.erb:26
+Rendered information/_form.html.erb (17.2ms)
+Rendered information/edit.html.erb within layouts/application (23.4ms)</pre>
 
-<p>Completed 200 OK in 59ms (Views: 56.0ms | ActiveRecord: 1.3ms)</p>
+<p>Completed 200 OK in 43ms (Views: 32.6ms | ActiveRecord: 5.3ms)</p>
 
-<p>Started GET “/information” for ::1 at 2019-12-05 22:25:22 -0300 Processing by <a href="../InformationController.html#method-i-index"><code>InformationController#index</code></a> as HTML</p>
+<p>Started PATCH “/information/3” for ::1 at 2019-12-12 23:06:16 -0300 Processing by <a href="../InformationController.html#method-i-update"><code>InformationController#update</code></a> as HTML</p>
 
-<pre>Rendering information/index.html.erb within layouts/application
-[1m[36mInformation Load (0.4ms)[0m  [1m[34mSELECT &quot;information&quot;.* FROM &quot;information&quot;[0m
-↳ app/views/information/index.html.erb:16
-[1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = $1 ORDER BY &quot;users&quot;.&quot;id&quot; ASC LIMIT $2[0m  [[&quot;id&quot;, 5], [&quot;LIMIT&quot;, 1]]
-↳ app/views/information/index.html.erb:22
-Rendered information/index.html.erb within layouts/application (8.4ms)</pre>
+<pre>Parameters: {&quot;utf8&quot;=&gt;&quot;✓&quot;, &quot;authenticity_token&quot;=&gt;&quot;AuOj9VjKSQpISE2qHJLC5Xdc7IkmbJR7UnMlWoVxXX5+hOE8MUFAgWRBPfBX59rC0P3UevE7F/echR4jilsRhA==&quot;, &quot;information&quot;=&gt;{&quot;title&quot;=&gt;&quot;tewefsd&quot;, &quot;info&quot;=&gt;&quot;fsdfsdfasdasdasd&quot;, &quot;fonte&quot;=&gt;&quot;hadfbsf&quot;}, &quot;commit&quot;=&gt;&quot;Update Information&quot;, &quot;id&quot;=&gt;&quot;3&quot;}
+[1m[36mInformation Load (1.0ms)[0m  [1m[34mSELECT  &quot;information&quot;.* FROM &quot;information&quot; WHERE &quot;information&quot;.&quot;id&quot; = $1 LIMIT $2[0m  [[&quot;id&quot;, 3], [&quot;LIMIT&quot;, 1]]
+↳ app/controllers/information_controller.rb:82
+[1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+↳ app/controllers/information_controller.rb:64
+[1m[36mInformation Update (0.9ms)[0m  [1m[33mUPDATE &quot;information&quot; SET &quot;info&quot; = $1, &quot;updated_at&quot; = $2 WHERE &quot;information&quot;.&quot;id&quot; = $3[0m  [[&quot;info&quot;, &quot;fsdfsdfasdasdasd&quot;], [&quot;updated_at&quot;, &quot;2019-12-13 02:06:16.287999&quot;], [&quot;id&quot;, 3]]
+↳ app/controllers/information_controller.rb:64
+[1m[35m (115.8ms)[0m  [1m[35mCOMMIT[0m
+↳ app/controllers/information_controller.rb:64</pre>
 
-<p>Completed 200 OK in 42ms (Views: 39.5ms | ActiveRecord: 0.7ms)</p>
+<p>Redirected to <a href="http://localhost:3000/information/3">localhost:3000/information/3</a> Completed 302 Found in 128ms (ActiveRecord: 117.9ms)</p>
 
-<p>Started GET “/information” for ::1 at 2019-12-05 22:25:29 -0300 Processing by <a href="../InformationController.html#method-i-index"><code>InformationController#index</code></a> as HTML</p>
+<p>Started GET “/information/3” for ::1 at 2019-12-12 23:06:16 -0300 Processing by <a href="../InformationController.html#method-i-show"><code>InformationController#show</code></a> as HTML</p>
 
-<pre>Rendering information/index.html.erb within layouts/application
-[1m[36mInformation Load (0.3ms)[0m  [1m[34mSELECT &quot;information&quot;.* FROM &quot;information&quot;[0m
-↳ app/views/information/index.html.erb:16
-Rendered information/index.html.erb within layouts/application (7.6ms)</pre>
+<pre>Parameters: {&quot;id&quot;=&gt;&quot;3&quot;}
+[1m[36mInformation Load (0.7ms)[0m  [1m[34mSELECT  &quot;information&quot;.* FROM &quot;information&quot; WHERE &quot;information&quot;.&quot;id&quot; = $1 LIMIT $2[0m  [[&quot;id&quot;, 3], [&quot;LIMIT&quot;, 1]]
+↳ app/controllers/information_controller.rb:82
+Rendering information/show.html.erb within layouts/application
+[1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = $1 ORDER BY &quot;users&quot;.&quot;id&quot; ASC LIMIT $2[0m  [[&quot;id&quot;, 5], [&quot;LIMIT&quot;, 1]]
+↳ app/views/information/show.html.erb:18
+Rendered information/show.html.erb within layouts/application (4.6ms)</pre>
 
-<p>Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.3ms)</p>
+<p>Completed 200 OK in 35ms (Views: 31.2ms | ActiveRecord: 1.4ms)</p>
 
-<p>ActionView::Template::Error (undefined method `origin&#39; for #&lt;Information:0x00007f99d15b7f08&gt;):</p>
-
-<pre>17:       &lt;tr&gt;
-18:         &lt;td&gt;&lt;%= information.title %&gt;&lt;/td&gt;
-19:         &lt;td&gt;&lt;%= information.info %&gt;&lt;/td&gt;
-20:         &lt;td&gt;&lt;%= information.origin %&gt;&lt;/td&gt;
-21:         &lt;td&gt;&lt;%= link_to &#39;Ver&#39;, information %&gt;&lt;/td&gt;
-22:         &lt;% if user_signed_in? and current_user.role == &#39;administrator&#39; %&gt;
-23:           &lt;td&gt;&lt;%= link_to &#39;Editar&#39;, edit_information_path(information) %&gt;&lt;/td&gt;</pre>
-
-<p>app/views/information/index.html.erb:20:in `block in _app_views_information_index_html_erb__1830171686668076965_70149309505380&#39; app/views/information/index.html.erb:16:in `_app_views_information_index_html_erb__1830171686668076965_70149309505380&#39; Started GET “/information” for ::1 at 2019-12-05 22:25:34 -0300 Processing by <a href="../InformationController.html#method-i-index"><code>InformationController#index</code></a> as HTML</p>
-
-<pre>Rendering information/index.html.erb within layouts/application
-[1m[36mInformation Load (0.4ms)[0m  [1m[34mSELECT &quot;information&quot;.* FROM &quot;information&quot;[0m
-↳ app/views/information/index.html.erb:16
-[1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = $1 ORDER BY &quot;users&quot;.&quot;id&quot; ASC LIMIT $2[0m  [[&quot;id&quot;, 5], [&quot;LIMIT&quot;, 1]]
-↳ app/views/information/index.html.erb:22
-Rendered information/index.html.erb within layouts/application (10.4ms)</pre>
-
-<p>Completed 200 OK in 47ms (Views: 45.4ms | ActiveRecord: 0.8ms)</p>
-
-<p>Started DELETE “/information/2” for ::1 at 2019-12-05 22:25:41 -0300 Processing by <a href="../InformationController.html#method-i-destroy"><code>InformationController#destroy</code></a> as HTML</p>
-
-<pre>Parameters: {&quot;authenticity_token&quot;=&gt;&quot;ETbT36MQ/wuG2S4ugEfl78+JbUsQpURrOmqRVC6uu/pAumcAUbFwctGFg+BZGfz+VckdhvZ+11B6UFvP6S1sjg==&quot;, &quot;id&quot;=&gt;&quot;2&quot;}
-[1m[36mInformation Load (0.3ms)[0m  [1m[34mSELECT  &quot;information&quot;.* FROM &quot;information&quot; WHERE &quot;information&quot;.&quot;id&quot; = $1 LIMIT $2[0m  [[&quot;id&quot;, 2], [&quot;LIMIT&quot;, 1]]
-↳ app/controllers/information_controller.rb:68
-[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-↳ app/controllers/information_controller.rb:58
-[1m[36mInformation Destroy (0.2ms)[0m  [1m[31mDELETE FROM &quot;information&quot; WHERE &quot;information&quot;.&quot;id&quot; = $1[0m  [[&quot;id&quot;, 2]]
-↳ app/controllers/information_controller.rb:58
-[1m[35m (18.2ms)[0m  [1m[35mCOMMIT[0m
-↳ app/controllers/information_controller.rb:58</pre>
-
-<p>Redirected to <a href="http://localhost:3000/information">localhost:3000/information</a> Completed 302 Found in 21ms (ActiveRecord: 18.7ms)</p>
-
-<p>Started GET “/information” for ::1 at 2019-12-05 22:25:41 -0300 Processing by <a href="../InformationController.html#method-i-index"><code>InformationController#index</code></a> as HTML</p>
+<p>Started GET “/information” for ::1 at 2019-12-12 23:06:18 -0300 Processing by <a href="../InformationController.html#method-i-index"><code>InformationController#index</code></a> as HTML</p>
 
 <pre>Rendering information/index.html.erb within layouts/application
-[1m[36mInformation Load (0.3ms)[0m  [1m[34mSELECT &quot;information&quot;.* FROM &quot;information&quot;[0m
+[1m[36mInformation Load (0.6ms)[0m  [1m[34mSELECT &quot;information&quot;.* FROM &quot;information&quot;[0m
 ↳ app/views/information/index.html.erb:16
-[1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = $1 ORDER BY &quot;users&quot;.&quot;id&quot; ASC LIMIT $2[0m  [[&quot;id&quot;, 5], [&quot;LIMIT&quot;, 1]]
+[1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = $1 ORDER BY &quot;users&quot;.&quot;id&quot; ASC LIMIT $2[0m  [[&quot;id&quot;, 5], [&quot;LIMIT&quot;, 1]]
 ↳ app/views/information/index.html.erb:22
-Rendered information/index.html.erb within layouts/application (4.3ms)</pre>
+Rendered information/index.html.erb within layouts/application (10.9ms)</pre>
 
-<p>Completed 200 OK in 25ms (Views: 22.8ms | ActiveRecord: 0.5ms)</p>
+<p>Completed 200 OK in 42ms (Views: 38.1ms | ActiveRecord: 1.3ms)</p>
 
-<p>Started DELETE “/information/1” for ::1 at 2019-12-05 22:25:45 -0300 Processing by <a href="../InformationController.html#method-i-destroy"><code>InformationController#destroy</code></a> as HTML</p>
+<p>Started GET “/information/5/edit” for ::1 at 2019-12-12 23:06:20 -0300 Processing by <a href="../InformationController.html#method-i-edit"><code>InformationController#edit</code></a> as HTML</p>
 
-<pre>Parameters: {&quot;authenticity_token&quot;=&gt;&quot;dCCjcHxt4CeG5Q4HJPY/8yR6vEzioZmPav9oW0sE1f8lrBevjsxvXtG5o8n9qCbivjrMgQR6CrQqxaLAjIcCiw==&quot;, &quot;id&quot;=&gt;&quot;1&quot;}
-[1m[36mInformation Load (0.3ms)[0m  [1m[34mSELECT  &quot;information&quot;.* FROM &quot;information&quot; WHERE &quot;information&quot;.&quot;id&quot; = $1 LIMIT $2[0m  [[&quot;id&quot;, 1], [&quot;LIMIT&quot;, 1]]
-↳ app/controllers/information_controller.rb:68
-[1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-↳ app/controllers/information_controller.rb:58
-[1m[36mInformation Destroy (0.4ms)[0m  [1m[31mDELETE FROM &quot;information&quot; WHERE &quot;information&quot;.&quot;id&quot; = $1[0m  [[&quot;id&quot;, 1]]
-↳ app/controllers/information_controller.rb:58
-[1m[35m (7.8ms)[0m  [1m[35mCOMMIT[0m
-↳ app/controllers/information_controller.rb:58</pre>
+<pre>Parameters: {&quot;id&quot;=&gt;&quot;5&quot;}
+[1m[36mInformation Load (0.8ms)[0m  [1m[34mSELECT  &quot;information&quot;.* FROM &quot;information&quot; WHERE &quot;information&quot;.&quot;id&quot; = $1 LIMIT $2[0m  [[&quot;id&quot;, 5], [&quot;LIMIT&quot;, 1]]
+↳ app/controllers/information_controller.rb:82
+Rendering information/edit.html.erb within layouts/application
+[1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = $1 ORDER BY &quot;users&quot;.&quot;id&quot; ASC LIMIT $2[0m  [[&quot;id&quot;, 5], [&quot;LIMIT&quot;, 1]]
+↳ app/views/information/edit.html.erb:1
+[1m[36mSource Load (0.8ms)[0m  [1m[34mSELECT &quot;sources&quot;.* FROM &quot;sources&quot;[0m
+↳ app/views/information/_form.html.erb:26
+Rendered information/_form.html.erb (9.2ms)
+Rendered information/edit.html.erb within layouts/application (15.5ms)</pre>
 
-<p>Redirected to <a href="http://localhost:3000/information">localhost:3000/information</a> Completed 302 Found in 13ms (ActiveRecord: 8.6ms)</p>
+<p>Completed 200 OK in 43ms (Views: 35.9ms | ActiveRecord: 2.3ms)</p>
 
-<p>Started GET “/information” for ::1 at 2019-12-05 22:25:45 -0300 Processing by <a href="../InformationController.html#method-i-index"><code>InformationController#index</code></a> as HTML</p>
+<p>Started GET “/information/5” for ::1 at 2019-12-12 23:06:21 -0300 Processing by <a href="../InformationController.html#method-i-show"><code>InformationController#show</code></a> as HTML</p>
 
-<pre>Rendering information/index.html.erb within layouts/application
-[1m[36mInformation Load (0.3ms)[0m  [1m[34mSELECT &quot;information&quot;.* FROM &quot;information&quot;[0m
-↳ app/views/information/index.html.erb:16
-[1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = $1 ORDER BY &quot;users&quot;.&quot;id&quot; ASC LIMIT $2[0m  [[&quot;id&quot;, 5], [&quot;LIMIT&quot;, 1]]
-↳ app/views/information/index.html.erb:22
-Rendered information/index.html.erb within layouts/application (6.9ms)</pre>
+<pre>Parameters: {&quot;id&quot;=&gt;&quot;5&quot;}
+[1m[36mInformation Load (0.7ms)[0m  [1m[34mSELECT  &quot;information&quot;.* FROM &quot;information&quot; WHERE &quot;information&quot;.&quot;id&quot; = $1 LIMIT $2[0m  [[&quot;id&quot;, 5], [&quot;LIMIT&quot;, 1]]
+↳ app/controllers/information_controller.rb:82
+Rendering information/show.html.erb within layouts/application
+[1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = $1 ORDER BY &quot;users&quot;.&quot;id&quot; ASC LIMIT $2[0m  [[&quot;id&quot;, 5], [&quot;LIMIT&quot;, 1]]
+↳ app/views/information/show.html.erb:18
+Rendered information/show.html.erb within layouts/application (5.7ms)</pre>
 
-<p>Completed 200 OK in 29ms (Views: 27.4ms | ActiveRecord: 0.7ms)</p>
+<p>Completed 200 OK in 41ms (Views: 36.8ms | ActiveRecord: 1.3ms)</p>
 
-<p>Started GET “/information” for ::1 at 2019-12-05 22:25:46 -0300 Processing by <a href="../InformationController.html#method-i-index"><code>InformationController#index</code></a> as HTML</p>
-
-<pre>Rendering information/index.html.erb within layouts/application
-[1m[36mInformation Load (0.5ms)[0m  [1m[34mSELECT &quot;information&quot;.* FROM &quot;information&quot;[0m
-↳ app/views/information/index.html.erb:16
-[1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = $1 ORDER BY &quot;users&quot;.&quot;id&quot; ASC LIMIT $2[0m  [[&quot;id&quot;, 5], [&quot;LIMIT&quot;, 1]]
-↳ app/views/information/index.html.erb:22
-Rendered information/index.html.erb within layouts/application (7.8ms)</pre>
-
-<p>Completed 200 OK in 45ms (Views: 41.9ms | ActiveRecord: 1.0ms)</p>
-
-<p>Started GET “/information” for ::1 at 2019-12-05 22:25:51 -0300 Processing by <a href="../InformationController.html#method-i-index"><code>InformationController#index</code></a> as HTML</p>
+<p>Started GET “/information” for ::1 at 2019-12-12 23:06:22 -0300 Processing by <a href="../InformationController.html#method-i-index"><code>InformationController#index</code></a> as HTML</p>
 
 <pre>Rendering information/index.html.erb within layouts/application
 [1m[36mInformation Load (0.8ms)[0m  [1m[34mSELECT &quot;information&quot;.* FROM &quot;information&quot;[0m
 ↳ app/views/information/index.html.erb:16
-Rendered information/index.html.erb within layouts/application (11.5ms)</pre>
+[1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = $1 ORDER BY &quot;users&quot;.&quot;id&quot; ASC LIMIT $2[0m  [[&quot;id&quot;, 5], [&quot;LIMIT&quot;, 1]]
+↳ app/views/information/index.html.erb:22
+Rendered information/index.html.erb within layouts/application (11.3ms)</pre>
 
-<p>Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.8ms)</p>
+<p>Completed 200 OK in 38ms (Views: 34.0ms | ActiveRecord: 1.1ms)</p>
 
-<p>ActionView::Template::Error (undefined method `source&#39; for #&lt;Information:0x00007f99d197c558&gt;):</p>
+<p>Started GET “/home/index” for ::1 at 2019-12-12 23:06:23 -0300 Processing by <a href="../HomeController.html#method-i-index"><code>HomeController#index</code></a> as HTML</p>
 
-<pre>17:       &lt;tr&gt;
-18:         &lt;td&gt;&lt;%= information.title %&gt;&lt;/td&gt;
-19:         &lt;td&gt;&lt;%= information.info %&gt;&lt;/td&gt;
-20:         &lt;td&gt;&lt;%= information.source %&gt;&lt;/td&gt;
-21:         &lt;td&gt;&lt;%= link_to &#39;Ver&#39;, information %&gt;&lt;/td&gt;
-22:         &lt;% if user_signed_in? and current_user.role == &#39;administrator&#39; %&gt;
-23:           &lt;td&gt;&lt;%= link_to &#39;Editar&#39;, edit_information_path(information) %&gt;&lt;/td&gt;</pre>
+<pre>Rendering home/index.html.erb within layouts/application
+[1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = $1 ORDER BY &quot;users&quot;.&quot;id&quot; ASC LIMIT $2[0m  [[&quot;id&quot;, 5], [&quot;LIMIT&quot;, 1]]
+↳ app/views/home/index.html.erb:3
+Rendered home/index.html.erb within layouts/application (1.5ms)</pre>
 
-<p>app/views/information/index.html.erb:20:in `block in _app_views_information_index_html_erb__1830171686668076965_70149311514840&#39; app/views/information/index.html.erb:16:in `_app_views_information_index_html_erb__1830171686668076965_70149311514840&#39; Started GET “/information” for ::1 at 2019-12-05 22:25:57 -0300 Processing by <a href="../InformationController.html#method-i-index"><code>InformationController#index</code></a> as HTML</p>
+<p>Completed 200 OK in 15ms (Views: 13.9ms | ActiveRecord: 0.2ms)</p>
+
+<p>Started DELETE “/users/sign_out” for ::1 at 2019-12-12 23:06:24 -0300 Processing by Devise::SessionsController#destroy as HTML</p>
+
+<pre>Parameters: {&quot;authenticity_token&quot;=&gt;&quot;WUWORn8XwhRiqWokku9KfzeSpj65bM3XAKKBiT/9LHiH8LRPC1pKTxXzZ8P2cUL/ylrFlIrBi0zjT6QkMrlOAQ==&quot;}
+[1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = $1 ORDER BY &quot;users&quot;.&quot;id&quot; ASC LIMIT $2[0m  [[&quot;id&quot;, 5], [&quot;LIMIT&quot;, 1]]
+↳ /usr/local/rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+↳ /usr/local/rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+↳ /usr/local/rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98</pre>
+
+<p>Redirected to <a href="http://localhost:3000">localhost:3000</a>/ Completed 302 Found in 12ms (ActiveRecord: 1.3ms)</p>
+
+<p>Started GET “/” for ::1 at 2019-12-12 23:06:24 -0300 Processing by <a href="../HomeController.html#method-i-index"><code>HomeController#index</code></a> as HTML</p>
+
+<pre>Rendering home/index.html.erb within layouts/application
+Rendered home/index.html.erb within layouts/application (1.8ms)</pre>
+
+<p>Completed 200 OK in 42ms (Views: 39.9ms | ActiveRecord: 0.0ms)</p>
+
+<p>Started GET “/” for ::1 at 2019-12-12 23:28:16 -0300</p>
+
+<pre>[1m[35m (0.7ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.&quot;version&quot; FROM &quot;schema_migrations&quot; ORDER BY &quot;schema_migrations&quot;.&quot;version&quot; ASC[0m
+↳ /usr/local/rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98</pre>
+
+<p>Processing by <a href="../HomeController.html#method-i-index"><code>HomeController#index</code></a> as HTML</p>
+
+<pre>Rendering home/index.html.erb within layouts/application
+Rendered home/index.html.erb within layouts/application (2.9ms)</pre>
+
+<p>Completed 200 OK in 161ms (Views: 156.9ms | ActiveRecord: 0.0ms)</p>
+
+<p>Started GET “/users/sign_in” for ::1 at 2019-12-12 23:28:18 -0300 Processing by Devise::SessionsController#new as HTML</p>
+
+<pre>Rendering devise/sessions/new.html.erb within layouts/application
+Rendered devise/shared/_links.html.erb (0.8ms)
+Rendered devise/sessions/new.html.erb within layouts/application (7.1ms)</pre>
+
+<p>Completed 200 OK in 42ms (Views: 18.2ms | ActiveRecord: 8.2ms)</p>
+
+<p>Started POST “/users/sign_in” for ::1 at 2019-12-12 23:28:23 -0300 Processing by Devise::SessionsController#create as HTML</p>
+
+<pre>Parameters: {&quot;utf8&quot;=&gt;&quot;✓&quot;, &quot;authenticity_token&quot;=&gt;&quot;13f4Uhcvf2k518QffxRnHMJyX1l8dTEY5H3Ll5iKvmU20jAtfJRCQiMpopM49wcu4UeS2fTYEGIVqqct8TAsAQ==&quot;, &quot;user&quot;=&gt;{&quot;email&quot;=&gt;&quot;student@student.com&quot;, &quot;password&quot;=&gt;&quot;[FILTERED]&quot;, &quot;remember_me&quot;=&gt;&quot;0&quot;}, &quot;commit&quot;=&gt;&quot;Entre&quot;}
+[1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;email&quot; = $1 ORDER BY &quot;users&quot;.&quot;id&quot; ASC LIMIT $2[0m  [[&quot;email&quot;, &quot;student@student.com&quot;], [&quot;LIMIT&quot;, 1]]
+↳ /usr/local/rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98</pre>
+
+<p>Redirected to <a href="http://localhost:3000">localhost:3000</a>/ Completed 302 Found in 118ms (ActiveRecord: 0.5ms)</p>
+
+<p>Started GET “/” for ::1 at 2019-12-12 23:28:23 -0300 Processing by <a href="../HomeController.html#method-i-index"><code>HomeController#index</code></a> as HTML</p>
+
+<pre>Rendering home/index.html.erb within layouts/application
+[1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = $1 ORDER BY &quot;users&quot;.&quot;id&quot; ASC LIMIT $2[0m  [[&quot;id&quot;, 8], [&quot;LIMIT&quot;, 1]]
+↳ app/views/home/index.html.erb:3
+Rendered home/index.html.erb within layouts/application (1.6ms)</pre>
+
+<p>Completed 200 OK in 14ms (Views: 13.5ms | ActiveRecord: 0.2ms)</p>
+
+<p>Started GET “/sources” for ::1 at 2019-12-12 23:28:24 -0300 Processing by <a href="../SourcesController.html#method-i-index"><code>SourcesController#index</code></a> as HTML</p>
+
+<pre>Rendering sources/index.html.erb within layouts/application
+[1m[36mSource Load (0.8ms)[0m  [1m[34mSELECT &quot;sources&quot;.* FROM &quot;sources&quot;[0m
+↳ app/views/sources/index.html.erb:14
+Rendered sources/index.html.erb within layouts/application (9.1ms)</pre>
+
+<p>Completed 200 OK in 25ms (Views: 18.7ms | ActiveRecord: 4.5ms)</p>
+
+<p>Started GET “/information” for ::1 at 2019-12-12 23:28:25 -0300 Processing by <a href="../InformationController.html#method-i-index"><code>InformationController#index</code></a> as HTML</p>
 
 <pre>Rendering information/index.html.erb within layouts/application
-[1m[36mInformation Load (0.4ms)[0m  [1m[34mSELECT &quot;information&quot;.* FROM &quot;information&quot;[0m
+[1m[36mInformation Load (0.3ms)[0m  [1m[34mSELECT &quot;information&quot;.* FROM &quot;information&quot;[0m
 ↳ app/views/information/index.html.erb:16
+[1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = $1 ORDER BY &quot;users&quot;.&quot;id&quot; ASC LIMIT $2[0m  [[&quot;id&quot;, 8], [&quot;LIMIT&quot;, 1]]
+↳ app/views/information/index.html.erb:22
 Rendered information/index.html.erb within layouts/application (9.7ms)</pre>
 
-<p>Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.4ms)</p>
+<p>Completed 200 OK in 24ms (Views: 19.8ms | ActiveRecord: 2.9ms)</p>
 
-<p>ActionView::Template::Error (undefined method `origin&#39; for #&lt;Information:0x00007f99d4459550&gt;):</p>
+<p>Started GET “/home/index” for ::1 at 2019-12-12 23:28:26 -0300 Processing by <a href="../HomeController.html#method-i-index"><code>HomeController#index</code></a> as HTML</p>
 
-<pre>17:       &lt;tr&gt;
-18:         &lt;td&gt;&lt;%= information.title %&gt;&lt;/td&gt;
-19:         &lt;td&gt;&lt;%= information.info %&gt;&lt;/td&gt;
-20:         &lt;td&gt;&lt;%= information.origin %&gt;&lt;/td&gt;
-21:         &lt;td&gt;&lt;%= link_to &#39;Ver&#39;, information %&gt;&lt;/td&gt;
-22:         &lt;% if user_signed_in? and current_user.role == &#39;administrator&#39; %&gt;
-23:           &lt;td&gt;&lt;%= link_to &#39;Editar&#39;, edit_information_path(information) %&gt;&lt;/td&gt;</pre>
+<pre>Rendering home/index.html.erb within layouts/application
+[1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = $1 ORDER BY &quot;users&quot;.&quot;id&quot; ASC LIMIT $2[0m  [[&quot;id&quot;, 8], [&quot;LIMIT&quot;, 1]]
+↳ app/views/home/index.html.erb:3
+Rendered home/index.html.erb within layouts/application (4.4ms)</pre>
 
-<p>app/views/information/index.html.erb:20:in `block in _app_views_information_index_html_erb__1830171686668076965_70149333444780&#39; app/views/information/index.html.erb:16:in `_app_views_information_index_html_erb__1830171686668076965_70149333444780&#39; Started GET “/information” for ::1 at 2019-12-05 22:26:01 -0300 Processing by <a href="../InformationController.html#method-i-index"><code>InformationController#index</code></a> as HTML</p>
+<p>Completed 200 OK in 37ms (Views: 35.0ms | ActiveRecord: 0.6ms)</p>
+
+<p>Started GET “/information” for ::1 at 2019-12-12 23:28:27 -0300 Processing by <a href="../InformationController.html#method-i-index"><code>InformationController#index</code></a> as HTML</p>
 
 <pre>Rendering information/index.html.erb within layouts/application
-[1m[36mInformation Load (8.0ms)[0m  [1m[34mSELECT &quot;information&quot;.* FROM &quot;information&quot;[0m
+[1m[36mInformation Load (0.7ms)[0m  [1m[34mSELECT &quot;information&quot;.* FROM &quot;information&quot;[0m
 ↳ app/views/information/index.html.erb:16
-[1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = $1 ORDER BY &quot;users&quot;.&quot;id&quot; ASC LIMIT $2[0m  [[&quot;id&quot;, 5], [&quot;LIMIT&quot;, 1]]
+[1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = $1 ORDER BY &quot;users&quot;.&quot;id&quot; ASC LIMIT $2[0m  [[&quot;id&quot;, 8], [&quot;LIMIT&quot;, 1]]
 ↳ app/views/information/index.html.erb:22
-Rendered information/index.html.erb within layouts/application (14.9ms)</pre>
+Rendered information/index.html.erb within layouts/application (9.9ms)</pre>
 
-<p>Completed 200 OK in 41ms (Views: 30.9ms | ActiveRecord: 9.0ms)</p>
+<p>Completed 200 OK in 39ms (Views: 35.3ms | ActiveRecord: 1.6ms)</p>
+
+<p>Started GET “/home/index” for ::1 at 2019-12-12 23:28:28 -0300 Processing by <a href="../HomeController.html#method-i-index"><code>HomeController#index</code></a> as HTML</p>
+
+<pre>Rendering home/index.html.erb within layouts/application
+[1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = $1 ORDER BY &quot;users&quot;.&quot;id&quot; ASC LIMIT $2[0m  [[&quot;id&quot;, 8], [&quot;LIMIT&quot;, 1]]
+↳ app/views/home/index.html.erb:3
+Rendered home/index.html.erb within layouts/application (3.2ms)</pre>
+
+<p>Completed 200 OK in 28ms (Views: 25.2ms | ActiveRecord: 0.4ms)</p>
+
+<p>Started DELETE “/users/sign_out” for ::1 at 2019-12-12 23:28:29 -0300 Processing by Devise::SessionsController#destroy as HTML</p>
+
+<pre>Parameters: {&quot;authenticity_token&quot;=&gt;&quot;5gjK3p0ud2ED8tvObr6FhFEzG6lJAgqJEYEcpTgm5x7+X0J2yglMKnHfbuYAOtDgc0s4GGAxbe//BeXbum1eaw==&quot;}
+[1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = $1 ORDER BY &quot;users&quot;.&quot;id&quot; ASC LIMIT $2[0m  [[&quot;id&quot;, 8], [&quot;LIMIT&quot;, 1]]
+↳ /usr/local/rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+↳ /usr/local/rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+↳ /usr/local/rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98</pre>
+
+<p>Redirected to <a href="http://localhost:3000">localhost:3000</a>/ Completed 302 Found in 13ms (ActiveRecord: 1.3ms)</p>
+
+<p>Started GET “/” for ::1 at 2019-12-12 23:28:29 -0300 Processing by <a href="../HomeController.html#method-i-index"><code>HomeController#index</code></a> as HTML</p>
+
+<pre>Rendering home/index.html.erb within layouts/application
+Rendered home/index.html.erb within layouts/application (1.4ms)</pre>
+
+<p>Completed 200 OK in 20ms (Views: 18.6ms | ActiveRecord: 0.0ms)</p>
 
 </main>
 

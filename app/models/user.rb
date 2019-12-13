@@ -1,4 +1,5 @@
-# frozen_string_literal: true
+##
+# = Model da Classe Users, resposavel por usuarios da aplicaçao 
 
 class User < ApplicationRecord
   validates :full_name, presence: true

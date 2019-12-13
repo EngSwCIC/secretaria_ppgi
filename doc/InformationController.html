@@ -60,7 +60,7 @@
   <h3>Parent</h3>
 
   
-  <p class="link"><a href="ApplicationController.html">ApplicationController</a>
+  <p class="link">ApplicationController
   
 </div>
 
@@ -99,6 +99,10 @@
 
   <section class="description">
     
+<h1 id="class-InformationController-label-Classe+responsavel+pelas+infoma-C3-A7oes+do+sistema.">Classe responsavel pelas infomaçoes do sistema.<span><a href="#class-InformationController-label-Classe+responsavel+pelas+infoma-C3-A7oes+do+sistema.">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<p>Nessa controller estao todas as operaçoes de criaçao, deleçao e atualizaçao das informaçoes. Operaçoes CRUD</p>
+
   </section>
 
   
@@ -131,24 +135,18 @@
 
         <div class="method-description">
           
-          <p>POST /information POST /information.json</p>
+          <p>Metodo responsavel por criar uma nova informaçao.</p>
+
+<p>POST /information POST /information.json</p>
           
           
 
           
           <div class="method-source-code" id="create-source">
-            <pre><span class="ruby-comment"># File app/controllers/information_controller.rb, line 26</span>
+            <pre><span class="ruby-comment"># File app/controllers/information_controller.rb, line 54</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">create</span>    
-  <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
     <span class="ruby-ivar">@information</span> = <span class="ruby-constant">Information</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">information_params</span>
-    <span class="ruby-keyword">if</span> <span class="ruby-ivar">@information</span>.<span class="ruby-identifier">save</span>
-      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">redirect_to</span> <span class="ruby-ivar">@information</span>, <span class="ruby-value">notice:</span> <span class="ruby-string">&#39;Informação foi criada com sucesso.&#39;</span> }
-      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span> { <span class="ruby-identifier">render</span> <span class="ruby-value">:show</span>, <span class="ruby-value">status:</span> <span class="ruby-value">:created</span>, <span class="ruby-value">location:</span> <span class="ruby-ivar">@information</span> }
-    <span class="ruby-keyword">else</span>
-      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">render</span> <span class="ruby-value">:new</span> }
-      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span> { <span class="ruby-identifier">render</span> <span class="ruby-value">json:</span> <span class="ruby-ivar">@information</span>.<span class="ruby-identifier">errors</span>, <span class="ruby-value">status:</span> <span class="ruby-value">:unprocessable_entity</span> }
-    <span class="ruby-keyword">end</span>
-  <span class="ruby-keyword">end</span>
+    <span class="ruby-ivar">@information</span>.<span class="ruby-identifier">save</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">operation</span>(<span class="ruby-string">&quot;Informação foi criada com sucesso.&quot;</span>, <span class="ruby-string">&quot;created&quot;</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">not_operation</span>(<span class="ruby-string">&quot;new&quot;</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
           
@@ -173,13 +171,15 @@
 
         <div class="method-description">
           
-          <p>DELETE /information/1 DELETE /information/1.json</p>
+          <p>Metodo responsavel por deletar/destruir uma fonte de informaçao.</p>
+
+<p>DELETE /information/1 DELETE /information/1.json</p>
           
           
 
           
           <div class="method-source-code" id="destroy-source">
-            <pre><span class="ruby-comment"># File app/controllers/information_controller.rb, line 55</span>
+            <pre><span class="ruby-comment"># File app/controllers/information_controller.rb, line 71</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">destroy</span>
   <span class="ruby-ivar">@information</span>.<span class="ruby-identifier">destroy</span>
   <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
@@ -210,13 +210,15 @@
 
         <div class="method-description">
           
-          <p>GET /information/1/edit</p>
+          <p>Metodo responsavel por chamar o formulario de ediçao.</p>
+
+<p>GET /information/1/edit</p>
           
           
 
           
           <div class="method-source-code" id="edit-source">
-            <pre><span class="ruby-comment"># File app/controllers/information_controller.rb, line 21</span>
+            <pre><span class="ruby-comment"># File app/controllers/information_controller.rb, line 33</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">edit</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
@@ -242,13 +244,15 @@
 
         <div class="method-description">
           
-          <p>GET /information GET /information.json</p>
+          <p>Metodo responsavel por exibir todas as infomaçoes cadastradas.</p>
+
+<p>GET /information GET /information.json</p>
           
           
 
           
           <div class="method-source-code" id="index-source">
-            <pre><span class="ruby-comment"># File app/controllers/information_controller.rb, line 6</span>
+            <pre><span class="ruby-comment"># File app/controllers/information_controller.rb, line 12</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">index</span>
   <span class="ruby-ivar">@information</span> = <span class="ruby-constant">Information</span>.<span class="ruby-identifier">all</span>
 <span class="ruby-keyword">end</span></pre>
@@ -275,13 +279,15 @@
 
         <div class="method-description">
           
-          <p>GET /information/new</p>
+          <p>Metodo responsavel por receber os dados do formulario e armazenar na variavel e passar para o metodo create.</p>
+
+<p>GET /information/new</p>
           
           
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File app/controllers/information_controller.rb, line 16</span>
+            <pre><span class="ruby-comment"># File app/controllers/information_controller.rb, line 26</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">new</span>
   <span class="ruby-ivar">@information</span> = <span class="ruby-constant">Information</span>.<span class="ruby-identifier">new</span>
 <span class="ruby-keyword">end</span></pre>
@@ -308,13 +314,15 @@
 
         <div class="method-description">
           
-          <p>GET /information/1 GET /information/1.json</p>
+          <p>Metodo responsavel por exibir todas as fontes de infomaçoes cadastradas.</p>
+
+<p>GET /information/1 GET /information/1.json</p>
           
           
 
           
           <div class="method-source-code" id="show-source">
-            <pre><span class="ruby-comment"># File app/controllers/information_controller.rb, line 12</span>
+            <pre><span class="ruby-comment"># File app/controllers/information_controller.rb, line 20</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">show</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
@@ -340,23 +348,17 @@
 
         <div class="method-description">
           
-          <p>PATCH/PUT /information/1 PATCH/PUT /information/1.json</p>
+          <p>Metodo responsavel por atualizar uma informaçao.</p>
+
+<p>PATCH/PUT /information/1 PATCH/PUT /information/1.json</p>
           
           
 
           
           <div class="method-source-code" id="update-source">
-            <pre><span class="ruby-comment"># File app/controllers/information_controller.rb, line 41</span>
+            <pre><span class="ruby-comment"># File app/controllers/information_controller.rb, line 63</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">update</span>
-  <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
-    <span class="ruby-keyword">if</span> <span class="ruby-ivar">@information</span>.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">information_params</span>)
-      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">redirect_to</span> <span class="ruby-ivar">@information</span>, <span class="ruby-value">notice:</span> <span class="ruby-string">&#39;Informação foi atualizada com sucesso.&#39;</span> }
-      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span> { <span class="ruby-identifier">render</span> <span class="ruby-value">:show</span>, <span class="ruby-value">status:</span> <span class="ruby-value">:ok</span>, <span class="ruby-value">location:</span> <span class="ruby-ivar">@information</span> }
-    <span class="ruby-keyword">else</span>
-      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">render</span> <span class="ruby-value">:edit</span> }
-      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span> { <span class="ruby-identifier">render</span> <span class="ruby-value">json:</span> <span class="ruby-ivar">@information</span>.<span class="ruby-identifier">errors</span>, <span class="ruby-value">status:</span> <span class="ruby-value">:unprocessable_entity</span> }
-    <span class="ruby-keyword">end</span>
-  <span class="ruby-keyword">end</span>
+  <span class="ruby-ivar">@information</span>.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">information_params</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">operation</span>(<span class="ruby-string">&quot;Informação foi atualizada com sucesso.&quot;</span>, <span class="ruby-string">&quot;ok&quot;</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">not_operation</span>(<span class="ruby-string">&quot;edit&quot;</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
           
