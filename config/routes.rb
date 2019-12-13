@@ -2,6 +2,7 @@
 # Routes
 
 Rails.application.routes.draw do
+  resources :notifications
   resources :sources
   resources :information
   get 'home/index'

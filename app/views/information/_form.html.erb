@@ -25,7 +25,11 @@
     <%= form.label :fonte %>
     <%= form.collection_select(:fonte, Source.all,:title, :title) %>
   </div>
-  
+
+  <div class="field">
+    <%= form.label :notificar_usuários %>
+    <%= form.check_box :notify_users %>  
+    
   <div class="actions">
     <%= form.submit %>
   </div>
