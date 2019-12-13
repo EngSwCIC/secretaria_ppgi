@@ -35,12 +35,12 @@ RSpec.describe ActivitiesController, type: :controller do
         end
     end
 
-    # describe "GET show" do
-    #     it "assigns the requested actvity to @activity" do
-    #         activity = Factory(:activity)
-    #         get :show, id: activity
-    #         assigns(:activity).should eq(activity)
-    #     end
-    # end
+    describe "GET show" do
+        it "assigns the requested actvity to @activity" do
+            activity = Factory(:activity)
+            get :show, id: activity
+            assigns(:activity).should eq(activity)
+        end
+    end
 
 end

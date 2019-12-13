@@ -5,20 +5,19 @@
         <th>ID</th>
         <th>Processo</th>
         <th>Descrição</th>
-        <th>Tipo de processo</th>
-        <th>Função</th>
+        <th>Status</th>
     </tr>
     <% @activity.each do |processo| %>
         <tr>
             <td><%= link_to processo.id, controller: "activities", action: "show", id: processo.id %></td>
             <td><%= processo.name %></td>
             <td><%= processo.description %></td>
-            <td><%= processo.type_activity %></td>
-            <td><%= processo.role %></td>
+            <td><%= processo.estado %></td>
         </tr>
     <% end %>
 </table><br>
 <%= link_to 'Criar', controller: "activities", action: "new" %><br>
+<%= link_to 'Voltar', home_index_path %>
 <%# <%= link_to "Processo", processos_path(@activity) %>
 <%# <%= link_to "Activities", processos_path %>
 <%# <%= link_to 'Deletar', controller: "activities", action: "delete" %>
