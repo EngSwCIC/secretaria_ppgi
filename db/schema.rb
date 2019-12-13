@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_06_223758) do
+ActiveRecord::Schema.define(version: 2019_12_13_012023) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,10 +23,13 @@ ActiveRecord::Schema.define(version: 2019_12_06_223758) do
     t.string "fonte"
   end
 
-  create_table "information_source", force: :cascade do |t|
-    t.string "name"
+  create_table "notifications", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "source_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["source_id"], name: "index_notifications_on_source_id"
+    t.index ["user_id"], name: "index_notifications_on_user_id"
   end
 
   create_table "sources", force: :cascade do |t|
@@ -50,4 +53,6 @@ ActiveRecord::Schema.define(version: 2019_12_06_223758) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "notifications", "sources"
+  add_foreign_key "notifications", "users"
 end
