@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_03_122142) do
+ActiveRecord::Schema.define(version: 2019_12_13_011005) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 2019_12_03_122142) do
     t.datetime "updated_at", null: false
     t.string "type_activity"
     t.string "role"
+    t.bigint "status_id"
+    t.index ["status_id"], name: "index_activities_on_status_id"
   end
 
   create_table "statuses", force: :cascade do |t|
@@ -45,4 +47,5 @@ ActiveRecord::Schema.define(version: 2019_12_03_122142) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "activities", "statuses"
 end

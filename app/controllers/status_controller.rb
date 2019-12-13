@@ -1,6 +1,8 @@
-class StatusesController < ApplicationController
-    def inde
-        @status = Status.All
+class StatusController < ApplicationController
+    skip_before_action :verify_authenticity_token
+
+    def index
+        @status = Status.all
         render json: @status
     end
 
@@ -12,7 +14,7 @@ class StatusesController < ApplicationController
     def create
         @status = Status.new(status_params)
 
-        if @status.create
+        if @status. save!
             render :json => {message: "novo status criado com sucesso"}
         else
             render :json => {message: "nao foi possivel criar o novo status"}
@@ -21,7 +23,7 @@ class StatusesController < ApplicationController
 
     def update
         @status = Status.find(params[:id])
-        @status = update.(status_params)
+        @status.update(status_params)
 
         render json: @status
     end

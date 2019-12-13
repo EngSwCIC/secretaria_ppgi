@@ -14,7 +14,7 @@ class ActivitiesController < ApplicationController
     def create
         @activity = Activity.create(activity_params) 
 
-        if @activity.save #byebug
+        if @activity.save
             render :json => {message: "Processo criado com êxito", status: 200}
         else
             render :json => {message: "Não foi possivel criar o Processo", status: 500}
@@ -22,7 +22,6 @@ class ActivitiesController < ApplicationController
     end
 
     def update 
-        byebug
         @activity = Activity.find(params[:id])
         @activity.update(activity_params)
 
