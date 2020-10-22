@@ -1,0 +1,13 @@
+version: '3.2'
+
+services: 
+    eng_sw_2020_1:
+        container_name: eng_sw_2020_1
+        tty: true
+        build: ./
+        image: eng_sw_image
+        volumes: 
+            - ./app:/secretaria/app
+        entrypoint: rails server
+        ports: 
+            - 3000:3000
