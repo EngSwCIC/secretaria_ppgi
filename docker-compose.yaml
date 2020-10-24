@@ -1,13 +1,28 @@
-version: '3.2'
+version: "3.2"
 
-services: 
-    eng_sw_2020_1:
-        container_name: eng_sw_2020_1
-        tty: true
-        build: ./
-        image: eng_sw_image
-        volumes: 
-            - ./app:/secretaria/app
-        entrypoint: rails server
-        ports: 
-            - 3000:3000
+services:
+  secretaria_ppgi_db:
+    container_name: secretaria_ppgi_db
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: test_user
+      POSTGRES_PASSWORD: test_pwd
+      POSTGRES_DB: secretaria_ppgi_test
+    logging: 
+        driver: none
+
+  eng_sw_2020_1:
+    container_name: eng_sw_2020_1
+    tty: true
+    build: ./
+    image: eng_sw_image
+    environment: 
+        SECRETARIA_PPGI_DATABASE_PASSWORD: example
+    volumes:
+      - ./:/secretaria/
+    ports:
+      - 3000:3000
+    command: bash -c 'service postgresql start && rake'
+    depends_on:
+      - secretaria_ppgi_db

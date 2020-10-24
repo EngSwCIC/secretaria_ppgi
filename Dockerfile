@@ -14,6 +14,4 @@ ENV PATH "$PATH:/opt/yarn-1.22.5/bin"
 
 COPY . /secretaria/
 WORKDIR /secretaria/
-RUN gem environment
-
-ENTRYPOINT [ "rails", "server"] 
+RUN bundle install
