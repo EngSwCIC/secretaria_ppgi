@@ -3,7 +3,7 @@ version: "3.2"
 services:
   secretaria_ppgi_db:
     container_name: secretaria_ppgi_db
-    image: postgres
+    image: postgres:13
     restart: always
     environment:
       POSTGRES_USER: test_user
@@ -24,7 +24,7 @@ services:
       - ./:/secretaria/
     ports:
       - 3000:3000
-    command: rake
+    command: bash -c "rake"
     depends_on:
       - secretaria_ppgi_db
 

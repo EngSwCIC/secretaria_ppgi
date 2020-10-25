@@ -18,6 +18,8 @@ services:
     volumes: 
         - ./:/root/secretaria
     image: eng_sw_image
+    working_dir: /root/secretaria
+    command: rails server -b 0.0.0.0
     ports: 
         - 3000:3000
     depends_on:
