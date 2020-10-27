@@ -7,7 +7,7 @@ Feature: User can view all published informations
 Background: Start from the user home page
 	Given I have logged in on SecretariaPpgi
 	And I have pressed "Informações"
-	Then I should be on the SecretariaPpgi Informations page
+	Then I should be on the "SecretariaPpgi Informations" page
 	
 Scenario: View all the information made available (happy path)
 	Then I should see all published informations
