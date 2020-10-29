@@ -2,7 +2,7 @@ Given("I have logged in on SecretariaPpgi") do
     pending
 end
 
-Given("I have pressed {string}") do |button|
+When("I press {string}") do |button|
     puts button
     pending
 end
