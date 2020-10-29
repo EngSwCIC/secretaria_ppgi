@@ -1,43 +1,31 @@
-Dado('que entrei com login e senha') do
-    pending # Write code here that turns the phrase above into concrete actions
-  end
-  
-  Dado('sou secretário') do
-    pending # Write code here that turns the phrase above into concrete actions
-  end
-  
-  Quando('clicar para cadastrar status de processos') do
-    pending # Write code here that turns the phrase above into concrete actions
-  end
-  
-  Quando('cadastrar um status chamado de Novo') do
-    pending # Write code here that turns the phrase above into concrete actions
-  end
-  
-  Então('sera cadastrado um status de processo chamado de Novo') do
-    pending # Write code here that turns the phrase above into concrete actions
-  end
-  
-  Quando('cadastrar um status chamado de Em Andamento') do
-    pending # Write code here that turns the phrase above into concrete actions
-  end
-  
-  Então('será cadastrado um status de processo chamado de Andamento') do
-    pending # Write code here that turns the phrase above into concrete actions
-  end
-  
-  Quando('cadastrar um status chamado de Finalizado') do
-    pending # Write code here that turns the phrase above into concrete actions
-  end
-  
-  Então('será cadastrado um status de processo chamado de Finalizado') do
-    pending # Write code here that turns the phrase above into concrete actions
-  end
-  
-  Quando('cadastrar um status com mesmo nome que um Status já existente') do
-    pending # Write code here that turns the phrase above into concrete actions
-  end
-  
-  Então('acontecerá um erro avisando que o Status já existe') do
-    pending # Write code here that turns the phrase above into concrete actions
-  end
+Dado('que estou estou na página de secretário') do |page_secretario|
+  visit path_to(page_secretario)
+end
+
+Dado('clico em {string}') do |string|
+  click_button(string)
+end
+
+Dado('que estou na pagina de cadastrar um status') do |page_cadastro_status|
+  visit path_to(page_cadastro_status)
+end
+
+Quando('preencher em {string} com {string2}') do |string, string2|
+  fill_in(string, :with => string2)
+end
+
+Quando('seleciono {string} em {string2}') do |string, string2|
+  select(string, :from => string2)
+end
+
+Quando('clicar em {string}') do |string|
+  click_button(string)
+end
+
+Então('deveria estar de volta na pagina de cadastrar um status') do |page_cadastro_status|
+  visit path_to(page_cadastro_status)
+end
+
+Então('deveria aparecer {string}') do |string|
+  @expected_message = string
+end

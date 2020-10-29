@@ -4,30 +4,21 @@ Funcionalidade: Como um secretário,
     eu gostaria de cadastrar os possíveis status dos processos,
     para que eu possa manter controle do fluxo dos processos 
 
-    Cenário: Cadastrar um Status chamado Novo
-    Dado que entrei com login e senha
-    E sou secretário
-    Quando clicar para cadastrar status de processos
-    E cadastrar um status chamado de Novo
-    Então sera cadastrado um status de processo chamado de Novo
+    Contexto: Faço login como secretário
+    Dado que estou estou na página de secretário
+    E clico em "Cadastrar um Status"
 
-    Cenario: Cadastrar um Status chamado Em Andamento
-    Dado que entrei com login e senha
-    E sou secretário
-    Quando clicar para cadastrar status de processos
-    E cadastrar um status chamado de Em Andamento
-    Então será cadastrado um status de processo chamado de Andamento
-    
-    Cenario: Cadastrar um Status chamado Finalizado
-    Dado que entrei com login e senha
-    E sou secretário
-    Quando clicar para cadastrar status de processos
-    E cadastrar um status chamado de Finalizado
-    Então será cadastrado um status de processo chamado de Finalizado
+    Cenário: Cadastrar um Status (caminho feliz)
+    Dado que estou na pagina de cadastrar um status
+    Quando preencher em "Nome do Status:" com "Novo"
+    E seleciono "Média" em "Urgência:"
+    E clicar em "Concluir"
+    Então deveria estar de volta na pagina de cadastrar um status
+    E deveria aparecer "Status Cadastrado com sucesso!"
 
-    Cenario: Cadastrar um Status que já existe
-    Dado que entrei com login e senha
-    E sou secretário
-    Quando clicar para cadastrar status de processos
-    E cadastrar um status com mesmo nome que um Status já existente
-    Então acontecerá um erro avisando que o Status já existe
+    Cenario: Cadastrar um Status (caminho triste)
+    Dado que estou na pagina de cadastrar um status
+    Quando preencher em "Nome do Status:" com "Novo"
+    E clicar em "Concluir"
+    Então deveria estar de volta na pagina de cadastrar um status
+    E deveria aparecer "Erro ao Cadastrar Status!"
