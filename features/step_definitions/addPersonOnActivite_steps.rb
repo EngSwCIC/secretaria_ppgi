@@ -13,3 +13,6 @@ end
 E("eu devo ver {string}") do |string|
 	expect(page).to have_content string
 end
+
+E("essa pessoa já está cadastrada nessa atividade") do |string|
+end
