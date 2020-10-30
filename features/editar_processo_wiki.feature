@@ -14,7 +14,7 @@ Funcionalidade: Editar processo de atendimento
     E eu clico no botão "Editar processo"
 
   Cenário: Preenche campos com informações válidas
-    Quando eu preencho o campo "número SEI" com o valor "0423-123456/2017"
+    Quando eu preencho o campo "número SEI" com "0423-123456/2017"
     E preencho o campo "nome/tipo do processo" com "Processo Seletivo para admissão de alunos"
     E preencho o campo "nome dos envolvidos" com "Genaína Rodrigues"
     E preencho o campo "status" com "em andamento"
@@ -23,9 +23,7 @@ Funcionalidade: Editar processo de atendimento
     E recebo uma mensagem de sucesso 
 
   Cenário: Preenche campos com informações inválidas
-    Quando eu preencho o campo "número SEI" com o valor "alilicece"
-    E preencho o campo "nome/tipo do processo" com "Processo Seletivo para admissão de alunos"
-    E preencho o campo "nome dos envolvidos" com "Genaína Rodrigues"
+    Quando eu preencho o campo "número SEI" com "alilicece"
     E preencho o campo "status" com "em andamento"
     E clico no botão "Confirmar"
     Então recebo uma mensagem de erro

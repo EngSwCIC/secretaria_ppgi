@@ -11,7 +11,7 @@ RSpec.describe ProcessosController, type: :controller do
   describe 'PUT #update' do
     it 'editar processo existente' do
       @processo = Processo.find(1)
-      @processo = Processo.update(numero_SEI:"0423-123477/2020", tipo_processo:"", nome_envolvidos: "", status:"finalizado")
+      @processo = Processo.update(numero_SEI:"0423-123477/2020", status:"finalizado")
       expect(@processo.numero_SEI).to eq('0423-123477/2020') 
       expect(@processo.status).to eq('finalizado') 
     end
