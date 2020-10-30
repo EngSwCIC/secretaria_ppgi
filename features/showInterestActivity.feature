@@ -9,13 +9,10 @@ Feature: User actions
 	I would like to see interests activities
 
 	Background: User logged in
-		Given I am on the sign up page
+		Given I am on the 'users/sign_in' page
 		And I fill in 'email' with 'student@student.com'
-		And I fill in 'full_name' with 'alunao'
-		Then 'student' should be an option for 'role'
 		And I fill in 'password' with 'admin123'
-		And I fill in 'password_confirmation' with 'admin123'
-		When I press 'Sign up'
+		When I press 'Log in'
 		Then I should be on 'root_path' page
 
 	
