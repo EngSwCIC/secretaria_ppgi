@@ -11,8 +11,7 @@ Funcionalidade: Cadastrar um novo processo na Wiki de atendimento
     Cenário: Cadastrar um novo processo na Wiki de atendimento(caminho feliz)
         Quando eu clicar "Adicionar processo"
         Então eu devo estar na pagina Criar Novo processo
-        Quando eu preencher "Aluno"
-        E eu preencher "Numero do processo"
+        Quando eu preencher "numero SEI", "nome/tipo do processo", "nome dos envolvidos no processo", "status"
         E eu clicar em "Criar Processo"
         Então eu devo estar na página de atendimento
         E eu devo ver o Processo de "Numero do processo"

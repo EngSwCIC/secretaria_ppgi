@@ -10,7 +10,7 @@ RSpec.describe ProcessosController, type: :controller do
 
   describe 'POST #create' do
     it 'criar um novo processo' do
-      @processo = Processo.create(aluno:"João", num_process:"123")
+      @processo = Processo.create(num_SEI:123, tipo: 1, nome_envolvidos:"Joao, Maria, Luizinho", status: "pending")
       @processo.should be_an_instante_of Processo
     end
   end
