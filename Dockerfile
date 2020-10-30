@@ -15,3 +15,4 @@ ENV PATH "$PATH:/opt/yarn-1.22.5/bin"
 COPY . /secretaria/
 WORKDIR /secretaria/
 RUN bundle install
+RUN gem install solargraph
