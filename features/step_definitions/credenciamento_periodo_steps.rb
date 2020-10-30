@@ -17,9 +17,9 @@ Quando('eu aperto o botão {string}') do |string|
 end
 
 Então('eu espero ver a mensagem {string}') do |string|
-  @expected_message = string
+  pending #@expected_message = string
 end
 
 Quando('eu adiciono um valor {string} para {string2}') do |string, string2|
-  fill_in(string2, :with => string)
+  pending #fill_in(string2, :with => string)
 end
