@@ -6,26 +6,22 @@ Dado('clico em {string}') do |string|
   click_button(string)
 end
 
-Dado('que estou na pagina de cadastrar um status') do |page_cadastro_status|
-  visit path_to(page_cadastro_status)
+Dado('que estou na pagina de busca por nome') do |page_search_name|
+  visit path_to(page_page_search_name)
 end
 
-Quando('preencher em {string} com {string2}') do |string, string2|
+Quando('preencher nome em {string} com {string2}') do |string, string2|
   fill_in(string, :with => string2)
 end
 
-Quando('seleciono {string} em {string2}') do |string, string2|
-  select(string, :from => string2)
+Então("o nome deve constar no db") do |string|
+expect(File.readlines(file).grep({string})
 end
 
-Quando('clicar em {string}') do |string|
-  click_button(string)
+Então("o nome não deve constar no db") do |string|
+  expect(File.readlines(file).not_to grep({string})
 end
 
-Então('deveria estar de volta na pagina de cadastrar um status') do |page_cadastro_status|
-  visit path_to(page_cadastro_status)
-end
-
-Então('deveria aparecer {string}') do |string|
-  @expected_message = string
-end
+Então("os processos de {string} devem constar") do |file|
+  @expected_message = @processo['files']
+  end

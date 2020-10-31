@@ -8,15 +8,14 @@ Funcionalidade: Filtrar processos por pessoa
     Contexto: Faço login como secretário
     Dado que estou estou na página de secretário
     E clico em "Consultar Processos" para ser direcionado 
-    ao campo "Nome do
+    ao campo "Nome do Envolvido"
 
     Cenário: Nome da pessoa não consta no sistema
-        Dado um processo existente
-        Quando adiciono um arquivo 'file.pdf' ao processo
-        Então o processo deve constar com o novo arquivo 'file.pdf'
+        Dado uma busca por nome
+        Quando pesquiso uma pessoa específica
+        Então deve surgir o aviso de que este nome não está no banco de dados
     
     Cenário: Pessoa sem processos registrados
-        Dado um processo existente
-        Quando adiciono um arquivo 'file.exe' ao processo
-        Então o processo não deve constar o novo arquivo 'file.exe'
-
+        Dado uma busca por nome
+        Quando pesquiso uma pessoa específica
+        Então deve surgir o aviso de que este nome não contém processos registrados
