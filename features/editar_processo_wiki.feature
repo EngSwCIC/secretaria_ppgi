@@ -8,22 +8,20 @@ Funcionalidade: Editar processo de atendimento
   eu gostaria de editar um processo de atendimento já cadastrado
 
   Contexto:
-    Dado que eu esteja cadastrado como usuario "alicinha@gatinha.com", "123456", "secretario",
-    E que esteja na pagina da wiki de atendimento
+    Dado que eu esteja conectado como usuario "alicinha@gatinha.com", "123456", "secretario"
+    E que esteja na página "processos de atendimento"
     E eu seleciono um processo
     E eu clico no botão "Editar processo"
 
   Cenário: Preenche campos com informações válidas
     Quando eu preencho o campo "número SEI" com "0423-123456/2017"
-    E preencho o campo "nome/tipo do processo" com "Processo Seletivo para admissão de alunos"
-    E preencho o campo "nome dos envolvidos" com "Genaína Rodrigues"
-    E preencho o campo "status" com "em andamento"
+    E preencho o campo "reponsável" com "Genaína Rodrigues"
+    E seleciono o "status" "em andamento"
     E clico no botão "Confirmar"
-    Então sou redirecionado para a página da wiki de atendimento
+    Então sou redirecionado para a página "processos de atendimento"
     E recebo uma mensagem de sucesso 
 
   Cenário: Preenche campos com informações inválidas
     Quando eu preencho o campo "número SEI" com "alilicece"
-    E preencho o campo "status" com "em andamento"
     E clico no botão "Confirmar"
     Então recebo uma mensagem de erro

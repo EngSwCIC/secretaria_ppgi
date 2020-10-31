@@ -9,18 +9,18 @@ Funcionalidade: Adicionar comentário a um processo de atendimento
   eu gostaria de adicionar um comentário nesse processo de atendimento.
 
   Contexto:
-    Dado que eu esteja cadastrado como usuario "alicinha@gatinha.com", "123456", "secretario",
-    E que esteja na pagina da wiki de atendimento
+    Dado que eu esteja conectado como usuario "alicinha@gatinha.com", "123456", "secretario"
+    E que esteja na página "processos de atendimento"
     E eu seleciono um processo
     E eu clico no botão "Adicionar comentário"
 
   Cenário: Preenche campo de comentário
     Quando eu preencho o campo "comentário" com "Processo acompanhado também pela professora Maristela Holanda"
     E clico no botão "Confirmar"
-    Então sou redirecionado para a página da wiki de atendimento
+    Então sou redirecionado para a página "processos de atendimento"
     E recebo uma mensagem de sucesso 
 
   Cenário: Deixa o campo de comentário vazio 
-    Quando eu não preencho o campo de comentário
+    Quando eu não preencho o campo "comentário"
     E clico no botão "Confirmar"
     Então recebo uma mensagem de erro
