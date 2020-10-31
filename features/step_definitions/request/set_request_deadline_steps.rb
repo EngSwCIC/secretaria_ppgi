@@ -2,7 +2,7 @@ Dado("que eu esteja cadastrado como administrador, com nome: {Name}, email: {Ema
   pending
 end
 
-E("que eu esteja autenticado com a role: {Role}") do |Role|
+E("que eu esteja autenticado como {Role}") do |Role|
   pending
 end
 
@@ -14,14 +14,14 @@ E("eu clicar no botão {string}") do |string|
   pending
 end
 
-E("eu esteja na página de definir um prazo") do |prazos_index_path|
+Caso("a página de definir um prazo seja carregada corretamente") do
   pending
 end
 
-E("deve haver um botão com a opção de {string} para que eu possa escolher um período") do |string|
+E("exista um botão com a opção de {string} para que eu possa escolher um período") do |string|
   pending
 end
 
-Então("eu devo conseguir vizualizar a tabela com o tipo da solicitação e período definido") do |prazos_index_path|
+Então("eu devo estar em uma página com uma tabela com os dados:") do
   pending
 end 

@@ -2,7 +2,7 @@ Dado("que eu esteja cadastrado como usuario, com nome: {Name}, email: {Email}, s
   pending
 end
 
-E("que eu esteja autenticado com a role: {Role}") do |Role|
+E("que eu esteja autenticado") do
   pending
 end
 
@@ -14,14 +14,14 @@ E("eu clicar no botão {string}") do |string|
   pending
 end
 
-E("eu esteja na página de solicitação de passagens") do |passagens_index_path|
+Caso("a página de solicitação de passagens seja carregada corretamente") do
   pending
 end
 
-E("deve haver um botão com a opção de {string} para que eu possa fazer uma solicitação") do |string|
+E("E exista haver um botão para escolher um período para fazer uma solicitação") do
   pending
 end
 
-Então("eu devo conseguir vizualizar a tabela com nome e período da solicitação que desejo fazer") do |passagens_index_path|
+Então("eu devo estar em uma página com uma tabela com os dados:") do
   pending
 end 
