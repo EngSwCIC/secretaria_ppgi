@@ -24,9 +24,9 @@ Rafael Mascarenhas Dal Moro
 ### Quais serão as regras de negócio para cada funcionalidade?
 
 ### Quem ficou responsável por cada uma?.
-* Adicionar processos com detalhes ->
+* Adicionar processos com detalhes -> Manoel
 * Anexar arquivos ao cadastro de um novo processo -> Bruno
-* Cadastro de possíveis status dos processos ->
+* Cadastro de possíveis status dos processos -> João Viktor
 * Consulta de todos os processos relacionados a uma pessoa -> Rafael 
 
 
