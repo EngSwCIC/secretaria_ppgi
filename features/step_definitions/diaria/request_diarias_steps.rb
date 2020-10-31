@@ -2,7 +2,7 @@ Dado("que eu esteja cadastrado como usuario, com nome: {Name}, email: {Email}, s
     pending
 end
 
-E("que eu esteja autenticado com a role: {Role}") do |Role|
+E("que eu esteja autenticado com a role") do
     pending
 end
 
@@ -10,18 +10,18 @@ E("que eu esteja na página inicial") do
     visit(root_path)
 end
 
-E("eu clicar no botão 'Solicitar diárias'") do |diarias_index_path|
+E("eu clicar no botão 'Solicitar diárias'") do
     pending
 end
 
-E("deve haver um campo para inserção da data de entrada {date} ") do |date| 
+E("existe um campo para inserção de data de entrada {date}") do |date| 
     pending
 end
 
-E("deve haver um campo para inserção da data de saída {date}") do |date|
+E("existe um campo para inserção de data de saída {date}") do |date|
     pending
 end
 
-Então("eu devo conseguir vizualizar uma tabela com as datas de entrada e saída da solicitação que desejo fazer") do |diarias_index_path|
+Então("eu devo estar em uma página de confirmação com a tabela:") do
     pending
 end 

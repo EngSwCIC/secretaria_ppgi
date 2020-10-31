@@ -2,7 +2,7 @@ Dado("que eu esteja cadastrado como administrador, com nome: {Name}, email: {Ema
     pending
 end
 
-E("que eu esteja autenticado com a role: {Role}") do |Role|
+E("que eu esteja autenticado como {Role}") do |Role|
     pending
 end
 
@@ -10,14 +10,14 @@ E("que eu esteja na página inicial") do
     visit(root_path)
 end
 
-E("eu clicar no link Painel de Administrador") do |admin_root_path|
+E("eu clicar no link do painel de administrador") do
     pending
 end
 
-E("eu clicar em Lista de Solicitações") do |solicitacao_index_path|
+E("eu clicar em na lista de solicitações") do
     pending
 end
 
-Então("eu devo conseguir vizualizar a tabela de solicitações ordenadas por prioridade") do |solicitacao_index_path|
+Então("eu devo estar em uma página com uma tabela mostrando os dados ordenados") do
     pending
 end
