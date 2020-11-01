@@ -19,7 +19,7 @@ Então("eu devo ser redirecionado para {string}") do |string|
     visit "localhost:3000/#{string.downcase}"
 end
 
-#Cenário
+#Cenário feliz
 Dado("que eu estou na página {string}") do |string|
     visit "localhost:3000/#{string.downcase}"
 end
@@ -38,6 +38,23 @@ end
 
 E("pressiono {button}") do |button|
     click_on(button)
+end
+
+Então("eu devo ver {string}") do |string|
+    expect(page).to have_content string
+end
+
+#Cenário triste
+Dado("que eu estou na página {string}") do |string|
+    visit "localhost:3000/#{string.downcase}"
+end
+
+Quando("pressiono {button}") do |button|
+    click_on(button)
+end
+
+Então("eu devo ser redirecionado para {string}") do |string|
+    visit "localhost:3000/#{string.downcase}"
 end
 
 Então("eu devo ver {string}") do |string|
