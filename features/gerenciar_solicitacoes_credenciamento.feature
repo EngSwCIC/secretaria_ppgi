@@ -14,7 +14,7 @@ Funcionalidade: Gerenciar solicitações de credenciamento
         | Solicitação 3 | 02-Jan-2021 | 1                |
         | Solicitação 4 | 02-Jan-2021 | 1                |
         
-        E que eu estou cadastrado como "Gabriel", "gabriel@admin.com", "gabriel123", 1, "200000000"
+        E que eu estou cadastrado como "Gabriel", "gabriel@admin.com", "gabriel123", "administrador", "200000000"
         E que eu estou logado
         E que eu estou na página de solicitações de credenciamento
     
