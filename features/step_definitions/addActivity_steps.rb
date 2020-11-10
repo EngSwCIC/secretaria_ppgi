@@ -1,19 +1,27 @@
-Dado("que eu estou na página {string}") do |string|
-    visit "localhost:3000/#{string.downcase}"
-  end
+Dado("que estou logado com usuário {string} e senha {string}") do |string, string2|
+  visit '/'
+  click_on 'Entrar'
+  fill_in 'Email', with: string
+  fill_in 'Password', with: string2
+  click_on 'Log in'
+end
+
+Dado("que estou em {string}") do |string|
+    visit "/#{string.downcase}"
+end
   
-  Quando("eu clico em {string}") do |string|
+  Quando("clico em {string}") do |string|
     click_on string
-  end
+end
   
-  Então("eu devo ser redirecionado para {string}") do |string|
-    visit "localhost:3000/#{string.downcase}"
-  end
+  Então("devo ser redirecionado para {string}") do |string|
+    visit "/#{string.downcase}"
+end
   
-  Quando("eu preencho o campo {string} com {string}") do |string, string2|
+  Quando("preencho o campo {string} com {string}") do |string, string2|
     fill_in string, with: string2
-  end
+end
   
-  Então("eu devo ver {string}") do |string|
+  Então("devo ver {string}") do |string|
     expect(page).to have_content string
-  end
+end

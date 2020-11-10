@@ -1,0 +1,16 @@
+<h1>Atividades</h1>
+ 
+<table>
+  <tr>
+    <th>Título</th>
+    <th>Descrição</th>
+    <th></th>
+  </tr>
+ 
+  <% @activities.each do |activity| %>
+    <tr>
+      <td><%= activity.title %></td>
+      <td><%= activity.description %></td>
+    </tr>
+  <% end %>
+</table>
