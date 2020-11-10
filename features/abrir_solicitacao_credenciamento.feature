@@ -1,29 +1,22 @@
 #language: pt
 #encoding: utf-8
 
-Funcionalidade: Solicitar credenciamento
-  Como professor autenticado no sistema,
-  Quero poder solicitar meu credenciamento
-  Para que eu possa ser um professor credenciado
+Funcionalidade: Abrir solicitação de credenciamento
+    Como professor autenticado no sistema,
+    Quero poder abrir uma solicitação de credenciamento
+    Para que eu possa ser um professor credenciado
 
-  Contexto:
-    Dado que eu esteja cadastrado como usuário "prof1@user.com"
-    E que esteja logado
-    E que esteja na página de credenciamento
-    E esteja pendente de credenciamento
+    Contexto:
+        Dado que eu estou cadastrado e logado como "Lucas", "lucas@professor.com", "lucas123", "professor", "200000000"
+        E que eu estou na página de abrir solicitação de credenciamento
 
-  Cenário: Solicitacao enviada com sucesso
-    Quando eu preencher o número do processo SEI
-    E clicar no botão "Solicitar credenciamento"
-    Então é enviado à administração uma solicitação de credenciamento
-    E aparece uma mensagem de confirmação
+    Cenário: Solicitação enviada com sucesso
+        Quando eu anexo o arquivo "Formulário de Credenciamento.pdf" no campo 'Formulario'
+        E eu anexo o arquivo "CV Lattes.pdf" em 'CV Lattes'
+        E eu clico em 'Enviar'
+        Então eu devo ver "Solicitação enviada com sucesso"
 
-  Cenário: Solicitacao não enviada - erro no número do processo    
-    Quando eu preencher com um número qualquer
-    E clicar no botão "Solicitar credenciamento"
-    Então a mensagem de erro "Número inválido"
-
-  Cenário: Solicitação não enviada - campo em branco    
-    Quando eu não preencher o campo do número do processo SEI
-    E clicar no botão "Solicitar credenciamento"
-    Então a mensagem de erro "Campo obrigatório em branco"
+    Cenário: Solicitação não enviada (campo obrigatório em branco)
+        Quando eu anexo o arquivo "Formulário de Credenciamento.pdf" no campo 'Formulario'
+        E eu clico em 'Enviar'
+        Então eu devo ver "Solicitação não enviada (campo obrigatório* em branco)"

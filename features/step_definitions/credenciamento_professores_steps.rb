@@ -31,7 +31,11 @@ Dado /^que eu estou na página (.+)$/ do |page_name|
     visit path_to(page_name)
 end
 
-Quando /^eu clico em "([^"]*)"$/ do |link|
+Quando /^eu anexo o arquivo "([^"]*)" em '([^']*)'$/ do |path, field|
+    attach_file(field, File.expand_path(path))
+end
+
+Quando /^eu clico em '([^']*)'$/ do |link|
     click_link(link)
 end
 
