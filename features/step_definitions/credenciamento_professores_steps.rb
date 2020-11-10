@@ -1,11 +1,27 @@
-Dado "que as seguintes solicitações estejam pendentes:" do |table|
+require 'uri'
+require 'cgi'
+require File.expand_path(File.join(File.dirname(__FILE__), "..", "support", "paths"))
+require File.expand_path(File.join(File.dirname(__FILE__), "..", "support", "selectors"))
+
+module WithinHelpers
+  def with_scope(locator)
+    locator ? within(*selector_for(locator)) { yield } : yield
+  end
+end
+World(WithinHelpers)
+
+Dado "que existam as seguintes solicitações:" do |table|
     pending
     # table.hashes.each do |row|
     #     Activity.create!(row)
     # end
 end
 
-Dado /^que eu estou cadastrado e logado como (.*)$/ do |input|
+Dado "que existam os seguintes credenciamentos sem prazo definido:" do |table|
+    pending
+end
+
+Dado /^que eu esteja cadastrado e logado como (.*)$/ do |input|
     user_props = [:full_name, :email, :password, :role, :registration]
     
     values = input.gsub!(/"/,'').split(/,\s?/)
@@ -13,11 +29,11 @@ Dado /^que eu estou cadastrado e logado como (.*)$/ do |input|
     User.create!(record)
     
     steps %(
-        Dado que eu estou logado como "#{record[:email]}", "#{record[:password]}"
+        Dado que eu esteja logado como "#{record[:email]}", "#{record[:password]}"
     )
 end
 
-Dado /^que eu estou logado como (.*)$/ do |input|
+Dado /^que eu esteja logado como (.*)$/ do |input|
     fields = ['email', 'password']
     values = Hash[fields.zip input.gsub!(/"/,'').split(/,\s?/)]
 
@@ -27,8 +43,9 @@ Dado /^que eu estou logado como (.*)$/ do |input|
     click_button("Log in")
 end
 
-Dado /^que eu estou na página (.+)$/ do |page_name|
-    visit path_to(page_name)
+Dado /^que eu esteja na página (.+)$/ do |page_name|
+    pending
+    # visit path_to(page_name)
 end
 
 Quando /^eu anexo o arquivo "([^"]*)" em '([^']*)'$/ do |path, field|
@@ -58,6 +75,18 @@ Quando /^eu desmarco os seguintes estados (.*)$/ do |statuses|
     statuses.split(/,[ ]*/).each do |status|
         uncheck("statuses[#{status}]")
     end
+end
+
+Quando /^eu preencho em '([^']*)' com/m do |field, text|
+    fill_in(field, :with => text)
+end
+
+Quando /^eu preencho com "([^"]*)" em '([^']*)'$/ do |field, text|
+    fill_in(field, :with => text)
+end
+
+Quando /^eu seleciono "([^"]*)" como data de '([^']*)'$/ do |date, field|
+    select_date(date, :from => field)
 end
 
 Quando /^eu aperto '([^']*)'$/ do |button|
