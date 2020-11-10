@@ -11,8 +11,8 @@ E("preencho o campo {string} com {string}") do |string1, string2|
 	fill_in string1, with: string2
 end	
 
-Quando("pressiono {button}") do |button|
-    click_on(button)
+Quando("pressiono {string}") do |string|
+    click_on(string)
 end
 
 Então("eu devo ser redirecionado para {string}") do |string|
@@ -24,8 +24,8 @@ Dado("que eu estou na página {string}") do |string|
     visit "localhost:3000/#{string.downcase}"
 end
 
-Quando("pressiono {button}") do |button|
-    click_on(button)
+Quando("pressiono {string}") do |string|
+    click_on(string)
 end
 
 Então("eu devo ser redirecionado para {string}") do |string|
@@ -36,8 +36,8 @@ Quando("preencho o campo {string} com {string}") do |string1, string2|
 	fill_in string1, with: string2
 end	
 
-E("pressiono {button}") do |button|
-    click_on(button)
+E("pressiono {string}") do |string|
+    click_on(string)
 end
 
 Então("eu devo ver {string}") do |string|
@@ -49,8 +49,8 @@ Dado("que eu estou na página {string}") do |string|
     visit "localhost:3000/#{string.downcase}"
 end
 
-Quando("pressiono {button}") do |button|
-    click_on(button)
+Quando("pressiono {string}") do |string|
+    click_on(string)
 end
 
 Então("eu devo ser redirecionado para {string}") do |string|
