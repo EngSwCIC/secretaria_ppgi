@@ -7,31 +7,32 @@ Funcionalidade: Gerenciar solicitações de credenciamento
     Para decidir se vou aceitar ou recusar tal solicitação
 
     Contexto:
-        Dado que os seguintes solicitações estejam pendentes:
-        | title         | due_date    | activity_type_id |
-        | Solicitação 1 | 02-Jan-2021 | 1                |
-        | Solicitação 2 | 02-Jan-2021 | 1                |
-        | Solicitação 3 | 02-Jan-2021 | 1                |
-        | Solicitação 4 | 02-Jan-2021 | 1                |
-        
-        E que eu estou cadastrado como "Gabriel", "gabriel@admin.com", "gabriel123", "administrador", "200000000"
-        E que eu estou logado
+        Dado que as seguintes solicitações estejam pendentes:
+        | title         | due_date    | activity_type_id              |
+        | Solicitação 1 | 02-Jan-2021 | Solicitação de credenciamento |
+        | Solicitação 2 | 02-Jan-2021 | Solicitação de credenciamento |
+        | Solicitação 3 | 02-Jan-2021 | Solicitação de credenciamento |
+        | Solicitação 4 | 02-Jan-2021 | Solicitação de credenciamento |
+
+        E que eu estou cadastrado e logado como "Gabriel", "gabriel@admin.com", "gabriel123", "administrator", "200000000"
         E que eu estou na página de solicitações de credenciamento
     
     Cenário: Aceitar uma solicitação de credenciamento
         Quando eu clico em "Solicitação 1"
         Então eu devo estar na página da "Solicitação 1"
-        Quando eu clico em "Aceitar"
+        Quando eu clico em "Aprovar"
         Então eu devo estar na página de solicitações de credenciamento
-        E eu não devo ver "Solicitação 1"
-        Quando eu clico em "Solicitações aceitas"
+        Quando eu desmarco os seguintes estados: Rejeitadas, Reformulação
+        E eu marco os seguintes estados: Aprovadas
+        E aperto 'Atualizar'
         Então eu devo ver "Solicitação 1"
     
     Cenário: Recusar uma solicitação de credenciamento
         Quando eu clico em "Solicitação 2"
         Então eu devo estar na página da "Solicitação 2"
-        Quando eu clico em "Recusar"
+        Quando eu clico em "Rejeitar"
         Então eu devo estar na página de solicitações de credenciamento
-        E eu não devo ver "Solicitação 2"
-        Quando eu clico em "Solicitações aceitas"
-        Então eu não devo ver "Solicitação 2"
+        Quando eu desmarco os seguintes estados: Aprovadas, Reformulação
+        E eu marco os seguintes estados: Rejeitadas
+        E aperto 'Atualizar'
+        Então eu devo ver "Solicitação 2"

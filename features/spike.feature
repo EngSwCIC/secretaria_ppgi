@@ -3,4 +3,4 @@
 
 Funcionalidade: Testar
     Cenário:
-        Dado que eu estou cadastrado e logado como "Gabriel", "gabriel@admin.com", "gabriel123", 1, "200000000"
+        Dado que eu estou cadastrado e logado como "Gabriel", "gabriel@admin.com", "gabriel123", "administrator", "200000000"

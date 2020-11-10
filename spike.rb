@@ -12,5 +12,5 @@
 # p record
 
 # frase = "\"gabriel@admin.com\", \"gabriel123\""
-# values = frase.gsub!(/"/,'').split(/,\s?/)
+# values = frase.gsub!(/["']/,'').split(/,\s?/)
 # p values
