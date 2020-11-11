@@ -1,0 +1,20 @@
+<h1>Atividades</h1>
+
+<%= link_to 'Adicionar atividade', new_activity_path %>
+ 
+<table>
+  <tr>
+    <th>Título</th>
+    <th>Prazo de execução</th>
+    <th>Descrição</th>
+    <th></th>
+  </tr>
+ 
+  <% @activities.each do |activity| %>
+    <tr>
+      <td><%= activity.title %></td>
+      <td><%= activity.due_date %></td>
+      <td><%= activity.description %></td>
+    </tr>
+  <% end %>
+</table>
