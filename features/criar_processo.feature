@@ -7,7 +7,7 @@ Funcionalidade: Cadastrar um novo processo na Wiki de atendimento
     A FIM de disponibilizar informações para outros secretários.
 
     Contexto:
-        Dado que eu esteja conectado como usuario "usuario_secretario@secretario.com", "123456", "secretario"
+        Dado que eu esteja conectado como usuario "secretary@secretary.com", "admin123", "secretary"
         E que esteja na página "processos de atendimento"
         E clico no botão "Adicionar processo"
 

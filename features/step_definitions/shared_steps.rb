@@ -15,12 +15,19 @@ Quando(/preencho o campo "([^"]*)" com "([^"]*)"/) do |campo, valor|
 end
 
 Dado(/(?:esteja na|redirecionado para a) página "([^"]*)"/) do |pagina|
-    pending # Write code here that turns the phrase above into concrete actions
+   pending
 end
 
 Dado(/esteja conectado como usuario "([^"]*)", "([^"]*)", "([^"]*)"/) do |usuario, senha, funcao|
-    pending # Write code here that turns the phrase above into concrete actions
-end
+    #faz login
+ 
+    User.create(full_name: "Secretário", email: "secretary@secretary.com", password: "admin123", role: "secretary", registration: "000000000")
+    visit new_user_session_path
+    fill_in :user_email, with: usuario
+    fill_in :user_password, with: senha
+    click_button "Log in"
+
+end 
 
 Quando(/visualizar (?:o|a|os|as) "([^"]*)"/) do |elemento|
     pending
