@@ -11,14 +11,22 @@ end
 World(WithinHelpers)
 
 Dado "que existam as seguintes solicitações:" do |table|
-    pending
-    # table.hashes.each do |row|
-    #     Activity.create!(row)
-    # end
+    table.hashes.each do |row|
+        type = ActivityType.find_by(title: row['activity_type_title'])
+        if type == nil
+            type = ActivityType.create!(title: row['activity_type_title'])
+        end
+        Activity.create!(title: row['title'], activity_type_id: type.id)
+    end
 end
 
 Dado "que existam os seguintes credenciamentos sem prazo definido:" do |table|
-    pending
+    type_id = ActivityType.create!(title: 'Credenciamento').id
+    table.hashes.each do |row|
+        act_id = Activity.create!(title: row['title'], activity_type_id: type_id).id
+        usr_id = User.create!(full_name: row['full_name'], email: row['full_name']+"@professor.com", password: row['full_name']+"123", role: "professor", registration: "000000000").id
+        UserActivity.create!(activity_id: act_id, user_id: usr_id)
+    end
 end
 
 Dado /^que eu esteja cadastrado e logado como (.*)$/ do |input|

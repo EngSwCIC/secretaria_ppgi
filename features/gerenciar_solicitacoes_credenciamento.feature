@@ -8,7 +8,7 @@ Funcionalidade: Gerenciar solicitações de credenciamento
 
     Contexto:
         Dado que existam as seguintes solicitações:
-        | title         | activity_type_id              |
+        | title         | activity_type                 |
         | Solicitação 1 | Solicitação de credenciamento |
         | Solicitação 2 | Solicitação de credenciamento |
         | Solicitação 3 | Solicitação de credenciamento |
