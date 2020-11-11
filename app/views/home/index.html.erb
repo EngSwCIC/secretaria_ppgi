@@ -2,6 +2,7 @@
 <p>Find me in app/views/home/index.html.erb</p>
 
 <% if user_signed_in? %>
+  <%= @word %>
   <h3>Usuário atual</h3>
   <p><strong>Nome: </strong><%= current_user.full_name %></p>
   <p><strong>Email: </strong><%= current_user.email %></p>

@@ -10,10 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_14_163205) do
+ActiveRecord::Schema.define(version: 2020_11_11_004340) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "activities", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.date "due_date"
+    t.bigint "activity_type_id"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["activity_type_id"], name: "index_activities_on_activity_type_id"
+  end
+
+  create_table "activity_types", force: :cascade do |t|
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -30,4 +47,13 @@ ActiveRecord::Schema.define(version: 2019_11_14_163205) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "users_activities", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "activity_id"
+    t.index ["activity_id"], name: "index_users_activities_on_activity_id"
+    t.index ["user_id", "activity_id"], name: "index_users_activities_on_user_id_and_activity_id", unique: true
+    t.index ["user_id"], name: "index_users_activities_on_user_id"
+  end
+
+  add_foreign_key "activities", "activity_types"
 end
