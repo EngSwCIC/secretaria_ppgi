@@ -1,0 +1,17 @@
+<h1>Cadastrar nova atividade</h1>
+
+<%= form_with scope: :activity, url: activities_path,local: true do |form| %>
+  <p>
+    <%= form.label :title, "Nome da atividade" %><br>
+    <%= form.text_field :title %>
+  </p>
+ 
+  <p>
+    <%= form.label :due_date, "Prazo de execução" %><br>
+    <%= form.date_field :due_date %>
+  </p>
+ 
+  <p>
+    <%= form.submit "Salvar" %>
+  </p>
+<% end %>

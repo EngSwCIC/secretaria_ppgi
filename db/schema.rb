@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2020_11_10_171424) do
   enable_extension "plpgsql"
 
   create_table "activities", force: :cascade do |t|
-    t.string "title"
+    t.string "title", null: false
     t.string "description"
     t.date "due_date"
     t.binary "documents"
