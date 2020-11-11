@@ -23,8 +23,8 @@ end
 Dado "que existam os seguintes credenciamentos sem prazo definido:" do |table|
     type_id = ActivityType.create!(title: 'Credenciamento').id
     table.hashes.each do |row|
-        act_id = Activity.create!(title: row['title'], activity_type_id: type_id).id
-        usr_id = User.create!(full_name: row['full_name'], email: row['full_name']+"@professor.com", password: row['full_name']+"123", role: "professor", registration: "000000000").id
+        act_id = Activity.create!(title: row['activity_title'], activity_type_id: type_id).id
+        usr_id = User.create!(full_name: row['user_full_name'], email: row['user_full_name']+"@professor.com", password: row['user_full_name']+"123", role: "professor", registration: "000000000").id
         UserActivity.create!(activity_id: act_id, user_id: usr_id)
     end
 end

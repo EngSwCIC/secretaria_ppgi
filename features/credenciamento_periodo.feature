@@ -8,10 +8,10 @@ Funcionalidade: Definir o prazo de credenciamento dos professores
 
   Contexto:
     Dado que existam os seguintes credenciamentos sem prazo definido:
-    | title            | full_name |
-    | Credenciamento 1 | Adalberto |
-    | Credenciamento 2 | Mariano   |
-    | Credenciamento 3 | Joel      |
+    | activity_title   | user_full_name |
+    | Credenciamento 1 | Adalberto      |
+    | Credenciamento 2 | Mariano        |
+    | Credenciamento 3 | Joel           |
     
     E que eu esteja cadastrado e logado como "Aécio", "aecio@admin.com", "aecio123", "administrator", "200000000"
     E que esteja na página de prazos de credenciamento
