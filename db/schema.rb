@@ -39,7 +39,8 @@ ActiveRecord::Schema.define(version: 2020_11_12_030843) do
   create_table "activities", force: :cascade do |t|
     t.string "title"
     t.text "description"
-    t.date "due_date"
+    t.date "start_date"
+    t.date "end_date"
     t.integer "status"
     t.bigint "activity_type_id"
     t.datetime "created_at", null: false
@@ -49,8 +50,6 @@ ActiveRecord::Schema.define(version: 2020_11_12_030843) do
 
   create_table "activity_types", force: :cascade do |t|
     t.string "title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "user_activities", force: :cascade do |t|
@@ -58,8 +57,6 @@ ActiveRecord::Schema.define(version: 2020_11_12_030843) do
     t.bigint "activity_id"
     t.boolean "interested"
     t.boolean "active"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.index ["activity_id"], name: "index_user_activities_on_activity_id"
     t.index ["user_id", "activity_id"], name: "index_user_activities_on_user_id_and_activity_id", unique: true
     t.index ["user_id"], name: "index_user_activities_on_user_id"

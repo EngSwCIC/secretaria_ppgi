@@ -5,8 +5,6 @@ class CreateUserActivities < ActiveRecord::Migration[5.2]
       t.belongs_to :activity, foreign_key: true
       t.boolean :interested
       t.boolean :active
-
-      t.timestamps
     end
     add_index :user_activities, %i[user_id activity_id], unique: true
   end
