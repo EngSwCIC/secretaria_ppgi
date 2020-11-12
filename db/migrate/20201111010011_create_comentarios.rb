@@ -1,6 +1,7 @@
-class CreateComentarios < ActiveRecord::Migration[5.2]
+class CreateWikiComments < ActiveRecord::Migration[5.2]
   def change
-    create_table :comentarios do |t|
+    create_table :wiki_comments do |t|
+      t.references :wiki_entry
       t.text :content
 
       t.timestamps

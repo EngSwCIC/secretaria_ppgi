@@ -1,6 +1,6 @@
-class CreateWikis < ActiveRecord::Migration[5.2]
+class CreateWikiEntries < ActiveRecord::Migration[5.2]
   def change
-    create_table :wikis do |t|
+    create_table :wiki_entries do |t|
       t.string :title
       t.text :content
 
