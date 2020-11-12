@@ -1,3 +1,4 @@
 class Activity < ApplicationRecord
-    validates :activity_type_id, presence: true
+    belongs_to :activity_type
+    has_many_attached :documents
 end

@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  before_action :set_word, only: [:index]
+  # before_action :set_word, only: [:index]
 
   def index
   end

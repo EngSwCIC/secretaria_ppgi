@@ -16,3 +16,4 @@ User.create(full_name: "Aluno", email: "student@student.com", password: "admin12
 # Activities
 ActivityType.destroy_all
 Activity.destroy_all
+UserActivity.destroy_all
