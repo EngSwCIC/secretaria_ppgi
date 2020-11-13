@@ -8,18 +8,17 @@ Funcionalidade: Cadastrar um novo processo na Wiki de atendimento
 
     Contexto:
         Dado que eu esteja conectado como usuario "secretary@secretary.com", "admin123", "secretary"
-        E que esteja na página "processos de atendimento"
+        E que esteja na página "Wiki de Atendimento"
         E clico no botão "Adicionar processo"
 
     Cenário: Preenche campos com informações válidas(caminho feliz)
-        Quando eu preencho o campo "número SEI" com "0423-123456/2017"
-        E preencho o campo "reponsável" com "Genaína Rodrigues"
-        E seleciono o "status" "em andamento"
+        Quando eu preencho o campo "Título" com "Trancar Semestre"
+        E preencho o campo "Conteúdo" com "Como fazer para trancar o semestre"
         E clico no botão "Confirmar"
-        Então sou redirecionado para a página "processos de atendimento"
+        Então sou redirecionado para a página "Processo"
         E recebo uma mensagem de sucesso
 
     Cenário: Preenche campos com informações inválidas
-        Quando eu preencho o campo "número SEI" com "alilicece"
+        Quando eu preencho o campo "Título" com "Trancar Semestre"
         E clico no botão "Confirmar"
         Então recebo uma mensagem de erro

@@ -9,19 +9,18 @@ Funcionalidade: Editar processo de atendimento
 
   Contexto:
     Dado que eu esteja conectado como usuario "alicinha@gatinha.com", "123456", "secretario"
-    E que esteja na página "processos de atendimento"
-    E eu seleciono um processo
-    E eu clico no botão "Editar processo"
+    E que esteja na página "Wiki de Atendimento"
+    E eu clico no botão "Editar"
 
   Cenário: Preenche campos com informações válidas
-    Quando eu preencho o campo "número SEI" com "0423-123456/2017"
-    E preencho o campo "reponsável" com "Genaína Rodrigues"
-    E seleciono o "status" "em andamento"
+    Quando eu preencho o campo "Título" com "Registrar Estágio"
+    E preencho o campo "Conteúdo" com "Como registrar o estágio do aluno"
     E clico no botão "Confirmar"
-    Então sou redirecionado para a página "processos de atendimento"
+    Então sou redirecionado para a página "Wiki de Atendimento"
     E recebo uma mensagem de sucesso 
 
   Cenário: Preenche campos com informações inválidas
-    Quando eu preencho o campo "número SEI" com "alilicece"
+    Quando eu preencho o campo "Título" com "Registrar Estágio"
+    E não preencho o campo "Conteúdo"
     E clico no botão "Confirmar"
     Então recebo uma mensagem de erro

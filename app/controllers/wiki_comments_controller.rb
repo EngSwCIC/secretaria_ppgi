@@ -1,5 +1,6 @@
 class WikiCommentsController < ApplicationController
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
+  before_action :set_entry, only:[:index, :new, :create]
 
   # GET /comments
   # GET /comments.json
@@ -24,11 +25,12 @@ class WikiCommentsController < ApplicationController
   # POST /comments
   # POST /comments.json
   def create
-    @comment = WikiComment.new(comment_params)
-
+    
+    @comment = WikiComment.new(comment_params.merge({entry: @entry}))
+    
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
+        format.html { redirect_to @comment.entry, notice: 'Comment was successfully created.' }
         format.json { render :show, status: :created, location: @comment }
       else
         format.html { render :new }
@@ -42,7 +44,7 @@ class WikiCommentsController < ApplicationController
   def update
     respond_to do |format|
       if @comment.update(comment_params)
-        format.html { redirect_to @comment, notice: 'Comment was successfully updated.' }
+        format.html { redirect_to @comment.entry, notice: 'Comment was successfully updated.' }
         format.json { render :show, status: :ok, location: @comment }
       else
         format.html { render :edit }
@@ -56,7 +58,7 @@ class WikiCommentsController < ApplicationController
   def destroy
     @comment.destroy
     respond_to do |format|
-      format.html { redirect_to wiki_comments_url, notice: 'Comment was successfully destroyed.' }
+      format.html { redirect_to @comment.entry, notice: 'Comment was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -65,6 +67,11 @@ class WikiCommentsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_comment
       @comment = WikiComment.find(params[:id])
+    end
+
+    
+    def set_entry
+      @entry = WikiEntry.find(params[:wiki_entry_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
