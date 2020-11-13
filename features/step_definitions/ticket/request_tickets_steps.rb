@@ -1,27 +1,52 @@
-Dado("que eu esteja cadastrado como usuario, com nome: {Name}, email: {Email}, senha: {Password}, cargo: {Role} e registro: {Registration}") do |Name, Email, Pasword, Role, Registration|
-  pending
+Dado /^Eu esteja cadastrado como usuario, com nome: {Name}, email: {Email}, senha: {Password}, cargo: {Role} e registro: {Registration}$/ do |Name, Email, Pasword, Role, Registration|
+  @user = {
+    Name: 'Usuario',
+    Email: 'user@user.com',
+    Password: 'user123',
+    Role: "user",
+    Registration: "000000000"
+  }
+  User.create!(@user)
 end
 
-E("que eu esteja autenticado") do
-  pending
+E /^Eu esteja autenticado como usuario do
+  @user = User.find_by_email('user@user.com')
 end
 
-E("que eu esteja na página inicial") do
-  visit(root_path)
+E /^Eu esteja na (.+)$/ do |root_path|
+  visit path_to(root_path)
 end
 
-E("eu clicar no botão {string}") do |string|
-  pending
+Quando /^Eu clico em ([^"]*)"$/ do |button|
+  click_button(button)
 end
 
-Caso("a página de solicitação de passagens seja carregada corretamente") do
-  pending
+Então /^Eu devo estar na página (.+)$/ do |tickets_index|
+  current_path = URI.parse(current_url).path
+  if current_path.respond_to? :should
+    current_path.should == path_to(prazos_index)
+  else
+    assert_equal path_to(prazos_index), current_path
+  end
 end
 
-E("E exista haver um botão para escolher um período para fazer uma solicitação") do
-  pending
+Quando /^Eu clico em ([^"]*)"$/ do |button|
+  click_button(button)
 end
 
-Então("eu devo estar em uma página com uma tabela com os dados:") do
-  pending
+E /^Eu preencho "([^"]*)" com "([^"]*)"$/ do |field, value|
+  fill_in(field, :with => value)
 end 
+
+Quando /^Eu aperto enter no teclado$/ do
+  page.evaluate_script('window.confirm = function() { return true; }')
+  page.click('Ok')
+end
+
+Então /^Eu devo ver ([^"]*)"$/ do |text|
+  if page.respond_to? :should
+    page.should have_content(text)
+  else
+    assert page.has_content?(text)
+  end
+end
