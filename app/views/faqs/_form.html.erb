@@ -1,0 +1,32 @@
+<%= form_with(model: faq, local: true) do |form| %>
+  <% if faq.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(faq.errors.count, "error") %> prohibited this faq from being saved:</h2>
+
+      <ul>
+      <% faq.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :Topic %>
+    <%= form.text_area :Topic %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Question %>
+    <%= form.text_area :Question %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Answer %>
+    <%= form.text_area :Answer %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
