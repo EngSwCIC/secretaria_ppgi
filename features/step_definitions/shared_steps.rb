@@ -1,5 +1,5 @@
 Quando(/(?:clico|clicar) no botão "([^"]*)"/) do |botao|
-    pending # Write code here that turns the phrase above into concrete actions
+    click_button botao
 end
 
 Então(/recebo uma mensagem de (sucesso|erro)/) do |status|
@@ -11,7 +11,7 @@ Quando(/não preencho o campo "([^"]*)"/) do |campo|
 end
 
 Quando(/preencho o campo "([^"]*)" com "([^"]*)"/) do |campo, valor|
-    pending # Write code here that turns the phrase above into concrete actions
+    fill_in campo, with: valor
 end
 
 Dado(/(?:esteja na|redirecionado para a) página "([^"]*)"/) do |pagina|
