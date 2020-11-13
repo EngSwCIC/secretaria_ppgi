@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Accreditations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Start date</th>
+      <th>End date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @accreditations.each do |accreditation| %>
+      <tr>
+        <td><%= accreditation.user %></td>
+        <td><%= accreditation.start_date %></td>
+        <td><%= accreditation.end_date %></td>
+        <td><%= link_to 'Show', accreditation %></td>
+        <td><%= link_to 'Edit', edit_accreditation_path(accreditation) %></td>
+        <td><%= link_to 'Destroy', accreditation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Accreditation', new_accreditation_path %>

@@ -1,0 +1,32 @@
+<%= form_with(model: accreditation, local: true) do |form| %>
+  <% if accreditation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(accreditation.errors.count, "error") %> prohibited this accreditation from being saved:</h2>
+
+      <ul>
+      <% accreditation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :start_date %>
+    <%= form.date_select :start_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :end_date %>
+    <%= form.date_select :end_date %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

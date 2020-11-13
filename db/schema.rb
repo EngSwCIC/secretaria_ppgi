@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_12_030843) do
+ActiveRecord::Schema.define(version: 2020_11_13_222556) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "accreditations", force: :cascade do |t|
+    t.bigint "user_id"
+    t.date "start_date"
+    t.date "end_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_accreditations_on_user_id"
+  end
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -36,30 +45,20 @@ ActiveRecord::Schema.define(version: 2020_11_12_030843) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "activities", force: :cascade do |t|
+  create_table "requirements", force: :cascade do |t|
     t.string "title"
-    t.text "description"
-    t.date "start_date"
-    t.date "end_date"
-    t.integer "status"
-    t.bigint "activity_type_id"
+    t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["activity_type_id"], name: "index_activities_on_activity_type_id"
   end
 
-  create_table "activity_types", force: :cascade do |t|
-    t.string "title"
-  end
-
-  create_table "user_activities", force: :cascade do |t|
+  create_table "sei_processes", force: :cascade do |t|
     t.bigint "user_id"
-    t.bigint "activity_id"
-    t.boolean "interested"
-    t.boolean "active"
-    t.index ["activity_id"], name: "index_user_activities_on_activity_id"
-    t.index ["user_id", "activity_id"], name: "index_user_activities_on_user_id_and_activity_id", unique: true
-    t.index ["user_id"], name: "index_user_activities_on_user_id"
+    t.integer "status"
+    t.string "code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_sei_processes_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -77,8 +76,7 @@ ActiveRecord::Schema.define(version: 2020_11_12_030843) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "accreditations", "users"
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "activities", "activity_types"
-  add_foreign_key "user_activities", "activities"
-  add_foreign_key "user_activities", "users"
+  add_foreign_key "sei_processes", "users"
 end

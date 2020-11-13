@@ -13,7 +13,6 @@ User.create(full_name: "Secretário", email: "secretary@secretary.com", password
 User.create(full_name: "Professor", email: "professor@professor.com", password: "admin123", role: "professor", registration: "000000000")
 User.create(full_name: "Aluno", email: "student@student.com", password: "admin123", role: "student", registration: "000000000")
 
-# Activities
-ActivityType.destroy_all
-Activity.destroy_all
-UserActivity.destroy_all
+Accreditation.destroy_all
+Requirement.destroy_all
+SeiProcess.destroy_all

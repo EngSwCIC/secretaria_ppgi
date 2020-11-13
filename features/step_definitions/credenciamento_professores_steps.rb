@@ -11,22 +11,16 @@ end
 World(WithinHelpers)
 
 Dado "que existam as seguintes solicitações:" do |table|
-    table.hashes.each do |row|
-        type = ActivityType.find_by(title: row['activity_type_title'])
-        if type == nil
-            type = ActivityType.create!(title: row['activity_type_title'])
-        end
-        Activity.create!(title: row['title'], activity_type_id: type.id)
-    end
+    pending
+    # table.hashes.each do |row|
+    # end
 end
 
 Dado "que existam os seguintes credenciamentos sem prazo definido:" do |table|
     type_id = ActivityType.create!(title: 'Credenciamento').id
-    table.hashes.each do |row|
-        act_id = Activity.create!(title: row['activity_title'], activity_type_id: type_id).id
-        usr_id = User.create!(full_name: row['user_full_name'], email: row['user_full_name']+"@professor.com", password: row['user_full_name']+"123", role: "professor", registration: "000000000").id
-        UserActivity.create!(activity_id: act_id, user_id: usr_id)
-    end
+    pending
+    # table.hashes.each do |row|
+    # end
 end
 
 Dado /^que eu esteja cadastrado e logado como (.*)$/ do |input|
@@ -93,8 +87,14 @@ Quando /^eu preencho com "([^"]*)" em '([^']*)'$/ do |field, text|
     fill_in(field, :with => text)
 end
 
-Quando /^eu seleciono "([^"]*)" como data de '([^']*)'$/ do |date, field|
-    select_date(date, :from => field)
+Quando /^eu seleciono uma data posterior a atual em '([^']*)'$/ do |field|
+    pending
+    # select_date(date, :from => field)
+end
+
+ndo /^eu seleciono uma data anterior a atual em '([^']*)'$/ do |field|
+    pending
+    # select_date(date, :from => field)
 end
 
 Quando /^eu aperto '([^']*)'$/ do |button|

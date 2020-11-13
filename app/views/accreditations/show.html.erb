@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @accreditation.user %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @accreditation.start_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @accreditation.end_date %>
+</p>
+
+<%= link_to 'Edit', edit_accreditation_path(@accreditation) %> |
+<%= link_to 'Back', accreditations_path %>

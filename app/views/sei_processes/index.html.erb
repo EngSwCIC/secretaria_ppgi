@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Sei Processes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Status</th>
+      <th>Code</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sei_processes.each do |sei_process| %>
+      <tr>
+        <td><%= sei_process.user %></td>
+        <td><%= sei_process.status %></td>
+        <td><%= sei_process.code %></td>
+        <td><%= link_to 'Show', sei_process %></td>
+        <td><%= link_to 'Edit', edit_sei_process_path(sei_process) %></td>
+        <td><%= link_to 'Destroy', sei_process, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sei Process', new_sei_process_path %>

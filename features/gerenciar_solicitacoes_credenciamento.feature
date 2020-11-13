@@ -8,18 +8,17 @@ Funcionalidade: Gerenciar solicitações de credenciamento
 
     Contexto:
         Dado que existam as seguintes solicitações:
-        | title         | activity_type_title           |
-        | Solicitação 1 | Solicitação de credenciamento |
-        | Solicitação 2 | Solicitação de credenciamento |
-        | Solicitação 3 | Solicitação de credenciamento |
-        | Solicitação 4 | Solicitação de credenciamento |
+        | user_full_name | status |
+        | Adalberto      | Espera |
+        | Mariano        | Espera |
+        | Joel           | Espera |
 
         E que eu esteja cadastrado e logado como "Gabriel", "gabriel@admin.com", "gabriel123", "administrator", "200000000"
         E que eu esteja na página de solicitações de credenciamento
     
     Cenário: Aceitar uma solicitação de credenciamento
-        Quando eu clico em "Solicitação 1"
-        Então eu devo estar na página de "Solicitação 1"
+        Quando eu clico em "Adalberto"
+        Então eu devo estar na página de "Adalberto"
         Quando eu clico em 'Aprovar'
         Então eu devo estar na página de solicitações de credenciamento
         Quando eu desmarco os seguintes estados: Rejeitadas, Reformulação
@@ -28,11 +27,11 @@ Funcionalidade: Gerenciar solicitações de credenciamento
         Então eu devo ver "Solicitação 1"
     
     Cenário: Recusar uma solicitação de credenciamento
-        Quando eu clico em "Solicitação 2"
-        Então eu devo estar na página de "Solicitação 2"
+        Quando eu clico em "Mariano"
+        Então eu devo estar na página de "Mariano"
         Quando eu clico em 'Rejeitar'
         Então eu devo estar na página de solicitações de credenciamento
         Quando eu desmarco os seguintes estados: Aprovadas, Reformulação
         E eu marco os seguintes estados: Rejeitadas
         E eu aperto 'Atualizar'
-        Então eu devo ver "Solicitação 2"
+        Então eu devo ver "Mariano"

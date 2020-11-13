@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @sei_process.user %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @sei_process.status %>
+</p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @sei_process.code %>
+</p>
+
+<%= link_to 'Edit', edit_sei_process_path(@sei_process) %> |
+<%= link_to 'Back', sei_processes_path %>
