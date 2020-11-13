@@ -16,12 +16,12 @@ class ActivitiesController < ApplicationController
             @activity.errors.each do |attribute, message|
                 flash[:notice] << message
             end
-            redirect_back(fallback_location: root_path)
+            redirect_back(fallback_location: new_activity_path)
         end
     end
 
     private
         def activity_params
-            params.require(:activity).permit(:title, :due_date)
+            params.fetch(:activity, {}).permit(:title, :due_date)
         end
 end
