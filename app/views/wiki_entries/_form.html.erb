@@ -1,10 +1,10 @@
-<%= form_with(model: wiki, local: true) do |form| %>
-  <% if wiki.errors.any? %>
+<%= form_with(model: entry, local: true) do |form| %>
+  <% if entry.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(wiki.errors.count, "error") %> prohibited this wiki from being saved:</h2>
+      <h2><%= pluralize(entry.errors.count, "error") %> prohibited this wiki from being saved:</h2>
 
       <ul>
-      <% wiki.errors.full_messages.each do |message| %>
+      <% entry.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>

@@ -1,10 +1,10 @@
-<%= form_with(model: comentario, local: true) do |form| %>
-  <% if comentario.errors.any? %>
+<%= form_with(model: comment, local: true) do |form| %>
+  <% if comment.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(comentario.errors.count, "error") %> prohibited this comentario from being saved:</h2>
+      <h2><%= pluralize(comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
 
       <ul>
-      <% comentario.errors.full_messages.each do |message| %>
+      <% comment.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
