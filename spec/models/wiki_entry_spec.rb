@@ -1,18 +1,36 @@
 require 'rails_helper'
-RSpec.describe Wiki, type: :model do
-  describe "#create" do 
-      it 'should create a new process when the attributes are valid'
-      it 'should not create a new process when the sei_process_code is not a valid code'
-      it 'should not create a new process when there is no assigned user'
-      it 'should not create a new process when the process_status_id is invalid'
-      it 'should not create a new process when trying to attach an invalid file '
+RSpec.describe WikiEntry, type: :model do
+
+  let(:valid_attributes) {
+    {id: 1, title: 'title', content:'content'}
+  }
+
+  let(:document) {
+    Rack::Test::UploadedFile.new(Rails.root.join("spec/support/assets/document.xml"))
+  }
+
+  subject(:entry) {
+    WikiEntry.create(valid_attributes)
+  }
+
+  describe "Validations" do 
+      
+      it "is valid with the valid attributes" do
+        expect(WikiEntry.new(valid_attributes)).to be_valid
+      end
+      
+      it "is valid with a valid document" do 
+        expect(WikiEntry.new(valid_attributes.merge({document: document}))).to be_valid
+      end
+
+      it "is not valid without a title" do
+        expect(WikiEntry.new({id: 1, title: '', content: 'content'})).to_not be_valid
+      end
+
+      it "is not valid without a content" do
+        expect(WikiEntry.new({id: 1, title: 'title', content: ''})).to_not be_valid
+      end
+      
   end
 
-  describe "#update" do 
-      it 'should update the process when the attributes are valid'
-      it 'should not update the process when the sei_process_code is not a valid code'
-      it 'should not update the process when there is no assigned user'
-      it 'should not update the process when the process_status_id is invalid'
-      it 'should not update the process when trying to attach an invalid file'
-  end
 end
