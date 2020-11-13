@@ -28,6 +28,9 @@ Funcionalidade: Solicitar passagens
     | solicitation | name |
     | period | 30/10/2020 - 01/11/2020 |
 
+    E eu preencho os dados 
+    Então eu devo estar em uma página confirmando a solicitação
+
   Cenário:
     Não é possível fazer uma solicitação de passagens para o período escolhido
     Não há dados cadastrados para o usuário fazer uma solicitação e receber auxílio
