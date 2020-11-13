@@ -33,7 +33,7 @@ RSpec.describe UserActivity, type: :model do
             second_inst = UserActivity.new(@ua_params)
             @instance = second_inst
         end
-        # it 'has a nonexistent user'
-        # it 'has a nonexistent activity'
+        it 'has a nonexistent user'
+        it 'has a nonexistent activity'
     end
 end
