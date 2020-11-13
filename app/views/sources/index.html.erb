@@ -1,0 +1,12 @@
+<h1>Source#index</h1>
+<% @sources.each do |source| %>
+
+<p> <%= source.name %> </p>
+<%# sem o "=" nao eh aprensentado o retorno da funçao %>
+<%= link_to "editar", edit_source_path(source.id)%>
+
+<% end %>
+
+<%= link_to "Cadastrar Fonte de Informaçao",  new_source_path, controller: 'sources'%>
+
+<p>Find me in app/views/source/index.html.erb</p>
