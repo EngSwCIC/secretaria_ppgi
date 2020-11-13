@@ -1,19 +1,22 @@
 require 'rails_helper'
  
-describe 'ActivitiesController' do
-  describe 'add a new Activity' do
-    it 'should call the model method that add a new Activity to the database' do
-      post :create, {}
+describe ActivitiesController, type: :controller do
+  describe 'create a new Activity' do
+    it 'should call the model method that creates a new Activity' do
+      activity_attrs = attributes_for(:activity)
+      expect {post :create, params: {activity: activity_attrs}}.to change(Activity, :count).by(1)
     end
     
-    it 'should give a success message after an activity is successfuly added' do
-      post :create, {}
-      expect(response).to have_http_status(:success)
+    it 'should go back to the activities page after a successfully addition' do
+      activity_attrs = attributes_for(:activity)
+      post :create, params: {activity: activity_attrs}
+      expect(response).to redirect_to(activities_path)
     end
     
-    it 'should give an error message if create is called without params' do
-      post :create
-      expect(response).to have_http_status(:error)
+    it 'should redirect to the same page when there was an error after adding an activity ' do
+      activity_attrs = attributes_for(:activity, title: "Testing the wrong way", due_date: nil)
+      post :create, params: {activity: activity_attrs}
+      expect(response).to redirect_to(new_activity_path)
     end
   end
 end
