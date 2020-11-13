@@ -10,7 +10,7 @@
       <th>Conteúdo</th>
       <th>Fonte</th>
       <th>Publicado por</th>
-      <th></th>
+      <th colspan="4"></th>
     </tr>
  
     <% @informations.each do |information| %>
@@ -20,7 +20,7 @@
         <td><%= information.source_id %></td>
         <td><%= information.published_by %></td>
         <td><%= link_to 'Visualizar', information_path(information) %></td>
-         <td><%= link_to 'Voltar', home_index_path %></td>
+        <td><%= link_to 'Voltar', home_index_path %></td>
       </tr>
     <% end %>
   </table>
