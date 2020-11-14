@@ -1,6 +1,31 @@
-<h1>Editing Sei Process</h1>
+<h1><%= "Processo #{@sei_process.id}" %></h1>
 
-<%= render 'form', sei_process: @sei_process %>
+<p>
+  <strong>Nome:</strong>
+  <%= @sei_process.user.full_name %>
+</p>
+<p>
+  <strong>Matrícula:</strong>
+  <%= @sei_process.user.registration %>
+</p>
 
-<%= link_to 'Show', @sei_process %> |
-<%= link_to 'Back', sei_processes_path %>
+<% if @sei_process.documents.attached? %>
+  <p>
+    <strong>Documentos Anexados</strong>
+    <% @sei_process.documents.each do | document | %>
+      <div>
+        <%= link_to document.filename, rails_blob_path(document, disposition: 'attachment') %>
+      <div>
+    <% end %>
+  </p>
+<% end %>
+
+<%= form_for @sei_process, html: { multipart: true } do |f| %>
+  <%= f.label "Avaliar" %>
+  <%= f.radio_button :status, 'Aprovado', :checked => true %> Aprovado
+  <%= f.radio_button :status, 'Rejeitado' %> Rejeitado
+  <%= f.submit "Save", class: "btn btn-primary" %>
+<% end %>
+
+<br/>
+<%= link_to 'Voltar', sei_processes_path %>

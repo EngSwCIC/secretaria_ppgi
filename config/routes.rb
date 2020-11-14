@@ -2,6 +2,7 @@
 
 Rails.application.routes.draw do
   resources :accreditations
+  resources :accreditations
   resources :sei_processes
   resources :requirements
   resources :requirements do

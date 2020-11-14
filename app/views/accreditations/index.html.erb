@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<p id="notice"></p>
 
 <h1>Accreditations</h1>
 
@@ -15,7 +15,8 @@
   <tbody>
     <% @accreditations.each do |accreditation| %>
       <tr>
-        <td><%= accreditation.user %></td>
+        <td><%= accreditation.user.full_name %></td>
+		<td><%= accreditation.sei_process_id %></td>
         <td><%= accreditation.start_date %></td>
         <td><%= accreditation.end_date %></td>
         <td><%= link_to 'Show', accreditation %></td>

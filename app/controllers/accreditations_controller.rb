@@ -14,7 +14,7 @@ class AccreditationsController < ApplicationController
 
   # GET /accreditations/new
   def new
-    @accreditation = Accreditation.new
+    @accreditation = Accreditation.new(sei_proccess_id: 0)
   end
 
   # GET /accreditations/1/edit
@@ -28,7 +28,7 @@ class AccreditationsController < ApplicationController
 
     respond_to do |format|
       if @accreditation.save
-        format.html { redirect_to @accreditation, notice: 'Accreditation was successfully created.' }
+        format.html { redirect_to accreditations_url, notice: 'Accreditation was successfully created.' }
         format.json { render :show, status: :created, location: @accreditation }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class AccreditationsController < ApplicationController
   def update
     respond_to do |format|
       if @accreditation.update(accreditation_params)
-        format.html { redirect_to @accreditation, notice: 'Accreditation was successfully updated.' }
+        format.html { redirect_to accreditations_url, notice: 'Accreditation was successfully updated.' }
         format.json { render :show, status: :ok, location: @accreditation }
       else
         format.html { render :edit }
@@ -69,6 +69,6 @@ class AccreditationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def accreditation_params
-      params.require(:accreditation).permit(:user_id, :start_date, :end_date)
+      params.require(:accreditation).permit(:user_id, :start_date, :end_date, :sei_proccess_id)
     end
 end

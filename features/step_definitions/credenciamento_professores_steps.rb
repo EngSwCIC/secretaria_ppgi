@@ -17,7 +17,6 @@ Dado "que existam as seguintes solicitações:" do |table|
 end
 
 Dado "que existam os seguintes credenciamentos sem prazo definido:" do |table|
-    type_id = ActivityType.create!(title: 'Credenciamento').id
     pending
     # table.hashes.each do |row|
     # end
@@ -92,7 +91,7 @@ Quando /^eu seleciono uma data posterior a atual em '([^']*)'$/ do |field|
     # select_date(date, :from => field)
 end
 
-ndo /^eu seleciono uma data anterior a atual em '([^']*)'$/ do |field|
+Quando /^eu seleciono uma data anterior a atual em '([^']*)'$/ do |field|
     pending
     # select_date(date, :from => field)
 end
