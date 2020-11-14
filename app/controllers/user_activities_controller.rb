@@ -1,10 +1,6 @@
 class UserActivitiesController < ApplicationController
 	def index
-		if user_admin?
-			@user_activities = UserActivity.all
-		else
-			@user_activities = UserActivity.where(user_id: current_user.id)
-		end
+		@user_activities = UserActivity.all
 	end
 
 	def new
@@ -58,11 +54,6 @@ class UserActivitiesController < ApplicationController
 			error(UserActivity.getUser(@user_activity.user_id), UserActivity.getActivity(@user_activity.activity_id), "deletar")
 		end
 	end
-
-	def user_admin?
-		current_user.administrator?
-	end
-	helper_method :user_admin?
 
 	private
 		def user_activity_params
