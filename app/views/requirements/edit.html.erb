@@ -1,6 +1,14 @@
 <h1>Editing Requirement</h1>
 
-<%= render 'form', requirement: @requirement %>
+<%= form_for @requirement, html: { multipart: true } do |f| %>
+  <%= f.label "Título" %>
+  <%= f.text_field :title %>
+  <%= f.label "Conteúdo" %>
+  <%= f.text_field :title %>
+  <%= f.label "documentos" %>
+  <%= f.file_field :documents %>
+  <%= f.submit "Save", class: "btn btn-primary" %>
+<% end %>
 
 <%= link_to 'Show', @requirement %> |
 <%= link_to 'Back', requirements_path %>

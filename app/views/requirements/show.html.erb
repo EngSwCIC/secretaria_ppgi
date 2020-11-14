@@ -10,5 +10,13 @@
   <%= @requirement.content %>
 </p>
 
+<p>documents:</p>
+<% if @requirement.documents.attached? %>
+  <p>existem documentos acoplados</p>
+  <% @requirement.documents.each do | document | %>
+    <%= link_to document.filename, rails_blob_path(document, disposition: 'attachment') %>
+  <% end %>
+<% end %>
+
 <%= link_to 'Edit', edit_requirement_path(@requirement) %> |
 <%= link_to 'Back', requirements_path %>

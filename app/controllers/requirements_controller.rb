@@ -25,7 +25,7 @@ class RequirementsController < ApplicationController
   # POST /requirements.json
   def create
     @requirement = Requirement.new(requirement_params)
-
+    
     respond_to do |format|
       if @requirement.save
         format.html { redirect_to @requirement, notice: 'Requirement was successfully created.' }
@@ -35,6 +35,8 @@ class RequirementsController < ApplicationController
         format.json { render json: @requirement.errors, status: :unprocessable_entity }
       end
     end
+    # requirement = Requirement.create!(requirement_params)
+    # redirect_to requirement
   end
 
   # PATCH/PUT /requirements/1
@@ -69,6 +71,6 @@ class RequirementsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def requirement_params
-      params.require(:requirement).permit(:title, :content)
+      params.require(:requirement).permit(:title, :content, :documents)
     end
 end
