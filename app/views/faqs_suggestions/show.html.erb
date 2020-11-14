@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Question:</strong>
+  <%= @faqs_suggestion.question %>
+</p>
+
+<p>
+  <strong>Answer:</strong>
+  <%= @faqs_suggestion.answer %>
+</p>
+
+<p>
+  <strong>Tropicquestion:</strong>
+  <%= @faqs_suggestion.tropicQuestion %>
+</p>
+
+<%= link_to 'Edit', edit_faqs_suggestion_path(@faqs_suggestion) %> |
+<%= link_to 'Back', faqs_suggestions_path %>

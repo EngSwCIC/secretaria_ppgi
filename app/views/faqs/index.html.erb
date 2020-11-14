@@ -20,6 +20,7 @@
         <td><%= faq.Answer %></td>
         <td><%= link_to 'Show', faq %></td>
         <td><%= link_to 'Edit', edit_faq_path(faq) %></td>
+        <td><%= link_to 'Add Suggetion', new_faqs_suggestion_path %>  </td>
         <td><%= link_to 'Destroy', faq, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -29,3 +30,5 @@
 <br>
 
 <%= link_to 'New Faq', new_faq_path %>
+<br/>
+<%= link_to 'New Faqs Suggestion', new_faqs_suggestion_path %>

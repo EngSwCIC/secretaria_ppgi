@@ -10,18 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_13_194005) do
+ActiveRecord::Schema.define(version: 2020_11_14_182907) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "faq_questions", force: :cascade do |t|
-    t.text "Topic"
-    t.text "Question"
-    t.text "Answer"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "faqs", force: :cascade do |t|
     t.text "Topic"
@@ -31,15 +23,17 @@ ActiveRecord::Schema.define(version: 2020_11_13_194005) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "question_topics", force: :cascade do |t|
-    t.string "topic"
+  create_table "faqs_suggestions", force: :cascade do |t|
+    t.string "question"
+    t.string "answer"
+    t.bigint "tropicQuestion_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["tropicQuestion_id"], name: "index_faqs_suggestions_on_tropicQuestion_id"
   end
 
-  create_table "questions", force: :cascade do |t|
-    t.string "question"
-    t.text "answer"
+  create_table "tropicQuestions", force: :cascade do |t|
+    t.text "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -59,4 +53,5 @@ ActiveRecord::Schema.define(version: 2020_11_13_194005) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "faqs_suggestions", "\"tropicQuestions\"", column: "tropicQuestion_id"
 end
