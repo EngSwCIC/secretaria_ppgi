@@ -6,6 +6,7 @@ Funcionalidade: Usuário pode adicionar pessoa interessada em uma atividade
 
 	# Cenário Feliz
 	Cenário: Adicionar pessoa em atividade
+		Dado que estou logado com usuário "admin@admin.com" e senha "admin123"
 		Dado que estou na página "Atividades" 
 		Quando eu clico em "Adicionar integrante"
 		Então eu devo ser redirecionado para "Cadastrar_novo_integrante"
@@ -16,6 +17,7 @@ Funcionalidade: Usuário pode adicionar pessoa interessada em uma atividade
 
 	#Cenário Triste
 	Cenário: Página não encontrada
+		Dado que estou logado com usuário "admin@admin.com" e senha "admin123"
 		Dado que estou na página "Atividades"
 		Quando eu clico em "Adicionar pessoa interessada"
 		Então eu devo ser redirecionado para "404"

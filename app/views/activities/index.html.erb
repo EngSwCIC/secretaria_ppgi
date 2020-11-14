@@ -1,7 +1,7 @@
 <h1>Atividades</h1>
 
-<%= link_to 'Adicionar atividade', new_activity_path %>
- 
+<%= link_to 'Adicionar atividade', new_activity_path, style: "#{'display: none' if !user_admin? }" %>
+
 <table>
   <tr>
     <th>Título</th>
@@ -13,8 +13,13 @@
   <% @activities.each do |activity| %>
     <tr>
       <td><%= activity.title %></td>
-      <td><%= activity.due_date %></td>
+      <td><%= activity.due_date.to_formatted_s(:rfc822) %></td>
       <td><%= activity.description %></td>
+      <td><%= check_box_tag(:interest, false, false, :onclick => "UserActivitiesController.create(current_user.id, activity.id);") %></td>
+      <td>Demonstrar Interesse</td>
+      <td><%= link_to 'Remover Atividade', activity_path(activity),  :method => :delete, :confirm => 'Tem certeza ?', style: "#{'display: none' if !user_admin? }" %></td>
     </tr>
   <% end %>
 </table>
+<br>
+<%= link_to 'Minhas Atividades de interesse', user_activities_path %>

@@ -16,9 +16,28 @@ class ActivitiesController < ApplicationController
             @activity.errors.each do |attribute, message|
                 flash[:notice] << message
             end
-            redirect_back(fallback_location: root_path)
+          redirect_back(fallback_location: root_path)
+       end
+    end
+
+    def destroy
+        @activity = Activity.find(params[:id])
+        if @activity.destroy
+            flash[:notice] = "Atividade deleteda com sucesso."
+            redirect_to activities_path
+        elsif @activity.errors.any?
+            flash[:notice] = ["Não foi possível deletar a Atividade."]
+            @activity.errors.each do |attribute, message|
+                flash[:notice] << message
+            end
+          redirect_back(fallback_location: root_path)
         end
     end
+
+    def user_admin?
+        current_user.administrator?
+    end
+    helper_method :user_admin?
 
     private
         def activity_params
