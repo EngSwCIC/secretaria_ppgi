@@ -34,11 +34,6 @@ class ActivitiesController < ApplicationController
         end
     end
 
-    def user_admin?
-        current_user.administrator?
-    end
-    helper_method :user_admin?
-
     private
         def activity_params
             params.fetch(:activity, {}).permit(:title, :due_date)

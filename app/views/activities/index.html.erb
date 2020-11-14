@@ -1,6 +1,6 @@
 <h1>Atividades</h1>
 
-<%= link_to 'Adicionar atividade', new_activity_path, style: "#{'display: none' if !user_admin? }" %>
+<%= link_to 'Adicionar atividade', new_activity_path %>
 
 <table>
   <tr>
@@ -17,7 +17,7 @@
       <td><%= activity.description %></td>
       <td><%= check_box_tag(:interest, false, false, :onclick => "UserActivitiesController.create(current_user.id, activity.id);") %></td>
       <td>Demonstrar Interesse</td>
-      <td><%= link_to 'Remover Atividade', activity_path(activity),  :method => :delete, :confirm => 'Tem certeza ?', style: "#{'display: none' if !user_admin? }" %></td>
+      <td><%= link_to 'Remover Atividade', activity_path(activity),  :method => :delete, :confirm => 'Tem certeza ?' %></td>
     </tr>
   <% end %>
 </table>
