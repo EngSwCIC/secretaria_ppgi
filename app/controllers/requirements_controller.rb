@@ -35,20 +35,14 @@ class RequirementsController < ApplicationController
         format.json { render json: @requirement.errors, status: :unprocessable_entity }
       end
     end
-    # requirement = Requirement.create!(requirement_params)
-    # redirect_to requirement
   end
 
-  # def delete_document_attachment
-  #   puts "entrou"
-  #   @document = ActiveStorage::Blob.find_signed(params[:id])
-  #   puts @document
-  #   @document.purge_later
-  #   respond_to do |format|
-  #     format.html { redirect_to requirements_url, notice: 'O documento foi excluido com sucesso !' }
-  #     format.json { head :no_content }
-  #   end
-  # end
+  def delete_document_attachment
+    @document = ActiveStorage::Attachment.find_by(id: params[:id])
+    @document&.purge
+    # @asset = ActiveStorage::Attachment.find_by(id: params[:id])
+    redirect_to :edit
+  end
 
   # PATCH/PUT /requirements/1
   # PATCH/PUT /requirements/1.json

@@ -10,18 +10,20 @@
   <%= f.submit "Save", class: "btn btn-primary" %>
 <% end %>
 
+<br />
 <% if @requirement.documents.attached? %>
 <div>Existem documentos anexados:</div>
   <% @requirement.documents.each do | document | %>
     <div>
       <%= link_to document.filename, rails_blob_path(document, disposition: 'attachment') %>
-        <%# <%= link_to 'Remover', delete_document_attachment_requirement_url(document.signed_id),
+        <%= link_to 'Remover', delete_document_attachment_requirement_url(document.id, @requirement),
           method: :delete,
           data: { } 
-        %>
+        %>    
     <div>
   <% end %>
 <% end %>
+
 <br />
 <%= link_to 'Show', @requirement %> |
 <%= link_to 'Back', requirements_path %>
