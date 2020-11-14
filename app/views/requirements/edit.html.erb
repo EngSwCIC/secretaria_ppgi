@@ -4,7 +4,7 @@
   <%= f.label "Título" %>
   <%= f.text_field :title %>
   <%= f.label "Conteúdo" %>
-  <%= f.text_field :title %>
+  <%= f.text_field :content %>
   <%= f.label "documentos" %>
   <%= f.file_field :documents, multiple: true %>
   <%= f.submit "Save", class: "btn btn-primary" %>
@@ -16,7 +16,7 @@
   <% @requirement.documents.each do | document | %>
     <div>
       <%= link_to document.filename, rails_blob_path(document, disposition: 'attachment') %>
-        <%= link_to 'Remover', delete_document_attachment_requirement_url(document.id, @requirement),
+        <%= link_to 'Remover', delete_document_attachment_requirement_url(document.id, requirement_id: @requirement.id),
           method: :delete,
           data: { } 
         %>    

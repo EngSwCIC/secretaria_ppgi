@@ -39,9 +39,9 @@ class RequirementsController < ApplicationController
 
   def delete_document_attachment
     @document = ActiveStorage::Attachment.find_by(id: params[:id])
+    @requirement_id = params[:requirement_id]
     @document&.purge
-    # @asset = ActiveStorage::Attachment.find_by(id: params[:id])
-    redirect_to :edit
+    redirect_to edit_requirement_path(@requirement_id)
   end
 
   # PATCH/PUT /requirements/1

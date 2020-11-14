@@ -29,11 +29,12 @@ RSpec.describe RequirementsController, type: :controller do
   # Requirement. As you add validations to Requirement, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    file = fixture_file_upload(Rails.root.join('public', 'TestImage.png'), 'image/png')
+    {"title" => "test", "content" => "", "documents" => [file]}
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    {"title" => ""}
   }
 
   # This should return the minimal set of values that should be in the session
@@ -119,6 +120,17 @@ RSpec.describe RequirementsController, type: :controller do
         requirement = Requirement.create! valid_attributes
         put :update, params: {id: requirement.to_param, requirement: invalid_attributes}, session: valid_session
         expect(response).to be_successful
+      end
+    end
+  end
+
+  describe "Documents Management"do
+    it 'purges a specific file' do
+      requirement = Requirement.create! valid_attributes
+      requirement.documents.each do | document |
+        expect {
+          delete :delete_document_attachment, params: { id: document.id }
+        }.to change(ActiveStorage::Attachment, :count).by(-1)
       end
     end
   end
