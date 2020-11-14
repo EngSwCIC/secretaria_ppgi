@@ -1,6 +1,6 @@
 <h1>Atividades</h1>
 
-<%= link_to 'Adicionar atividade', new_activity_path %>
+<%= link_to 'Adicionar atividade', new_activity_path, style: "#{'display: none' if !user_admin? }" %>
 
 <table>
   <tr>

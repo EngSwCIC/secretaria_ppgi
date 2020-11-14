@@ -4,7 +4,7 @@ RSpec.describe ".addPersonOnActivite" do
 	let(:uri) {'/Atividades'}
 
 	context "Adicionar pessoa em atividade" do
-		let(:person) {Activite.addPerson("Teste", "teste@teste")}
+		let(:person) {Activity.addPerson("admin@admin.com", "admin123")}
 
 		it "Mostra menssagem" do
 			page.driver.get uri
