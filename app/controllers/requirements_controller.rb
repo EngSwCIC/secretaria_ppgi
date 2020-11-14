@@ -39,6 +39,17 @@ class RequirementsController < ApplicationController
     # redirect_to requirement
   end
 
+  # def delete_document_attachment
+  #   puts "entrou"
+  #   @document = ActiveStorage::Blob.find_signed(params[:id])
+  #   puts @document
+  #   @document.purge_later
+  #   respond_to do |format|
+  #     format.html { redirect_to requirements_url, notice: 'O documento foi excluido com sucesso !' }
+  #     format.json { head :no_content }
+  #   end
+  # end
+
   # PATCH/PUT /requirements/1
   # PATCH/PUT /requirements/1.json
   def update
@@ -71,6 +82,6 @@ class RequirementsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def requirement_params
-      params.require(:requirement).permit(:title, :content, :documents)
+      params.require(:requirement).permit(:title, :content, documents: [])
     end
 end

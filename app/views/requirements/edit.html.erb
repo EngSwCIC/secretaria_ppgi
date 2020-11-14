@@ -6,9 +6,22 @@
   <%= f.label "Conteúdo" %>
   <%= f.text_field :title %>
   <%= f.label "documentos" %>
-  <%= f.file_field :documents %>
+  <%= f.file_field :documents, multiple: true %>
   <%= f.submit "Save", class: "btn btn-primary" %>
 <% end %>
 
+<% if @requirement.documents.attached? %>
+<div>Existem documentos anexados:</div>
+  <% @requirement.documents.each do | document | %>
+    <div>
+      <%= link_to document.filename, rails_blob_path(document, disposition: 'attachment') %>
+        <%# <%= link_to 'Remover', delete_document_attachment_requirement_url(document.signed_id),
+          method: :delete,
+          data: { } 
+        %>
+    <div>
+  <% end %>
+<% end %>
+<br />
 <%= link_to 'Show', @requirement %> |
 <%= link_to 'Back', requirements_path %>

@@ -5,8 +5,8 @@
   <%= f.text_field :title %>
   <%= f.label "Conteúdo" %>
   <%= f.text_field :content %>
-  <%= f.label :documents %>
-  <%= f.file_field :documents %>
+  <%= f.label "documentos" %>
+  <%= f.file_field :documents, multiple: true %>
   <%= f.submit "Save", class: "btn btn-primary" %>
 <% end %>
 
