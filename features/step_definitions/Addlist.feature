@@ -2,13 +2,12 @@ Feature: Notify interested users of published information.
 
 Background: 
 	Given I'm an administrator
-        And logged in as administrator on SecretariaPpgi
-        When I press "Lista de Grupos de Informações"
-    	Then I should see "Filtrar por fonte" 
+        When I press "Notificações"
+    	Then I should see "Notificações" 
 
 Scenario: create a new list
-        When I click on the "New" link
-        Then I should see "New List"
+        When I click on the "Nova Lista" link
+        Then I should see "Nova Lista"
         When I fill the form with:
         |Title | Info |
         And I click in the "Save" button

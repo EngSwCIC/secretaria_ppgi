@@ -1,0 +1,27 @@
+<h1>Lista de Notificação</h1>
+ 
+<% if @notification.empty? %>
+  <h2>Nenhuma lista de notificação criada</h2>
+  <td><%= link_to 'Voltar', home_index_path %></td>
+  <td><%= link_to 'Criar Lista', new_notification_path, controller: 'notification' %></td>
+<%else %>
+  <table>
+    <tr>
+      <th>Notificação</th>
+      <th>Conteúdo</th>
+      <th>ID</th>
+      <th colspan="4"></th>
+    </tr>
+ 
+    <% @notification.each do |notifications| %>
+      <tr>
+        <td><%= notifications.title %></td>
+        <td><%= notifications.content %></td>
+        <td><%= notifications.group_id %></td>
+        <td><%= link_to 'Visualizar', notification_path(notification) %></td>
+        <td><%= link_to 'Voltar', home_index_path %></td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>
+<p>Find me in app/views/notification/index.html.erb</p>
