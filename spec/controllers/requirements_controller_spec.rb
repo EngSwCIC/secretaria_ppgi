@@ -129,7 +129,7 @@ RSpec.describe RequirementsController, type: :controller do
       requirement = Requirement.create! valid_attributes
       requirement.documents.each do | document |
         expect {
-          delete :delete_document_attachment, params: { id: document.id }
+          delete :delete_document_attachment, params: { id: document.id, requirement_id: requirement.id }
         }.to change(ActiveStorage::Attachment, :count).by(-1)
       end
     end
