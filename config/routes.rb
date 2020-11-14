@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :activities
+  resources :notifications
 
   resources :user_activities
 

@@ -1,0 +1,22 @@
+<h1>Criar nova notificação</h1>
+
+<%= form_with scope: :notification, url: notifications_path,local: true do |form| %>
+  
+  <p>
+    <%= form.label :title, "Nome da notificação" %><br>
+    <%= form.text_field :title %>
+  </p>
+ 
+  <p>
+    <%= form.label :content, "Conteúdo da notificação" %><br>
+    <%= form.text_area :content %>
+  </p>
+
+  <p>
+    <%= form.label :interested, "Integrantes interessados" %><br>
+    <%= form.collection_select(:interested, User.roles, :second, :first) %>
+  </p>
+  <p>
+    <%= form.submit "Enviar notificação" %>
+  </p>
+<% end %>
