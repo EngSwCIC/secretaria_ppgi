@@ -20,4 +20,4 @@ Funcionalidade: Verificar se há orçamento disponível
     Dado que a página é carregada corretamente
     E que eu tenha 500.00 de orçamento disponível
     E um valor diferente de 500.00 é exibido
-    Então uma mensagem de erro deve ser exibida.
+    Então uma mensagem de erro deve ser exibida

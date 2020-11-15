@@ -1,9 +1,13 @@
-# Dado /^Eu esteja cadastrado como usuario com email {string}$/ do |email|
-#     @user = {
-#       Email: email
-#     }
-#     User.create!(@user)
-#   end
+# Dado /^Eu esteja cadastrado como usuario, com nome: {Name}, email: {Email}, senha: {Password}, cargo: {Role} e registro: {Registration}$/ do |Name, Email, Pasword, Role, Registration|
+#   @user = {
+#     Name: 'Usuario',
+#     Email: 'user@user.com',
+#     Password: 'user123',
+#     Role: "user",
+#     Registration: "000000000"
+#   }
+#   User.create!(@user)
+# end
   
 #   E /^Eu esteja autenticado como usuario do
 #     @user = User.find_by_email('user@user.com')

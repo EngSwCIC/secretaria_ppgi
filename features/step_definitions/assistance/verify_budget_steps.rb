@@ -1,60 +1,51 @@
-# #-------------------- Contexto --#
-# Dado("que eu esteja cadastrado como administrador, com o email {email} e a senha {password}") do |email, password|
-#   pending
-# end
+#-------------------- Contexto --#
+Dado("que eu esteja cadastrado como administrador, com o email {string} e a senha {string}") do |email, password|
+  @email = email
+  @password = password
+  valid_email = @email.eql? "admin@admin.com"
+  valid_psswd = @password.eql? "123456"
+  valid_user = valid_email && valid_psswd
+  expect(valid_user).to be true
+end
  
-# E("que eu esteja autenticado com o email {email} e a senha {password}") do |email, password|
-#   pending
-# end
+E("que eu esteja autenticado com o email {string} e a senha {string}") do |email, password|
+  auth = @email.eql? email
+  auth2 = @password.eql? password
+  authentication = auth && auth2
+  expect(authentication).to be true
+end
 
-# E("que esteja na pagina inicial") do
-#   pending
-# end
+E("que esteja na pagina inicial") do
+  visit(root_path)
+end
 
-# E("que eu clique no botão Verificar Orçamento") do
-#   pending
-# end
+E("que eu clique no botão Verificar Orçamento") do
+  click_button "Verificar Orçamento"
+end
 
-# #-------------------- Cenário feliz --#
-# Dado("que a página é carregada corretamente") do
-#   pending
-# end
+#-------------------- Cenário feliz --#
+Dado("que a página é carregada corretamente") do
+  pending
+end
 
-# E("que eu tenha {value} de orçamento disponível") do |value|
-#   pending
-# end
+E("que eu tenha {float} de orçamento disponível") do |value|
+  @value = value
+  budget = @value > 0
+  expect(budget).to be true
+end
  
-# Então("o valor {value} é exibido") do |value|
-#   pending
-# end
+Então("o valor {float} é exibido") do |value|
+  same_val = @value.eql? value
+  expect(same_val).to be true
+end
 
-# #-------------------- Cenário triste --#
-# E("um valor diferente de {value} é exibido") do |value|
-#   pending
-# end
+#-------------------- Cenário triste --#
+E("um valor diferente de {float} é exibido") do |value|
+  dif_val = @value.eql? value
+  expect(dif_val).to be false
+end
 
-# Então("uma mensagem de erro deve ser exibida") do
-#   pending
-# end
-
-
-Dado('que eu clique no botão Verificar Orçamento') do    
-    click_button("#verify_budget")
-  end
-  
-  E('que eu tenha {float} de orçamento disponível') do |budget|
-    orcamento_disp = budget > 0
-    expect(orcamento_disp).to be true
-  end
-  
-  Então('o valor {float} é exibido') do |float|
-    pending # Write code here that turns the phrase above into concrete actions
-  end
-  
-  Dado('um valor diferente de {float} é exibido') do |float|
-    pending # Write code here that turns the phrase above into concrete actions
-  end
-  
-  Então('uma mensagem de erro deve ser exibida.') do
-    pending # Write code here that turns the phrase above into concrete actions
-  end
+Então("uma mensagem de erro deve ser exibida") do
+  alert = find("#error_msg")
+  expect(alert).to be true
+end

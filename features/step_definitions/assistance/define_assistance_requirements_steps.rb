@@ -16,24 +16,24 @@ E("que eu esteja autenticado com o email {string} e a senha {string}") do |email
 end
 
 E("que esteja na pagina inicial") do
-  pending
+  visit(root_path)
 end
 
 E("que eu clique no botão de edição de requisitos de solitação de auxílio") do
-  pending
+  click_button("#edicao_requisitos")
 end
 
 #-------------------- Cenário feliz --#
 Dado("que a página é carregada corretamente") do
-  pending
+  visit(requirement_page)
 end
 
 E("que eu insira o requisito {string}") do |requirement|
-  pending
+  find("#requisitos").set requirement
 end
 
 E("clique no botão de confirmação de edição") do
-  pending
+  click_button "confirmar edição"
 end
 
 Então("os requisitos são atualizados") do
@@ -42,50 +42,15 @@ end
 
 #-------------------- Cenário triste --#
 E("que eu remova os requisitos existentes") do
-  pending
+  requirement = ""
+  find("#requisitos").set requirement
 end
 
 E("clique no botão de confirmação de edição") do
-  pending
+  click_button "confirmar edição"
 end
 
 Então("uma mensagem de erro, é exibida, indicando que os requisitos não podem ficar em branco") do
-  pending
+  alert = find("#error_msg")
+  expect(alert).to be true
 end
-
-
-# Dado('que eu esteja cadastrado como administrador, com o email {string} e a senha {string}') do |email, senha|
-#     pending # Write code here that turns the phrase above into concrete actions
-#   end
-  
-#   E('que eu esteja autenticado com o email {string} e a senha {string}') do |email, senha|
-#     pending # Write code here that turns the phrase above into concrete actions
-#   end
-  
-#   E('que eu clique no botão de edição de requisitos de solitação de auxílio') do
-#     click_button("#edicao_req")
-#   end
-  
-#   E('que a página é carregada corretamente') do
-#     pending # Write code here that turns the phrase above into concrete actions
-#   end
-  
-#   E('que eu insira o requisito {string}') do |requisito|
-#     pending # Write code here that turns the phrase above into concrete actions
-#   end
-  
-#   E('clique no botão de confirmação de edição') do
-#     click_button("#confirm")
-#   end  
-  
-#   Então('os requisitos são atualizados') do
-#     pending # Write code here that turns the phrase above into concrete actions
-#   end
-  
-#   Dado('que eu remova os requisitos existentes') do
-#     pending # Write code here that turns the phrase above into concrete actions
-#   end
-  
-#   Então('uma mensagem de erro, é exibida, indicando que os requisitos não podem ficar em branco') do
-#     pending # Write code here that turns the phrase above into concrete actions
-#   end

@@ -32,5 +32,5 @@ Funcionalidade: Realizar solicitação de diárias para um período
 
     # Cenario triste
     Cenário: Usuário envia dados em formato inválido
-        O usuário insere uma data inválida
-        O usuário insere um valor não numérico
+        Dado que o usuário insere uma data inválida
+        Então eu devo ver uma mensagem de erro

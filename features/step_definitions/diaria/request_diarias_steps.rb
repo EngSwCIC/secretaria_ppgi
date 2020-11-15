@@ -42,3 +42,16 @@ Então('eu devo estar em uma página de confirmação com a tabela:') do |table|
   # table is a Cucumber::MultilineArgument::DataTable
   pending # Write code here that turns the phrase above into concrete actions
 end
+
+#----------------- cenario triste
+Dado('que o usuário insere uma data inválida') do
+  valid = true
+  if invalid(@date_in) || invalid(@date_out)
+    valid = false
+  end 
+  expect(valid).to be false
+end
+
+Então('eu devo ver uma mensagem de erro') do
+  find("#error_msg")
+end
