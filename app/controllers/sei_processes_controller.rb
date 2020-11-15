@@ -4,10 +4,15 @@ class SeiProcessesController < ApplicationController
   # GET /sei_processes
   # GET /sei_processes.json
   def index
+    @all_statuses = %w[Espera Aprovado Rejeitado]
+
+    session[:statuses] = params[:statuses] || session[:statuses] || @all_statuses.zip([]).to_h
+    @status_filter = session[:statuses].keys
+
     if current_user.role == "administrator"
-      @sei_processes = SeiProcess.all
+      @sei_processes = SeiProcess.where(status: @status_filter)
     else
-      @my_processes = SeiProcess.where(user_id: current_user.id)
+      @my_processes = SeiProcess.where(user_id: current_user.id, status: @status_filter)
     end
   end
 

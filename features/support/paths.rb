@@ -13,6 +13,12 @@ module NavigationHelpers
     
     when /^de requisitos para o credenciamento$/
       '/requirements'
+    
+    when /^de solicitações de credenciamento$/
+      '/sei_processes'
+
+    when /^de credenciamentos$/
+      '/accreditations'
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

@@ -11,9 +11,12 @@ end
 World(WithinHelpers)
 
 Dado "que existam as seguintes solicitações:" do |table|
-    pending
-    # table.hashes.each do |row|
-    # end
+    User.destroy_all
+    table.hashes.each do |row|
+        name = row['user_full_name']
+        user = User.create!(full_name: name, email: name+'@professor.com', password: name+'123', role: 'professor', registration: '200000000')
+        p SeiProcess.create!(user_id: user.id, status: row['status'], code: 0).id
+    end
 end
 
 Dado "que existam os seguintes credenciamentos sem prazo definido:" do |table|
@@ -48,6 +51,12 @@ Dado /^que eu esteja na página (.+)$/ do |page_name|
     visit path_to(page_name)
 end
 
+Quando /^eu escolho avaliar "([^"]*)"$/ do |name|
+    user_id = User.find_by(full_name: name).id
+    process_id = SeiProcess.find_by(user_id: user_id).id
+    visit "/sei_processes/#{process_id}/edit"
+end
+
 Quando /^eu anexo o arquivo "([^"]*)" em '([^']*)'$/ do |path, field|
     attach_file(field, File.expand_path(path))
 end
@@ -65,13 +74,17 @@ Então /^eu devo estar na página (.+)$/ do |page_name|
     end
 end
 
-Quando /^eu marco os seguintes estados (.*)$/ do |statuses|
+Quando /^eu escolho '([^']*)'$/ do |option|
+    choose(option)
+end
+
+Quando /^eu marco os seguintes estados: (.*)$/ do |statuses|
     statuses.split(/,[ ]*/).each do |status|
         check("statuses[#{status}]")
     end
 end
 
-Quando /^eu desmarco os seguintes estados (.*)$/ do |statuses|
+Quando /^eu desmarco os seguintes estados: (.*)$/ do |statuses|
     statuses.split(/,[ ]*/).each do |status|
         uncheck("statuses[#{status}]")
     end
@@ -115,7 +128,7 @@ Então /^eu não devo ver "([^"]*)"$/ do |text|
     end
 end
 
-Então /^eu recebo uma mensagem de (sucesso|erro)$/ do |status|
+Então /^eu devo receber uma mensagem de (sucesso|erro)$/ do |status|
     if(status == 'sucesso') 
         find(".notice", text: /sucesso!$/)
     elsif(status == 'erro')

@@ -15,4 +15,4 @@ Funcionalidade: Disponibilizar os requisitos para o credenciamento
       E eu preencho com "Requisitos de Credenciamento" em 'Título'
       E eu anexo o arquivo "features/resources/Formulário de Credenciamento.doc" em 'Documentos'
       E eu aperto 'Enviar'
-      Então eu recebo uma mensagem de sucesso
+      Então eu devo receber uma mensagem de sucesso

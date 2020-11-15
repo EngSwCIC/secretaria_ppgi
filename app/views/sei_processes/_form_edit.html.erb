@@ -12,21 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :status %>
-    <%= form.number_field :status %>
-  </div>
-
-  <div class="field">
-    <%= form.label :code %>
-    <%= form.text_field :code %>
+    <%= form.label :status, "Avaliar" %>
+    <%= form.radio_button :status, 'Aprovado', id: 'Aprovado', :checked => true %> Aprovado
+    <%= form.radio_button :status, 'Rejeitado', id: 'Rejeitado' %> Rejeitado
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Enviar" %>
   </div>
 <% end %>

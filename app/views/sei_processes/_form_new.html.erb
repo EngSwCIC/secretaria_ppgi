@@ -1,0 +1,34 @@
+<%= form_with(model: sei_process, local: true) do |form| %>
+  <% if sei_process.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(sei_process.errors.count, "error") %> prohibited this sei_process from being saved:</h2>
+
+      <ul>
+      <% sei_process.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.hidden_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.hidden_field :status %>
+  </div>
+
+  <div class="field">
+    <%= form.hidden_field :code %>
+  </div>
+
+  <div class="field">
+    <%= form.label :documents, "Documentos" %>
+    <%= form.file_field :documents, multiple: true %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Enviar" %>
+  </div>
+<% end %>

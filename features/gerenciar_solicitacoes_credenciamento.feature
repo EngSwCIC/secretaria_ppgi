@@ -17,21 +17,21 @@ Funcionalidade: Gerenciar solicitações de credenciamento
         E que eu esteja na página de solicitações de credenciamento
     
     Cenário: Aceitar uma solicitação de credenciamento
-        Quando eu clico em "Adalberto"
-        Então eu devo estar na página de "Adalberto"
-        Quando eu clico em 'Aprovar'
+        Quando eu escolho avaliar "Adalberto"
+        E eu escolho 'Aprovado'
+        E eu aperto 'Enviar'
         Então eu devo estar na página de solicitações de credenciamento
-        Quando eu desmarco os seguintes estados: Rejeitadas, Reformulação
-        E eu marco os seguintes estados: Aprovadas
+        Quando eu desmarco os seguintes estados: Espera, Rejeitado
+        E eu marco os seguintes estados: Aprovado
         E eu aperto 'Atualizar'
-        Então eu devo ver "Solicitação 1"
+        Então eu devo ver "Adalberto"
     
     Cenário: Recusar uma solicitação de credenciamento
-        Quando eu clico em "Mariano"
-        Então eu devo estar na página de "Mariano"
-        Quando eu clico em 'Rejeitar'
+        Quando eu escolho avaliar "Mariano"
+        E eu escolho 'Rejeitado'
+        E eu aperto 'Enviar'
         Então eu devo estar na página de solicitações de credenciamento
-        Quando eu desmarco os seguintes estados: Aprovadas, Reformulação
-        E eu marco os seguintes estados: Rejeitadas
+        Quando eu desmarco os seguintes estados: Espera, Aprovado
+        E eu marco os seguintes estados: Rejeitado
         E eu aperto 'Atualizar'
         Então eu devo ver "Mariano"

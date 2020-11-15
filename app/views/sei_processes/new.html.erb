@@ -16,15 +16,6 @@
   <% end %>
 <% end %>
 
-<%= form_for @sei_process, html: { multipart: true } do |f| %>
-  <%= f.hidden_field :user_id %>
-  <%= f.hidden_field :status %>
-  <%= f.hidden_field :code %>
-  <%= f.label "Anexar Documentos" %>
-  <%= f.file_field :documents, multiple: true %>
-  <br/>
-  <%= f.submit "Save", class: "btn btn-primary" %>
-<% end %>
+<%= render 'form_new', sei_process: @sei_process %>
 
-<br/>
 <%= link_to 'Voltar', sei_processes_path %>

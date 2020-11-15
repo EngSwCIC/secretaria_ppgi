@@ -8,15 +8,15 @@ Funcionalidade: Abrir solicitação de credenciamento
 
     Contexto:
         Dado que eu esteja cadastrado e logado como "Lucas", "lucas@professor.com", "lucas123", "professor", "200000000"
-        E que eu esteja na página de abrir solicitação de credenciamento
+        E que eu esteja na página de solicitações de credenciamento
+        Quando eu clico em 'Abrir Novo Processo'
 
     Cenário: Solicitação enviada com sucesso
-        Quando eu anexo o arquivo "Formulário de Credenciamento.pdf" em 'Formulario'
-        E eu anexo o arquivo "CV Lattes.pdf" em 'CV Lattes'
+        Quando eu anexo o arquivo "features/resources/Formulário de Credenciamento.doc" em 'Documentos'
+        E eu anexo o arquivo "features/resources/ship.jpg" em 'Documentos'
         E eu aperto 'Enviar'
-        Então eu devo ver "Solicitação enviada com sucesso"
+        Então eu devo receber uma mensagem de sucesso
 
     Cenário: Solicitação não enviada (campo obrigatório em branco)
-        Quando eu anexo o arquivo "Formulário de Credenciamento.pdf" em 'Formulario'
-        E eu aperto 'Enviar'
-        Então eu devo ver "Solicitação não enviada (campo obrigatório* em branco)"
+        Quando eu aperto 'Enviar'
+        Então eu não devo receber uma mensagem de sucesso

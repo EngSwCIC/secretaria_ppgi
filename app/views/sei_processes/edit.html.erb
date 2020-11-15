@@ -20,12 +20,6 @@
   </p>
 <% end %>
 
-<%= form_for @sei_process, html: { multipart: true } do |f| %>
-  <%= f.label "Avaliar" %>
-  <%= f.radio_button :status, 'Aprovado', :checked => true %> Aprovado
-  <%= f.radio_button :status, 'Rejeitado' %> Rejeitado
-  <%= f.submit "Save", class: "btn btn-primary" %>
-<% end %>
+<%= render 'form_edit', sei_process: @sei_process %>
 
-<br/>
 <%= link_to 'Voltar', sei_processes_path %>
