@@ -23,5 +23,5 @@ Scenario: Add new source that has already been added (sad path)
 
     When I fill the form with "information about the new source"
     And I press "Cadastrar fonte"
-    Then I should recieve a message "Fonte já consta na lista de fontes confiáveis"
+    Then I should recieve a message "Não foi possível cadastrar fonte"
     And I should be on "SecretariaPpgi Register Source of Inforamtion page"
