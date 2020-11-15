@@ -1,38 +1,41 @@
 #-------------------- Contexto --#
-Dado("que eu esteja cadastrado como administrador, com o email {email} e a senha {password}") do |email, password|
-  pending
-end
- 
-E("que eu esteja autenticado com o email {email} e a senha {password}") do |email, password|
-  pending
+Dado /^Eu esteja cadastrado como administrador, com nome: {Name}, email: {Email}, senha: {Password}, cargo: {Role} e registro: {Registration}$/ do |Name, Email, Pasword, Role, Registration|
+  @adm = {
+    Name: 'Administrador',
+    Email: 'admin@admin.com',
+    Password: 'admin123',
+    Role: "admin",
+    Registration: "000000000"
+  }
+  Admin.create!(@adm)
 end
 
-E("que esteja na pagina inicial") do
-  pending
+E /^Eu esteja autenticado como administrador do
+  @admin = Admin.find_by_email('admin@admin.com')
 end
 
-E("que eu clique no botão Verificar Orçamento") do
-  pending
+E /^Eu esteja na (.+)$/ do |root_path|
+  visit path_to(root_path)
+end
+
+Quando /^Eu clico em ([^"]*)"$/ do |button|
+  click_button(button)
 end
 
 #-------------------- Cenário feliz --#
-Dado("que a página é carregada corretamente") do
-  pending
-end
-
-E("que eu tenha {value} de orçamento disponível") do |value|
-  pending
+Então /^Eu devo estar na página (.+)$/ do |budget_index|
+  current_path = URI.parse(current_url).path
+  if current_path.respond_to? :should
+    current_path.should == path_to(budget_index)
+  else
+    assert_equal path_to(prazos_index), current_path
+  end
 end
  
-Então("o valor {value} é exibido") do |value|
-  pending
-end
-
-#-------------------- Cenário triste --#
-E("um valor diferente de {value} é exibido") do |value|
-  pending
-end
-
-Então("uma mensagem de erro deve ser exibida") do
-  pending
+Então /^Eu devo ver ([^"]*)"$/ do |value|
+  if page.respond_to? :should
+    page.should have_content(value)
+  else
+    assert page.has_content?(value)
+  end
 end
