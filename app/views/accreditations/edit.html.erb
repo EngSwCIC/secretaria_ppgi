@@ -1,20 +1,48 @@
-<h1>Editing Accreditation</h1>
+<h1>Definir Prazo de Credenciamento</h1>
+
+<p>
+  <strong>Código do Processo SEI:</strong>
+  <%= @accreditation.sei_process_id %>
+</p>
+<p>
+  <strong>Nome:</strong>
+  <%= @accreditation.user.full_name %>
+</p>
+<p>
+  <strong>Matrícula:</strong>
+  <%= @accreditation.user.registration %>
+</p>
+
+<% if @accreditation.sei_process.documents.attached? %>
+  <p>
+    <strong>Documentos anexados:</strong>
+    <% @accreditation.sei_process.documents.each do | document | %>
+      <div>
+        <%= link_to document.filename, rails_blob_path(document, disposition: 'attachment') %>
+      <div>
+    <% end %>
+  </p>
+<% end %>
+<br/>
+
+<% if @accreditation.start_date != nil %>
+  <p>
+    <strong>Data de Início:</strong>
+    <%= @accreditation.start_date %>
+  </p>
+<% end %>
 
 <%= form_for @accreditation, html: { multipart: true } do |f| %>
-  <strong>User:</strong>
-  <%= f.number_field :user_id %>
-  <strong>Start date:</strong>
-  <%= f.date_field :start_date %>
-  <strong>End date:</strong>
+  <% if @accreditation.start_date == nil %>
+    <%= f.label "Data de Início" %>
+    <%= f.date_field :start_date, value: Date.current %>
+  <% end %>
+  <%= f.label "Data de Fim" %>
   <%= f.date_field :end_date %>
   <br/>
   <%= f.submit "Save", class: "btn btn-primary" %>
 <% end %>
 
-
-<%= link_to 'Show', @accreditation %> |
-<%= link_to 'Back', accreditations_path %>
-
-
-
-
+<br/>
+<%= link_to 'Mostrar', @accreditation %> |
+<%= link_to 'Voltar', accreditations_path %>

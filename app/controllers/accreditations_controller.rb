@@ -14,7 +14,6 @@ class AccreditationsController < ApplicationController
 
   # GET /accreditations/new
   def new
-    @accreditation = Accreditation.new(sei_proccess_id: 0)
   end
 
   # GET /accreditations/1/edit

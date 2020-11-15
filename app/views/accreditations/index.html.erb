@@ -1,15 +1,16 @@
 <p id="notice"></p>
 
-<h1>Accreditations</h1>
+<h1>Credenciamentos</h1>
 
 <table>
   <thead>
     <tr>
-      <th>User</th>
-      <th>Sei Process ID</th>
-      <th>Start date</th>
-      <th>End date</th>
-      <th colspan="3"></th>
+      <th>Nome</th>
+      <th>Matrícula</th>
+      <th>Código SEI</th>
+      <th>Data de Início</th>
+      <th>Data de Fim</th>
+      <th colspan="1"></th>
     </tr>
   </thead>
 
@@ -17,17 +18,19 @@
     <% @accreditations.each do |accreditation| %>
       <tr>
         <td><%= accreditation.user.full_name %></td>
+        <td><%= accreditation.user.registration %></td>
 		    <td><%= accreditation.sei_process_id %></td>
         <td><%= accreditation.start_date %></td>
         <td><%= accreditation.end_date %></td>
-        <td><%= link_to 'Show', accreditation %></td>
-        <td><%= link_to 'Edit', edit_accreditation_path(accreditation) %></td>
-        <td><%= link_to 'Destroy', accreditation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if accreditation.start_date != nil && accreditation.end_date != nil %>
+          <td><%= link_to 'Mostrar', accreditation %></td>
+        <% else %>
+          <td><%= link_to 'Definir Prazo', edit_accreditation_path(accreditation) %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Accreditation', new_accreditation_path %>
+<br/>
+<%= link_to 'Página Inicial', home_index_path %>
