@@ -32,17 +32,7 @@
   </p>
 <% end %>
 
-<%= form_for @accreditation, html: { multipart: true } do |f| %>
-  <% if @accreditation.start_date == nil %>
-    <%= f.label "Data de Início" %>
-    <%= f.date_field :start_date, value: Date.current %>
-  <% end %>
-  <%= f.label "Data de Fim" %>
-  <%= f.date_field :end_date %>
-  <br/>
-  <%= f.submit "Save", class: "btn btn-primary" %>
-<% end %>
+<%= render 'form_edit', accreditation: @accreditation %>
 
-<br/>
 <%= link_to 'Mostrar', @accreditation %> |
 <%= link_to 'Voltar', accreditations_path %>

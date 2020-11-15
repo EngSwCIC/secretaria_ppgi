@@ -11,27 +11,19 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
-  </div>
+  <% if @accreditation.start_date == nil %>
+    <div class="field">
+      <%= form.label :start_date, "Início" %>
+      <%= form.date_field :start_date, value: Date.current %>
+    </div>
+  <% end %>
 
   <div class="field">
-    <%= form.label :start_date %>
-    <%= form.date_select :start_date %>
-  </div>
-
-  <div class="field">
-    <%= form.label :end_date %>
-    <%= form.date_select :end_date %>
-  </div>
-
-  <div class="field">
-    <%= form.label :sei_process_id %>
-    <%= form.text_field :sei_process_id %>
+    <%= form.label :end_date, "Fim" %>
+    <%= form.date_field :end_date %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Salvar" %>
   </div>
 <% end %>

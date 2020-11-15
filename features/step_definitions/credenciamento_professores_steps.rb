@@ -15,14 +15,18 @@ Dado "que existam as seguintes solicitações:" do |table|
     table.hashes.each do |row|
         name = row['user_full_name']
         user = User.create!(full_name: name, email: name+'@professor.com', password: name+'123', role: 'professor', registration: '200000000')
-        p SeiProcess.create!(user_id: user.id, status: row['status'], code: 0).id
+        SeiProcess.create!(user_id: user.id, status: row['status'], code: 0)
     end
 end
 
 Dado "que existam os seguintes credenciamentos sem prazo definido:" do |table|
-    pending
-    # table.hashes.each do |row|
-    # end
+    User.destroy_all
+    table.hashes.each do |row|
+        name = row['user_full_name']
+        user = User.create!(full_name: name, email: name+'@professor.com', password: name+'123', role: 'professor', registration: '200000000')
+        sei_process = SeiProcess.create!(user_id: user.id, status: 'Aprovado', code: 0)
+        Accreditation.create!(user_id: user.id, sei_process_id: sei_process.id, start_date: row['start_date'])
+    end
 end
 
 Dado /^que eu esteja cadastrado e logado como (.*)$/ do |input|
@@ -51,10 +55,15 @@ Dado /^que eu esteja na página (.+)$/ do |page_name|
     visit path_to(page_name)
 end
 
-Quando /^eu escolho avaliar "([^"]*)"$/ do |name|
+Quando /^eu escolho (avaliar|definir o prazo de) "([^"]*)"$/ do |state, name|
     user_id = User.find_by(full_name: name).id
-    process_id = SeiProcess.find_by(user_id: user_id).id
-    visit "/sei_processes/#{process_id}/edit"
+    if state = 'avaliar'
+        process_id = SeiProcess.find_by(user_id: user_id).id
+        visit "/sei_processes/#{process_id}/edit"
+    elsif state = 'definir o prazo de'
+        accreditation_id = Accreditation.find_by(user_id: user_id).id
+        visit "/accreditations/#{accreditation_id}/edit"
+    end
 end
 
 Quando /^eu anexo o arquivo "([^"]*)" em '([^']*)'$/ do |path, field|
