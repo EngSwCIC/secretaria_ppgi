@@ -12,9 +12,13 @@ class InformationsController < ApplicationController
   def create
     params.require(:information)
     params[:information].permit(info_params)
-    #@information = Information.create!(params[:information])
-    @information = Information.create!(info_params)
-    redirect_to informations_path
+    @information = Information.create!(info_params.merge(:published_by => current_user.id))
+    if @information.save
+      redirect_to informations_path
+    else
+      redirect_to new_information_path,alert:"Deu ruim"
+    end
+    #redirect_to informations_path
   end
 
   def destroy

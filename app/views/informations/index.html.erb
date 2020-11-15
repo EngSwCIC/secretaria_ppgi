@@ -18,7 +18,7 @@
         <td><%= information.title %></td>
         <td><%= information.content %></td>
         <td><%= Source.find(information.source_id ? information.source_id : 1).name %></td>
-        <td><%= information.published_by %></td>
+        <td><%= User.find(information.published_by ? information.published_by : 1).full_name %></td>
         <td><%= link_to 'Visualizar', information_path(information) %></td>
         <td><%= link_to 'Remover', information_path(information), method: :delete %></td>
       </tr>

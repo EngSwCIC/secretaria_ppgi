@@ -30,3 +30,4 @@ Then("I should recieve a message {string}") do |string|
 end	
 
 #rodar o cucumber com o comando "budle exec cucumber features/"
+
