@@ -1,5 +1,21 @@
 <h1>Abrir Processo</h1>
 
+<% if @requirements != nil %>
+  <h2><%= @requirements.title %></h2>
+  <%= @requirements.content %>
+
+  <% if @requirements.documents.attached? %>
+    <p>
+      <strong>Documentos Necessários:</strong>
+      <% @requirements.documents.each do | document | %>
+        <div>
+          <%= link_to document.filename, rails_blob_path(document, disposition: 'attachment') %>
+        <div>
+      <% end %>
+    </p>
+  <% end %>
+<% end %>
+
 <%= form_for @sei_process, html: { multipart: true } do |f| %>
   <%= f.hidden_field :user_id %>
   <%= f.hidden_field :status %>

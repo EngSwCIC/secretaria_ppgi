@@ -2,7 +2,7 @@
 
 <h1>SEI Processos</h1>
 
-<% if user_signed_in? && (current_user.role == "administrator") %>
+<% if current_user.role == "administrator" %>
   <table>
     <thead>
       <tr>
@@ -27,8 +27,27 @@
       <% end %>
     </tbody>
   </table>
+
+<% else %>
+  <table>
+    <thead>
+      <tr>
+        <th>Código do Processo</th>
+        <th>Status</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @my_processes.each do |sei_process| %>
+        <tr>
+          <td><%= sei_process.id %></td>
+          <td><%= sei_process.status %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 <% end %>
 
 <br>
-
 <%= link_to 'Abrir Processo', new_sei_process_path %>

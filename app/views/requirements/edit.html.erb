@@ -4,9 +4,10 @@
   <%= f.label "Título" %>
   <%= f.text_field :title %>
   <%= f.label "Conteúdo" %>
-  <%= f.text_field :content %>
+  <%= f.text_area :content %>
   <%= f.label "documentos" %>
   <%= f.file_field :documents, multiple: true %>
+  <br/>
   <%= f.submit "Save", class: "btn btn-primary" %>
 <% end %>
 

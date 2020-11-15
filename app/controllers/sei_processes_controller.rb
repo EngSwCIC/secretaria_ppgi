@@ -4,7 +4,11 @@ class SeiProcessesController < ApplicationController
   # GET /sei_processes
   # GET /sei_processes.json
   def index
-    @sei_processes = SeiProcess.all
+    if current_user.role == "administrator"
+      @sei_processes = SeiProcess.all
+    else
+      @my_processes = SeiProcess.where(user_id: current_user.id)
+    end
   end
 
   # GET /sei_processes/1
@@ -14,6 +18,7 @@ class SeiProcessesController < ApplicationController
 
   # GET /sei_processes/new
   def new
+    @requirements = Requirement.find_by(title: 'Requisitos de Credenciamento')
     @sei_process = SeiProcess.new(user_id: current_user.id, status: 'Espera', code: '0')
   end
 

@@ -8,16 +8,16 @@
   <p><strong>Cargo: </strong><%= current_user.role %></p>
 
   <% if current_user.role == "administrator" %>
-    
     <%= link_to "Atualizar Requisitos", requirements_path %>
-    <%= link_to "Processos Abertos", sei_processes_path %>
+    <%= link_to "Lista de Processos", sei_processes_path %>
     <%= link_to "Lista de Credenciamentos", accreditations_path %>
+  
+  <% else %>
+    <%= link_to "Meus Processos Abertos", sei_processes_path %>
+  <% end %>
+  
     <br/>
     <%= link_to "Sair", destroy_user_session_path, method: :delete %>
-
-  <% else %>
-    <%= link_to "Sair", destroy_user_session_path, method: :delete %>
-  <% end %>
 
 <% else %>
   <h3>Entre para acessar o sistema!</h3>
