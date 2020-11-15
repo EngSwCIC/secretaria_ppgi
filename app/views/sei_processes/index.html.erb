@@ -10,7 +10,7 @@
         <th>Matrícula</th>
         <th>Código do Processo</th>
         <th>Status</th>
-        <th colspan="3"></th>
+        <th colspan="1"></th>
       </tr>
     </thead>
 
@@ -21,8 +21,11 @@
           <td><%= sei_process.user.registration %></td>
           <td><%= sei_process.id %></td>
           <td><%= sei_process.status %></td>
-          <td><%= link_to 'Gerenciar', edit_sei_process_path(sei_process) %></td>
-          <td><%= link_to 'Excluir', sei_process, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% if sei_process.status == 'Aprovado' %>
+            <td><%= link_to 'Mostrar', sei_process_path(sei_process) %></td>
+          <% else %>
+            <td><%= link_to 'Avaliar', edit_sei_process_path(sei_process) %></td>
+          <% end %>
         </tr>
       <% end %>
     </tbody>
@@ -49,5 +52,7 @@
   </table>
 <% end %>
 
-<br>
+<br/>
 <%= link_to 'Abrir Processo', new_sei_process_path %>
+<br/>
+<%= link_to 'Página Inicial', home_index_path %>

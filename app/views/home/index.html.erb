@@ -1,5 +1,4 @@
 <h1>Início</h1>
-<p>Find me in app/views/home/index.html.erb</p>
 
 <% if user_signed_in? %>
   <h3>Usuário atual</h3>
@@ -8,7 +7,7 @@
   <p><strong>Cargo: </strong><%= current_user.role %></p>
 
   <% if current_user.role == "administrator" %>
-    <%= link_to "Atualizar Requisitos", requirements_path %>
+    <%= link_to "Lista de Requisitos", requirements_path %>
     <%= link_to "Lista de Processos", sei_processes_path %>
     <%= link_to "Lista de Credenciamentos", accreditations_path %>
   

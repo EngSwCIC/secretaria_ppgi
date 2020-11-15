@@ -1,19 +1,19 @@
-<p id="notice"><%= notice %></p>
+<p id="notice"></p>
 
 <p>
-  <strong>Title:</strong>
+  <strong>Tipo dos Requisitos:</strong>
   <%= @requirement.title %>
 </p>
 
 <p>
-  <strong>Content:</strong>
+  <strong>Conteúdo:</strong>
   <%= @requirement.content %>
 </p>
 
 <% if @requirement.documents.attached? %>
   <p>
-    <strong>existem documentos acoplados</strong>
-    <% @requirement.documents.each do | document | %>
+    <strong>Documentos anexados</strong>
+    <% @requirement.documents.each do |document| %>
       <div>
         <%= link_to document.filename, rails_blob_path(document, disposition: 'attachment') %>
       <div>
@@ -21,5 +21,5 @@
   </p>
 <% end %>
 
-<%= link_to 'Edit', edit_requirement_path(@requirement) %> |
-<%= link_to 'Back', requirements_path %>
+<%= link_to 'Editar', edit_requirement_path(@requirement) %> |
+<%= link_to 'Voltar', requirements_path %>

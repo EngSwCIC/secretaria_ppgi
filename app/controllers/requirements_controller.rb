@@ -28,7 +28,7 @@ class RequirementsController < ApplicationController
     
     respond_to do |format|
       if @requirement.save
-        format.html { redirect_to @requirement, notice: 'Requirement was successfully created.' }
+        format.html { redirect_to @requirement, notice: 'Requisitos criados com sucesso!' }
         format.json { render :show, status: :created, location: @requirement }
       else
         format.html { render :new }
@@ -49,7 +49,7 @@ class RequirementsController < ApplicationController
   def update
     respond_to do |format|
       if @requirement.update(requirement_params)
-        format.html { redirect_to @requirement, notice: 'Requirement was successfully updated.' }
+        format.html { redirect_to @requirement, notice: 'Requisitos atualizados com sucesso!' }
         format.json { render :show, status: :ok, location: @requirement }
       else
         format.html { render :edit }
@@ -63,7 +63,7 @@ class RequirementsController < ApplicationController
   def destroy
     @requirement.destroy
     respond_to do |format|
-      format.html { redirect_to requirements_url, notice: 'Requirement was successfully destroyed.' }
+      format.html { redirect_to requirements_url, notice: 'Requisitos excluídos com sucesso!' }
       format.json { head :no_content }
     end
   end

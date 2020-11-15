@@ -11,7 +11,7 @@
 
 <% if @sei_process.documents.attached? %>
   <p>
-    <strong>Documentos Anexados</strong>
+    <strong>Documentos anexados:</strong>
     <% @sei_process.documents.each do | document | %>
       <div>
         <%= link_to document.filename, rails_blob_path(document, disposition: 'attachment') %>
