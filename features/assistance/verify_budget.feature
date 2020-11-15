@@ -1,3 +1,5 @@
+#language:pt
+
 Funcionalidade: Verificar se há orçamento disponível
   Como um administrador
   Para que eu possa disponibilizar os auxílios
