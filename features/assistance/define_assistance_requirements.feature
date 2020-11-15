@@ -1,3 +1,5 @@
+#language:pt
+
 Funcionalidade: Definir os requisitos para solicitação de auxílio
   Como um administrador 
   Para que eu possa disponibilizar diárias e passagens 
