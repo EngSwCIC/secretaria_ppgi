@@ -7,7 +7,7 @@ RSpec.describe InformationsController, :type => :controller do
     context "with available information" do
       it "assigns @informations" do
         #@fake_results = [double('Information')]
-        information = Information.create
+        information = Information.create(:title => 'title', :content => 'content', :source_id => '1')
         expect(Information.all).not_to be_empty
         #expect assigns(:informations).to eq(@fake_results)
       end

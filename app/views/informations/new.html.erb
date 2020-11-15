@@ -1,11 +1,11 @@
 <h2>Adicionar uma nova informação</h2>
 <%= form_tag informations_path, :method => :post do %>
   <%= label :information, :title, 'Título: ' %>
-  <%= text_field :information, :title, :size=>100, :required => true%>
+  <%= text_field :information, :title, :size=>100, :required => false%>
   <%= simple_format("\n") %>
   <%= label :information, :content, 'Conteúdo: '%>
   <%= simple_format("\n") %>
-  <%= text_area :information, :content, :rows=>50, :cols=>100, :required => true%>
+  <%= text_area :information, :content, :rows=>50, :cols=>100, :required => false%>
   
 
   <%= label :information, :source_id, 'Fonte: ' %>

@@ -4,7 +4,8 @@
 <p> <%= source.name %> </p>
 <%# sem o "=" nao eh aprensentado o retorno da funçao %>
 <%= link_to "editar", edit_source_path(source.id)%>
-
+<td><%= link_to 'Remover', source_path(source), method: :delete %></td>
+<%= simple_format("\n") %>
 <% end %>
 
 <%= link_to "Cadastrar Fonte de Informaçao",  new_source_path, controller: 'sources'%>

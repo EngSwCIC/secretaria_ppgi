@@ -10,6 +10,7 @@
   <% if current_user.role == 'administrator' %>
   <%= link_to "Adicionar uma nova informação", new_information_path %>
   <%= link_to "Cadastrar Fonte de Informaçao",  new_source_path, controller: 'sources'%>
+  <%= link_to 'Fontes de informação', sources_path %>
   <% end %>
    <%= link_to 'Informações', controller: 'informations' %> 
   <%= link_to "Sair", destroy_user_session_path, method: :delete %>

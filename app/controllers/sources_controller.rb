@@ -11,12 +11,19 @@ class SourcesController < ApplicationController
   	@source=Source.new
   end
 
+  def destroy
+    @source = Source.find(params[:id])
+    @source.destroy
+    flash[:notice] = "#{@source.name} removido."
+    redirect_to sources_path
+  end
+
   def create
   	@source = Source.new(source_params)
     if @source.save
       redirect_to sources_path
     else
-      redirect_to new_source_path,alert:"Deu ruim"
+      redirect_to new_source_path,alert:"Ocorreu um erro"
 
     end  
   end

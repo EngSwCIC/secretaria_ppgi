@@ -12,11 +12,11 @@ class InformationsController < ApplicationController
   def create
     params.require(:information)
     params[:information].permit(info_params)
-    @information = Information.create!(info_params.merge(:published_by => current_user.id))
+    @information = Information.new(info_params.merge(:published_by => current_user.id))
     if @information.save
       redirect_to informations_path
     else
-      redirect_to new_information_path,alert:"Deu ruim"
+      redirect_to new_information_path,alert:"Ocorreu um erro"
     end
     #redirect_to informations_path
   end
@@ -24,7 +24,7 @@ class InformationsController < ApplicationController
   def destroy
     @information = Information.find(params[:id])
     @information.destroy
-    flash[:notice] = "#{@information.title} deleted."
+    flash[:notice] = "#{@information.title} removido."
     redirect_to informations_path
   end
 

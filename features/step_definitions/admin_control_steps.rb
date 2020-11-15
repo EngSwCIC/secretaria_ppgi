@@ -13,11 +13,6 @@ Then("I should be on {string}") do |string|
 	
 end
 
-When("I press {string}") do |string|
-	puts string
-	
-end
-
 
 When("I fill the form with {string}") do |string|
 	puts string
