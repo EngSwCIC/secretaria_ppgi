@@ -25,7 +25,7 @@ development:
   <<: *default
   database: secretaria_ppgi
   username: postgres
-  password: post123
+  password: postgres
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -61,7 +61,7 @@ test:
   <<: *default
   database: secretaria_ppgi
   username: postgres
-  password: post123
+  password: postgres
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -82,8 +82,20 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
+
+  host: localhost
+
+  # The TCP port the server listens on. Defaults to 5432.
+  # If your server runs on a different port number, change accordingly.
+  port: 5432
 production:
   <<: *default
   database: secretaria_ppgi
   username: postgres
-  password: post123
+  password: postgres
+
+  host: localhost
+
+  # The TCP port the server listens on. Defaults to 5432.
+  # If your server runs on a different port number, change accordingly.
+  port: 5432
