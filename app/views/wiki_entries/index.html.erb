@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<div class="title">Wikis</div>
+<div class="title">Wiki de Atendimento</div>
 
 <div class="listEntries">
   <table>
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Content</th>
+      <th>Título</th>
+      <th>Conteúdo</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,9 +17,9 @@
       <tr>
         <td><%= entry.title %></td>
         <td><%= entry.content %></td>
-        <td><%= link_to 'Show', entry %></td>
-        <td><%= link_to 'Edit', edit_wiki_entry_path(entry) %></td>
-        <td><%= link_to 'Destroy', entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Exibir', entry %></td>
+        <td><%= link_to 'Editar', edit_wiki_entry_path(entry) %></td>
+        <td><%= link_to 'Excluir', entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Wiki', new_wiki_entry_path %>
+<%= link_to 'Adicionar processo', new_wiki_entry_path %>

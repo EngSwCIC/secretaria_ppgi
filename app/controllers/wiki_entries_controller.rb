@@ -10,6 +10,7 @@ class WikiEntriesController < ApplicationController
   # GET /wikis/1
   # GET /wikis/1.json
   def show
+  
   end
 
   # GET /wikis/new
@@ -28,10 +29,10 @@ class WikiEntriesController < ApplicationController
 
     respond_to do |format|
       if @entry.save
-        format.html { redirect_to @entry, notice: 'Wiki was successfully created.' }
+        format.html { redirect_to @entry, notice: 'Página foi criada com sucesso!' }
         format.json { render :show, status: :created, location: @entry}
       else
-        format.html { render :new }
+        format.html { render :new}
         format.json { render json: @entry.errors, status: :unprocessable_entity }
       end
     end
@@ -42,7 +43,7 @@ class WikiEntriesController < ApplicationController
   def update
     respond_to do |format|
       if @entry.update(entry_params)
-        format.html { redirect_to @entry, notice: 'Wiki was successfully updated.' }
+        format.html { redirect_to @entry, notice: 'Página foi criada com sucesso!' }
         format.json { render :show, status: :ok, location: @entry}
       else
         format.html { render :edit }

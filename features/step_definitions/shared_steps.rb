@@ -1,21 +1,42 @@
 Quando(/(?:clico|clicar) no botão "([^"]*)"/) do |botao|
-    click_button botao
+    click_on botao
 end
 
 Então(/recebo uma mensagem de (sucesso|erro)/) do |status|
-    pending # Write code here that turns the phrase above into concrete actions
-end
+    if(status == "sucesso") 
+        find(".notice", text:"Página foi criada com sucesso!")
 
-Quando(/não preencho o campo "([^"]*)"/) do |campo|
-    pending # Write code here that turns the phrase above into concrete actions
+    elsif(status == "erro")
+        find("#error_explanation")
+    else
+        raise StandardError.new("Mensagem não encontrada")
+    end
 end
 
 Quando(/preencho o campo "([^"]*)" com "([^"]*)"/) do |campo, valor|
     fill_in campo, with: valor
 end
 
-Dado(/(?:esteja na|redirecionado para a) página "([^"]*)"/) do |pagina|
-   pending
+Quando(/não preencho o campo "([^"]*)"/) do |campo|
+    fill_in campo, with: ""
+end
+
+Dado(/redirecionado para a página "([^"]*)"/) do |pagina|
+    case(pagina)
+    when "Wiki de Atendimento"
+        page.current_path == wiki_entries_path
+    when "Processo"
+        page.current_path == wiki_entry_path(id: WikiEntry.last.id)
+    end
+end
+
+Dado(/esteja na página "([^"]*)"/) do |pagina|
+    case(pagina)
+    when "Wiki de Atendimento"
+        visit wiki_entries_path
+    when "Processo"
+        visit wiki_entry_path(id: WikiEntry.last.id)
+    end
 end
 
 Dado(/esteja conectado como usuario "([^"]*)", "([^"]*)", "([^"]*)"/) do |usuario, senha, funcao|
@@ -30,7 +51,7 @@ Dado(/esteja conectado como usuario "([^"]*)", "([^"]*)", "([^"]*)"/) do |usuari
 end 
 
 Quando(/visualizar (?:o|a|os|as) "([^"]*)"/) do |elemento|
-    pending
+    find(".attribute:has(strong)", text: elemento).find(".value").text != ""
 end
 
 Quando(/seleciono (?:o|a|os|as) "([^"]*)" "([^"]*)"/) do |campo, valor|

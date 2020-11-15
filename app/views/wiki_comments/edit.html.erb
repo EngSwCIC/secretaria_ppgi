@@ -1,6 +1,7 @@
 <h1>Editing Comentario</h1>
 
-<%= render 'form', comment: @comment %>
-
+<%= form_for @comment, url: comment_path(@comment), method: :put do |form|%>
+<%= render 'form', form:form, comment: @comment, entry:@entry%>
+<%end%>
 <%= link_to 'Show', @comment %> |
 <%= link_to 'Back', wiki_comments_path %>

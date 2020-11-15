@@ -1,14 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @entry.title %>
-</p>
+<div class="attribute">
+  <strong>Título</strong>:
+  <span class="value"><%= @entry.title %></span>
+</div>
 
-<p>
-  <strong>Content:</strong>
-  <%= @entry.content %>
-</p>
+<div class="attribute">
+  <strong>Conteúdo</strong>:
+  <span class="value"><%= @entry.content %></span>
+</div>
 
-<%= link_to 'Edit', edit_wiki_entry_path(@entry) %> |
-<%= link_to 'Back', wiki_entries_path %>
+<%= link_to 'Editar', edit_wiki_entry_path(@entry) %> |
+<%= link_to 'Voltar', wiki_entries_path %>|
+<%= link_to 'Adicionar comentário', new_wiki_entry_comment_path(@entry) %>
+
+<%@entry.comments.each do |comment| %>
+<div class="comment">
+  <p> <%=comment.content%></p>
+</div>
+
+<%end%>
