@@ -11,12 +11,8 @@ Funcionalidade: Disponibilizar os requisitos para o credenciamento
     E que eu esteja na página de requisitos para o credenciamento
 
     Cenário: Modificar os requisitos necessários para o credenciamento
-      Quando eu preencho em 'Requisitos' com
-      """
-      - Formulário de solicitação preenchido e assinado pelo interessado*
-      - CV Lattes do coorientador* (apenas dados de publicação dos últimos 5 anos)
-      - Cópia do passaporte (apenas caso de orientador/coorientador estrangeiro)
-      """
-      E eu anexo o arquivo "Formulário de Credenciamento.doc" no campo 'Formulario'
+      Quando eu clico em 'Adicionar Informação de Requisitos'
+      E eu preencho com "Requisitos de Credenciamento" em 'Título'
+      E eu anexo o arquivo "features/resources/Formulário de Credenciamento.doc" em 'Documentos'
       E eu aperto 'Enviar'
-      Então eu devo ver "Requisitos atualizados com sucesso"
+      Então eu recebo uma mensagem de sucesso

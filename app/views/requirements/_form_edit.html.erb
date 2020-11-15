@@ -1,0 +1,46 @@
+<%= form_with(model: requirement, local: true) do |form| %>
+  <% if requirement.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(requirement.errors.count, "error") %> prohibited this requirement from being saved:</h2>
+
+      <ul>
+      <% requirement.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title, "Título" %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :content, "Conteúdo" %>
+    <%= form.text_area :content %>
+  </div>
+
+  <% if @requirement.documents.attached? %>
+  <div>Documentos anexados:</div>
+    <% @requirement.documents.each do | document | %>
+      <div>
+        <%= link_to document.filename, rails_blob_path(document, disposition: 'attachment') %>
+          <%= link_to 'Remover', delete_document_attachment_requirement_url(document.id, requirement_id: @requirement.id),
+            method: :delete,
+            data: { } 
+          %>    
+      <div>
+    <% end %>
+  <% end %>
+  <br/>
+
+  <div class="field">
+    <%= form.label :documents, "Documentos" %>
+    <%= form.file_field :documents, multiple: true %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Salvar" %>
+  </div>
+<% end %>

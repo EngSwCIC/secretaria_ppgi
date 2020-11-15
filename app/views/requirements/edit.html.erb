@@ -1,32 +1,6 @@
 <h1>Editar Requisitos</h1>
 
-<%= form_for @requirement, html: { multipart: true } do |f| %>
-  <%= f.label "Tipo dos Requisitos" %>
-  <%= f.text_field :title %>
-  <%= f.label "Conteúdo" %>
-  <%= f.text_area :content %>
+<%= render 'form_edit', requirement: @requirement %>
 
-  <% if @requirement.documents.attached? %>
-  <div>Documentos anexados:</div>
-    <% @requirement.documents.each do | document | %>
-      <div>
-        <%= link_to document.filename, rails_blob_path(document, disposition: 'attachment') %>
-          <%= link_to 'Remover', delete_document_attachment_requirement_url(document.id, requirement_id: @requirement.id),
-            method: :delete,
-            data: { } 
-          %>    
-      <div>
-    <% end %>
-  <% end %>
-  <br/>
-  <%= f.label "Adicionar documentos:" %>
-  <%= f.file_field :documents, multiple: true %>
-  <br/>
-  <%= f.submit "Salvar", class: "btn btn-primary" %>
-<% end %>
-
-<br />
-
-<br />
 <%= link_to 'Mostrar', @requirement %> |
 <%= link_to 'Voltar', requirements_path %>

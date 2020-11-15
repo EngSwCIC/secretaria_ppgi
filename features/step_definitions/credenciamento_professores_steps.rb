@@ -45,8 +45,7 @@ Dado /^que eu esteja logado como (.*)$/ do |input|
 end
 
 Dado /^que eu esteja na página (.+)$/ do |page_name|
-    pending
-    # visit path_to(page_name)
+    visit path_to(page_name)
 end
 
 Quando /^eu anexo o arquivo "([^"]*)" em '([^']*)'$/ do |path, field|
@@ -82,7 +81,7 @@ Quando /^eu preencho em '([^']*)' com/m do |field, text|
     fill_in(field, :with => text)
 end
 
-Quando /^eu preencho com "([^"]*)" em '([^']*)'$/ do |field, text|
+Quando /^eu preencho com "([^"]*)" em '([^']*)'$/ do |text, field|
     fill_in(field, :with => text)
 end
 
@@ -113,5 +112,15 @@ Então /^eu não devo ver "([^"]*)"$/ do |text|
         page.should have_no_content(text)
     else
         assert page.has_no_content?(text)
+    end
+end
+
+Então /^eu recebo uma mensagem de (sucesso|erro)$/ do |status|
+    if(status == 'sucesso') 
+        find(".notice", text: /sucesso!$/)
+    elsif(status == 'erro')
+        find("#error_explanation")
+    else
+        raise StandardError.new('Mensagem não encontrada')
     end
 end

@@ -12,16 +12,21 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :title %>
+    <%= form.label :title, "Título" %>
     <%= form.text_field :title %>
   </div>
 
   <div class="field">
-    <%= form.label :content %>
+    <%= form.label :content, "Conteúdo" %>
     <%= form.text_area :content %>
   </div>
 
+  <div class="field">
+    <%= form.label :documents, "Documentos" %>
+    <%= form.file_field :documents, multiple: true %>
+  </div>
+
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Enviar" %>
   </div>
 <% end %>
