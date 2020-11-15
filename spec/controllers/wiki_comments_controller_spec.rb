@@ -4,11 +4,11 @@ RSpec.describe WikiCommentsController, type: :controller do
 
   
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    {content: "Engenharia de Software"}
   }
   
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    {content: ""}
   }
   
   let(:valid_session) { {} }
@@ -68,14 +68,14 @@ RSpec.describe WikiCommentsController, type: :controller do
   describe "PUT #update" do
     context "with valid params" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        {content: "Sprint 2"}
       }
 
       it "updates the requested comentario" do
 
         put :update, params: {id: comment.id, wiki_comment: new_attributes}, session: valid_session
         comment.reload
-        skip("Add assertions for updated state")
+        expect(comment).to eq(new_attributes)
       end
 
       it "redirects to the comentario" do

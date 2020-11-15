@@ -3,11 +3,11 @@ require 'rails_helper'
 RSpec.describe WikiEntriesController, type: :controller do
 
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    {title: "Processo de trancamento", content: "o processo de trancamento é assim"}
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    {title: "", content: "o processo de trancamento é assim"}
   }
 
   let(:valid_session) { {} }
@@ -67,7 +67,7 @@ RSpec.describe WikiEntriesController, type: :controller do
   describe "PUT #update" do
     context "with valid params" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        {title: "Processo de matrícula", content: "Aluno se matricula"}
       }
 
       it "updates the requested wiki" do
