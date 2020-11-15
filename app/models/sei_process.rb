@@ -1,6 +1,7 @@
 class SeiProcess < ApplicationRecord
   belongs_to :user
   has_many_attached :documents
+  validates :documents, attached: true
 
   enum status: {
     Espera: 0,

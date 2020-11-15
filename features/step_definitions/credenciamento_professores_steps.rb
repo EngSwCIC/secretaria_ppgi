@@ -12,19 +12,21 @@ World(WithinHelpers)
 
 Dado "que existam as seguintes solicitações:" do |table|
     User.destroy_all
+    file = fixture_file_upload(Rails.root.join('public', 'TestImage.png'), 'image/png')
     table.hashes.each do |row|
         name = row['user_full_name']
         user = User.create!(full_name: name, email: name+'@professor.com', password: name+'123', role: 'professor', registration: '200000000')
-        SeiProcess.create!(user_id: user.id, status: row['status'], code: 0)
+        SeiProcess.create!(user_id: user.id, status: row['status'], code: 0, documents: [file])
     end
 end
 
 Dado "que existam os seguintes credenciamentos sem prazo definido:" do |table|
     User.destroy_all
+    file = fixture_file_upload(Rails.root.join('public', 'TestImage.png'), 'image/png')
     table.hashes.each do |row|
         name = row['user_full_name']
         user = User.create!(full_name: name, email: name+'@professor.com', password: name+'123', role: 'professor', registration: '200000000')
-        sei_process = SeiProcess.create!(user_id: user.id, status: 'Aprovado', code: 0)
+        sei_process = SeiProcess.create!(user_id: user.id, status: 'Aprovado', code: 0, documents: [file])
         Accreditation.create!(user_id: user.id, sei_process_id: sei_process.id, start_date: row['start_date'])
     end
 end
@@ -55,15 +57,16 @@ Dado /^que eu esteja na página (.+)$/ do |page_name|
     visit path_to(page_name)
 end
 
-Quando /^eu escolho (avaliar|definir o prazo de) "([^"]*)"$/ do |state, name|
+Quando /^eu escolho avaliar "([^"]*)"$/ do |name|
     user_id = User.find_by(full_name: name).id
-    if state = 'avaliar'
-        process_id = SeiProcess.find_by(user_id: user_id).id
-        visit "/sei_processes/#{process_id}/edit"
-    elsif state = 'definir o prazo de'
-        accreditation_id = Accreditation.find_by(user_id: user_id).id
-        visit "/accreditations/#{accreditation_id}/edit"
-    end
+    process_id = SeiProcess.find_by(user_id: user_id).id
+    visit "/sei_processes/#{process_id}/edit"
+end
+
+Quando /^eu escolho credenciar "([^"]*)"$/ do |name|
+    user_id = User.find_by(full_name: name).id
+    accreditation_id = Accreditation.find_by(user_id: user_id).id
+    visit "/accreditations/#{accreditation_id}/edit"
 end
 
 Quando /^eu anexo o arquivo "([^"]*)" em '([^']*)'$/ do |path, field|
@@ -107,14 +110,18 @@ Quando /^eu preencho com "([^"]*)" em '([^']*)'$/ do |text, field|
     fill_in(field, :with => text)
 end
 
-Quando /^eu seleciono uma data posterior a atual em '([^']*)'$/ do |field|
-    pending
-    # select_date(date, :from => field)
-end
-
-Quando /^eu seleciono uma data anterior a atual em '([^']*)'$/ do |field|
-    pending
-    # select_date(date, :from => field)
+Quando /^eu seleciono uma data final (posterior|anterior) a data inicial$/ do |status|
+    if status == 'posterior'
+        season = 5
+    elsif status == 'anterior'
+        season = -5
+    end
+    date1 = (Date.current+season).strftime("%Y-%m-%e")
+    date2 = (Date.current).strftime("%Y-%m-%e")
+    fill_in 'Data final', with: date1
+    fill_in 'Data inicial', with: date2
+    # select_date(date1, :from => 'Data Final')
+    # select_date(date2, :from => 'Data Inicial')
 end
 
 Quando /^eu aperto '([^']*)'$/ do |button|
@@ -138,9 +145,9 @@ Então /^eu não devo ver "([^"]*)"$/ do |text|
 end
 
 Então /^eu devo receber uma mensagem de (sucesso|erro)$/ do |status|
-    if(status == 'sucesso') 
+    if status == 'sucesso'
         find(".notice", text: /sucesso!$/)
-    elsif(status == 'erro')
+    elsif status == 'erro'
         find("#error_explanation")
     else
         raise StandardError.new('Mensagem não encontrada')

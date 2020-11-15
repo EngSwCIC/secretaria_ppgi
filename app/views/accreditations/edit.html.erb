@@ -25,13 +25,6 @@
 <% end %>
 <br/>
 
-<% if @accreditation.start_date != nil %>
-  <p>
-    <strong>Data de Início:</strong>
-    <%= @accreditation.start_date %>
-  </p>
-<% end %>
-
 <%= render 'form_edit', accreditation: @accreditation %>
 
 <%= link_to 'Mostrar', @accreditation %> |

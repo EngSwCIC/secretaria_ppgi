@@ -11,15 +11,13 @@
     </div>
   <% end %>
 
-  <% if @accreditation.start_date == nil %>
-    <div class="field">
-      <%= form.label :start_date, "Início" %>
-      <%= form.date_field :start_date, value: Date.current %>
-    </div>
-  <% end %>
+  <div class="field">
+    <%= form.label :start_date, "Data inicial" %>
+    <%= form.date_field :start_date, value: Date.current %>
+  </div>
 
   <div class="field">
-    <%= form.label :end_date, "Fim" %>
+    <%= form.label :end_date, "Data final" %>
     <%= form.date_field :end_date %>
   </div>
 

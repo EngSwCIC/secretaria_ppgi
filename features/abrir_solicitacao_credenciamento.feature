@@ -19,4 +19,4 @@ Funcionalidade: Abrir solicitação de credenciamento
 
     Cenário: Solicitação não enviada (campo obrigatório em branco)
         Quando eu aperto 'Enviar'
-        Então eu não devo receber uma mensagem de sucesso
+        Então eu devo receber uma mensagem de erro

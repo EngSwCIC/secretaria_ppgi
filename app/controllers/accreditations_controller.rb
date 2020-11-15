@@ -41,7 +41,7 @@ class AccreditationsController < ApplicationController
   def update
     respond_to do |format|
       if @accreditation.update(accreditation_params)
-        format.html { redirect_to accreditations_url, notice: 'Accreditation was successfully updated.' }
+        format.html { redirect_to accreditations_url, notice: 'Credenciamento atualizado com sucesso!' }
         format.json { render :show, status: :ok, location: @accreditation }
       else
         format.html { render :edit }
