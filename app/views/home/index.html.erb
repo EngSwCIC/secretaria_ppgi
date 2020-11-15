@@ -7,9 +7,12 @@
   <p><strong>Email: </strong><%= current_user.email %></p>
   <p><strong>Cargo: </strong><%= current_user.role %></p>
   
-  <%= link_to 'Informações', controller: 'informations' %>
-  <%= link_to "Sair", destroy_user_session_path, method: :delete %>
+  <% if current_user.role == 'administrator' %>
+  <%= link_to "Adicionar uma nova informação", new_information_path %>
   <%= link_to "Cadastrar Fonte de Informaçao",  new_source_path, controller: 'sources'%>
+  <% end %>
+   <%= link_to 'Informações', controller: 'informations' %> 
+  <%= link_to "Sair", destroy_user_session_path, method: :delete %>
 <% else %>
   <h3>Entre para acessar o sistema!</h3>
   <p>Você também pode se registrar <small>ou pegar uma conta no arquivo db/seeds.rb</small></p>

@@ -9,7 +9,6 @@ class SourcesController < ApplicationController
 
   def new
   	@source=Source.new
-
   end
 
   def create

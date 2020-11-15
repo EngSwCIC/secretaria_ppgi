@@ -17,11 +17,12 @@
       <tr>
         <td><%= information.title %></td>
         <td><%= information.content %></td>
-        <td><%= information.source_id %></td>
+        <td><%= Source.find(information.source_id ? information.source_id : 1).name %></td>
         <td><%= information.published_by %></td>
         <td><%= link_to 'Visualizar', information_path(information) %></td>
-         <td><%= link_to 'Voltar', home_index_path %></td>
+        <td><%= link_to 'Remover', information_path(information), method: :delete %></td>
       </tr>
     <% end %>
   </table>
+  <td><%= link_to 'Voltar', home_index_path %></td>
 <% end %>
