@@ -10,6 +10,4 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   enum role: %i[administrator secretary professor student]
-
-
 end
