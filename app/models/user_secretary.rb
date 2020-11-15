@@ -1,0 +1,2 @@
+class UserSecretary < ApplicationRecord
+end

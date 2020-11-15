@@ -8,6 +8,8 @@ services:
     environment:
       POSTGRES_USER: test_user
       POSTGRES_PASSWORD: test_pwd
+    ports:
+      - 5432:5432
     volumes:
       - ./dbconfig/init.sql:/docker-entrypoint-initdb.d/init.sql
 
@@ -19,7 +21,7 @@ services:
         - ./:/root/secretaria
     image: eng_sw_image
     working_dir: /root/secretaria
-    command: rails server -b 0.0.0.0
+    command: bash -c 'bin/rails db:migrate RAILS_ENV=test && rails server -b 0.0.0.0'
     ports: 
         - 3000:3000
     depends_on:
