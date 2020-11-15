@@ -40,7 +40,30 @@ end
 
 Então('eu devo estar em uma página de confirmação com a tabela:') do |table|
   # table is a Cucumber::MultilineArgument::DataTable
-  pending # Write code here that turns the phrase above into concrete actions
+
+  # | type            |    data    |  
+  # | data de entrada | dd/mm/aaaa |
+  # | data de saída   | dd/mm/aaaa |
+
+  data = table.hashes
+  type = []
+  data = []
+
+  data.each do |row|
+    row.each do |key, value|
+      if key.eql? "type"
+        type << value
+      elsif key.eql? "data"
+        data << value
+      end
+    end
+  end
+  # a ser implementado
+  has_table = page.has_css?("#table")
+  find("#table")
+  valid_table = is_equal(find("#table"), type, data)
+  valid = has_table && valid_table
+  expect(valid).to be true
 end
 
 #----------------- cenario triste

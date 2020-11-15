@@ -27,6 +27,7 @@ Funcionalidade: Realizar solicitação de diárias para um período
         E eu insira "data_saida" no campo "data_saida"
         Então eu devo estar em uma página de confirmação com a tabela:
 
+        | type            |    data    |  
         | data de entrada | dd/mm/aaaa |
         | data de saída   | dd/mm/aaaa |
 

@@ -52,32 +52,58 @@
 # end
 
 Dado('que eu esteja cadastrado como administrador com email {string}') do |email|
-    @email = email
-    valid_email = email.eql? "admin@admin.com"
-    expect(email).to be true
+  @email = email
+  valid_email = email.eql? "admin@admin.com"
+  expect(email).to be true
+end
+
+E('que eu esteja autenticado') do
+  authenticate(admin)
+end
+
+E('que eu esteja na pagina inicial') do
+  visit(root_path)
+end
+
+Quando ('Eu clico em (.*?)"') do |button|
+  click_button(button)
+end
+
+Dado('deve haver um botão para escolher um período a ser definido') do
+  find("#escolher_periodo")
+end
+
+Então('eu devo estar em uma página com uma tabela com os dados:') do |table|
+  # table is a Cucumber::MultilineArgument::DataTable
+  # | type | value |
+  # | Deadline | 30/10/2020 - 01/11/2020 |
+  data = table.hashes
+  type = []
+  values = []
+
+  data.each do |row|
+    row.each do |key, value|
+      if key.eql? "type"
+        type << value
+      elsif key.eql? "value"
+        values << value
+      end
+    end
   end
-  
-  E('que eu esteja autenticado') do
-    pending # Write code here that turns the phrase above into concrete actions
-  end
-  
-  E('que eu esteja na pagina inicial') do
-    pending # Write code here that turns the phrase above into concrete actions
-  end
-  
-  Dado('deve haver um botão para escolher um período a ser definido') do
-    pending # Write code here that turns the phrase above into concrete actions
-  end
-  
-  Então('eu devo estar em uma página com uma tabela com os dados:') do |table|
-    # table is a Cucumber::MultilineArgument::DataTable
-    pending # Write code here that turns the phrase above into concrete actions
-  end
-  
-  Então('eu preencho os dados') do
-    pending # Write code here that turns the phrase above into concrete actions
-  end
-  
-  Então('eu devo estar em uma página confirmando a solicitação') do
-    pending # Write code here that turns the phrase above into concrete actions
-  end
+  # a ser implementado
+  has_table = page.has_css?("#table")
+  find("#table")
+  valid_table = is_equal(find("#table"), type, values)
+  valid = has_table && valid_table
+  expect(valid).to be true
+end
+
+Então('eu preencho os dados') do
+  dados = get_data
+  find("input[placeholder*= dados]").set dados
+end
+
+Então('eu devo estar em uma página confirmando a solicitação') do
+  confirm_page = page.has_css?("#confirm_solicitacao")
+  expect(confirm_page).to be true
+end

@@ -104,7 +104,8 @@ Então ('Eu devo ver "([^"]*)"') do |text|
 end
 
 Dado("a página de solicitação de passagens seja carregada corretamente") do
-  pending
+  solicit_psg = page.has_css?("#solicit_passagens")
+  expect(solicit_psg).to be true
 end
 
 E("exista um botão para escolher um período para fazer uma solicitação") do
@@ -112,5 +113,43 @@ E("exista um botão para escolher um período para fazer uma solicitação") do
 end
 
 Então("eu devo estar em uma página com uma tabela com os dados:") do
-  pending
+  # | solicitation | name |
+  # | period | 30/10/2020 - 01/11/2020 |
+  data = table.hashes
+  solicits = []
+  names = []
+
+  data.each do |row|
+    row.each do |key, value|
+      if key.eql? "solicitation"
+        solicits << value
+      elsif key.eql? "name"
+        names << value
+      end
+    end
+  end
+  # a ser implementado
+  has_table = page.has_css?("#table")
+  find("#table")
+  valid_table = is_equal(find("#table"), solicits, names)
+  valid = has_table && valid_table
+  expect(valid).to be true
 end 
+
+E('não é possível fazer uma solicitação de passagens para o período escolhido') do
+  verify_disponibilidade()
+end
+
+Então('vejo uma mensagem {string}') do |msg|
+  alert = find("#msg_disp")
+  expect(alert.text).to be msg
+end
+
+Dado('não há dados cadastrados para o usuário fazer uma solicitação e receber auxílio') do
+  expect(user(@email).has_data).to be false
+end
+
+Então('vejo uma mensagem {string}') do |msg_erro|
+  alert = find("#error_msg")
+  expect(alert.text).to be msg_erro
+end
