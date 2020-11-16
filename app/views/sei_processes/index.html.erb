@@ -1,0 +1,67 @@
+<p id="notice"></p>
+
+<h1>SEI Processos</h1>
+
+<%= form_tag sei_processes_path, :method => :get, id: 'statuses_form' do %>
+    <% @all_statuses.each do |status| %>
+      <%= check_box_tag "statuses[#{status}]", 'yes', @status_filter.include?(status), id: "statuses_#{status}" %>
+      <%= status %>
+    <% end %>
+    <%= submit_tag "Atualizar", id: 'statuses_submit' %>
+<% end %>
+<br/>
+
+<% if current_user.role == "administrator" %>
+  <table>
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Matrícula</th>
+        <th>Código do Processo</th>
+        <th>Status</th>
+        <th colspan="1"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @sei_processes.each do |sei_process| %>
+        <tr>
+          <td><%= sei_process.user.full_name %></td>
+          <td><%= sei_process.user.registration %></td>
+          <td><%= sei_process.id %></td>
+          <td><%= sei_process.status %></td>
+          <% if sei_process.status != 'Espera' %>
+            <td><%= link_to 'Mostrar', sei_process_path(sei_process) %></td>
+          <% else %>
+            <td><%= link_to 'Avaliar', edit_sei_process_path(sei_process) %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+<% else %>
+  <table>
+    <thead>
+      <tr>
+        <th>Código do Processo</th>
+        <th>Status</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @my_processes.each do |sei_process| %>
+        <tr>
+          <td><%= sei_process.id %></td>
+          <td><%= sei_process.status %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
+
+<br/>
+<%= link_to 'Abrir Novo Processo', new_sei_process_path %>
+<br/>
+<%= link_to 'Página Inicial', home_index_path %>

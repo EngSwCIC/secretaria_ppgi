@@ -1,0 +1,28 @@
+<h1><%= "Processo #{@sei_process.id}" %></h1>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @sei_process.user.full_name %>
+</p>
+<p>
+  <strong>Matrícula:</strong>
+  <%= @sei_process.user.registration %>
+</p>
+
+<% if @sei_process.documents.attached? %>
+  <p>
+    <strong>Documentos anexados:</strong>
+    <% @sei_process.documents.each do | document | %>
+      <div>
+        <%= link_to document.filename, rails_blob_path(document, disposition: 'attachment') %>
+      <div>
+    <% end %>
+  </p>
+<% end %>
+
+<p>
+  <strong>Status:</strong>
+  <%= @sei_process.status %>
+</p>
+
+<%= link_to 'Voltar', sei_processes_path %>

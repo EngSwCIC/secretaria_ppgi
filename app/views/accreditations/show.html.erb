@@ -1,0 +1,39 @@
+<p id="notice"></p>
+
+<h1>Credenciamento</h1>
+
+<p>
+  <strong>Código do Processo SEI:</strong>
+  <%= @accreditation.sei_process_id %>
+</p>
+<p>
+  <strong>Nome:</strong>
+  <%= @accreditation.user.full_name %>
+</p>
+<p>
+  <strong>Matrícula:</strong>
+  <%= @accreditation.user.registration %>
+</p>
+<p>
+  <strong>Data de Início:</strong>
+  <%= @accreditation.start_date %>
+</p>
+<p>
+  <strong>Data de Fim:</strong>
+  <%= @accreditation.end_date %>
+</p>
+
+<% if @accreditation.sei_process.documents.attached? %>
+  <p>
+    <strong>Documentos anexados:</strong>
+    <% @accreditation.sei_process.documents.each do | document | %>
+      <div>
+        <%= link_to document.filename, rails_blob_path(document, disposition: 'attachment') %>
+      <div>
+    <% end %>
+  </p>
+<% end %>
+<br/>
+
+<%= link_to 'Editar', edit_accreditation_path(@accreditation) %> |
+<%= link_to 'Voltar', accreditations_path %>

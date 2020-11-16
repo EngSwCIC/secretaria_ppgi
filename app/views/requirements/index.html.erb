@@ -1,0 +1,28 @@
+<p id="notice"></p>
+
+<h1>Informações de Requisitos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tipo de Requisito</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @requirements.each do |requirement| %>
+      <tr>
+        <td><%= requirement.title %></td>
+        <td><%= link_to 'Mostrar', requirement %></td>
+        <td><%= link_to 'Editar', edit_requirement_path(requirement) %></td>
+        <td><%= link_to 'Excluir', requirement, method: :delete, data: { confirm: 'Tem certeza que deseja excluir essa Informação?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br/>
+<%= link_to 'Adicionar Informação de Requisitos', new_requirement_path %>
+<br/>
+<%= link_to 'Página Inicial', home_index_path %>

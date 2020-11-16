@@ -1,0 +1,36 @@
+<p id="notice"></p>
+
+<h1>Credenciamentos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Matrícula</th>
+      <th>Código SEI</th>
+      <th>Data de Início</th>
+      <th>Data de Fim</th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @accreditations.each do |accreditation| %>
+      <tr>
+        <td><%= accreditation.user.full_name %></td>
+        <td><%= accreditation.user.registration %></td>
+		    <td><%= accreditation.sei_process_id %></td>
+        <td><%= accreditation.start_date %></td>
+        <td><%= accreditation.end_date %></td>
+        <% if accreditation.start_date != nil && accreditation.end_date != nil %>
+          <td><%= link_to 'Mostrar', accreditation %></td>
+        <% else %>
+          <td><%= link_to 'Definir Prazo', edit_accreditation_path(accreditation) %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br/>
+<%= link_to 'Página Inicial', home_index_path %>

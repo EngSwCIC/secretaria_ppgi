@@ -1,0 +1,31 @@
+<h1>Definir Prazo de Credenciamento</h1>
+
+<p>
+  <strong>Código do Processo SEI:</strong>
+  <%= @accreditation.sei_process_id %>
+</p>
+<p>
+  <strong>Nome:</strong>
+  <%= @accreditation.user.full_name %>
+</p>
+<p>
+  <strong>Matrícula:</strong>
+  <%= @accreditation.user.registration %>
+</p>
+
+<% if @accreditation.sei_process.documents.attached? %>
+  <p>
+    <strong>Documentos anexados:</strong>
+    <% @accreditation.sei_process.documents.each do | document | %>
+      <div>
+        <%= link_to document.filename, rails_blob_path(document, disposition: 'attachment') %>
+      <div>
+    <% end %>
+  </p>
+<% end %>
+<br/>
+
+<%= render 'form_edit', accreditation: @accreditation %>
+
+<%= link_to 'Mostrar', @accreditation %> |
+<%= link_to 'Voltar', accreditations_path %>
