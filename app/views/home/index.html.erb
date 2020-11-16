@@ -16,6 +16,7 @@
   <%= simple_format("\n") %>
   <% end %>
   <%= link_to 'Informações', controller: 'informations' %> 
+  <%= simple_format("\n") %>
   <%= link_to 'Notificação', controller: 'notification' %>
   <%= link_to "Sair", destroy_user_session_path, method: :delete %>
 <% else %>

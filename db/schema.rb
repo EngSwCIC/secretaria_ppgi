@@ -24,16 +24,16 @@ ActiveRecord::Schema.define(version: 2020_11_14_201313) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "sources", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-  
   create_table "notifications", force: :cascade do |t|
     t.string "title"
     t.text "content"
     t.integer "group_id"
+  end
+
+  create_table "sources", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

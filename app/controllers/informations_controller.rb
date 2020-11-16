@@ -28,6 +28,11 @@ class InformationsController < ApplicationController
     redirect_to informations_path
   end
 
+  def show
+    id = params[:id] # retrieve movie ID from URI route
+    @information = Information.find(id) # look up movie by unique ID
+  end
+
   private
   def info_params
     params.require(:information).permit(:title, :content, :source_id)
