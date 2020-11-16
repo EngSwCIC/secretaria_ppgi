@@ -13,4 +13,12 @@ User.create(full_name: "Secretário", email: "secretary@secretary.com", password
 User.create(full_name: "Professor", email: "professor@professor.com", password: "admin123", role: "professor", registration: "000000000")
 User.create(full_name: "Aluno", email: "student@student.com", password: "admin123", role: "student", registration: "000000000")
 
-RequestType.column_names
+RequestType.create(name: "general", label: "Solicitação geral")
+RequestType.create(name: "enroll_payment", label: "Pagamento de inscrição")
+RequestType.create(name: "financial_assistance", label: "Auxílio financeiro")
+RequestType.create(name: "proficiency", label: "Proficiência")
+RequestType.create(name: "deadline_extension", label: "Prorrogação de prazo")
+RequestType.create(name: "qualification", label: "Qualificação")
+RequestType.create(name: "credits_transfer", label: "Aproveitamento de estudos")
+RequestType.create(name: "graduation_enrollment", label: "Matrícula de aluno de graduação")
+RequestType.create(name: "general_enrollment", label: "Matrículas gerais de alunos")
