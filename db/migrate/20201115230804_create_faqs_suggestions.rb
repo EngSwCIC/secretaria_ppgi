@@ -3,7 +3,7 @@ class CreateFaqsSuggestions < ActiveRecord::Migration[5.2]
     create_table :faqs_suggestions do |t|
       t.string :question
       t.string :answer
-      t.references :tropicQuestion, foreign_key: true
+      t.string :tropicQuestion
 
       t.timestamps
     end

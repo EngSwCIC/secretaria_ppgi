@@ -1,6 +1,5 @@
 class FaqsSuggestionsController < ApplicationController
   before_action :set_faqs_suggestion, only: [:show, :edit, :update, :destroy]
-  #before_action :must_be_authenticated_user, only:  [:create, :edit, :update]
 
   # GET /faqs_suggestions
   # GET /faqs_suggestions.json
@@ -70,6 +69,6 @@ class FaqsSuggestionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def faqs_suggestion_params
-      params.require(:faqs_suggestion).permit(:question, :answer, :tropicQuestion_id)
+      params.require(:faqs_suggestion).permit(:question, :answer, :tropicQuestion)
     end
 end

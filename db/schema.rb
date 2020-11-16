@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_14_182907) do
+ActiveRecord::Schema.define(version: 2020_11_15_230804) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,10 +26,9 @@ ActiveRecord::Schema.define(version: 2020_11_14_182907) do
   create_table "faqs_suggestions", force: :cascade do |t|
     t.string "question"
     t.string "answer"
-    t.bigint "tropicQuestion_id"
+    t.string "tropicQuestion"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["tropicQuestion_id"], name: "index_faqs_suggestions_on_tropicQuestion_id"
   end
 
   create_table "tropicQuestions", force: :cascade do |t|
@@ -53,5 +52,4 @@ ActiveRecord::Schema.define(version: 2020_11_14_182907) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "faqs_suggestions", "\"tropicQuestions\"", column: "tropicQuestion_id"
 end

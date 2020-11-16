@@ -6,12 +6,12 @@ RSpec.describe "faqs_suggestions/index", type: :view do
       FaqsSuggestion.create!(
         :question => "Question",
         :answer => "Answer",
-        :tropicQuestion => nil
+        :tropicQuestion => "Tropic Question"
       ),
       FaqsSuggestion.create!(
         :question => "Question",
         :answer => "Answer",
-        :tropicQuestion => nil
+        :tropicQuestion => "Tropic Question"
       )
     ])
   end
@@ -20,6 +20,6 @@ RSpec.describe "faqs_suggestions/index", type: :view do
     render
     assert_select "tr>td", :text => "Question".to_s, :count => 2
     assert_select "tr>td", :text => "Answer".to_s, :count => 2
-    assert_select "tr>td", :text => nil.to_s, :count => 2
+    assert_select "tr>td", :text => "Tropic Question".to_s, :count => 2
   end
 end

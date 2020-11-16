@@ -18,8 +18,9 @@ RSpec.describe "faqs/index", type: :view do
 
   it "renders a list of faqs" do
     render
-    assert_select "tr>td", :text => "MyText".to_s, :count => 2
-    assert_select "tr>td", :text => "MyText".to_s, :count => 2
-    assert_select "tr>td", :text => "MyText".to_s, :count => 2
+    assert_select "tr>td", :text => "MyText".to_s, :count => 6
+    assert_select "tr>td", :text => "MyText".to_s, :count => 6
+    assert_select "tr>td", :text => "MyText".to_s, :count => 6
+    assert_select "tr>td", :text => "MyText".to_s, :count => 6
   end
 end

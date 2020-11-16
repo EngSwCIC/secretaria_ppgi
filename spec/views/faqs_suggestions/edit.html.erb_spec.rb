@@ -5,7 +5,7 @@ RSpec.describe "faqs_suggestions/edit", type: :view do
     @faqs_suggestion = assign(:faqs_suggestion, FaqsSuggestion.create!(
       :question => "MyString",
       :answer => "MyString",
-      :tropicQuestion => nil
+      :tropicQuestion => "MyString"
     ))
   end
 
@@ -18,7 +18,7 @@ RSpec.describe "faqs_suggestions/edit", type: :view do
 
       assert_select "input[name=?]", "faqs_suggestion[answer]"
 
-      assert_select "input[name=?]", "faqs_suggestion[tropicQuestion_id]"
+      assert_select "input[name=?]", "faqs_suggestion[tropicQuestion]"
     end
   end
 end
