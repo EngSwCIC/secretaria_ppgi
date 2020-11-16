@@ -1,25 +1,25 @@
 require 'rails_helper'
 
-describe Status, type: :model do
+describe ProcessStatus, type: :model do
   it "Valido quando nome esta presente" do
-    status = Status.new( name_status: 'Novo')
+    status = Status.new( title: 'Novo')
     expect(status).to be_valid
   end
 end
 
-describe Status, type: :model do
+describe ProcessStatus, type: :model do
   it "Invalido sem o nome" do
-    status = Status.new( name_status: nil)
+    status = Status.new( title: nil)
     status.valid?
-    expect(status.errors[:name_status]).to include("Nao pode deixar espaço de nome em branco.")
+    expect(status.errors[:title]).to include("Nao pode deixar espaço de nome em branco.")
   end
 end
 
-describe Status, type: :model do
+describe ProcessStatus, type: :model do
   it "Invalido caso ja exista um e-mail igual" do
-    status = Status.create( name_status: 'Em espera')
-    status = Status.new( name_status: 'Em espera')
+    status = Status.create( title: 'Em espera')
+    status = Status.new( title: 'Em espera')
     status.valid?
-    expect(status.errors[:name_status]).to include('Status Repetido')
+    expect(status.errors[:title]).to include('Status Repetido')
   end
 end

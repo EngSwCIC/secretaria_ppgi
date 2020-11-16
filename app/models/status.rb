@@ -1,3 +1,3 @@
-class Status < ApplicationRecord
-    validates :name_status, presence: true
+class ProcessStatus < ApplicationRecord
+    validates :title, presence: true
 end
