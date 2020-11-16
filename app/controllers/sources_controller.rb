@@ -3,10 +3,7 @@ class SourcesController < ApplicationController
   def index
   	@sources=Source.all
   end
-#show
-  def show
-  	@source=Source.find(params[:id])
-  end
+ 
 #página onde há o form de cadastro da fonte de informaçao
   def new
   	@source=Source.new
