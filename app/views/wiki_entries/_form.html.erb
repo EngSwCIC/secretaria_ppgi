@@ -21,6 +21,11 @@
     <%= form.text_area :content %>
   </div>
 
+  <div class="field">
+    <%= form.label :document, "Documento"%>
+    <%= form.file_field :document %>
+  </div>
+
   <div class="actions">
     <%= form.submit "Confirmar"%>
   </div>

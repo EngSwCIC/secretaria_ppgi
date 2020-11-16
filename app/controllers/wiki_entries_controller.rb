@@ -70,6 +70,6 @@ class WikiEntriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def entry_params
-      params.require(:wiki_entry).permit(:title, :content)
+      params.require(:wiki_entry).permit(:title, :content, :document)
     end
 end

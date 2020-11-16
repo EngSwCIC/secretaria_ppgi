@@ -4,7 +4,7 @@ end
 
 Então(/recebo uma mensagem de (sucesso|erro)/) do |status|
     if(status == "sucesso") 
-        find(".notice", text:"Página foi criada com sucesso!")
+        find(".notice", text:/sucesso/)
 
     elsif(status == "erro")
         find("#error_explanation")
@@ -27,6 +27,8 @@ Dado(/redirecionado para a página "([^"]*)"/) do |pagina|
         page.current_path == wiki_entries_path
     when "Processo"
         page.current_path == wiki_entry_path(id: WikiEntry.last.id)
+    else
+        raise StandardError.new("A página não foi encontrada.")
     end
 end
 
@@ -36,6 +38,8 @@ Dado(/esteja na página "([^"]*)"/) do |pagina|
         visit wiki_entries_path
     when "Processo"
         visit wiki_entry_path(id: WikiEntry.last.id)
+    else
+        raise StandardError.new("A página não foi encontrada.")
     end
 end
 
@@ -54,11 +58,7 @@ Quando(/visualizar (?:o|a|os|as) "([^"]*)"/) do |elemento|
     find(".attribute:has(strong)", text: elemento).find(".value").text != ""
 end
 
-Quando(/seleciono (?:o|a|os|as) "([^"]*)" "([^"]*)"/) do |campo, valor|
-    pending
-end
-
 Quando(/envio o arquivo "([^"]*)"/) do |arquivo|
-    pending # Write code here that turns the phrase above into concrete actions
+   page.attach_file "Documento", File.join(Rails.root + "features/support/assets/", arquivo)
 end
   

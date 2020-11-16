@@ -7,18 +7,16 @@ Funcionalidade: Anexar arquivo a um processo existente
 
     Contexto: 
         Dado que eu esteja conectado como usuario "alicinha@gatinha.com", "123456", "secretario"
-        E que esteja na página "processos de atendimentoo"
-        E seleciono um processo 
-        E clico no botão "Editar processo"
+        E que esteja na página "Wiki de Atendimento"
+        E clico no botão "Editar"
 
     Cenário: Anexar um arquivo válido
-        Quando eu clico no botão "Adicionar documento"  
-        E envio o arquivo "documento.pdf"
+        Quando envio o arquivo "document.xml"
         E clico no botão "Confirmar"
-        Então sou redirecionado para a página "processos de atendimentoo"
+        Então sou redirecionado para a página "Processo"
         E recebo uma mensagem de sucesso 
 
-    Cenário: Anexar arquivo nválido
-        Quando eu clico no botão "Adicionar documento"  
-        E envio o arquivo "Pabllo_Vittar_seu_crime.mp4"
+    Cenário: Anexar arquivo inválido
+        Quando envio o arquivo "Pabllo_Vittar_seu_crime.mp4"
+        E clico no botão "Confirmar"
         Então recebo uma mensagem de erro

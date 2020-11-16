@@ -30,7 +30,7 @@ class WikiCommentsController < ApplicationController
     
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to @comment.entry, notice: 'Comment was successfully created.' }
+        format.html { redirect_to @comment.entry, notice: 'Comentário foi criado com sucesso.' }
         format.json { render :show, status: :created, location: @comment }
       else
         format.html { render :new }
@@ -44,7 +44,7 @@ class WikiCommentsController < ApplicationController
   def update
     respond_to do |format|
       if @comment.update(comment_params)
-        format.html { redirect_to @comment.entry, notice: 'Comment was successfully updated.' }
+        format.html { redirect_to @comment.entry, notice: 'Comentário foi editado com sucesso.' }
         format.json { render :show, status: :ok, location: @comment.entry }
       else
         format.html { render :edit }
@@ -58,7 +58,7 @@ class WikiCommentsController < ApplicationController
   def destroy
     @comment.destroy
     respond_to do |format|
-      format.html { redirect_to @comment.entry, notice: 'Comment was successfully destroyed.' }
+      format.html { redirect_to @comment.entry, notice: 'Comentário foi excluído com sucesso.' }
       format.json { head :no_content }
     end
   end

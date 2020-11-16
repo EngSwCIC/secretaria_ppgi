@@ -5,6 +5,7 @@ RSpec.describe WikiEntry, type: :model do
     {id: 1, title: 'title', content:'content'}
   }
 
+
   let(:document) {
     Rack::Test::UploadedFile.new(Rails.root.join("spec/support/assets/document.xml"))
   }
@@ -30,7 +31,7 @@ RSpec.describe WikiEntry, type: :model do
       it "is not valid without a content" do
         expect(WikiEntry.new({id: 1, title: 'title', content: ''})).to_not be_valid
       end
-      
+
   end
 
 end
