@@ -1,2 +1,0 @@
-class UserSecretary < ApplicationRecord
-end

@@ -10,26 +10,28 @@
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
       </path>
+    </expand>
+    <select>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
       </path>
-    </expand>
-    <select />
+    </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="371f7bda-8799-439a-8d9c-1781a1ce2f2d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/secretaria_ppgi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/secretaria_ppgi.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/spring.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/spring.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20201113214404_create_request_types.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20201113214441_create_requests.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/20201113214441_create_requests.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20201113215730_create_user_secretaries.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/20201113215730_create_user_secretaries.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/request.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/request.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/request_type.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/request_type.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/user.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/user_secretary.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/migrate/20191114162918_devise_create_users.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/20191114162918_devise_create_users.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/migrate/20191114163205_add_info_to_users.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/migrate/20201113215730_create_user_secretaries.rb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/seeds.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/seeds.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose-dev.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose-dev.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,13 +58,14 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/docker-compose-dev.yaml" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.ruby.settings.RubyActiveModuleSdkConfigurable" />
   </component>
-  <component name="RunManager" selected="Rake.db:seed: secretaria_ppgi">
+  <component name="RunManager" selected="Rake.db:migrate: secretaria_ppgi">
     <configuration name="Development: secretaria_ppgi" type="RailsRunConfigurationType" factoryName="Rails">
       <module name="secretaria_ppgi" />
       <predefined_log_file enabled="true" id="RUBY_RAILS_SERVER" />
@@ -111,6 +114,33 @@
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="RAILS_SERVER_TYPE" VALUE="Default" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="ENVIRONMENT_TYPE" VALUE="production" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="LAUNCH_JS" VALUE="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="db:migrate: secretaria_ppgi" type="RakeRunConfigurationType" factoryName="Rake" temporary="true">
+      <module name="secretaria_ppgi" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs>
+        <env name="RAILS_ENV" value="development" />
+      </envs>
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <EXTENSION ID="RubyDockerContainerSettingsRunConfigurationExtension" dockerComposeCommand="RUN" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_NAME" VALUE="db:migrate" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ARGS" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ATTACHED_TEST_FRAMEWORKS" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TRACE" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_DRYRUN" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_PREREQS" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TESTOPTS" VALUE="" />
       <method v="2" />
     </configuration>
     <configuration name="db:seed: secretaria_ppgi" type="RakeRunConfigurationType" factoryName="Rake" temporary="true">
@@ -190,6 +220,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Rake.db:migrate: secretaria_ppgi" />
         <item itemvalue="Rake.db:seed: secretaria_ppgi" />
       </list>
     </recent_temporary>
@@ -204,7 +235,7 @@
       <option name="presentableId" value="Default" />
       <updated>1605305587618</updated>
       <workItem from="1605305589488" duration="2883000" />
-      <workItem from="1605479490152" duration="4374000" />
+      <workItem from="1605479490152" duration="10050000" />
     </task>
     <task id="LOCAL-00001" summary="Added models from MER">
       <created>1605483214391</created>
@@ -213,7 +244,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605483214391</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="New migrations and seed file">
+      <created>1605487764046</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1605487764046</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -224,7 +262,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -232,7 +282,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added models from MER" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added models from MER" />
+    <MESSAGE value="New migrations and seed file" />
+    <option name="LAST_COMMIT_MESSAGE" value="New migrations and seed file" />
   </component>
   <component name="WindowStateProjectService">
     <state x="479" y="305" width="461" height="315" key="#Docker" timestamp="1605305872732">
@@ -251,54 +302,54 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="492" y="169" width="424" height="475" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1605305831288" />
-    <state width="1326" height="214" key="GridCell.Tab.0.bottom" timestamp="1605486720092">
+    <state width="1326" height="214" key="GridCell.Tab.0.bottom" timestamp="1605494071493">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1326" height="214" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1605486720091" />
-    <state width="1326" height="214" key="GridCell.Tab.0.center" timestamp="1605486720090">
+    <state width="1326" height="214" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1605494071493" />
+    <state width="1326" height="214" key="GridCell.Tab.0.center" timestamp="1605494071493">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1326" height="214" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1605486720090" />
-    <state width="1326" height="214" key="GridCell.Tab.0.left" timestamp="1605486720089">
+    <state width="1326" height="214" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1605494071493" />
+    <state width="1326" height="214" key="GridCell.Tab.0.left" timestamp="1605494071492">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1326" height="214" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1605486720089" />
-    <state width="1326" height="214" key="GridCell.Tab.0.right" timestamp="1605486720091">
+    <state width="1326" height="214" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1605494071492" />
+    <state width="1326" height="214" key="GridCell.Tab.0.right" timestamp="1605494071493">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1326" height="214" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1605486720091" />
-    <state width="1326" height="214" key="GridCell.Tab.1.bottom" timestamp="1605486720096">
+    <state width="1326" height="214" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1605494071493" />
+    <state width="1326" height="214" key="GridCell.Tab.1.bottom" timestamp="1605494071494">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1326" height="214" key="GridCell.Tab.1.bottom/0.0.1366.738@0.0.1366.738" timestamp="1605486720096" />
-    <state width="1326" height="214" key="GridCell.Tab.1.center" timestamp="1605486720094">
+    <state width="1326" height="214" key="GridCell.Tab.1.bottom/0.0.1366.738@0.0.1366.738" timestamp="1605494071494" />
+    <state width="1326" height="214" key="GridCell.Tab.1.center" timestamp="1605494071493">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1326" height="214" key="GridCell.Tab.1.center/0.0.1366.738@0.0.1366.738" timestamp="1605486720094" />
-    <state width="1326" height="214" key="GridCell.Tab.1.left" timestamp="1605486720093">
+    <state width="1326" height="214" key="GridCell.Tab.1.center/0.0.1366.738@0.0.1366.738" timestamp="1605494071493" />
+    <state width="1326" height="214" key="GridCell.Tab.1.left" timestamp="1605494071493">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1326" height="214" key="GridCell.Tab.1.left/0.0.1366.738@0.0.1366.738" timestamp="1605486720093" />
-    <state width="1326" height="214" key="GridCell.Tab.1.right" timestamp="1605486720095">
+    <state width="1326" height="214" key="GridCell.Tab.1.left/0.0.1366.738@0.0.1366.738" timestamp="1605494071493" />
+    <state width="1326" height="214" key="GridCell.Tab.1.right" timestamp="1605494071493">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1326" height="214" key="GridCell.Tab.1.right/0.0.1366.738@0.0.1366.738" timestamp="1605486720095" />
-    <state width="1326" height="214" key="GridCell.Tab.2.bottom" timestamp="1605486720099">
+    <state width="1326" height="214" key="GridCell.Tab.1.right/0.0.1366.738@0.0.1366.738" timestamp="1605494071493" />
+    <state width="1326" height="214" key="GridCell.Tab.2.bottom" timestamp="1605494071494">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1326" height="214" key="GridCell.Tab.2.bottom/0.0.1366.738@0.0.1366.738" timestamp="1605486720099" />
-    <state width="1326" height="214" key="GridCell.Tab.2.center" timestamp="1605486720097">
+    <state width="1326" height="214" key="GridCell.Tab.2.bottom/0.0.1366.738@0.0.1366.738" timestamp="1605494071494" />
+    <state width="1326" height="214" key="GridCell.Tab.2.center" timestamp="1605494071494">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1326" height="214" key="GridCell.Tab.2.center/0.0.1366.738@0.0.1366.738" timestamp="1605486720097" />
-    <state width="1326" height="214" key="GridCell.Tab.2.left" timestamp="1605486720096">
+    <state width="1326" height="214" key="GridCell.Tab.2.center/0.0.1366.738@0.0.1366.738" timestamp="1605494071494" />
+    <state width="1326" height="214" key="GridCell.Tab.2.left" timestamp="1605494071494">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1326" height="214" key="GridCell.Tab.2.left/0.0.1366.738@0.0.1366.738" timestamp="1605486720096" />
-    <state width="1326" height="214" key="GridCell.Tab.2.right" timestamp="1605486720098">
+    <state width="1326" height="214" key="GridCell.Tab.2.left/0.0.1366.738@0.0.1366.738" timestamp="1605494071494" />
+    <state width="1326" height="214" key="GridCell.Tab.2.right" timestamp="1605494071494">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1326" height="214" key="GridCell.Tab.2.right/0.0.1366.738@0.0.1366.738" timestamp="1605486720098" />
+    <state width="1326" height="214" key="GridCell.Tab.2.right/0.0.1366.738@0.0.1366.738" timestamp="1605494071494" />
     <state x="179" y="4" key="SettingsEditor" timestamp="1605305924926">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -311,30 +362,18 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="600" height="440" key="javadoc.popup/0.0.1366.738@0.0.1366.738" timestamp="1605307019745" />
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1605487198202">
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1605493656291">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1605487198202" />
-    <state x="408" y="276" width="540" height="180" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1605486961909">
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1605493656291" />
+    <state x="408" y="276" width="540" height="180" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1605494429841">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="408" y="276" width="540" height="180" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.0.1366.738@0.0.1366.738" timestamp="1605486961909" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="ruby-line">
-          <url>file://$PROJECT_DIR$/db/seeds.rb</url>
-          <line>15</line>
-          <properties myBlockOrdinal="-1">
-            <option name="block-ordinal" value="-1" />
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state x="408" y="276" width="540" height="180" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.0.1366.738@0.0.1366.738" timestamp="1605494429841" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/secretaria_ppgi@db_migrate__secretaria_ppgi.rcov" NAME="db:migrate: secretaria_ppgi Coverage Results" MODIFIED="1605494051699" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="secretaria_ppgi" />
     <SUITE FILE_PATH="coverage/secretaria_ppgi@Development__secretaria_ppgi.rcov" NAME="Development: secretaria_ppgi Coverage Results" MODIFIED="1605486714606" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="secretaria_ppgi" />
+    <SUITE FILE_PATH="coverage/secretaria_ppgi@db_seed__secretaria_ppgi.rcov" NAME="db:seed: secretaria_ppgi Coverage Results" MODIFIED="1605487649662" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="secretaria_ppgi" />
   </component>
 </project>
