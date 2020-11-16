@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   root to: 'home#index'
 
   resources :informations
+  
+  resources :notification
 end

@@ -15,7 +15,8 @@
   <%= link_to 'Fontes de informação', sources_path %>
   <%= simple_format("\n") %>
   <% end %>
-   <%= link_to 'Informações', controller: 'informations' %> 
+  <%= link_to 'Informações', controller: 'informations' %> 
+  <%= link_to 'Notificação', controller: 'notification' %>
   <%= link_to "Sair", destroy_user_session_path, method: :delete %>
 <% else %>
   <h3>Entre para acessar o sistema!</h3>
