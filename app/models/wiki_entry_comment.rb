@@ -1,2 +1,2 @@
-class WikiEntryComment < ApplicationRecord    
+class WikiEntryComment < ApplicationRecord
 end
