@@ -2,13 +2,13 @@ require 'rails_helper'
 
 RSpec.describe WikiComment, type: :model do
   let(:valid_attributes) {
-    {id: 1, content:'content'}
+    {id: 1, content:'content', entry: entry}
   }
 
-  subject(:entry) {
-    WikiComment.create(valid_attributes)
+  let(:entry) {
+    WikiEntry.create({ title: "Processo de religamento", content: "aluno deve ser religado" })
   }
-
+  
   describe "Validations" do 
       
       it "is valid with the valid attributes" do
