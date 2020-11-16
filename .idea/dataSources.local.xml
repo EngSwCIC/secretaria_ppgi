@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Rails secretaria_ppgi: production" uuid="b4b9e7b6-0a1f-4100-9540-d3a500961263">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" exact-version="0" />
+      <user-name>secretaria_ppgi</user-name>
+      <schema-mapping />
+    </data-source>
+    <data-source name="Rails secretaria_ppgi: development" uuid="7c0e90f8-8c0e-4000-a4bb-d6987aeeb909">
+      <database-info product="PostgreSQL" version="13.0 (Debian 13.0-1.pgdg100+1)" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.2.5" dbms="POSTGRES" exact-version="13.0" exact-driver-version="42.2">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>test_user</user-name>
+      <schema-mapping />
+    </data-source>
+    <data-source name="Rails secretaria_ppgi: test" uuid="75e62ec9-fb24-46a0-84ef-ab82bc38a722">
+      <database-info product="PostgreSQL" version="13.0 (Debian 13.0-1.pgdg100+1)" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.2.5" dbms="POSTGRES" exact-version="13.0" exact-driver-version="42.2">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <user-name>test_user</user-name>
+      <schema-mapping>
+        <introspection-scope>
+          <node kind="database" qname="@">
+            <node kind="schema" qname="@" />
+          </node>
+        </introspection-scope>
+      </schema-mapping>
+    </data-source>
+  </component>
+</project>
