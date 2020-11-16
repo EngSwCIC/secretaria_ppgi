@@ -1,0 +1,25 @@
+<h1>Lista de Notificação</h1>
+<h1>Criar Lista de Notificação</h1>
+
+<%= form_with model:@notifications do |form| %>
+  <div>
+    <%= form.label :title, "Nome da Lista de Notificação" %><br>
+    <%= form.text_field :title %>
+  </div>
+  
+  <div>
+    <%= form.label :content, "Descrição" %><br>
+    <%= form.text_field :content %>
+  </div>
+ 
+  <div>
+    <%= form.label :group_id, "ID" %><br>
+    <%= form.text_field :group_id %>
+  </div>
+
+  <div>
+    <%= form.submit "Cadastrar"%>
+  </div>
+
+<% end %>
+<p>Find me in app/views/notification/new.html.erb</p>

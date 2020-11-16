@@ -6,6 +6,18 @@
   <p><strong>Nome: </strong><%= current_user.full_name %></p>
   <p><strong>Email: </strong><%= current_user.email %></p>
   <p><strong>Cargo: </strong><%= current_user.role %></p>
+  
+  <% if current_user.role == 'administrator' %>
+  <%= link_to "Adicionar uma nova informação", new_information_path %>
+  <%= simple_format("\n") %>
+  <%= link_to "Cadastrar Fonte de Informaçao",  new_source_path, controller: 'sources'%>
+  <%= simple_format("\n") %>
+  <%= link_to 'Fontes de informação', sources_path %>
+  <%= simple_format("\n") %>
+  <% end %>
+  <%= link_to 'Informações', controller: 'informations' %> 
+  <%= simple_format("\n") %>
+  <%= link_to 'Notificação', controller: 'notification' %>
   <%= link_to "Sair", destroy_user_session_path, method: :delete %>
 <% else %>
   <h3>Entre para acessar o sistema!</h3>

@@ -26,6 +26,7 @@ describe SourcesController do
     end
 
     context 'already exists' do
-      it {is_expected.to respond_with 404}
+      it {is_expected.to respond_with 403}
   end      
 end  
+end
