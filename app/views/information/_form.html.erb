@@ -1,0 +1,35 @@
+<%= form_with(model: information, local: true) do |form| %>
+  <% if information.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(information.errors.count, "error") %> prohibited this information from being saved:</h2>
+
+      <ul>
+      <% information.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+  <div class="field">
+    <%= form.label "source" %>
+    <%= form.collection_select(:source_id, Source.all, :id, :name, { :prompt => 'Selecione uma fonte', :selected => @information.source_id }, { class: 'form-control' }) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :published_by %>
+    <%= form.number_field :published_by %>
+  </div>
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.text_area :content %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Registrar' %>
+  </div>
+<% end %>
