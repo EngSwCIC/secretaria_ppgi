@@ -1,0 +1,17 @@
+<h1>Source#new</h1>
+<h1>Nova fonte</h1>
+
+<%= form_with model:@source do |form| %>
+  <div>
+    <%= form.label :name, "Nome da fonte" %><br>
+    <%= form.text_field :name %>
+  </div>
+  
+
+  <div>
+    <%= form.submit "Registrar"%>
+  </div>
+
+  <%= link_to 'Voltar', home_index_path %>
+
+<% end %>

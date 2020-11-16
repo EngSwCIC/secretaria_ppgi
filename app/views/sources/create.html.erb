@@ -1,0 +1,16 @@
+<h1>Source#create</h1>
+<h1>Nova fonte</h1>
+
+<%= form_with url: new_source_path, method: :post do |form| %>
+  <div>
+    <%= form.label :name, "Nome da fonte" %><br>
+    <%= form.text_field :name %>
+  </div>
+  
+
+  <div>
+    <%= form.submit "Registrar"%>
+  </div>
+
+<% end %>
+<p>Find me in app/views/source/create.html.erb</p>
