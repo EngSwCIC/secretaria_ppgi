@@ -20,7 +20,9 @@
         <td><%= Source.find(information.source_id ? information.source_id : 1).name %></td>
         <td><%= User.find(information.published_by ? information.published_by : 1).full_name %></td>
         <td><%= link_to 'Visualizar', information_path(information) %></td>
+        <% if current_user.role == 'administrator' %>
         <td><%= link_to 'Remover', information_path(information), method: :delete %></td>
+        <% end %>
       </tr>
     <% end %>
   </table>
