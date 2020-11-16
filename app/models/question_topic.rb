@@ -1,2 +1,0 @@
-class QuestionTopic < ApplicationRecord    
-end
