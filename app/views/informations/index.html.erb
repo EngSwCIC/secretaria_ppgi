@@ -1,0 +1,30 @@
+<h1>Lista de Informações</h1>
+ 
+<% if @informations.empty? %>
+  <h2>Nenhuma informação publicada</h2>
+  <td><%= link_to 'Voltar', home_index_path %></td>
+<%else %>
+  <table>
+    <tr>
+      <th>Título</th>
+      <th>Conteúdo</th>
+      <th>Fonte</th>
+      <th>Publicado por</th>
+      <th colspan="4"></th>
+    </tr>
+ 
+    <% @informations.each do |information| %>
+      <tr>
+        <td><%= information.title %></td>
+        <td><%= information.content %></td>
+        <td><%= Source.find(information.source_id ? information.source_id : 1).name %></td>
+        <td><%= User.find(information.published_by ? information.published_by : 1).full_name %></td>
+        <td><%= link_to 'Visualizar', information_path(information) %></td>
+        <% if current_user.role == 'administrator' %>
+        <td><%= link_to 'Remover', information_path(information), method: :delete %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </table>
+  <td><%= link_to 'Voltar', home_index_path %></td>
+<% end %>
