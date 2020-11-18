@@ -1,6 +1,11 @@
 class InformationsController < ApplicationController
   def index
-    @informations = Information.all.order("created_at DESC")
+    if params[:information] and params[:information][:source_id]
+      @informations = Information.search(params[:information][:source_id]).order("created_at DESC")
+    
+    else
+      @informations = Information.all.order("created_at DESC")
+    end
   end
 
   def new
@@ -11,8 +16,8 @@ class InformationsController < ApplicationController
 
   def create
     params.require(:information)
-    params[:information].permit(info_params)
-    @information = Information.new(info_params.merge(:published_by => current_user.id))
+    params[:information].permit(information_params)
+    @information = Information.new(information_params.merge(:published_by => current_user.id))
     if @information.save
       redirect_to informations_path
     else
@@ -29,8 +34,10 @@ class InformationsController < ApplicationController
   end
 
   private
-  def info_params
-    params.require(:information).permit(:title, :content, :source_id)
+
+  def information_params
+    params.require(:information).permit(:title, :content, :source_id, :published_by)
   end
+
 end
   
