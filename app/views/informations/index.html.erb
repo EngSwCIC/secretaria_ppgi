@@ -30,13 +30,13 @@
 
 
 <%= form_tag(informations_path, :method => :get) do %>
- <%= select_tag "Fonte", options_from_collection_for_select(Source.all, :id, :name), {:class=>'form-control', :prompt => 'Filtrar por fonte'}  %><br>
-<%= submit_tag "Filtrar" %>
-<% end %>
-
+  <%= collection_select :information, :source_id, Source.all, :id, :name, {:include_blank => 'Selecione uma fonte'} %>
+  <%=submit_tag "Filtrar"%>
+<%end%>
 
 <%= simple_format("\n") %>
 <% if current_user.role == 'administrator' %>
   <td><%= link_to 'Cadastrar nova informação', new_information_path %></td>
-  <% end %>
-    <td><%= link_to 'Voltar', home_index_path %></td>
+<% end %>
+<td><%= link_to 'Voltar', home_index_path %></td>
+
