@@ -56,7 +56,9 @@ class SeiProcessesController < ApplicationController
         format.json { render :index, status: :ok, location: @sei_process }
 
         if (@sei_process.status == 'Aprovado') && @sei_process.documents.attached?
-          Accreditation.create!(user_id: @sei_process.user_id, sei_process_id: @sei_process.id)
+          if accreditation_instance == nil
+            Accreditation.create!(user_id: @sei_process.user_id, sei_process_id: @sei_process.id)
+          end
         end
 
       else
