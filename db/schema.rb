@@ -24,6 +24,12 @@ ActiveRecord::Schema.define(version: 2020_11_12_190856) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "notifications", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.integer "group_id"
+  end
+
   create_table "sources", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false

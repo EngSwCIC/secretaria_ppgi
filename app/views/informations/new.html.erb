@@ -9,7 +9,6 @@
   
 
   <%= label :information, :source_id, 'Fonte: ' %>
-
   <%= select :information, :source_id, @sources.map{|source| [source.name, source.id]} %>
   
   <%= submit_tag 'Enviar' %>

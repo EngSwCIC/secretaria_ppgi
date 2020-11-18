@@ -1,14 +1,19 @@
 <h1>Source#index</h1>
 <% @sources.each do |source| %>
 
-<p> <%= source.name %> </p>
+<td> <%= source.name %> </td>
 <%# sem o "=" nao eh aprensentado o retorno da funçao %>
-<%= link_to "editar", edit_source_path(source.id)%>
-<td><%= link_to 'Remover', source_path(source), method: :delete %></td>
+<% if current_user.role == 'administrator' %>
+ <td><%= link_to "editar", edit_source_path(source.id)%> </td>
+ <td><%= link_to 'Remover', source_path(source), method: :delete %></td>
+<%= simple_format("\n") %>
+<% end %>
 <%= simple_format("\n") %>
 <% end %>
 
+<% if current_user.role == 'administrator' %>
 <%= link_to "Cadastrar Fonte de Informaçao",  new_source_path, controller: 'sources'%>
+<% end %>
 <%= link_to 'Voltar', home_index_path %>
 
 <p>Find me in app/views/source/index.html.erb</p>

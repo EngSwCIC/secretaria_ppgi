@@ -2,7 +2,6 @@
  
 <% if @informations.empty? %>
   <h2>Nenhuma informação publicada</h2>
-  <td><%= link_to 'Voltar', home_index_path %></td>
 <%else %>
   <table>
     <tr>
@@ -20,9 +19,24 @@
         <td><%= Source.find(information.source_id ? information.source_id : 1).name %></td>
         <td><%= User.find(information.published_by ? information.published_by : 1).full_name %></td>
         <td><%= link_to 'Visualizar', information_path(information) %></td>
+        <% if current_user.role == 'administrator' %>
         <td><%= link_to 'Remover', information_path(information), method: :delete %></td>
+        <% end %>
       </tr>
     <% end %>
   </table>
-  <td><%= link_to 'Voltar', home_index_path %></td>
 <% end %>
+<%= simple_format("\n") %>
+
+
+<%= form_tag(informations_path, :method => :get) do %>
+ <%= select_tag "Fonte", options_from_collection_for_select(Source.all, :id, :name), {:class=>'form-control', :prompt => 'Filtrar por fonte'}  %><br>
+<%= submit_tag "Filtrar" %>
+<% end %>
+
+
+<%= simple_format("\n") %>
+<% if current_user.role == 'administrator' %>
+  <td><%= link_to 'Cadastrar nova informação', new_information_path %></td>
+  <% end %>
+    <td><%= link_to 'Voltar', home_index_path %></td>

@@ -1,0 +1,29 @@
+<h1>Lista de Notificação</h1>
+ 
+<% if @notifications.empty? %>
+  <h2>Nenhuma lista de notificação criada</h2>
+<%else %>
+  <table>
+    <tr>
+      <th>Notificação</th>
+      <th>Conteúdo</th>
+      <th>ID</th>
+      <th colspan="4"></th>
+    </tr>
+ 
+    <% @notifications.each do |notification| %>
+      <tr>
+        <td><%= notification.title %></td>
+        <td><%= notification.content %></td>
+        <td><%= notification.group_id %></td>
+        <td><%= link_to 'Visualizar', notification_path(notification) %></td>
+        <% if current_user.role == 'administrator' %>
+        <td><%= link_to 'Remover', notification_path(notification), method: :delete %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </table>  
+<% end %>
+<td><%= link_to 'Criar Lista', new_notification_path, controller: 'notifications' %></td>
+<td><%= link_to 'Voltar', home_index_path %></td>
+<p>Find me in app/views/notification/index.html.erb</p>

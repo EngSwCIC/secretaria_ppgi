@@ -8,11 +8,19 @@
   <p><strong>Cargo: </strong><%= current_user.role %></p>
   
   <% if current_user.role == 'administrator' %>
-  <%= link_to "Adicionar uma nova informação", new_information_path %>
-  <%= link_to "Cadastrar Fonte de Informaçao",  new_source_path, controller: 'sources'%>
-  <%= link_to 'Fontes de informação', sources_path %>
+  <%= link_to "Cadastrar nova informação", new_information_path %>
+  <%= simple_format("\n") %>
+  <%= link_to "Cadastrar fonte de informaçao",  new_source_path, controller: 'sources'%>
+  <%= simple_format("\n") %>
+  <%= link_to "Criar lista de notificação",  new_notification_path, controller: 'notifications'%>
+  <%= simple_format("\n") %>
   <% end %>
    <%= link_to 'Informações', controller: 'informations' %> 
+   <%= simple_format("\n") %>
+   <%= link_to "Fontes de informação",  sources_path, controller: 'sources'%>
+  <%= simple_format("\n") %>
+  <%= link_to 'Notificações', controller: 'notifications' %>
+  <%= simple_format("\n") %>
   <%= link_to "Sair", destroy_user_session_path, method: :delete %>
 <% else %>
   <h3>Entre para acessar o sistema!</h3>
