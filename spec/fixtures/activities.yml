@@ -1,0 +1,4 @@
+accreditation:
+    id: 1
+    title: 'Accreditation Request'
+    status: 'waiting'
