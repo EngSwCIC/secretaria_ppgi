@@ -11,17 +11,18 @@ end
 World(WithinHelpers)
 
 Dado "que existam as seguintes solicitações:" do |table|
-    User.destroy_all
+    sower_begin
     file = fixture_file_upload(Rails.root.join('public', 'TestImage.png'), 'image/png')
     table.hashes.each do |row|
         name = row['user_full_name']
         user = User.create!(full_name: name, email: name+'@professor.com', password: name+'123', role: 'professor', registration: '200000000')
         SeiProcess.create!(user_id: user.id, status: row['status'], code: 0, documents: [file])
     end
+    sower_finish
 end
 
 Dado "que existam os seguintes credenciamentos sem prazo definido:" do |table|
-    User.destroy_all
+    sower_begin
     file = fixture_file_upload(Rails.root.join('public', 'TestImage.png'), 'image/png')
     table.hashes.each do |row|
         name = row['user_full_name']
@@ -29,6 +30,7 @@ Dado "que existam os seguintes credenciamentos sem prazo definido:" do |table|
         sei_process = SeiProcess.create!(user_id: user.id, status: 'Aprovado', code: 0, documents: [file])
         Accreditation.create!(user_id: user.id, sei_process_id: sei_process.id, start_date: row['start_date'])
     end
+    sower_finish
 end
 
 Dado /^que eu esteja cadastrado e logado como (.*)$/ do |input|
@@ -36,21 +38,8 @@ Dado /^que eu esteja cadastrado e logado como (.*)$/ do |input|
     
     values = input.gsub!(/"/,'').split(/,\s?/)
     record = Hash[user_props.zip(values)]
-    User.create!(record)
-    
-    steps %(
-        Dado que eu esteja logado como "#{record[:email]}", "#{record[:password]}"
-    )
-end
-
-Dado /^que eu esteja logado como (.*)$/ do |input|
-    fields = ['email', 'password']
-    values = Hash[fields.zip input.gsub!(/"/,'').split(/,\s?/)]
-
-    visit new_user_session_path
-    fill_in("Email", :with => values['email'])
-    fill_in("Password", :with => values['password'])
-    click_button("Log in")
+    user = User.create!(record)
+    login(user)
 end
 
 Dado /^que eu esteja na página (.+)$/ do |page_name|
@@ -120,8 +109,6 @@ Quando /^eu seleciono uma data final (posterior|anterior) a data inicial$/ do |s
     date2 = (Date.current).strftime("%Y-%m-%e")
     fill_in 'Data final', with: date1
     fill_in 'Data inicial', with: date2
-    # select_date(date1, :from => 'Data Final')
-    # select_date(date2, :from => 'Data Inicial')
 end
 
 Quando /^eu aperto '([^']*)'$/ do |button|

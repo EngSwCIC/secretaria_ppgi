@@ -8,3 +8,9 @@ val1 = 0
 
 p val0 && val1
 p val0 || val1
+
+def metodo (var=nil)
+    p var
+end
+metodo(13)
+metodo
