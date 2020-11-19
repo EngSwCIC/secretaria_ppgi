@@ -13,10 +13,22 @@ World(WithinHelpers)
 Dado "que existam as seguintes solicitações:" do |table|
     sower_begin
     file = fixture_file_upload(Rails.root.join('public', 'TestImage.png'), 'image/png')
+    
     table.hashes.each do |row|
         name = row['user_full_name']
-        user = User.create!(full_name: name, email: name+'@professor.com', password: name+'123', role: 'professor', registration: '200000000')
-        SeiProcess.create!(user_id: user.id, status: row['status'], code: 0, documents: [file])
+        user = User.create!(
+            full_name: name,
+            email: name+'@professor.com',
+            password: name+'123',
+            role: 'professor',
+            registration: '200000000'
+        )
+        SeiProcess.create!(
+            user_id: user.id,
+            status: row['status'],
+            code: 0,
+            documents: [file]
+        )
     end
     sower_finish
 end
@@ -24,11 +36,27 @@ end
 Dado "que existam os seguintes credenciamentos sem prazo definido:" do |table|
     sower_begin
     file = fixture_file_upload(Rails.root.join('public', 'TestImage.png'), 'image/png')
+    
     table.hashes.each do |row|
         name = row['user_full_name']
-        user = User.create!(full_name: name, email: name+'@professor.com', password: name+'123', role: 'professor', registration: '200000000')
-        sei_process = SeiProcess.create!(user_id: user.id, status: 'Aprovado', code: 0, documents: [file])
-        Accreditation.create!(user_id: user.id, sei_process_id: sei_process.id, start_date: row['start_date'])
+        user = User.create!(
+            full_name: name,
+            email: name+'@professor.com',
+            password: name+'123',
+            role: 'professor',
+            registration: '200000000'
+        )
+        sei_process = SeiProcess.create!(
+            user_id: user.id,
+            status: 'Aprovado',
+            code: 0,
+            documents: [file]
+        )
+        Accreditation.create!(
+            user_id: user.id,
+            sei_process_id: sei_process.id,
+            start_date: row['start_date']
+        )
     end
     sower_finish
 end
