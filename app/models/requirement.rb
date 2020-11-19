@@ -11,7 +11,13 @@ class Requirement < ApplicationRecord
         true
     end
 
-    before_destroy do
-        throw(:abort) unless Current.user.role == 'administrator'
+    before_destroy :check_permission
+    def allow_deletion!
+        @allow_deletion = true
+    end
+    def check_permission
+        unless @allow_deletion || Current.user.role == 'administrator'
+            throw(:abort)
+        end
     end
 end

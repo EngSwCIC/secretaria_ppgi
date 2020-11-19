@@ -1,5 +1,3 @@
-include Devise::Test::ControllerHelpers
-
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -8,19 +6,17 @@ include Devise::Test::ControllerHelpers
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-admin_sower = User.create(
-    full_name: "Sower",
-    email: "sower@admin.com",
-    password: "admin123",
-    role: "administrator",
-    registration: "000000000"
-)
-app.post('/users/sign_in', params: {"user"=>{"email"=>"sower@mail.com", "password"=>"admin123"}})
+def destroy_records class_name
+    class_name.each do |obj|
+        obj.allow_deletion!
+        obj.destroy
+    end
+end
 
-# Accreditations
-Requirement.destroy_all
-Accreditation.destroy_all
-SeiProcess.destroy_all
+# All Stuff
+destroy_records(Requirement.all)
+destroy_records(Accreditation.all)
+destroy_records(SeiProcess.all)
 
 # Users
 User.destroy_all

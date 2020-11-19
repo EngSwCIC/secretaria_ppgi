@@ -20,4 +20,12 @@ class Accreditation < ApplicationRecord
     end
     true
   end
+
+  before_destroy :check_permission
+  def allow_deletion!
+    @allow_deletion = true
+  end
+  def check_permission
+    throw(:abort) unless @allow_deletion || Current.user.role == 'administrator'
+  end
 end
