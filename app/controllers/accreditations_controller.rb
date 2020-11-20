@@ -4,7 +4,11 @@ class AccreditationsController < ApplicationController
   # GET /accreditations
   # GET /accreditations.json
   def index
-    @accreditations = Accreditation.all
+    if current_user.role == "administrator"
+      @accreditations = Accreditation.all
+    else
+      @accreditations = Accreditation.where(user_id: current_user.id)
+    end
   end
 
   # GET /accreditations/1

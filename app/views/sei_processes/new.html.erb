@@ -1,21 +1,15 @@
 <h1>Abrir Processo</h1>
 
-<% if @requirements != nil %>
-  <h2><%= @requirements.title %></h2>
-  <%= @requirements.content %>
-
-  <% if @requirements.documents.attached? %>
-    <p>
-      <strong>Documentos Necessários:</strong>
-      <% @requirements.documents.each do | document | %>
-        <div>
-          <%= link_to document.filename, rails_blob_path(document, disposition: 'attachment') %>
-        <div>
-      <% end %>
-    </p>
-  <% end %>
+<% if (current_user.role == 'administrator') || (current_user.role == 'professor') %>
+  <%= render 'show_accreditation_requirements' %>
 <% end %>
 
 <%= render 'form_new', sei_process: @sei_process %>
 
-<%= link_to 'Voltar', sei_processes_path %>
+<% if current_user.role == 'professor' %>
+  <br/>Voltar para<br/>
+  <%= link_to 'Meus Processos', sei_processes_path %>
+  <%= link_to 'Meus Credenciamentos', accreditations_path %>
+<% else %>
+  <%= link_to 'Voltar', sei_processes_path %>
+<% end %>

@@ -35,5 +35,7 @@
 <% end %>
 <br/>
 
-<%= link_to 'Editar', edit_accreditation_path(@accreditation) %> |
+<% if current_user.role == 'administrator' %>
+  <%= link_to 'Editar', edit_accreditation_path(@accreditation) %> |
+<% end %>
 <%= link_to 'Voltar', accreditations_path %>

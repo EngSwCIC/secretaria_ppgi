@@ -13,6 +13,10 @@
   
   <% else %>
     <%= link_to "Meus Processos Abertos", sei_processes_path %>
+
+    <% if current_user.role == "professor" %>
+      <%= link_to "Meus Credenciamentos", accreditations_path %>
+    <% end %>
   <% end %>
   
     <br/>

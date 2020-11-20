@@ -22,7 +22,7 @@
 		    <td><%= accreditation.sei_process_id %></td>
         <td><%= accreditation.start_date %></td>
         <td><%= accreditation.end_date %></td>
-        <% if accreditation.start_date != nil && accreditation.end_date != nil %>
+        <% if current_user.role != 'administrator' || accreditation.end_date != nil %>
           <td><%= link_to 'Mostrar', accreditation %></td>
         <% else %>
           <td><%= link_to 'Definir Prazo', edit_accreditation_path(accreditation) %></td>
@@ -31,6 +31,11 @@
     <% end %>
   </tbody>
 </table>
+
+<% if current_user.role == 'professor' %>
+  <br/>
+  <%= link_to 'Abrir Solicitação de Credenciamento', new_sei_process_path %>
+<% end %>
 
 <br/>
 <%= link_to 'Página Inicial', home_index_path %>
