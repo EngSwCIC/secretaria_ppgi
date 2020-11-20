@@ -2,10 +2,6 @@ require 'rails_helper'
 
 RSpec.describe Requirement, type: :model do
 
-  let(:valid_attributes) {
-    {"title" => "testing"}
-  }
-
   before(:each) do
     @admin = User.create!(
       full_name: "Sower",
@@ -29,7 +25,7 @@ RSpec.describe Requirement, type: :model do
     end
 
     it "is not equal to previous requirement title" do
-      requirement = Requirement.create! :valid_attributes
+      Requirement.create! title: "testing"
       expect(Requirement.new({"title" => "testing"})).to_not be_valid
     end
   end
