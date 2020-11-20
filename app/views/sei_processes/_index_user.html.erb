@@ -1,0 +1,19 @@
+<table>
+    <thead>
+        <tr>
+        <th>Código do Processo</th>
+        <th>Status</th>
+        <th colspan="1"></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% @my_processes.each do |sei_process| %>
+        <tr>
+            <td><%= sei_process.id %></td>
+            <td><%= sei_process.status %></td>
+            <td><%= link_to 'Mostrar', sei_process_path(sei_process) %></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>

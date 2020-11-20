@@ -9,10 +9,22 @@ class SeiProcess < ApplicationRecord
     Rejeitado: 2
   }
 
-  validate :check_role_to_change_status, on: [:create, :update]
-  def check_role_to_change_status
-    if (Current.user.role != 'administrator') && (status != 'Espera')
-      self.errors.add(:user_id, 'without permission')
+  validate :check_signed_in, on: :create
+  def check_signed_in
+    if Current.user == nil
+      self.errors.add(:base, 'Usuário sem permissão')
+      return false
+    end
+    true
+  end
+
+  validate :check_role, on: :update
+  def current_user_is_admin
+    Current.user != nil && Current.user.role == 'administrator'
+  end
+  def check_role
+    unless current_user_is_admin
+      self.errors.add(:base, 'Usuário sem permissão')
       return false
     end
     true
@@ -23,6 +35,6 @@ class SeiProcess < ApplicationRecord
     @allow_deletion = true
   end
   def check_permission
-    throw(:abort) unless @allow_deletion || Current.user.role == 'administrator'
+    throw(:abort) unless @allow_deletion || current_user_is_admin
   end
 end

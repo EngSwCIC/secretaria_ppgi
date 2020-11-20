@@ -4,9 +4,12 @@ class Accreditation < ApplicationRecord
   validates :sei_process, uniqueness: true
 
   validate :check_role, on: [:create, :update]
+  def current_user_is_admin
+    Current.user != nil && Current.user.role == 'administrator'
+  end
   def check_role
-    if Current.user.role != 'administrator'
-      self.errors.add(:user_id, 'without permission')
+    unless current_user_is_admin
+      self.errors.add(:base, 'Usuário sem permissão')
       return false
     end
     true
@@ -15,7 +18,7 @@ class Accreditation < ApplicationRecord
   validate :check_date, on: :update
   def check_date
     if (start_date == nil) || (end_date == nil) || (end_date < start_date)
-      self.errors.add(:end_date, 'invalid')
+      self.errors.add(:end_date, 'inválida')
       return false
     end
     true
@@ -26,6 +29,6 @@ class Accreditation < ApplicationRecord
     @allow_deletion = true
   end
   def check_permission
-    throw(:abort) unless @allow_deletion || Current.user.role == 'administrator'
+    throw(:abort) unless @allow_deletion || current_user_is_admin
   end
 end

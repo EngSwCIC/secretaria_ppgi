@@ -61,10 +61,14 @@ class RequirementsController < ApplicationController
   # DELETE /requirements/1
   # DELETE /requirements/1.json
   def destroy
-    @requirement.destroy
     respond_to do |format|
-      format.html { redirect_to requirements_url, notice: 'Requisitos excluídos com sucesso!' }
-      format.json { head :no_content }
+      if @requirement.destroy
+        format.html { redirect_to requirements_url, notice: 'Requisitos excluídos com sucesso!' }
+        format.json { head :no_content }
+      else
+        format.html { redirect_to requirements_url, notice: 'Erro: não foi possível excluir os requisitos!' }
+        format.json { head :no_content }
+      end
     end
   end
 

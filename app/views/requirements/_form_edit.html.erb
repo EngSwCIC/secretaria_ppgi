@@ -1,7 +1,7 @@
 <%= form_with(model: requirement, local: true) do |form| %>
   <% if requirement.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(requirement.errors.count, "error") %> prohibited this requirement from being saved:</h2>
+      <h2><%= pluralize(requirement.errors.count, "erro") %> impediu o salvamento dos requisitos:</h2>
 
       <ul>
       <% requirement.errors.full_messages.each do |message| %>

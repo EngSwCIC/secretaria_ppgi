@@ -24,7 +24,7 @@ class SeiProcessesController < ApplicationController
   # GET /sei_processes/new
   def new
     @requirements = Requirement.find_by(title: 'Requisitos de Credenciamento')
-    @sei_process = SeiProcess.new(user_id: current_user.id, status: 'Espera', code: '0')
+    @sei_process = SeiProcess.new
   end
 
   # GET /sei_processes/1/edit
@@ -34,7 +34,8 @@ class SeiProcessesController < ApplicationController
   # POST /sei_processes
   # POST /sei_processes.json
   def create
-    @sei_process = SeiProcess.new(sei_process_params)
+    mandatory_params = {'user_id' => current_user.id, 'status' => 'Espera', 'code' => '0'}
+    @sei_process = SeiProcess.new(sei_process_params.merge!(mandatory_params))
 
     respond_to do |format|
       if @sei_process.save
@@ -72,10 +73,14 @@ class SeiProcessesController < ApplicationController
   # DELETE /sei_processes/1
   # DELETE /sei_processes/1.json
   def destroy
-    @sei_process.destroy
     respond_to do |format|
-      format.html { redirect_to sei_processes_url, notice: 'Processo excluído com sucesso!' }
-      format.json { head :no_content }
+      if @sei_process.destroy
+        format.html { redirect_to sei_processes_url, notice: 'Processo excluído com sucesso!' }
+        format.json { head :no_content }
+      else
+        format.html { redirect_to sei_processes_url, notice: 'Erro: não foi possível excluir o processo!' }
+        format.json { head :no_content }
+      end
     end
   end
 

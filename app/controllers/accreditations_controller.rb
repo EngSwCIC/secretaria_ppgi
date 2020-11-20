@@ -53,10 +53,14 @@ class AccreditationsController < ApplicationController
   # DELETE /accreditations/1
   # DELETE /accreditations/1.json
   def destroy
-    @accreditation.destroy
     respond_to do |format|
-      format.html { redirect_to accreditations_url, notice: 'Accreditation was successfully destroyed.' }
-      format.json { head :no_content }
+      if @accreditation.destroy
+        format.html { redirect_to accreditations_url, notice: 'Accreditation was successfully destroyed.' }
+        format.json { head :no_content }
+      else
+        format.html { redirect_to accreditations_url, notice: 'Erro: não foi possível excluir o credenciamento!' }
+        format.json { head :no_content }
+      end
     end
   end
 

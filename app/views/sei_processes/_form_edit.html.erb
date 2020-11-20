@@ -1,7 +1,7 @@
 <%= form_with(model: sei_process, local: true) do |form| %>
   <% if sei_process.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(sei_process.errors.count, "error") %> prohibited this sei_process from being saved:</h2>
+      <h2><%= pluralize(sei_process.errors.count, "erro") %> impediu este processo de ser salvo:</h2>
 
       <ul>
       <% sei_process.errors.full_messages.each do |message| %>
