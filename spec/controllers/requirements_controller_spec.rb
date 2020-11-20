@@ -24,7 +24,17 @@ require 'rails_helper'
 # `rails-controller-testing` gem.
 
 RSpec.describe RequirementsController, type: :controller do
-
+    before(:each) do
+      @admin = User.create!(
+        full_name: "Sower",
+        email: "sower@admin.com",
+        password: "admin123",
+        role: "administrator",
+        registration: "000000000"
+      )
+      sign_in @admin
+      Current.user = @admin
+    end
   # This should return the minimal set of attributes required to create a valid
   # Requirement. As you add validations to Requirement, be sure to
   # adjust the attributes here as well.
