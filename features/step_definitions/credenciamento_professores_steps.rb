@@ -4,11 +4,53 @@ require File.expand_path(File.join(File.dirname(__FILE__), "..", "support", "pat
 require File.expand_path(File.join(File.dirname(__FILE__), "..", "support", "selectors"))
 
 module WithinHelpers
-  def with_scope(locator)
-    locator ? within(*selector_for(locator)) { yield } : yield
-  end
+    def with_scope(locator)
+        locator ? within(*selector_for(locator)) { yield } : yield
+    end
 end
 World(WithinHelpers)
+
+module UserSessionHelper
+    def current_user
+        @current_user
+    end
+  
+    def login user
+        @current_user = user
+        visit new_user_session_path
+        fill_in("Email", with: user.email)
+        fill_in("Password", with: user.password)
+        click_button("Log in")
+        Current.user = @current_user
+    end
+    
+    def sower_begin (user=nil)
+        if user != nil
+            @saved_user = user
+            visit '/'
+            click_link("Sair")
+        end
+  
+        sower = User.create(
+            full_name: "Sower",
+            email: "sower@admin.com",
+            password: "admin123",
+            role: "administrator",
+            registration: "000000000"
+        )
+        login(sower)
+    end
+  
+    def sower_finish
+        Current.user = nil
+        visit '/'
+        click_link("Sair")
+        @current_user = nil
+
+        login(@saved_user) if @saved_user != nil
+    end
+end
+World(UserSessionHelper) if respond_to?(:World)
 
 Dado "que existam as seguintes solicitações:" do |table|
     sower_begin
