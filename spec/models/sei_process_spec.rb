@@ -63,12 +63,6 @@ RSpec.describe SeiProcess, type: :model do
     end
 
     context 'when an invalid record' do
-      it 'has invalid attributes' do
-        expect(
-          SeiProcess.new(invalid_status_params)
-        ).to_not be_valid
-      end
-
       it 'has no attached documents' do
         expect(
           SeiProcess.new(invalid_docs_params_by_prof)

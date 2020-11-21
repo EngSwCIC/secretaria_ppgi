@@ -48,7 +48,7 @@ class AccreditationsController < ApplicationController
   def destroy
     respond_to do |format|
       if @accreditation.destroy
-        format.html { redirect_to accreditations_url, notice: 'Accreditation was successfully destroyed.' }
+        format.html { redirect_to accreditations_url, notice: 'Credenciamento excluído com sucesso!' }
         format.json { head :no_content }
       else
         format.html { redirect_to accreditations_url, notice: 'Erro: não foi possível excluir o credenciamento!' }
