@@ -185,6 +185,7 @@ RSpec.describe SeiProcessesController, type: :controller do
       it "destroys the requested sei_process" do
         process = SeiProcess.create!(valid_admin_params)
         process.update_attributes(user_id: users(:prof))
+
         expect {
           delete :destroy, params: {id: process.to_param}, session: valid_session
         }.to change(SeiProcess, :count).by(-1)
@@ -193,6 +194,7 @@ RSpec.describe SeiProcessesController, type: :controller do
       it "redirects to the sei_processes list" do
         process = SeiProcess.create!(valid_admin_params)
         process.update_attributes(user_id: users(:prof))
+        
         delete :destroy, params: {id: process.to_param}, session: valid_session
         expect(response).to redirect_to(sei_processes_url)
       end

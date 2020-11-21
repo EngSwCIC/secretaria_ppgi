@@ -1,17 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe Requirement, type: :model do
+  fixtures :users
 
   before(:each) do
-    @admin = User.create!(
-      full_name: "Sower",
-      email: "sower@admin.com",
-      password: "admin123",
-      role: "administrator",
-      registration: "000000000"
-    )
-    sign_in @admin
-    Current.user = @admin
+    sign_in users(:admin)
+    Current.user = users(:admin)
   end
 
   describe "Title validation" do
