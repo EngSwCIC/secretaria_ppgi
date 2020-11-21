@@ -27,17 +27,6 @@ class AccreditationsController < ApplicationController
   # POST /accreditations
   # POST /accreditations.json
   def create
-    @accreditation = Accreditation.new(accreditation_params)
-
-    respond_to do |format|
-      if @accreditation.save
-        format.html { redirect_to accreditations_url, notice: 'Accreditation was successfully created.' }
-        format.json { render :show, status: :created, location: @accreditation }
-      else
-        format.html { render :new }
-        format.json { render json: @accreditation.errors, status: :unprocessable_entity }
-      end
-    end
   end
 
   # PATCH/PUT /accreditations/1
@@ -79,3 +68,4 @@ class AccreditationsController < ApplicationController
       params.require(:accreditation).permit(:user_id, :start_date, :end_date, :sei_proccess_id)
     end
 end
+
