@@ -108,7 +108,8 @@ RSpec.describe RequirementsController, type: :controller do
   describe "PUT #update" do
     context "with valid params" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        file = fixture_file_upload(Rails.root.join('public', 'TestImage.png'), 'image/png')
+        {"title" => "test", "content" => "", "documents" => [file]}
       }
 
       it "updates the requested requirement" do
