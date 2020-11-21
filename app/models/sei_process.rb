@@ -9,9 +9,13 @@ class SeiProcess < ApplicationRecord
     Rejeitado: 2
   }
 
+  def current_user_is_admin
+    Current.user != nil && Current.user.role == 'administrator'
+  end
+
   validate :check_signed_in, on: :create
   def check_signed_in
-    if Current.user == nil
+    if (Current.user == nil) || ((!current_user_is_admin) && (status != 'Espera'))
       self.errors.add(:base, 'Usuário sem permissão')
       return false
     end
@@ -19,10 +23,8 @@ class SeiProcess < ApplicationRecord
   end
 
   validate :check_role, on: :update
-  def current_user_is_admin
-    Current.user != nil && Current.user.role == 'administrator'
-  end
   def check_role
+    print "check_role"
     unless current_user_is_admin
       self.errors.add(:base, 'Usuário sem permissão')
       return false

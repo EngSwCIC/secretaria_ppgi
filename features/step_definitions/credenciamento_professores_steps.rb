@@ -53,7 +53,7 @@ end
 World(UserSessionHelper) if respond_to?(:World)
 
 Dado "que existam as seguintes solicitações:" do |table|
-    sower_begin
+    sower_begin(@current_user)
     file = fixture_file_upload(Rails.root.join('public', 'TestImage.png'), 'image/png')
     
     table.hashes.each do |row|
@@ -76,7 +76,7 @@ Dado "que existam as seguintes solicitações:" do |table|
 end
 
 Dado "que existam os seguintes credenciamentos sem prazo definido:" do |table|
-    sower_begin
+    sower_begin(@current_user)
     file = fixture_file_upload(Rails.root.join('public', 'TestImage.png'), 'image/png')
     
     table.hashes.each do |row|
