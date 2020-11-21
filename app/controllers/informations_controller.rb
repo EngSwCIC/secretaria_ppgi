@@ -38,6 +38,19 @@ class InformationsController < ApplicationController
     @information = Information.find(id) # look up movie by unique ID
   end
 
+  def edit
+    @information = Information.find params[:id]
+    @sources=Source.all
+  end
+  
+  def update
+    @information = Information.find params[:id]
+    @information.update_attributes!(information_params)
+    flash[:notice] = "#{@information.title} foi atualizado."
+    redirect_to information_path(@information)
+  end
+    
+
   private
 
   def information_params

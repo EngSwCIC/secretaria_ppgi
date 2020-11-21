@@ -8,4 +8,8 @@
   <%= @information.content %>
 </p>
 
+<% if current_user.role == 'administrator' %>
+  <%= link_to 'Editar', edit_information_path(@information) %>
+<% end %> 
+
 <%= link_to 'Voltar', informations_path %>

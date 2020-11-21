@@ -16,8 +16,16 @@
       <tr>
         <td><%= information.title %></td>
         <td><%= information.content %></td>
-        <td><%= Source.find(information.source_id ? information.source_id : 1).name %></td>
-        <td><%= User.find(information.published_by ? information.published_by : 1).full_name %></td>
+        <% if Source.find_by_id(information.source_id)%> 
+          <td><%= Source.find(information.source_id).name %></td>
+        <% else %>
+          <td>Fonte não encontrada</td>
+        <% end %>
+        <% if User.find_by_id(information.published_by)%> 
+          <td><%= User.find(information.published_by).full_name %></td>
+        <% else %>
+          <td>Usuário não encontrado</td>
+        <%end %>
         <td><%= link_to 'Visualizar', information_path(information) %></td>
         <% if current_user.role == 'administrator' %>
         <td><%= link_to 'Remover', information_path(information), method: :delete %></td>
