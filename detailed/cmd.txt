@@ -1,0 +1,1 @@
+saikuro -c -p app/models/user.rb -p app/models/accreditation.rb -p app/models/requirement.rb -p app/models/sei_process.rb -p app/controllers/application_controller.rb -p app/controllers/home_controller.rb -p app/controllers/accreditations_controller.rb -p app/controllers/requirements_controller.rb -p app/controllers/sei_processes_controller.rb -y 0 -w 11 -e 16 -o detailed/

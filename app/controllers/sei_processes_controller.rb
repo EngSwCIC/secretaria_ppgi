@@ -56,11 +56,8 @@ class SeiProcessesController < ApplicationController
         format.html { redirect_to sei_processes_url, notice: 'Processo atualizado com sucesso!' }
         format.json { render :index, status: :ok, location: @sei_process }
 
-        if (@sei_process.status == 'Aprovado') && @sei_process.documents.attached?
-          accreditation_instance = Accreditation.find_by(sei_process: @sei_process.id)
-          if accreditation_instance == nil
-            Accreditation.create!(user_id: @sei_process.user_id, sei_process_id: @sei_process.id)
-          end
+        if @sei_process.status == 'Aprovado' && (Accreditation.find_by(sei_process: @sei_process.id) == nil)
+          Accreditation.create!(user_id: @sei_process.user_id, sei_process_id: @sei_process.id)
         end
 
       else
