@@ -11,7 +11,7 @@ RSpec.describe Accreditation, type: :model do
     {user_id: users(:admin).id, status: 'Espera', code: 0, documents: [file]}
   }
   
-  let(:valid_attributes){
+  let(:valid_attributes) {
     {user_id: users(:admin).id, sei_process_id: @process.id}
   }
 
