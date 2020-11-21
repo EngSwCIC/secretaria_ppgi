@@ -35,7 +35,7 @@ class SeiProcessesController < ApplicationController
   # POST /sei_processes.json
   def create
     mandatory_params = {'user_id' => current_user.id, 'status' => 'Espera', 'code' => '0'}
-    @sei_process = SeiProcess.new(sei_process_params.merge!(mandatory_params))
+    @sei_process = SeiProcess.new(sei_process_params.merge(mandatory_params))
 
     respond_to do |format|
       if @sei_process.save

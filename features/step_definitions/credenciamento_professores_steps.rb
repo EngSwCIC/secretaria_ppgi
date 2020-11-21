@@ -103,6 +103,12 @@ Dado "que existam os seguintes credenciamentos sem prazo definido:" do |table|
     sower_finish
 end
 
+Dado /^que o registro "([^"]*)" já exista na tabela de requisitos$/ do |text|
+    sower_begin(@current_user)
+    Requirement.create!(title: text)
+    sower_finish
+end
+
 Dado /^que eu esteja cadastrado e logado como (.*)$/ do |input|
     user_props = [:full_name, :email, :password, :role, :registration]
     
