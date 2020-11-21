@@ -52,5 +52,15 @@ RSpec.describe Accreditation, type: :model do
         Accreditation.new(valid_attributes)
       ).to_not be_valid
     end
+
+    it "has been created by a non-admin user" do
+      sign_out users(:admin)
+      sign_in users(:prof)
+      Current.user = users(:prof)
+
+      expect(
+        Accreditation.new(valid_attributes)
+      ).to_not be_valid
+    end
   end
 end
