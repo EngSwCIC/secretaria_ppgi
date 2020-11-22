@@ -33,6 +33,8 @@ class AccreditationsController < ApplicationController
   # PATCH/PUT /accreditations/1.json
   def update
     # Atualiza o credenciamento caso exista
+    # Se não existir retorna erro
+    # Se existir retorna mensagem de sucesso
     respond_to do |format|
       if @accreditation.update(accreditation_params)
         format.html { redirect_to accreditations_url, notice: 'Credenciamento atualizado com sucesso!' }
@@ -48,6 +50,8 @@ class AccreditationsController < ApplicationController
   # DELETE /accreditations/1.json
   def destroy
     # Exclui o credenciamento caso exista
+    # Se não existir retorna erro
+    # Se existir retorna mensagem de sucesso
     respond_to do |format|
       if @accreditation.destroy
         format.html { redirect_to accreditations_url, notice: 'Credenciamento excluído com sucesso!' }

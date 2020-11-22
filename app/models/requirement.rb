@@ -4,9 +4,11 @@ class Requirement < ApplicationRecord
 
     validate :check_role, on: [:create, :update]
     def current_user_is_admin
+        # Valida se o usuário possui permissão
         Current.user != nil && Current.user.role == 'administrator'
     end
     def check_role
+        # Valida se o usuário possui permissão
         unless current_user_is_admin
             self.errors.add(:base, 'Usuário sem permissão')
             return false

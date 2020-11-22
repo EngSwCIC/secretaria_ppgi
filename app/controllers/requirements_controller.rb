@@ -25,6 +25,8 @@ class RequirementsController < ApplicationController
   # POST /requirements.json
   def create
     # Cria requisitos
+    # Se não for possível retorna erro
+    # Se for, retorna mensagem de sucesso
     @requirement = Requirement.new(requirement_params)
     
     respond_to do |format|
@@ -50,6 +52,8 @@ class RequirementsController < ApplicationController
   # PATCH/PUT /requirements/1.json
   def update
     # Atualiza requisitos caso exista
+    # Se não existir retorna erro
+    # Se existir retorna mensagem de sucesso
     respond_to do |format|
       if @requirement.update(requirement_params)
         format.html { redirect_to @requirement, notice: 'Requisitos atualizados com sucesso!' }
@@ -65,6 +69,8 @@ class RequirementsController < ApplicationController
   # DELETE /requirements/1.json
   def destroy
     # Exclui requisitos caso exista
+    # Se não existir retorna erro
+    # Se existir retorna mensagem de sucesso
     respond_to do |format|
       if @requirement.destroy
         format.html { redirect_to requirements_url, notice: 'Requisitos excluídos com sucesso!' }

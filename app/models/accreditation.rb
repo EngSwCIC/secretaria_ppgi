@@ -8,6 +8,8 @@ class Accreditation < ApplicationRecord
     Current.user != nil && Current.user.role == 'administrator'
   end
   def check_role
+    # Valida se o usuário possui permissão
+    # Se não possuir, nega ação
     unless current_user_is_admin
       self.errors.add(:base, 'Usuário sem permissão')
       return false
@@ -17,6 +19,7 @@ class Accreditation < ApplicationRecord
   
   validate :check_date, on: :update
   def check_date
+    # Valida data
     if (start_date == nil) || (end_date == nil) || (end_date < start_date)
       self.errors.add(:end_date, 'inválida')
       return false

@@ -34,7 +34,9 @@ class SeiProcessesController < ApplicationController
   # POST /sei_processes
   # POST /sei_processes.json
   def create
-    #Cria Processo
+    # Cria Processo
+    # Se não for possível retorna erro
+    # Se for, retorna mensagem de sucesso
     mandatory_params = {'user_id' => current_user.id, 'status' => 'Espera', 'code' => '0'}
     @sei_process = SeiProcess.new(sei_process_params.merge(mandatory_params))
 
@@ -53,6 +55,8 @@ class SeiProcessesController < ApplicationController
   # PATCH/PUT /sei_processes/1.json
   def update
     # Atualiza Processo caso exista
+    # Se não existir retorna erro
+    # Se existir retorna mensagem de sucesso
     respond_to do |format|
       if @sei_process.update(sei_process_params)
         format.html { redirect_to sei_processes_url, notice: 'Processo atualizado com sucesso!' }
@@ -73,6 +77,8 @@ class SeiProcessesController < ApplicationController
   # DELETE /sei_processes/1.json
   def destroy
     # Exclui Processo caso exista
+    # Se não existir retorna erro
+    # Se existir retorna mensagem de sucesso
     respond_to do |format|
       if @sei_process.destroy
         format.html { redirect_to sei_processes_url, notice: 'Processo excluído com sucesso!' }

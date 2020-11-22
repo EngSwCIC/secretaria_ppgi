@@ -10,11 +10,13 @@ class SeiProcess < ApplicationRecord
   }
 
   def current_user_is_admin
+    # Valida se o usuário possui permissão
     Current.user != nil && Current.user.role == 'administrator'
   end
 
   validate :check_signed_in, on: :create
   def check_signed_in
+    # Valida se o usuário possui permissão  
     if Current.user == nil
       self.errors.add(:base, 'Usuário sem permissão')
       return false
