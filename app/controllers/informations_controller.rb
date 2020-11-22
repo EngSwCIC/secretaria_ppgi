@@ -46,7 +46,7 @@ class InformationsController < ApplicationController
   def update
     @information = Information.find params[:id]
     @information.update_attributes!(information_params)
-    flash[:notice] = "#{@information.title} foi atualizado."
+    flash[:notice] = "Informação atualizada."
     redirect_to information_path(@information)
   end
     

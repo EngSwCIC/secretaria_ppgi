@@ -25,6 +25,22 @@ class SourcesController < ApplicationController
 
     end  
   end
+
+  def show
+    id = params[:id] # retrieve movie ID from URI route
+    @source = Source.find(id) # look up movie by unique ID
+  end
+
+  def edit
+    @source = Source.find params[:id]
+  end
+  
+  def update
+    @source = Source.find params[:id]
+    @source.update_attributes!(source_params)
+    flash[:notice] = "Fonte de informação atualizada."
+    redirect_to source_path(@source)
+  end
 #parametros necessários para poder enviar o form
 #caso nao passe o parametro name a página é recarregada com a mensagem de erro
   private

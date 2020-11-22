@@ -1,5 +1,11 @@
-<h1>Source#edit</h1>
+<h1>Editar fonte de informação</h1>
+<%= form_tag source_path(@source), :method => :put do %>
+  <%= label :source, :name, 'Nome: ' %>
+  <%= text_field :source, :name, :size=>100, :required => false%>
+  <%= simple_format("\n") %>
+  
+  <%= submit_tag 'Enviar' %>
+  <%= link_to 'Voltar', home_index_path %>
+<% end %>
 
-<%= @source.name %>
 
-<p>Find me in app/views/source/edit.html.erb</p>

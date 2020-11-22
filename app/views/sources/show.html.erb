@@ -1,2 +1,10 @@
-<h1>Source#show</h1>
-<p>Find me in app/views/source/show.html.erb</p>
+<p>
+  <strong>Nome:</strong>
+  <%= @source.name %>
+</p>
+ 
+<% if current_user.role == 'administrator' %>
+  <%= link_to 'Editar', edit_source_path(@source) %>
+<% end %> 
+
+<%= link_to 'Voltar', sources_path %>

@@ -5,7 +5,6 @@ class CreateInformation < ActiveRecord::Migration[5.2]
       t.text :content
       t.integer :source_id
       t.integer :published_by
-
       t.timestamps
     end
   end
