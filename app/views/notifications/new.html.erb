@@ -1,32 +1,19 @@
-<h1>Lista de Notificação</h1>
-<h1>Criar Lista de Notificação</h1>
-
+<h2>Adicionar uma nova notificação</h2>
 <%= form_tag notifications_path, :method => :post do %>
-  <div>
-    <%= label :notification, :title, 'Nome da Lista de Notificação: ' %>
-    <%= simple_format("\n") %>
-    <%= text_field :notification, :title, :size=>50, :required => true%>
-    <%= simple_format("\n") %>
-  </div>
+  <%= label :notification, :title, 'Título: ' %>
+  <%= text_field :notification, :title, :size=>100, :required => false%>
+  <%= simple_format("\n") %>
+  <%= label :notification, :content, 'Conteúdo: '%>
+  <%= simple_format("\n") %>
+  <%= text_area :notification, :content, :rows=>25, :cols=>100, :required => false%>
+  <%= simple_format("\n") %>
+  <%= label :notification, :interested_group, 'Entidade interessada: ' %>
+  <%= select :notification, :interested_group, ['Administrador', 'Secretário', 'Professor', 'Estudante'] %>
   
-  <div>
-    <%= label :notification, :content, 'Descrição:' %>
-    <%= simple_format("\n") %>
-    <%= text_field :notification, :content, :size=>50, :required => true%>
-    <%= simple_format("\n") %>
-  </div>
- 
-  <div>
-    <%= label :notification, :group_id, 'Grupo interessado:' %>
-    <%= simple_format("\n") %>
-    <%= text_field :notification, :group_id, :size=>50, :required => true%>
-    <%= simple_format("\n") %>
-  </div>
-
-  <div>
-    <%= submit_tag 'Cadastrar' %>
-    <%= link_to 'Voltar', home_index_path %>
-  </div>
-
+  <%= submit_tag 'Enviar' %>
+  <%= link_to 'Voltar', home_index_path %>
 <% end %>
-<p>Find me in app/views/notification/new.html.erb</p>
+
+
+
+

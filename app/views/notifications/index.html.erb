@@ -7,7 +7,9 @@
     <tr>
       <th>Notificação</th>
       <th>Conteúdo</th>
-      <th>ID</th>
+      <% if current_user.role == 'administrator' %>
+      <th>Entidade interessda</th>
+      <% end %>
       <th colspan="4"></th>
     </tr>
  
@@ -15,7 +17,9 @@
       <tr>
         <td><%= notification.title %></td>
         <td><%= notification.content %></td>
-        <td><%= notification.group_id %></td>
+        <% if current_user.role == 'administrator' %>
+        <td><%= notification.interested_group %></td>
+        <% end %>
         <td><%= link_to 'Visualizar', notification_path(notification) %></td>
         <% if current_user.role == 'administrator' %>
         <td><%= link_to 'Remover', notification_path(notification), method: :delete %></td>
@@ -24,6 +28,7 @@
     <% end %>
   </table>  
 <% end %>
+<% if current_user.role == 'administrator' %>
 <td><%= link_to 'Criar Lista', new_notification_path, controller: 'notifications' %></td>
+<% end %>
 <td><%= link_to 'Voltar', home_index_path %></td>
-<p>Find me in app/views/notification/index.html.erb</p>

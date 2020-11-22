@@ -29,7 +29,7 @@ class NotificationsController < ApplicationController
   
     private
       def notification_params
-        params.require(:notification).permit(:title, :content, :group_id)
+        params.require(:notification).permit(:title, :content, :interested_group)
       end
   
     def show
