@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 2020_11_14_202425) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  # Cria tabela de Credenciamento
   create_table "accreditations", force: :cascade do |t|
     t.bigint "user_id"
     t.date "start_date"
@@ -47,6 +48,7 @@ ActiveRecord::Schema.define(version: 2020_11_14_202425) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  # Cria tabela de Requisitos
   create_table "requirements", force: :cascade do |t|
     t.string "title"
     t.text "content"
@@ -54,6 +56,7 @@ ActiveRecord::Schema.define(version: 2020_11_14_202425) do
     t.datetime "updated_at", null: false
   end
 
+  # Cria tabela de Processos Sei
   create_table "sei_processes", force: :cascade do |t|
     t.bigint "user_id"
     t.integer "status"

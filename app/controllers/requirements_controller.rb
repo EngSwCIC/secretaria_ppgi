@@ -24,6 +24,7 @@ class RequirementsController < ApplicationController
   # POST /requirements
   # POST /requirements.json
   def create
+    # Cria requisitos
     @requirement = Requirement.new(requirement_params)
     
     respond_to do |format|
@@ -38,6 +39,7 @@ class RequirementsController < ApplicationController
   end
 
   def delete_document_attachment
+    # Exclui documento anexado caso exista
     @document = ActiveStorage::Attachment.find_by(id: params[:id])
     @requirement_id = params[:requirement_id]
     @document&.purge
@@ -47,6 +49,7 @@ class RequirementsController < ApplicationController
   # PATCH/PUT /requirements/1
   # PATCH/PUT /requirements/1.json
   def update
+    # Atualiza requisitos caso exista
     respond_to do |format|
       if @requirement.update(requirement_params)
         format.html { redirect_to @requirement, notice: 'Requisitos atualizados com sucesso!' }
@@ -61,6 +64,7 @@ class RequirementsController < ApplicationController
   # DELETE /requirements/1
   # DELETE /requirements/1.json
   def destroy
+    # Exclui requisitos caso exista
     respond_to do |format|
       if @requirement.destroy
         format.html { redirect_to requirements_url, notice: 'Requisitos excluídos com sucesso!' }
@@ -73,7 +77,7 @@ class RequirementsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+    # Define parametros de Requisito
     def set_requirement
       @requirement = Requirement.find(params[:id])
     end

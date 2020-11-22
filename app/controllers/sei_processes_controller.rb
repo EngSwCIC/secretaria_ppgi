@@ -34,6 +34,7 @@ class SeiProcessesController < ApplicationController
   # POST /sei_processes
   # POST /sei_processes.json
   def create
+    #Cria Processo
     mandatory_params = {'user_id' => current_user.id, 'status' => 'Espera', 'code' => '0'}
     @sei_process = SeiProcess.new(sei_process_params.merge(mandatory_params))
 
@@ -51,6 +52,7 @@ class SeiProcessesController < ApplicationController
   # PATCH/PUT /sei_processes/1
   # PATCH/PUT /sei_processes/1.json
   def update
+    # Atualiza Processo caso exista
     respond_to do |format|
       if @sei_process.update(sei_process_params)
         format.html { redirect_to sei_processes_url, notice: 'Processo atualizado com sucesso!' }
@@ -70,6 +72,7 @@ class SeiProcessesController < ApplicationController
   # DELETE /sei_processes/1
   # DELETE /sei_processes/1.json
   def destroy
+    # Exclui Processo caso exista
     respond_to do |format|
       if @sei_process.destroy
         format.html { redirect_to sei_processes_url, notice: 'Processo excluído com sucesso!' }
@@ -82,7 +85,7 @@ class SeiProcessesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+    # Define parametros de Processo
     def set_sei_process
       @sei_process = SeiProcess.find(params[:id])
     end

@@ -32,6 +32,7 @@ class AccreditationsController < ApplicationController
   # PATCH/PUT /accreditations/1
   # PATCH/PUT /accreditations/1.json
   def update
+    # Atualiza o credenciamento caso exista
     respond_to do |format|
       if @accreditation.update(accreditation_params)
         format.html { redirect_to accreditations_url, notice: 'Credenciamento atualizado com sucesso!' }
@@ -46,6 +47,7 @@ class AccreditationsController < ApplicationController
   # DELETE /accreditations/1
   # DELETE /accreditations/1.json
   def destroy
+    # Exclui o credenciamento caso exista
     respond_to do |format|
       if @accreditation.destroy
         format.html { redirect_to accreditations_url, notice: 'Credenciamento excluído com sucesso!' }
@@ -58,11 +60,11 @@ class AccreditationsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+    # Define parametros de Credenciamento
     def set_accreditation
       @accreditation = Accreditation.find(params[:id])
     end
-
+    
     # Never trust parameters from the scary internet, only allow the white list through.
     def accreditation_params
       params.require(:accreditation).permit(:user_id, :start_date, :end_date, :sei_proccess_id)
