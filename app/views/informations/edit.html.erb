@@ -12,7 +12,7 @@
   <%= select :information, :source_id, @sources.map{|source| [source.name, source.id]} %>
   
   <%= submit_tag 'Enviar' %>
-  <%= link_to 'Voltar', home_index_path %>
+  <%= link_to 'Voltar', informations_path %>
 <% end %>
 
 

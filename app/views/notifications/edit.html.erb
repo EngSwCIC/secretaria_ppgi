@@ -1,5 +1,19 @@
-<h1>Notification#edit</h1>
+<h2>Editar notificação</h2>
+<%= form_tag notification_path(@notification), :method => :put do %>
+  <%= label :notification, :title, 'Título: ' %>
+  <%= text_field :notification, :title, :size=>100, :required => false%>
+  <%= simple_format("\n") %>
+  <%= label :notification, :content, 'Conteúdo: '%>
+  <%= simple_format("\n") %>
+  <%= text_area :notification, :content, :rows=>25, :cols=>100, :required => false%>
+  <%= simple_format("\n") %>
+  <%= label :notification, :interested_group, 'Entidade interessada: ' %>
+  <%= select :notification, :interested_group, ['Administrador', 'Secretário', 'Professor', 'Estudante'] %>
+  
+  <%= submit_tag 'Enviar' %>
+  <%= link_to 'Voltar', notifications_path %>
+<% end %>
 
-<%= @notification.name %>
+
 
 
