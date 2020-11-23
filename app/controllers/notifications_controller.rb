@@ -32,7 +32,7 @@ class NotificationsController < ApplicationController
       if @notification.save
         redirect_to notifications_path
       else
-        redirect_to new_notifications_path,alert:"Ocorreu um erro"
+        redirect_to new_notifications_path,alert:"Ocorreu um erro. Tente novamente."
   
       end  
     end

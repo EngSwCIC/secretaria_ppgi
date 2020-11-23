@@ -21,7 +21,7 @@ class InformationsController < ApplicationController
     if @information.save
       redirect_to informations_path
     else
-      redirect_to new_information_path,alert:"Ocorreu um erro"
+      redirect_to new_information_path,alert:"Ocorreu um erro. Tente novamente."
     end
     #redirect_to informations_path
   end

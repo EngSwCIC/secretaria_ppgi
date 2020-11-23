@@ -21,7 +21,7 @@ class SourcesController < ApplicationController
     if @source.save
       redirect_to sources_path
     else
-      redirect_to new_source_path,alert:"Ocorreu um erro"
+      redirect_to new_source_path,alert:"Ocorreu um erro. Tente novamente."
 
     end  
   end
