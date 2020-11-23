@@ -26,6 +26,7 @@ default: &default
 
 development:
   <<: *default
+  host: localhost
   database: secretaria_ppgi_development
   
   # The specified database role being used to connect to postgres.
