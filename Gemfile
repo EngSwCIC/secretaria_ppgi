@@ -36,6 +36,10 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 # Reduces boot times through caching; required in config/boot.rb
+#Documentation
+gem 'rdoc', '~> 4.2', '>= 4.2.2'
+#Coverage of tests
+gem 'simplecov', require: false, group: :test
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
