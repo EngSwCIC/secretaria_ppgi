@@ -62,3 +62,11 @@ Quando(/envio o arquivo "([^"]*)"/) do |arquivo|
    page.attach_file "Documento", File.join(Rails.root + "features/support/assets/", arquivo)
 end
   
+Quando(/eu for para a página da entry número "([^"]*)"/) do |numero|
+    URI.parse(current_url).path == wiki_entry_path(id: numero)
+
+end
+
+Então (/recebo que entidade "([^"]*)" não existe/) do |numero|
+   expect {visit wiki_entry_path(id: numero)}.to raise_exception(ActiveRecord::RecordNotFound)
+end

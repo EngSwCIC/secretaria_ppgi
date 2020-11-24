@@ -4,6 +4,7 @@
       "/home/nayara/Documentos/secretaria_ppgi/app/models/wiki_comment.rb": {
         "lines": [
           1,
+          null,
           1,
           1,
           null
@@ -23,6 +24,8 @@
       "/home/nayara/Documentos/secretaria_ppgi/app/models/wiki_entry.rb": {
         "lines": [
           1,
+          null,
+          null,
           1,
           1,
           1,
@@ -36,16 +39,17 @@
           1,
           null,
           1,
-          19,
+          null,
+          20,
           2,
           null,
           null,
           null
         ],
         "branches": {
-          "[:if, 0, 15, 8, 17, 11]": {
-            "[:then, 1, 16, 8, 16, 73]": 2,
-            "[:else, 2, 15, 8, 17, 11]": 17
+          "[:if, 0, 18, 8, 20, 11]": {
+            "[:then, 1, 19, 8, 19, 73]": 2,
+            "[:else, 2, 18, 8, 20, 11]": 18
           }
         }
       },
@@ -63,23 +67,6 @@
           null,
           null,
           1,
-          null
-        ],
-        "branches": {
-        }
-      },
-      "/home/nayara/Documentos/secretaria_ppgi/app/controllers/application_controller.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          null,
-          1,
-          null,
-          1,
-          31,
-          null,
           null
         ],
         "branches": {
@@ -125,7 +112,8 @@
           null,
           null,
           1,
-          9,
+          null,
+          10,
           null,
           null,
           null,
@@ -134,8 +122,8 @@
           null,
           null,
           null,
-          null,
           1,
+          null,
           4,
           null,
           null,
@@ -146,6 +134,7 @@
           null,
           null,
           1,
+          null,
           4,
           null,
           4,
@@ -162,6 +151,7 @@
           null,
           null,
           1,
+          null,
           4,
           4,
           4,
@@ -176,6 +166,7 @@
           null,
           null,
           1,
+          null,
           0,
           0,
           0,
@@ -186,23 +177,25 @@
           1,
           null,
           1,
-          16,
+          null,
+          17,
           null,
           null,
           null,
           1,
+          null,
           8,
           null,
           null
         ],
         "branches": {
-          "[:if, 0, 31, 6, 37, 9]": {
-            "[:then, 1, 32, 8, 33, 71]": 2,
-            "[:else, 2, 35, 8, 36, 81]": 2
+          "[:if, 0, 33, 6, 39, 9]": {
+            "[:then, 1, 34, 8, 35, 71]": 2,
+            "[:else, 2, 37, 8, 38, 81]": 2
           },
-          "[:if, 3, 45, 6, 51, 9]": {
-            "[:then, 4, 46, 8, 47, 66]": 2,
-            "[:else, 5, 49, 8, 50, 81]": 2
+          "[:if, 3, 48, 6, 54, 9]": {
+            "[:then, 4, 49, 8, 50, 66]": 2,
+            "[:else, 5, 52, 8, 53, 81]": 2
           }
         }
       },
@@ -215,6 +208,7 @@
           null,
           null,
           1,
+          null,
           0,
           null,
           null,
@@ -252,6 +246,7 @@
           null,
           null,
           1,
+          null,
           0,
           0,
           0,
@@ -276,49 +271,43 @@
           1,
           null,
           1,
+          null,
           0,
           null,
           null,
           null,
           1,
+          null,
           4,
           null,
           null,
           null,
           1,
+          null,
           2,
           null,
           null
         ],
         "branches": {
-          "[:if, 0, 32, 6, 38, 9]": {
-            "[:then, 1, 33, 8, 34, 74]": 1,
-            "[:else, 2, 36, 8, 37, 83]": 1
+          "[:if, 0, 33, 6, 39, 9]": {
+            "[:then, 1, 34, 8, 35, 74]": 1,
+            "[:else, 2, 37, 8, 38, 83]": 1
           },
-          "[:if, 3, 46, 6, 52, 9]": {
-            "[:then, 4, 47, 8, 48, 75]": 0,
-            "[:else, 5, 50, 8, 51, 83]": 0
+          "[:if, 3, 48, 6, 54, 9]": {
+            "[:then, 4, 49, 8, 50, 75]": 0,
+            "[:else, 5, 52, 8, 53, 83]": 0
           }
-        }
-      },
-      "/home/nayara/Documentos/secretaria_ppgi/app/controllers/home_controller.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          null
-        ],
-        "branches": {
         }
       }
     },
-    "timestamp": 1606177809
+    "timestamp": 1606241628
   },
   "RSpec": {
     "coverage": {
       "/home/nayara/Documentos/secretaria_ppgi/app/models/wiki_comment.rb": {
         "lines": [
           1,
+          null,
           1,
           1,
           null
@@ -338,6 +327,8 @@
       "/home/nayara/Documentos/secretaria_ppgi/app/models/wiki_entry.rb": {
         "lines": [
           1,
+          null,
+          null,
           1,
           1,
           1,
@@ -351,6 +342,7 @@
           1,
           null,
           1,
+          null,
           30,
           0,
           null,
@@ -358,9 +350,9 @@
           null
         ],
         "branches": {
-          "[:if, 0, 15, 8, 17, 11]": {
-            "[:then, 1, 16, 8, 16, 73]": 0,
-            "[:else, 2, 15, 8, 17, 11]": 30
+          "[:if, 0, 18, 8, 20, 11]": {
+            "[:then, 1, 19, 8, 19, 73]": 0,
+            "[:else, 2, 18, 8, 20, 11]": 30
           }
         }
       },
@@ -424,6 +416,7 @@
           null,
           null,
           1,
+          null,
           1,
           null,
           null,
@@ -461,6 +454,7 @@
           null,
           null,
           1,
+          null,
           3,
           3,
           4,
@@ -485,46 +479,32 @@
           1,
           null,
           1,
+          null,
           7,
           null,
           null,
           null,
           1,
+          null,
           5,
           null,
           null,
           null,
           1,
+          null,
           6,
           null,
           null
         ],
         "branches": {
-          "[:if, 0, 32, 6, 38, 9]": {
-            "[:then, 1, 33, 8, 34, 74]": 2,
-            "[:else, 2, 36, 8, 37, 83]": 1
+          "[:if, 0, 33, 6, 39, 9]": {
+            "[:then, 1, 34, 8, 35, 74]": 2,
+            "[:else, 2, 37, 8, 38, 83]": 1
           },
-          "[:if, 3, 46, 6, 52, 9]": {
-            "[:then, 4, 47, 8, 48, 75]": 2,
-            "[:else, 5, 50, 8, 51, 83]": 1
+          "[:if, 3, 48, 6, 54, 9]": {
+            "[:then, 4, 49, 8, 50, 75]": 2,
+            "[:else, 5, 52, 8, 53, 83]": 1
           }
-        }
-      },
-      "/home/nayara/Documentos/secretaria_ppgi/app/controllers/application_controller.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          null,
-          1,
-          null,
-          1,
-          0,
-          null,
-          null
-        ],
-        "branches": {
         }
       },
       "/home/nayara/Documentos/secretaria_ppgi/app/controllers/wiki_entries_controller.rb": {
@@ -535,10 +515,6 @@
           null,
           null,
           1,
-          1,
-          null,
-          null,
-          null,
           null,
           1,
           null,
@@ -546,6 +522,11 @@
           null,
           null,
           1,
+          null,
+          null,
+          null,
+          1,
+          null,
           1,
           null,
           null,
@@ -556,6 +537,7 @@
           null,
           null,
           1,
+          null,
           3,
           null,
           3,
@@ -572,6 +554,7 @@
           null,
           null,
           1,
+          null,
           3,
           3,
           4,
@@ -586,6 +569,7 @@
           null,
           null,
           1,
+          null,
           2,
           2,
           4,
@@ -596,37 +580,29 @@
           1,
           null,
           1,
+          null,
           7,
           null,
           null,
           null,
           1,
+          null,
           6,
           null,
           null
         ],
         "branches": {
-          "[:if, 0, 31, 6, 37, 9]": {
-            "[:then, 1, 32, 8, 33, 71]": 2,
-            "[:else, 2, 35, 8, 36, 81]": 1
+          "[:if, 0, 33, 6, 39, 9]": {
+            "[:then, 1, 34, 8, 35, 71]": 2,
+            "[:else, 2, 37, 8, 38, 81]": 1
           },
-          "[:if, 3, 45, 6, 51, 9]": {
-            "[:then, 4, 46, 8, 47, 66]": 2,
-            "[:else, 5, 49, 8, 50, 81]": 1
+          "[:if, 3, 48, 6, 54, 9]": {
+            "[:then, 4, 49, 8, 50, 66]": 2,
+            "[:else, 5, 52, 8, 53, 81]": 1
           }
-        }
-      },
-      "/home/nayara/Documentos/secretaria_ppgi/app/controllers/home_controller.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
         }
       }
     },
-    "timestamp": 1606178724
+    "timestamp": 1606241430
   }
 }
