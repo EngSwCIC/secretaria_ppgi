@@ -26,20 +26,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="371f7bda-8799-439a-8d9c-1781a1ce2f2d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/secretaria_ppgi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/secretaria_ppgi.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/application_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/application_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/home_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/home_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/helpers/application_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/application_helper.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/processo.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/processo.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/user.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/database.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/initializers/assets.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/initializers/assets.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/process_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/process_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/process/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/process/index.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -531,7 +521,7 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/secretaria_ppgi@db_migrate__secretaria_ppgi.rcov" NAME="db:migrate: secretaria_ppgi Coverage Results" MODIFIED="1605494051699" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="secretaria_ppgi" />
     <SUITE FILE_PATH="coverage/secretaria_ppgi@RequestType.rcov" NAME="RequestType Coverage Results" MODIFIED="1605497449780" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="secretaria_ppgi" />
-    <SUITE FILE_PATH="coverage/secretaria_ppgi@Development__secretaria_ppgi.rcov" NAME="Development: secretaria_ppgi Coverage Results" MODIFIED="1606106471832" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="secretaria_ppgi" />
+    <SUITE FILE_PATH="coverage/secretaria_ppgi@Development__secretaria_ppgi.rcov" NAME="Development: secretaria_ppgi Coverage Results" MODIFIED="1606175988685" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="secretaria_ppgi" />
     <SUITE FILE_PATH="coverage/secretaria_ppgi@RequestType_is_seeded_array___.rcov" NAME="RequestType is seeded array... Coverage Results" MODIFIED="1605933890681" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="secretaria_ppgi" />
     <SUITE FILE_PATH="coverage/secretaria_ppgi@db_seed__secretaria_ppgi.rcov" NAME="db:seed: secretaria_ppgi Coverage Results" MODIFIED="1605487649662" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="secretaria_ppgi" />
   </component>

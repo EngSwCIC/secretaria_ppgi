@@ -35,7 +35,7 @@
       <td><%= process['sei_process_code'] %></td>
       <td align="right"><%= process['process_status_id'] %></td>
       <td align="center">
-        <%= link_to fa_icon('trash').html_safe, "#{process['id']}", :method => :delete, :action => "delete", :id => process['id'], class: "delete_link"   %>
+        <%= link_to fa_icon('trash').html_safe, process_delete_path({:id => process['id']}), :method => :delete, :action => "delete", :id => process['id'], class: "delete_link"   %>
         <% end %>
       </td>
     </tr>

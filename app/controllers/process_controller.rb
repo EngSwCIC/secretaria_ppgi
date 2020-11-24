@@ -13,8 +13,8 @@ class ProcessController < ApplicationController
 
   def index
     if user_signed_in?
-      @user = current_user
-      reload_processes(@user)
+      user = current_user
+      reload_processes(user)
     end
   end
 
@@ -22,17 +22,19 @@ class ProcessController < ApplicationController
     if user_signed_in?
       user = current_user
       permitted_params = params.require(:processo).permit(:sei_process_code, :process_status_id, :documents)
-      process = user.processos.create(permitted_params)
+      user.processos.create(permitted_params)
       reload_processes(user)
+      redirect_to process_home_path
     end
   end
 
-  def delete
+  def destroy
     if user_signed_in?
       user = current_user
       permitted_params = params.permit(:id)
       user.processos.destroy(permitted_params[:id])
       reload_processes(user)
+      redirect_to process_home_path
     end
   end
 end
