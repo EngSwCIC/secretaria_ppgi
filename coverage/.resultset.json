@@ -1,0 +1,632 @@
+{
+  "Cucumber Features": {
+    "coverage": {
+      "/home/nayara/Documentos/secretaria_ppgi/app/models/wiki_comment.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ],
+        "branches": {
+        }
+      },
+      "/home/nayara/Documentos/secretaria_ppgi/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ],
+        "branches": {
+        }
+      },
+      "/home/nayara/Documentos/secretaria_ppgi/app/models/wiki_entry.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          19,
+          2,
+          null,
+          null,
+          null
+        ],
+        "branches": {
+          "[:if, 0, 15, 8, 17, 11]": {
+            "[:then, 1, 16, 8, 16, 73]": 2,
+            "[:else, 2, 15, 8, 17, 11]": 17
+          }
+        }
+      },
+      "/home/nayara/Documentos/secretaria_ppgi/app/models/user.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null
+        ],
+        "branches": {
+        }
+      },
+      "/home/nayara/Documentos/secretaria_ppgi/app/controllers/application_controller.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          31,
+          null,
+          null
+        ],
+        "branches": {
+        }
+      },
+      "/home/nayara/Documentos/secretaria_ppgi/app/helpers/application_helper.rb": {
+        "lines": [
+          1,
+          null
+        ],
+        "branches": {
+        }
+      },
+      "/home/nayara/Documentos/secretaria_ppgi/app/helpers/comentarios_helper.rb": {
+        "lines": [
+          1,
+          null
+        ],
+        "branches": {
+        }
+      },
+      "/home/nayara/Documentos/secretaria_ppgi/app/helpers/home_helper.rb": {
+        "lines": [
+          1,
+          null
+        ],
+        "branches": {
+        }
+      },
+      "/home/nayara/Documentos/secretaria_ppgi/app/helpers/wikis_helper.rb": {
+        "lines": [
+          1,
+          null
+        ],
+        "branches": {
+        }
+      },
+      "/home/nayara/Documentos/secretaria_ppgi/app/controllers/wiki_entries_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          9,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          4,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          4,
+          null,
+          4,
+          4,
+          4,
+          2,
+          null,
+          4,
+          2,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          4,
+          4,
+          4,
+          2,
+          null,
+          4,
+          2,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          16,
+          null,
+          null,
+          null,
+          1,
+          8,
+          null,
+          null
+        ],
+        "branches": {
+          "[:if, 0, 31, 6, 37, 9]": {
+            "[:then, 1, 32, 8, 33, 71]": 2,
+            "[:else, 2, 35, 8, 36, 81]": 2
+          },
+          "[:if, 3, 45, 6, 51, 9]": {
+            "[:then, 4, 46, 8, 47, 66]": 2,
+            "[:else, 5, 49, 8, 50, 81]": 2
+          }
+        }
+      },
+      "/home/nayara/Documentos/secretaria_ppgi/app/controllers/wiki_comments_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          2,
+          null,
+          2,
+          2,
+          2,
+          1,
+          null,
+          2,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          0,
+          null,
+          null,
+          null,
+          1,
+          4,
+          null,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null
+        ],
+        "branches": {
+          "[:if, 0, 32, 6, 38, 9]": {
+            "[:then, 1, 33, 8, 34, 74]": 1,
+            "[:else, 2, 36, 8, 37, 83]": 1
+          },
+          "[:if, 3, 46, 6, 52, 9]": {
+            "[:then, 4, 47, 8, 48, 75]": 0,
+            "[:else, 5, 50, 8, 51, 83]": 0
+          }
+        }
+      },
+      "/home/nayara/Documentos/secretaria_ppgi/app/controllers/home_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null
+        ],
+        "branches": {
+        }
+      }
+    },
+    "timestamp": 1606177809
+  },
+  "RSpec": {
+    "coverage": {
+      "/home/nayara/Documentos/secretaria_ppgi/app/models/wiki_comment.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ],
+        "branches": {
+        }
+      },
+      "/home/nayara/Documentos/secretaria_ppgi/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ],
+        "branches": {
+        }
+      },
+      "/home/nayara/Documentos/secretaria_ppgi/app/models/wiki_entry.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          30,
+          0,
+          null,
+          null,
+          null
+        ],
+        "branches": {
+          "[:if, 0, 15, 8, 17, 11]": {
+            "[:then, 1, 16, 8, 16, 73]": 0,
+            "[:else, 2, 15, 8, 17, 11]": 30
+          }
+        }
+      },
+      "/home/nayara/Documentos/secretaria_ppgi/app/models/user.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null
+        ],
+        "branches": {
+        }
+      },
+      "/home/nayara/Documentos/secretaria_ppgi/app/helpers/application_helper.rb": {
+        "lines": [
+          1,
+          null
+        ],
+        "branches": {
+        }
+      },
+      "/home/nayara/Documentos/secretaria_ppgi/app/helpers/comentarios_helper.rb": {
+        "lines": [
+          1,
+          null
+        ],
+        "branches": {
+        }
+      },
+      "/home/nayara/Documentos/secretaria_ppgi/app/helpers/home_helper.rb": {
+        "lines": [
+          1,
+          null
+        ],
+        "branches": {
+        }
+      },
+      "/home/nayara/Documentos/secretaria_ppgi/app/helpers/wikis_helper.rb": {
+        "lines": [
+          1,
+          null
+        ],
+        "branches": {
+        }
+      },
+      "/home/nayara/Documentos/secretaria_ppgi/app/controllers/wiki_comments_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          3,
+          null,
+          3,
+          3,
+          4,
+          2,
+          null,
+          2,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          3,
+          3,
+          4,
+          2,
+          null,
+          2,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          2,
+          2,
+          4,
+          2,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          7,
+          null,
+          null,
+          null,
+          1,
+          5,
+          null,
+          null,
+          null,
+          1,
+          6,
+          null,
+          null
+        ],
+        "branches": {
+          "[:if, 0, 32, 6, 38, 9]": {
+            "[:then, 1, 33, 8, 34, 74]": 2,
+            "[:else, 2, 36, 8, 37, 83]": 1
+          },
+          "[:if, 3, 46, 6, 52, 9]": {
+            "[:then, 4, 47, 8, 48, 75]": 2,
+            "[:else, 5, 50, 8, 51, 83]": 1
+          }
+        }
+      },
+      "/home/nayara/Documentos/secretaria_ppgi/app/controllers/application_controller.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          0,
+          null,
+          null
+        ],
+        "branches": {
+        }
+      },
+      "/home/nayara/Documentos/secretaria_ppgi/app/controllers/wiki_entries_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          3,
+          null,
+          3,
+          3,
+          4,
+          2,
+          null,
+          2,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          3,
+          3,
+          4,
+          2,
+          null,
+          2,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          2,
+          2,
+          4,
+          2,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          7,
+          null,
+          null,
+          null,
+          1,
+          6,
+          null,
+          null
+        ],
+        "branches": {
+          "[:if, 0, 31, 6, 37, 9]": {
+            "[:then, 1, 32, 8, 33, 71]": 2,
+            "[:else, 2, 35, 8, 36, 81]": 1
+          },
+          "[:if, 3, 45, 6, 51, 9]": {
+            "[:then, 4, 46, 8, 47, 66]": 2,
+            "[:else, 5, 49, 8, 50, 81]": 1
+          }
+        }
+      },
+      "/home/nayara/Documentos/secretaria_ppgi/app/controllers/home_controller.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      }
+    },
+    "timestamp": 1606178724
+  }
+}
