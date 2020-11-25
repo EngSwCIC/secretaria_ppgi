@@ -2,10 +2,11 @@ require 'rails_helper'
 
 RSpec.describe InformationsController, :type => :controller do
   render_views
+
   before :each do
     get :index
   end
-
+ 
   describe 'add new info' do
     it 'renders the New Information template' do
       get :new
