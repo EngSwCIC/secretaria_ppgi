@@ -29,15 +29,17 @@ class WikiCommentsController < ApplicationController
     #Método para a criação do comentário que faz a ligação da existencia desse comentário com uma Wikientry já criada, pois sem isso o comentário não pode existir
     @comment = WikiComment.new(comment_params.merge({entry: @entry}))
     #verifica se o comentario pode ser salvo e se sim renderiza a página da entry a qual o comentário pertence, caso contrário, retorna um erro
-    respond_to do |format|
+    # respond_to do |format|
       if @comment.save
-        format.html { redirect_to @comment.entry, notice: 'Comentário foi criado com sucesso.' }
-        format.json { render :show, status: :created, location: @comment }
+        redirect_to @comment.entry, notice:'Comentário foi criado com sucesso.'
+        # format.html { redirect_to @comment.entry, notice: 'Comentário foi criado com sucesso.' }
+        # format.json { render :show, status: :created, location: @comment }
       else
-        format.html { render :new }
-        format.json { render json: @comment.errors, status: :unprocessable_entity }
+        # format.html { render :new }
+        render :show
+        # format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
-    end
+    # end
   end
 
   # PATCH/PUT /comments/1

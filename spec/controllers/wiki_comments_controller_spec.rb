@@ -20,32 +20,49 @@ RSpec.describe WikiCommentsController, type: :controller do
   
   let!(:comment) { WikiComment.create!(valid_attributes) }
 
-  describe "GET #index" do
+  def sucresponde(metodo, parametros)
+    get metodo, params:parametros
+    
+  end
+
+  def delete_comment_on_id(comment_id)
+    delete :destroy, params: {id: comment_id}
+  end
+
+  def update_with_attributes(attributes)
+    put :update, params: {id: comment.id, wiki_comment: attributes}
+  end
+
+  shared_examples "receive_response" do |metodo, parametro|
     it "returns a success response" do
-      get :index, params:{wiki_entry_id: entry.id}
+
+      if(parametro== "wiki") then 
+        get metodo, params: {wiki_entry_id: entry.id}
+       
+      else
+        get metodo, params:{id: comment.id}
+      end
+      # get :index, params:{wiki_entry_id: entry.id}
       expect(response).to be_successful
     end
+
+  end
+
+  describe "GET #index" do
+    it_behaves_like 'receive_response', :index, "wiki"
   end
 
   describe "GET #show" do
-    it "returns a success response" do
-      get :show, params: {id: comment.id}
-      expect(response).to be_successful
-    end
+    it_behaves_like 'receive_response', :show, "comment"
+
   end
 
   describe "GET #new" do
-    it "returns a success response" do
-      get :new, params:{wiki_entry_id: entry.id}
-      expect(response).to be_successful
-    end
+    it_behaves_like 'receive_response', :new, "wiki"
   end
 
   describe "GET #edit" do
-    it "returns a success response" do
-      get :edit, params: {id: comment.id}
-      expect(response).to be_successful
-    end
+    it_behaves_like 'receive_response', :edit, "comment"
   end
 
   describe "POST #create" do
@@ -77,8 +94,7 @@ RSpec.describe WikiCommentsController, type: :controller do
       }
 
       it "updates the requested comment" do
-
-        put :update, params: {id: comment.id, wiki_comment: new_attributes}
+        update_with_attributes(new_attributes)
         comment.reload
         expect(comment.content).to eq(new_attributes[:content])
         expect(comment.entry).to eq(new_attributes[:entry])
@@ -86,6 +102,7 @@ RSpec.describe WikiCommentsController, type: :controller do
 
       it "redirects to the comment's entry" do
 
+        
         put :update, params: {id: comment.id, wiki_comment: new_attributes}
         expect(response).to redirect_to(comment.entry)
       end
@@ -93,8 +110,8 @@ RSpec.describe WikiCommentsController, type: :controller do
 
     context "with invalid params" do
       it "renders the edit page with an error" do
+        update_with_attributes(invalid_attributes)
 
-        put :update, params: {id: comment.id, wiki_comment: invalid_attributes}
         expect(response).to have_http_status(:ok)
       end
     end
@@ -103,12 +120,14 @@ RSpec.describe WikiCommentsController, type: :controller do
   describe "DELETE #destroy" do
     it "destroys the requested comment" do
       expect {
-        delete :destroy, params: {id: comment.id}
+        idCom= comment.id
+        delete_comment_on_id(idCom)
       }.to change(WikiComment, :count).by(-1)
     end
 
     it "redirects to the entry page" do
-      delete :destroy, params: {id: comment.id}
+      idCom= comment.id
+      delete_comment_on_id(idCom)
       expect(response).to redirect_to(entry)
     end
   end
