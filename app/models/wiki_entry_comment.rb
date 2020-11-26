@@ -1,0 +1,2 @@
+class WikiEntryComment < ApplicationRecord
+end
