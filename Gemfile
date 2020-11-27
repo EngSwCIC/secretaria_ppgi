@@ -76,3 +76,6 @@ gem 'active_storage_validations'
 
 # Optional, to use :dimension validator or :aspect_ratio validator
 gem 'mini_magick', '>= 4.9.5'
+
+# Ordena a lista pelo ABC Score em conformidade a Sprint 3
+gem 'flog'
