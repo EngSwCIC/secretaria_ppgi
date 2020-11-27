@@ -1,3 +1,4 @@
 class ProcessStatus < ApplicationRecord
-    validates :title, presence: true
+    validates :name, presence: true
+    validates :label, presence: true
 end

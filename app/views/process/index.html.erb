@@ -8,10 +8,10 @@
   </div>
   <div>
     <%= label_tag(:status_id, "Status do processo") %>
-    <%= f.select(:process_status_id, options_for_select([['Status 1', 1], ['Status 2', 2], ['Status 3', 3]], 1)) %>
+    <%= f.select(:process_status_id, options_for_select(@available_status, 1)) %>
   </div>
   <div>
-    <%= f.file_field :documents, multiple: true, name: "doc_[document]" %>
+    <%= f.file_field :document_files, multiple: true, accept: 'image/png,image/jpg,application/pdf' %>
   </div>
   <div>
 
@@ -33,7 +33,7 @@
   <% @processes.each do |process| %>
     <tr>
       <td><%= process['sei_process_code'] %></td>
-      <td align="right"><%= process['process_status_id'] %></td>
+      <td align="right"><%= @status[process['process_status_id']] %></td>
       <td align="center">
         <%= link_to fa_icon('trash').html_safe, process_delete_path({:id => process['id']}), :method => :delete, :action => "delete", :id => process['id'], class: "delete_link"   %>
         <% end %>
