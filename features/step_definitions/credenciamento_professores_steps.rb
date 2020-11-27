@@ -155,15 +155,12 @@ Quando /^eu escolho '([^']*)'$/ do |option|
     choose(option)
 end
 
-Quando /^eu marco os seguintes estados: (.*)$/ do |statuses|
+Quando /^eu marco apenas os seguintes estados: (.*)$/ do |statuses|
+    all("input[type=checkbox]").each do |checkbox|
+        checkbox.uncheck
+    end
     statuses.split(/,[ ]*/).each do |status|
         check("statuses[#{status}]")
-    end
-end
-
-Quando /^eu desmarco os seguintes estados: (.*)$/ do |statuses|
-    statuses.split(/,[ ]*/).each do |status|
-        uncheck("statuses[#{status}]")
     end
 end
 
@@ -177,12 +174,12 @@ end
 
 Quando /^eu seleciono uma data final (posterior|anterior) a data inicial$/ do |status|
     if status == 'posterior'
-        season = 5
+        date1 = Date.tomorrow.strftime("%Y-%0m-%0e")
     elsif status == 'anterior'
-        season = -5
+        date1 = Date.yesterday.strftime("%Y-%0m-%0e")
     end
-    date1 = (Date.current+season).strftime("%Y-%m-%e")
-    date2 = (Date.current).strftime("%Y-%m-%e")
+    date2 = Date.current.strftime("%Y-%0m-%0e")
+
     fill_in 'Data final', with: date1
     fill_in 'Data inicial', with: date2
 end

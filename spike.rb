@@ -1,6 +1,6 @@
 require 'date'
 
-datedate = Date.today.strftime("%Y-%m-%e")
+datedate = (Date.today+5).strftime("%Y-%0m-%0e")
 p datedate
 
 val0 = 0
