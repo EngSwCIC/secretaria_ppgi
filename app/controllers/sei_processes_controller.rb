@@ -4,13 +4,15 @@ class SeiProcessesController < ApplicationController
   # GET /sei_processes
   # GET /sei_processes.json
   def index
+    # Filtra solicitações baseadas nos estados marcados como visíveis
     @all_statuses = %w[Espera Aprovado Rejeitado]
-
     session[:statuses] = params[:statuses] || session[:statuses] || @all_statuses.zip([]).to_h
     @status_filter = session[:statuses].keys
-
+    
+    # Lista todas as solicitações de credenciamento para um administrador
     if current_user.role == "administrator"
       @sei_processes = SeiProcess.where(status: @status_filter)
+    # Lista as solicitações próprias para um professor
     else
       @my_processes = SeiProcess.where(user_id: current_user.id, status: @status_filter)
     end
@@ -23,6 +25,7 @@ class SeiProcessesController < ApplicationController
 
   # GET /sei_processes/new
   def new
+    # Renderiza Requisitos de Credenciamento, caso existam, na página de criação de processo ou de abrir solicitação de credenciamento
     @requirements = Requirement.find_by(title: 'Requisitos de Credenciamento')
     @sei_process = SeiProcess.new
   end
@@ -34,16 +37,16 @@ class SeiProcessesController < ApplicationController
   # POST /sei_processes
   # POST /sei_processes.json
   def create
-    # Cria Processo
-    # Se não for possível retorna erro
-    # Se for, retorna mensagem de sucesso
+    # Faz correções de entradas inválidas baseando-se nos dados do usuário logado
     mandatory_params = {'user_id' => current_user.id, 'status' => 'Espera', 'code' => '0'}
     @sei_process = SeiProcess.new(sei_process_params.merge(mandatory_params))
 
     respond_to do |format|
+      # Mensagem de sucesso ao criar processo ou abrir solicitação quando condições da model forem cumpridas
       if @sei_process.save
         format.html { redirect_to sei_processes_url, notice: 'Processo aberto com sucesso!' }
         format.json { render :index, status: :created, location: @sei_process }
+      # Mensagem de erro se condições da model não forem cumpridas
       else
         format.html { render :new }
         format.json { render json: @sei_process.errors, status: :unprocessable_entity }
@@ -54,18 +57,18 @@ class SeiProcessesController < ApplicationController
   # PATCH/PUT /sei_processes/1
   # PATCH/PUT /sei_processes/1.json
   def update
-    # Atualiza Processo caso exista
-    # Se não existir retorna erro
-    # Se existir retorna mensagem de sucesso
     respond_to do |format|
+      # Mensagem de sucesso ao atualizar processo ou solicitação quando condições da model forem cumpridas
       if @sei_process.update(sei_process_params)
         format.html { redirect_to sei_processes_url, notice: 'Processo atualizado com sucesso!' }
         format.json { render :index, status: :ok, location: @sei_process }
 
+        # Cria o credenciamento correspondente aa solicitação aprovada
         if @sei_process.status == 'Aprovado' && (Accreditation.find_by(sei_process: @sei_process.id) == nil)
           Accreditation.create!(user_id: @sei_process.user_id, sei_process_id: @sei_process.id)
         end
 
+      # Mensagem de erro se condições da model não forem cumpridas
       else
         format.html { render :edit }
         format.json { render json: @sei_process.errors, status: :unprocessable_entity }
@@ -75,14 +78,14 @@ class SeiProcessesController < ApplicationController
 
   # DELETE /sei_processes/1
   # DELETE /sei_processes/1.json
+  # Exclui Processo se condições da model forem cumpridas, mensagem de erro caso contrário
   def destroy
-    # Exclui Processo caso exista
-    # Se não existir retorna erro
-    # Se existir retorna mensagem de sucesso
     respond_to do |format|
+      # Mensagem de sucesso ao excluir processo ou solicitação quando condições da model forem cumpridas
       if @sei_process.destroy
         format.html { redirect_to sei_processes_url, notice: 'Processo excluído com sucesso!' }
         format.json { head :no_content }
+      # Mensagem de erro se condições da model não forem cumpridas
       else
         format.html { redirect_to sei_processes_url, notice: 'Erro: não foi possível excluir o processo!' }
         format.json { head :no_content }

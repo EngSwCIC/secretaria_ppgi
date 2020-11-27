@@ -26,7 +26,7 @@ Funcionalidade: Gerenciar solicitações de credenciamento
         E eu aperto 'Atualizar'
         Então eu devo ver "Dave"
 
-    Cenário: Aceitar uma solicitação e encontrar o credenciamento correspondente
+    Cenário: Encontrar um credenciamento correspondente a uma solicitação aprovada
         Quando eu escolho avaliar "Alvin"
         E eu escolho 'Aprovado'
         E eu aperto 'Enviar'
@@ -42,7 +42,7 @@ Funcionalidade: Gerenciar solicitações de credenciamento
         E eu aperto 'Atualizar'
         Então eu devo ver "Simon"
 
-    Cenário: Recusar uma solicitação e não encontrar o credenciamento correspondente
+    Cenário: Não encontrar um credenciamento correspondente a uma solicitação rejeitada
         Quando eu escolho avaliar "Theodore"
         E eu escolho 'Rejeitado'
         E eu aperto 'Enviar'
