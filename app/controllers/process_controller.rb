@@ -17,7 +17,6 @@ class ProcessController < ApplicationController
       @available_status.append([status.label, status.id])
       @status[status.id] = status.label
     end
-    puts(@status)
   end
 
   def index
@@ -29,7 +28,14 @@ class ProcessController < ApplicationController
     else
       redirect_to home_path
     end
+  end
 
+  def show
+    if user_signed_in?
+      load_status
+      permitted_params = params.permit(:id)
+      @process = current_user.processos.find(permitted_params[:id])
+    end
   end
 
   def create
@@ -47,7 +53,14 @@ class ProcessController < ApplicationController
     else
       redirect_to home_path
     end
+  end
 
+  def serve
+    if user_signed_in?
+      permitted_params = params.permit(:process_id, :document_id)
+      @doc = user.processos.find(permitted_params).documents.find(document_id)
+      send_data(@doc.data, :type => @doc.mime_type, :filename => @doc.filename, :disposition => "inline")
+    end
   end
 
   def destroy

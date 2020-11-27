@@ -32,7 +32,7 @@
   <tbody>
   <% @processes.each do |process| %>
     <tr>
-      <td><%= process['sei_process_code'] %></td>
+      <td><%= link_to process['sei_process_code'], process_show_path({:id => process['id']}) %></td>
       <td align="right"><%= @status[process['process_status_id']] %></td>
       <td align="center">
         <%= link_to fa_icon('trash').html_safe, process_delete_path({:id => process['id']}), :method => :delete, :action => "delete", :id => process['id'], class: "delete_link"   %>
