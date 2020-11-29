@@ -9,20 +9,19 @@ Feature: User actions
 	I would like to see interests activities
 
 	Background: User logged in
-		Given I am on the '/' page and clik on 'Entrar'
+		Given I am on the '/' page and click on 'Entrar'
 		And I fill in 'email' with 'student@student.com'
 		And I fill in 'password' with 'admin123'
-		When I press 'Log in'
+		When I click on 'Log in'
 		Then I should be on '/'
 
 	Scenario: See Activities page
 		Given I am on the 'activities' page
-		When I check 'teste aluno'
-		And I press 'Marcar interesse'
-		Then I should be on 'activities' page
+		When I click on 'Minhas atividades'
+		Then I should be on '/user_activities' page
 
-	Scenario: See Calendar page
+	Scenario: See Error page
 		Given I am on the 'activities' page
-		When I check 'Mostrar apenas minhas atividades de interesse'
-		Then I should see on 'activities' page only 'interests activities'
+		When I click on 'Minhas atividades'
+		Then I should be on '/404' page
 		

@@ -1,4 +1,4 @@
-Given("I am on the {string} page and clik on {string}") do |string1, string2|
+Given("I am on the {string} page and click on {string}") do |string1, string2|
     visit string1
     click_on string2
   end
@@ -11,7 +11,7 @@ And("I fill in 'password' with {string}") do |string|
     fill_in 'Password', with: string
 end
 
-And("I press {string}") do |string|
+And("I click on {string}") do |string|
     click_on string
 end
     
@@ -24,7 +24,7 @@ Given("I am on the {string} page") do |string|
 end
 
 Then("I should be on {string} page") do |string|
-    visit "localhost:3000/#{string.downcase}"
+    visit string.downcase
 end
   
 When("I check {string}") do |string|
