@@ -1,4 +1,5 @@
 class WikiCommentsController < ApplicationController
+  #comentarios de cada entry
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
   before_action :set_entry, only:[:index, :new, :create]
 
@@ -29,31 +30,21 @@ class WikiCommentsController < ApplicationController
     #Método para a criação do comentário que faz a ligação da existencia desse comentário com uma Wikientry já criada, pois sem isso o comentário não pode existir
     @comment = WikiComment.new(comment_params.merge({entry: @entry}))
     #verifica se o comentario pode ser salvo e se sim renderiza a página da entry a qual o comentário pertence, caso contrário, retorna um erro
-    # respond_to do |format|
-      if @comment.save
-        redirect_to @comment.entry, notice:'Comentário foi criado com sucesso.'
-        # format.html { redirect_to @comment.entry, notice: 'Comentário foi criado com sucesso.' }
-        # format.json { render :show, status: :created, location: @comment }
-      else
-        # format.html { render :new }
-        render :show
-        # format.json { render json: @comment.errors, status: :unprocessable_entity }
-      end
-    # end
+    if @comment.save
+      redirect_to @comment.entry, notice:'Comentário foi criado com sucesso.'
+    else
+      render :new
+    end
   end
 
   # PATCH/PUT /comments/1
   # PATCH/PUT /comments/1.json
   def update
     #Método que permite a atualização de um comentário. Esse método não está sendo utilizado no momento.
-    respond_to do |format|
-      if @comment.update(comment_params)
-        format.html { redirect_to @comment.entry, notice: 'Comentário foi editado com sucesso.' }
-        format.json { render :show, status: :ok, location: @comment.entry }
-      else
-        format.html { render :edit }
-        format.json { render json: @comment.errors, status: :unprocessable_entity }
-      end
+    if @comment.update(comment_params)
+      redirect_to @comment.entry, notice: 'Comentário foi editado com sucesso.'
+    else
+      render :edit
     end
   end
 
@@ -61,10 +52,7 @@ class WikiCommentsController < ApplicationController
   # DELETE /comments/1.json
   def destroy
     @comment.destroy
-    respond_to do |format|
-      format.html { redirect_to @comment.entry, notice: 'Comentário foi excluído com sucesso.' }
-      format.json { head :no_content }
-    end
+    redirect_to @comment.entry, notice: 'Comentário foi excluído com sucesso.' 
   end
 
   private

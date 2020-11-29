@@ -29,29 +29,22 @@ class WikiEntriesController < ApplicationController
     #O Método create é chamado após preencher o form de criação e popula as informaçoes.
     @entry= WikiEntry.new(entry_params)
     #Se houver erros na hora da criação retorna um aviso de erros. Não preencher o título por exemplo causa um erro. De outra forma ele leva para a página de show e avisa que a página foi criada com sucesso
-    respond_to do |format|
-      if @entry.save
-        format.html { redirect_to @entry, notice: 'Página foi criada com sucesso!' }
-        format.json { render :show, status: :created, location: @entry}
-      else
-        format.html { render :new}
-        format.json { render json: @entry.errors, status: :unprocessable_entity }
-      end
+    if @entry.save
+      redirect_to @entry, notice: 'Página foi criada com sucesso!'
+    else
+      render :new
     end
+    #end
   end
 
   # PATCH/PUT /wikis/1
   # PATCH/PUT /wikis/1.json
   def update
     #Utilizado para atualizar parte ou todos os campos da entity cuja id é passada pelo metodo http, similarmente à create ele retorna erros caso o objeto não possa ser criado
-    respond_to do |format|
-      if @entry.update(entry_params)
-        format.html { redirect_to @entry, notice: 'Página foi criada com sucesso!' }
-        format.json { render :show, status: :ok, location: @entry}
-      else
-        format.html { render :edit }
-        format.json { render json: @entry.errors, status: :unprocessable_entity }
-      end
+    if @entry.update(entry_params)
+      redirect_to @entry, notice: 'Página foi criada com sucesso!'
+    else
+      render :edit 
     end
   end
 
@@ -60,10 +53,7 @@ class WikiEntriesController < ApplicationController
   def destroy
     #método para excluir um objeto da tabela
     @entry.destroy
-    respond_to do |format|
-      format.html { redirect_to wiki_entries_url, notice: 'Wiki was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to wiki_entries_url, notice: 'Wiki was successfully destroyed.' 
   end
 
   private
