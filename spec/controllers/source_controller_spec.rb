@@ -37,4 +37,38 @@ let(:invalid_attributes) { {name: nil} }
     end      
   end
 
+  describe "show information" do
+    it "shows information source" do
+      source = Source.create(:name => 's')
+      get :show, params: {id: source.id}
+      expect(response).to have_http_status(:ok)
+    end
+  end
+
+  describe "destroy information source" do
+    it "removes information source from the database" do
+      source = Source.create(:name => 's')
+      expect(Source.all).not_to be_empty
+      delete :destroy, params: {id: source.id}
+      expect(Source.all).to be_empty     
+    end
+  end
+
+  describe "edit information source" do
+    it "renders the template for editing information source with current information source data" do
+      source = Source.create(:name => 's')
+      get :edit, params: {id: source.id}
+      expect(response).to have_http_status(:ok)
+    end
+  end
+
+  describe "update information source" do
+    it "updates information source in the database with new data" do
+      source = Source.create(:name => 's')
+      new_source = Source.new(:name => 'ss')
+      put :update, params: {id: source.id, :source => new_source.attributes}
+      expect(response).to redirect_to(source)
+    end
+  end
+
 end

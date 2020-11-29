@@ -4,7 +4,7 @@ RSpec.describe 'InformationControler' do
     describe 'viewing available information by source'do
         it 'from all sources'do
             click_link('Informações')
-            collection_select('Todas')
+            collection_select('Selecione uma fonte')
             click_link('Filtrar')
             expect(page).to have_content('Todas Infomações')
         end

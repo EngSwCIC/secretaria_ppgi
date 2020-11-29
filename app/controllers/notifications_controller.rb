@@ -1,4 +1,5 @@
 class NotificationsController < ApplicationController
+  
     def index
       if current_user.role == 'administrator'
         @notifications = Notification.all

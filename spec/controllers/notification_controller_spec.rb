@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe ListController do
+describe NotificationsController do
   describe 'create a new list' do
     it 'renders the New Information template'
     it 'fills the template with new information data and sends it to the server'
@@ -19,4 +19,6 @@ describe ListController do
     it 'calls the controller method that performs information content validation'
     it 'renders the New Information template with an error message'
   end
+
+  
 end

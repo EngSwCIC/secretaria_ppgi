@@ -8,7 +8,7 @@
   <%= @information.content %>
 </p>
 
-<% if current_user.role == 'administrator' %>
+<% if !current_user.nil? and current_user.role == 'administrator' %>
   <%= link_to 'Editar', edit_information_path(@information) %>
 <% end %> 
 
