@@ -48,7 +48,7 @@ class InformationsController < ApplicationController
     @information.update_attributes!(information_params)
     flash[:notice] = "Informação atualizada."
     redirect_to information_path(@information)
-  end
+    end
     
 
   private

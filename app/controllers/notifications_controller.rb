@@ -1,13 +1,13 @@
 class NotificationsController < ApplicationController
   
     def index
-      if current_user.role == 'administrator'
+      if !current_user.nil? and current_user.role == 'administrator'
         @notifications = Notification.all
-      elsif current_user.role == 'secretary'
+      elsif !current_user.nil? and current_user.role == 'secretary'
         @notifications = Notification.where(interested_group: 'Secretário')
-      elsif current_user.role == 'professor'
+      elsif !current_user.nil? and current_user.role == 'professor'
         @notifications = Notification.where(interested_group: 'Professor')
-      elsif current_user.role == 'student'
+      elsif !current_user.nil? and current_user.role == 'student'
         @notifications = Notification.where(interested_group: 'Estudante')
       end
 
@@ -33,7 +33,7 @@ class NotificationsController < ApplicationController
       if @notification.save
         redirect_to notifications_path
       else
-        redirect_to new_notifications_path,alert:"Ocorreu um erro. Tente novamente."
+        redirect_to new_notification_path,alert:"Ocorreu um erro. Tente novamente."
   
       end  
     end

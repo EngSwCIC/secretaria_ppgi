@@ -4,7 +4,8 @@ RSpec.describe InformationsController, :type => :controller do
   render_views
 
   before :each do
-    get :index
+    @user = create(:user)
+    sign_in @user
   end
  
   describe 'add new info' do
@@ -41,6 +42,7 @@ RSpec.describe InformationsController, :type => :controller do
     end
     
     it 'renders the New Information template with an error message' do
+      get :index
       information = Information.create(:title => 'title', :content => 'content', :source_id => '1')
       information2 = Information.create(:title => 'title', :content => 'content', :source_id => '1')
       expect(response.body).to match /<p class="alert">/im

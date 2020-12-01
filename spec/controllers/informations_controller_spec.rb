@@ -4,8 +4,8 @@ RSpec.describe InformationsController, :type => :controller do
   render_views
 
   before :each do
-    current_user = create(:user)
-    sign_in current_user
+    @user = create(:user)
+    sign_in @user
   end
 
   describe "GET index" do
