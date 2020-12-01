@@ -1,3 +1,4 @@
+<% if !current_user.nil? and current_user.role == 'administrator' %>
 <h2>Editar notificação</h2>
 <%= form_tag notification_path(@notification), :method => :put do %>
   <%= label :notification, :title, 'Título: ' %>
@@ -12,6 +13,9 @@
   
   <%= submit_tag 'Enviar' %>
   <%= link_to 'Voltar', notifications_path %>
+<% end %>
+<% else %>
+<h2>Acesso Negado</h2>
 <% end %>
 
 

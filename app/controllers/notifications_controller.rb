@@ -1,17 +1,14 @@
 class NotificationsController < ApplicationController
   
     def index
-      if !current_user.nil? and current_user.role == 'administrator'
         @notifications = Notification.all
-      elsif !current_user.nil? and current_user.role == 'secretary'
+      if current_user.role == 'secretary'
         @notifications = Notification.where(interested_group: 'Secretário')
-      elsif !current_user.nil? and current_user.role == 'professor'
+      elsif current_user.role == 'professor'
         @notifications = Notification.where(interested_group: 'Professor')
-      elsif !current_user.nil? and current_user.role == 'student'
+      elsif current_user.role == 'student'
         @notifications = Notification.where(interested_group: 'Estudante')
       end
-
-
     end
     
     def new
