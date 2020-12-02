@@ -14,7 +14,7 @@ Scenario: Add new information (happy path)
     
     When I fill the new information form with some information not yet registered
     And I click "Publicar informação"
-    Then I should go to the "SecretairiaPpgi informations page"
+    Then I should go to the "SecretariaPpgi informations page"
     And I should see published the information I just recently added
 
 Scenario: Add information that has already been added (sad path)

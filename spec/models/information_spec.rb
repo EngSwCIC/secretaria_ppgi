@@ -8,7 +8,7 @@ RSpec.describe Information, type: :model do
   end
 
   it "has one after adding one" do
-    Information.create
+    information = Information.create(:title => 'title', :content => 'content', :source_id => '1')
     expect(Information.count).to eq 1
   end
 

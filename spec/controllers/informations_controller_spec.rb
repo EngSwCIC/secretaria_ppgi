@@ -81,6 +81,17 @@ RSpec.describe InformationsController, :type => :controller do
     end
   end
 
+  describe "filter information by source" do
+    it "displays only informations posted by the selected source" do
+      information = Information.create(:title => 'title', :content => 'content', :source_id => '1')
+      information2 = Information.create(:title => 'title2', :content => 'content2', :source_id => '2')
+      get :index, params: {:information => {:source_id => '1'}}
+      expect(response).to have_http_status(:ok)
+      expect(response.body).to match /<td>title/im
+      expect(response.body).not_to match /<td>title2/im
+    end
+  end
+
   
 
 end
