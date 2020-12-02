@@ -1,4 +1,4 @@
-# GRUPO 1 - Sprint 2
+## GRUPO 1 - Sprint 3
 
 * Carlos Eduardo de Sousa - 160057701
 * Edilton Costa Alves - 170002365
@@ -6,10 +6,10 @@
 * Estevam Galvão Albuquerque - 160005663
 * Kalley Wilkerson Rodrigues Alexandre - 170038050
 
-
+&nbsp;
 ## NOME DO PROJETO
 #### Calendário de atividades - secretaria-ppgi
-
+&nbsp;
 ## ESCOPO DO PROJETO
 * Teste para cadastro de atividade e seu prazo de execução;
 * Teste para inclusão de pessoas interessadas em cada atividade;
@@ -17,14 +17,21 @@
 * Teste para visualização de atividades cadastradas;
 * Teste para visualização de atividades de interesse.
 
-
+&nbsp;
 ## ATRIBUIÇÕES
 
-### Scrum Master
-#### Carlos Eduardo de Sousa - 160057701
+#### Scrum Master
+ * Carlos Eduardo de Sousa - 160057701
 
-### Product Owner
-#### Kalley Wilkerson Rodrigues Alexandre - 170038050
+#### Product Owner
+* Kalley Wilkerson Rodrigues Alexandre - 170038050
 
-## Problemas
-Não foi possível fazer uma boa verificação se o usuário logado é administrador ou não à tempo, a execução do cucumber não permite o acesso a dados da sessão. Portanto, o método que a gente criou que fazia essa verificação, por mais que funcionasse como esperado na execução normal da aplicação, não funcionava nos testes.
+&nbsp;
+## Tabela Comparativa
+&nbsp;
+|    |      Antes da refatoração      |  Depois da refatoração |
+|----------|:-------------:|------:|
+| Code 1 |   |  |
+| Code 2 |       |    |
+| Code 3 |  |     |
+
