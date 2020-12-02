@@ -2,28 +2,30 @@ class RequirementsController < ApplicationController
   before_action :set_requirement, only: [:show, :edit, :update, :destroy]
 
   # GET /requirements
-  # GET /requirements.json
+  # Lista os requisitos criados
   def index
     # Lista todos os tipos de requisitos criados
     @requirements = Requirement.all
   end
 
   # GET /requirements/1
-  # GET /requirements/1.json
+  # Mostra detalhes de um registro criado
   def show
   end
 
   # GET /requirements/new
+  # Renderiza página para criação de umm registro
   def new
     @requirement = Requirement.new
   end
 
   # GET /requirements/1/edit
+  # Renderiza página para atualizar um registro
   def edit
   end
 
   # POST /requirements
-  # POST /requirements.json
+  # Faz o tratamento dos dados enviados pelo usuário para decidir se o registro é válido ou não
   def create
     @requirement = Requirement.new(requirement_params)
     
@@ -49,7 +51,7 @@ class RequirementsController < ApplicationController
   end
 
   # PATCH/PUT /requirements/1
-  # PATCH/PUT /requirements/1.json
+  # Faz o tratamento dos dados modificados pelo usuário para decidir se a modificação é válida ou não
   def update
     respond_to do |format|
       # Mensagem de sucesso ao atualizar requisitos quando condições da model forem cumpridas
@@ -65,7 +67,7 @@ class RequirementsController < ApplicationController
   end
 
   # DELETE /requirements/1
-  # DELETE /requirements/1.json
+  # Decide se a exclusão do registro é válida ou não
   def destroy
     respond_to do |format|
       # Mensagem de sucesso ao excluir requisitos quando condições da model forem cumpridas

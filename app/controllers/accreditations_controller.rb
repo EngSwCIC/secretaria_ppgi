@@ -2,7 +2,7 @@ class AccreditationsController < ApplicationController
   before_action :set_accreditation, only: [:show, :edit, :update, :destroy]
 
   # GET /accreditations
-  # GET /accreditations.json
+  # Lista os credenciamentos criados
   def index
     # Lista todas os credenciamentos para um administrador
     if current_user.role == "administrator"
@@ -14,27 +14,17 @@ class AccreditationsController < ApplicationController
   end
 
   # GET /accreditations/1
-  # GET /accreditations/1.json
+  # Mostra detalhes de um registro criado
   def show
   end
 
-  # GET /accreditations/new
-  def new
-    # Não há view para new, pois o processo de criação é feita em sei_processes_controller
-  end
-
   # GET /accreditations/1/edit
+  # Renderiza página para atualizar um registro
   def edit
   end
 
-  # POST /accreditations
-  # POST /accreditations.json
-  def create
-    # O processo de criação de credenciamento é feita em sei_processes_controller
-  end
-
   # PATCH/PUT /accreditations/1
-  # PATCH/PUT /accreditations/1.json
+  # Faz o tratamento dos dados modificados pelo usuário para decidir se a modificação é válida ou não
   def update
     respond_to do |format|
       # Mensagem de sucesso ao atualizar credenciamento quando condições da model forem cumpridas
@@ -50,7 +40,7 @@ class AccreditationsController < ApplicationController
   end
 
   # DELETE /accreditations/1
-  # DELETE /accreditations/1.json
+  # Decide se a exclusão do registro é válida ou não
   def destroy
     respond_to do |format|
       # Mensagem de sucesso ao excluir o credenciamento quando condições da model forem cumpridas

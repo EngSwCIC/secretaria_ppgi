@@ -2,7 +2,7 @@ class SeiProcessesController < ApplicationController
   before_action :set_sei_process, only: [:show, :edit, :update, :destroy]
 
   # GET /sei_processes
-  # GET /sei_processes.json
+  # Lista os processos e solicitações criados
   def index
     # Filtra solicitações baseadas nos estados marcados como visíveis
     @all_statuses = SeiProcess.all_statuses
@@ -19,11 +19,12 @@ class SeiProcessesController < ApplicationController
   end
 
   # GET /sei_processes/1
-  # GET /sei_processes/1.json
+  # Mostra detalhes de um registro criado
   def show
   end
 
   # GET /sei_processes/new
+  # Renderiza página para criação de umm registro
   def new
     # Renderiza Requisitos de Credenciamento, caso existam, na página de criação de processo ou de abrir solicitação de credenciamento
     @requirements = Requirement.find_by(title: 'Requisitos de Credenciamento')
@@ -31,11 +32,12 @@ class SeiProcessesController < ApplicationController
   end
 
   # GET /sei_processes/1/edit
+  # Renderiza página para atualizar um registro
   def edit
   end
 
   # POST /sei_processes
-  # POST /sei_processes.json
+  # Faz o tratamento dos dados enviados pelo usuário para decidir se o registro é válido ou não
   def create
     # Faz correções de entradas inválidas baseando-se nos dados do usuário logado
     mandatory_params = {'user_id' => current_user.id, 'status' => 'Espera', 'code' => '0'}
@@ -55,7 +57,7 @@ class SeiProcessesController < ApplicationController
   end
 
   # PATCH/PUT /sei_processes/1
-  # PATCH/PUT /sei_processes/1.json
+  # Faz o tratamento dos dados modificados pelo usuário para decidir se a modificação é válida ou não
   def update
     respond_to do |format|
       # Mensagem de sucesso ao atualizar processo ou solicitação quando condições da model forem cumpridas
@@ -77,7 +79,7 @@ class SeiProcessesController < ApplicationController
   end
 
   # DELETE /sei_processes/1
-  # DELETE /sei_processes/1.json
+  # Decide se a exclusão do registro é válida ou não
   def destroy
     respond_to do |format|
       # Mensagem de sucesso ao excluir processo ou solicitação quando condições da model forem cumpridas
