@@ -5,7 +5,7 @@ class SeiProcessesController < ApplicationController
   # GET /sei_processes.json
   def index
     # Filtra solicitações baseadas nos estados marcados como visíveis
-    @all_statuses = %w[Espera Aprovado Rejeitado]
+    @all_statuses = SeiProcess.all_statuses
     session[:statuses] = params[:statuses] || session[:statuses] || @all_statuses.zip([]).to_h
     @status_filter = session[:statuses].keys
     
@@ -78,7 +78,6 @@ class SeiProcessesController < ApplicationController
 
   # DELETE /sei_processes/1
   # DELETE /sei_processes/1.json
-  # Exclui Processo se condições da model forem cumpridas, mensagem de erro caso contrário
   def destroy
     respond_to do |format|
       # Mensagem de sucesso ao excluir processo ou solicitação quando condições da model forem cumpridas

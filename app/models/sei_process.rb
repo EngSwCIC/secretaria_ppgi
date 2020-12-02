@@ -8,6 +8,10 @@ class SeiProcess < ApplicationRecord
     Aprovado: 1,
     Rejeitado: 2
   }
+  # Lista os status possíveis para os registros
+  def self.all_statuses
+    %w[Espera Aprovado Rejeitado]
+  end
 
   # Define se usuário atual está logado e se é administrador do sistema
   def current_user_is_admin
