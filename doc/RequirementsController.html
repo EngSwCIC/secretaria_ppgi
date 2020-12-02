@@ -136,25 +136,23 @@
 
         <div class="method-description">
           
-          <p>POST /requirements POST /requirements.json</p>
+          <p>POST /requirements Faz o tratamento dos dados enviados pelo usuário para decidir se o registro é válido ou não</p>
           
           
 
           
           <div class="method-source-code" id="create-source">
-            <pre><span class="ruby-comment"># File app/controllers/requirements_controller.rb, line 27</span>
+            <pre><span class="ruby-comment"># File app/controllers/requirements_controller.rb, line 29</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">create</span>
   <span class="ruby-ivar">@requirement</span> = <span class="ruby-constant">Requirement</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">requirement_params</span>)
   
   <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
-    <span class="ruby-comment"># Mensagem de sucesso ao criar requisitos quando condições da model forem cumpridas</span>
+    <span class="ruby-comment"># Quando condições da model forem cumpridas, cria um novo registro no banco, redireciona para pagina index da entidade atual e mostra uma mensagem de sucesso</span>
     <span class="ruby-keyword">if</span> <span class="ruby-ivar">@requirement</span>.<span class="ruby-identifier">save</span>
       <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">redirect_to</span> <span class="ruby-ivar">@requirement</span>, <span class="ruby-value">notice:</span> <span class="ruby-string">&#39;Requisitos criados com sucesso!&#39;</span> }
-      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span> { <span class="ruby-identifier">render</span> <span class="ruby-value">:show</span>, <span class="ruby-value">status:</span> <span class="ruby-value">:created</span>, <span class="ruby-value">location:</span> <span class="ruby-ivar">@requirement</span> }
-    <span class="ruby-comment"># Mensagem de erro se condições da model não forem cumpridas</span>
+    <span class="ruby-comment"># Mostra uma mensagem de erro se condições da model não forem cumpridas</span>
     <span class="ruby-keyword">else</span>
       <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">render</span> <span class="ruby-value">:new</span> }
-      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span> { <span class="ruby-identifier">render</span> <span class="ruby-value">json:</span> <span class="ruby-ivar">@requirement</span>.<span class="ruby-identifier">errors</span>, <span class="ruby-value">status:</span> <span class="ruby-value">:unprocessable_entity</span> }
     <span class="ruby-keyword">end</span>
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
@@ -217,23 +215,21 @@
 
         <div class="method-description">
           
-          <p>DELETE /requirements/1 DELETE /requirements/1.json</p>
+          <p>DELETE /requirements/1 Decide se a exclusão do registro é válida ou não</p>
           
           
 
           
           <div class="method-source-code" id="destroy-source">
-            <pre><span class="ruby-comment"># File app/controllers/requirements_controller.rb, line 69</span>
+            <pre><span class="ruby-comment"># File app/controllers/requirements_controller.rb, line 67</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">destroy</span>
   <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
     <span class="ruby-comment"># Mensagem de sucesso ao excluir requisitos quando condições da model forem cumpridas</span>
     <span class="ruby-keyword">if</span> <span class="ruby-ivar">@requirement</span>.<span class="ruby-identifier">destroy</span>
       <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">requirements_url</span>, <span class="ruby-value">notice:</span> <span class="ruby-string">&#39;Requisitos excluídos com sucesso!&#39;</span> }
-      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span> { <span class="ruby-identifier">head</span> <span class="ruby-value">:no_content</span> }
     <span class="ruby-comment"># Mensagem de erro se condições da model não forem cumpridas</span>
     <span class="ruby-keyword">else</span>
       <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">requirements_url</span>, <span class="ruby-value">notice:</span> <span class="ruby-string">&#39;Erro: não foi possível excluir os requisitos!&#39;</span> }
-      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span> { <span class="ruby-identifier">head</span> <span class="ruby-value">:no_content</span> }
     <span class="ruby-keyword">end</span>
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
@@ -260,13 +256,13 @@
 
         <div class="method-description">
           
-          <p>GET /requirements/1/edit</p>
+          <p>GET /requirements/1/edit Renderiza página para atualizar um registro</p>
           
           
 
           
           <div class="method-source-code" id="edit-source">
-            <pre><span class="ruby-comment"># File app/controllers/requirements_controller.rb, line 22</span>
+            <pre><span class="ruby-comment"># File app/controllers/requirements_controller.rb, line 24</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">edit</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
@@ -292,7 +288,7 @@
 
         <div class="method-description">
           
-          <p>GET /requirements GET /requirements.json</p>
+          <p>GET /requirements Lista os requisitos criados</p>
           
           
 
@@ -326,13 +322,13 @@
 
         <div class="method-description">
           
-          <p>GET /requirements/new</p>
+          <p>GET /requirements/new Renderiza página para criação de umm registro</p>
           
           
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File app/controllers/requirements_controller.rb, line 17</span>
+            <pre><span class="ruby-comment"># File app/controllers/requirements_controller.rb, line 18</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">new</span>
   <span class="ruby-ivar">@requirement</span> = <span class="ruby-constant">Requirement</span>.<span class="ruby-identifier">new</span>
 <span class="ruby-keyword">end</span></pre>
@@ -359,7 +355,7 @@
 
         <div class="method-description">
           
-          <p>GET /requirements/1 GET /requirements/1.json</p>
+          <p>GET /requirements/1 Mostra detalhes de um registro criado</p>
           
           
 
@@ -391,7 +387,7 @@
 
         <div class="method-description">
           
-          <p>PATCH/PUT /requirements/1 PATCH/PUT /requirements/1.json</p>
+          <p>PATCH/PUT /requirements/1 Faz o tratamento dos dados modificados pelo usuário para decidir se a modificação é válida ou não</p>
           
           
 
@@ -400,14 +396,12 @@
             <pre><span class="ruby-comment"># File app/controllers/requirements_controller.rb, line 53</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">update</span>
   <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
-    <span class="ruby-comment"># Mensagem de sucesso ao atualizar requisitos quando condições da model forem cumpridas</span>
+    <span class="ruby-comment"># Quando condições da model forem cumpridas, atualiza o registro no banco, redireciona para pagina de detalhes do registro recém modificado e mostra uma mensagem de sucesso</span>
     <span class="ruby-keyword">if</span> <span class="ruby-ivar">@requirement</span>.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">requirement_params</span>)
       <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">redirect_to</span> <span class="ruby-ivar">@requirement</span>, <span class="ruby-value">notice:</span> <span class="ruby-string">&#39;Requisitos atualizados com sucesso!&#39;</span> }
-      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span> { <span class="ruby-identifier">render</span> <span class="ruby-value">:show</span>, <span class="ruby-value">status:</span> <span class="ruby-value">:ok</span>, <span class="ruby-value">location:</span> <span class="ruby-ivar">@requirement</span> }
-    <span class="ruby-comment"># Mensagem de erro se condições da model não forem cumpridas</span>
+    <span class="ruby-comment"># Mostra uma mensagem de erro se condições da model não forem cumpridas</span>
     <span class="ruby-keyword">else</span>
       <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">render</span> <span class="ruby-value">:edit</span> }
-      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span> { <span class="ruby-identifier">render</span> <span class="ruby-value">json:</span> <span class="ruby-ivar">@requirement</span>.<span class="ruby-identifier">errors</span>, <span class="ruby-value">status:</span> <span class="ruby-value">:unprocessable_entity</span> }
     <span class="ruby-keyword">end</span>
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>

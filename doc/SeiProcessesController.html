@@ -134,27 +134,25 @@
 
         <div class="method-description">
           
-          <p>POST /sei_processes POST /sei_processes.json</p>
+          <p>POST /sei_processes Faz o tratamento dos dados enviados pelo usuário para decidir se o registro é válido ou não</p>
           
           
 
           
           <div class="method-source-code" id="create-source">
-            <pre><span class="ruby-comment"># File app/controllers/sei_processes_controller.rb, line 39</span>
+            <pre><span class="ruby-comment"># File app/controllers/sei_processes_controller.rb, line 41</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">create</span>
   <span class="ruby-comment"># Faz correções de entradas inválidas baseando-se nos dados do usuário logado</span>
   <span class="ruby-identifier">mandatory_params</span> = {<span class="ruby-string">&#39;user_id&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">current_user</span>.<span class="ruby-identifier">id</span>, <span class="ruby-string">&#39;status&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&#39;Espera&#39;</span>, <span class="ruby-string">&#39;code&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&#39;0&#39;</span>}
   <span class="ruby-ivar">@sei_process</span> = <span class="ruby-constant">SeiProcess</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">sei_process_params</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">mandatory_params</span>))
 
   <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
-    <span class="ruby-comment"># Mensagem de sucesso ao criar processo ou abrir solicitação quando condições da model forem cumpridas</span>
+    <span class="ruby-comment"># Quando condições da model forem cumpridas, cria um novo registro no banco, redireciona para pagina index da tabela atual e mostra uma mensagem de sucesso</span>
     <span class="ruby-keyword">if</span> <span class="ruby-ivar">@sei_process</span>.<span class="ruby-identifier">save</span>
       <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">sei_processes_url</span>, <span class="ruby-value">notice:</span> <span class="ruby-string">&#39;Processo aberto com sucesso!&#39;</span> }
-      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span> { <span class="ruby-identifier">render</span> <span class="ruby-value">:index</span>, <span class="ruby-value">status:</span> <span class="ruby-value">:created</span>, <span class="ruby-value">location:</span> <span class="ruby-ivar">@sei_process</span> }
-    <span class="ruby-comment"># Mensagem de erro se condições da model não forem cumpridas</span>
+    <span class="ruby-comment"># Mostra uma mensagem de erro se condições da model não forem cumpridas</span>
     <span class="ruby-keyword">else</span>
       <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">render</span> <span class="ruby-value">:new</span> }
-      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span> { <span class="ruby-identifier">render</span> <span class="ruby-value">json:</span> <span class="ruby-ivar">@sei_process</span>.<span class="ruby-identifier">errors</span>, <span class="ruby-value">status:</span> <span class="ruby-value">:unprocessable_entity</span> }
     <span class="ruby-keyword">end</span>
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
@@ -181,23 +179,21 @@
 
         <div class="method-description">
           
-          <p>DELETE /sei_processes/1 DELETE /sei_processes/1.json Exclui Processo se condições da model forem cumpridas, mensagem de erro caso contrário</p>
+          <p>DELETE /sei_processes/1 Decide se a exclusão do registro é válida ou não</p>
           
           
 
           
           <div class="method-source-code" id="destroy-source">
-            <pre><span class="ruby-comment"># File app/controllers/sei_processes_controller.rb, line 82</span>
+            <pre><span class="ruby-comment"># File app/controllers/sei_processes_controller.rb, line 79</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">destroy</span>
   <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
     <span class="ruby-comment"># Mensagem de sucesso ao excluir processo ou solicitação quando condições da model forem cumpridas</span>
     <span class="ruby-keyword">if</span> <span class="ruby-ivar">@sei_process</span>.<span class="ruby-identifier">destroy</span>
       <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">sei_processes_url</span>, <span class="ruby-value">notice:</span> <span class="ruby-string">&#39;Processo excluído com sucesso!&#39;</span> }
-      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span> { <span class="ruby-identifier">head</span> <span class="ruby-value">:no_content</span> }
     <span class="ruby-comment"># Mensagem de erro se condições da model não forem cumpridas</span>
     <span class="ruby-keyword">else</span>
       <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">sei_processes_url</span>, <span class="ruby-value">notice:</span> <span class="ruby-string">&#39;Erro: não foi possível excluir o processo!&#39;</span> }
-      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span> { <span class="ruby-identifier">head</span> <span class="ruby-value">:no_content</span> }
     <span class="ruby-keyword">end</span>
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
@@ -224,13 +220,13 @@
 
         <div class="method-description">
           
-          <p>GET /sei_processes/1/edit</p>
+          <p>GET /sei_processes/1/edit Renderiza página para atualizar um registro</p>
           
           
 
           
           <div class="method-source-code" id="edit-source">
-            <pre><span class="ruby-comment"># File app/controllers/sei_processes_controller.rb, line 34</span>
+            <pre><span class="ruby-comment"># File app/controllers/sei_processes_controller.rb, line 36</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">edit</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
@@ -256,7 +252,7 @@
 
         <div class="method-description">
           
-          <p>GET /sei_processes GET /sei_processes.json</p>
+          <p>GET /sei_processes Lista os processos e solicitações criados</p>
           
           
 
@@ -265,7 +261,7 @@
             <pre><span class="ruby-comment"># File app/controllers/sei_processes_controller.rb, line 6</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">index</span>
   <span class="ruby-comment"># Filtra solicitações baseadas nos estados marcados como visíveis</span>
-  <span class="ruby-ivar">@all_statuses</span> = <span class="ruby-node">%w[Espera Aprovado Rejeitado]</span>
+  <span class="ruby-ivar">@all_statuses</span> = <span class="ruby-constant">SeiProcess</span>.<span class="ruby-identifier">all_statuses</span>
   <span class="ruby-identifier">session</span>[<span class="ruby-value">:statuses</span>] = <span class="ruby-identifier">params</span>[<span class="ruby-value">:statuses</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">session</span>[<span class="ruby-value">:statuses</span>] <span class="ruby-operator">||</span> <span class="ruby-ivar">@all_statuses</span>.<span class="ruby-identifier">zip</span>([]).<span class="ruby-identifier">to_h</span>
   <span class="ruby-ivar">@status_filter</span> = <span class="ruby-identifier">session</span>[<span class="ruby-value">:statuses</span>].<span class="ruby-identifier">keys</span>
   
@@ -300,13 +296,13 @@
 
         <div class="method-description">
           
-          <p>GET /sei_processes/new</p>
+          <p>GET /sei_processes/new Renderiza página para criação de umm registro</p>
           
           
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File app/controllers/sei_processes_controller.rb, line 27</span>
+            <pre><span class="ruby-comment"># File app/controllers/sei_processes_controller.rb, line 28</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">new</span>
   <span class="ruby-comment"># Renderiza Requisitos de Credenciamento, caso existam, na página de criação de processo ou de abrir solicitação de credenciamento</span>
   <span class="ruby-ivar">@requirements</span> = <span class="ruby-constant">Requirement</span>.<span class="ruby-identifier">find_by</span>(<span class="ruby-value">title:</span> <span class="ruby-string">&#39;Requisitos de Credenciamento&#39;</span>)
@@ -335,7 +331,7 @@
 
         <div class="method-description">
           
-          <p>GET /sei_processes/1 GET /sei_processes/1.json</p>
+          <p>GET /sei_processes/1 Mostra detalhes de um registro criado</p>
           
           
 
@@ -367,7 +363,7 @@
 
         <div class="method-description">
           
-          <p>PATCH/PUT /sei_processes/1 PATCH/PUT /sei_processes/1.json</p>
+          <p>PATCH/PUT /sei_processes/1 Faz o tratamento dos dados modificados pelo usuário para decidir se a modificação é válida ou não</p>
           
           
 
@@ -376,20 +372,18 @@
             <pre><span class="ruby-comment"># File app/controllers/sei_processes_controller.rb, line 59</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">update</span>
   <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
-    <span class="ruby-comment"># Mensagem de sucesso ao atualizar processo ou solicitação quando condições da model forem cumpridas</span>
+    <span class="ruby-comment"># Quando condições da model forem cumpridas, atualiza o registro no banco, redireciona para pagina index da tabela atual e mostra uma mensagem de sucesso</span>
     <span class="ruby-keyword">if</span> <span class="ruby-ivar">@sei_process</span>.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">sei_process_params</span>)
       <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">sei_processes_url</span>, <span class="ruby-value">notice:</span> <span class="ruby-string">&#39;Processo atualizado com sucesso!&#39;</span> }
-      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span> { <span class="ruby-identifier">render</span> <span class="ruby-value">:index</span>, <span class="ruby-value">status:</span> <span class="ruby-value">:ok</span>, <span class="ruby-value">location:</span> <span class="ruby-ivar">@sei_process</span> }
 
       <span class="ruby-comment"># Cria o credenciamento correspondente aa solicitação aprovada</span>
       <span class="ruby-keyword">if</span> <span class="ruby-ivar">@sei_process</span>.<span class="ruby-identifier">status</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;Aprovado&#39;</span> <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-constant">Accreditation</span>.<span class="ruby-identifier">find_by</span>(<span class="ruby-value">sei_process:</span> <span class="ruby-ivar">@sei_process</span>.<span class="ruby-identifier">id</span>) <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span>)
         <span class="ruby-constant">Accreditation</span>.<span class="ruby-identifier">create!</span>(<span class="ruby-value">user_id:</span> <span class="ruby-ivar">@sei_process</span>.<span class="ruby-identifier">user_id</span>, <span class="ruby-value">sei_process_id:</span> <span class="ruby-ivar">@sei_process</span>.<span class="ruby-identifier">id</span>)
       <span class="ruby-keyword">end</span>
 
-    <span class="ruby-comment"># Mensagem de erro se condições da model não forem cumpridas</span>
+    <span class="ruby-comment"># Mostra uma mensagem de erro se condições da model não forem cumpridas</span>
     <span class="ruby-keyword">else</span>
       <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">render</span> <span class="ruby-value">:edit</span> }
-      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span> { <span class="ruby-identifier">render</span> <span class="ruby-value">json:</span> <span class="ruby-ivar">@sei_process</span>.<span class="ruby-identifier">errors</span>, <span class="ruby-value">status:</span> <span class="ruby-value">:unprocessable_entity</span> }
     <span class="ruby-keyword">end</span>
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>

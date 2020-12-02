@@ -75,15 +75,11 @@
 
   <ul class="link-list" role="directory">
     
-    <li ><a href="#method-i-create">#create</a>
-    
     <li ><a href="#method-i-destroy">#destroy</a>
     
     <li ><a href="#method-i-edit">#edit</a>
     
     <li ><a href="#method-i-index">#index</a>
-    
-    <li ><a href="#method-i-new">#new</a>
     
     <li ><a href="#method-i-show">#show</a>
     
@@ -121,39 +117,6 @@
        </header>
 
     
-      <div id="method-i-create" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">create</span><span
-            class="method-args">()</span>
-          
-          <span class="method-click-advice">click to toggle source</span>
-          
-        </div>
-        
-
-        <div class="method-description">
-          
-          <p>POST /accreditations POST /accreditations.json</p>
-          
-          
-
-          
-          <div class="method-source-code" id="create-source">
-            <pre><span class="ruby-comment"># File app/controllers/accreditations_controller.rb, line 32</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">create</span>
-  <span class="ruby-comment"># O processo de criação de credenciamento é feita em sei_processes_controller</span>
-<span class="ruby-keyword">end</span></pre>
-          </div>
-          
-        </div>
-
-        
-
-        
-      </div>
-
-    
       <div id="method-i-destroy" class="method-detail ">
         
         <div class="method-heading">
@@ -167,23 +130,21 @@
 
         <div class="method-description">
           
-          <p>DELETE /accreditations/1 DELETE /accreditations/1.json</p>
+          <p>DELETE /accreditations/1 Decide se a exclusão do registro é válida ou não</p>
           
           
 
           
           <div class="method-source-code" id="destroy-source">
-            <pre><span class="ruby-comment"># File app/controllers/accreditations_controller.rb, line 54</span>
+            <pre><span class="ruby-comment"># File app/controllers/accreditations_controller.rb, line 42</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">destroy</span>
   <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
     <span class="ruby-comment"># Mensagem de sucesso ao excluir o credenciamento quando condições da model forem cumpridas</span>
     <span class="ruby-keyword">if</span> <span class="ruby-ivar">@accreditation</span>.<span class="ruby-identifier">destroy</span>
       <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">accreditations_url</span>, <span class="ruby-value">notice:</span> <span class="ruby-string">&#39;Credenciamento excluído com sucesso!&#39;</span> }
-      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span> { <span class="ruby-identifier">head</span> <span class="ruby-value">:no_content</span> }
     <span class="ruby-comment"># Mensagem de erro se condições da model não forem cumpridas</span>
     <span class="ruby-keyword">else</span>
       <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">accreditations_url</span>, <span class="ruby-value">notice:</span> <span class="ruby-string">&#39;Erro: não foi possível excluir o credenciamento!&#39;</span> }
-      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span> { <span class="ruby-identifier">head</span> <span class="ruby-value">:no_content</span> }
     <span class="ruby-keyword">end</span>
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
@@ -210,13 +171,13 @@
 
         <div class="method-description">
           
-          <p>GET /accreditations/1/edit</p>
+          <p>GET /accreditations/1/edit Renderiza página para atualizar um registro</p>
           
           
 
           
           <div class="method-source-code" id="edit-source">
-            <pre><span class="ruby-comment"># File app/controllers/accreditations_controller.rb, line 27</span>
+            <pre><span class="ruby-comment"># File app/controllers/accreditations_controller.rb, line 23</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">edit</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
@@ -242,7 +203,7 @@
 
         <div class="method-description">
           
-          <p>GET /accreditations GET /accreditations.json</p>
+          <p>GET /accreditations Lista os credenciamentos criados</p>
           
           
 
@@ -268,39 +229,6 @@
       </div>
 
     
-      <div id="method-i-new" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">new</span><span
-            class="method-args">()</span>
-          
-          <span class="method-click-advice">click to toggle source</span>
-          
-        </div>
-        
-
-        <div class="method-description">
-          
-          <p>GET /accreditations/new</p>
-          
-          
-
-          
-          <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File app/controllers/accreditations_controller.rb, line 22</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">new</span>
-  <span class="ruby-comment"># Não há view para new, pois o processo de criação é feita em sei_processes_controller</span>
-<span class="ruby-keyword">end</span></pre>
-          </div>
-          
-        </div>
-
-        
-
-        
-      </div>
-
-    
       <div id="method-i-show" class="method-detail ">
         
         <div class="method-heading">
@@ -314,7 +242,7 @@
 
         <div class="method-description">
           
-          <p>GET /accreditations/1 GET /accreditations/1.json</p>
+          <p>GET /accreditations/1 Mostra detalhes de um registro criado</p>
           
           
 
@@ -346,23 +274,21 @@
 
         <div class="method-description">
           
-          <p>PATCH/PUT /accreditations/1 PATCH/PUT /accreditations/1.json</p>
+          <p>PATCH/PUT /accreditations/1 Faz o tratamento dos dados modificados pelo usuário para decidir se a modificação é válida ou não</p>
           
           
 
           
           <div class="method-source-code" id="update-source">
-            <pre><span class="ruby-comment"># File app/controllers/accreditations_controller.rb, line 38</span>
+            <pre><span class="ruby-comment"># File app/controllers/accreditations_controller.rb, line 28</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">update</span>
   <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
-    <span class="ruby-comment"># Mensagem de sucesso ao atualizar credenciamento quando condições da model forem cumpridas</span>
+    <span class="ruby-comment"># Quando condições da model forem cumpridas, atualiza o registro no banco, redireciona para pagina index da tabela atual e mostra uma mensagem de sucesso</span>
     <span class="ruby-keyword">if</span> <span class="ruby-ivar">@accreditation</span>.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">accreditation_params</span>)
       <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">accreditations_url</span>, <span class="ruby-value">notice:</span> <span class="ruby-string">&#39;Credenciamento atualizado com sucesso!&#39;</span> }
-      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span> { <span class="ruby-identifier">render</span> <span class="ruby-value">:show</span>, <span class="ruby-value">status:</span> <span class="ruby-value">:ok</span>, <span class="ruby-value">location:</span> <span class="ruby-ivar">@accreditation</span> }
-    <span class="ruby-comment"># Mensagem de erro se condições da model não forem cumpridas</span>
+    <span class="ruby-comment"># Mostra uma mensagem de erro se condições da model não forem cumpridas</span>
     <span class="ruby-keyword">else</span>
       <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">render</span> <span class="ruby-value">:edit</span> }
-      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span> { <span class="ruby-identifier">render</span> <span class="ruby-value">json:</span> <span class="ruby-ivar">@accreditation</span>.<span class="ruby-identifier">errors</span>, <span class="ruby-value">status:</span> <span class="ruby-value">:unprocessable_entity</span> }
     <span class="ruby-keyword">end</span>
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
