@@ -1,15 +1,19 @@
 require 'rails_helper'
 
 RSpec.describe ".showInterestActivities" do
-	let(:uri) {'/Calendar'}
+	let(:uri) {'/Atividades'}
 
 	context "Mostrar atividades de interesse" do
-		let(:activities) {showInterestActivities}
+		let(:user) {Activite.showInterestActivities("Atividades")}
 
-		it "Mostra menssagem" do
+		it "Mostra mensagem" do
 			page.driver.get uri
 			except(page.status_code).to be 200
-			is_expected.to have "localhost:3000/Calendar"
+			is_expected.to have "localhost:3000/Atividades"
 		end
+  end
+
+	context "Página não encontrada" do
+		it {is_expected.to equal 404}
 	end
 end

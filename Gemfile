@@ -68,7 +68,15 @@ group :test do
   # Factory
   gem 'factory_bot_rails'
   gem 'rails-controller-testing'
+  gem 'simplecov', require: false
 end
 
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+  # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+  gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+  # Complexidade ciclomática
+  gem 'metric_fu-Saikuro'
+  # ABC Score
+  gem 'rubycritic'
+  # Rdoc
+  gem 'rdoc'

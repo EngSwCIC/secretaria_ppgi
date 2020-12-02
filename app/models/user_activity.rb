@@ -1,4 +1,4 @@
-class UserActivities < ApplicationRecord
+class UserActivity < ApplicationRecord
 	validates :user_id, presence: { message: "Usuário deve ser informado." }
     validates :activity_id, presence: { message: "Atividade deve ser informada." }
 
