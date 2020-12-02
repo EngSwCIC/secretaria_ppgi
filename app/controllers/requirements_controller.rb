@@ -30,14 +30,12 @@ class RequirementsController < ApplicationController
     @requirement = Requirement.new(requirement_params)
     
     respond_to do |format|
-      # Mensagem de sucesso ao criar requisitos quando condições da model forem cumpridas
+      # Quando condições da model forem cumpridas, cria um novo registro no banco, redireciona para pagina index da entidade atual e mostra uma mensagem de sucesso 
       if @requirement.save
         format.html { redirect_to @requirement, notice: 'Requisitos criados com sucesso!' }
-        format.json { render :show, status: :created, location: @requirement }
-      # Mensagem de erro se condições da model não forem cumpridas
+      # Mostra uma mensagem de erro se condições da model não forem cumpridas
       else
         format.html { render :new }
-        format.json { render json: @requirement.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -54,14 +52,12 @@ class RequirementsController < ApplicationController
   # Faz o tratamento dos dados modificados pelo usuário para decidir se a modificação é válida ou não
   def update
     respond_to do |format|
-      # Mensagem de sucesso ao atualizar requisitos quando condições da model forem cumpridas
+      # Quando condições da model forem cumpridas, atualiza o registro no banco, redireciona para pagina de detalhes do registro recém modificado e mostra uma mensagem de sucesso 
       if @requirement.update(requirement_params)
         format.html { redirect_to @requirement, notice: 'Requisitos atualizados com sucesso!' }
-        format.json { render :show, status: :ok, location: @requirement }
-      # Mensagem de erro se condições da model não forem cumpridas
+      # Mostra uma mensagem de erro se condições da model não forem cumpridas
       else
         format.html { render :edit }
-        format.json { render json: @requirement.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -73,11 +69,9 @@ class RequirementsController < ApplicationController
       # Mensagem de sucesso ao excluir requisitos quando condições da model forem cumpridas
       if @requirement.destroy
         format.html { redirect_to requirements_url, notice: 'Requisitos excluídos com sucesso!' }
-        format.json { head :no_content }
       # Mensagem de erro se condições da model não forem cumpridas
       else
         format.html { redirect_to requirements_url, notice: 'Erro: não foi possível excluir os requisitos!' }
-        format.json { head :no_content }
       end
     end
   end

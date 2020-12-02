@@ -44,14 +44,12 @@ class SeiProcessesController < ApplicationController
     @sei_process = SeiProcess.new(sei_process_params.merge(mandatory_params))
 
     respond_to do |format|
-      # Mensagem de sucesso ao criar processo ou abrir solicitação quando condições da model forem cumpridas
+      # Quando condições da model forem cumpridas, cria um novo registro no banco, redireciona para pagina index da tabela atual e mostra uma mensagem de sucesso 
       if @sei_process.save
         format.html { redirect_to sei_processes_url, notice: 'Processo aberto com sucesso!' }
-        format.json { render :index, status: :created, location: @sei_process }
-      # Mensagem de erro se condições da model não forem cumpridas
+      # Mostra uma mensagem de erro se condições da model não forem cumpridas
       else
         format.html { render :new }
-        format.json { render json: @sei_process.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -60,20 +58,18 @@ class SeiProcessesController < ApplicationController
   # Faz o tratamento dos dados modificados pelo usuário para decidir se a modificação é válida ou não
   def update
     respond_to do |format|
-      # Mensagem de sucesso ao atualizar processo ou solicitação quando condições da model forem cumpridas
+      # Quando condições da model forem cumpridas, atualiza o registro no banco, redireciona para pagina index da tabela atual e mostra uma mensagem de sucesso 
       if @sei_process.update(sei_process_params)
         format.html { redirect_to sei_processes_url, notice: 'Processo atualizado com sucesso!' }
-        format.json { render :index, status: :ok, location: @sei_process }
 
         # Cria o credenciamento correspondente aa solicitação aprovada
         if @sei_process.status == 'Aprovado' && (Accreditation.find_by(sei_process: @sei_process.id) == nil)
           Accreditation.create!(user_id: @sei_process.user_id, sei_process_id: @sei_process.id)
         end
 
-      # Mensagem de erro se condições da model não forem cumpridas
+      # Mostra uma mensagem de erro se condições da model não forem cumpridas
       else
         format.html { render :edit }
-        format.json { render json: @sei_process.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -85,11 +81,9 @@ class SeiProcessesController < ApplicationController
       # Mensagem de sucesso ao excluir processo ou solicitação quando condições da model forem cumpridas
       if @sei_process.destroy
         format.html { redirect_to sei_processes_url, notice: 'Processo excluído com sucesso!' }
-        format.json { head :no_content }
       # Mensagem de erro se condições da model não forem cumpridas
       else
         format.html { redirect_to sei_processes_url, notice: 'Erro: não foi possível excluir o processo!' }
-        format.json { head :no_content }
       end
     end
   end

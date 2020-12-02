@@ -27,14 +27,12 @@ class AccreditationsController < ApplicationController
   # Faz o tratamento dos dados modificados pelo usuário para decidir se a modificação é válida ou não
   def update
     respond_to do |format|
-      # Mensagem de sucesso ao atualizar credenciamento quando condições da model forem cumpridas
+      # Quando condições da model forem cumpridas, atualiza o registro no banco, redireciona para pagina index da tabela atual e mostra uma mensagem de sucesso 
       if @accreditation.update(accreditation_params)
         format.html { redirect_to accreditations_url, notice: 'Credenciamento atualizado com sucesso!' }
-        format.json { render :show, status: :ok, location: @accreditation }
-      # Mensagem de erro se condições da model não forem cumpridas
+      # Mostra uma mensagem de erro se condições da model não forem cumpridas
       else
         format.html { render :edit }
-        format.json { render json: @accreditation.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -46,11 +44,9 @@ class AccreditationsController < ApplicationController
       # Mensagem de sucesso ao excluir o credenciamento quando condições da model forem cumpridas
       if @accreditation.destroy
         format.html { redirect_to accreditations_url, notice: 'Credenciamento excluído com sucesso!' }
-        format.json { head :no_content }
       # Mensagem de erro se condições da model não forem cumpridas
       else
         format.html { redirect_to accreditations_url, notice: 'Erro: não foi possível excluir o credenciamento!' }
-        format.json { head :no_content }
       end
     end
   end
