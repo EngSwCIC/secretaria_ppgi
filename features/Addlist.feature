@@ -5,28 +5,16 @@ Background:
         When I press "Notificações"
     	Then I should see "Notificações" 
 
-Scenario: create a new list
-        When I click on the "Nova Lista" link
-        Then I should see "Nova Lista"
-        When I fill the form with:
-        |Title | Info |
-        And I click in the "Save" button
-        Then I should see "List Saved Successfully."
+Scenario: create a new notification with new content (happy path)
+        When I click on the "Nova Notificação" link
+        Then I should see "Nova Notificação"
+        When I fill the form with a notification which content does not exist as another notification's content
+        And I click in the "Enviar" button
+        Then I should see "Notificação criada com sucesso."
         
-Scenario: edit list
-        When I click on the "Edit" link on the "Professor"
-        Then I should see "Include Record"
-        When I fill the form with:
-        |Name | Email |
-        And I click in the "Save" button
-        Then I should see "List Successfully Edited."
-        
-Scenario: send message
-        When I click on the "Send" link
-        Then I should see "select list"
-        And I click in the "Professor" button
-        When I fill the form with:
-        |Title | Message |
-        And I click in the "Submit" button
-        Then I should see "Message sent successfully."
-   
+Scenario: create a notification with content that already exists as another notification's body (sad path)
+        When I click on the "Nova Notificação" link
+        Then I should see "Nova Notificação"
+        When I fill the form with a notification which content already exists as another notification's content
+        And I click in the "Enviar" button
+        Then I should see "Ocorreu um erro."

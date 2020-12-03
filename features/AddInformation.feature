@@ -6,7 +6,7 @@ Feature: System administrator can manually add information
 
 Background: Start from the administrator page
     
-    Given I am logged as a(n) "administrador" on SecretariaPpgi
+    Given I am logged as an "administrador" on SecretariaPpgi
     When I click "Adicionar uma nova informação"  
     Then I should go to the "informations/new" page
 
