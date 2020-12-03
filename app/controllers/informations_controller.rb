@@ -21,7 +21,7 @@ class InformationsController < ApplicationController
     if @information.save
       redirect_to informations_path
     else
-      redirect_to new_information_path,alert:"Ocorreu um erro. Tente novamente."
+      redirect_to new_information_path,alert:"Ocorreu um erro."
     end
     #redirect_to informations_path
   end
@@ -46,6 +46,10 @@ class InformationsController < ApplicationController
   def update
     @information = Information.find params[:id]
     @information.update_attributes!(information_params)
+    rescue ActiveRecord::RecordInvalid
+      flash[:notice] = "Ocorreu um erro."
+      redirect_to informations_path
+    else
     flash[:notice] = "Informação atualizada."
     redirect_to information_path(@information)
     end

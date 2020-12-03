@@ -38,6 +38,10 @@ class SourcesController < ApplicationController
   def update
     @source = Source.find params[:id]
     @source.update_attributes!(source_params)
+    rescue ActiveRecord::RecordInvalid
+      flash[:notice] = "Ocorreu um erro."
+      redirect_to sources_path
+    else
     flash[:notice] = "Fonte de informação atualizada."
     redirect_to source_path(@source)
   end

@@ -8,7 +8,7 @@ RSpec.describe InformationsController, :type => :controller do
     sign_in @user
   end
  
-  describe 'add new info' do
+  describe 'add new info (happy path)' do
     it 'renders the New Information template' do
       get :new
       expect(response).to have_http_status(:ok)
@@ -26,7 +26,7 @@ RSpec.describe InformationsController, :type => :controller do
       expect(Information.all).not_to be_empty
     end
   end
-  describe 'add info that has already been added' do
+  describe 'add info that has already been added (sad path)' do
     it 'renders the New Information template' do
       get :new
       expect(response).to have_http_status(:ok)

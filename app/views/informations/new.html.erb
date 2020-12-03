@@ -1,4 +1,4 @@
-<% if !current_user.nil? and current_user.role == 'administrator' %>
+<% if current_user.role == 'administrator' %>
 <h2>Adicionar uma nova informação</h2>
 <%= form_tag informations_path, :method => :post do %>
   <%= label :information, :title, 'Título: ' %>

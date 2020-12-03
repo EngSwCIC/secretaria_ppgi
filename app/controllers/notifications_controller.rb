@@ -43,6 +43,10 @@ class NotificationsController < ApplicationController
     def update
       @notification = Notification.find params[:id]
       @notification.update_attributes!(notification_params)
+      rescue ActiveRecord::RecordInvalid
+        flash[:notice] = "Ocorreu um erro."
+        redirect_to notifications_path
+      else
       flash[:notice] = "Notificação atualizada."
       redirect_to notification_path(@notification)
     end
