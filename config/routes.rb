@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'process/:id', to: 'process#show', as: :process_show
   post 'process', to: 'process#create', as: :process_creation
   delete 'process/:id', to: 'process#destroy', as: :process_delete
+  get 'search', to: 'process#search', as: :process_search
 
   get 'home/index', :home
   devise_for :users

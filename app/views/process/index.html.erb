@@ -1,44 +1,60 @@
 <%= stylesheet_link_tag "process" %>
-<h1>Lista de Processos</h1>
-<h2>Criar um novo processo</h2>
-<%= form_for :processo, url: process_creation_path ,html: {id: "creation_form", :multipart => true} do |f| %>
-  <div>
-    <%= f.label "Número do processo SEI" %>
-    <%= f.text_field :sei_process_code %>
-  </div>
-  <div>
-    <%= label_tag(:status_id, "Status do processo") %>
-    <%= f.select(:process_status_id, options_for_select(@available_status, 1)) %>
-  </div>
-  <div>
-    <%= f.file_field :document_files, multiple: true, accept: 'image/png,image/jpg,application/pdf' %>
-  </div>
-  <div>
-
-  </div>
-  <div>
-    <%= submit_tag("Enviar") %>
-  </div>
-<% end %>
-<table>
-  <thead>
-  <tr>
-    <th>Número SEI</th>
-    <th>Status do processo</th>
-    <th>Deletar</th>
-    <th colspan="3"></th>
-  </tr>
-  </thead>
-  <tbody>
-  <% @processes.each do |process| %>
+<%= javascript_include_tag "process" %>
+<div id="process-list-root">
+  <h5>Lista de Processos</h5>
+  <h5>Criar um novo processo</h5>
+  <%= form_for :processo, url: process_creation_path ,html: {id: "creation_form", :multipart => true} do |f| %>
+    <div>
+      <%= f.label "Número do processo SEI" %>
+      <%= f.text_field :sei_process_code %>
+    </div>
+    <div>
+      <%= label_tag(:status_id, "Status do processo") %>
+      <%= f.select(:process_status_id, options_for_select(@available_status, 1)) %>
+    </div>
+    <div>
+        <div class="input_file">
+          <%= label_tag 'file_field', 'Drop a file or click to select one', :id => 'file_label' %>
+          <ul hidden id="file_list"></ul>
+          <%= f.file_field :document_files, multiple: true, accept: 'image/png,image/jpg,application/pdf', :id => "file_input" %>
+        </div>
+        <div>
+        <%= submit_tag("Enviar") %>
+      </div>
+    </div>
+  <% end %>
+  <h5>
+      <span>Filtrar por status</span>
+    <div>
+      <%= form_tag process_search_path, method: :get %>
+      <%= label_tag :filter_by, "Filtrar por Status" %>
+      <%= select 'filter_by', :filter_status, options_for_select(@filters, @current_filter)  %>
+      <div class="filter-button">
+      <%= submit_tag("Search") %>
+      </div>
+    </div>
+  </h5>
+  <table>
+    <thead>
     <tr>
-      <td><%= link_to process['sei_process_code'], process_show_path({:id => process['id']}) %></td>
-      <td align="right"><%= @status[process['process_status_id']] %></td>
-      <td align="center">
-        <%= link_to fa_icon('trash').html_safe, process_delete_path({:id => process['id']}), :method => :delete, :action => "delete", :id => process['id'], class: "delete_link"   %>
-        <% end %>
-      </td>
+      <th>Número SEI</th>
+      <th >
+        Status do processo
+      </th>
+      <th>Deletar</th>
+      <th colspan="3"></th>
     </tr>
-  </tbody>
-</table>
-
+    </thead>
+    <tbody>
+    <% @processes.each do |process| %>
+      <tr>
+        <td><%= link_to process['sei_process_code'], process_show_path({:id => process['id']}) %></td>
+        <td align="right"><%= @status[process['process_status_id']] %></td>
+        <td align="center">
+          <%= link_to fa_icon('trash').html_safe, process_delete_path({:id => process['id']}), :method => :delete, :action => "delete", :id => process['id'], class: "delete_link"   %>
+          <% end %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

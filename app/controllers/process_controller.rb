@@ -10,7 +10,7 @@ class ProcessController < ApplicationController
     @processes
   end
 
-  def load_status()
+  def load_status
     @available_status = []
     @status = {}
     ProcessStatus.find_each do |status|
@@ -19,15 +19,48 @@ class ProcessController < ApplicationController
     end
   end
 
+  def load_filters
+    load_status
+    @filters = @available_status
+    @filters.append(['Todos', -1])
+  end
+
+  def filter_processes(filter_status)
+    unless @processes.nil?
+      @processes = @processes.select do |process|
+        process['process_status_id'] == filter_status
+      end
+    end
+  end
+
   def index
     if user_signed_in?
       load_status
+      load_filters
       user = current_user
       reload_processes(user)
-      puts(@processes)
+      filter_by = params['filter_by']
+      if filter_by.nil?
+        @current_filter = -1
+      else
+        @current_filter = filter_by.to_i
+        if @current_filter != -1
+          filter_processes(@current_filter)
+        end
+      end
     else
       redirect_to home_path
     end
+  end
+
+  def search
+    if user_signed_in?
+      permitted_params = params.require(:filter_by).permit(:filter_status)
+      redirect_to process_home_path(:filter_by => permitted_params['filter_status'])
+    else
+      redirect_to home_path
+    end
+
   end
 
   def show

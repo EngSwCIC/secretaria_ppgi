@@ -67,5 +67,7 @@ group :test do
 end
 
 gem "font-awesome-rails"
+gem 'materialize-sass'
+gem 'jquery-rails'
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
