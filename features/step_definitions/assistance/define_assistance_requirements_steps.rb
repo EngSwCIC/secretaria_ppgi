@@ -1,5 +1,5 @@
 #-------------------- Contexto --#
-Dado("que eu esteja cadastrado como administrador, com o email {string} e a senha {string}") do |email, password|
+Dado("que eu esteja cadastrado como administrador para definir requisitos de solicitações, com o email {string} e a senha {string}") do |email, password|
   @email = email
   @password = password
   valid_email = @email.eql? "admin@admin.com"
@@ -8,49 +8,52 @@ Dado("que eu esteja cadastrado como administrador, com o email {string} e a senh
   expect(valid_user).to be true
 end
 
-E("que eu esteja autenticado com o email {string} e a senha {string}") do |email, password|
-  auth = @email.eql? email
-  auth2 = @password.eql? password
-  authentication = auth && auth2
-  expect(authentication).to be true
+E("que eu esteja autenticado com o email {string} e a senha {string} 1") do |email, password|
+  visit '/users/sign_in'
+  fill_in 'user_email', :with => 'admin@admin.com'
+  fill_in 'user_password', :with => 'admin123'
+  click_button "Log in"
 end
 
-E("que esteja na pagina inicial") do
-  visit(root_path)
+E("que esteja na pagina inicial 1") do
+  expect(page).to have_text("Usuário atual")
 end
 
-E("que eu clique no botão de edição de requisitos de solitação de auxílio") do
-  click_button("#edicao_requisitos")
+E("que eu clique no botão Editar requisitos de solicitação") do
+  visit('/requirements/new')
 end
 
 #-------------------- Cenário feliz --#
-Dado("que a página é carregada corretamente") do
-  visit(requirement_page)
+
+Dado("que eu insira o requisito {string}") do |requirement|
+  expect(page).to have_selector('#requirement_text', visible: true)
+
+  fill_in 'requirement_text', :with => requirement
+
+  expect(page).to have_field("requirement_text", with: requirement)
 end
 
-E("que eu insira o requisito {string}") do |requirement|
-  find("#requisitos").set requirement
-end
+E("que eu clique no botão de Definir requisitos") do
+  click_button "Definir requisitos"
+end 
 
-E("clique no botão de confirmação de edição") do
-  click_button "confirmar edição"
-end
+Então("os requisitos são atualizados com o valor {string}") do |requirements|
+  @requirements = Requirement.all
 
-Então("os requisitos são atualizados") do
-  pending
+  expect(@requirements.count).to eq 1
+  expect(@requirements[0].requirements).to eq(requirements)
 end
 
 #-------------------- Cenário triste --#
-E("que eu remova os requisitos existentes") do
+Dado("que eu remova os requisitos existentes") do
   requirement = ""
-  find("#requisitos").set requirement
+  find("#requirement_text").set requirement
 end
 
-E("clique no botão de confirmação de edição") do
-  click_button "confirmar edição"
+E("clique no botão Definir requisitos") do
+  click_button "Definir requisitos"
 end
 
-Então("uma mensagem de erro, é exibida, indicando que os requisitos não podem ficar em branco") do
-  alert = find("#error_msg")
-  expect(alert).to be true
+Então("uma mensagem de erro é exibida") do
+  expect(page).to have_text("Ocorreu um erro ao salvar os requisitos.")
 end

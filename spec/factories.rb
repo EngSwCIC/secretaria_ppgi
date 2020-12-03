@@ -1,4 +1,8 @@
 FactoryBot.define do
+  factory :requirement do
+    requirements { "MyString" }
+  end
+
   factory :user do
     full_name {"Teste da Silva"}
     email {"testesilva@teste.com"}

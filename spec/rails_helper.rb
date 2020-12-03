@@ -43,6 +43,10 @@ RSpec.configure do |config|
   # instead of true.
   config.use_transactional_fixtures = true
   config.include FactoryBot::Syntax::Methods
+  
+  config.before(:each, type: :system, js: true) do 
+    driven_by :selenium_chrome
+  end 
 
   # RSpec Rails can automatically mix in different behaviours to your tests
   # based on their file location, for example enabling you to call `get` and
@@ -68,3 +72,9 @@ end
 FactoryBot::SyntaxRunner.class_eval do
   include ActionDispatch::TestProcess
 end
+
+Capybara.register_driver :selenium_chrome do |app|
+  Capybara::Selenium::Driver.new(app, browser: :chrome)
+end
+
+Capybara.javascript_driver = :selenium_chrome
