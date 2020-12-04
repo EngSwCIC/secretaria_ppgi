@@ -10,28 +10,28 @@
 ## NOME DO PROJETO
 #### Calendário de atividades - secretaria-ppgi
 &nbsp;
-## ESCOPO DO PROJETO
-* Teste para cadastro de atividade e seu prazo de execução;
-* Teste para inclusão de pessoas interessadas em cada atividade;
-* Teste para notificação de pessoas interessadas;
-* Teste para visualização de atividades cadastradas;
-* Teste para visualização de atividades de interesse.
+## Papéis na Sprint
+
+### Kálley - 170038050
+* Refatoração utilizando o Saikuro
 
 &nbsp;
 ## ATRIBUIÇÕES
 
 #### Scrum Master
- * Carlos Eduardo de Sousa - 160057701
+* Carlos Eduardo de Sousa - 160057701
 
 #### Product Owner
-* Kalley Wilkerson Rodrigues Alexandre - 170038050
+* 
 
 &nbsp;
-## Tabela Comparativa
+## Resultados para a Sprint 3
 &nbsp;
-|    |      Antes da refatoração      |  Depois da refatoração |
-|----------|:-------------:|------:|
-| Code 1 |   |  |
-| Code 2 |       |    |
-| Code 3 |  |     |
+|        |      Antes da refatoração      |  Depois da refatoração |
+| ------ | ------------------------------ | ---------------------- |
+| Code 1 |                                |                        |
+| Code 2 |                                |                        |
+| Code 3 |                                |                        |
 
+### Saikuro
+As tabelas geradas pelo Saikuro estão nas pastas **app/controllers/saikuro** e **app/models/saikuro**. Não foi preciso mudar o código pois os resultados do Saikuro já eram satisfatórios
