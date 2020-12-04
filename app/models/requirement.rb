@@ -1,3 +1,7 @@
+##
+# Model de Requirement.
+# Pede para que o titulo seja unico, e necessariamente preenchido
+# indica que um único requisito pode ter também diversos documentos anexados
 class Requirement < ApplicationRecord
     validates :title, presence: true, uniqueness: true
     has_many_attached :documents
@@ -16,6 +20,8 @@ class Requirement < ApplicationRecord
         true
     end
 
+    ##
+    # Indica se o usuário tem permissão para apagar
     before_destroy :check_permission
     # Habilita deleção (usado por 'db/seeds.rb')
     def allow_deletion!

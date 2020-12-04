@@ -1,31 +1,41 @@
 class RequirementsController < ApplicationController
   before_action :set_requirement, only: [:show, :edit, :update, :destroy]
 
+  ##
   # GET /requirements
-  # Lista os requisitos criados
+  # Esse método faz uma completa listagem a partir de Requirements
+  # para os requisitos criados
   def index
     # Lista todos os tipos de requisitos criados
     @requirements = Requirement.all
   end
 
+  ##
   # GET /requirements/1
-  # Mostra detalhes de um registro criado
+  # Demonstração em detalhes os dados de um registro anteriormente criado
+  # para visualização
   def show
   end
 
+  ##
   # GET /requirements/new
-  # Renderiza página para criação de umm registro
+  # Permite, a partir do preenchimento dos dados necessários para um requisito,
+  # a criação de um novo requisito
   def new
     @requirement = Requirement.new
   end
 
+  ##
   # GET /requirements/1/edit
-  # Renderiza página para atualizar um registro
+  # Permite uma visualização dos dados de um registro, e além disso apresenta
+  # a possibilidade de atualização de alguns dados específicos do mesmo
   def edit
   end
 
+  ##
   # POST /requirements
-  # Faz o tratamento dos dados enviados pelo usuário para decidir se o registro é válido ou não
+  # Faz uma validação dos dados disponibilizados pelo usuário, e resulta na
+  # aceitação ou negação dos mesmos
   def create
     @requirement = Requirement.new(requirement_params)
     
@@ -40,7 +50,9 @@ class RequirementsController < ApplicationController
     end
   end
 
-  # Exclui documento anexado, caso exista
+  ##
+  # Realiza uma busca pelo documento que se deseja apagar,
+  # e após isso deleta o mesmo
   def delete_document_attachment
     @document = ActiveStorage::Attachment.find_by(id: params[:id])
     @requirement_id = params[:requirement_id]
@@ -48,8 +60,11 @@ class RequirementsController < ApplicationController
     redirect_to edit_requirement_path(@requirement_id)
   end
 
+  ##
   # PATCH/PUT /requirements/1
   # Faz o tratamento dos dados modificados pelo usuário para decidir se a modificação é válida ou não
+  # Realiza uma validação dos dados que foram editados pelo usuário,
+  # e resulta na aceitação ou não do mesmo
   def update
     respond_to do |format|
       # Quando condições da model forem cumpridas, atualiza o registro no banco, redireciona para pagina de detalhes do registro recém modificado e mostra uma mensagem de sucesso 
@@ -62,8 +77,10 @@ class RequirementsController < ApplicationController
     end
   end
 
+  ##
   # DELETE /requirements/1
-  # Decide se a exclusão do registro é válida ou não
+  # Tenta realizar a exclusão de um requirement, e apresenta
+  # uma mensagem de sucesso ou falha
   def destroy
     respond_to do |format|
       # Mensagem de sucesso ao excluir requisitos quando condições da model forem cumpridas
