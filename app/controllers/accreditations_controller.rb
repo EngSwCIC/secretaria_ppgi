@@ -1,8 +1,10 @@
 class AccreditationsController < ApplicationController
   before_action :set_accreditation, only: [:show, :edit, :update, :destroy]
 
+  ##
+  # Ação index da classe Accreditation.
+  # Renderiza a view index, que exibe os credenciamentos criados (dependente do usuário que está logado).
   # GET /accreditations
-  # Lista os credenciamentos criados
   def index
     # Lista todas os credenciamentos para um administrador
     if current_user.role == "administrator"
@@ -13,18 +15,23 @@ class AccreditationsController < ApplicationController
     end
   end
 
+  ##
+  # Ação show da classe Accreditation. Mostra detalhes de um registro criado.
   # GET /accreditations/1
-  # Mostra detalhes de um registro criado
   def show
   end
 
+  ##
+  # Ação edit da classe Accreditation. Renderiza página para atualizar um registro.
   # GET /accreditations/1/edit
-  # Renderiza página para atualizar um registro
   def edit
   end
 
+  ##
+  # Método responsável por atualizar um registro com os dados inseridos na view edit.
+  # Recebe os dados da view edit enviados para o servidor e faz o tratamento dos dados para decidir se a modificação é válida ou não.
+  # Redireciona para a view index caso os dados sejam válidos.
   # PATCH/PUT /accreditations/1
-  # Faz o tratamento dos dados modificados pelo usuário para decidir se a modificação é válida ou não
   def update
     respond_to do |format|
       # Quando condições da model forem cumpridas, atualiza o registro no banco, redireciona para pagina index da tabela atual e mostra uma mensagem de sucesso 
@@ -37,8 +44,11 @@ class AccreditationsController < ApplicationController
     end
   end
 
+  ##
+  # Método responsável por excluir um registro salvo na tabela.
+  # Decide se a exclusão do registro é válida ou não.
+  # Redireciona para a view index.
   # DELETE /accreditations/1
-  # Decide se a exclusão do registro é válida ou não
   def destroy
     respond_to do |format|
       # Mensagem de sucesso ao excluir o credenciamento quando condições da model forem cumpridas
@@ -62,4 +72,3 @@ class AccreditationsController < ApplicationController
       params.require(:accreditation).permit(:user_id, :start_date, :end_date, :sei_proccess_id)
     end
 end
-
