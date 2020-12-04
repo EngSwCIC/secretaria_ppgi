@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2020-12-04T19:10:42-03:00">2020-12-04T19:10:42-03:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2020-12-04T19:46:23-03:00">2020-12-04T19:46:23-03:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,14 +23,14 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="green">
-  96.11%
+  96.08%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.45
+         1.47
        </span>
     </span> hits/line
     )
@@ -43,11 +43,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>257</b> relevant lines,
-    <span class="green"><b>247</b> lines covered</span> and
+    <b>255</b> relevant lines,
+    <span class="green"><b>245</b> lines covered</span> and
     <span class="red"><b>10</b> lines missed. </span>
     (<span class="green">
-  96.11%
+  96.08%
 </span>
 )
   </div>
@@ -94,12 +94,12 @@
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#1408fcce5c0282ec5374bbc78031c91fb73dc58f" class="src_link" title="app/controllers/process_controller.rb">app/controllers/process_controller.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">91.55 %</td>
-            <td class="cell--number">106</td>
-            <td class="cell--number">71</td>
-            <td class="cell--number">65</td>
+            <td class="green strong cell--number t-file__coverage">91.30 %</td>
+            <td class="cell--number">164</td>
+            <td class="cell--number">69</td>
+            <td class="cell--number">63</td>
             <td class="cell--number">6</td>
-            <td class="cell--number">2.21</td>
+            <td class="cell--number">2.30</td>
             
           </tr>
         
@@ -726,7 +726,7 @@
     <h3>app/controllers/process_controller.rb</h3>
     <h4>
       <span class="green">
-  91.55%
+  91.3%
 </span>
 
       lines covered
@@ -735,8 +735,8 @@
     
 
     <div class="t-line-summary">
-      <b>71</b> relevant lines.
-      <span class="green"><b>65</b> lines covered</span> and
+      <b>69</b> relevant lines.
+      <span class="green"><b>63</b> lines covered</span> and
       <span class="red"><b>6</b> lines missed.</span>
     </div>
 
@@ -748,24 +748,24 @@
     <ol>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="1">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="1">
+            
             
 
             
 
-            <code class="ruby">class ProcessController &lt; ApplicationController</code>
+            <code class="ruby">##</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="2">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="2">
+            
             
 
             
 
-            <code class="ruby">  before_action :require_login</code>
+            <code class="ruby"># ProcessController class implements all methods for interacting with process</code>
           </li>
         </div>
       
@@ -776,73 +776,73 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby"># asset</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="4">
+          <li class="never" data-hits="" data-linenumber="4">
+            
+            
+
+            
+
+            <code class="ruby">#</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="5">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  def reload_processes(user)</code>
+            <code class="ruby">class ProcessController &lt; ApplicationController</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="7" data-linenumber="5">
-            <span class="hits">7</span>
+          <li class="covered" data-hits="1" data-linenumber="6">
+            <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">    @processes = []</code>
+            <code class="ruby">  before_action :require_login</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="7" data-linenumber="6">
-            <span class="hits">7</span>
+          <li class="never" data-hits="" data-linenumber="7">
+            
             
 
             
 
-            <code class="ruby">    unless user.nil?</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="7" data-linenumber="7">
-            <span class="hits">7</span>
+          <li class="never" data-hits="" data-linenumber="8">
+            
             
 
             
 
-            <code class="ruby">      processes_query = user.processos.nil? ? [] : user.processos;</code>
+            <code class="ruby">  ##</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="7" data-linenumber="8">
-            <span class="hits">7</span>
+          <li class="never" data-hits="" data-linenumber="9">
+            
             
 
             
 
-            <code class="ruby">      processes_query.each do |process|</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="11" data-linenumber="9">
-            <span class="hits">11</span>
-            
-
-            
-
-            <code class="ruby">        @processes.append(process.attributes)</code>
+            <code class="ruby">  # reload_processes reloads @process variable for a user requesting a Process page</code>
           </li>
         </div>
       
@@ -853,7 +853,7 @@
 
             
 
-            <code class="ruby">      end</code>
+            <code class="ruby">  #</code>
           </li>
         </div>
       
@@ -864,18 +864,18 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">  # this methods changes instance var @process</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="7" data-linenumber="12">
-            <span class="hits">7</span>
+          <li class="never" data-hits="" data-linenumber="12">
+            
             
 
             
 
-            <code class="ruby">    @processes</code>
+            <code class="ruby">  #</code>
           </li>
         </div>
       
@@ -886,7 +886,7 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">  # @param user: devise logged user</code>
           </li>
         </div>
       
@@ -897,128 +897,128 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">  #</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="15">
+          <li class="never" data-hits="" data-linenumber="15">
+            
+            
+
+            
+
+            <code class="ruby">  # @return [Processo]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="16">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  def reset_status</code>
+            <code class="ruby">  def reload_processes(user)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="5" data-linenumber="16">
-            <span class="hits">5</span>
+          <li class="covered" data-hits="7" data-linenumber="17">
+            <span class="hits">7</span>
             
 
             
 
-            <code class="ruby">    @available_status = []</code>
+            <code class="ruby">    @processes = []</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="5" data-linenumber="17">
-            <span class="hits">5</span>
+          <li class="covered" data-hits="7" data-linenumber="18">
+            <span class="hits">7</span>
             
 
             
 
-            <code class="ruby">    @status = {}</code>
+            <code class="ruby">    unless user.nil?</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="18">
-            
-            
-
+          <li class="covered" data-hits="7" data-linenumber="19">
+            <span class="hits">7</span>
             
 
-            <code class="ruby">  end</code>
+            
+
+            <code class="ruby">      user_processes = user.processos</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="19">
-            
-            
-
+          <li class="covered" data-hits="7" data-linenumber="20">
+            <span class="hits">7</span>
             
 
-            <code class="ruby"></code>
+            
+
+            <code class="ruby">      processes_query = user_processes.nil? ? [] : user_processes;</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="20">
-            <span class="hits">1</span>
+          <li class="covered" data-hits="7" data-linenumber="21">
+            <span class="hits">7</span>
             
 
             
 
-            <code class="ruby">  def load_status</code>
+            <code class="ruby">      processes_query.each do |process|</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="5" data-linenumber="21">
-            <span class="hits">5</span>
+          <li class="covered" data-hits="11" data-linenumber="22">
+            <span class="hits">11</span>
             
 
             
 
-            <code class="ruby">    reset_status</code>
+            <code class="ruby">        @processes.append(process.attributes)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="5" data-linenumber="22">
-            <span class="hits">5</span>
+          <li class="never" data-hits="" data-linenumber="23">
+            
             
 
             
 
-            <code class="ruby">    ProcessStatus.find_each do |status|</code>
+            <code class="ruby">      end</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="5" data-linenumber="23">
-            <span class="hits">5</span>
+          <li class="never" data-hits="" data-linenumber="24">
+            
             
 
             
 
-            <code class="ruby">      id, label = status.label, status.id</code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="5" data-linenumber="24">
-            <span class="hits">5</span>
+          <li class="covered" data-hits="7" data-linenumber="25">
+            <span class="hits">7</span>
             
 
             
 
-            <code class="ruby">      @available_status.append([label, id])</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="5" data-linenumber="25">
-            <span class="hits">5</span>
-            
-
-            
-
-            <code class="ruby">      @status[id] = label</code>
+            <code class="ruby">    @processes</code>
           </li>
         </div>
       
@@ -1029,7 +1029,7 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -1040,7 +1040,7 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -1051,56 +1051,78 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">  ##</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="29">
+          <li class="never" data-hits="" data-linenumber="29">
+            
+            
+
+            
+
+            <code class="ruby">  # reset_status resets instance variables relative to process_status</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="30">
+            
+            
+
+            
+
+            <code class="ruby">  #</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="31">
+            
+            
+
+            
+
+            <code class="ruby">  # @return</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="32">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  def load_filters</code>
+            <code class="ruby">  def reset_status</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="30">
-            <span class="hits">2</span>
+          <li class="covered" data-hits="5" data-linenumber="33">
+            <span class="hits">5</span>
             
 
             
 
-            <code class="ruby">    load_status</code>
+            <code class="ruby">    @available_status = []</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="31">
-            <span class="hits">2</span>
+          <li class="covered" data-hits="5" data-linenumber="34">
+            <span class="hits">5</span>
             
 
             
 
-            <code class="ruby">    @filters = @available_status</code>
+            <code class="ruby">    @status = {}</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="32">
-            <span class="hits">2</span>
-            
-
-            
-
-            <code class="ruby">    @filters.append([&#39;Todos&#39;, -1])</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="33">
+          <li class="never" data-hits="" data-linenumber="35">
             
             
 
@@ -1111,7 +1133,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="34">
+          <li class="never" data-hits="" data-linenumber="36">
             
             
 
@@ -1122,95 +1144,117 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="35">
+          <li class="never" data-hits="" data-linenumber="37">
+            
+            
+
+            
+
+            <code class="ruby">  ##</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="38">
+            
+            
+
+            
+
+            <code class="ruby">  # load_status load @available_status and @status for view to access it</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="39">
+            
+            
+
+            
+
+            <code class="ruby">  #</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="40">
+            
+            
+
+            
+
+            <code class="ruby">  # @return</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="41">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  def filter_processes(filter_status)</code>
+            <code class="ruby">  def load_status</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="36">
-            <span class="hits">3</span>
+          <li class="covered" data-hits="5" data-linenumber="42">
+            <span class="hits">5</span>
             
 
             
 
-            <code class="ruby">    reload_processes(current_user)</code>
+            <code class="ruby">    reset_status</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="37">
-            <span class="hits">3</span>
+          <li class="covered" data-hits="5" data-linenumber="43">
+            <span class="hits">5</span>
             
 
             
 
-            <code class="ruby">    @current_filter = filter_status</code>
+            <code class="ruby">    ProcessStatus.find_each do |status|</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="38">
-            <span class="hits">3</span>
+          <li class="covered" data-hits="5" data-linenumber="44">
+            <span class="hits">5</span>
             
 
             
 
-            <code class="ruby">    @current_filter = filter_status.to_i</code>
+            <code class="ruby">      id, label = status.id, status.label</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="39">
-            <span class="hits">3</span>
+          <li class="covered" data-hits="5" data-linenumber="45">
+            <span class="hits">5</span>
             
 
             
 
-            <code class="ruby">    if @current_filter != -1</code>
+            <code class="ruby">      @available_status.append([label, id])</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="40">
-            <span class="hits">1</span>
+          <li class="covered" data-hits="5" data-linenumber="46">
+            <span class="hits">5</span>
             
 
             
 
-            <code class="ruby">      @processes = @processes.select do |process|</code>
+            <code class="ruby">      @status[id] = label</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="41">
-            <span class="hits">2</span>
-            
-
-            
-
-            <code class="ruby">        process[&#39;process_status_id&#39;] == filter_status</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="42">
-            
-            
-
-            
-
-            <code class="ruby">      end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="43">
+          <li class="never" data-hits="" data-linenumber="47">
             
             
 
@@ -1221,7 +1265,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="44">
+          <li class="never" data-hits="" data-linenumber="48">
             
             
 
@@ -1232,7 +1276,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="45">
+          <li class="never" data-hits="" data-linenumber="49">
             
             
 
@@ -1243,79 +1287,35 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="46">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="50">
+            
             
 
             
 
-            <code class="ruby">  def index</code>
+            <code class="ruby">  ##</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="47">
-            <span class="hits">2</span>
+          <li class="never" data-hits="" data-linenumber="51">
+            
             
 
             
 
-            <code class="ruby">    load_status</code>
+            <code class="ruby">  # load_filters returns filters that a user can apply to filter_status</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="48">
-            <span class="hits">2</span>
+          <li class="never" data-hits="" data-linenumber="52">
+            
             
 
             
 
-            <code class="ruby">    load_filters</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="2" data-linenumber="49">
-            <span class="hits">2</span>
-            
-
-            
-
-            <code class="ruby">    reload_processes(current_user)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="2" data-linenumber="50">
-            <span class="hits">2</span>
-            
-
-            
-
-            <code class="ruby">    filter_by = params[&#39;filter_by&#39;]</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="2" data-linenumber="51">
-            <span class="hits">2</span>
-            
-
-            
-
-            <code class="ruby">    filter_status = filter_by.nil? ? -1 : filter_by[&#39;filter_status&#39;].to_i</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="2" data-linenumber="52">
-            <span class="hits">2</span>
-            
-
-            
-
-            <code class="ruby">    filter_processes(filter_status)</code>
+            <code class="ruby">  #</code>
           </li>
         </div>
       
@@ -1326,73 +1326,73 @@
 
             
 
+            <code class="ruby">  # @returns [[String, Int]]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="54">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def load_filters</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="55">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">    load_status</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="56">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">    @filters = @available_status</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="57">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">    @filters.append([&#39;Todos&#39;, -1])</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="58">
+            
+            
+
+            
+
             <code class="ruby">  end</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="54">
+          <li class="never" data-hits="" data-linenumber="59">
             
             
 
             
 
             <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="55">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">  def search</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="56">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    permitted_params = params.require(:filter_by).permit(:filter_status)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="57">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    filter_status = permitted_params[&#39;filter_status&#39;]</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="58">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    filter_processes(filter_status)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="59">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    redirect_to process_home_path(:filter_by =&gt; permitted_params[&#39;filter_status&#39;])</code>
           </li>
         </div>
       
@@ -1403,7 +1403,7 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">  ##</code>
           </li>
         </div>
       
@@ -1414,95 +1414,95 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">  # filter_processes selects processes with requested status_id only</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="62">
+          <li class="never" data-hits="" data-linenumber="62">
+            
+            
+
+            
+
+            <code class="ruby">  #</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="63">
+            
+            
+
+            
+
+            <code class="ruby">  # @param filter_status: Int</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="64">
+            
+            
+
+            
+
+            <code class="ruby">  #</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="65">
+            
+            
+
+            
+
+            <code class="ruby">  # @return</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="66">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  def show</code>
+            <code class="ruby">  def filter_processes(filter_status)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="63">
-            <span class="hits">1</span>
+          <li class="covered" data-hits="3" data-linenumber="67">
+            <span class="hits">3</span>
             
 
             
 
-            <code class="ruby">    load_status</code>
+            <code class="ruby">    reload_processes(current_user)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="64">
-            <span class="hits">1</span>
+          <li class="covered" data-hits="3" data-linenumber="68">
+            <span class="hits">3</span>
             
 
             
 
-            <code class="ruby">    permitted_params = params.permit(:id)</code>
+            <code class="ruby">    @current_filter = filter_status</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="65">
-            <span class="hits">1</span>
+          <li class="covered" data-hits="3" data-linenumber="69">
+            <span class="hits">3</span>
             
 
             
 
-            <code class="ruby">    @process = current_user.processos.find(permitted_params[:id])</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="66">
-            
-            
-
-            
-
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="67">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="68">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">  def create</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="69">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    user = current_user</code>
+            <code class="ruby">    if @current_filter != -1</code>
           </li>
         </div>
       
@@ -1513,89 +1513,23 @@
 
             
 
-            <code class="ruby">    permitted_params = params.require(:processo).permit(:sei_process_code, :process_status_id, :document_files =&gt; [])</code>
+            <code class="ruby">      @processes = @processes.select do |process|</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="71">
-            <span class="hits">1</span>
+          <li class="covered" data-hits="2" data-linenumber="71">
+            <span class="hits">2</span>
             
 
             
 
-            <code class="ruby">    @process = user.processos.create({&quot;sei_process_code&quot;: permitted_params[&quot;sei_process_code&quot;], &quot;process_status_id&quot;: permitted_params[&quot;process_status_id&quot;]})</code>
+            <code class="ruby">        process[&#39;process_status_id&#39;] == filter_status</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="72">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    @process.save</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="73">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    docs = permitted_params[&quot;document_files&quot;]</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="74">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    unless docs.nil?</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="75">
-            
-            
-
-            
-
-            <code class="ruby">      docs.each do |doc|</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="76">
-            
-            
-
-            
-
-            <code class="ruby">        doc_model = {&quot;processo_id&quot;: @process[:id], &quot;data&quot; =&gt; doc.read, &quot;filename&quot;: doc.original_filename, &quot;mime_type&quot;: doc.content_type}</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="77">
-            
-            
-
-            
-
-            <code class="ruby">        @process.documents.create(doc_model)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="78">
+          <li class="never" data-hits="" data-linenumber="72">
             
             
 
@@ -1606,7 +1540,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="79">
+          <li class="never" data-hits="" data-linenumber="73">
             
             
 
@@ -1617,13 +1551,79 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="80">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="74">
+            
             
 
             
 
-            <code class="ruby">    reload_processes(user)</code>
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="75">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="76">
+            
+            
+
+            
+
+            <code class="ruby">  ##</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="77">
+            
+            
+
+            
+
+            <code class="ruby">  # index renders the process index page and returns filtered processes</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="78">
+            
+            
+
+            
+
+            <code class="ruby">  #</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="79">
+            
+            
+
+            
+
+            <code class="ruby">  # it can be GET with ?filter_by=status_id</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="80">
+            
+            
+
+            
+
+            <code class="ruby">  # @return [Processo]</code>
           </li>
         </div>
       
@@ -1634,23 +1634,34 @@
 
             
 
-            <code class="ruby">    redirect_to process_home_path</code>
+            <code class="ruby">  def index</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="82">
-            
-            
-
+          <li class="covered" data-hits="2" data-linenumber="82">
+            <span class="hits">2</span>
             
 
-            <code class="ruby">  end</code>
+            
+
+            <code class="ruby">    load_status</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="83">
+          <li class="covered" data-hits="2" data-linenumber="83">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">    load_filters</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="84">
             
             
 
@@ -1661,57 +1672,46 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="84">
-            <span class="hits">1</span>
+          <li class="covered" data-hits="2" data-linenumber="85">
+            <span class="hits">2</span>
             
 
             
 
-            <code class="ruby">  def serve</code>
+            <code class="ruby">    reload_processes(current_user)</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="85">
-            
-            
-
+          <li class="covered" data-hits="2" data-linenumber="86">
+            <span class="hits">2</span>
             
 
-            <code class="ruby">    permitted_params = params.permit(:process_id, :document_id)</code>
+            
+
+            <code class="ruby">    filter_by = params[&#39;filter_by&#39;]</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="86">
-            
-            
-
+          <li class="covered" data-hits="2" data-linenumber="87">
+            <span class="hits">2</span>
             
 
-            <code class="ruby">    @doc = user.processos.find(permitted_params).documents.find(document_id)</code>
+            
+
+            <code class="ruby">    filter_status = filter_by.nil? ? -1 : filter_by.to_i</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="87">
-            
-            
-
-            
-
-            <code class="ruby">    send_data(@doc.data, :type =&gt; @doc.mime_type, :filename =&gt; @doc.filename, :disposition =&gt; &quot;inline&quot;)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="88">
-            
+          <li class="covered" data-hits="2" data-linenumber="88">
+            <span class="hits">2</span>
             
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">    filter_processes(filter_status)</code>
           </li>
         </div>
       
@@ -1722,62 +1722,62 @@
 
             
 
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="90">
+            
+            
+
+            
+
             <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="90">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="91">
+            
             
 
             
 
-            <code class="ruby">  def destroy</code>
+            <code class="ruby">  ##</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="91">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="92">
+            
             
 
             
 
-            <code class="ruby">    user = current_user</code>
+            <code class="ruby">  # search filters processes by a status_id passed as parameter in the form {filter_by: {filter_status: Int}}</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="92">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="93">
+            
             
 
             
 
-            <code class="ruby">    permitted_params = params.permit(:id)</code>
+            <code class="ruby">  #</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="93">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="94">
+            
             
 
             
 
-            <code class="ruby">    user.processos.destroy(permitted_params[:id])</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="94">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    reload_processes(user)</code>
+            <code class="ruby">  # redirects to home with filtered table rendered</code>
           </li>
         </div>
       
@@ -1788,40 +1788,40 @@
 
             
 
-            <code class="ruby">    redirect_to process_home_path</code>
+            <code class="ruby">  def search</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="96">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="96">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">  end</code>
+            
+
+            <code class="ruby">    permitted_params = params.require(:filter_by).permit(:filter_status)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="97">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="97">
+            <span class="hits">1</span>
             
 
-            <code class="ruby"></code>
+            
+
+            <code class="ruby">    filter_status = permitted_params[&#39;filter_status&#39;]</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="98">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="98">
+            <span class="hits">1</span>
             
 
-            <code class="ruby"></code>
+            
+
+            <code class="ruby">    filter_processes(filter_status)</code>
           </li>
         </div>
       
@@ -1832,7 +1832,7 @@
 
             
 
-            <code class="ruby">  private</code>
+            <code class="ruby">    redirect_to process_home_path(:filter_by =&gt; permitted_params[&#39;filter_status&#39;])</code>
           </li>
         </div>
       
@@ -1843,40 +1843,40 @@
 
             
 
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="101">
+            
+            
+
+            
+
             <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="101">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="102">
+            
             
 
             
 
-            <code class="ruby">  def require_login</code>
+            <code class="ruby">  ##</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="7" data-linenumber="102">
-            <span class="hits">7</span>
+          <li class="never" data-hits="" data-linenumber="103">
+            
             
 
             
 
-            <code class="ruby">    unless current_user</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="103">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">      redirect_to root_url</code>
+            <code class="ruby">  # show a process with an id as url parameter</code>
           </li>
         </div>
       
@@ -1887,7 +1887,7 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">  #</code>
           </li>
         </div>
       
@@ -1898,12 +1898,650 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">  # changes instance @process to requested process</code>
           </li>
         </div>
       
         <div>
           <li class="never" data-hits="" data-linenumber="106">
+            
+            
+
+            
+
+            <code class="ruby">  #</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="107">
+            
+            
+
+            
+
+            <code class="ruby">  # @return</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="108">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def show</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="109">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    load_status</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="110">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    permitted_params = params.permit(:id)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="111">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    @process = current_user.processos.find(permitted_params[:id])</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="112">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="113">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="114">
+            
+            
+
+            
+
+            <code class="ruby">  ##</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="115">
+            
+            
+
+            
+
+            <code class="ruby">  # create will create a new entry on db for an user</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="116">
+            
+            
+
+            
+
+            <code class="ruby">  #</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="117">
+            
+            
+
+            
+
+            <code class="ruby">  # redirects to home with new created process attached to table on process index</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="118">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def create</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="119">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    permitted_params = params.require(:processo).permit(:sei_process_code, :process_status_id, :document_files =&gt; [])</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="120">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    @process = current_user.processos.create({&quot;sei_process_code&quot;: permitted_params[&quot;sei_process_code&quot;], &quot;process_status_id&quot;: permitted_params[&quot;process_status_id&quot;]})</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="121">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    @process.save</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="122">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    docs = permitted_params[&quot;document_files&quot;]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="123">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    unless docs.nil?</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="124">
+            
+            
+
+            
+
+            <code class="ruby">      docs.each do |doc|</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="125">
+            
+            
+
+            
+
+            <code class="ruby">        doc_model = {&quot;processo_id&quot;: @process[:id], &quot;data&quot; =&gt; doc.read, &quot;filename&quot;: doc.original_filename, &quot;mime_type&quot;: doc.content_type}</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="126">
+            
+            
+
+            
+
+            <code class="ruby">        @process.documents.create(doc_model)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="127">
+            
+            
+
+            
+
+            <code class="ruby">      end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="128">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="129">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    reload_processes(current_user)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="130">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    redirect_to process_home_path</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="131">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="132">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="133">
+            
+            
+
+            
+
+            <code class="ruby">  ##</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="134">
+            
+            
+
+            
+
+            <code class="ruby">  # serve returns a document attached to a process</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="135">
+            
+            
+
+            
+
+            <code class="ruby">  #</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="136">
+            
+            
+
+            
+
+            <code class="ruby">  # returns a data url to enable user to download it</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="137">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def serve</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="138">
+            
+            
+
+            
+
+            <code class="ruby">    permitted_params = params.permit(:process_id, :document_id)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="139">
+            
+            
+
+            
+
+            <code class="ruby">    @doc = user.processos.find(permitted_params).documents.find(document_id)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="140">
+            
+            
+
+            
+
+            <code class="ruby">    send_data(@doc.data, :type =&gt; @doc.mime_type, :filename =&gt; @doc.filename, :disposition =&gt; &quot;inline&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="141">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="142">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="143">
+            
+            
+
+            
+
+            <code class="ruby">  ##</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="144">
+            
+            
+
+            
+
+            <code class="ruby">  # destroy removes an process with an id={id} from a user&#39;s process</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="145">
+            
+            
+
+            
+
+            <code class="ruby">  # it changes database</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="146">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def destroy</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="147">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    permitted_params = params.permit(:id)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="148">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    current_user.processos.destroy(permitted_params[:id])</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="149">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    reload_processes(current_user)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="150">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    redirect_to process_home_path</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="151">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="152">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="153">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="154">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  private</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="155">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="156">
+            
+            
+
+            
+
+            <code class="ruby">  ##</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="157">
+            
+            
+
+            
+
+            <code class="ruby">  # require_login redirects to homepage everytime a guest user tries to request /process</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="158">
+            
+            
+
+            
+
+            <code class="ruby">  #</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="159">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def require_login</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="7" data-linenumber="160">
+            <span class="hits">7</span>
+            
+
+            
+
+            <code class="ruby">    unless current_user</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="161">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      redirect_to root_url</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="162">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="163">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="164">
             
             
 

@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class ProcessController - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link"><a href="ApplicationController.html">ApplicationController</a>
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-i-create">#create</a>
+    
+    <li ><a href="#method-i-destroy">#destroy</a>
+    
+    <li ><a href="#method-i-filter_processes">#filter_processes</a>
+    
+    <li ><a href="#method-i-index">#index</a>
+    
+    <li ><a href="#method-i-load_filters">#load_filters</a>
+    
+    <li ><a href="#method-i-load_status">#load_status</a>
+    
+    <li ><a href="#method-i-reload_processes">#reload_processes</a>
+    
+    <li ><a href="#method-i-reset_status">#reset_status</a>
+    
+    <li ><a href="#method-i-search">#search</a>
+    
+    <li ><a href="#method-i-serve">#serve</a>
+    
+    <li ><a href="#method-i-show">#show</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-ProcessController">
+  <h1 id="class-ProcessController" class="class">
+    class ProcessController
+  </h1>
+
+  <section class="description">
+    
+<p><a href="ProcessController.html"><code>ProcessController</code></a> class implements all methods for interacting with process asset</p>
+
+  </section>
+
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-create" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>create will create a new entry on db for an user</p>
+
+<p>redirects to home with new created process attached to table on process index</p>
+          
+          
+
+          
+          <div class="method-source-code" id="create-source">
+            <pre><span class="ruby-comment"># File app/controllers/process_controller.rb, line 117</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">create</span>
+  <span class="ruby-identifier">permitted_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">require</span>(<span class="ruby-value">:processo</span>).<span class="ruby-identifier">permit</span>(<span class="ruby-value">:sei_process_code</span>, <span class="ruby-value">:process_status_id</span>, <span class="ruby-value">:document_files</span> <span class="ruby-operator">=&gt;</span> [])
+  <span class="ruby-ivar">@process</span> = <span class="ruby-identifier">current_user</span>.<span class="ruby-identifier">processos</span>.<span class="ruby-identifier">create</span>({<span class="ruby-value">&quot;sei_process_code&quot;:</span> <span class="ruby-identifier">permitted_params</span>[<span class="ruby-string">&quot;sei_process_code&quot;</span>], <span class="ruby-value">&quot;process_status_id&quot;:</span> <span class="ruby-identifier">permitted_params</span>[<span class="ruby-string">&quot;process_status_id&quot;</span>]})
+  <span class="ruby-ivar">@process</span>.<span class="ruby-identifier">save</span>
+  <span class="ruby-identifier">docs</span> = <span class="ruby-identifier">permitted_params</span>[<span class="ruby-string">&quot;document_files&quot;</span>]
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">docs</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-identifier">docs</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">doc</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">doc_model</span> = {<span class="ruby-value">&quot;processo_id&quot;:</span> <span class="ruby-ivar">@process</span>[<span class="ruby-value">:id</span>], <span class="ruby-string">&quot;data&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">doc</span>.<span class="ruby-identifier">read</span>, <span class="ruby-value">&quot;filename&quot;:</span> <span class="ruby-identifier">doc</span>.<span class="ruby-identifier">original_filename</span>, <span class="ruby-value">&quot;mime_type&quot;:</span> <span class="ruby-identifier">doc</span>.<span class="ruby-identifier">content_type</span>}
+      <span class="ruby-ivar">@process</span>.<span class="ruby-identifier">documents</span>.<span class="ruby-identifier">create</span>(<span class="ruby-identifier">doc_model</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">reload_processes</span>(<span class="ruby-identifier">current_user</span>)
+  <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">process_home_path</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-destroy" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">destroy</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>destroy removes an process with an id={id} from a user&#39;s process it changes database</p>
+          
+          
+
+          
+          <div class="method-source-code" id="destroy-source">
+            <pre><span class="ruby-comment"># File app/controllers/process_controller.rb, line 145</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">destroy</span>
+  <span class="ruby-identifier">permitted_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">permit</span>(<span class="ruby-value">:id</span>)
+  <span class="ruby-identifier">current_user</span>.<span class="ruby-identifier">processos</span>.<span class="ruby-identifier">destroy</span>(<span class="ruby-identifier">permitted_params</span>[<span class="ruby-value">:id</span>])
+  <span class="ruby-identifier">reload_processes</span>(<span class="ruby-identifier">current_user</span>)
+  <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">process_home_path</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-filter_processes" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">filter_processes</span><span
+            class="method-args">(filter_status)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p><a href="ProcessController.html#method-i-filter_processes"><code>filter_processes</code></a> selects processes with requested status_id only</p>
+
+<p>@param filter_status: Int</p>
+
+<p>@return</p>
+          
+          
+
+          
+          <div class="method-source-code" id="filter_processes-source">
+            <pre><span class="ruby-comment"># File app/controllers/process_controller.rb, line 65</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">filter_processes</span>(<span class="ruby-identifier">filter_status</span>)
+  <span class="ruby-identifier">reload_processes</span>(<span class="ruby-identifier">current_user</span>)
+  <span class="ruby-ivar">@current_filter</span> = <span class="ruby-identifier">filter_status</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@current_filter</span> <span class="ruby-operator">!=</span> <span class="ruby-value">-1</span>
+    <span class="ruby-ivar">@processes</span> = <span class="ruby-ivar">@processes</span>.<span class="ruby-identifier">select</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">process</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">process</span>[<span class="ruby-string">&#39;process_status_id&#39;</span>] <span class="ruby-operator">==</span> <span class="ruby-identifier">filter_status</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-index" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">index</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>index renders the process index page and returns filtered processes</p>
+
+<p>it can be GET with ?filter_by=status_id @return [Processo]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="index-source">
+            <pre><span class="ruby-comment"># File app/controllers/process_controller.rb, line 80</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">index</span>
+  <span class="ruby-identifier">load_status</span>
+  <span class="ruby-identifier">load_filters</span>
+
+  <span class="ruby-identifier">reload_processes</span>(<span class="ruby-identifier">current_user</span>)
+  <span class="ruby-identifier">filter_by</span> = <span class="ruby-identifier">params</span>[<span class="ruby-string">&#39;filter_by&#39;</span>]
+  <span class="ruby-identifier">filter_status</span> = <span class="ruby-identifier">filter_by</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">?</span> <span class="ruby-value">-1</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">filter_by</span>.<span class="ruby-identifier">to_i</span>
+  <span class="ruby-identifier">filter_processes</span>(<span class="ruby-identifier">filter_status</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-load_filters" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">load_filters</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p><a href="ProcessController.html#method-i-load_filters"><code>load_filters</code></a> returns filters that a user can apply to filter_status</p>
+
+<p>@returns [[String, Int]]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="load_filters-source">
+            <pre><span class="ruby-comment"># File app/controllers/process_controller.rb, line 53</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">load_filters</span>
+  <span class="ruby-identifier">load_status</span>
+  <span class="ruby-ivar">@filters</span> = <span class="ruby-ivar">@available_status</span>
+  <span class="ruby-ivar">@filters</span>.<span class="ruby-identifier">append</span>([<span class="ruby-string">&#39;Todos&#39;</span>, <span class="ruby-value">-1</span>])
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-load_status" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">load_status</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p><a href="ProcessController.html#method-i-load_status"><code>load_status</code></a> load @available_status and @status for view to access it</p>
+
+<p>@return</p>
+          
+          
+
+          
+          <div class="method-source-code" id="load_status-source">
+            <pre><span class="ruby-comment"># File app/controllers/process_controller.rb, line 40</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">load_status</span>
+  <span class="ruby-identifier">reset_status</span>
+  <span class="ruby-constant">ProcessStatus</span>.<span class="ruby-identifier">find_each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">status</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">id</span>, <span class="ruby-identifier">label</span> = <span class="ruby-identifier">status</span>.<span class="ruby-identifier">id</span>, <span class="ruby-identifier">status</span>.<span class="ruby-identifier">label</span>
+    <span class="ruby-ivar">@available_status</span>.<span class="ruby-identifier">append</span>([<span class="ruby-identifier">label</span>, <span class="ruby-identifier">id</span>])
+    <span class="ruby-ivar">@status</span>[<span class="ruby-identifier">id</span>] = <span class="ruby-identifier">label</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-reload_processes" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">reload_processes</span><span
+            class="method-args">(user)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p><a href="ProcessController.html#method-i-reload_processes"><code>reload_processes</code></a> reloads @process variable for a user requesting a Process page</p>
+
+<p>this methods changes instance var @process</p>
+
+<p>@param user: devise logged user</p>
+
+<p>@return [Processo]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="reload_processes-source">
+            <pre><span class="ruby-comment"># File app/controllers/process_controller.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">reload_processes</span>(<span class="ruby-identifier">user</span>)
+  <span class="ruby-ivar">@processes</span> = []
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">user</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-identifier">processes_query</span> = <span class="ruby-identifier">user</span>.<span class="ruby-identifier">processos</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">?</span> [] <span class="ruby-operator">:</span> <span class="ruby-identifier">user</span>.<span class="ruby-identifier">processos</span>;
+    <span class="ruby-identifier">processes_query</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">process</span><span class="ruby-operator">|</span>
+      <span class="ruby-ivar">@processes</span>.<span class="ruby-identifier">append</span>(<span class="ruby-identifier">process</span>.<span class="ruby-identifier">attributes</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-ivar">@processes</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-reset_status" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">reset_status</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p><a href="ProcessController.html#method-i-reset_status"><code>reset_status</code></a> resets instance variables relative to process_status</p>
+
+<p>@return</p>
+          
+          
+
+          
+          <div class="method-source-code" id="reset_status-source">
+            <pre><span class="ruby-comment"># File app/controllers/process_controller.rb, line 31</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">reset_status</span>
+  <span class="ruby-ivar">@available_status</span> = []
+  <span class="ruby-ivar">@status</span> = {}
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-search" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">search</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>search filters processes by a status_id passed as parameter in the form {filter_by: {filter_status: Int}}</p>
+
+<p>redirects to home with filtered table rendered</p>
+          
+          
+
+          
+          <div class="method-source-code" id="search-source">
+            <pre><span class="ruby-comment"># File app/controllers/process_controller.rb, line 94</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">search</span>
+  <span class="ruby-identifier">permitted_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">require</span>(<span class="ruby-value">:filter_by</span>).<span class="ruby-identifier">permit</span>(<span class="ruby-value">:filter_status</span>)
+  <span class="ruby-identifier">filter_status</span> = <span class="ruby-identifier">permitted_params</span>[<span class="ruby-string">&#39;filter_status&#39;</span>]
+  <span class="ruby-identifier">filter_processes</span>(<span class="ruby-identifier">filter_status</span>)
+  <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">process_home_path</span>(<span class="ruby-value">:filter_by</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">permitted_params</span>[<span class="ruby-string">&#39;filter_status&#39;</span>])
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-serve" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">serve</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>serve returns a document attached to a process</p>
+
+<p>returns a data url to enable user to download it</p>
+          
+          
+
+          
+          <div class="method-source-code" id="serve-source">
+            <pre><span class="ruby-comment"># File app/controllers/process_controller.rb, line 136</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">serve</span>
+  <span class="ruby-identifier">permitted_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">permit</span>(<span class="ruby-value">:process_id</span>, <span class="ruby-value">:document_id</span>)
+  <span class="ruby-ivar">@doc</span> = <span class="ruby-identifier">user</span>.<span class="ruby-identifier">processos</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">permitted_params</span>).<span class="ruby-identifier">documents</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">document_id</span>)
+  <span class="ruby-identifier">send_data</span>(<span class="ruby-ivar">@doc</span>.<span class="ruby-identifier">data</span>, <span class="ruby-value">:type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-ivar">@doc</span>.<span class="ruby-identifier">mime_type</span>, <span class="ruby-value">:filename</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-ivar">@doc</span>.<span class="ruby-identifier">filename</span>, <span class="ruby-value">:disposition</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;inline&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-show" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">show</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>show a process with an id as url parameter</p>
+
+<p>changes instance @process to requested process</p>
+
+<p>@return</p>
+          
+          
+
+          
+          <div class="method-source-code" id="show-source">
+            <pre><span class="ruby-comment"># File app/controllers/process_controller.rb, line 107</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">show</span>
+  <span class="ruby-identifier">load_status</span>
+  <span class="ruby-identifier">permitted_params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">permit</span>(<span class="ruby-value">:id</span>)
+  <span class="ruby-ivar">@process</span> = <span class="ruby-identifier">current_user</span>.<span class="ruby-identifier">processos</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">permitted_params</span>[<span class="ruby-value">:id</span>])
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.1.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
