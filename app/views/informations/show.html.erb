@@ -1,3 +1,4 @@
+<% if current_user.role != nil %>
 <p>
   <strong>Título:</strong>
   <%= @information.title %>
@@ -13,3 +14,6 @@
 <% end %> 
 
 <%= link_to 'Voltar', informations_path %>
+<% else %>
+    <h2>Acesso Negado</h2>
+<% end %>

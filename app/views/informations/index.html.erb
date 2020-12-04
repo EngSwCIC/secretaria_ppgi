@@ -1,3 +1,4 @@
+<% if current_user.role != nil %>
 <h1>Lista de Informações</h1>
  
 <% if @informations.empty? %>
@@ -48,4 +49,6 @@
   <td><%= link_to 'Cadastrar nova informação', new_information_path %></td>
 <% end %>
 <td><%= link_to 'Voltar', home_index_path %></td>
-
+<% else %>
+    <h2>Acesso Negado</h2>
+<% end %>

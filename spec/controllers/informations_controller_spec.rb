@@ -159,6 +159,70 @@ RSpec.describe InformationsController, :type => :controller do
       end
     end
   end
+
+  describe "get information index page" do
+    context "as an administrator" do
+      it "displays links for creating and deleting informations" do
+        information = Information.create(:title => 'title', :content => 'content', :source_id => '1')
+        get :index
+        expect(response.body).to match /Remover/im
+        expect(response.body).to match /Cadastrar nova informação/im
+      end
+    end
+
+    context "as a non administrator user" do
+      it "does not display links for creating and deleting informations" do
+        sign_out @user
+        @user2 = create(:user, :professor)
+        sign_in @user2
+        get :index
+        expect(response.body).not_to match /Remover/im
+        expect(response.body).not_to match /Cadastrar nova informação/im
+      end
+    end
+  end
+
+  describe "get information edit page" do
+    context "as an administrator (happy path)" do
+      it "renders the edit information page" do
+        information = Information.create(:title => 'title', :content => 'content', :source_id => '1')
+        get :edit, params: {id: information.id}
+        expect(response.body).to match /Editar informação/im
+      end
+    end
+
+    context "as a non administrator user (sad path)" do
+      it "renders the access denied page" do
+        sign_out @user
+        @user2 = create(:user, :professor)
+        sign_in @user2
+        information = Information.create(:title => 'title', :content => 'content', :source_id => '1')
+        get :edit, params: {id: information.id}
+        expect(response.body).to match /negado/im
+        expect(response.body).not_to match /Editar informação/im
+      end
+    end
+  end
+
+  describe "get information creation page" do
+    context "as an administrator (happy path)" do
+      it "renders the create information page" do
+        get :new
+        expect(response.body).to match /Adicionar uma nova informação/im
+      end
+    end
+
+    context "as a non administrator user (sad path)" do
+      it "renders the access denied page" do
+        sign_out @user
+        @user2 = create(:user, :professor)
+        sign_in @user2
+        get :new
+        expect(response.body).to match /negado/im
+        expect(response.body).not_to match /Adicionar uma nova informação/im
+      end
+    end
+  end
   
 
 end

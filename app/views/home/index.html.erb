@@ -10,7 +10,7 @@
   <% if current_user.role == 'administrator' %>
   <%= link_to "Cadastrar nova informação", new_information_path %>
   <%= simple_format("\n") %>
-  <%= link_to "Cadastrar fonte de informaçao",  new_source_path, controller: 'sources'%>
+  <%= link_to "Cadastrar fonte de informação",  new_source_path, controller: 'sources'%>
   <%= simple_format("\n") %>
   <%= link_to "Criar nova notificação",  new_notification_path, controller: 'notifications'%>
   <%= simple_format("\n") %>

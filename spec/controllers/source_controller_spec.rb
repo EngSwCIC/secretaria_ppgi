@@ -142,4 +142,70 @@ describe "create source" do
   end
 end
 
+describe "get source index page" do
+  context "as an administrator" do
+    it "displays links for creating and deleting sources" do
+      source = Source.create(:name => 's')      
+      get :index
+      expect(response.body).to match /Remover/im
+      expect(response.body).to match /Cadastrar Fonte de Informação/im
+    end
+  end
+
+  context "as a non administrator user" do
+    it "does not display links for creating and deleting sources" do
+      sign_out @user
+      @user2 = create(:user, :professor)
+      sign_in @user2
+      get :index
+      expect(response.body).not_to match /Remover/im
+      expect(response.body).not_to match /Cadastrar Fonte de Informação/im
+    end
+  end
+end
+
+describe "get source edit page" do
+  context "as an administrator (happy path)" do
+    it "renders the edit source page" do
+      source = Source.create(:name => 's')      
+      get :edit, params: {id: source.id}
+      expect(response.body).to match /Editar fonte de informação/im
+    end
+  end
+
+  context "as a non administrator user (sad path)" do
+    it "renders the access denied page" do
+      sign_out @user
+      @user2 = create(:user, :professor)
+      sign_in @user2
+      source = Source.create(:name => 's')      
+      get :edit, params: {id: source.id}
+      expect(response.body).to match /negado/im
+      expect(response.body).not_to match /Editar fonte de informação/im
+    end
+  end
+end
+
+describe "get source creation page" do
+  context "as an administrator (happy path)" do
+    it "renders the create source page" do
+      get :new
+      expect(response.body).to match /Nova fonte/im
+    end
+  end
+
+  context "as a non administrator user (sad path)" do
+    it "renders the access denied page" do
+      sign_out @user
+      @user2 = create(:user, :professor)
+      sign_in @user2
+      get :new
+      expect(response.body).to match /negado/im
+      expect(response.body).not_to match /Nova fonte/im
+    end
+  end
+end
+
+
+
 end
