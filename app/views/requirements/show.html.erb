@@ -1,0 +1,25 @@
+<p id="notice"></p>
+
+<p>
+  <strong>Tipo dos Requisitos:</strong>
+  <%= @requirement.title %>
+</p>
+
+<p>
+  <strong>Conteúdo:</strong>
+  <%= @requirement.content %>
+</p>
+
+<% if @requirement.documents.attached? %>
+  <p>
+    <strong>Documentos anexados</strong>
+    <% @requirement.documents.each do |document| %>
+      <div>
+        <%= link_to document.filename, rails_blob_path(document, disposition: 'attachment') %>
+      <div>
+    <% end %>
+  </p>
+<% end %>
+
+<%= link_to 'Editar', edit_requirement_path(@requirement) %> |
+<%= link_to 'Voltar', requirements_path %>

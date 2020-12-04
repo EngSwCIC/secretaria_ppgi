@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class RequirementsController - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
+</script>
+
+<script src="./js/navigation.js" defer></script>
+<script src="./js/search.js" defer></script>
+<script src="./js/search_index.js" defer></script>
+<script src="./js/searcher.js" defer></script>
+<script src="./js/darkfish.js" defer></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link"><a href="ApplicationController.html">ApplicationController</a>
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-i-create">#create</a>
+    
+    <li ><a href="#method-i-delete_document_attachment">#delete_document_attachment</a>
+    
+    <li ><a href="#method-i-destroy">#destroy</a>
+    
+    <li ><a href="#method-i-edit">#edit</a>
+    
+    <li ><a href="#method-i-index">#index</a>
+    
+    <li ><a href="#method-i-new">#new</a>
+    
+    <li ><a href="#method-i-show">#show</a>
+    
+    <li ><a href="#method-i-update">#update</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-RequirementsController">
+  <h1 id="class-RequirementsController" class="class">
+    class RequirementsController
+  </h1>
+
+  <section class="description">
+    
+  </section>
+
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-create" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>POST /requirements Faz uma validação dos dados disponibilizados pelo usuário, e resulta na aceitação ou negação dos mesmos</p>
+          
+          
+
+          
+          <div class="method-source-code" id="create-source">
+            <pre><span class="ruby-comment"># File app/controllers/requirements_controller.rb, line 39</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">create</span>
+  <span class="ruby-ivar">@requirement</span> = <span class="ruby-constant">Requirement</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">requirement_params</span>)
+  
+  <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
+    <span class="ruby-comment"># Quando condições da model forem cumpridas, cria um novo registro no banco, redireciona para pagina index da entidade atual e mostra uma mensagem de sucesso</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-ivar">@requirement</span>.<span class="ruby-identifier">save</span>
+      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">redirect_to</span> <span class="ruby-ivar">@requirement</span>, <span class="ruby-value">notice:</span> <span class="ruby-string">&#39;Requisitos criados com sucesso!&#39;</span> }
+    <span class="ruby-comment"># Mostra uma mensagem de erro se condições da model não forem cumpridas</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">render</span> <span class="ruby-value">:new</span> }
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-delete_document_attachment" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">delete_document_attachment</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Realiza uma busca pelo documento que se deseja apagar, e após isso deleta o mesmo</p>
+          
+          
+
+          
+          <div class="method-source-code" id="delete_document_attachment-source">
+            <pre><span class="ruby-comment"># File app/controllers/requirements_controller.rb, line 56</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">delete_document_attachment</span>
+  <span class="ruby-ivar">@document</span> = <span class="ruby-constant">ActiveStorage</span><span class="ruby-operator">::</span><span class="ruby-constant">Attachment</span>.<span class="ruby-identifier">find_by</span>(<span class="ruby-value">id:</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+  <span class="ruby-ivar">@requirement_id</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:requirement_id</span>]
+  <span class="ruby-ivar">@document</span>&amp;.<span class="ruby-identifier">purge</span>
+  <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">edit_requirement_path</span>(<span class="ruby-ivar">@requirement_id</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-destroy" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">destroy</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>DELETE /requirements/1 Tenta realizar a exclusão de um requirement, e apresenta uma mensagem de sucesso ou falha</p>
+          
+          
+
+          
+          <div class="method-source-code" id="destroy-source">
+            <pre><span class="ruby-comment"># File app/controllers/requirements_controller.rb, line 84</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">destroy</span>
+  <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
+    <span class="ruby-comment"># Mensagem de sucesso ao excluir requisitos quando condições da model forem cumpridas</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-ivar">@requirement</span>.<span class="ruby-identifier">destroy</span>
+      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">requirements_url</span>, <span class="ruby-value">notice:</span> <span class="ruby-string">&#39;Requisitos excluídos com sucesso!&#39;</span> }
+    <span class="ruby-comment"># Mensagem de erro se condições da model não forem cumpridas</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">requirements_url</span>, <span class="ruby-value">notice:</span> <span class="ruby-string">&#39;Erro: não foi possível excluir os requisitos!&#39;</span> }
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-edit" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">edit</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>GET /requirements/1/edit Permite uma visualização dos dados de um registro, e além disso apresenta a possibilidade de atualização de alguns dados específicos do mesmo</p>
+          
+          
+
+          
+          <div class="method-source-code" id="edit-source">
+            <pre><span class="ruby-comment"># File app/controllers/requirements_controller.rb, line 32</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">edit</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-index" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">index</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>GET /requirements Esse método faz uma completa listagem a partir de Requirements para os requisitos criados</p>
+          
+          
+
+          
+          <div class="method-source-code" id="index-source">
+            <pre><span class="ruby-comment"># File app/controllers/requirements_controller.rb, line 8</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">index</span>
+  <span class="ruby-comment"># Lista todos os tipos de requisitos criados</span>
+  <span class="ruby-ivar">@requirements</span> = <span class="ruby-constant">Requirement</span>.<span class="ruby-identifier">all</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>GET /requirements/new Permite, a partir do preenchimento dos dados necessários para um requisito, a criação de um novo requisito</p>
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File app/controllers/requirements_controller.rb, line 24</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">new</span>
+  <span class="ruby-ivar">@requirement</span> = <span class="ruby-constant">Requirement</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-show" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">show</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>GET /requirements/1 Demonstração em detalhes os dados de um registro anteriormente criado para visualização</p>
+          
+          
+
+          
+          <div class="method-source-code" id="show-source">
+            <pre><span class="ruby-comment"># File app/controllers/requirements_controller.rb, line 17</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">show</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-update" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">update</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>PATCH/PUT /requirements/1 Faz o tratamento dos dados modificados pelo usuário para decidir se a modificação é válida ou não Realiza uma validação dos dados que foram editados pelo usuário, e resulta na aceitação ou não do mesmo</p>
+          
+          
+
+          
+          <div class="method-source-code" id="update-source">
+            <pre><span class="ruby-comment"># File app/controllers/requirements_controller.rb, line 68</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">update</span>
+  <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
+    <span class="ruby-comment"># Quando condições da model forem cumpridas, atualiza o registro no banco, redireciona para pagina de detalhes do registro recém modificado e mostra uma mensagem de sucesso</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-ivar">@requirement</span>.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">requirement_params</span>)
+      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">redirect_to</span> <span class="ruby-ivar">@requirement</span>, <span class="ruby-value">notice:</span> <span class="ruby-string">&#39;Requisitos atualizados com sucesso!&#39;</span> }
+    <span class="ruby-comment"># Mostra uma mensagem de erro se condições da model não forem cumpridas</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">render</span> <span class="ruby-value">:edit</span> }
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.2.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

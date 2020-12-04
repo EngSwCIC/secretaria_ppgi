@@ -1,0 +1,27 @@
+<%= form_with(model: accreditation, local: true) do |form| %>
+  <% if accreditation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(accreditation.errors.count, "erro") %> impediu este credenciamento de ser salvo:</h2>
+
+      <ul>
+      <% accreditation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :start_date, "Data inicial" %>
+    <%= form.date_field :start_date, value: Date.current %>
+  </div>
+
+  <div class="field">
+    <%= form.label :end_date, "Data final" %>
+    <%= form.date_field :end_date %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Salvar" %>
+  </div>
+<% end %>

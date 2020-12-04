@@ -6,6 +6,18 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+def destroy_records class_name
+    class_name.each do |obj|
+        obj.allow_deletion!
+        obj.destroy
+    end
+end
+
+# All Stuff
+destroy_records(Requirement.all)
+destroy_records(Accreditation.all)
+destroy_records(SeiProcess.all)
+
 # Users
 User.destroy_all
 User.create(full_name: "Administrador", email: "admin@admin.com", password: "admin123", role: "administrator", registration: "000000000")

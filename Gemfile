@@ -24,6 +24,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
+gem 'simplecov', require: false, group: :test
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
@@ -42,7 +43,6 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails'
-
 end
 
 group :development do
@@ -56,15 +56,26 @@ end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'webdrivers'
   gem 'cucumber-rails', require: false
+  gem 'cucumber-rails-training-wheels' # some pre-fabbed step definitions
   # database_cleaner is not required, but highly recommended
   gem 'database_cleaner'
+  gem 'capybara', '>= 2.15'
+  gem 'launchy' # a useful debugging aid for user stories
   gem 'shoulda-matchers'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# Rails 5.2 and Rails 6
+gem 'active_storage_validations'
+
+# Optional, to use :dimension validator or :aspect_ratio validator
+gem 'mini_magick', '>= 4.9.5'
+
+# Ordena a lista pelo ABC Score em conformidade a Sprint 3
+gem 'flog'
