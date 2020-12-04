@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :budgets
+  resources :budgets, only: [:new, :index, :create]
   resources :requirements
   resources :requests
   resources :request_types

@@ -1,15 +1,15 @@
-class BudgetsController < ApplicationController
-  before_action :set_budget, only: [:show, :edit, :update, :destroy]
-
+class BudgetsController < ApplicationController  
+  ##
   # GET /budgets
+  #
   # GET /budgets.json
+  #
+  # Returns a list containing all budgets in the system.
+  #
+  # However, it's important to notice that the system is designed to allow only 1 budget instance, 
+  # as multiple budgets would lead to inconsistencies.
   def index
     @budgets = Budget.all
-  end
-
-  # GET /budgets/1
-  # GET /budgets/1.json
-  def show
   end
 
   # GET /budgets/new
@@ -17,47 +17,25 @@ class BudgetsController < ApplicationController
     @budget = Budget.new
   end
 
-  # GET /budgets/1/edit
-  def edit
-  end
-
   # POST /budgets
   # POST /budgets.json
   def create
+    @budgets = Budget.all
+
+    @budgets.each do |b|
+      b.destroy
+    end
+    
     @budget = Budget.new(budget_params)
 
     respond_to do |format|
       if @budget.save
-        format.html { redirect_to @budget, notice: 'Budget was successfully created.' }
+        format.html { redirect_to '/budgets', notice: 'Budget was successfully created.' }
         format.json { render :show, status: :created, location: @budget }
       else
         format.html { render :new }
         format.json { render json: @budget.errors, status: :unprocessable_entity }
       end
-    end
-  end
-
-  # PATCH/PUT /budgets/1
-  # PATCH/PUT /budgets/1.json
-  def update
-    respond_to do |format|
-      if @budget.update(budget_params)
-        format.html { redirect_to @budget, notice: 'Budget was successfully updated.' }
-        format.json { render :show, status: :ok, location: @budget }
-      else
-        format.html { render :edit }
-        format.json { render json: @budget.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /budgets/1
-  # DELETE /budgets/1.json
-  def destroy
-    @budget.destroy
-    respond_to do |format|
-      format.html { redirect_to budgets_url, notice: 'Budget was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 
