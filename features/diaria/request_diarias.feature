@@ -14,14 +14,10 @@ Funcionalidade: Realizar solicitação de diárias para um período
     Cenário: A solicitação de passagens é bem sucedida
         Dado que eu insira data de entrada "00/00/0000"
         E que eu insira data de saida "00/00/0000"
-        E que eu clique no botão de Create Diarium
-        Então eu devo estar em uma página de confirmação com a tabela:
-
-        | type            |    data    |  
-        | data de entrada | dd/mm/aaaa |
-        | data de saída   | dd/mm/aaaa |
+        E que eu clique no botão de 'Create Diarium'
+        Então eu devo estar em uma página de confirmação
 
     # Cenario triste
     Cenário: Usuário envia dados em formato inválido
-        Dado que o usuário insere uma data inválida
+        Dado que o usuário insere uma data inválida "00/00/0000"
         Então eu devo ver uma mensagem de erro

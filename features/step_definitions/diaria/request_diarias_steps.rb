@@ -19,51 +19,40 @@ Dado('eu clicar no botão Solicitar diárias') do
   click_button("Solicitar diárias")
 end
 
-Dado('eu insira data de entrada {string}') do |date|
+Dado('que eu insira data de entrada {string}') do |date|
   fill_in 'data_entrada', :with => date
   expect(page).to have_field('data_entrada', with: date)
 end
 
-Dado('eu insira data de saida {string}') do |date|
+E('que eu insira data de saida {string}') do |date|
   fill_in 'data_saida', :with => date
   expect(page).to have_field('data_saida', with: date)
 end
+# oi
+E('que eu clique no botão de {string}') do |nome|
+  click_button(nome)
+end
 
-Então('eu devo estar em uma página de confirmação com a tabela:') do |table|
-  # table is a Cucumber::MultilineArgument::DataTable
+Então('eu devo estar em uma página de confirmação') do
 
-  # | type            |    data    |  
-  # | data de entrada | dd/mm/aaaa |
-  # | data de saída   | dd/mm/aaaa |
+  # puts @data_entrada
+  # puts @data_saida
 
-  data = table.hashes
-  type = []
-  data = []
-
-  data.each do |row|
-    row.each do |key, value|
-      if key.eql? "type"
-        type << value
-      elsif key.eql? "data"
-        data << value
-      end
-    end
-  end
-  # a ser implementado
-  has_table = page.has_css?("#table")
-  find("#table")
-  valid_table = is_equal(find("#table"), type, data)
-  valid = has_table && valid_table
-  expect(valid).to be true
+  expect(page).to have_text("Diarium was successfully created.")
+  # expect(page).to have_text("Data de entrada: 00/00/0000")
 end
 
 #----------------- cenario triste
-Dado('que o usuário insere uma data inválida') do
-  valid = true
-  if invalid(@date_in) || invalid(@date_out)
-    valid = false
-  end 
+Dado('que o usuário insere uma data inválida {string}') do |string|
+
+  require 'date'
+  def valid_date?( str, format="%d/%m/%Y" )
+    Date.strptime(str,format) rescue false
+  end
+
+  valid = valid_date?(string)
   expect(valid).to be false
+  
 end
 
 Então('eu devo ver uma mensagem de erro') do

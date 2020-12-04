@@ -1,2 +1,0 @@
-class Diarium < ApplicationRecord
-end
