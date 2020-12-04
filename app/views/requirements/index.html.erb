@@ -1,27 +1,13 @@
-<p id="notice"><%= notice %></p>
+<p id="notice"><% notice %></p>
 
-<h1>Requirements</h1>
+<h1>Requisitos de solicitação</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Requirements</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @requirements.each do |requirement| %>
-      <tr>
-        <td><%= requirement.requirements %></td>
-        <td><%= link_to 'Show', requirement %></td>
-        <td><%= link_to 'Edit', edit_requirement_path(requirement) %></td>
-        <td><%= link_to 'Destroy', requirement, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<h3>Os requisitos atuais para solicitações de passagens e diárias são:</h3>
+<% @requirements.each do |requirement| %>
+  <%= requirement.requirements %></td>
+<% end %>
 
 <br>
+<br>
 
-<%= link_to 'New Requirement', new_requirement_path %>
+<%= link_to 'Redefinir os requisitos de solicitações', new_requirement_path %>

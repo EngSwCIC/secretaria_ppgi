@@ -2,7 +2,7 @@
 
 Rails.application.routes.draw do
   resources :budgets, only: [:new, :index, :create]
-  resources :requirements
+  resources :requirements, only: [:new, :index, :create]
   resources :requests
   resources :request_types
   get 'home/index'
