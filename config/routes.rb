@@ -3,6 +3,7 @@
 Rails.application.routes.draw do
 
   get 'process/:id', to: 'process#show', as: :process_show
+  get 'process', to: 'process#index', as: :process_home
   get 'processstatus/:id', to: 'processstatus#show', as: :processstatus_show
   post 'process', to: 'process#create', as: :process_creation
   post 'processstatus', to: 'processstatus#create', as: :processstatus_creation

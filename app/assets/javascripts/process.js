@@ -37,3 +37,7 @@ function renderFileList(files) {
     });
     $("ul").html(fileMap);
 }
+// prevent delete link to redirect to GET process/:id
+$('delete_link').click((event) => {
+    event.stopPropagation()
+})

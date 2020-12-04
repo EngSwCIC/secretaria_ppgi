@@ -34,6 +34,8 @@ class ProcessController < ApplicationController
   end
 
   def index
+    user = current_user
+    puts(user)
     if user_signed_in?
       load_status
       load_filters
