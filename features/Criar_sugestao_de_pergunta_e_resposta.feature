@@ -1,10 +1,6 @@
-
-
-
 Feature: Criar uma sugestão de pergunta e dar uma sugestão de resposta
   Como usuário,
-  Quero cadastrar uma sugestão para de pergunta e também sugirir uma resposta para a pergunta
-  Para que eu possa ajudar no levatamento de perguntas
+  Quero cadastrar uma sugestão para de pergunta e também sugirir uma resposta para a pergunta para que eu possa ajudar no levatamento de perguntas
 
 
   Scenario:
@@ -16,6 +12,3 @@ Feature: Criar uma sugestão de pergunta e dar uma sugestão de resposta
     Then O usuário clica "Salvar Sugestão"
     Then será cadastrado uma nova sugestão de pergunta e resposta
 
-
-
-@pending

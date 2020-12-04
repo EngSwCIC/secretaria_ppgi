@@ -1,4 +1,6 @@
 Feature: Editar resposta cadastrada
+Como um administrador, para que eu mantenha as perguntas e respostas atualizadas, eu gostaria de editar uma resposta já cadastrada
+
 Scenario: Usuário administrador edita pergunta ou resposta
     Given que um usuário admin está logado
     And ele está na tela onde os faqs são exibidos
