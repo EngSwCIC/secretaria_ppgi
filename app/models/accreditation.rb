@@ -1,5 +1,7 @@
 ##
  # Model da classe Accreditation
+ # É necessário a presença de um usuário
+ # É necessário a presença de um sei_process
  # É necessário a presença de um sei_process único
  # Em métodos com ações de create ou update, é necessário a verificação do método check_role
  # Em métodos com ações de update, é necessário a verificação do método check_date
