@@ -46,7 +46,6 @@ class AccreditationsController < ApplicationController
 
   ##
   # Método responsável por excluir um registro salvo na tabela.
-  # Decide se a exclusão do registro é válida ou não.
   # Redireciona para a view index.
   # DELETE /accreditations/1
   def destroy
