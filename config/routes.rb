@@ -2,10 +2,12 @@
 
 Rails.application.routes.draw do
 
-  get 'process', to: 'process#index', as: :process_home
   get 'process/:id', to: 'process#show', as: :process_show
+  get 'processstatus/:id', to: 'processstatus#show', as: :processstatus_show
   post 'process', to: 'process#create', as: :process_creation
+  post 'processstatus', to: 'processstatus#create', as: :processstatus_creation
   delete 'process/:id', to: 'process#destroy', as: :process_delete
+  delete 'processstatus/:id', to: 'processstatus#destroy', as: :processstatus_delete
   get 'search', to: 'process#search', as: :process_search
 
   get 'home/index', :home

@@ -16,7 +16,7 @@ describe ProcessStatus, type: :model do
 end
 
 describe ProcessStatus, type: :model do
-  it "Invalido caso ja exista um e-mail igual" do
+  it "Invalido caso ja exista um status com mesmo nome ou label" do
     status = Status.create( title: 'Em espera')
     status = Status.new( title: 'Em espera')
     status.valid?
