@@ -1,51 +1,54 @@
 #-------------------- Contexto --#
 Dado("que eu esteja cadastrado como administrador, com o email {string} e a senha {string}") do |email, password|
-  @email = email
-  @password = password
-  valid_email = @email.eql? "admin@admin.com"
-  valid_psswd = @password.eql? "123456"
-  valid_user = valid_email && valid_psswd
-  expect(valid_user).to be true
+  @user = User.find_by_email(email)
+
+  expect(@user.nil?).to eq(false)
 end
  
-E("que eu esteja autenticado com o email {string} e a senha {string}") do |email, password|
-  auth = @email.eql? email
-  auth2 = @password.eql? password
-  authentication = auth && auth2
-  expect(authentication).to be true
+E("que eu realize login com o email {string} e a senha {string}") do |email, password|
+  visit '/users/sign_in'
+  fill_in 'user_email', :with => email
+  fill_in 'user_password', :with => password
+  click_button "Log in"
 end
 
-E("que esteja na pagina inicial") do
-  visit(root_path)
-end
-
-E("que eu clique no botão Verificar Orçamento") do
-  click_button "Verificar Orçamento"
+E("que esteja autenticado na página inicial") do
+  expect(page).to have_text("Usuário atual")
 end
 
 #-------------------- Cenário feliz --#
-Dado("que a página é carregada corretamente") do
-  pending
+Dado("que eu tenha {float} de orçamento disponível") do |value|
+  @budgets = Budget.all
+
+  @budgets.each do |budget|
+    budget.destroy!
+  end
+  
+  Budget.create!(value: value)
+
+  @budget = Budget.all
+  
+  expect(@budget.count).to eq 1
+  expect(@budget[0].value).to eq value
 end
 
-E("que eu tenha {float} de orçamento disponível") do |value|
-  @value = value
-  budget = @value > 0
-  expect(budget).to be true
+E("que eu clique no botão Verificar orçamento") do
+  click_button "Verificar orçamento"
 end
- 
-Então("o valor {float} é exibido") do |value|
-  same_val = @value.eql? value
-  expect(same_val).to be true
+
+Então("o valor {string} é exibido") do |value|
+  expect(page).to have_text(value)
 end
 
 #-------------------- Cenário triste --#
-E("um valor diferente de {float} é exibido") do |value|
-  dif_val = @value.eql? value
-  expect(dif_val).to be false
+Dado('que não exista nenhum orçamento registrado') do
+  @budgets = Budget.all
+
+  @budgets.each do |budget|
+    budget.destroy!
+  end
 end
 
-Então("uma mensagem de erro deve ser exibida") do
-  alert = find("#error_msg")
-  expect(alert).to be true
+Então('o valor uma mensagem de erro é exibida') do
+  expect(page).to have_text('Não há orçamento cadastrado.')
 end
