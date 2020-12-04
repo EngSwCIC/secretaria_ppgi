@@ -1,18 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Topic:</strong>
-  <%= @faq.Topic %>
-</p>
-
-<p>
   <strong>Question:</strong>
-  <%= @faq.Question %>
+  <%= @faq.question %>
 </p>
 
 <p>
   <strong>Answer:</strong>
-  <%= @faq.Answer %>
+  <%= @faq.answer %>
+</p>
+
+<p>
+  <strong>Topic:</strong>
+  <%= @faq.topic.titulo %>
 </p>
 
 <%= link_to 'Edit', edit_faq_path(@faq) %> |

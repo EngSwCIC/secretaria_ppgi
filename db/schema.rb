@@ -10,29 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_15_230804) do
+ActiveRecord::Schema.define(version: 2020_12_04_223755) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "faqs", force: :cascade do |t|
-    t.text "Topic"
-    t.text "Question"
-    t.text "Answer"
+    t.string "question"
+    t.string "answer"
+    t.bigint "topic_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["topic_id"], name: "index_faqs_on_topic_id"
   end
 
   create_table "faqs_suggestions", force: :cascade do |t|
     t.string "question"
     t.string "answer"
-    t.string "tropicQuestion"
+    t.bigint "topic_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["topic_id"], name: "index_faqs_suggestions_on_topic_id"
   end
 
-  create_table "tropicQuestions", force: :cascade do |t|
-    t.text "title"
+  create_table "topics", force: :cascade do |t|
+    t.string "titulo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -52,4 +54,6 @@ ActiveRecord::Schema.define(version: 2020_11_15_230804) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "faqs", "topics"
+  add_foreign_key "faqs_suggestions", "topics"
 end

@@ -1,6 +1,5 @@
 class FaqsController < ApplicationController
   before_action :set_faq, only: [:show, :edit, :update, :destroy]
-  before_action :must_be_admin, only:  [:create, :edit, :update, :destroy]
 
   # GET /faqs
   # GET /faqs.json
@@ -70,12 +69,6 @@ class FaqsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def faq_params
-      params.require(:faq).permit(:Topic, :Question, :Answer)
+      params.require(:faq).permit(:question, :answer, :topic_id)
     end
-
-  def must_be_admin
-    unless current_user && current_user.role == "administrator"
-      redirect_to faqs_url, alert: "Usuário deve ser admin"
-    end
-  end
 end

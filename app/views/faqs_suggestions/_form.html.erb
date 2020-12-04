@@ -22,8 +22,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :tropicQuestion %>
-    <%= form.text_field :tropicQuestion %>
+    <%= form.label :topic %><br>
+    <%= form.collection_select :topic_id, Topic.all, :id, :titulo %>
   </div>
 
   <div class="actions">

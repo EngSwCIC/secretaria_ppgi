@@ -5,7 +5,7 @@ RSpec.describe "faqs_suggestions/show", type: :view do
     @faqs_suggestion = assign(:faqs_suggestion, FaqsSuggestion.create!(
       :question => "Question",
       :answer => "Answer",
-      :tropicQuestion => "Tropic Question"
+      :topic => nil
     ))
   end
 
@@ -13,6 +13,6 @@ RSpec.describe "faqs_suggestions/show", type: :view do
     render
     expect(rendered).to match(/Question/)
     expect(rendered).to match(/Answer/)
-    expect(rendered).to match(/Tropic Question/)
+    expect(rendered).to match(//)
   end
 end

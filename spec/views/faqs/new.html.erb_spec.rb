@@ -3,9 +3,9 @@ require 'rails_helper'
 RSpec.describe "faqs/new", type: :view do
   before(:each) do
     assign(:faq, Faq.new(
-      :Topic => "MyText",
-      :Question => "MyText",
-      :Answer => "MyText"
+      :question => "MyString",
+      :answer => "MyString",
+      :topic => nil
     ))
   end
 
@@ -14,11 +14,11 @@ RSpec.describe "faqs/new", type: :view do
 
     assert_select "form[action=?][method=?]", faqs_path, "post" do
 
-      assert_select "textarea[name=?]", "faq[Topic]"
+      assert_select "input[name=?]", "faq[question]"
 
-      assert_select "textarea[name=?]", "faq[Question]"
+      assert_select "input[name=?]", "faq[answer]"
 
-      assert_select "textarea[name=?]", "faq[Answer]"
+      assert_select "input[name=?]", "faq[topic_id]"
     end
   end
 end

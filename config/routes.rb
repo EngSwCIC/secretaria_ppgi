@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources :topics
   resources :faqs_suggestions
   resources :faqs
   get 'home/index'

@@ -69,6 +69,6 @@ class FaqsSuggestionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def faqs_suggestion_params
-      params.require(:faqs_suggestion).permit(:question, :answer, :tropicQuestion)
+      params.require(:faqs_suggestion).permit(:question, :answer, :topic_id)
     end
 end

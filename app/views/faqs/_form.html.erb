@@ -12,18 +12,18 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :Topic %>
-    <%= form.text_area :Topic %>
+    <%= form.label :question %>
+    <%= form.text_field :question %>
   </div>
 
   <div class="field">
-    <%= form.label :Question %>
-    <%= form.text_area :Question %>
+    <%= form.label :answer %>
+    <%= form.text_field :answer %>
   </div>
 
   <div class="field">
-    <%= form.label :Answer %>
-    <%= form.text_area :Answer %>
+    <%= form.label :topic %><br>
+    <%= form.collection_select :topic_id, Topic.all, :id, :titulo %>
   </div>
 
   <div class="actions">
