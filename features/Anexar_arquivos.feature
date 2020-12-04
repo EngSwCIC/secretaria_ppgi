@@ -1,14 +1,21 @@
+#language: pt
 Funcionalidade: Como um secretário, eu gostaria de anexar arquivos ao cadastro de um novo processo para que eu possa disponibilizar informações sobre os processos.
 
-Cenário: Anexar arquivos válidos 
-     Dado que todos os arquivos anexados são de formatos válidos
-     E eu sou secretário
-     Quando eu clicar para anexar arquivos
-     Então os arquivos serão anexados
-     E mostra uma mensagem de operação concluída 
 
-Cenário: Anexar arquivos inválidos
-     Dado que pelo menos um arquivo anexado foi de formato não válido
-     E eu sou secretário
-     Quando eu clicar para anexar arquivos 
-     Então mostra uma mensagem de erro
+  Cenario: Anexar arquivos validos sendo um usuario registrado
+Dado que sou usuario
+E estou registrado
+Quando eu clicar para anexar arquivos a um novo processo
+Entao devo receber como retorno mensagem de sucesso
+
+Cenario: Anexar arquivos invalidos sendo um usuario registrado
+Dado que sou usuario
+E estou registrado
+Quando eu clicar para anexar arquivos a um novo processo
+Entao devo receber como retorno mensagem de falha
+
+Cenario: Anexar arquivos validos ou invalidos sendo um usuario nao registrado
+Dado que sou usuario
+E nao estou registrado
+Quando eu clicar para anexar arquivos a um novo processo
+Entao devo ser encaminhado para a pagina inicial
