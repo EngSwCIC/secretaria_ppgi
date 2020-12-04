@@ -10,11 +10,6 @@
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
       </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
     </expand>
     <select>
       <path>
@@ -27,15 +22,16 @@
   <component name="ChangeListManager">
     <list default="true" id="371f7bda-8799-439a-8d9c-1781a1ce2f2d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/process_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/process_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/process_status.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/process_status.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/processo.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/processo.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/process/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/process/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/database.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20201116015420_create_process_statuses.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/20201116015420_create_process_statuses.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/request.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/request.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/request_type.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/request_type.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/user.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/user_secretary.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/migrate/20191114162918_devise_create_users.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/20191114162918_devise_create_users.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/migrate/20191114163205_add_info_to_users.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/migrate/20201113215730_create_user_secretaries.rb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/seeds.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/seeds.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose-dev.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose-dev.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,84 +61,11 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/.rvm/rubies/ruby-2.6.3/bin/ruby" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/docker-compose-dev.yaml" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.ruby.settings.RubyActiveModuleSdkConfigurable" />
   </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/test/models" />
-    </key>
-  </component>
-  <component name="RunManager" selected="Rails.Development: secretaria_ppgi">
-    <configuration name="RequestType is seeded array..." type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true" nameIsGenerated="true">
-      <module name="secretaria_ppgi" />
-      <predefined_log_file enabled="true" id="RUBY_RSPEC" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
-      <envs>
-        <env name="RAILS_ENV" value="test" />
-        <env name="JRUBY_OPTS" value="-X+O" />
-      </envs>
-      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="true" />
-      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
-      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov">
-        <COVERAGE_PATTERN ENABLED="true">
-          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
-        </COVERAGE_PATTERN>
-      </EXTENSION>
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/test/models/request_type_spec.rb" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_RUNNER_PATH" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="**/*_spec.rb" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_EXAMPLE_NAME" VALUE="RequestType is seeded array matching expected types" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_ARGS" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="USE_CUSTOM_SPEC_RUNNER" VALUE="false" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="ZEUS" VALUE="false" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPRING" VALUE="false" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
-      <method v="2" />
-    </configuration>
-    <configuration name="RequestType" type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true" nameIsGenerated="true">
-      <module name="secretaria_ppgi" />
-      <predefined_log_file enabled="true" id="RUBY_RSPEC" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
-      <envs>
-        <env name="RAILS_ENV" value="test" />
-        <env name="JRUBY_OPTS" value="-X+O" />
-      </envs>
-      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="true" />
-      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
-      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov">
-        <COVERAGE_PATTERN ENABLED="true">
-          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
-        </COVERAGE_PATTERN>
-      </EXTENSION>
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/test/models/request_type_spec.rb" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_RUNNER_PATH" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="**/*_spec.rb" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_EXAMPLE_NAME" VALUE="RequestType" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_ARGS" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="USE_CUSTOM_SPEC_RUNNER" VALUE="false" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="ZEUS" VALUE="false" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPRING" VALUE="false" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Rake.db:migrate: secretaria_ppgi">
     <configuration name="Development: secretaria_ppgi" type="RailsRunConfigurationType" factoryName="Rails">
       <module name="secretaria_ppgi" />
       <predefined_log_file enabled="true" id="RUBY_RAILS_SERVER" />
@@ -158,6 +81,7 @@
           <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
         </COVERAGE_PATTERN>
       </EXTENSION>
+      <EXTENSION ID="RubyDockerContainerSettingsRunConfigurationExtension" dockerComposeCommand="UP" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="SCRIPT_ARGS" VALUE="" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="PORT" VALUE="3000" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="IP" VALUE="0.0.0.0" />
@@ -182,6 +106,7 @@
           <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
         </COVERAGE_PATTERN>
       </EXTENSION>
+      <EXTENSION ID="RubyDockerContainerSettingsRunConfigurationExtension" dockerComposeCommand="UP" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="SCRIPT_ARGS" VALUE="" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="PORT" VALUE="3000" />
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="IP" VALUE="0.0.0.0" />
@@ -208,6 +133,7 @@
           <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
         </COVERAGE_PATTERN>
       </EXTENSION>
+      <EXTENSION ID="RubyDockerContainerSettingsRunConfigurationExtension" dockerComposeCommand="RUN" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_NAME" VALUE="db:migrate" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ARGS" VALUE="" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ATTACHED_TEST_FRAMEWORKS" VALUE="" />
@@ -231,6 +157,7 @@
           <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
         </COVERAGE_PATTERN>
       </EXTENSION>
+      <EXTENSION ID="RubyDockerContainerSettingsRunConfigurationExtension" dockerComposeCommand="RUN" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_NAME" VALUE="db:seed" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ARGS" VALUE="" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ATTACHED_TEST_FRAMEWORKS" VALUE="" />
@@ -254,6 +181,7 @@
           <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
         </COVERAGE_PATTERN>
       </EXTENSION>
+      <EXTENSION ID="RubyDockerContainerSettingsRunConfigurationExtension" dockerComposeCommand="RUN" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_NAME" VALUE="spec" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ARGS" VALUE="" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ATTACHED_TEST_FRAMEWORKS" VALUE=":rspec " />
@@ -280,6 +208,7 @@
           <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
         </COVERAGE_PATTERN>
       </EXTENSION>
+      <EXTENSION ID="RubyDockerContainerSettingsRunConfigurationExtension" dockerComposeCommand="RUN" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_NAME" VALUE="test" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ARGS" VALUE="" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ATTACHED_TEST_FRAMEWORKS" VALUE=":test_unit " />
@@ -291,8 +220,6 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="RSpec.RequestType is seeded array..." />
-        <item itemvalue="RSpec.RequestType" />
         <item itemvalue="Rake.db:migrate: secretaria_ppgi" />
         <item itemvalue="Rake.db:seed: secretaria_ppgi" />
       </list>
@@ -308,12 +235,7 @@
       <option name="presentableId" value="Default" />
       <updated>1605305587618</updated>
       <workItem from="1605305589488" duration="2883000" />
-      <workItem from="1605479490152" duration="13382000" />
-      <workItem from="1605932028136" duration="4470000" />
-      <workItem from="1606080741809" duration="4359000" />
-      <workItem from="1606099787260" duration="10498000" />
-      <workItem from="1606458762125" duration="4219000" />
-      <workItem from="1606463164512" duration="974000" />
+      <workItem from="1605479490152" duration="10050000" />
     </task>
     <task id="LOCAL-00001" summary="Added models from MER">
       <created>1605483214391</created>
@@ -357,7 +279,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added models from MER" />
@@ -377,162 +298,82 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="462" y="311" width="495" height="199" key="DockerComposeFileDialog/0.0.1366.738@0.0.1366.738" timestamp="1605305852195" />
-    <state x="2058" y="247" width="424" height="475" key="FileChooserDialogImpl" timestamp="1605932630104">
-      <screen x="1366" y="0" width="1920" height="1080" />
-    </state>
-    <state x="492" y="169" width="424" height="475" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1605305831288" />
-    <state x="2058" y="247" width="424" height="475" key="FileChooserDialogImpl/0.312.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1605932630104" />
-    <state width="1880" height="408" key="GridCell.Tab.0.bottom" timestamp="1606463792228">
-      <screen x="1366" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1326" height="253" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1606259340883" />
-    <state width="1326" height="267" key="GridCell.Tab.0.bottom/0.0.3286.1050@0.0.3286.1050" timestamp="1606087262816" />
-    <state width="1326" height="253" key="GridCell.Tab.0.bottom/0.312.1366.768/1366.0.1920.1080@0.312.1366.768" timestamp="1606458855649" />
-    <state width="1880" height="408" key="GridCell.Tab.0.bottom/0.312.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1606463792228" />
-    <state width="1880" height="408" key="GridCell.Tab.0.center" timestamp="1606463792228">
-      <screen x="1366" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1326" height="253" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1606259340883" />
-    <state width="1326" height="267" key="GridCell.Tab.0.center/0.0.3286.1050@0.0.3286.1050" timestamp="1606087262815" />
-    <state width="1326" height="253" key="GridCell.Tab.0.center/0.312.1366.768/1366.0.1920.1080@0.312.1366.768" timestamp="1606458855649" />
-    <state width="1880" height="408" key="GridCell.Tab.0.center/0.312.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1606463792228" />
-    <state width="1880" height="408" key="GridCell.Tab.0.left" timestamp="1606463792228">
-      <screen x="1366" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1326" height="253" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1606259340883" />
-    <state width="1326" height="267" key="GridCell.Tab.0.left/0.0.3286.1050@0.0.3286.1050" timestamp="1606087262815" />
-    <state width="1326" height="253" key="GridCell.Tab.0.left/0.312.1366.768/1366.0.1920.1080@0.312.1366.768" timestamp="1606458855649" />
-    <state width="1880" height="408" key="GridCell.Tab.0.left/0.312.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1606463792228" />
-    <state width="1880" height="408" key="GridCell.Tab.0.right" timestamp="1606463792228">
-      <screen x="1366" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1326" height="253" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1606259340883" />
-    <state width="1326" height="267" key="GridCell.Tab.0.right/0.0.3286.1050@0.0.3286.1050" timestamp="1606087262816" />
-    <state width="1326" height="253" key="GridCell.Tab.0.right/0.312.1366.768/1366.0.1920.1080@0.312.1366.768" timestamp="1606458855649" />
-    <state width="1880" height="408" key="GridCell.Tab.0.right/0.312.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1606463792228" />
-    <state width="1880" height="253" key="GridCell.Tab.1.bottom" timestamp="1606463737507">
-      <screen x="1366" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1326" height="253" key="GridCell.Tab.1.bottom/0.0.1366.738@0.0.1366.738" timestamp="1606259340884" />
-    <state width="1326" height="267" key="GridCell.Tab.1.bottom/0.0.3286.1050@0.0.3286.1050" timestamp="1606087262817" />
-    <state width="1326" height="253" key="GridCell.Tab.1.bottom/0.312.1366.768/1366.0.1920.1080@0.312.1366.768" timestamp="1606107842339" />
-    <state width="1880" height="253" key="GridCell.Tab.1.bottom/0.312.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1606463737507" />
-    <state width="1880" height="253" key="GridCell.Tab.1.center" timestamp="1606463737507">
-      <screen x="1366" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1326" height="253" key="GridCell.Tab.1.center/0.0.1366.738@0.0.1366.738" timestamp="1606259340884" />
-    <state width="1326" height="267" key="GridCell.Tab.1.center/0.0.3286.1050@0.0.3286.1050" timestamp="1606087262816" />
-    <state width="1326" height="253" key="GridCell.Tab.1.center/0.312.1366.768/1366.0.1920.1080@0.312.1366.768" timestamp="1606107842338" />
-    <state width="1880" height="253" key="GridCell.Tab.1.center/0.312.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1606463737507" />
-    <state width="1880" height="253" key="GridCell.Tab.1.left" timestamp="1606463737506">
-      <screen x="1366" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1326" height="253" key="GridCell.Tab.1.left/0.0.1366.738@0.0.1366.738" timestamp="1606259340883" />
-    <state width="1326" height="267" key="GridCell.Tab.1.left/0.0.3286.1050@0.0.3286.1050" timestamp="1606087262816" />
-    <state width="1326" height="253" key="GridCell.Tab.1.left/0.312.1366.768/1366.0.1920.1080@0.312.1366.768" timestamp="1606107842338" />
-    <state width="1880" height="253" key="GridCell.Tab.1.left/0.312.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1606463737506" />
-    <state width="1880" height="253" key="GridCell.Tab.1.right" timestamp="1606463737507">
-      <screen x="1366" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1326" height="253" key="GridCell.Tab.1.right/0.0.1366.738@0.0.1366.738" timestamp="1606259340884" />
-    <state width="1326" height="267" key="GridCell.Tab.1.right/0.0.3286.1050@0.0.3286.1050" timestamp="1606087262817" />
-    <state width="1326" height="253" key="GridCell.Tab.1.right/0.312.1366.768/1366.0.1920.1080@0.312.1366.768" timestamp="1606107842339" />
-    <state width="1880" height="253" key="GridCell.Tab.1.right/0.312.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1606463737507" />
-    <state width="1880" height="253" key="GridCell.Tab.2.bottom" timestamp="1606463737508">
-      <screen x="1366" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1326" height="253" key="GridCell.Tab.2.bottom/0.0.1366.738@0.0.1366.738" timestamp="1606259340885" />
-    <state width="1326" height="267" key="GridCell.Tab.2.bottom/0.0.3286.1050@0.0.3286.1050" timestamp="1606087262818" />
-    <state width="1326" height="253" key="GridCell.Tab.2.bottom/0.312.1366.768/1366.0.1920.1080@0.312.1366.768" timestamp="1606107842339" />
-    <state width="1880" height="253" key="GridCell.Tab.2.bottom/0.312.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1606463737508" />
-    <state width="1880" height="253" key="GridCell.Tab.2.center" timestamp="1606463737507">
-      <screen x="1366" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1326" height="253" key="GridCell.Tab.2.center/0.0.1366.738@0.0.1366.738" timestamp="1606259340885" />
-    <state width="1326" height="267" key="GridCell.Tab.2.center/0.0.3286.1050@0.0.3286.1050" timestamp="1606087262817" />
-    <state width="1326" height="253" key="GridCell.Tab.2.center/0.312.1366.768/1366.0.1920.1080@0.312.1366.768" timestamp="1606107842339" />
-    <state width="1880" height="253" key="GridCell.Tab.2.center/0.312.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1606463737507" />
-    <state width="1880" height="253" key="GridCell.Tab.2.left" timestamp="1606463737507">
-      <screen x="1366" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1326" height="253" key="GridCell.Tab.2.left/0.0.1366.738@0.0.1366.738" timestamp="1606259340884" />
-    <state width="1326" height="267" key="GridCell.Tab.2.left/0.0.3286.1050@0.0.3286.1050" timestamp="1606087262817" />
-    <state width="1326" height="253" key="GridCell.Tab.2.left/0.312.1366.768/1366.0.1920.1080@0.312.1366.768" timestamp="1606107842339" />
-    <state width="1880" height="253" key="GridCell.Tab.2.left/0.312.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1606463737507" />
-    <state width="1880" height="253" key="GridCell.Tab.2.right" timestamp="1606463737507">
-      <screen x="1366" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1326" height="253" key="GridCell.Tab.2.right/0.0.1366.738@0.0.1366.738" timestamp="1606259340885" />
-    <state width="1326" height="267" key="GridCell.Tab.2.right/0.0.3286.1050@0.0.3286.1050" timestamp="1606087262818" />
-    <state width="1326" height="253" key="GridCell.Tab.2.right/0.312.1366.768/1366.0.1920.1080@0.312.1366.768" timestamp="1606107842339" />
-    <state width="1880" height="253" key="GridCell.Tab.2.right/0.312.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1606463737507" />
-    <state width="1880" height="350" key="GridCell.Tab.3.bottom" timestamp="1605933903979">
-      <screen x="1366" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1326" height="214" key="GridCell.Tab.3.bottom/0.0.1366.738@0.0.1366.738" timestamp="1605498083854" />
-    <state width="1880" height="350" key="GridCell.Tab.3.bottom/0.312.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1605933903979" />
-    <state width="1880" height="350" key="GridCell.Tab.3.center" timestamp="1605933903979">
-      <screen x="1366" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1326" height="214" key="GridCell.Tab.3.center/0.0.1366.738@0.0.1366.738" timestamp="1605498083854" />
-    <state width="1880" height="350" key="GridCell.Tab.3.center/0.312.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1605933903979" />
-    <state width="1880" height="350" key="GridCell.Tab.3.left" timestamp="1605933903979">
-      <screen x="1366" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1326" height="214" key="GridCell.Tab.3.left/0.0.1366.738@0.0.1366.738" timestamp="1605498083852" />
-    <state width="1880" height="350" key="GridCell.Tab.3.left/0.312.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1605933903979" />
-    <state width="1880" height="350" key="GridCell.Tab.3.right" timestamp="1605933903979">
-      <screen x="1366" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1326" height="214" key="GridCell.Tab.3.right/0.0.1366.738@0.0.1366.738" timestamp="1605498083854" />
-    <state width="1880" height="350" key="GridCell.Tab.3.right/0.312.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1605933903979" />
-    <state x="1618" y="6" key="SettingsEditor" timestamp="1605932637032">
-      <screen x="1366" y="0" width="1920" height="1080" />
-    </state>
-    <state x="179" y="4" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1605305924926" />
-    <state x="1618" y="6" key="SettingsEditor/0.312.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1605932637032" />
-    <state x="336" y="312" width="683" height="738" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1606107870240">
-      <screen x="0" y="312" width="1366" height="768" />
-    </state>
-    <state x="336" y="312" width="683" height="738" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.312.1366.768/1366.0.1920.1080@0.312.1366.768" timestamp="1606107870240" />
-    <state x="2035" y="395" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606462337461">
-      <screen x="1366" y="0" width="1920" height="1080" />
-    </state>
-    <state x="476" y="593" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.312.1366.768/1366.0.1920.1080@0.312.1366.768" timestamp="1606107387029" />
-    <state x="2035" y="395" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.312.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1606462337461" />
-    <state x="380" y="0" width="606" height="738" key="find.popup" timestamp="1606084743496">
+    <state x="492" y="169" width="424" height="475" key="FileChooserDialogImpl" timestamp="1605305831288">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="380" y="0" width="606" height="738" key="find.popup/0.0.1366.738@0.0.1366.738" timestamp="1606084743496" />
+    <state x="492" y="169" width="424" height="475" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1605305831288" />
+    <state width="1326" height="214" key="GridCell.Tab.0.bottom" timestamp="1605494071493">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1326" height="214" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1605494071493" />
+    <state width="1326" height="214" key="GridCell.Tab.0.center" timestamp="1605494071493">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1326" height="214" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1605494071493" />
+    <state width="1326" height="214" key="GridCell.Tab.0.left" timestamp="1605494071492">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1326" height="214" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1605494071492" />
+    <state width="1326" height="214" key="GridCell.Tab.0.right" timestamp="1605494071493">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1326" height="214" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1605494071493" />
+    <state width="1326" height="214" key="GridCell.Tab.1.bottom" timestamp="1605494071494">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1326" height="214" key="GridCell.Tab.1.bottom/0.0.1366.738@0.0.1366.738" timestamp="1605494071494" />
+    <state width="1326" height="214" key="GridCell.Tab.1.center" timestamp="1605494071493">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1326" height="214" key="GridCell.Tab.1.center/0.0.1366.738@0.0.1366.738" timestamp="1605494071493" />
+    <state width="1326" height="214" key="GridCell.Tab.1.left" timestamp="1605494071493">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1326" height="214" key="GridCell.Tab.1.left/0.0.1366.738@0.0.1366.738" timestamp="1605494071493" />
+    <state width="1326" height="214" key="GridCell.Tab.1.right" timestamp="1605494071493">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1326" height="214" key="GridCell.Tab.1.right/0.0.1366.738@0.0.1366.738" timestamp="1605494071493" />
+    <state width="1326" height="214" key="GridCell.Tab.2.bottom" timestamp="1605494071494">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1326" height="214" key="GridCell.Tab.2.bottom/0.0.1366.738@0.0.1366.738" timestamp="1605494071494" />
+    <state width="1326" height="214" key="GridCell.Tab.2.center" timestamp="1605494071494">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1326" height="214" key="GridCell.Tab.2.center/0.0.1366.738@0.0.1366.738" timestamp="1605494071494" />
+    <state width="1326" height="214" key="GridCell.Tab.2.left" timestamp="1605494071494">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1326" height="214" key="GridCell.Tab.2.left/0.0.1366.738@0.0.1366.738" timestamp="1605494071494" />
+    <state width="1326" height="214" key="GridCell.Tab.2.right" timestamp="1605494071494">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1326" height="214" key="GridCell.Tab.2.right/0.0.1366.738@0.0.1366.738" timestamp="1605494071494" />
+    <state x="179" y="4" key="SettingsEditor" timestamp="1605305924926">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="179" y="4" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1605305924926" />
+    <state x="380" y="0" width="606" height="738" key="find.popup" timestamp="1605306837662">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="380" y="0" width="606" height="738" key="find.popup/0.0.1366.738@0.0.1366.738" timestamp="1605306837662" />
     <state width="600" height="440" key="javadoc.popup" timestamp="1605307019745">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="600" height="440" key="javadoc.popup/0.0.1366.738@0.0.1366.738" timestamp="1605307019745" />
-    <state x="1852" y="86" width="945" height="993" key="search.everywhere.popup" timestamp="1606460283850">
-      <screen x="1366" y="0" width="1920" height="1080" />
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1605493656291">
+      <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1605496865656" />
-    <state x="346" y="373" width="672" height="706" key="search.everywhere.popup/0.312.1366.768/1366.0.1920.1080@0.312.1366.768" timestamp="1606107844473" />
-    <state x="1852" y="86" width="945" height="993" key="search.everywhere.popup/0.312.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1606460283850" />
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1605493656291" />
     <state x="408" y="276" width="540" height="180" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1605494429841">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="408" y="276" width="540" height="180" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.0.1366.738@0.0.1366.738" timestamp="1605494429841" />
   </component>
-  <component name="XDebuggerManager">
-    <pin-to-top-manager>
-      <pinned-members>
-        <PinnedItemInfo parentTag="User" memberName="@attributes" />
-        <PinnedItemInfo parentTag="ActiveModel::AttributeSet" memberName="@attributes" />
-        <PinnedItemInfo parentTag="User" memberName="@association_cache" />
-      </pinned-members>
-    </pin-to-top-manager>
-  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/secretaria_ppgi@db_migrate__secretaria_ppgi.rcov" NAME="db:migrate: secretaria_ppgi Coverage Results" MODIFIED="1605494051699" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="secretaria_ppgi" />
-    <SUITE FILE_PATH="coverage/secretaria_ppgi@RequestType.rcov" NAME="RequestType Coverage Results" MODIFIED="1605497449780" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="secretaria_ppgi" />
-    <SUITE FILE_PATH="coverage/secretaria_ppgi@Development__secretaria_ppgi.rcov" NAME="Development: secretaria_ppgi Coverage Results" MODIFIED="1606463557826" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="secretaria_ppgi" />
-    <SUITE FILE_PATH="coverage/secretaria_ppgi@RequestType_is_seeded_array___.rcov" NAME="RequestType is seeded array... Coverage Results" MODIFIED="1605933890681" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="secretaria_ppgi" />
+    <SUITE FILE_PATH="coverage/secretaria_ppgi@Development__secretaria_ppgi.rcov" NAME="Development: secretaria_ppgi Coverage Results" MODIFIED="1605486714606" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="secretaria_ppgi" />
     <SUITE FILE_PATH="coverage/secretaria_ppgi@db_seed__secretaria_ppgi.rcov" NAME="db:seed: secretaria_ppgi Coverage Results" MODIFIED="1605487649662" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="secretaria_ppgi" />
   </component>
 </project>

@@ -1,2 +1,0 @@
-class ActivityType < ApplicationRecord
-end
