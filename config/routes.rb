@@ -2,9 +2,9 @@
 
 Rails.application.routes.draw do
   resources :tickets
-  resources :budgets
   resources :diaria
-  resources :requirements
+  resources :budgets, only: [:new, :index, :create]
+  resources :requirements, only: [:new, :index, :create]
   resources :requests
   resources :request_types
   get 'home/index'
