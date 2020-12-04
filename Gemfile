@@ -64,6 +64,7 @@ group :test do
   # database_cleaner is not required, but highly recommended
   gem 'database_cleaner'
   gem 'shoulda-matchers'
+  gem 'simplecov', require: false
 end
 
 gem "font-awesome-rails"

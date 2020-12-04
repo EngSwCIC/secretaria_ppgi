@@ -26,12 +26,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="371f7bda-8799-439a-8d9c-1781a1ce2f2d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Sprint3.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/application_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/application_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/home_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/home_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/process_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/process_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -647,10 +643,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="600" height="440" key="javadoc.popup/0.0.1366.738@0.0.1366.738" timestamp="1605307019745" />
-    <state x="347" y="163" key="run.anything.popup" timestamp="1607106021833">
+    <state x="347" y="163" key="run.anything.popup" timestamp="1607119172238">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="347" y="163" key="run.anything.popup/0.0.1366.738@0.0.1366.738" timestamp="1607106021833" />
+    <state x="347" y="163" key="run.anything.popup/0.0.1366.738@0.0.1366.738" timestamp="1607119172238" />
     <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1607118816006">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
