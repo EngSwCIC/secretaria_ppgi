@@ -1,68 +1,14 @@
-# Dado /^Eu esteja cadastrado como usuario, com nome: {Name}, email: {Email}, senha: {Password}, cargo: {Role} e registro: {Registration}$/ do |Name, Email, Pasword, Role, Registration|
-#   @user = {
-#     Name: 'Usuario',
-#     Email: 'user@user.com',
-#     Password: 'user123',
-#     Role: "user",
-#     Registration: "000000000"
-#   }
-#   User.create!(@user)
-# end
-  
-#   E /^Eu esteja autenticado como usuario do
-#     @user = User.find_by_email('user@user.com')
-#   end
-  
-#   E /^Eu esteja na "(.*?)"$/ do |root_path|
-#     visit path_to(root_path)
-#   end
-  
-#   Quando /^Eu clico em ([^"]*)"$/ do |button|
-#     click_button(button)
-#   end
-  
-#   Então /^Eu devo estar na página "(.*?)"$/ do |tickets_index|
-#     current_path = URI.parse(current_url).path
-#     if current_path.respond_to? :should
-#       current_path.should == path_to(prazos_index)
-#     else
-#       assert_equal path_to(prazos_index), current_path
-#     end
-#   end
-  
-#   Quando /^Eu clico em ([^"]*)"$/ do |button|
-#     click_button(button)
-#   end
-  
-#   E /^Eu preencho "([^"]*)" com "([^"]*)"$/ do |field, value|
-#     fill_in(field, :with => value)
-#   end 
-  
-#   Quando /^Eu aperto enter no teclado$/ do
-#     page.evaluate_script('window.confirm = function() { return true; }')
-#     page.click('Ok')
-#   end
-  
-#   Então /^Eu devo ver ([^"]*)"$/ do |text|
-#     if page.respond_to? :should
-#       page.should have_content(text)
-#     else
-#       assert page.has_content?(text)
-#     end
-#   end
-
-######################################################################################
-
 Dado("que eu esteja cadastrado como usuario com email {string}") do |email|
-    @email = email
-    valid_email = email.eql? "user@user.com"
-    expect(valid_email).to be true
+  @user = User.find_by_email(email)
+
+  expect(@user.nil?).to eq(false)
 end
 
-E("que eu esteja autenticado como usuario") do
-#   authenticate(user)
-    valid_email = @email.eql? "user@user.com"
-    expect(valid_email).to be true
+E("que eu realize login como usuário, com email {string} e senha {string}") do |email, password|
+  visit '/users/sign_in'
+  fill_in 'user_email', :with => email
+  fill_in 'user_password', :with => password
+  click_button "Log in"
 end
 
 E("que eu esteja na página inicial") do
@@ -73,83 +19,29 @@ E("eu clicar no botão {string}") do |button|
   click_button(button)
 end
 
-Então ('Eu devo estar na página "(.*?)"') do |tickets_index|
-  current_path = URI.parse(current_url).path
-  if current_path.respond_to? :should
-    current_path.should == path_to(tickets_index)
-  else
-    assert_equal path_to(prazos_index), current_path
-  end
+# -- Cenário Feliz -- #
+Dado('que eu insira a data de entrada como dia {string} do mês {string} do ano {string}') do |day, month, year|
+  id = 'ticket_data_entrada'
+  select year,   from: "#{id}_1i"
+  select month,  from: "#{id}_2i"
+  select day,    from: "#{id}_3i"
 end
 
-E("eu clicar no botão {string}") do |button|
-  click_button(button)
+E('que eu insira a data de saída como dia {string} do mês {string} do ano {string}') do |day, month, year|
+  id = 'ticket_data_saida'
+  select year,   from: "#{id}_1i"
+  select month,  from: "#{id}_2i"
+  select day,    from: "#{id}_3i"
 end
 
-E ('Eu preencho "([^"]*)" com "([^"]*)"') do |field, value|
-  fill_in(field, :with => value)
-end   
+Então ('a passagem com data de entrada {string} - {string} - {string} e data de saída {string} - {string} - {string}, pertencente ao usuário {string}, é criada') do |day_in, month_in, year_in, day_out, month_out, year_out, email|
+  @user = User.find_by_email(email)
+  
+  @user_tickets = Ticket.where(user_id: @user.id, data_entrada: Date.parse("#{year_in}-#{month_in}-#{day_in}"), data_saida: Date.parse("#{year_out}-#{month_out}-#{day_out}"))
 
-Quando ('Eu aperto enter no teclado') do
-  page.evaluate_script('window.confirm = function() { return true; }')
-  page.click('Ok')
+  expect(@user_tickets.any?).to eq true
 end
 
-Então ('Eu devo ver "([^"]*)"') do |text|
-  if page.respond_to? :should
-    page.should have_content(text)
-  else
-    assert page.has_content?(text)
-  end
-end
-
-Dado("a página de solicitação de passagens seja carregada corretamente") do
-  solicit_psg = page.has_css?("#solicit_passagens")
-  expect(solicit_psg).to be true
-end
-
-E("exista um botão para escolher um período para fazer uma solicitação") do
-  find("#escolher_periodo")
-end
-
-Então("eu devo estar em uma página com uma tabela com os dados:") do
-  # | solicitation | name |
-  # | period | 30/10/2020 - 01/11/2020 |
-  data = table.hashes
-  solicits = []
-  names = []
-
-  data.each do |row|
-    row.each do |key, value|
-      if key.eql? "solicitation"
-        solicits << value
-      elsif key.eql? "name"
-        names << value
-      end
-    end
-  end
-  # a ser implementado
-  has_table = page.has_css?("#table")
-  find("#table")
-  valid_table = is_equal(find("#table"), solicits, names)
-  valid = has_table && valid_table
-  expect(valid).to be true
-end 
-
-E('não é possível fazer uma solicitação de passagens para o período escolhido') do
-  verify_disponibilidade()
-end
-
-Então('vejo uma mensagem {string}') do |msg|
-  alert = find("#msg_disp")
-  expect(alert.text).to be msg
-end
-
-Dado('não há dados cadastrados para o usuário fazer uma solicitação e receber auxílio') do
-  expect(user(@email).has_data).to be false
-end
-
-Então('vejo uma mensagem {string}') do |msg_erro|
-  alert = find("#error_msg")
-  expect(alert.text).to be msg_erro
+Então('vejo uma mensagem {string}') do |message|
+  expect(page).to have_text message
 end
