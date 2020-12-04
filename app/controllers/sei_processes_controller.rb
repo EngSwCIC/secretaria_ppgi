@@ -1,8 +1,10 @@
 class SeiProcessesController < ApplicationController
   before_action :set_sei_process, only: [:show, :edit, :update, :destroy]
 
+  ##
+  # Ação index da classe SeiProcess.
+  # Renderiza a view index, que exibe os processos e solicitações criados (dependente do usuário que está logado).
   # GET /sei_processes
-  # Lista os processos e solicitações criados
   def index
     # Filtra solicitações baseadas nos estados marcados como visíveis
     @all_statuses = SeiProcess.all_statuses
@@ -18,26 +20,33 @@ class SeiProcessesController < ApplicationController
     end
   end
 
+  ##
+  # Ação show da classe SeiProcess. Mostra detalhes de um registro criado.
   # GET /sei_processes/1
-  # Mostra detalhes de um registro criado
   def show
   end
 
+  ##
+  # Ação new da classe SeiProcess. Renderiza página para criação de um registro.
+  # Recebe também o registro Requisitos de Credenciamento para exibição na view new.
   # GET /sei_processes/new
-  # Renderiza página para criação de umm registro
   def new
     # Renderiza Requisitos de Credenciamento, caso existam, na página de criação de processo ou de abrir solicitação de credenciamento
     @requirements = Requirement.find_by(title: 'Requisitos de Credenciamento')
     @sei_process = SeiProcess.new
   end
 
+  ##
+  # Ação edit da classe SeiProcess. Renderiza página para atualizar um registro.
   # GET /sei_processes/1/edit
-  # Renderiza página para atualizar um registro
   def edit
   end
 
+  ##
+  # Método responsável por criar um registro com os dados inseridos na view new.
+  # Recebe os dados da view new e faz o tratamento para decidir se o registro é válido ou não.
+  # Redireciona para a view index caso os dados sejam válidos.
   # POST /sei_processes
-  # Faz o tratamento dos dados enviados pelo usuário para decidir se o registro é válido ou não
   def create
     # Faz correções de entradas inválidas baseando-se nos dados do usuário logado
     mandatory_params = {'user_id' => current_user.id, 'status' => 'Espera', 'code' => '0'}
@@ -54,8 +63,11 @@ class SeiProcessesController < ApplicationController
     end
   end
 
+  ##
+  # Método responsável por atualizar um registro com os dados inseridos na view edit.
+  # Recebe os dados da view edit e faz o tratamento dos dados modificados pelo usuário.
+  # Caso os dados sejam válidos, o registro é atualizado no banco e um novo registro de Accreditation correspondente é criado e o usuário é redirecionado para a view index.
   # PATCH/PUT /sei_processes/1
-  # Faz o tratamento dos dados modificados pelo usuário para decidir se a modificação é válida ou não
   def update
     respond_to do |format|
       # Quando condições da model forem cumpridas, atualiza o registro no banco, redireciona para pagina index da tabela atual e mostra uma mensagem de sucesso 
@@ -74,8 +86,10 @@ class SeiProcessesController < ApplicationController
     end
   end
 
+  ##
+  # Método responsável por excluir um registro salvo na tabela.
+  # Redireciona para a view index.
   # DELETE /sei_processes/1
-  # Decide se a exclusão do registro é válida ou não
   def destroy
     respond_to do |format|
       # Mensagem de sucesso ao excluir processo ou solicitação quando condições da model forem cumpridas
