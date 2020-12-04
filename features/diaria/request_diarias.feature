@@ -8,7 +8,7 @@ Funcionalidade: Realizar solicitação de diárias para um período
     Contexto: 
         Dado que eu esteja cadastrado como usuario "student@student.com"
         E que eu esteja autenticado com o email "student@student.com" e a senha "admin123" 2
-        E que esteja na pagina inicial 2
+        E que esteja na página inicial
         E eu clicar no botão Solicitar diárias
 
     Cenário: A solicitação de passagens é bem sucedida

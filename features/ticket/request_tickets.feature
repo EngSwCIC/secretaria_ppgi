@@ -9,7 +9,7 @@ Funcionalidade: Solicitar passagens
   Contexto: 
     Dado que eu esteja cadastrado como usuario com email "student@student.com"
     E que eu realize login como usuário, com email "student@student.com" e senha "admin123"
-    E que eu esteja na pagina inicial
+    E que eu esteja na página inicial
     E eu clicar no botão "Solicitar passagem"
 
   Cenário: A passagem é solicitada com sucesso

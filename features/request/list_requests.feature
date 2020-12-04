@@ -15,7 +15,7 @@ Funcionalidade: Listar todas as solicitações de acordo com as suas prioridades
       # }
       Dado que eu esteja cadastrado como administrador com email "admin@admin.com" 
       E que esteja autenticado como "admin"
-      E que esteja na pagina inicial
+      E que esteja na página inicial
       E eu clicar no link do painel de administrador
       E eu clicar em na lista de solicitações
    

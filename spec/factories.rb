@@ -3,6 +3,10 @@ FactoryBot.define do
     data_entrada { "2020-12-04" }
     date_saida { "2020-12-04" }
   end
+  
+  factory :request_deadline do
+    deadline { "2020-12-04 16:53:43" }
+  end
 
   factory :ticket do
     data_entrada { "2020-12-04" }
