@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :request_deadlines
+  resources :request_deadlines, only: [:new, :index, :create]
   resources :tickets
   resources :diaria
   resources :budgets, only: [:new, :index, :create]

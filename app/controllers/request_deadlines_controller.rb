@@ -13,11 +13,17 @@ class RequestDeadlinesController < ApplicationController
   # POST /request_deadlines
   # POST /request_deadlines.json
   def create
+    @request_deadlines = RequestDeadline.all
+
+    @request_deadlines.each do |r|
+      r.destroy!
+    end
+    
     @request_deadline = RequestDeadline.new(request_deadline_params)
 
     respond_to do |format|
       if @request_deadline.save
-        format.html { redirect_to @request_deadline, notice: 'Request deadline was successfully created.' }
+        format.html { redirect_to '/request_deadlines', notice: 'O prazo para solitações foi definido com sucesso.' }
         format.json { render :show, status: :created, location: @request_deadline }
       else
         format.html { render :new }

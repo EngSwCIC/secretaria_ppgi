@@ -1,27 +1,13 @@
-<p id="notice"><%= notice %></p>
+<p id="notice"><% notice %></p>
 
-<h1>Request Deadlines</h1>
+<h1>Data limite para solicitações</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Deadline</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @request_deadlines.each do |request_deadline| %>
-      <tr>
-        <td><%= request_deadline.deadline %></td>
-        <td><%= link_to 'Show', request_deadline %></td>
-        <td><%= link_to 'Edit', edit_request_deadline_path(request_deadline) %></td>
-        <td><%= link_to 'Destroy', request_deadline, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<h3>O prazo atual para solicitações de passagens e diárias é:</h3>
+<% @request_deadlines.each do |r| %>
+  <%= r.deadline %>
+<% end %>
 
 <br>
+<br>
 
-<%= link_to 'New Request Deadline', new_request_deadline_path %>
+<%= link_to 'Alterar o prazo para solicitação', new_request_deadline_path %>

@@ -11,7 +11,7 @@ Dado('que eu esteja autenticado com o email {string} e a senha {string} 2') do |
   click_button "Log in"
 end
 
-Dado('que esteja na pagina inicial 2') do
+Dado('que esteja na página inicial') do
   expect(page).to have_text("Usuário atual")
 end
 
