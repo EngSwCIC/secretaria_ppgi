@@ -1,0 +1,1 @@
+{"churn":{"changes":[{"file_path":"app/controllers/informations_controller.rb","times_changed":10}],"class_churn":[],"method_churn":[],"changed_files":["app/views/informations/index.html.erb","spec/controllers/new_info_controller_spec.rb"],"changed_classes":[],"changed_methods":[]}}

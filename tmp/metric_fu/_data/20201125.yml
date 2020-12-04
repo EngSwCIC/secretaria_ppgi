@@ -1,0 +1,2662 @@
+---
+:churn:
+  :changes:
+  - :file_path: app/controllers/informations_controller.rb
+    :times_changed: 10
+  :class_churn: []
+  :method_churn: []
+  :changed_files:
+  - app/views/informations/index.html.erb
+  - spec/controllers/new_info_controller_spec.rb
+  :changed_classes: []
+  :changed_methods: []
+:cane:
+  :total_violations: 70
+  :violations:
+    :line_style:
+    - :line: app/controllers/informations_controller.rb:4
+      :description: Line is >80 characters (99)
+    - :line: app/controllers/informations_controller.rb:5
+      :description: Line contains trailing whitespace
+    - :line: app/controllers/informations_controller.rb:20
+      :description: Line is >80 characters (94)
+    - :line: app/controllers/informations_controller.rb:45
+      :description: Line contains trailing whitespace
+    - :line: app/controllers/informations_controller.rb:52
+      :description: Line contains trailing whitespace
+    - :line: app/controllers/informations_controller.rb:57
+      :description: Line is >80 characters (84)
+    - :line: app/controllers/informations_controller.rb:61
+      :description: Line contains trailing whitespace
+    - :line: app/controllers/notifications_controller.rb:15
+      :description: Line contains trailing whitespace
+    - :line: app/controllers/notifications_controller.rb:18
+      :description: Line contains trailing whitespace
+    - :line: app/controllers/notifications_controller.rb:27
+      :description: Line contains trailing whitespace
+    - :line: app/controllers/notifications_controller.rb:35
+      :description: Line is >80 characters (84)
+    - :line: app/controllers/notifications_controller.rb:36
+      :description: Line contains trailing whitespace
+    - :line: app/controllers/notifications_controller.rb:37
+      :description: Line contains trailing whitespace
+    - :line: app/controllers/notifications_controller.rb:44
+      :description: Line contains trailing whitespace
+    - :line: app/controllers/notifications_controller.rb:56
+      :description: Line contains trailing whitespace
+    - :line: app/controllers/notifications_controller.rb:59
+      :description: Line is >80 characters (81)
+    - :line: app/controllers/notifications_controller.rb:62
+      :description: Line contains trailing whitespace
+    - :line: app/controllers/sources_controller.rb:4
+      :description: Line contains hard tabs
+    - :line: app/controllers/sources_controller.rb:6
+      :description: Line contains trailing whitespace
+    - :line: app/controllers/sources_controller.rb:9
+      :description: Line contains hard tabs
+    - :line: app/controllers/sources_controller.rb:20
+      :description: Line contains hard tabs
+    - :line: app/controllers/sources_controller.rb:26
+      :description: Line contains trailing whitespace
+    - :line: app/controllers/sources_controller.rb:37
+      :description: Line contains trailing whitespace
+    - :line: app/models/notification.rb:2
+      :description: Line contains hard tabs
+    - :line: app/models/notification.rb:3
+      :description: Line contains hard tabs
+    - :line: app/models/source.rb:2
+      :description: Line contains hard tabs
+    - :line: app/models/source.rb:3
+      :description: Line contains hard tabs
+    - :line: app/models/source.rb:4
+      :description: Line contains hard tabs
+    - :line: spec/controllers/admincontrol_controller_spec.rb:6
+      :description: Line is >80 characters (82)
+    - :line: spec/controllers/admincontrol_controller_spec.rb:11
+      :description: Line is >80 characters (82)
+    - :line: spec/controllers/admincontrol_controller_spec.rb:13
+      :description: Line is >80 characters (87)
+    - :line: spec/controllers/admincontrol_controller_spec.rb:15
+      :description: Line contains trailing whitespace
+    - :line: spec/controllers/admincontrol_controller_spec.rb:23
+      :description: Line contains trailing whitespace
+    - :line: spec/controllers/admincontrol_controller_spec.rb:30
+      :description: Line contains trailing whitespace
+    - :line: spec/controllers/admincontrol_controller_spec.rb:31
+      :description: Line contains trailing whitespace
+    - :line: spec/controllers/informations_controller_spec.rb:10
+      :description: Line is >80 characters (101)
+    - :line: spec/controllers/informations_controller_spec.rb:14
+      :description: Line contains trailing whitespace
+    - :line: spec/controllers/InfoSourceFilter_spec.rb:23
+      :description: Line is >80 characters (100)
+    - :line: spec/controllers/InfoSourceFilter_spec.rb:23
+      :description: Line contains trailing whitespace
+    - :line: spec/controllers/ListEmail.rb:7
+      :description: Line is >80 characters (81)
+    - :line: spec/controllers/ListEmail.rb:13
+      :description: Line is >80 characters (81)
+    - :line: spec/controllers/ListEmail.rb:19
+      :description: Line is >80 characters (81)
+    - :line: spec/controllers/new_info_controller_spec.rb:9
+      :description: Line contains trailing whitespace
+    - :line: spec/controllers/new_info_controller_spec.rb:15
+      :description: Line is >80 characters (83)
+    - :line: spec/controllers/new_info_controller_spec.rb:16
+      :description: Line is >80 characters (86)
+    - :line: spec/controllers/new_info_controller_spec.rb:19
+      :description: Line is >80 characters (84)
+    - :line: spec/controllers/new_info_controller_spec.rb:20
+      :description: Line is >80 characters (96)
+    - :line: spec/controllers/new_info_controller_spec.rb:24
+      :description: Line is >80 characters (99)
+    - :line: spec/controllers/new_info_controller_spec.rb:34
+      :description: Line is >80 characters (86)
+    - :line: spec/controllers/new_info_controller_spec.rb:37
+      :description: Line is >80 characters (84)
+    - :line: spec/controllers/new_info_controller_spec.rb:38
+      :description: Line is >80 characters (99)
+    - :line: spec/controllers/new_info_controller_spec.rb:39
+      :description: Line is >80 characters (100)
+    - :line: spec/controllers/new_info_controller_spec.rb:42
+      :description: Line contains trailing whitespace
+    - :line: spec/controllers/new_info_controller_spec.rb:44
+      :description: Line is >80 characters (99)
+    - :line: spec/controllers/new_info_controller_spec.rb:45
+      :description: Line is >80 characters (100)
+    - :line: spec/controllers/source_controller_spec.rb:28
+      :description: Line is >80 characters (97)
+    - :line: spec/controllers/source_controller_spec.rb:28
+      :description: Line contains trailing whitespace
+    - :line: spec/controllers/source_controller_spec.rb:31
+      :description: Line contains trailing whitespace
+    - :line: spec/controllers/source_controller_spec.rb:34
+      :description: Line contains trailing whitespace
+    - :line: spec/controllers/source_controller_spec.rb:37
+      :description: Line contains trailing whitespace
+    - :line: spec/rails_helper.rb:8
+      :description: Line is >80 characters (86)
+    - :line: spec/spec_helper.rb:1
+      :description: Line is >80 characters (92)
+    - :line: spec/spec_helper.rb:65
+      :description: Line is >80 characters (87)
+    - :line: spec/spec_helper.rb:66
+      :description: Line is >80 characters (92)
+    :comment:
+    - :line: app/controllers/application_controller.rb:3
+      :class_name: ApplicationController
+    - :line: app/controllers/home_controller.rb:1
+      :class_name: HomeController
+    - :line: app/controllers/informations_controller.rb:1
+      :class_name: InformationsController
+    - :line: app/controllers/notifications_controller.rb:1
+      :class_name: NotificationsController
+    - :line: app/controllers/sources_controller.rb:1
+      :class_name: SourcesController
+    - :line: app/models/information.rb:1
+      :class_name: Information
+:stats:
+  :codeLOC: 186
+  :testLOC: 218
+  :code_to_test_ratio: 1.2
+  :lines:
+  - :name: Controllers
+    :lines: 189
+    :loc: 146
+    :classes: 5
+    :methods: 26
+    :methods_per_class: 5
+    :loc_per_method: 3
+  - :name: Helpers
+    :lines: 6
+    :loc: 6
+    :classes: 0
+    :methods: 0
+    :methods_per_class: 0
+    :loc_per_method: 0
+  - :name: Models
+    :lines: 33
+    :loc: 26
+    :classes: 5
+    :methods: 1
+    :methods_per_class: 0
+    :loc_per_method: 24
+  - :name: Mailers
+    :lines: 4
+    :loc: 4
+    :classes: 1
+    :methods: 0
+    :methods_per_class: 0
+    :loc_per_method: 0
+  - :name: Javascripts
+    :lines: 35
+    :loc: 4
+    :classes: 0
+    :methods: 1
+    :methods_per_class: 0
+    :loc_per_method: 2
+  - :name: Libraries
+    :lines: 0
+    :loc: 0
+    :classes: 0
+    :methods: 0
+    :methods_per_class: 0
+    :loc_per_method: 0
+  - :name: Controller tests
+    :lines: 0
+    :loc: 0
+    :classes: 0
+    :methods: 0
+    :methods_per_class: 0
+    :loc_per_method: 0
+  - :name: Helper tests
+    :lines: 0
+    :loc: 0
+    :classes: 0
+    :methods: 0
+    :methods_per_class: 0
+    :loc_per_method: 0
+  - :name: Model tests
+    :lines: 0
+    :loc: 0
+    :classes: 0
+    :methods: 0
+    :methods_per_class: 0
+    :loc_per_method: 0
+  - :name: Mailer tests
+    :lines: 0
+    :loc: 0
+    :classes: 0
+    :methods: 0
+    :methods_per_class: 0
+    :loc_per_method: 0
+  - :name: Integration tests
+    :lines: 0
+    :loc: 0
+    :classes: 0
+    :methods: 0
+    :methods_per_class: 0
+    :loc_per_method: 0
+  - :name: Controllers specs
+    :lines: 217
+    :loc: 169
+    :classes: 0
+    :methods: 0
+    :methods_per_class: 0
+    :loc_per_method: 0
+  - :name: Helpers specs
+    :lines: 30
+    :loc: 8
+    :classes: 0
+    :methods: 0
+    :methods_per_class: 0
+    :loc_per_method: 0
+  - :name: Models specs
+    :lines: 28
+    :loc: 21
+    :classes: 0
+    :methods: 0
+    :methods_per_class: 0
+    :loc_per_method: 0
+  - :name: Home specs
+    :lines: 5
+    :loc: 4
+    :classes: 0
+    :methods: 0
+    :methods_per_class: 0
+    :loc_per_method: 0
+  - :name: Source specs
+    :lines: 20
+    :loc: 16
+    :classes: 0
+    :methods: 0
+    :methods_per_class: 0
+    :loc_per_method: 0
+  - :name: Total
+    :lines: 567
+    :loc: 404
+    :classes: 11
+    :methods: 28
+    :methods_per_class: 2
+    :loc_per_method: 12
+:rails_best_practices:
+  :total:
+  - Found 17 errors.
+  :problems:
+  - :file: "/mnt/c/EngSw/secretaria_ppgi/db/schema.rb"
+    :line: '18'
+    :problem: always add db index (information => [source_id])
+    :url: https://rails-bestpractices.com/posts/2010/07/24/always-add-db-index/
+  - :file: "/mnt/c/EngSw/secretaria_ppgi/app/views/informations/index.html.erb"
+    :line: '20'
+    :problem: move code into controller
+    :url: https://rails-bestpractices.com/posts/2010/07/24/move-code-into-controller/
+  - :file: "/mnt/c/EngSw/secretaria_ppgi/app/views/informations/index.html.erb"
+    :line: '25'
+    :problem: move code into controller
+    :url: https://rails-bestpractices.com/posts/2010/07/24/move-code-into-controller/
+  - :file: "/mnt/c/EngSw/secretaria_ppgi/app/helpers/home_helper.rb"
+    :line: '1'
+    :problem: remove empty helpers
+    :url: https://rails-bestpractices.com/posts/2011/04/09/remove-empty-helpers/
+  - :file: "/mnt/c/EngSw/secretaria_ppgi/app/helpers/source_helper.rb"
+    :line: '1'
+    :problem: remove empty helpers
+    :url: https://rails-bestpractices.com/posts/2011/04/09/remove-empty-helpers/
+  - :file: "/mnt/c/EngSw/secretaria_ppgi/app/controllers/informations_controller.rb"
+    :line: '5'
+    :problem: remove trailing whitespace
+    :url: https://rails-bestpractices.com/posts/2010/12/02/remove-trailing-whitespace/
+  - :file: "/mnt/c/EngSw/secretaria_ppgi/app/controllers/sources_controller.rb"
+    :line: '6'
+    :problem: remove trailing whitespace
+    :url: https://rails-bestpractices.com/posts/2010/12/02/remove-trailing-whitespace/
+  - :file: "/mnt/c/EngSw/secretaria_ppgi/app/views/home/index.html.erb"
+    :line: '9'
+    :problem: remove trailing whitespace
+    :url: https://rails-bestpractices.com/posts/2010/12/02/remove-trailing-whitespace/
+  - :file: "/mnt/c/EngSw/secretaria_ppgi/app/views/informations/index.html.erb"
+    :line: '2'
+    :problem: remove trailing whitespace
+    :url: https://rails-bestpractices.com/posts/2010/12/02/remove-trailing-whitespace/
+  - :file: "/mnt/c/EngSw/secretaria_ppgi/app/views/notifications/edit.html.erb"
+    :line: '12'
+    :problem: remove trailing whitespace
+    :url: https://rails-bestpractices.com/posts/2010/12/02/remove-trailing-whitespace/
+  - :file: "/mnt/c/EngSw/secretaria_ppgi/app/views/notifications/index.html.erb"
+    :line: '2'
+    :problem: remove trailing whitespace
+    :url: https://rails-bestpractices.com/posts/2010/12/02/remove-trailing-whitespace/
+  - :file: "/mnt/c/EngSw/secretaria_ppgi/app/views/notifications/new.html.erb"
+    :line: '12'
+    :problem: remove trailing whitespace
+    :url: https://rails-bestpractices.com/posts/2010/12/02/remove-trailing-whitespace/
+  - :file: "/mnt/c/EngSw/secretaria_ppgi/app/views/notifications/show.html.erb"
+    :line: '5'
+    :problem: remove trailing whitespace
+    :url: https://rails-bestpractices.com/posts/2010/12/02/remove-trailing-whitespace/
+  - :file: "/mnt/c/EngSw/secretaria_ppgi/app/views/sources/edit.html.erb"
+    :line: '6'
+    :problem: remove trailing whitespace
+    :url: https://rails-bestpractices.com/posts/2010/12/02/remove-trailing-whitespace/
+  - :file: "/mnt/c/EngSw/secretaria_ppgi/app/views/sources/new.html.erb"
+    :line: '9'
+    :problem: remove trailing whitespace
+    :url: https://rails-bestpractices.com/posts/2010/12/02/remove-trailing-whitespace/
+  - :file: "/mnt/c/EngSw/secretaria_ppgi/app/views/sources/show.html.erb"
+    :line: '5'
+    :problem: remove trailing whitespace
+    :url: https://rails-bestpractices.com/posts/2010/12/02/remove-trailing-whitespace/
+  - :file: "/mnt/c/EngSw/secretaria_ppgi/config/routes.rb"
+    :line: '11'
+    :problem: remove trailing whitespace
+    :url: https://rails-bestpractices.com/posts/2010/12/02/remove-trailing-whitespace/
+:flog:
+  :total: 279.37540684558655
+  :average: 7.550686671502339
+  :method_containers:
+  - :name: main
+    :path: ''
+    :total_score: 79.38841225267078
+    :highest_score: 79.38841225267078
+    :average_score: 79.38841225267078
+    :methods:
+      main#none:
+        :operators:
+          :branch: 27.00000000000001
+          :any?: 1.0
+          :assignment: 17.400000000000006
+          :root: 1.6
+          :[]: 1.4000000000000001
+          :first: 1.2000000000000002
+          :nil?: 1.2000000000000002
+          :dirname: 1.7000000000000002
+          :+: 1.5000000000000002
+          :unshift: 1.3000000000000003
+          :require: 3.200000000000001
+          :namespace: 1.4000000000000004
+          :new: 4.800000000000002
+          :desc: 4.3000000000000025
+          :task: 14.500000000000005
+          :exist?: 3.600000000000002
+          :<<: 5.800000000000003
+          :application: 1.900000000000001
+          :configure: 1.700000000000001
+          :config: 7.000000000000005
+          :respond_to?: 1.8000000000000014
+          :annotations: 4.600000000000003
+          :directories: 2.2000000000000015
+          :register_extensions: 2.0000000000000013
+          :puts: 1.5000000000000009
+          :abort: 1.4000000000000008
+        :score: 79.38841225267078
+        :path: 
+  - :name: NotificationsController
+    :path: app/controllers/notifications_controller.rb
+    :total_score: 69.09666469735565
+    :highest_score: 22.262075374951014
+    :average_score: 7.6774071885950725
+    :methods:
+      NotificationsController#index:
+        :operators:
+          :branch: 4.6000000000000005
+          :current_user: 6.2
+          :role: 5.4
+          :==: 4.6000000000000005
+          :assignment: 5.000000000000001
+          :all: 1.1
+          :where: 3.900000000000001
+        :score: 22.262075374951014
+        :path: app/controllers/notifications_controller.rb:2-10
+      NotificationsController#create:
+        :operators:
+          :params: 2.5999999999999996
+          :require: 1.0
+          :[]: 1.2
+          :notification_params: 2.4
+          :permit: 1.0
+          :assignment: 1.0
+          :new: 1.0
+          :branch: 1.0
+          :save: 1.0
+          :notifications_path: 1.3
+          :redirect_to: 2.2
+          :new_notifications_path: 1.3
+        :score: 15.066519173319364
+        :path: app/controllers/notifications_controller.rb:28-35
+      NotificationsController#update:
+        :operators:
+          :assignment: 2.0
+          :params: 1.4
+          :[]: 1.2
+          :find: 1.0
+          :notification_params: 1.2
+          :update_attributes!: 1.0
+          :flash: 1.0
+          :notification_path: 1.2
+          :redirect_to: 1.0
+        :score: 9.219544457292887
+        :path: app/controllers/notifications_controller.rb:45-49
+      NotificationsController#destroy:
+        :operators:
+          :assignment: 2.0
+          :params: 1.4
+          :[]: 1.2
+          :find: 1.0
+          :destroy: 1.0
+          :flash: 1.0
+          :title: 1.0
+          :notifications_path: 1.2
+          :redirect_to: 1.0
+        :score: 9.024411338142782
+        :path: app/controllers/notifications_controller.rb:21-25
+      NotificationsController#show:
+        :operators:
+          :assignment: 2.0
+          :params: 1.2
+          :[]: 1.0
+          :find: 1.0
+        :score: 3.773592452822642
+        :path: app/controllers/notifications_controller.rb:52-54
+      NotificationsController#edit:
+        :operators:
+          :assignment: 1.0
+          :params: 1.4
+          :[]: 1.2
+          :find: 1.0
+        :score: 3.7363083384538807
+        :path: app/controllers/notifications_controller.rb:41-42
+      NotificationsController#notification_params:
+        :operators:
+          :params: 1.4
+          :require: 1.2
+          :permit: 1.0
+        :score: 3.5999999999999996
+        :path: app/controllers/notifications_controller.rb:58-59
+      NotificationsController#new:
+        :operators:
+          :assignment: 1.0
+          :new: 1.0
+        :score: 1.4142135623730951
+        :path: app/controllers/notifications_controller.rb:16-17
+      NotificationsController#none:
+        :operators:
+          :private: 1.0
+        :score: 1.0
+        :path: 
+  - :name: InformationsController
+    :path: app/controllers/informations_controller.rb
+    :total_score: 70.3840077794657
+    :highest_score: 19.451478092936796
+    :average_score: 7.820445308829523
+    :methods:
+      InformationsController#create:
+        :operators:
+          :params: 2.6000000000000005
+          :require: 1.0000000000000002
+          :[]: 1.2000000000000002
+          :information_params: 2.6000000000000005
+          :permit: 1.0000000000000002
+          :assignment: 1.0000000000000002
+          :current_user: 1.6
+          :id: 1.4000000000000001
+          :merge: 1.2000000000000002
+          :new: 1.0000000000000002
+          :branch: 1.0000000000000002
+          :save: 1.0000000000000002
+          :informations_path: 1.3000000000000003
+          :redirect_to: 2.2000000000000006
+          :new_information_path: 1.3000000000000003
+        :score: 19.451478092936796
+        :path: app/controllers/informations_controller.rb:17-24
+      InformationsController#index:
+        :operators:
+          :branch: 2.0
+          :params: 4.7
+          :[]: 6.700000000000001
+          :assignment: 2.2
+          :search: 1.3000000000000003
+          :order: 2.2000000000000006
+          :all: 1.3000000000000003
+        :score: 16.470579831930632
+        :path: app/controllers/informations_controller.rb:2-7
+      InformationsController#update:
+        :operators:
+          :assignment: 2.0000000000000004
+          :params: 1.4000000000000001
+          :[]: 1.2000000000000002
+          :find: 1.0000000000000002
+          :information_params: 1.2000000000000002
+          :update_attributes!: 1.0000000000000002
+          :flash: 1.0000000000000002
+          :information_path: 1.2000000000000002
+          :redirect_to: 1.0000000000000002
+        :score: 9.219544457292887
+        :path: app/controllers/informations_controller.rb:46-50
+      InformationsController#destroy:
+        :operators:
+          :assignment: 2.0000000000000004
+          :params: 1.4000000000000001
+          :[]: 1.2000000000000002
+          :find: 1.0000000000000002
+          :destroy: 1.0000000000000002
+          :flash: 1.0000000000000002
+          :title: 1.0000000000000002
+          :informations_path: 1.2000000000000002
+          :redirect_to: 1.0000000000000002
+        :score: 9.024411338142782
+        :path: app/controllers/informations_controller.rb:29-33
+      InformationsController#edit:
+        :operators:
+          :assignment: 2.0000000000000004
+          :params: 1.4000000000000001
+          :[]: 1.2000000000000002
+          :find: 1.0000000000000002
+          :all: 1.0000000000000002
+        :score: 5.015974481593782
+        :path: app/controllers/informations_controller.rb:41-43
+      InformationsController#show:
+        :operators:
+          :assignment: 2.0000000000000004
+          :params: 1.2000000000000002
+          :[]: 1.0000000000000002
+          :find: 1.0000000000000002
+        :score: 3.773592452822642
+        :path: app/controllers/informations_controller.rb:36-38
+      InformationsController#information_params:
+        :operators:
+          :params: 1.4000000000000001
+          :require: 1.2000000000000002
+          :permit: 1.0000000000000002
+        :score: 3.6000000000000005
+        :path: app/controllers/informations_controller.rb:56-57
+      InformationsController#new:
+        :operators:
+          :assignment: 2.0000000000000004
+          :new: 1.0000000000000002
+          :all: 1.0000000000000002
+        :score: 2.8284271247461907
+        :path: app/controllers/informations_controller.rb:11-13
+      InformationsController#none:
+        :operators:
+          :private: 1.0000000000000002
+        :score: 1.0000000000000002
+        :path: 
+  - :name: SourcesController
+    :path: app/controllers/sources_controller.rb
+    :total_score: 41.306322116094336
+    :highest_score: 9.219544457292887
+    :average_score: 4.589591346232704
+    :methods:
+      SourcesController#update:
+        :operators:
+          :assignment: 2.0
+          :params: 1.4
+          :[]: 1.2
+          :find: 1.0
+          :source_params: 1.2
+          :update_attributes!: 1.0
+          :flash: 1.0
+          :source_path: 1.2
+          :redirect_to: 1.0
+        :score: 9.219544457292887
+        :path: app/controllers/sources_controller.rb:38-42
+      SourcesController#destroy:
+        :operators:
+          :assignment: 2.0
+          :params: 1.4
+          :[]: 1.2
+          :find: 1.0
+          :destroy: 1.0
+          :flash: 1.0
+          :name: 1.0
+          :sources_path: 1.2
+          :redirect_to: 1.0
+        :score: 9.024411338142782
+        :path: app/controllers/sources_controller.rb:12-16
+      SourcesController#create:
+        :operators:
+          :assignment: 1.0
+          :source_params: 1.2
+          :new: 1.0
+          :branch: 1.0
+          :save: 1.0
+          :sources_path: 1.3
+          :redirect_to: 2.2
+          :new_source_path: 1.3
+        :score: 8.12403840463596
+        :path: app/controllers/sources_controller.rb:19-24
+      SourcesController#show:
+        :operators:
+          :assignment: 2.0
+          :params: 1.2
+          :[]: 1.0
+          :find: 1.0
+        :score: 3.773592452822642
+        :path: app/controllers/sources_controller.rb:29-31
+      SourcesController#edit:
+        :operators:
+          :assignment: 1.0
+          :params: 1.4
+          :[]: 1.2
+          :find: 1.0
+        :score: 3.7363083384538807
+        :path: app/controllers/sources_controller.rb:34-35
+      SourcesController#source_params:
+        :operators:
+          :params: 1.4
+          :require: 1.2
+          :permit: 1.0
+        :score: 3.5999999999999996
+        :path: app/controllers/sources_controller.rb:47-48
+      SourcesController#index:
+        :operators:
+          :assignment: 1.0
+          :all: 1.0
+        :score: 1.4142135623730951
+        :path: app/controllers/sources_controller.rb:3-4
+      SourcesController#new:
+        :operators:
+          :assignment: 1.0
+          :new: 1.0
+        :score: 1.4142135623730951
+        :path: app/controllers/sources_controller.rb:8-9
+      SourcesController#none:
+        :operators:
+          :private: 1.0
+        :score: 1.0
+        :path: 
+  - :name: User
+    :path: ''
+    :total_score: 4.0
+    :highest_score: 4.0
+    :average_score: 4.0
+    :methods:
+      User#none:
+        :operators:
+          :validates: 2.0
+          :devise: 1.0
+          :enum: 1.0
+        :score: 4.0
+        :path: 
+  - :name: Source
+    :path: ''
+    :total_score: 3.0
+    :highest_score: 3.0
+    :average_score: 3.0
+    :methods:
+      Source#none:
+        :operators:
+          :validates: 2.0
+          :has_many: 1.0
+        :score: 3.0
+        :path: 
+  - :name: ApplicationController
+    :path: app/controllers/application_controller.rb
+    :total_score: 4.2
+    :highest_score: 2.2
+    :average_score: 2.1
+    :methods:
+      ApplicationController#configure_permitted_parameters:
+        :operators:
+          :devise_parameter_sanitizer: 1.2
+          :permit: 1.0
+        :score: 2.2
+        :path: app/controllers/application_controller.rb:8-9
+      ApplicationController#none:
+        :operators:
+          :before_action: 1.0
+          :protected: 1.0
+        :score: 2.0
+        :path: 
+  - :name: Notification
+    :path: ''
+    :total_score: 2.0
+    :highest_score: 2.0
+    :average_score: 2.0
+    :methods:
+      Notification#none:
+        :operators:
+          :validates: 2.0
+        :score: 2.0
+        :path: 
+  - :name: Information
+    :path: ''
+    :total_score: 2.0
+    :highest_score: 2.0
+    :average_score: 2.0
+    :methods:
+      Information#none:
+        :operators:
+          :validates: 1.0
+          :validates_presence_of: 1.0
+        :score: 2.0
+        :path: 
+  - :name: ApplicationMailer
+    :path: ''
+    :total_score: 2.0
+    :highest_score: 2.0
+    :average_score: 2.0
+    :methods:
+      ApplicationMailer#none:
+        :operators:
+          :default: 1.0
+          :layout: 1.0
+        :score: 2.0
+        :path: 
+  - :name: Information::search
+    :path: app/models/information.rb
+    :total_score: 1.0
+    :highest_score: 1.0
+    :average_score: 1.0
+    :methods:
+      Information::search:
+        :operators:
+          :where: 1.0
+        :score: 1.0
+        :path: app/models/information.rb:5-6
+  - :name: ApplicationRecord
+    :path: ''
+    :total_score: 1.0
+    :highest_score: 1.0
+    :average_score: 1.0
+    :methods:
+      ApplicationRecord#none:
+        :operators:
+          :assignment: 1.0
+        :score: 1.0
+        :path: 
+:flay:
+  :total_score: '970'
+  :matches:
+  - :reason: 1) Similar code found in :block (mass = 282)
+    :matches:
+    - :name: app/views/notifications/edit.html.erb
+      :line: '2'
+    - :name: app/views/notifications/new.html.erb
+      :line: '2'
+  - :reason: 2) Similar code found in :block (mass = 270)
+    :matches:
+    - :name: app/views/informations/edit.html.erb
+      :line: '2'
+    - :name: app/views/informations/new.html.erb
+      :line: '2'
+  - :reason: 3) Similar code found in :attrasgn (mass = 142)
+    :matches:
+    - :name: app/views/devise/passwords/new.html.erb
+      :line: '3'
+    - :name: app/views/devise/unlocks/new.html.erb
+      :line: '3'
+  - :reason: 4) Similar code found in :defn (mass = 60)
+    :matches:
+    - :name: app/controllers/informations_controller.rb
+      :line: '29'
+    - :name: app/controllers/notifications_controller.rb
+      :line: '21'
+    - :name: app/controllers/sources_controller.rb
+      :line: '12'
+  - :reason: 5) Similar code found in :defn (mass = 54)
+    :matches:
+    - :name: app/controllers/informations_controller.rb
+      :line: '46'
+    - :name: app/controllers/notifications_controller.rb
+      :line: '45'
+    - :name: app/controllers/sources_controller.rb
+      :line: '38'
+  - :reason: 6) Similar code found in :if (mass = 44)
+    :matches:
+    - :name: app/views/informations/index.html.erb
+      :line: '19'
+    - :name: app/views/informations/index.html.erb
+      :line: '24'
+  - :reason: 7) Similar code found in :if (mass = 42)
+    :matches:
+    - :name: app/views/informations/index.html.erb
+      :line: '30'
+    - :name: app/views/notifications/index.html.erb
+      :line: '24'
+  - :reason: 8) Similar code found in :if (mass = 40)
+    :matches:
+    - :name: app/views/devise/shared/_links.html.erb
+      :line: '5'
+    - :name: app/views/devise/shared/_links.html.erb
+      :line: '13'
+  - :reason: 9) Similar code found in :if (mass = 36)
+    :matches:
+    - :name: app/views/informations/show.html.erb
+      :line: '11'
+    - :name: app/views/sources/show.html.erb
+      :line: '6'
+:roodi:
+  :total:
+  - Found 0 errors.
+  :problems: []
+:reek:
+  :matches:
+  - :file_path: app/channels/application_cable/channel.rb
+    :code_smells:
+    - :method: ApplicationCable::Channel
+      :message: has no descriptive comment
+      :type: IrresponsibleModule
+      :lines:
+      - 2
+  - :file_path: app/channels/application_cable/connection.rb
+    :code_smells:
+    - :method: ApplicationCable::Connection
+      :message: has no descriptive comment
+      :type: IrresponsibleModule
+      :lines:
+      - 2
+  - :file_path: app/controllers/application_controller.rb
+    :code_smells:
+    - :method: ApplicationController
+      :message: has no descriptive comment
+      :type: IrresponsibleModule
+      :lines:
+      - 3
+  - :file_path: app/controllers/home_controller.rb
+    :code_smells:
+    - :method: HomeController
+      :message: has no descriptive comment
+      :type: IrresponsibleModule
+      :lines:
+      - 1
+  - :file_path: app/controllers/informations_controller.rb
+    :code_smells:
+    - :method: InformationsController#index
+      :message: calls 'params[:information]' 3 times
+      :type: DuplicateMethodCall
+      :lines:
+      - 3
+      - 3
+      - 4
+    - :method: InformationsController#index
+      :message: calls 'params[:information][:source_id]' 2 times
+      :type: DuplicateMethodCall
+      :lines:
+      - 3
+      - 4
+    - :method: InformationsController
+      :message: assumes too much for instance variable '@information'
+      :type: InstanceVariableAssumption
+      :lines:
+      - 1
+    - :method: InformationsController
+      :message: has no descriptive comment
+      :type: IrresponsibleModule
+      :lines:
+      - 1
+  - :file_path: app/controllers/notifications_controller.rb
+    :code_smells:
+    - :method: NotificationsController#index
+      :message: calls 'current_user.role' 4 times
+      :type: DuplicateMethodCall
+      :lines:
+      - 3
+      - 5
+      - 7
+      - 9
+    - :method: NotificationsController
+      :message: assumes too much for instance variable '@notification'
+      :type: InstanceVariableAssumption
+      :lines:
+      - 1
+    - :method: NotificationsController
+      :message: has no descriptive comment
+      :type: IrresponsibleModule
+      :lines:
+      - 1
+  - :file_path: app/controllers/sources_controller.rb
+    :code_smells:
+    - :method: SourcesController
+      :message: assumes too much for instance variable '@source'
+      :type: InstanceVariableAssumption
+      :lines:
+      - 1
+    - :method: SourcesController
+      :message: has no descriptive comment
+      :type: IrresponsibleModule
+      :lines:
+      - 1
+  - :file_path: app/helpers/application_helper.rb
+    :code_smells:
+    - :method: ApplicationHelper
+      :message: has no descriptive comment
+      :type: IrresponsibleModule
+      :lines:
+      - 1
+  - :file_path: app/helpers/home_helper.rb
+    :code_smells:
+    - :method: HomeHelper
+      :message: has no descriptive comment
+      :type: IrresponsibleModule
+      :lines:
+      - 1
+  - :file_path: app/helpers/source_helper.rb
+    :code_smells:
+    - :method: SourceHelper
+      :message: has no descriptive comment
+      :type: IrresponsibleModule
+      :lines:
+      - 1
+  - :file_path: app/jobs/application_job.rb
+    :code_smells:
+    - :method: ApplicationJob
+      :message: has no descriptive comment
+      :type: IrresponsibleModule
+      :lines:
+      - 1
+  - :file_path: app/mailers/application_mailer.rb
+    :code_smells:
+    - :method: ApplicationMailer
+      :message: has no descriptive comment
+      :type: IrresponsibleModule
+      :lines:
+      - 1
+  - :file_path: app/models/application_record.rb
+    :code_smells:
+    - :method: ApplicationRecord
+      :message: has no descriptive comment
+      :type: IrresponsibleModule
+      :lines:
+      - 1
+  - :file_path: app/models/information.rb
+    :code_smells:
+    - :method: Information
+      :message: has no descriptive comment
+      :type: IrresponsibleModule
+      :lines:
+      - 1
+  - :file_path: app/models/notification.rb
+    :code_smells:
+    - :method: Notification
+      :message: has no descriptive comment
+      :type: IrresponsibleModule
+      :lines:
+      - 1
+  - :file_path: app/models/source.rb
+    :code_smells:
+    - :method: Source
+      :message: has no descriptive comment
+      :type: IrresponsibleModule
+      :lines:
+      - 1
+  - :file_path: app/models/user.rb
+    :code_smells:
+    - :method: User
+      :message: has no descriptive comment
+      :type: IrresponsibleModule
+      :lines:
+      - 3
+:saikuro:
+  :files:
+  - :classes:
+    - :class_name: NotificationsController
+      :complexity: 13
+      :lines: 60
+      :methods:
+      - :name: NotificationsController#index
+        :complexity: 5
+        :lines: 12
+      - :name: NotificationsController#create
+        :complexity: 2
+        :lines: 10
+      - :name: NotificationsController#notification_params
+        :complexity: 1
+        :lines: 2
+      - :name: NotificationsController#show
+        :complexity: 1
+        :lines: 3
+      - :name: NotificationsController#update
+        :complexity: 1
+        :lines: 5
+      - :name: NotificationsController#edit
+        :complexity: 1
+        :lines: 2
+      - :name: NotificationsController#destroy
+        :complexity: 1
+        :lines: 5
+      - :name: NotificationsController#new
+        :complexity: 1
+        :lines: 3
+    :filename: app/controllers/notifications_controller.rb
+  - :classes:
+    - :class_name: InformationsController
+      :complexity: 10
+      :lines: 59
+      :methods:
+      - :name: InformationsController#create
+        :complexity: 2
+        :lines: 10
+      - :name: InformationsController#index
+        :complexity: 2
+        :lines: 7
+      - :name: InformationsController#information_params
+        :complexity: 1
+        :lines: 2
+      - :name: InformationsController#update
+        :complexity: 1
+        :lines: 5
+      - :name: InformationsController#edit
+        :complexity: 1
+        :lines: 3
+      - :name: InformationsController#show
+        :complexity: 1
+        :lines: 3
+      - :name: InformationsController#destroy
+        :complexity: 1
+        :lines: 5
+      - :name: InformationsController#new
+        :complexity: 1
+        :lines: 4
+    :filename: app/controllers/informations_controller.rb
+  - :classes:
+    - :class_name: SourcesController
+      :complexity: 9
+      :lines: 50
+      :methods:
+      - :name: SourcesController#create
+        :complexity: 2
+        :lines: 8
+      - :name: SourcesController#source_params
+        :complexity: 1
+        :lines: 2
+      - :name: SourcesController#update
+        :complexity: 1
+        :lines: 5
+      - :name: SourcesController#edit
+        :complexity: 1
+        :lines: 2
+      - :name: SourcesController#show
+        :complexity: 1
+        :lines: 3
+      - :name: SourcesController#destroy
+        :complexity: 1
+        :lines: 5
+      - :name: SourcesController#new
+        :complexity: 1
+        :lines: 2
+      - :name: SourcesController#index
+        :complexity: 1
+        :lines: 2
+    :filename: app/controllers/sources_controller.rb
+  - :classes:
+    - :class_name: ''
+      :complexity: 0
+      :lines: 1
+      :methods: []
+    - :class_name: ApplicationController
+      :complexity: 2
+      :lines: 9
+      :methods:
+      - :name: ApplicationController#configure_permitted_parameters
+        :complexity: 1
+        :lines: 2
+    :filename: app/controllers/application_controller.rb
+  - :classes:
+    - :class_name: ''
+      :complexity: 1
+      :lines: 0
+      :methods: []
+    :filename: app/views/sources/index.html.erb
+  - :classes:
+    - :class_name: ''
+      :complexity: 1
+      :lines: 0
+      :methods: []
+    :filename: app/views/devise/registrations/edit.html.erb
+  - :classes:
+    - :class_name: Information
+      :complexity: 1
+      :lines: 7
+      :methods:
+      - :name: Information#self.search
+        :complexity: 1
+        :lines: 2
+    :filename: app/models/information.rb
+  - :classes:
+    - :class_name: HomeController
+      :complexity: 1
+      :lines: 3
+      :methods:
+      - :name: HomeController#index
+        :complexity: 1
+        :lines: 1
+    :filename: app/controllers/home_controller.rb
+  - :classes:
+    - :class_name: ''
+      :complexity: 0
+      :lines: 0
+      :methods: []
+    :filename: app/views/sources/show.html.erb
+  - :classes:
+    - :class_name: ''
+      :complexity: 0
+      :lines: 1
+      :methods: []
+    :filename: app/views/sources/new.html.erb
+  - :classes:
+    - :class_name: ''
+      :complexity: 0
+      :lines: 1
+      :methods: []
+    :filename: app/views/sources/create.html.erb
+  - :classes:
+    - :class_name: ''
+      :complexity: 0
+      :lines: 0
+      :methods: []
+    :filename: app/views/notifications/show.html.erb
+  - :classes:
+    - :class_name: ''
+      :complexity: 0
+      :lines: 2
+      :methods: []
+    :filename: app/views/layouts/application.html.erb
+  - :classes:
+    - :class_name: ''
+      :complexity: 0
+      :lines: 0
+      :methods: []
+    :filename: app/views/informations/show.html.erb
+  - :classes:
+    - :class_name: ''
+      :complexity: 0
+      :lines: 1
+      :methods: []
+    :filename: app/views/home/index.html.erb
+  - :classes:
+    - :class_name: ''
+      :complexity: 0
+      :lines: 2
+      :methods: []
+    :filename: app/views/devise/sessions/new.html.erb
+  - :classes:
+    - :class_name: ''
+      :complexity: 0
+      :lines: 1
+      :methods: []
+    - :class_name: User
+      :complexity: 0
+      :lines: 10
+      :methods: []
+    :filename: app/models/user.rb
+  - :classes:
+    - :class_name: Source
+      :complexity: 0
+      :lines: 4
+      :methods: []
+    :filename: app/models/source.rb
+  - :classes:
+    - :class_name: Notification
+      :complexity: 0
+      :lines: 3
+      :methods: []
+    :filename: app/models/notification.rb
+  - :classes:
+    - :class_name: ApplicationRecord
+      :complexity: 0
+      :lines: 2
+      :methods: []
+    :filename: app/models/application_record.rb
+  - :classes:
+    - :class_name: ApplicationMailer
+      :complexity: 0
+      :lines: 3
+      :methods: []
+    :filename: app/mailers/application_mailer.rb
+  - :classes:
+    - :class_name: ApplicationJob
+      :complexity: 0
+      :lines: 1
+      :methods: []
+    :filename: app/jobs/application_job.rb
+  - :classes:
+    - :class_name: SourceHelper
+      :complexity: 0
+      :lines: 1
+      :methods: []
+    :filename: app/helpers/source_helper.rb
+  - :classes:
+    - :class_name: HomeHelper
+      :complexity: 0
+      :lines: 1
+      :methods: []
+    :filename: app/helpers/home_helper.rb
+  - :classes:
+    - :class_name: ApplicationHelper
+      :complexity: 0
+      :lines: 1
+      :methods: []
+    :filename: app/helpers/application_helper.rb
+  - :classes:
+    - :class_name: ApplicationCable
+      :complexity: 0
+      :lines: 2
+      :methods: []
+    - :class_name: ApplicationCable::Connection
+      :complexity: 0
+      :lines: 1
+      :methods: []
+    :filename: app/channels/application_cable/connection.rb
+  - :classes:
+    - :class_name: ApplicationCable
+      :complexity: 0
+      :lines: 2
+      :methods: []
+    - :class_name: ApplicationCable::Channel
+      :complexity: 0
+      :lines: 1
+      :methods: []
+    :filename: app/channels/application_cable/channel.rb
+  :classes:
+  - :name: NotificationsController
+    :complexity: 13
+    :lines: 60
+    :defs:
+    - :name: NotificationsController#index
+      :complexity: 5
+      :lines: 12
+    - :name: NotificationsController#new
+      :complexity: 1
+      :lines: 3
+    - :name: NotificationsController#destroy
+      :complexity: 1
+      :lines: 5
+    - :name: NotificationsController#create
+      :complexity: 2
+      :lines: 10
+    - :name: NotificationsController#edit
+      :complexity: 1
+      :lines: 2
+    - :name: NotificationsController#update
+      :complexity: 1
+      :lines: 5
+    - :name: NotificationsController#show
+      :complexity: 1
+      :lines: 3
+    - :name: NotificationsController#notification_params
+      :complexity: 1
+      :lines: 2
+  - :name: InformationsController
+    :complexity: 10
+    :lines: 59
+    :defs:
+    - :name: InformationsController#index
+      :complexity: 2
+      :lines: 7
+    - :name: InformationsController#new
+      :complexity: 1
+      :lines: 4
+    - :name: InformationsController#create
+      :complexity: 2
+      :lines: 10
+    - :name: InformationsController#destroy
+      :complexity: 1
+      :lines: 5
+    - :name: InformationsController#show
+      :complexity: 1
+      :lines: 3
+    - :name: InformationsController#edit
+      :complexity: 1
+      :lines: 3
+    - :name: InformationsController#update
+      :complexity: 1
+      :lines: 5
+    - :name: InformationsController#information_params
+      :complexity: 1
+      :lines: 2
+  - :name: SourcesController
+    :complexity: 9
+    :lines: 50
+    :defs:
+    - :name: SourcesController#index
+      :complexity: 1
+      :lines: 2
+    - :name: SourcesController#new
+      :complexity: 1
+      :lines: 2
+    - :name: SourcesController#destroy
+      :complexity: 1
+      :lines: 5
+    - :name: SourcesController#create
+      :complexity: 2
+      :lines: 8
+    - :name: SourcesController#show
+      :complexity: 1
+      :lines: 3
+    - :name: SourcesController#edit
+      :complexity: 1
+      :lines: 2
+    - :name: SourcesController#update
+      :complexity: 1
+      :lines: 5
+    - :name: SourcesController#source_params
+      :complexity: 1
+      :lines: 2
+  - :name: ApplicationController
+    :complexity: 2
+    :lines: 9
+    :defs:
+    - :name: ApplicationController#configure_permitted_parameters
+      :complexity: 1
+      :lines: 2
+  - :name: HomeController
+    :complexity: 1
+    :lines: 3
+    :defs:
+    - :name: HomeController#index
+      :complexity: 1
+      :lines: 1
+  - :name: Information
+    :complexity: 1
+    :lines: 7
+    :defs:
+    - :name: Information#self.search
+      :complexity: 1
+      :lines: 2
+  - :name: ''
+    :complexity: 1
+    :lines: 0
+  - :name: ''
+    :complexity: 1
+    :lines: 0
+  - :name: ApplicationCable::Channel
+    :complexity: 0
+    :lines: 1
+  - :name: ApplicationCable
+    :complexity: 0
+    :lines: 2
+  - :name: ApplicationCable::Connection
+    :complexity: 0
+    :lines: 1
+  - :name: ApplicationCable
+    :complexity: 0
+    :lines: 2
+  - :name: ApplicationHelper
+    :complexity: 0
+    :lines: 1
+  - :name: HomeHelper
+    :complexity: 0
+    :lines: 1
+  - :name: SourceHelper
+    :complexity: 0
+    :lines: 1
+  - :name: ApplicationJob
+    :complexity: 0
+    :lines: 1
+  - :name: ApplicationMailer
+    :complexity: 0
+    :lines: 3
+  - :name: ApplicationRecord
+    :complexity: 0
+    :lines: 2
+  - :name: Notification
+    :complexity: 0
+    :lines: 3
+  - :name: Source
+    :complexity: 0
+    :lines: 4
+  - :name: User
+    :complexity: 0
+    :lines: 10
+  - :name: ''
+    :complexity: 0
+    :lines: 1
+  - :name: ''
+    :complexity: 0
+    :lines: 2
+  - :name: ''
+    :complexity: 0
+    :lines: 0
+  - :name: ''
+    :complexity: 0
+    :lines: 1
+  - :name: ''
+    :complexity: 0
+    :lines: 0
+  - :name: ''
+    :complexity: 0
+    :lines: 2
+  - :name: ''
+    :complexity: 0
+    :lines: 0
+  - :name: ''
+    :complexity: 0
+    :lines: 1
+  - :name: ''
+    :complexity: 0
+    :lines: 1
+  - :name: ''
+    :complexity: 0
+    :lines: 0
+  - :name: ''
+    :complexity: 0
+    :lines: 1
+  :methods:
+  - :name: NotificationsController#index
+    :complexity: 5
+    :lines: 12
+  - :name: SourcesController#create
+    :complexity: 2
+    :lines: 8
+  - :name: InformationsController#create
+    :complexity: 2
+    :lines: 10
+  - :name: InformationsController#index
+    :complexity: 2
+    :lines: 7
+  - :name: NotificationsController#create
+    :complexity: 2
+    :lines: 10
+  - :name: HomeController#index
+    :complexity: 1
+    :lines: 1
+  - :name: Information#self.search
+    :complexity: 1
+    :lines: 2
+  - :name: ApplicationController#configure_permitted_parameters
+    :complexity: 1
+    :lines: 2
+  - :name: SourcesController#source_params
+    :complexity: 1
+    :lines: 2
+  - :name: SourcesController#update
+    :complexity: 1
+    :lines: 5
+  - :name: SourcesController#edit
+    :complexity: 1
+    :lines: 2
+  - :name: SourcesController#show
+    :complexity: 1
+    :lines: 3
+  - :name: SourcesController#destroy
+    :complexity: 1
+    :lines: 5
+  - :name: SourcesController#new
+    :complexity: 1
+    :lines: 2
+  - :name: SourcesController#index
+    :complexity: 1
+    :lines: 2
+  - :name: InformationsController#information_params
+    :complexity: 1
+    :lines: 2
+  - :name: InformationsController#update
+    :complexity: 1
+    :lines: 5
+  - :name: InformationsController#edit
+    :complexity: 1
+    :lines: 3
+  - :name: InformationsController#show
+    :complexity: 1
+    :lines: 3
+  - :name: InformationsController#destroy
+    :complexity: 1
+    :lines: 5
+  - :name: InformationsController#new
+    :complexity: 1
+    :lines: 4
+  - :name: NotificationsController#notification_params
+    :complexity: 1
+    :lines: 2
+  - :name: NotificationsController#show
+    :complexity: 1
+    :lines: 3
+  - :name: NotificationsController#update
+    :complexity: 1
+    :lines: 5
+  - :name: NotificationsController#edit
+    :complexity: 1
+    :lines: 2
+  - :name: NotificationsController#destroy
+    :complexity: 1
+    :lines: 5
+  - :name: NotificationsController#new
+    :complexity: 1
+    :lines: 3
+:hotspots:
+  files:
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/notifications_controller.rb:2-10
+      file_name: app/controllers/notifications_controller.rb
+      line_number: 2-10
+      hash_key: '["app/controllers/notifications_controller.rb:2-10", nil, nil]'
+    details:
+      flog: complexity is 22.3
+      saikuro: complexity is 5.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/informations_controller.rb:17-24
+      file_name: app/controllers/informations_controller.rb
+      line_number: 17-24
+      hash_key: '["app/controllers/informations_controller.rb:17-24", nil, nil]'
+    details:
+      flog: complexity is 19.5
+      saikuro: complexity is 2.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/informations_controller.rb:2-7
+      file_name: app/controllers/informations_controller.rb
+      line_number: 2-7
+      hash_key: '["app/controllers/informations_controller.rb:2-7", nil, nil]'
+    details:
+      flog: complexity is 16.5
+      saikuro: complexity is 2.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/notifications_controller.rb:28-35
+      file_name: app/controllers/notifications_controller.rb
+      line_number: 28-35
+      hash_key: '["app/controllers/notifications_controller.rb:28-35", nil, nil]'
+    details:
+      flog: complexity is 15.1
+      saikuro: complexity is 2.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/notifications_controller.rb:45-49
+      file_name: app/controllers/notifications_controller.rb
+      line_number: 45-49
+      hash_key: '["app/controllers/notifications_controller.rb:45-49", nil, nil]'
+    details:
+      flog: complexity is 9.2
+      saikuro: complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/informations_controller.rb:46-50
+      file_name: app/controllers/informations_controller.rb
+      line_number: 46-50
+      hash_key: '["app/controllers/informations_controller.rb:46-50", nil, nil]'
+    details:
+      flog: complexity is 9.2
+      saikuro: complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/sources_controller.rb:38-42
+      file_name: app/controllers/sources_controller.rb
+      line_number: 38-42
+      hash_key: '["app/controllers/sources_controller.rb:38-42", nil, nil]'
+    details:
+      flog: complexity is 9.2
+      saikuro: complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/sources_controller.rb:19-24
+      file_name: app/controllers/sources_controller.rb
+      line_number: 19-24
+      hash_key: '["app/controllers/sources_controller.rb:19-24", nil, nil]'
+    details:
+      flog: complexity is 8.1
+      saikuro: complexity is 2.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/notifications_controller.rb:21-25
+      file_name: app/controllers/notifications_controller.rb
+      line_number: 21-25
+      hash_key: '["app/controllers/notifications_controller.rb:21-25", nil, nil]'
+    details:
+      flog: complexity is 9.0
+      saikuro: complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/informations_controller.rb:29-33
+      file_name: app/controllers/informations_controller.rb
+      line_number: 29-33
+      hash_key: '["app/controllers/informations_controller.rb:29-33", nil, nil]'
+    details:
+      flog: complexity is 9.0
+      saikuro: complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/sources_controller.rb:12-16
+      file_name: app/controllers/sources_controller.rb
+      line_number: 12-16
+      hash_key: '["app/controllers/sources_controller.rb:12-16", nil, nil]'
+    details:
+      flog: complexity is 9.0
+      saikuro: complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/informations_controller.rb:41-43
+      file_name: app/controllers/informations_controller.rb
+      line_number: 41-43
+      hash_key: '["app/controllers/informations_controller.rb:41-43", nil, nil]'
+    details:
+      flog: complexity is 5.0
+      saikuro: complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/notifications_controller.rb:52-54
+      file_name: app/controllers/notifications_controller.rb
+      line_number: 52-54
+      hash_key: '["app/controllers/notifications_controller.rb:52-54", nil, nil]'
+    details:
+      flog: complexity is 3.8
+      saikuro: complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/informations_controller.rb:36-38
+      file_name: app/controllers/informations_controller.rb
+      line_number: 36-38
+      hash_key: '["app/controllers/informations_controller.rb:36-38", nil, nil]'
+    details:
+      flog: complexity is 3.8
+      saikuro: complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/sources_controller.rb:29-31
+      file_name: app/controllers/sources_controller.rb
+      line_number: 29-31
+      hash_key: '["app/controllers/sources_controller.rb:29-31", nil, nil]'
+    details:
+      flog: complexity is 3.8
+      saikuro: complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/notifications_controller.rb:41-42
+      file_name: app/controllers/notifications_controller.rb
+      line_number: 41-42
+      hash_key: '["app/controllers/notifications_controller.rb:41-42", nil, nil]'
+    details:
+      flog: complexity is 3.7
+      saikuro: complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/sources_controller.rb:34-35
+      file_name: app/controllers/sources_controller.rb
+      line_number: 34-35
+      hash_key: '["app/controllers/sources_controller.rb:34-35", nil, nil]'
+    details:
+      flog: complexity is 3.7
+      saikuro: complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/informations_controller.rb:56-57
+      file_name: app/controllers/informations_controller.rb
+      line_number: 56-57
+      hash_key: '["app/controllers/informations_controller.rb:56-57", nil, nil]'
+    details:
+      flog: complexity is 3.6
+      saikuro: complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/notifications_controller.rb:58-59
+      file_name: app/controllers/notifications_controller.rb
+      line_number: 58-59
+      hash_key: '["app/controllers/notifications_controller.rb:58-59", nil, nil]'
+    details:
+      flog: complexity is 3.6
+      saikuro: complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/sources_controller.rb:47-48
+      file_name: app/controllers/sources_controller.rb
+      line_number: 47-48
+      hash_key: '["app/controllers/sources_controller.rb:47-48", nil, nil]'
+    details:
+      flog: complexity is 3.6
+      saikuro: complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/informations_controller.rb:11-13
+      file_name: app/controllers/informations_controller.rb
+      line_number: 11-13
+      hash_key: '["app/controllers/informations_controller.rb:11-13", nil, nil]'
+    details:
+      flog: complexity is 2.8
+      saikuro: complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/application_controller.rb:8-9
+      file_name: app/controllers/application_controller.rb
+      line_number: 8-9
+      hash_key: '["app/controllers/application_controller.rb:8-9", nil, nil]'
+    details:
+      flog: complexity is 2.2
+      saikuro: complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/notifications_controller.rb:16-17
+      file_name: app/controllers/notifications_controller.rb
+      line_number: 16-17
+      hash_key: '["app/controllers/notifications_controller.rb:16-17", nil, nil]'
+    details:
+      flog: complexity is 1.4
+      saikuro: complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/sources_controller.rb:3-4
+      file_name: app/controllers/sources_controller.rb
+      line_number: 3-4
+      hash_key: '["app/controllers/sources_controller.rb:3-4", nil, nil]'
+    details:
+      flog: complexity is 1.4
+      saikuro: complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/sources_controller.rb:8-9
+      file_name: app/controllers/sources_controller.rb
+      line_number: 8-9
+      hash_key: '["app/controllers/sources_controller.rb:8-9", nil, nil]'
+    details:
+      flog: complexity is 1.4
+      saikuro: complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/informations_controller.rb
+      file_name: app/controllers/informations_controller.rb
+      line_number: 
+      hash_key: '["app/controllers/informations_controller.rb", nil, nil]'
+    details:
+      churn: detected high level of churn (changed 10 times)
+      flay: found 2 code duplications
+      reek: found 4 code smells
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/models/information.rb:5-6
+      file_name: app/models/information.rb
+      line_number: 5-6
+      hash_key: '["app/models/information.rb:5-6", nil, nil]'
+    details:
+      flog: complexity is 1.0
+      saikuro: complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/notifications_controller.rb
+      file_name: app/controllers/notifications_controller.rb
+      line_number: 
+      hash_key: '["app/controllers/notifications_controller.rb", nil, nil]'
+    details:
+      flay: found 2 code duplications
+      reek: found 3 code smells
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/sources_controller.rb
+      file_name: app/controllers/sources_controller.rb
+      line_number: 
+      hash_key: '["app/controllers/sources_controller.rb", nil, nil]'
+    details:
+      flay: found 2 code duplications
+      reek: found 2 code smells
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/home_controller.rb
+      file_name: app/controllers/home_controller.rb
+      line_number: 
+      hash_key: '["app/controllers/home_controller.rb", nil, nil]'
+    details:
+      reek: found 1 code smells
+      saikuro: complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/channels/application_cable/channel.rb
+      file_name: app/channels/application_cable/channel.rb
+      line_number: 
+      hash_key: '["app/channels/application_cable/channel.rb", nil, nil]'
+    details:
+      reek: found 1 code smells
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/views/informations/index.html.erb
+      file_name: app/views/informations/index.html.erb
+      line_number: 
+      hash_key: '["app/views/informations/index.html.erb", nil, nil]'
+    details:
+      flay: found 2 code duplications
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/channels/application_cable/connection.rb
+      file_name: app/channels/application_cable/connection.rb
+      line_number: 
+      hash_key: '["app/channels/application_cable/connection.rb", nil, nil]'
+    details:
+      reek: found 1 code smells
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/application_controller.rb
+      file_name: app/controllers/application_controller.rb
+      line_number: 
+      hash_key: '["app/controllers/application_controller.rb", nil, nil]'
+    details:
+      reek: found 1 code smells
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/views/notifications/edit.html.erb
+      file_name: app/views/notifications/edit.html.erb
+      line_number: 
+      hash_key: '["app/views/notifications/edit.html.erb", nil, nil]'
+    details:
+      flay: found 1 code duplications
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/views/notifications/new.html.erb
+      file_name: app/views/notifications/new.html.erb
+      line_number: 
+      hash_key: '["app/views/notifications/new.html.erb", nil, nil]'
+    details:
+      flay: found 1 code duplications
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/helpers/application_helper.rb
+      file_name: app/helpers/application_helper.rb
+      line_number: 
+      hash_key: '["app/helpers/application_helper.rb", nil, nil]'
+    details:
+      reek: found 1 code smells
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/views/informations/edit.html.erb
+      file_name: app/views/informations/edit.html.erb
+      line_number: 
+      hash_key: '["app/views/informations/edit.html.erb", nil, nil]'
+    details:
+      flay: found 1 code duplications
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/helpers/home_helper.rb
+      file_name: app/helpers/home_helper.rb
+      line_number: 
+      hash_key: '["app/helpers/home_helper.rb", nil, nil]'
+    details:
+      reek: found 1 code smells
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/views/informations/new.html.erb
+      file_name: app/views/informations/new.html.erb
+      line_number: 
+      hash_key: '["app/views/informations/new.html.erb", nil, nil]'
+    details:
+      flay: found 1 code duplications
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/helpers/source_helper.rb
+      file_name: app/helpers/source_helper.rb
+      line_number: 
+      hash_key: '["app/helpers/source_helper.rb", nil, nil]'
+    details:
+      reek: found 1 code smells
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/views/devise/passwords/new.html.erb
+      file_name: app/views/devise/passwords/new.html.erb
+      line_number: 
+      hash_key: '["app/views/devise/passwords/new.html.erb", nil, nil]'
+    details:
+      flay: found 1 code duplications
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/jobs/application_job.rb
+      file_name: app/jobs/application_job.rb
+      line_number: 
+      hash_key: '["app/jobs/application_job.rb", nil, nil]'
+    details:
+      reek: found 1 code smells
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/mailers/application_mailer.rb
+      file_name: app/mailers/application_mailer.rb
+      line_number: 
+      hash_key: '["app/mailers/application_mailer.rb", nil, nil]'
+    details:
+      reek: found 1 code smells
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/views/devise/unlocks/new.html.erb
+      file_name: app/views/devise/unlocks/new.html.erb
+      line_number: 
+      hash_key: '["app/views/devise/unlocks/new.html.erb", nil, nil]'
+    details:
+      flay: found 1 code duplications
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/models/application_record.rb
+      file_name: app/models/application_record.rb
+      line_number: 
+      hash_key: '["app/models/application_record.rb", nil, nil]'
+    details:
+      reek: found 1 code smells
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/views/notifications/index.html.erb
+      file_name: app/views/notifications/index.html.erb
+      line_number: 
+      hash_key: '["app/views/notifications/index.html.erb", nil, nil]'
+    details:
+      flay: found 1 code duplications
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/models/information.rb
+      file_name: app/models/information.rb
+      line_number: 
+      hash_key: '["app/models/information.rb", nil, nil]'
+    details:
+      reek: found 1 code smells
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/views/devise/shared/_links.html.erb
+      file_name: app/views/devise/shared/_links.html.erb
+      line_number: 
+      hash_key: '["app/views/devise/shared/_links.html.erb", nil, nil]'
+    details:
+      flay: found 1 code duplications
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/models/notification.rb
+      file_name: app/models/notification.rb
+      line_number: 
+      hash_key: '["app/models/notification.rb", nil, nil]'
+    details:
+      reek: found 1 code smells
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/views/informations/show.html.erb
+      file_name: app/views/informations/show.html.erb
+      line_number: 
+      hash_key: '["app/views/informations/show.html.erb", nil, nil]'
+    details:
+      flay: found 1 code duplications
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/models/source.rb
+      file_name: app/models/source.rb
+      line_number: 
+      hash_key: '["app/models/source.rb", nil, nil]'
+    details:
+      reek: found 1 code smells
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/views/sources/show.html.erb
+      file_name: app/views/sources/show.html.erb
+      line_number: 
+      hash_key: '["app/views/sources/show.html.erb", nil, nil]'
+    details:
+      flay: found 1 code duplications
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/models/user.rb
+      file_name: app/models/user.rb
+      line_number: 
+      hash_key: '["app/models/user.rb", nil, nil]'
+    details:
+      reek: found 1 code smells
+  classes:
+  - location:
+      class_name: main
+      method_name: 
+      file_path: 
+      file_name: 
+      line_number: 
+      hash_key: '[nil, "main", nil]'
+    details:
+      flog: complexity is 79.4
+  - location:
+      class_name: NotificationsController
+      method_name: 
+      file_path: app/controllers/notifications_controller.rb:2-10
+      file_name: app/controllers/notifications_controller.rb
+      line_number: 2-10
+      hash_key: '["app/controllers/notifications_controller.rb:2-10", "NotificationsController",
+        nil]'
+    details:
+      flog: average complexity is 7.7
+      reek: found 3 code smells
+      saikuro: average complexity is 1.6
+  - location:
+      class_name: InformationsController
+      method_name: 
+      file_path: app/controllers/informations_controller.rb:17-24
+      file_name: app/controllers/informations_controller.rb
+      line_number: 17-24
+      hash_key: '["app/controllers/informations_controller.rb:17-24", "InformationsController",
+        nil]'
+    details:
+      flog: average complexity is 7.8
+      reek: found 4 code smells
+      saikuro: average complexity is 1.2
+  - location:
+      class_name: SourcesController
+      method_name: 
+      file_path: app/controllers/sources_controller.rb:38-42
+      file_name: app/controllers/sources_controller.rb
+      line_number: 38-42
+      hash_key: '["app/controllers/sources_controller.rb:38-42", "SourcesController",
+        nil]'
+    details:
+      flog: average complexity is 4.6
+      reek: found 2 code smells
+      saikuro: average complexity is 1.1
+  - location:
+      class_name: User
+      method_name: 
+      file_path: 
+      file_name: 
+      line_number: 
+      hash_key: '[nil, "User", nil]'
+    details:
+      flog: complexity is 4.0
+      reek: found 1 code smells
+  - location:
+      class_name: ApplicationController
+      method_name: 
+      file_path: app/controllers/application_controller.rb:8-9
+      file_name: app/controllers/application_controller.rb
+      line_number: 8-9
+      hash_key: '["app/controllers/application_controller.rb:8-9", "ApplicationController",
+        nil]'
+    details:
+      flog: average complexity is 2.1
+      reek: found 1 code smells
+      saikuro: complexity is 1.0
+  - location:
+      class_name: Source
+      method_name: 
+      file_path: 
+      file_name: 
+      line_number: 
+      hash_key: '[nil, "Source", nil]'
+    details:
+      flog: complexity is 3.0
+      reek: found 1 code smells
+  - location:
+      class_name: Information
+      method_name: 
+      file_path: 
+      file_name: 
+      line_number: 
+      hash_key: '[nil, "Information", nil]'
+    details:
+      flog: average complexity is 1.5
+      reek: found 1 code smells
+      saikuro: complexity is 1.0
+  - location:
+      class_name: ApplicationMailer
+      method_name: 
+      file_path: 
+      file_name: 
+      line_number: 
+      hash_key: '[nil, "ApplicationMailer", nil]'
+    details:
+      flog: complexity is 2.0
+      reek: found 1 code smells
+  - location:
+      class_name: Notification
+      method_name: 
+      file_path: 
+      file_name: 
+      line_number: 
+      hash_key: '[nil, "Notification", nil]'
+    details:
+      flog: complexity is 2.0
+      reek: found 1 code smells
+  - location:
+      class_name: HomeController
+      method_name: 
+      file_path: app/controllers/home_controller.rb
+      file_name: app/controllers/home_controller.rb
+      line_number: 
+      hash_key: '["app/controllers/home_controller.rb", "HomeController", nil]'
+    details:
+      reek: found 1 code smells
+      saikuro: complexity is 1.0
+  - location:
+      class_name: ApplicationRecord
+      method_name: 
+      file_path: 
+      file_name: 
+      line_number: 
+      hash_key: '[nil, "ApplicationRecord", nil]'
+    details:
+      flog: complexity is 1.0
+      reek: found 1 code smells
+  - location:
+      class_name: Channel
+      method_name: 
+      file_path: app/channels/application_cable/channel.rb
+      file_name: app/channels/application_cable/channel.rb
+      line_number: 
+      hash_key: '["app/channels/application_cable/channel.rb", "Channel", nil]'
+    details:
+      reek: found 1 code smells
+  - location:
+      class_name: Connection
+      method_name: 
+      file_path: app/channels/application_cable/connection.rb
+      file_name: app/channels/application_cable/connection.rb
+      line_number: 
+      hash_key: '["app/channels/application_cable/connection.rb", "Connection", nil]'
+    details:
+      reek: found 1 code smells
+  - location:
+      class_name: ApplicationHelper
+      method_name: 
+      file_path: app/helpers/application_helper.rb
+      file_name: app/helpers/application_helper.rb
+      line_number: 
+      hash_key: '["app/helpers/application_helper.rb", "ApplicationHelper", nil]'
+    details:
+      reek: found 1 code smells
+  - location:
+      class_name: HomeHelper
+      method_name: 
+      file_path: app/helpers/home_helper.rb
+      file_name: app/helpers/home_helper.rb
+      line_number: 
+      hash_key: '["app/helpers/home_helper.rb", "HomeHelper", nil]'
+    details:
+      reek: found 1 code smells
+  - location:
+      class_name: SourceHelper
+      method_name: 
+      file_path: app/helpers/source_helper.rb
+      file_name: app/helpers/source_helper.rb
+      line_number: 
+      hash_key: '["app/helpers/source_helper.rb", "SourceHelper", nil]'
+    details:
+      reek: found 1 code smells
+  - location:
+      class_name: ApplicationJob
+      method_name: 
+      file_path: app/jobs/application_job.rb
+      file_name: app/jobs/application_job.rb
+      line_number: 
+      hash_key: '["app/jobs/application_job.rb", "ApplicationJob", nil]'
+    details:
+      reek: found 1 code smells
+  methods:
+  - location:
+      class_name: main
+      method_name: main#none
+      file_path: 
+      file_name: 
+      line_number: 
+      hash_key: '[nil, "main", "main#none"]'
+      simple_method_name: "#none"
+    details:
+      flog: complexity is 79.4
+  - location:
+      class_name: NotificationsController
+      method_name: NotificationsController#index
+      file_path: app/controllers/notifications_controller.rb:2-10
+      file_name: app/controllers/notifications_controller.rb
+      line_number: 2-10
+      hash_key: '["app/controllers/notifications_controller.rb:2-10", "NotificationsController",
+        "NotificationsController#index"]'
+      simple_method_name: "#index"
+    details:
+      flog: complexity is 22.3
+      reek: found 1 code smells
+      saikuro: complexity is 5.0
+  - location:
+      class_name: InformationsController
+      method_name: InformationsController#create
+      file_path: app/controllers/informations_controller.rb:17-24
+      file_name: app/controllers/informations_controller.rb
+      line_number: 17-24
+      hash_key: '["app/controllers/informations_controller.rb:17-24", "InformationsController",
+        "InformationsController#create"]'
+      simple_method_name: "#create"
+    details:
+      flog: complexity is 19.5
+      saikuro: complexity is 2.0
+  - location:
+      class_name: InformationsController
+      method_name: InformationsController#index
+      file_path: app/controllers/informations_controller.rb:2-7
+      file_name: app/controllers/informations_controller.rb
+      line_number: 2-7
+      hash_key: '["app/controllers/informations_controller.rb:2-7", "InformationsController",
+        "InformationsController#index"]'
+      simple_method_name: "#index"
+    details:
+      flog: complexity is 16.5
+      reek: found 2 code smells
+      saikuro: complexity is 2.0
+  - location:
+      class_name: NotificationsController
+      method_name: NotificationsController#create
+      file_path: app/controllers/notifications_controller.rb:28-35
+      file_name: app/controllers/notifications_controller.rb
+      line_number: 28-35
+      hash_key: '["app/controllers/notifications_controller.rb:28-35", "NotificationsController",
+        "NotificationsController#create"]'
+      simple_method_name: "#create"
+    details:
+      flog: complexity is 15.1
+      saikuro: complexity is 2.0
+  - location:
+      class_name: NotificationsController
+      method_name: NotificationsController#update
+      file_path: app/controllers/notifications_controller.rb:45-49
+      file_name: app/controllers/notifications_controller.rb
+      line_number: 45-49
+      hash_key: '["app/controllers/notifications_controller.rb:45-49", "NotificationsController",
+        "NotificationsController#update"]'
+      simple_method_name: "#update"
+    details:
+      flog: complexity is 9.2
+      saikuro: complexity is 1.0
+  - location:
+      class_name: InformationsController
+      method_name: InformationsController#update
+      file_path: app/controllers/informations_controller.rb:46-50
+      file_name: app/controllers/informations_controller.rb
+      line_number: 46-50
+      hash_key: '["app/controllers/informations_controller.rb:46-50", "InformationsController",
+        "InformationsController#update"]'
+      simple_method_name: "#update"
+    details:
+      flog: complexity is 9.2
+      saikuro: complexity is 1.0
+  - location:
+      class_name: SourcesController
+      method_name: SourcesController#update
+      file_path: app/controllers/sources_controller.rb:38-42
+      file_name: app/controllers/sources_controller.rb
+      line_number: 38-42
+      hash_key: '["app/controllers/sources_controller.rb:38-42", "SourcesController",
+        "SourcesController#update"]'
+      simple_method_name: "#update"
+    details:
+      flog: complexity is 9.2
+      saikuro: complexity is 1.0
+  - location:
+      class_name: SourcesController
+      method_name: SourcesController#create
+      file_path: app/controllers/sources_controller.rb:19-24
+      file_name: app/controllers/sources_controller.rb
+      line_number: 19-24
+      hash_key: '["app/controllers/sources_controller.rb:19-24", "SourcesController",
+        "SourcesController#create"]'
+      simple_method_name: "#create"
+    details:
+      flog: complexity is 8.1
+      saikuro: complexity is 2.0
+  - location:
+      class_name: NotificationsController
+      method_name: NotificationsController#destroy
+      file_path: app/controllers/notifications_controller.rb:21-25
+      file_name: app/controllers/notifications_controller.rb
+      line_number: 21-25
+      hash_key: '["app/controllers/notifications_controller.rb:21-25", "NotificationsController",
+        "NotificationsController#destroy"]'
+      simple_method_name: "#destroy"
+    details:
+      flog: complexity is 9.0
+      saikuro: complexity is 1.0
+  - location:
+      class_name: InformationsController
+      method_name: InformationsController#destroy
+      file_path: app/controllers/informations_controller.rb:29-33
+      file_name: app/controllers/informations_controller.rb
+      line_number: 29-33
+      hash_key: '["app/controllers/informations_controller.rb:29-33", "InformationsController",
+        "InformationsController#destroy"]'
+      simple_method_name: "#destroy"
+    details:
+      flog: complexity is 9.0
+      saikuro: complexity is 1.0
+  - location:
+      class_name: SourcesController
+      method_name: SourcesController#destroy
+      file_path: app/controllers/sources_controller.rb:12-16
+      file_name: app/controllers/sources_controller.rb
+      line_number: 12-16
+      hash_key: '["app/controllers/sources_controller.rb:12-16", "SourcesController",
+        "SourcesController#destroy"]'
+      simple_method_name: "#destroy"
+    details:
+      flog: complexity is 9.0
+      saikuro: complexity is 1.0
+  - location:
+      class_name: InformationsController
+      method_name: InformationsController#edit
+      file_path: app/controllers/informations_controller.rb:41-43
+      file_name: app/controllers/informations_controller.rb
+      line_number: 41-43
+      hash_key: '["app/controllers/informations_controller.rb:41-43", "InformationsController",
+        "InformationsController#edit"]'
+      simple_method_name: "#edit"
+    details:
+      flog: complexity is 5.0
+      saikuro: complexity is 1.0
+  - location:
+      class_name: NotificationsController
+      method_name: NotificationsController#show
+      file_path: app/controllers/notifications_controller.rb:52-54
+      file_name: app/controllers/notifications_controller.rb
+      line_number: 52-54
+      hash_key: '["app/controllers/notifications_controller.rb:52-54", "NotificationsController",
+        "NotificationsController#show"]'
+      simple_method_name: "#show"
+    details:
+      flog: complexity is 3.8
+      saikuro: complexity is 1.0
+  - location:
+      class_name: InformationsController
+      method_name: InformationsController#show
+      file_path: app/controllers/informations_controller.rb:36-38
+      file_name: app/controllers/informations_controller.rb
+      line_number: 36-38
+      hash_key: '["app/controllers/informations_controller.rb:36-38", "InformationsController",
+        "InformationsController#show"]'
+      simple_method_name: "#show"
+    details:
+      flog: complexity is 3.8
+      saikuro: complexity is 1.0
+  - location:
+      class_name: SourcesController
+      method_name: SourcesController#show
+      file_path: app/controllers/sources_controller.rb:29-31
+      file_name: app/controllers/sources_controller.rb
+      line_number: 29-31
+      hash_key: '["app/controllers/sources_controller.rb:29-31", "SourcesController",
+        "SourcesController#show"]'
+      simple_method_name: "#show"
+    details:
+      flog: complexity is 3.8
+      saikuro: complexity is 1.0
+  - location:
+      class_name: NotificationsController
+      method_name: NotificationsController#edit
+      file_path: app/controllers/notifications_controller.rb:41-42
+      file_name: app/controllers/notifications_controller.rb
+      line_number: 41-42
+      hash_key: '["app/controllers/notifications_controller.rb:41-42", "NotificationsController",
+        "NotificationsController#edit"]'
+      simple_method_name: "#edit"
+    details:
+      flog: complexity is 3.7
+      saikuro: complexity is 1.0
+  - location:
+      class_name: SourcesController
+      method_name: SourcesController#edit
+      file_path: app/controllers/sources_controller.rb:34-35
+      file_name: app/controllers/sources_controller.rb
+      line_number: 34-35
+      hash_key: '["app/controllers/sources_controller.rb:34-35", "SourcesController",
+        "SourcesController#edit"]'
+      simple_method_name: "#edit"
+    details:
+      flog: complexity is 3.7
+      saikuro: complexity is 1.0
+  - location:
+      class_name: InformationsController
+      method_name: InformationsController#information_params
+      file_path: app/controllers/informations_controller.rb:56-57
+      file_name: app/controllers/informations_controller.rb
+      line_number: 56-57
+      hash_key: '["app/controllers/informations_controller.rb:56-57", "InformationsController",
+        "InformationsController#information_params"]'
+      simple_method_name: "#information_params"
+    details:
+      flog: complexity is 3.6
+      saikuro: complexity is 1.0
+  - location:
+      class_name: NotificationsController
+      method_name: NotificationsController#notification_params
+      file_path: app/controllers/notifications_controller.rb:58-59
+      file_name: app/controllers/notifications_controller.rb
+      line_number: 58-59
+      hash_key: '["app/controllers/notifications_controller.rb:58-59", "NotificationsController",
+        "NotificationsController#notification_params"]'
+      simple_method_name: "#notification_params"
+    details:
+      flog: complexity is 3.6
+      saikuro: complexity is 1.0
+  - location:
+      class_name: SourcesController
+      method_name: SourcesController#source_params
+      file_path: app/controllers/sources_controller.rb:47-48
+      file_name: app/controllers/sources_controller.rb
+      line_number: 47-48
+      hash_key: '["app/controllers/sources_controller.rb:47-48", "SourcesController",
+        "SourcesController#source_params"]'
+      simple_method_name: "#source_params"
+    details:
+      flog: complexity is 3.6
+      saikuro: complexity is 1.0
+  - location:
+      class_name: User
+      method_name: User#none
+      file_path: 
+      file_name: 
+      line_number: 
+      hash_key: '[nil, "User", "User#none"]'
+      simple_method_name: "#none"
+    details:
+      flog: complexity is 4.0
+  - location:
+      class_name: InformationsController
+      method_name: InformationsController#new
+      file_path: app/controllers/informations_controller.rb:11-13
+      file_name: app/controllers/informations_controller.rb
+      line_number: 11-13
+      hash_key: '["app/controllers/informations_controller.rb:11-13", "InformationsController",
+        "InformationsController#new"]'
+      simple_method_name: "#new"
+    details:
+      flog: complexity is 2.8
+      saikuro: complexity is 1.0
+  - location:
+      class_name: ApplicationController
+      method_name: ApplicationController#configure_permitted_parameters
+      file_path: app/controllers/application_controller.rb:8-9
+      file_name: app/controllers/application_controller.rb
+      line_number: 8-9
+      hash_key: '["app/controllers/application_controller.rb:8-9", "ApplicationController",
+        "ApplicationController#configure_permitted_parameters"]'
+      simple_method_name: "#configure_permitted_parameters"
+    details:
+      flog: complexity is 2.2
+      saikuro: complexity is 1.0
+  - location:
+      class_name: Source
+      method_name: Source#none
+      file_path: 
+      file_name: 
+      line_number: 
+      hash_key: '[nil, "Source", "Source#none"]'
+      simple_method_name: "#none"
+    details:
+      flog: complexity is 3.0
+  - location:
+      class_name: NotificationsController
+      method_name: NotificationsController#new
+      file_path: app/controllers/notifications_controller.rb:16-17
+      file_name: app/controllers/notifications_controller.rb
+      line_number: 16-17
+      hash_key: '["app/controllers/notifications_controller.rb:16-17", "NotificationsController",
+        "NotificationsController#new"]'
+      simple_method_name: "#new"
+    details:
+      flog: complexity is 1.4
+      saikuro: complexity is 1.0
+  - location:
+      class_name: SourcesController
+      method_name: SourcesController#index
+      file_path: app/controllers/sources_controller.rb:3-4
+      file_name: app/controllers/sources_controller.rb
+      line_number: 3-4
+      hash_key: '["app/controllers/sources_controller.rb:3-4", "SourcesController",
+        "SourcesController#index"]'
+      simple_method_name: "#index"
+    details:
+      flog: complexity is 1.4
+      saikuro: complexity is 1.0
+  - location:
+      class_name: SourcesController
+      method_name: SourcesController#new
+      file_path: app/controllers/sources_controller.rb:8-9
+      file_name: app/controllers/sources_controller.rb
+      line_number: 8-9
+      hash_key: '["app/controllers/sources_controller.rb:8-9", "SourcesController",
+        "SourcesController#new"]'
+      simple_method_name: "#new"
+    details:
+      flog: complexity is 1.4
+      saikuro: complexity is 1.0
+  - location:
+      class_name: ApplicationController
+      method_name: ApplicationController#none
+      file_path: 
+      file_name: 
+      line_number: 
+      hash_key: '[nil, "ApplicationController", "ApplicationController#none"]'
+      simple_method_name: "#none"
+    details:
+      flog: complexity is 2.0
+  - location:
+      class_name: Notification
+      method_name: Notification#none
+      file_path: 
+      file_name: 
+      line_number: 
+      hash_key: '[nil, "Notification", "Notification#none"]'
+      simple_method_name: "#none"
+    details:
+      flog: complexity is 2.0
+  - location:
+      class_name: Information
+      method_name: Information#none
+      file_path: 
+      file_name: 
+      line_number: 
+      hash_key: '[nil, "Information", "Information#none"]'
+      simple_method_name: "#none"
+    details:
+      flog: complexity is 2.0
+  - location:
+      class_name: ApplicationMailer
+      method_name: ApplicationMailer#none
+      file_path: 
+      file_name: 
+      line_number: 
+      hash_key: '[nil, "ApplicationMailer", "ApplicationMailer#none"]'
+      simple_method_name: "#none"
+    details:
+      flog: complexity is 2.0
+  - location:
+      class_name: InformationsController
+      method_name: InformationsController#none
+      file_path: 
+      file_name: 
+      line_number: 
+      hash_key: '[nil, "InformationsController", "InformationsController#none"]'
+      simple_method_name: "#none"
+    details:
+      flog: complexity is 1.0
+  - location:
+      class_name: NotificationsController
+      method_name: NotificationsController#none
+      file_path: 
+      file_name: 
+      line_number: 
+      hash_key: '[nil, "NotificationsController", "NotificationsController#none"]'
+      simple_method_name: "#none"
+    details:
+      flog: complexity is 1.0
+  - location:
+      class_name: SourcesController
+      method_name: SourcesController#none
+      file_path: 
+      file_name: 
+      line_number: 
+      hash_key: '[nil, "SourcesController", "SourcesController#none"]'
+      simple_method_name: "#none"
+    details:
+      flog: complexity is 1.0
+  - location:
+      class_name: Information
+      method_name: Information#search
+      file_path: app/models/information.rb:5-6
+      file_name: app/models/information.rb
+      line_number: 5-6
+      hash_key: '["app/models/information.rb:5-6", "Information", "Information#search"]'
+      simple_method_name: "#search"
+    details:
+      flog: complexity is 1.0
+  - location:
+      class_name: ApplicationRecord
+      method_name: ApplicationRecord#none
+      file_path: 
+      file_name: 
+      line_number: 
+      hash_key: '[nil, "ApplicationRecord", "ApplicationRecord#none"]'
+      simple_method_name: "#none"
+    details:
+      flog: complexity is 1.0
+  - location:
+      class_name: Information
+      method_name: Information#self.search
+      file_path: app/models/information.rb:5-6
+      file_name: app/models/information.rb
+      line_number: 5-6
+      hash_key: '["app/models/information.rb:5-6", "Information", "Information#self.search"]'
+      simple_method_name: "#self.search"
+    details:
+      saikuro: complexity is 1.0
+  - location:
+      class_name: HomeController
+      method_name: HomeController#index
+      file_path: app/controllers/home_controller.rb
+      file_name: app/controllers/home_controller.rb
+      line_number: 
+      hash_key: '["app/controllers/home_controller.rb", "HomeController", "HomeController#index"]'
+      simple_method_name: "#index"
+    details:
+      saikuro: complexity is 1.0
