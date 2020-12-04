@@ -1,0 +1,2 @@
+class RequestDeadline < ApplicationRecord
+end
