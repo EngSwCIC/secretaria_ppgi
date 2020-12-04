@@ -1,4 +1,8 @@
 FactoryBot.define do
+  factory :budget do
+    value { "9.99" }
+  end
+
   factory :requirement do
     requirements { "MyString" }
   end

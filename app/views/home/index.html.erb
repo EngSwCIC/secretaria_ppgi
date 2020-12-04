@@ -9,6 +9,8 @@
 
   <% if current_user.role == 'administrator'%>
     <%= button_to "Editar requisitos de solicitação", '/requirements/new', method: :get, id: 'edit_requirements' %>
+    <br>
+    <%= button_to "Verificar orçamento", '/budgets', method: :get, id: 'verify_budget_button' %>
   <% end %>
 
   <br>
