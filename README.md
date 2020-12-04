@@ -12,8 +12,10 @@
 &nbsp;
 ## Papéis na Sprint
 
-### Kálley - 170038050
+#### Kálley - 170038050
 * Refatoração utilizando o Saikuro
+#### Carlos Eduardo - 160057701
+* Rubycritic (tmp/rubycritic/)
 
 &nbsp;
 ## ATRIBUIÇÕES
