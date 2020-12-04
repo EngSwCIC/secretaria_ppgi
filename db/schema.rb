@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_04_190307) do
+ActiveRecord::Schema.define(version: 2020_12_04_195343) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,12 @@ ActiveRecord::Schema.define(version: 2020_12_04_190307) do
   create_table "diaria", force: :cascade do |t|
     t.string "data_entrada"
     t.string "data_saida"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "request_deadlines", force: :cascade do |t|
+    t.datetime "deadline"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
