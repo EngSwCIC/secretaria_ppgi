@@ -2,6 +2,7 @@
 
 Rails.application.routes.draw do
   resources :budgets
+  resources :diaria
   resources :requirements
   resources :requests
   resources :request_types

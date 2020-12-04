@@ -2,6 +2,11 @@ FactoryBot.define do
   factory :budget do
     value { "9.99" }
   end
+  
+  factory :diarium do
+    data_entrada { "MyString" }
+    data_saida { "MyString" }
+  end
 
   factory :requirement do
     requirements { "MyString" }

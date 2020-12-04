@@ -1,0 +1,27 @@
+<%= form_with(model: diarium, local: true) do |form| %>
+  <% if diarium.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(diarium.errors.count, "error") %> prohibited this diarium from being saved:</h2>
+
+      <ul>
+      <% diarium.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :data_entrada %>
+    <%= form.text_field :data_entrada%> 
+  </div> 
+
+  <div class="field">
+    <%= form.label :data_saida %>
+    <%= form.text_field :data_saida%>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
