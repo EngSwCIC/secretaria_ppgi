@@ -1,4 +1,9 @@
 FactoryBot.define do
+  factory :diarium do
+    data_entrada { "MyString" }
+    data_saida { "MyString" }
+  end
+
   factory :requirement do
     requirements { "MyString" }
   end

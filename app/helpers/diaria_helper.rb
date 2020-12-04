@@ -1,0 +1,2 @@
+module DiariaHelper
+end

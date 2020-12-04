@@ -13,6 +13,10 @@
 
   <br>
 
+  <% if current_user.role == 'student'%>
+    <%= button_to "Solicitar diárias", '/diaria/new', method: :get, id: 'request_diaria' %>
+  <% end %>
+
   <%= link_to "Sair", destroy_user_session_path, method: :delete %>
 <% else %>
   <h3>Entre para acessar o sistema!</h3>

@@ -1,41 +1,32 @@
 Dado('que eu esteja cadastrado como usuario {string}') do |email|
   @email = email
-  teste = email.eql? "user@user.com"
+  teste = email.eql? "student@student.com"
   expect(teste).to be true
 end
   
-Dado('que esteja autenticado') do
-  authentication = true
-  expect(authentication).to be true
+Dado('que eu esteja autenticado com o email {string} e a senha {string} 2') do |email, password|
+  visit '/users/sign_in'
+  fill_in 'user_email', :with => email
+  fill_in 'user_password', :with => password
+  click_button "Log in"
 end
 
-Dado('que esteja na pagina inicial') do
-  visit(root_path)
+Dado('que esteja na pagina inicial 2') do
+  expect(page).to have_text("Usuário atual")
 end
 
-Dado('eu clicar no botão {string}') do |button|
-  click_button(button)
-  # visit(diarias_index)
+Dado('eu clicar no botão Solicitar diárias') do
+  click_button("Solicitar diárias")
 end
 
-Dado('existe um campo {string} para inserção de data de entrada') do |field|
-  find(field)
+Dado('eu insira data de entrada {string}') do |date|
+  fill_in 'data_entrada', :with => date
+  expect(page).to have_field('data_entrada', with: date)
 end
 
-Dado('eu insira {string} no campo {string}') do |date, field|
-  @date_in = date
-  find(field).set @date_in
-  # fill_in(field, :with => date)
-end
-
-Dado('existe um campo {string} para inserção de data de saída') do |field|
-  find(field)
-end
-
-Dado('eu insira {string} no campo {string}') do |date, field|
-  @date_out = date
-  find(field). set @date_out
-  # fill_in(field, :with => date)
+Dado('eu insira data de saida {string}') do |date|
+  fill_in 'data_saida', :with => date
+  expect(page).to have_field('data_saida', with: date)
 end
 
 Então('eu devo estar em uma página de confirmação com a tabela:') do |table|
