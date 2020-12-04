@@ -14,6 +14,15 @@ RSpec.describe ProcessController, type: :controller do
     sign_in user
   end
 
+  describe "GET #index signed out" do
+    it "should redirect to home" do
+      sign_out user
+      get :index
+      expect(response).to redirect_to(root_url)
+    end
+
+  end
+
   describe "GET #index" do
     it "returns http success" do
       get :index
@@ -55,8 +64,6 @@ RSpec.describe ProcessController, type: :controller do
     user.processos.create(process_status_id: 2, sei_process_code: 2, documents: [])
     user.processos.create(process_status_id: 1, sei_process_code: 5, documents: [])
     get :search, params: {filter_by: {filter_status: 1}}
-    proc = assigns(:processes)
     expect(assigns(:processes)).to all(have_member_with_value('process_status_id': 1))
   end
-
 end

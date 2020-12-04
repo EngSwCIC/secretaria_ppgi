@@ -55,9 +55,6 @@ class ProcessController < ApplicationController
   def search
     permitted_params = params.require(:filter_by).permit(:filter_status)
     filter_status = permitted_params['filter_status']
-    if filter_status.nil?
-      filter_status = -1
-    end
     filter_processes(filter_status)
     redirect_to process_home_path(:filter_by => permitted_params['filter_status'])
   end

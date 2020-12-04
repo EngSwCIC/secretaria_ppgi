@@ -15,3 +15,7 @@ Depois da refatoração: 19 code smells
 
 - Criado uma before_action para redirecionar os usuários diretamente sem a necessidade de verificar se o usuário estava
 em todos os métodos
+
+#### SimpleCov
+
+- Método de search com verificação nula desnecessária devido ao require de query_parameters

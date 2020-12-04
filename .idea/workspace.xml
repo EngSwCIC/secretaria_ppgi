@@ -26,8 +26,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="371f7bda-8799-439a-8d9c-1781a1ce2f2d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/secretaria_ppgi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/secretaria_ppgi.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sprint3.md" beforeDir="false" afterPath="$PROJECT_DIR$/Sprint3.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/process_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/process_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/controllers/process_controller_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/controllers/process_controller_spec.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/spec_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/spec_helper.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +81,7 @@
       <recent name="$PROJECT_DIR$/test/models" />
     </key>
   </component>
-  <component name="RunManager" selected="Rails.Development: secretaria_ppgi">
+  <component name="RunManager" selected="Rake.spec: secretaria_ppgi">
     <configuration name="ProcessController GET #inde..." type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true" nameIsGenerated="true">
       <module name="secretaria_ppgi" />
       <predefined_log_file enabled="true" id="RUBY_RSPEC" />
@@ -100,7 +105,7 @@
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/spec/controllers/process_controller_spec.rb" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_RUNNER_PATH" VALUE="" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="**/*_spec.rb" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_EXAMPLE_NAME" VALUE="ProcessController GET #index renders template" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_EXAMPLE_NAME" VALUE="ProcessController GET #index signed out should redirect to home" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_ARGS" VALUE="" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
@@ -281,40 +286,6 @@
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
       <method v="2" />
     </configuration>
-    <configuration name="ProcessStatus Invalido sem ..." type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true" nameIsGenerated="true">
-      <module name="secretaria_ppgi" />
-      <predefined_log_file enabled="true" id="RUBY_RSPEC" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
-      <envs>
-        <env name="RAILS_ENV" value="test" />
-        <env name="JRUBY_OPTS" value="-X+O" />
-      </envs>
-      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="true" />
-      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
-      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov">
-        <COVERAGE_PATTERN ENABLED="true">
-          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
-        </COVERAGE_PATTERN>
-      </EXTENSION>
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/spec/models/process_status_spec.rb" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_RUNNER_PATH" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="**/*_spec.rb" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_EXAMPLE_NAME" VALUE="ProcessStatus Invalido sem o nome" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_ARGS" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="USE_CUSTOM_SPEC_RUNNER" VALUE="false" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="ZEUS" VALUE="false" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPRING" VALUE="false" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
-      <method v="2" />
-    </configuration>
     <configuration name="Development: secretaria_ppgi" type="RailsRunConfigurationType" factoryName="Rails">
       <module name="secretaria_ppgi" />
       <predefined_log_file enabled="true" id="RUBY_RAILS_SERVER" />
@@ -414,11 +385,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="RSpec.ProcessController GET #inde..." />
         <item itemvalue="RSpec.ProcessController should fi..." />
         <item itemvalue="RSpec.ProcessController should de..." />
         <item itemvalue="RSpec.ProcessController Process C..." />
         <item itemvalue="RSpec.ProcessStatus Invalido caso..." />
-        <item itemvalue="RSpec.ProcessStatus Invalido sem ..." />
       </list>
     </recent_temporary>
   </component>
@@ -512,59 +483,59 @@
     </state>
     <state x="492" y="169" width="424" height="475" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1605305831288" />
     <state x="2058" y="247" width="424" height="475" key="FileChooserDialogImpl/0.312.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1605932630104" />
-    <state width="1326" height="314" key="GridCell.Tab.0.bottom" timestamp="1607118853880">
+    <state width="1326" height="314" key="GridCell.Tab.0.bottom" timestamp="1607119839733">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1326" height="314" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1607118853880" />
+    <state width="1326" height="314" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1607119839733" />
     <state width="1326" height="267" key="GridCell.Tab.0.bottom/0.0.3286.1050@0.0.3286.1050" timestamp="1606087262816" />
     <state width="1326" height="253" key="GridCell.Tab.0.bottom/0.312.1366.768/1366.0.1920.1080@0.312.1366.768" timestamp="1606458855649" />
     <state width="1880" height="253" key="GridCell.Tab.0.bottom/0.312.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1606464963636" />
-    <state width="1326" height="314" key="GridCell.Tab.0.center" timestamp="1607118853877">
+    <state width="1326" height="314" key="GridCell.Tab.0.center" timestamp="1607119839733">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1326" height="314" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1607118853877" />
+    <state width="1326" height="314" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1607119839733" />
     <state width="1326" height="267" key="GridCell.Tab.0.center/0.0.3286.1050@0.0.3286.1050" timestamp="1606087262815" />
     <state width="1326" height="253" key="GridCell.Tab.0.center/0.312.1366.768/1366.0.1920.1080@0.312.1366.768" timestamp="1606458855649" />
     <state width="1880" height="253" key="GridCell.Tab.0.center/0.312.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1606464963635" />
-    <state width="1326" height="314" key="GridCell.Tab.0.left" timestamp="1607118853876">
+    <state width="1326" height="314" key="GridCell.Tab.0.left" timestamp="1607119839733">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1326" height="314" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1607118853876" />
+    <state width="1326" height="314" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1607119839733" />
     <state width="1326" height="267" key="GridCell.Tab.0.left/0.0.3286.1050@0.0.3286.1050" timestamp="1606087262815" />
     <state width="1326" height="253" key="GridCell.Tab.0.left/0.312.1366.768/1366.0.1920.1080@0.312.1366.768" timestamp="1606458855649" />
     <state width="1880" height="253" key="GridCell.Tab.0.left/0.312.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1606464963635" />
-    <state width="1326" height="314" key="GridCell.Tab.0.right" timestamp="1607118853879">
+    <state width="1326" height="314" key="GridCell.Tab.0.right" timestamp="1607119839733">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1326" height="314" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1607118853879" />
+    <state width="1326" height="314" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1607119839733" />
     <state width="1326" height="267" key="GridCell.Tab.0.right/0.0.3286.1050@0.0.3286.1050" timestamp="1606087262816" />
     <state width="1326" height="253" key="GridCell.Tab.0.right/0.312.1366.768/1366.0.1920.1080@0.312.1366.768" timestamp="1606458855649" />
     <state width="1880" height="253" key="GridCell.Tab.0.right/0.312.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1606464963635" />
-    <state width="1326" height="314" key="GridCell.Tab.1.bottom" timestamp="1607118853886">
+    <state width="1326" height="314" key="GridCell.Tab.1.bottom" timestamp="1607119529627">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1326" height="314" key="GridCell.Tab.1.bottom/0.0.1366.738@0.0.1366.738" timestamp="1607118853886" />
+    <state width="1326" height="314" key="GridCell.Tab.1.bottom/0.0.1366.738@0.0.1366.738" timestamp="1607119529627" />
     <state width="1326" height="267" key="GridCell.Tab.1.bottom/0.0.3286.1050@0.0.3286.1050" timestamp="1606087262817" />
     <state width="1326" height="253" key="GridCell.Tab.1.bottom/0.312.1366.768/1366.0.1920.1080@0.312.1366.768" timestamp="1606107842339" />
     <state width="1880" height="253" key="GridCell.Tab.1.bottom/0.312.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1606464963636" />
-    <state width="1326" height="314" key="GridCell.Tab.1.center" timestamp="1607118853884">
+    <state width="1326" height="314" key="GridCell.Tab.1.center" timestamp="1607119529626">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1326" height="314" key="GridCell.Tab.1.center/0.0.1366.738@0.0.1366.738" timestamp="1607118853884" />
+    <state width="1326" height="314" key="GridCell.Tab.1.center/0.0.1366.738@0.0.1366.738" timestamp="1607119529626" />
     <state width="1326" height="267" key="GridCell.Tab.1.center/0.0.3286.1050@0.0.3286.1050" timestamp="1606087262816" />
     <state width="1326" height="253" key="GridCell.Tab.1.center/0.312.1366.768/1366.0.1920.1080@0.312.1366.768" timestamp="1606107842338" />
     <state width="1880" height="253" key="GridCell.Tab.1.center/0.312.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1606464963636" />
-    <state width="1326" height="314" key="GridCell.Tab.1.left" timestamp="1607118853882">
+    <state width="1326" height="314" key="GridCell.Tab.1.left" timestamp="1607119529626">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1326" height="314" key="GridCell.Tab.1.left/0.0.1366.738@0.0.1366.738" timestamp="1607118853882" />
+    <state width="1326" height="314" key="GridCell.Tab.1.left/0.0.1366.738@0.0.1366.738" timestamp="1607119529626" />
     <state width="1326" height="267" key="GridCell.Tab.1.left/0.0.3286.1050@0.0.3286.1050" timestamp="1606087262816" />
     <state width="1326" height="253" key="GridCell.Tab.1.left/0.312.1366.768/1366.0.1920.1080@0.312.1366.768" timestamp="1606107842338" />
     <state width="1880" height="253" key="GridCell.Tab.1.left/0.312.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1606464963636" />
-    <state width="1326" height="314" key="GridCell.Tab.1.right" timestamp="1607118853885">
+    <state width="1326" height="314" key="GridCell.Tab.1.right" timestamp="1607119529626">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1326" height="314" key="GridCell.Tab.1.right/0.0.1366.738@0.0.1366.738" timestamp="1607118853885" />
+    <state width="1326" height="314" key="GridCell.Tab.1.right/0.0.1366.738@0.0.1366.738" timestamp="1607119529626" />
     <state width="1326" height="267" key="GridCell.Tab.1.right/0.0.3286.1050@0.0.3286.1050" timestamp="1606087262817" />
     <state width="1326" height="253" key="GridCell.Tab.1.right/0.312.1366.768/1366.0.1920.1080@0.312.1366.768" timestamp="1606107842339" />
     <state width="1880" height="253" key="GridCell.Tab.1.right/0.312.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1606464963636" />
@@ -679,11 +650,11 @@
     <SUITE FILE_PATH="coverage/secretaria_ppgi@ProcessStatus_Invalido_sem____.rcov" NAME="ProcessStatus Invalido sem ... Coverage Results" MODIFIED="1607108681063" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="secretaria_ppgi" />
     <SUITE FILE_PATH="coverage/secretaria_ppgi@ProcessStatus.rcov" NAME="ProcessStatus Coverage Results" MODIFIED="1607108322133" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="secretaria_ppgi" />
     <SUITE FILE_PATH="coverage/secretaria_ppgi@test__secretaria_ppgi.rcov" NAME="test: secretaria_ppgi Coverage Results" MODIFIED="1607106451110" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="secretaria_ppgi" />
-    <SUITE FILE_PATH="coverage/secretaria_ppgi@spec__secretaria_ppgi.rcov" NAME="spec: secretaria_ppgi Coverage Results" MODIFIED="1607118609406" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="secretaria_ppgi" />
+    <SUITE FILE_PATH="coverage/secretaria_ppgi@spec__secretaria_ppgi.rcov" NAME="spec: secretaria_ppgi Coverage Results" MODIFIED="1607119839724" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="secretaria_ppgi" />
     <SUITE FILE_PATH="coverage/secretaria_ppgi@ProcessController_should_de___.rcov" NAME="ProcessController should de... Coverage Results" MODIFIED="1607111850181" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="secretaria_ppgi" />
     <SUITE FILE_PATH="coverage/secretaria_ppgi@Development__secretaria_ppgi.rcov" NAME="Development: secretaria_ppgi Coverage Results" MODIFIED="1607118616399" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="secretaria_ppgi" />
     <SUITE FILE_PATH="coverage/secretaria_ppgi@db_migrate__secretaria_ppgi.rcov" NAME="db:migrate: secretaria_ppgi Coverage Results" MODIFIED="1605494051699" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="secretaria_ppgi" />
-    <SUITE FILE_PATH="coverage/secretaria_ppgi@ProcessController_GET__inde___.rcov" NAME="ProcessController GET #inde... Coverage Results" MODIFIED="1607103609047" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="secretaria_ppgi" />
+    <SUITE FILE_PATH="coverage/secretaria_ppgi@ProcessController_GET__inde___.rcov" NAME="ProcessController GET #inde... Coverage Results" MODIFIED="1607119514904" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="secretaria_ppgi" />
     <SUITE FILE_PATH="coverage/secretaria_ppgi@ProcessController_GET__index.rcov" NAME="ProcessController GET #index Coverage Results" MODIFIED="1607104194657" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="secretaria_ppgi" />
     <SUITE FILE_PATH="coverage/secretaria_ppgi@All_specs_in_secretaria_ppgi__secretaria_ppgi.rcov" NAME="All specs in secretaria_ppgi: secretaria_ppgi Coverage Results" MODIFIED="1607107642651" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="secretaria_ppgi" />
     <SUITE FILE_PATH="coverage/secretaria_ppgi@RequestType_is_seeded_array___.rcov" NAME="RequestType is seeded array... Coverage Results" MODIFIED="1605933890681" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="secretaria_ppgi" />
