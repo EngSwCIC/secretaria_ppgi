@@ -20,5 +20,6 @@ Funcionalidade: Como um secretário,
     Dado que estou na pagina de cadastrar um status
     Quando preencher em "Nome do Status:" com "Novo"
     E clicar em "Concluir"
-    Então deveria estar de volta na pagina de cadastrar um status
+    Então deveria estar de volta na pagina de secretário
     E deveria aparecer "Erro ao Cadastrar Status!"
+    

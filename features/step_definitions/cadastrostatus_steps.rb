@@ -26,6 +26,10 @@ Então('deveria estar de volta na pagina de cadastrar um status') do |page_cadas
   visit path_to(page_cadastro_status)
 end
 
+Então('deveria estar de volta na pagina de secretario') do |page_secretario|
+  visit path_to(page_secretario)
+end
+
 Então('deveria aparecer {string}') do |string|
   @expected_message = string
 end
