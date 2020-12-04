@@ -1,5 +1,8 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<% if user_signed_in? %>
+  <h1>Painel</h1>
+<% else %>
+  <h1>Página inicial</h1>
+<% end %>
 
 <% if user_signed_in? %>
   <h3>Usuário atual</h3>
@@ -11,14 +14,13 @@
     <%= button_to "Editar requisitos de solicitação", '/requirements/new', method: :get, id: 'edit_requirements' %>
     <br>
     <%= button_to "Verificar orçamento", '/budgets', method: :get, id: 'verify_budget_button' %>
+    <br>
   <% end %>
-
+  
+  <%= button_to "Solicitar diárias", '/diaria/new', method: :get, id: 'request_diaria' %>
   <br>
-
-  <% if current_user.role == 'student'%>
-    <%= button_to "Solicitar diárias", '/diaria/new', method: :get, id: 'request_diaria' %>
-  <% end %>
-
+  <%= button_to "Solicitar passagem", '/tickets/new', method: :get, id: 'request_ticket' %>
+  <br>
   <%= link_to "Sair", destroy_user_session_path, method: :delete %>
 <% else %>
   <h3>Entre para acessar o sistema!</h3>

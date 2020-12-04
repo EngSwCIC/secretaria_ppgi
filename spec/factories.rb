@@ -1,4 +1,9 @@
 FactoryBot.define do
+  factory :ticket do
+    data_entrada { "2020-12-04" }
+    data_saida { "2020-12-04" }
+  end
+
   factory :budget do
     value { "9.99" }
   end
