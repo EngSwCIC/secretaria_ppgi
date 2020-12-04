@@ -18,7 +18,6 @@ describe ProcessStatus, type: :model do
   it "Invalido caso ja exista um status com mesmo nome ou label" do
     ProcessStatus.create( name: 'waiting', label: 'Em espera')
     status = ProcessStatus.create( name: 'waiting', label: 'Em espera')
-    puts(status.valid?)
     expect(status.errors["name"]).to include('You can only have one status with that name')
   end
 end

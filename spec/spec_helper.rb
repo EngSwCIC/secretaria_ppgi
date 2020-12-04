@@ -94,3 +94,9 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 =end
 end
+
+RSpec::Matchers.define :have_member_with_value do |expected_key, expected_value|
+  match do |actual|
+    actual[expected_key] == expected_value
+  end
+end
