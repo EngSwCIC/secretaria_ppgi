@@ -1,0 +1,50 @@
+<%= stylesheet_link_tag "process" %>
+<%= javascript_include_tag "process" %>
+
+<div class="process-show-root">
+  <h2>Processo Nº: <%= @process.sei_process_code %></h2>
+  <div>
+    Status do processo: <%= @status[@process.process_status_id] %>
+  </div>
+  <div>
+    <%= form_for :processo, url: process_attach_path(@process), html: {:multipart => true} do |f| %>
+
+    <div class="input_file">
+      <%= label_tag 'file_field', 'Drop a file or click to select one', :id => 'file_label' %>
+      <ul hidden id="file_list"></ul>
+      <%= f.file_field :document_files, multiple: true, accept: 'image/png,image/jpg,application/pdf', :id => "file_input" %>
+    </div>
+    <div>
+        <%= f.submit("Anexar") %>
+    </div>
+      <% end %>
+  </div>
+  <table style="margin-top: 5%">
+    <thead>
+    <th>
+      Nome do arquivo
+    </th>
+    <th>
+      Download
+    </th>
+    </thead>
+    <tbody>
+    <% @process.documents.each do |document| %>
+      <tr>
+        <td>
+          <%= document.filename %>
+        </td>
+        <td>
+          <%= link_to fa_icon('download').html_safe,
+                      process_download_path({:id => @process['id'], :doc_id => document['id']}),
+                      download: process_download_path({:id => @process['id'], :doc_id => document['id']}),
+                      target: '_blank',
+                      style: "margin-left: 10%"
+          %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+
+</div>

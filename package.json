@@ -1,5 +1,7 @@
 {
   "name": "secretaria_ppgi",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.1"
+  }
 }

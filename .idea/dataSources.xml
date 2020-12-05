@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="Rails secretaria_ppgi: production" uuid="b4b9e7b6-0a1f-4100-9540-d3a500961263">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/secretaria_ppgi_production</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="Rails secretaria_ppgi: development" uuid="7c0e90f8-8c0e-4000-a4bb-d6987aeeb909">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/secretaria_ppgi_development</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="Rails secretaria_ppgi: test" uuid="75e62ec9-fb24-46a0-84ef-ab82bc38a722">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/secretaria_ppgi_test</jdbc-url>
+    </data-source>
+  </component>
+</project>

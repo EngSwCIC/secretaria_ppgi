@@ -1,24 +1,10 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Running 
 
-Things you may want to cover:
+Run with `docker-compose up` it will start database and rails containers
 
-* Ruby version
+By default it'll start rails server at localhost:3000
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+While container is running you can execute another commands
+ 

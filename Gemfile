@@ -64,7 +64,12 @@ group :test do
   # database_cleaner is not required, but highly recommended
   gem 'database_cleaner'
   gem 'shoulda-matchers'
+  gem 'simplecov', require: false
 end
 
+gem "font-awesome-rails"
+gem 'materialize-sass'
+gem 'jquery-rails'
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'rails-controller-testing'
