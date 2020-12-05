@@ -7,7 +7,7 @@
     Status do processo: <%= @status[@process.process_status_id] %>
   </div>
   <div>
-    <%= form_for :processo, url: process_attach_path, html: {:multipart => true} do |f| %>
+    <%= form_for :processo, url: process_attach_path(@process), html: {:multipart => true} do |f| %>
 
     <div class="input_file">
       <%= label_tag 'file_field', 'Drop a file or click to select one', :id => 'file_label' %>
@@ -15,7 +15,7 @@
       <%= f.file_field :document_files, multiple: true, accept: 'image/png,image/jpg,application/pdf', :id => "file_input" %>
     </div>
     <div>
-        <%= submit_tag("Anexar") %>
+        <%= f.submit("Anexar") %>
     </div>
       <% end %>
   </div>

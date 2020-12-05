@@ -35,15 +35,16 @@ class ProcessController < ApplicationController
   end
 
   def attach
-    permitted_params = params.permit(:id, :document_files => [])
-    docs = permitted_params['document_files']
+    permitted_params = params.require(:processo).permit(:id,  :document_files => [])
+    docs = permitted_params[:document_files]
+    process = current_user.processos.find(params[:id])
     unless docs.nil?
       docs.each do |doc|
-        doc_model = {"processo_id": permitted_params[:id], "data" => doc.read, "filename": doc.original_filename, "mime_type": doc.content_type}
-        @process.documents.create(doc_model)
+        doc_model = {"processo_id": process[:id], "data" => doc.read, "filename": doc.original_filename, "mime_type": doc.content_type}
+        process.documents.create(doc_model)
       end
     end
-    @process = current_user.processos.find(permitted_params[:id])
+    redirect_to process_show_path process
   end
 
   ##
