@@ -1,0 +1,19 @@
+<% if current_user.role != nil %>
+<p>
+  <strong>Título:</strong>
+  <%= @information.title %>
+</p>
+ 
+<p>
+  <strong>Conteúdo:</strong>
+  <%= @information.content %>
+</p>
+
+<% if current_user.role == 'administrator' %>
+  <%= link_to 'Editar', edit_information_path(@information) %>
+<% end %> 
+
+<%= link_to 'Voltar', informations_path %>
+<% else %>
+    <h2>Acesso Negado</h2>
+<% end %>

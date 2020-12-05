@@ -1,0 +1,15 @@
+<% if !current_user.nil? and current_user.role == 'administrator' %>
+<h1>Editar fonte de informação</h1>
+<%= form_tag source_path(@source), :method => :put do %>
+  <%= label :source, :name, 'Nome: ' %>
+  <%= text_field :source, :name, :size=>100, :required => false%>
+  <%= simple_format("\n") %>
+  
+  <%= submit_tag 'Enviar' %>
+  <%= link_to 'Voltar', home_index_path %>
+<% end %>
+<% else %>
+<h2>Acesso Negado</h2>
+<% end %>
+
+

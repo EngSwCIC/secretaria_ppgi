@@ -1,0 +1,54 @@
+<% if current_user.role != nil %>
+<h1>Lista de Informações</h1>
+ 
+<% if @informations.empty? %>
+  <h2>Nenhuma informação publicada</h2>
+<%else %>
+  <table>
+    <tr>
+      <th>Título</th>
+      <th>Conteúdo</th>
+      <th>Fonte</th>
+      <th>Publicado por</th>
+      <th colspan="4"></th>
+    </tr>
+ 
+    <% @informations.each do |information| %>
+      <tr>
+        <td><%= information.title %></td>
+        <td><%= information.content %></td>
+        <% if Source.find_by_id(information.source_id)%> 
+          <td><%= Source.find(information.source_id).name %></td>
+        <% else %>
+          <td>Fonte não encontrada</td>
+        <% end %>
+        <% if User.find_by_id(information.published_by)%> 
+          <td><%= User.find(information.published_by).full_name %></td>
+        <% else %>
+          <td>Usuário não encontrado</td>
+        <%end %>
+        <td><%= link_to 'Visualizar', information_path(information) %></td>
+        <% if current_user.role == 'administrator' %>
+        <td><%= link_to 'Remover', information_path(information), method: :delete %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </table>
+<% end %>
+<%= simple_format("\n") %>
+
+
+<%= form_tag(informations_path, :method => :get) do %>
+  <%= collection_select :information, :source_id, Source.all, :id, :name, {:include_blank => 'Selecione uma fonte'} %>
+  <%=submit_tag "Filtrar"%>
+<%end%>
+
+<%= simple_format("\n") %>
+
+<% if current_user.role == 'administrator' %>
+  <td><%= link_to 'Cadastrar nova informação', new_information_path %></td>
+<% end %>
+<td><%= link_to 'Voltar', home_index_path %></td>
+<% else %>
+    <h2>Acesso Negado</h2>
+<% end %>

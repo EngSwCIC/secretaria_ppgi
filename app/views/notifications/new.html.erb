@@ -1,0 +1,23 @@
+<% if !current_user.nil? and current_user.role == 'administrator' %>
+<h2>Adicionar uma nova notificação</h2>
+<%= form_tag notifications_path, :method => :post do %>
+  <%= label :notification, :title, 'Título: ' %>
+  <%= text_field :notification, :title, :size=>100, :required => false%>
+  <%= simple_format("\n") %>
+  <%= label :notification, :content, 'Conteúdo: '%>
+  <%= simple_format("\n") %>
+  <%= text_area :notification, :content, :rows=>25, :cols=>100, :required => false%>
+  <%= simple_format("\n") %>
+  <%= label :notification, :interested_group, 'Entidade interessada: ' %>
+  <%= select :notification, :interested_group, ['Administrador', 'Secretário', 'Professor', 'Estudante'] %>
+  
+  <%= submit_tag 'Enviar' %>
+  <%= link_to 'Voltar', home_index_path %>
+<% end %>
+<% else %>
+<h2>Acesso Negado</h2>
+<% end %>
+
+
+
+

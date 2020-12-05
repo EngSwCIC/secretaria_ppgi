@@ -1,0 +1,19 @@
+<p>
+  <strong>Título:</strong>
+  <%= @notification.title %>
+</p>
+ 
+<p>
+  <strong>Conteúdo:</strong>
+  <%= @notification.content %>
+</p>
+
+<% if !current_user.nil? and current_user.role == 'administrator' %>
+  <strong>Entidade interessada:</strong>
+  <%= @notification.interested_group %>
+  <%= simple_format("\n") %>
+  <%= link_to 'Editar', edit_notification_path(@notification) %>
+  <%= simple_format("\n") %>
+<% end %> 
+
+<%= link_to 'Voltar', notifications_path %>

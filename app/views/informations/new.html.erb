@@ -1,0 +1,25 @@
+<% if current_user.role == 'administrator' %>
+<h2>Adicionar uma nova informação</h2>
+<%= form_tag informations_path, :method => :post do %>
+  <%= label :information, :title, 'Título: ' %>
+  <%= text_field :information, :title, :size=>100, :required => false%>
+  <%= simple_format("\n") %>
+  <%= label :information, :content, 'Conteúdo: '%>
+  <%= simple_format("\n") %>
+  <%= text_area :information, :content, :rows=>50, :cols=>100, :required => false%>
+  
+
+  <%= label :information, :source_id, 'Fonte: ' %>
+  <%= select :information, :source_id, @sources.map{|source| [source.name, source.id]} %>
+  
+  <%= submit_tag 'Enviar' %>
+  <%= link_to 'Voltar', home_index_path %>
+<% end %>
+<% else %>
+<h2>Acesso Negado</h2>
+<% end %>
+
+
+
+
+

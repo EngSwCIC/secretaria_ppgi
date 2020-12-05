@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ruby Critic - Home</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- StyleSheets -->
+    <link href="../../assets/stylesheets/bootstrap.min.css" media="screen, projection, print" rel="stylesheet" type="text/css">
+    <link href="../../assets/stylesheets/font-awesome.min.css" media="screen, projection, print" rel="stylesheet" type="text/css">
+    <link href="../../assets/stylesheets/prettify.custom_theme.css" media="screen, projection, print" rel="stylesheet" type="text/css">
+    <link href="../../assets/stylesheets/application.css" media="screen, projection, print" rel="stylesheet" type="text/css">
+  </head>
+
+  <body>
+    <header class="navbar navbar-default navbar-fixed-top">
+      <a href="#menu-toggle" class="btn btn-default hidden-lg visible-sm-* hidden-md visible-xs-* pull-left" id="menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i></a>
+      <a href="../../overview.html"><img src="../../assets/images/logo.png" alt="Ruby Critic Logo" title="Ruby Critic Logo" width="55"><span class="logo">RUBYCRITIC</span></a>
+      
+    </header>
+    <div id="wrapper">
+      <!-- Sidebar -->
+      <aside id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+          <li class="sidebar-item">
+            <a href="../../overview.html" class="project-nav-item overview-nav"><i class="fa fa-dashboard"></i>Overview</a>
+          </li>
+          <li class="sidebar-item">
+            <a href="../../code_index.html" class="project-nav-item code-index-nav"><i class="fa fa-code"></i>Code</a>
+          </li>
+          <li class="sidebar-item">
+            <a href="../../smells_index.html" class="project-nav-item smells-index-nav"><i class="fa fa-warning"></i>Smells</a>
+          </li>
+          <li class="sidebar-item">
+            <a href="../../simple_cov_index.html" class="project-nav-item coverage-index-nav"><i class="fa fa-umbrella"></i>Coverage</a>
+          </li>
+        </ul>
+      </aside>
+      <!-- /#sidebar-wrapper -->
+      <div id="page-content-wrapper">
+        <div class="container-fluid">
+          <div class="row">
+  <!--Page Title -->
+  <div class="Page_Title">
+    <div class="file-time">
+      <span class="committed-at">
+        
+          Updated <time class='js-timeago' datetime='2020-12-04 04:31:00 -0300'>2020-12-04 04:31:00 -0300</time>
+        
+      </span>
+    </div>
+    <div>
+      <h3><small>app/controllers /</small> sources_controller.rb</h3>
+    </div>
+  </div>
+  <!--End Page Title -->
+  <div class="Content_Wrapper">
+    <!-- code detail -->
+    <div class="code-top-detail clearfix row">
+      <div class="col-md-8">
+        <div class="row">
+          <div class="col-md-1">
+            <div class="rating c big">
+              C
+            </div>
+          </div>
+          <div class="code-statistics col-md-11">
+            <div class="col-md-3">
+              <div><span class="metric">94</span><small> lines of codes</small></div>
+              <div><span class="metric">8</span><small> methods</small></div>
+            </div>
+            <div class="col-md-3">
+              <div><span class="metric">5.7</span><small> complexity/method</small></div>
+              <div><span class="metric">15</span><small> churn</small></div>
+            </div>
+            <div class="col-md-3">
+              <div><span class="metric">45.65</span><small> complexity</small></div>
+              <div><span class="metric">51</span><small> duplications</small></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="code-tabs">
+          <ul class="nav nav-pills right-to-left">
+            <li><a href="#" id="toggle-code" class="toggle-button button">code</a></li>
+            <li class="active">
+              <a href="#" id="toggle-smells" class="toggle-button button">
+                4
+                smells
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <code class="prettyprint linenums lang-ruby file-code js-file-code">class SourcesController &lt; ApplicationController<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Instance-Variable-Assumption.md" target="_blank"><b>InstanceVariableAssumption</b></a>        </span>      </div>      <span>SourcesController assumes too much for instance variable '@source'</span>          </div>  </li>  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md" target="_blank"><b>IrresponsibleModule</b></a>        </span>      </div>      <span>SourcesController has no descriptive comment</span>          </div>  </li></ol>
+##
+# Esse metodo representa a ação index da classe Source e renderiza a view
+# index, que exibe todas fontes de informação cadastradas.
+# Não retorna nenhum valor e não redireciona o usuário.
+  def index
+  	@sources=Source.all
+  end
+ 
+##
+# Esse método representa a ação new da classe Source. 
+# Renderiza a new view, que recebe dados para a criação de uma nova fonte.
+# Não recebe parâmetros, não retorna valor e não redireciona o usuário.
+  def new
+  	@source=Source.new
+  end
+
+##
+# Ação destroy da classe Source. Recebe como argumento alguma fonte enviada
+# para o servidor. Essa notificação é então removida do banco de dados, o usuário é 
+# redirecionado para a view index de fontes e uma mensagem confirmando a exclusão da
+# fonte é exibida na tela.
+# Não retorna valores.
+  def destroy<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="http://docs.seattlerb.org/flay/" target="_blank"><b>DuplicateCode</b></a>        </span>      </div>      <span>Similar code found in 3 nodes</span>              <span>Locations:</span>                  <a href="informations_controller.html#L53" class="js-smell-location">0</a>                  <a href="notifications_controller.html#L34" class="js-smell-location">1</a>                  <a href="sources_controller.html#L24" class="js-smell-location">2</a>                  </div>  </li></ol>
+    @source = Source.find(params[:id])
+    @source.destroy
+    flash[:notice] = &quot;#{@source.name} removido.&quot;
+    redirect_to sources_path
+  end
+
+##
+# Esse é o método responsável por  adicionar uma nova entrada no banco de dados com os dados inseridos na view new,
+# caso os dados recebidos sejam válidos.
+# Caso os dados sejam válidos, uma nova entrada é criada no banco de dados e o usuário é
+# redirecionado para a view index das fontes. Caso os dados não sejam válidos, o usuário é
+# redirecionado para a view new e uma mensagem de erro é exibida na tela. 
+# O método não retorna nenhum valor.  
+  def create
+  	@source = Source.new(source_params)
+    if @source.save
+      redirect_to sources_path
+    else
+      redirect_to new_source_path,alert:&quot;Ocorreu um erro. Tente novamente.&quot;
+    end  
+  end
+
+
+  ##
+  # Ação show da classe Source. Recebe uma fonte como argumento, econtra-a no
+  # banco de dados e renderiza a view show para aquela notificação, exibindo seus detalhes. 
+  # Vale notar que essa view só é renderizada quando métodos redirecionam o usuário para ela.
+  # Como o único campo relevante de uma fonte de informação é seu nome, não foi considerado muito
+  # pertinente a inserção de um link para a view show de uma fonte de informação.
+  # Não retorna valores e não redireciona o usuário.
+  def show
+    id = params[:id] # retrieve movie ID from URI route
+    @source = Source.find(id) # look up movie by unique ID
+  end
+
+  ##
+  # Ação de edit da classe Source. Recebe uma fonte de informação como argumento, encontra-a no
+  # banco de dados e renderiza a view edit. Vale notar que essa view é bastante parecida com a view new, salvo 
+  # que os dados atuais da fonte a ser editada já são renderizados junto da página.
+  # Não retorna valores e não redireciona o usuário.
+  def edit
+    @source = Source.find params[:id]
+  end
+  
+  ##
+  # O método que é responsável por atualizar uma fonte de informação com os dados inseridos na view edit. Recebe 
+  # os dados enviados pela edit view ao servidor. Caso os dados enviados sejam válidos, a entrada é modificada no banco
+  # de dados e o usuário é redirecionado para a view show da fonte atualizada. Caso contrário, O usuário é redirecionado
+  # para a view index e uma mensagem de erro é exibida na tela. Não retorna valores.     
+  # Vale dizer que quando dados inválidos são recebidos, uma exceção é lançada e, por meio do tratamento dessa exceção
+  # é que se realiza o procedimento para redirecionar o usuário e exibir a mensagem de erro na tela.
+  def update<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="http://docs.seattlerb.org/flay/" target="_blank"><b>DuplicateCode</b></a>        </span>      </div>      <span>Similar code found in 3 nodes</span>              <span>Locations:</span>                  <a href="informations_controller.html#L87" class="js-smell-location">0</a>                  <a href="notifications_controller.html#L76" class="js-smell-location">1</a>                  <a href="sources_controller.html#L76" class="js-smell-location">2</a>                  </div>  </li></ol>
+    @source = Source.find params[:id]
+    @source.update_attributes!(source_params)
+    rescue ActiveRecord::RecordInvalid
+      flash[:notice] = &quot;Ocorreu um erro.&quot;
+      redirect_to sources_path
+    else
+    flash[:notice] = &quot;Fonte de informação atualizada.&quot;
+    redirect_to source_path(@source)
+  end
+  
+  ##
+  # Permite que os atributos das infromações possam ser acessados por outros métodos neste módulo.
+  private
+    def source_params
+      params.require(:source).permit(:name)
+    end
+
+end
+</code>
+  </div>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScripts -->
+    <script src='../../assets/javascripts/jquery.min.js'></script>
+    <script src='../../assets/javascripts/jquery.tablesorter.min.js'></script>
+    <script src='../../assets/javascripts/jquery.scrollTo.min.js'></script>
+    <script src='../../assets/javascripts/jquery.timeago.js'></script>
+    <script src='../../assets/javascripts/highcharts.src-4.0.1.js'></script>
+    <script src='../../assets/javascripts/prettify.js'></script>
+    <script src='../../assets/javascripts/bootstrap.min.js'></script>
+    <script src='../../assets/javascripts/application.js'></script>
+    <script src='../../assets/javascripts/jquery.filtertable.min.js'></script>
+  </body>
+</html>

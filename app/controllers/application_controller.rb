@@ -6,6 +6,9 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
+    # :nocov:
     devise_parameter_sanitizer.permit(:sign_up, keys: %i[full_name role])
+    # :nocov:
   end
 end
+
