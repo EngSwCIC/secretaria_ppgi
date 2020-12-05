@@ -25,15 +25,11 @@ class ProcessController < ApplicationController
     @processes
   end
 
-  ##
-  # reset_status resets instance variables relative to process_status
-  #
-  # @return
-  def reset_status
-    @available_status = []
-    @status = {}
-  end
 
+  ##
+  # attach adds new files to a requested process
+  #
+  # @return nothing changes instance
   def attach
     permitted_params = params.require(:processo).permit(:id,  :document_files => [])
     docs = permitted_params[:document_files]
@@ -168,7 +164,6 @@ class ProcessController < ApplicationController
 
 
   private
-
   ##
   # require_login redirects to homepage everytime a guest user tries to request /process
   #
@@ -177,4 +172,14 @@ class ProcessController < ApplicationController
       redirect_to root_url
     end
   end
+
+  ##
+  # reset_status resets instance variables relative to process_status
+  #
+  # @return nothing, changes instance
+  def reset_status
+    @available_status = []
+    @status = {}
+  end
+
 end
