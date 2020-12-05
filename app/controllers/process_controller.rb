@@ -4,7 +4,6 @@
 #
 class ProcessController < ApplicationController
   before_action :require_login
-
   ##
   # reload_processes reloads @process variable for a user requesting a Process page
   #
@@ -34,11 +33,9 @@ class ProcessController < ApplicationController
     permitted_params = params.require(:processo).permit(:id,  :document_files => [])
     docs = permitted_params[:document_files]
     @process = current_user.processos.find(params[:id])
-    unless docs.nil?
-      docs.each do |doc|
-        doc_model = {"processo_id": @process[:id], "data" => doc.read, "filename": doc.original_filename, "mime_type": doc.content_type}
-        @process.documents.create(doc_model)
-      end
+    docs.each do |doc|
+      doc_model = {"processo_id": @process[:id], "data" => doc.read, "filename": doc.original_filename, "mime_type": doc.content_type}
+      @process.documents.create(doc_model)
     end
     @process.save
     redirect_to process_show_path @process
@@ -182,5 +179,4 @@ class ProcessController < ApplicationController
     @available_status = []
     @status = {}
   end
-
 end

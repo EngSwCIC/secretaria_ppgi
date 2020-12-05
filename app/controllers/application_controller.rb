@@ -1,8 +1,10 @@
 # frozen_string_literal: true
-
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
-
+  extend ActiveSupport::Concern
+  rescue_from ActionController::ParameterMissing do |exception|
+    render json: { error: exception.message }, status: :bad_request, layout: false
+  end
 
   protected
 
