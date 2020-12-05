@@ -1,24 +1,27 @@
-# README
+# SECRETARIA PPGI
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Sistema feito para a secretária PPGI.
 
-Things you may want to cover:
+## Instalar as dependencias
 
-* Ruby version
+    $ bundle
 
-* System dependencies
+## Migrar o banco de dados
 
-* Configuration
+    $ rake db:migrate
 
-* Database creation
+## Rodar a aplicação
 
-* Database initialization
+    $ rails s
+    
+## Rodar o Saikuro
+    
+    $ saikuro -c -t -i app -y 0 -w 11 -e 16 -o detailed/
+    
+## Rodar o rubycritic
 
-* How to run the test suite
+    $ cd app && rubycritic
 
-* Services (job queues, cache servers, search engines, etc.)
+## ABC Score e complexidade ciclomática
 
-* Deployment instructions
-
-* ...
+O maior ABC Score corespondeu a 6.1 e a maior complexidade ciclomática correspondeu a 7.
