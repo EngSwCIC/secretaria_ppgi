@@ -17,6 +17,9 @@
 #### Carlos Eduardo - 160057701
 * Rubycritic (tmp/rubycritic/)
 
+### Eduardo - 180075161
+* Refatoração utilizando o SimpleCov
+
 &nbsp;
 ## ATRIBUIÇÕES
 
@@ -37,3 +40,6 @@
 
 ### Saikuro
 As tabelas geradas pelo Saikuro estão nas pastas **app/controllers/saikuro** e **app/models/saikuro**. Não foi preciso mudar o código pois os resultados do Saikuro já eram satisfatórios
+
+### SimpleCov
+A tabela gerada pelo SimpleCov está na pasta **coverage**.
