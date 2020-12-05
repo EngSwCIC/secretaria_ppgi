@@ -27,10 +27,19 @@
   <component name="ChangeListManager">
     <list default="true" id="371f7bda-8799-439a-8d9c-1781a1ce2f2d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/application_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/application_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/process_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/process_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/process_status.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/process_status.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/processo.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/processo.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/home/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/home/index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/database.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage/.last_run.json" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/.last_run.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage/.resultset.json" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/.resultset.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coverage/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/Anexar_arquivos.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/cadastrostatus.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/step_definitions/Anexar_arquivos.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/step_definitions/cadastrostatus_steps.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/step_definitions/ver_processos_por_pessoa.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/ver_processos_por_pessoa.feature" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -468,10 +477,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="479" y="305" width="461" height="315" key="#Docker/0.0.1366.738@0.0.1366.738" timestamp="1605305872732" />
-    <state x="91" y="10" width="800" height="668" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605305762683">
+    <state x="91" y="10" width="820" height="668" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607137085020">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="91" y="10" width="800" height="668" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738@0.0.1366.738" timestamp="1605305762683" />
+    <state x="91" y="10" width="820" height="668" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738@0.0.1366.738" timestamp="1607137085020" />
     <state x="412" y="163" width="532" height="402" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1607122206022">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -493,59 +502,59 @@
     </state>
     <state x="492" y="169" width="424" height="475" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1605305831288" />
     <state x="2058" y="247" width="424" height="475" key="FileChooserDialogImpl/0.312.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1605932630104" />
-    <state width="1326" height="260" key="GridCell.Tab.0.bottom" timestamp="1607135658457">
+    <state width="1326" height="239" key="GridCell.Tab.0.bottom" timestamp="1607137103647">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1326" height="260" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1607135658457" />
+    <state width="1326" height="239" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1607137103647" />
     <state width="1326" height="267" key="GridCell.Tab.0.bottom/0.0.3286.1050@0.0.3286.1050" timestamp="1606087262816" />
     <state width="1326" height="253" key="GridCell.Tab.0.bottom/0.312.1366.768/1366.0.1920.1080@0.312.1366.768" timestamp="1606458855649" />
     <state width="1880" height="253" key="GridCell.Tab.0.bottom/0.312.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1606464963636" />
-    <state width="1326" height="260" key="GridCell.Tab.0.center" timestamp="1607135658457">
+    <state width="1326" height="239" key="GridCell.Tab.0.center" timestamp="1607137103645">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1326" height="260" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1607135658457" />
+    <state width="1326" height="239" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1607137103645" />
     <state width="1326" height="267" key="GridCell.Tab.0.center/0.0.3286.1050@0.0.3286.1050" timestamp="1606087262815" />
     <state width="1326" height="253" key="GridCell.Tab.0.center/0.312.1366.768/1366.0.1920.1080@0.312.1366.768" timestamp="1606458855649" />
     <state width="1880" height="253" key="GridCell.Tab.0.center/0.312.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1606464963635" />
-    <state width="1326" height="260" key="GridCell.Tab.0.left" timestamp="1607135658457">
+    <state width="1326" height="239" key="GridCell.Tab.0.left" timestamp="1607137103644">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1326" height="260" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1607135658457" />
+    <state width="1326" height="239" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1607137103644" />
     <state width="1326" height="267" key="GridCell.Tab.0.left/0.0.3286.1050@0.0.3286.1050" timestamp="1606087262815" />
     <state width="1326" height="253" key="GridCell.Tab.0.left/0.312.1366.768/1366.0.1920.1080@0.312.1366.768" timestamp="1606458855649" />
     <state width="1880" height="253" key="GridCell.Tab.0.left/0.312.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1606464963635" />
-    <state width="1326" height="260" key="GridCell.Tab.0.right" timestamp="1607135658457">
+    <state width="1326" height="239" key="GridCell.Tab.0.right" timestamp="1607137103647">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1326" height="260" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1607135658457" />
+    <state width="1326" height="239" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1607137103647" />
     <state width="1326" height="267" key="GridCell.Tab.0.right/0.0.3286.1050@0.0.3286.1050" timestamp="1606087262816" />
     <state width="1326" height="253" key="GridCell.Tab.0.right/0.312.1366.768/1366.0.1920.1080@0.312.1366.768" timestamp="1606458855649" />
     <state width="1880" height="253" key="GridCell.Tab.0.right/0.312.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1606464963635" />
-    <state width="1326" height="260" key="GridCell.Tab.1.bottom" timestamp="1607135658458">
+    <state width="1326" height="239" key="GridCell.Tab.1.bottom" timestamp="1607137103650">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1326" height="260" key="GridCell.Tab.1.bottom/0.0.1366.738@0.0.1366.738" timestamp="1607135658458" />
+    <state width="1326" height="239" key="GridCell.Tab.1.bottom/0.0.1366.738@0.0.1366.738" timestamp="1607137103650" />
     <state width="1326" height="267" key="GridCell.Tab.1.bottom/0.0.3286.1050@0.0.3286.1050" timestamp="1606087262817" />
     <state width="1326" height="253" key="GridCell.Tab.1.bottom/0.312.1366.768/1366.0.1920.1080@0.312.1366.768" timestamp="1606107842339" />
     <state width="1880" height="253" key="GridCell.Tab.1.bottom/0.312.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1606464963636" />
-    <state width="1326" height="260" key="GridCell.Tab.1.center" timestamp="1607135658458">
+    <state width="1326" height="239" key="GridCell.Tab.1.center" timestamp="1607137103648">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1326" height="260" key="GridCell.Tab.1.center/0.0.1366.738@0.0.1366.738" timestamp="1607135658458" />
+    <state width="1326" height="239" key="GridCell.Tab.1.center/0.0.1366.738@0.0.1366.738" timestamp="1607137103648" />
     <state width="1326" height="267" key="GridCell.Tab.1.center/0.0.3286.1050@0.0.3286.1050" timestamp="1606087262816" />
     <state width="1326" height="253" key="GridCell.Tab.1.center/0.312.1366.768/1366.0.1920.1080@0.312.1366.768" timestamp="1606107842338" />
     <state width="1880" height="253" key="GridCell.Tab.1.center/0.312.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1606464963636" />
-    <state width="1326" height="260" key="GridCell.Tab.1.left" timestamp="1607135658457">
+    <state width="1326" height="239" key="GridCell.Tab.1.left" timestamp="1607137103648">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1326" height="260" key="GridCell.Tab.1.left/0.0.1366.738@0.0.1366.738" timestamp="1607135658457" />
+    <state width="1326" height="239" key="GridCell.Tab.1.left/0.0.1366.738@0.0.1366.738" timestamp="1607137103648" />
     <state width="1326" height="267" key="GridCell.Tab.1.left/0.0.3286.1050@0.0.3286.1050" timestamp="1606087262816" />
     <state width="1326" height="253" key="GridCell.Tab.1.left/0.312.1366.768/1366.0.1920.1080@0.312.1366.768" timestamp="1606107842338" />
     <state width="1880" height="253" key="GridCell.Tab.1.left/0.312.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1606464963636" />
-    <state width="1326" height="260" key="GridCell.Tab.1.right" timestamp="1607135658458">
+    <state width="1326" height="239" key="GridCell.Tab.1.right" timestamp="1607137103649">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1326" height="260" key="GridCell.Tab.1.right/0.0.1366.738@0.0.1366.738" timestamp="1607135658458" />
+    <state width="1326" height="239" key="GridCell.Tab.1.right/0.0.1366.738@0.0.1366.738" timestamp="1607137103649" />
     <state width="1326" height="267" key="GridCell.Tab.1.right/0.0.3286.1050@0.0.3286.1050" timestamp="1606087262817" />
     <state width="1326" height="253" key="GridCell.Tab.1.right/0.312.1366.768/1366.0.1920.1080@0.312.1366.768" timestamp="1606107842339" />
     <state width="1880" height="253" key="GridCell.Tab.1.right/0.312.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1606464963636" />
@@ -616,10 +625,10 @@
     </state>
     <state x="476" y="593" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.312.1366.768/1366.0.1920.1080@0.312.1366.768" timestamp="1606107387029" />
     <state x="2035" y="395" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.312.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1606462337461" />
-    <state x="380" y="0" width="606" height="738" key="find.popup" timestamp="1607117940300">
+    <state x="380" y="0" width="606" height="738" key="find.popup" timestamp="1607136873675">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="380" y="0" width="606" height="738" key="find.popup/0.0.1366.738@0.0.1366.738" timestamp="1607117940300" />
+    <state x="380" y="0" width="606" height="738" key="find.popup/0.0.1366.738@0.0.1366.738" timestamp="1607136873675" />
     <state width="600" height="440" key="javadoc.popup" timestamp="1605307019745">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -628,10 +637,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="347" y="163" key="run.anything.popup/0.0.1366.738@0.0.1366.738" timestamp="1607119172238" />
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1607130495877">
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1607137314787">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1607130495877" />
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1607137314787" />
     <state x="346" y="373" width="672" height="706" key="search.everywhere.popup/0.312.1366.768/1366.0.1920.1080@0.312.1366.768" timestamp="1606107844473" />
     <state x="1852" y="86" width="945" height="993" key="search.everywhere.popup/0.312.1366.768/1366.0.1920.1080@1366.0.1920.1080" timestamp="1606464680082" />
     <state x="408" y="276" width="540" height="180" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1605494429841">
@@ -663,9 +672,9 @@
     <SUITE FILE_PATH="coverage/secretaria_ppgi@ProcessStatus_Invalido_sem____.rcov" NAME="ProcessStatus Invalido sem ... Coverage Results" MODIFIED="1607108681063" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="secretaria_ppgi" />
     <SUITE FILE_PATH="coverage/secretaria_ppgi@ProcessStatus.rcov" NAME="ProcessStatus Coverage Results" MODIFIED="1607108322133" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="secretaria_ppgi" />
     <SUITE FILE_PATH="coverage/secretaria_ppgi@test__secretaria_ppgi.rcov" NAME="test: secretaria_ppgi Coverage Results" MODIFIED="1607106451110" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="secretaria_ppgi" />
-    <SUITE FILE_PATH="coverage/secretaria_ppgi@spec__secretaria_ppgi.rcov" NAME="spec: secretaria_ppgi Coverage Results" MODIFIED="1607129551522" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="secretaria_ppgi" />
+    <SUITE FILE_PATH="coverage/secretaria_ppgi@spec__secretaria_ppgi.rcov" NAME="spec: secretaria_ppgi Coverage Results" MODIFIED="1607137077131" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="secretaria_ppgi" />
     <SUITE FILE_PATH="coverage/secretaria_ppgi@ProcessController_should_de___.rcov" NAME="ProcessController should de... Coverage Results" MODIFIED="1607111850181" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="secretaria_ppgi" />
-    <SUITE FILE_PATH="coverage/secretaria_ppgi@Development__secretaria_ppgi.rcov" NAME="Development: secretaria_ppgi Coverage Results" MODIFIED="1607135658412" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="secretaria_ppgi" />
+    <SUITE FILE_PATH="coverage/secretaria_ppgi@Development__secretaria_ppgi.rcov" NAME="Development: secretaria_ppgi Coverage Results" MODIFIED="1607137087130" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="secretaria_ppgi" />
     <SUITE FILE_PATH="coverage/secretaria_ppgi@ProcessController_should_at___.rcov" NAME="ProcessController should at... Coverage Results" MODIFIED="1607134186392" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="secretaria_ppgi" />
     <SUITE FILE_PATH="coverage/secretaria_ppgi@db_migrate__secretaria_ppgi.rcov" NAME="db:migrate: secretaria_ppgi Coverage Results" MODIFIED="1605494051699" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="secretaria_ppgi" />
     <SUITE FILE_PATH="coverage/secretaria_ppgi@ProcessController_GET__inde___.rcov" NAME="ProcessController GET #inde... Coverage Results" MODIFIED="1607119514904" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="secretaria_ppgi" />

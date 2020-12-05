@@ -18,13 +18,11 @@ services:
     tty: true
     build: ./
     image: eng_sw_image
-    environment: 
-        SECRETARIA_PPGI_DATABASE_PASSWORD: example
     volumes:
       - ./:/secretaria/
     ports:
       - 3000:3000
-    command: bash -c "rake"
+    command: bash -c "rake db:migrate RAILS_ENV=test && rake db:migrate RAILS_ENV=development && rake && rake db:seed && rails server -b 0.0.0.0 -p 3000 -e development"
     depends_on:
       - secretaria_ppgi_db
 
