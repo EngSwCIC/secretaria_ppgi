@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   resources :bookings
   resources :request_deadlines, only: [:new, :index, :create]
   resources :tickets
-  resources :diaria
   resources :budgets, only: [:new, :index, :create]
   resources :requirements, only: [:new, :index, :create]
   resources :requests

@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :booking do
     data_entrada { "2020-12-04" }
-    date_saida { "2020-12-04" }
+    data_saida { "2020-12-04" }
   end
   
   factory :request_deadline do
@@ -15,11 +15,6 @@ FactoryBot.define do
 
   factory :budget do
     value { "9.99" }
-  end
-  
-  factory :diarium do
-    data_entrada { "MyString" }
-    data_saida { "MyString" }
   end
 
   factory :requirement do

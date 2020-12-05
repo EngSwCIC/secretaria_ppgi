@@ -8,7 +8,7 @@
       <h4 id="error_msg" style="color: red">Ocorreu um erro ao salvar os requisitos.</h4 id="error_msg">
       <br>
     <% end %>
-    <%= form.text_area :requirements, id: "requirement_text", value: @requirements.any? ? @requirements[0].requirements : '' %>
+    <%= form.text_area :requirements, id: "requirement_text", value: @all_requirements.blank? == false ? @all_requirements[0].requirements : '' %>
     <br>
     <%= form.submit "Definir requisitos", id: "edit_requirements"%>
   <% end %>

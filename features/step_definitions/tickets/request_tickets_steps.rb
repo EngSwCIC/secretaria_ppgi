@@ -20,15 +20,15 @@ E("eu clicar no botão {string}") do |button|
 end
 
 # -- Cenário Feliz -- #
-Dado('que eu insira a data de entrada como dia {string} do mês {string} do ano {string}') do |day, month, year|
-  id = 'ticket_data_entrada'
+Dado('que eu insira a data de entrada do {string} como dia {string} do mês {string} do ano {string}') do |type, day, month, year|
+  id = "#{type}_data_entrada"
   select year,   from: "#{id}_1i"
   select month,  from: "#{id}_2i"
   select day,    from: "#{id}_3i"
 end
 
-E('que eu insira a data de saída como dia {string} do mês {string} do ano {string}') do |day, month, year|
-  id = 'ticket_data_saida'
+E('que eu insira a data de saída do {string} como dia {string} do mês {string} do ano {string}') do |type, day, month, year|
+  id = "#{type}_data_saida"
   select year,   from: "#{id}_1i"
   select month,  from: "#{id}_2i"
   select day,    from: "#{id}_3i"
@@ -40,6 +40,10 @@ Então ('a passagem com data de entrada {string} - {string} - {string} e data de
   @user_tickets = Ticket.where(user_id: @user.id, data_entrada: Date.parse("#{year_in}-#{month_in}-#{day_in}"), data_saida: Date.parse("#{year_out}-#{month_out}-#{day_out}"))
 
   expect(@user_tickets.any?).to eq true
+end
+
+Dado('que eu insira a data de entrada como dia {string} do mês {string} do ano {string}') do |string, string2, string3|
+  pending # Write code here that turns the phrase above into concrete actions
 end
 
 Então('vejo uma mensagem {string}') do |message|

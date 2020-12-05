@@ -5,6 +5,7 @@ class User < ApplicationRecord
   validates :role, presence: true
   
   has_many :tickets
+  has_many :bookings
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable

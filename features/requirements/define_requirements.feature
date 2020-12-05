@@ -18,6 +18,6 @@ Funcionalidade: Definir os requisitos para solicitação de auxílio
     
 
   Cenário: Edição de requisitos contém requisito em branco
-    Dado que eu remova os requisitos existentes
+    Dado que eu insira o requisito ""
     E eu clicar no botão "Definir requisitos"
     Então uma mensagem de erro é exibida

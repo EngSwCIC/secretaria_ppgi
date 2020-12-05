@@ -34,13 +34,6 @@ Então("os requisitos são atualizados com o valor {string}") do |requirements|
 end
 
 #-------------------- Cenário triste --#
-Dado("que eu remova os requisitos existentes") do
-  visit('/requirements/new')
-  
-  requirement = ""
-  fill_in 'requirement_text', :with => requirement
-end
-
 Então("uma mensagem de erro é exibida") do
   expect(page).to have_text("Ocorreu um erro ao salvar os requisitos.")
 end

@@ -28,6 +28,15 @@ E('que eu insira data de saida {string}') do |date|
   fill_in 'data_saida', :with => date
   expect(page).to have_field('data_saida', with: date)
 end
+
+Então ('a diária com data de entrada {string} - {string} - {string} e data de saída {string} - {string} - {string}, pertencente ao usuário {string}, é criada') do |day_in, month_in, year_in, day_out, month_out, year_out, email|
+  @user = User.find_by_email(email)
+  
+  @user_bookings = Booking.where(user_id: @user.id, data_entrada: Date.parse("#{year_in}-#{month_in}-#{day_in}"), data_saida: Date.parse("#{year_out}-#{month_out}-#{day_out}"))
+
+  expect(@user_bookings.any?).to eq true
+end
+
 # oi
 E('que eu clique no botão de {string}') do |nome|
   click_button(nome)

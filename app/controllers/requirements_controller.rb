@@ -7,7 +7,9 @@ class RequirementsController < ApplicationController
 
   # GET /requirements/new
   def new
-    @requirements = Requirement.all
+    @all_requirements = Requirement.all
+
+    puts "REQUIREMENTS", @requirements
     
     @requirement = Requirement.new
   end
