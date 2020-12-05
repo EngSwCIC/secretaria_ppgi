@@ -1,6 +1,6 @@
 ##
 # Classe da controller dos FAQS
-# Herda de +ApplicationController+
+# Herda de ApplicationController
 class FaqsController < ApplicationController
   before_action :set_faq, only: [:show, :edit, :update, :destroy]
   before_action :must_be_admin, only:  [:create, :edit, :update, :destroy]
@@ -64,7 +64,7 @@ class FaqsController < ApplicationController
  
   ##
   # Apaga uma instancia de FAQ
-  # Redireciona para faqs_url
+  # Redireciona para a página de faqs
   def destroy
     @faq.destroy
     respond_to do |format|
@@ -91,8 +91,8 @@ class FaqsController < ApplicationController
     end
 
     ##
-    # Redireciona o usuário para a pagina faqs_url
-    # caso não seja admin. Exibe alertaa na tela.
+    # Redireciona o usuário para a pagina faqs
+    # caso não seja admin. Exibe alerta na tela.
      def must_be_admin
       unless current_user && current_user.role == "administrator"
         redirect_to faqs_url, alert: "Rota restrita para administradores"
