@@ -66,4 +66,12 @@ RSpec.describe ProcessController, type: :controller do
     get :search, params: {filter_by: {filter_status: 1}}
     expect(assigns(:processes)).to all(have_member_with_value('process_status_id': 1))
   end
+
+  it 'should attach documents to process' do
+    file = fixture_file_upload('files/test_attach.pdf', 'application/pdf')
+    process = user.processos.first
+    original_documents_length = process.documents.length
+    post :attach, :params => {id:process[:id], processo: {id: process[:id], document_files: [file]}}
+    expect(Processo.find(process.id).documents.length).to be(original_documents_length+ 1)
+  end
 end
