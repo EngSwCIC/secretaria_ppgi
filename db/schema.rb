@@ -10,10 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_13_005619) do
+ActiveRecord::Schema.define(version: 2020_12_04_235248) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.date "data_entrada"
+    t.date "data_saida"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
+  end
+
+  create_table "budgets", force: :cascade do |t|
+    t.decimal "value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "request_deadlines", force: :cascade do |t|
+    t.datetime "deadline"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "request_types", force: :cascade do |t|
     t.string "title"
@@ -29,6 +49,20 @@ ActiveRecord::Schema.define(version: 2020_11_13_005619) do
     t.datetime "updated_at", null: false
     t.index ["request_type_id"], name: "index_requests_on_request_type_id"
     t.index ["user_id"], name: "index_requests_on_user_id"
+  end
+
+  create_table "requirements", force: :cascade do |t|
+    t.string "requirements"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tickets", force: :cascade do |t|
+    t.date "data_entrada"
+    t.date "data_saida"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|
