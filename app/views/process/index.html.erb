@@ -1,6 +1,6 @@
 <%= stylesheet_link_tag "process" %>
 <%= javascript_include_tag "process" %>
-<div id="process-list-root">
+<div class="process-list-root">
   <h5>Lista de Processos</h5>
   <h5>Criar um novo processo</h5>
   <%= form_for :processo, url: process_creation_path ,html: {id: "creation_form", :multipart => true} do |f| %>

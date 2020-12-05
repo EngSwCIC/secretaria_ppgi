@@ -34,6 +34,18 @@ class ProcessController < ApplicationController
     @status = {}
   end
 
+  def attach
+    permitted_params = params.permit(:id, :document_files => [])
+    docs = permitted_params['document_files']
+    unless docs.nil?
+      docs.each do |doc|
+        doc_model = {"processo_id": permitted_params[:id], "data" => doc.read, "filename": doc.original_filename, "mime_type": doc.content_type}
+        @process.documents.create(doc_model)
+      end
+    end
+    @process = current_user.processos.find(permitted_params[:id])
+  end
+
   ##
   # load_status load @available_status and @status for view to access it
   #
@@ -53,7 +65,9 @@ class ProcessController < ApplicationController
   # @returns [[String, Int]]
   def load_filters
     load_status
-    @filters = @available_status
+    @filters = @available_status.map do |item|
+      item
+    end
     @filters.append(['Todos', -1])
   end
 
@@ -127,6 +141,7 @@ class ProcessController < ApplicationController
       end
     end
     reload_processes(current_user)
+    puts(@process)
     redirect_to process_home_path
   end
 
@@ -135,8 +150,8 @@ class ProcessController < ApplicationController
   #
   # returns a data url to enable user to download it
   def serve
-    permitted_params = params.permit(:process_id, :document_id)
-    @doc = user.processos.find(permitted_params).documents.find(document_id)
+    permitted_params = params.permit(:id, :doc_id)
+    @doc = current_user.processos.find(permitted_params['id']).documents.find(permitted_params["doc_id"])
     send_data(@doc.data, :type => @doc.mime_type, :filename => @doc.filename, :disposition => "inline")
   end
 
