@@ -123,13 +123,19 @@
 
         <div class="method-description">
           
-          <p>POST /request_deadlines POST /request_deadlines.json</p>
+          <p>Metodo cria DeadLines @param [Date] deadline Criação bem sucedida:</p>
+
+<pre>@return { render :show, status: :created, location: @request_deadline }</pre>
+
+<p>Criação mal sucedida:</p>
+
+<pre>@return { render json: @request_deadline.errors, status: :unprocessable_entity }</pre>
           
           
 
           
           <div class="method-source-code" id="create-source">
-            <pre><span class="ruby-comment"># File app/controllers/request_deadlines_controller.rb, line 15</span>
+            <pre><span class="ruby-comment"># File app/controllers/request_deadlines_controller.rb, line 23</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">create</span>
   <span class="ruby-ivar">@request_deadlines</span> = <span class="ruby-constant">RequestDeadline</span>.<span class="ruby-identifier">all</span>
 
@@ -172,13 +178,13 @@
 
         <div class="method-description">
           
-          <p>GET /request_deadlines GET /request_deadlines.json</p>
+          <p>Serve para buscar todas as deadlines e envia as informações para a view @return [@request_deadlines] se existir</p>
           
           
 
           
           <div class="method-source-code" id="index-source">
-            <pre><span class="ruby-comment"># File app/controllers/request_deadlines_controller.rb, line 4</span>
+            <pre><span class="ruby-comment"># File app/controllers/request_deadlines_controller.rb, line 6</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">index</span>
   <span class="ruby-ivar">@request_deadlines</span> = <span class="ruby-constant">RequestDeadline</span>.<span class="ruby-identifier">all</span>
 <span class="ruby-keyword">end</span></pre>
@@ -205,13 +211,13 @@
 
         <div class="method-description">
           
-          <p>GET /request_deadlines/new</p>
+          <p>Metodo serve apenas para view</p>
           
           
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File app/controllers/request_deadlines_controller.rb, line 9</span>
+            <pre><span class="ruby-comment"># File app/controllers/request_deadlines_controller.rb, line 12</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">new</span>
   <span class="ruby-ivar">@request_deadline</span> = <span class="ruby-constant">RequestDeadline</span>.<span class="ruby-identifier">new</span>
 <span class="ruby-keyword">end</span></pre>

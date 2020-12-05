@@ -123,13 +123,19 @@
 
         <div class="method-description">
           
-          <p>POST /requirements POST /requirements.json</p>
+          <p>Metodo cria requisitos @param [string] requirements Criação bem sucedida:</p>
+
+<pre>@return { render :show, status: :created, location: @requirement }</pre>
+
+<p>Criação mal sucedida:</p>
+
+<pre>@return { render json: @requirement.errors, status: :unprocessable_entity }</pre>
           
           
 
           
           <div class="method-source-code" id="create-source">
-            <pre><span class="ruby-comment"># File app/controllers/requirements_controller.rb, line 17</span>
+            <pre><span class="ruby-comment"># File app/controllers/requirements_controller.rb, line 29</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">create</span>
   <span class="ruby-identifier">requirements</span> = <span class="ruby-constant">Requirement</span>.<span class="ruby-identifier">all</span>
 
@@ -175,13 +181,13 @@
 
         <div class="method-description">
           
-          <p>GET /requirements GET /requirements.json</p>
+          <p>Serve para buscar todas as requisitos e envia as informações para a view @return [@requirements] se existir</p>
           
           
 
           
           <div class="method-source-code" id="index-source">
-            <pre><span class="ruby-comment"># File app/controllers/requirements_controller.rb, line 4</span>
+            <pre><span class="ruby-comment"># File app/controllers/requirements_controller.rb, line 7</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">index</span>
   <span class="ruby-ivar">@requirements</span> = <span class="ruby-constant">Requirement</span>.<span class="ruby-identifier">all</span>
 <span class="ruby-keyword">end</span></pre>
@@ -208,15 +214,17 @@
 
         <div class="method-description">
           
-          <p>GET /requirements/new</p>
+          <p>Server para a view e retornar todos os requisitos @return [@all_requirements] se existir</p>
           
           
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File app/controllers/requirements_controller.rb, line 9</span>
+            <pre><span class="ruby-comment"># File app/controllers/requirements_controller.rb, line 14</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">new</span>
   <span class="ruby-ivar">@all_requirements</span> = <span class="ruby-constant">Requirement</span>.<span class="ruby-identifier">all</span>
+
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;REQUIREMENTS&quot;</span>, <span class="ruby-ivar">@requirements</span>
   
   <span class="ruby-ivar">@requirement</span> = <span class="ruby-constant">Requirement</span>.<span class="ruby-identifier">new</span>
 <span class="ruby-keyword">end</span></pre>

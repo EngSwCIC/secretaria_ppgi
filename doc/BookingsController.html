@@ -131,13 +131,19 @@
 
         <div class="method-description">
           
-          <p>POST /bookings POST /bookings.json</p>
+          <p>Metodo cria diarias @param [Date] data_entrada @param [Date] data_saida Criação bem sucedida:</p>
+
+<pre>@return { render :show, status: :created, location: @booking }</pre>
+
+<p>Criação mal sucedida:</p>
+
+<pre>@return { render json: @booking.errors, status: :unprocessable_entity }</pre>
           
           
 
           
           <div class="method-source-code" id="create-source">
-            <pre><span class="ruby-comment"># File app/controllers/bookings_controller.rb, line 26</span>
+            <pre><span class="ruby-comment"># File app/controllers/bookings_controller.rb, line 35</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">create</span>
   <span class="ruby-ivar">@booking</span> = <span class="ruby-constant">Booking</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">booking_params</span>)
 
@@ -176,13 +182,15 @@
 
         <div class="method-description">
           
-          <p>DELETE /bookings/1 DELETE /bookings/1.json</p>
+          <p>Metodo destroi diarias Criação bem sucedida:</p>
+
+<pre>@return { head :no_content }</pre>
           
           
 
           
           <div class="method-source-code" id="destroy-source">
-            <pre><span class="ruby-comment"># File app/controllers/bookings_controller.rb, line 58</span>
+            <pre><span class="ruby-comment"># File app/controllers/bookings_controller.rb, line 75</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">destroy</span>
   <span class="ruby-ivar">@booking</span>.<span class="ruby-identifier">destroy</span>
   <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
@@ -213,13 +221,13 @@
 
         <div class="method-description">
           
-          <p>GET /bookings/1/edit</p>
+          <p>Metodo serve apenas para view</p>
           
           
 
           
           <div class="method-source-code" id="edit-source">
-            <pre><span class="ruby-comment"># File app/controllers/bookings_controller.rb, line 21</span>
+            <pre><span class="ruby-comment"># File app/controllers/bookings_controller.rb, line 24</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">edit</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
@@ -245,13 +253,13 @@
 
         <div class="method-description">
           
-          <p>GET /bookings GET /bookings.json</p>
+          <p>Serve para buscar todas as diarias e envia as informações para a view @return [@bookings] se existir</p>
           
           
 
           
           <div class="method-source-code" id="index-source">
-            <pre><span class="ruby-comment"># File app/controllers/bookings_controller.rb, line 6</span>
+            <pre><span class="ruby-comment"># File app/controllers/bookings_controller.rb, line 7</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">index</span>
   <span class="ruby-ivar">@bookings</span> = <span class="ruby-constant">Booking</span>.<span class="ruby-identifier">all</span>
 <span class="ruby-keyword">end</span></pre>
@@ -278,13 +286,13 @@
 
         <div class="method-description">
           
-          <p>GET /bookings/new</p>
+          <p>Metodo serve apenas para view</p>
           
           
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File app/controllers/bookings_controller.rb, line 16</span>
+            <pre><span class="ruby-comment"># File app/controllers/bookings_controller.rb, line 18</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">new</span>
   <span class="ruby-ivar">@booking</span> = <span class="ruby-constant">Booking</span>.<span class="ruby-identifier">new</span>
 <span class="ruby-keyword">end</span></pre>
@@ -311,13 +319,13 @@
 
         <div class="method-description">
           
-          <p>GET /bookings/1 GET /bookings/1.json</p>
+          <p>Metodo serve apenas para view</p>
           
           
 
           
           <div class="method-source-code" id="show-source">
-            <pre><span class="ruby-comment"># File app/controllers/bookings_controller.rb, line 12</span>
+            <pre><span class="ruby-comment"># File app/controllers/bookings_controller.rb, line 13</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">show</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
@@ -343,13 +351,19 @@
 
         <div class="method-description">
           
-          <p>PATCH/PUT /bookings/1 PATCH/PUT /bookings/1.json</p>
+          <p>Metodo atualiza diarias @param [Date] data_entrada @param [Date] data_saida Criação bem sucedida:</p>
+
+<pre>@return { render :show, status: :ok, location: @booking }</pre>
+
+<p>Criação mal sucedida:</p>
+
+<pre>@return { render json: @booking.errors, status: :unprocessable_entity }</pre>
           
           
 
           
           <div class="method-source-code" id="update-source">
-            <pre><span class="ruby-comment"># File app/controllers/bookings_controller.rb, line 44</span>
+            <pre><span class="ruby-comment"># File app/controllers/bookings_controller.rb, line 59</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">update</span>
   <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
     <span class="ruby-keyword">if</span> <span class="ruby-ivar">@booking</span>.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">booking_params</span>)
