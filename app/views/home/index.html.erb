@@ -21,6 +21,8 @@
     <br>
     <%= button_to "Editar data limite para solicitações", '/request_deadlines/new', method: :get, id: 'edit_deadline_button' %>
     <br>
+    <%= button_to "Visualizar solicitações de diárias e passagens", admin_panel_path, method: :get, id: 'view_requests_button' %>
+    <br>
   <% end %>
 
   <%= button_to "Solicitar diárias", '/bookings/new', method: :get, id: 'request_diaria' %>

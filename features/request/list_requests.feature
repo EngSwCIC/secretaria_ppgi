@@ -7,9 +7,9 @@ Funcionalidade: Listar todas as solicitações de acordo com as suas prioridades
 
    Contexto:
       Dado que eu esteja cadastrado como admin
-      E que esteja autenticado com email: "admin@admin2.com" e senha: "admin1234"
-      E que esteja na home page
-      E eu clicar no link do painel de administrador
+      E que eu realize login com o email "admin@admin.com" e a senha "admin123"
+      E que esteja autenticado na página inicial
+      E eu clicar no botão "Visualizar solicitações de diárias e passagens"
       E eu clicar em na lista de solicitações
    
    Cenário: Dado que Lista de Solicitações aparece adequadamente

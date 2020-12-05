@@ -93,6 +93,8 @@
     
     <li ><a href="#method-i-system-21">#system!</a>
     
+    <li ><a href="#method-i-valid_date-3F">#valid_date?</a>
+    
   </ul>
 </div>
 
@@ -166,6 +168,39 @@
             <pre><span class="ruby-comment"># File bin/setup, line 8</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">system!</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
   <span class="ruby-identifier">system</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">abort</span>(<span class="ruby-node">&quot;\n== Command #{args} failed ==&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-valid_date-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">valid_date?</span><span
+            class="method-args">( str, format=&quot;%d/%m/%Y&quot; )</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="valid_date-3F-source">
+            <pre><span class="ruby-comment"># File features/step_definitions/bookings/request_bookings_steps.rb, line 58</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">valid_date?</span>( <span class="ruby-identifier">str</span>, <span class="ruby-identifier">format</span>=<span class="ruby-string">&quot;%d/%m/%Y&quot;</span> )
+  <span class="ruby-constant">Date</span>.<span class="ruby-identifier">strptime</span>(<span class="ruby-identifier">str</span>,<span class="ruby-identifier">format</span>) <span class="ruby-keyword">rescue</span> <span class="ruby-keyword">false</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
           

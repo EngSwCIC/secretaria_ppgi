@@ -8,8 +8,6 @@ class RequirementsController < ApplicationController
   # GET /requirements/new
   def new
     @all_requirements = Requirement.all
-
-    puts "REQUIREMENTS", @requirements
     
     @requirement = Requirement.new
   end
