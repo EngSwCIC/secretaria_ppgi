@@ -24,7 +24,7 @@
 * Carlos Eduardo de Sousa - 160057701
 
 #### Product Owner
-* * Edilton Costa Alves - 170002365
+* Edilton Costa Alves - 170002365
 
 &nbsp;
 ## Resultados para a Sprint 3
