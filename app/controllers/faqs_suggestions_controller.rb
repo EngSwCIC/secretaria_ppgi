@@ -1,6 +1,7 @@
 class FaqsSuggestionsController < ApplicationController
   before_action :set_faqs_suggestion, only: [:show, :edit, :update, :destroy]
-
+  before_action :must_be_admin, only:  [:destroy, :index, :accept]
+  before_action :must_be_authenticated_user, only:  [:create, :edit, :update]
  
   def index
     @faqs_suggestions = FaqsSuggestion.all
@@ -63,5 +64,17 @@ class FaqsSuggestionsController < ApplicationController
    
     def faqs_suggestion_params
       params.require(:faqs_suggestion).permit(:question, :answer, :topic_id)
+    end
+
+    def must_be_admin
+      unless current_user && current_user.role == "administrator"
+        redirect_to faqs_url, alert: "Rota restrita para administradores"
+      end
+    end
+
+     def must_be_authenticated_user
+      unless current_user && current_user.role != "administrator"
+        redirect_to faqs_url, alert: "Rota restrita para usuários cadastrados"
+      end
     end
 end

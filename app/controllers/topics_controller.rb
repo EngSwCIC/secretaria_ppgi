@@ -1,6 +1,7 @@
 class TopicsController < ApplicationController
   before_action :set_topic, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_faq, only: [:show, :edit, :update, :destroy]
+  before_action :must_be_admin, only:  [:create, :edit, :update, :destroy]
   
   def index
     @topics = Topic.all
@@ -65,5 +66,11 @@ class TopicsController < ApplicationController
     
     def topic_params
       params.require(:topic).permit(:titulo)
+    end
+
+    def must_be_admin
+      unless current_user && current_user.role == "administrator"
+        redirect_to faqs_url, alert: "Rota restrita para administradores"
+      end
     end
 end
