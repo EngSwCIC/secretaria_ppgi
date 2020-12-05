@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   resources :tickets
   resources :budgets, only: [:new, :index, :create]
   resources :requirements, only: [:new, :index, :create]
+  get 'admin/panel'
+  get 'admin/index'
   resources :requests
   resources :request_types
   get 'home/index'
