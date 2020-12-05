@@ -1,17 +1,25 @@
 class RequestDeadlinesController < ApplicationController
-  # GET /request_deadlines
-  # GET /request_deadlines.json
+
+  ##
+  # Serve para buscar todas as deadlines e envia as informações para a view
+  # @return [@request_deadlines] se existir
   def index
     @request_deadlines = RequestDeadline.all
   end
 
-  # GET /request_deadlines/new
+  ##
+  # Metodo serve apenas para view
   def new
     @request_deadline = RequestDeadline.new
   end
 
-  # POST /request_deadlines
-  # POST /request_deadlines.json
+  ##
+  # Metodo cria DeadLines
+  # @param [Date] deadline
+  # Criação bem sucedida:
+  #   @return { render :show, status: :created, location: @request_deadline }
+  # Criação mal sucedida:
+  #   @return { render json: @request_deadline.errors, status: :unprocessable_entity }
   def create
     @request_deadlines = RequestDeadline.all
 

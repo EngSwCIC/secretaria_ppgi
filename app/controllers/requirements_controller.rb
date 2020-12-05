@@ -1,19 +1,31 @@
 class RequirementsController < ApplicationController
-  # GET /requirements
-  # GET /requirements.json
+ 
+  
+  ##
+  # Serve para buscar todas as requisitos e envia as informações para a view
+  # @return [@requirements] se existir
   def index
     @requirements = Requirement.all
   end
 
-  # GET /requirements/new
+  ##
+  # Server para a view e retornar todos os requisitos
+  # @return [@all_requirements] se existir
   def new
     @all_requirements = Requirement.all
+
+    puts "REQUIREMENTS", @requirements
     
     @requirement = Requirement.new
   end
 
-  # POST /requirements
-  # POST /requirements.json
+  ##
+  # Metodo cria requisitos
+  # @param [string] requirements
+  # Criação bem sucedida:
+  #   @return { render :show, status: :created, location: @requirement }
+  # Criação mal sucedida:
+  #   @return { render json: @requirement.errors, status: :unprocessable_entity }
   def create
     requirements = Requirement.all
   

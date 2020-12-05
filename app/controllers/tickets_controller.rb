@@ -1,28 +1,38 @@
 class TicketsController < ApplicationController
   before_action :set_ticket, only: [:show, :edit, :update, :destroy]
 
-  # GET /tickets
-  # GET /tickets.json
+  ##
+  # Serve para buscar todas as requisitos e envia as informações para a view
+  # @return [@requirements] se existir
   def index
     @tickets = Ticket.all
   end
 
-  # GET /tickets/1
-  # GET /tickets/1.json
+ 
+  ##
+  # Metodo serve apenas para view
   def show
   end
 
-  # GET /tickets/new
+  ##
+  # Metodo serve apenas para view
   def new
     @ticket = Ticket.new
   end
 
-  # GET /tickets/1/edit
+  ##
+  # Metodo serve apenas para view
   def edit
   end
 
-  # POST /tickets
-  # POST /tickets.json
+  ##
+  # Metodo cria ticket
+  # @param [Date] data_entrada
+  # @param [Date] data_saida
+  # Criação bem sucedida:
+  #   @return { render :show, status: :created, location: @ticket }
+  # Criação mal sucedida:
+  #   @return { render json: @ticket.errors, status: :unprocessable_entity }
   def create    
     @ticket = Ticket.new(ticket_params)
 
@@ -39,8 +49,14 @@ class TicketsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /tickets/1
-  # PATCH/PUT /tickets/1.json
+  ##
+  # Metodo atualiza solicitação
+  # @param [Date] data_entrada
+  # @param [Date] data_saida
+  # Criação bem sucedida:
+  #   @return { render :show, status: :ok, location: @ticket }
+  # Criação mal sucedida:
+  #   @return { render json: @ticket.errors, status: :unprocessable_entity }
   def update
     respond_to do |format|
       if @ticket.update(ticket_params)
@@ -53,8 +69,10 @@ class TicketsController < ApplicationController
     end
   end
 
-  # DELETE /tickets/1
-  # DELETE /tickets/1.json
+  ##
+  # Metodo destroi ticket
+  # Criação bem sucedida:
+  #   @return { head :no_content }
   def destroy
     @ticket.destroy
     respond_to do |format|

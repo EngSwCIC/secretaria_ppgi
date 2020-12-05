@@ -1,28 +1,37 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: [:show, :edit, :update, :destroy]
 
-  # GET /bookings
-  # GET /bookings.json
+  ##
+  # Serve para buscar todas as diarias e envia as informações para a view
+  # @return [@bookings] se existir
   def index
     @bookings = Booking.all
   end
 
-  # GET /bookings/1
-  # GET /bookings/1.json
+  ##
+  # Metodo serve apenas para view
   def show
   end
 
-  # GET /bookings/new
+  ##
+  # Metodo serve apenas para view
   def new
     @booking = Booking.new
   end
 
-  # GET /bookings/1/edit
+  ##
+  # Metodo serve apenas para view
   def edit
   end
 
-  # POST /bookings
-  # POST /bookings.json
+  ##
+  # Metodo cria diarias
+  # @param [Date] data_entrada
+  # @param [Date] data_saida
+  # Criação bem sucedida:
+  #   @return { render :show, status: :created, location: @booking }
+  # Criação mal sucedida:
+  #   @return { render json: @booking.errors, status: :unprocessable_entity }
   def create
     @booking = Booking.new(booking_params)
 
@@ -39,8 +48,14 @@ class BookingsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /bookings/1
-  # PATCH/PUT /bookings/1.json
+  ##
+  # Metodo atualiza diarias
+  # @param [Date] data_entrada
+  # @param [Date] data_saida
+  # Criação bem sucedida:
+  #   @return { render :show, status: :ok, location: @booking }
+  # Criação mal sucedida:
+  #   @return { render json: @booking.errors, status: :unprocessable_entity }
   def update
     respond_to do |format|
       if @booking.update(booking_params)
@@ -53,8 +68,10 @@ class BookingsController < ApplicationController
     end
   end
 
-  # DELETE /bookings/1
-  # DELETE /bookings/1.json
+  ##
+  # Metodo destroi diarias
+  # Criação bem sucedida:
+  #   @return { head :no_content }
   def destroy
     @booking.destroy
     respond_to do |format|
