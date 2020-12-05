@@ -1,24 +1,45 @@
-# README
+## GRUPO 1 - Sprint 3
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Carlos Eduardo de Sousa - 160057701
+* Edilton Costa Alves - 170002365
+* Eduardo Vaz Fagundes Rech - 180075161
+* Estevam Galvão Albuquerque - 160005663
+* Kalley Wilkerson Rodrigues Alexandre - 170038050
 
-Things you may want to cover:
+&nbsp;
+## NOME DO PROJETO
+#### Calendário de atividades - secretaria-ppgi
+&nbsp;
+## Papéis na Sprint
 
-* Ruby version
+#### Kálley - 170038050
+* Refatoração utilizando o Saikuro
+#### Carlos Eduardo - 160057701
+* Rubycritic (tmp/rubycritic/)
 
-* System dependencies
+### Eduardo - 180075161
+* Refatoração utilizando o SimpleCov
 
-* Configuration
+&nbsp;
+## ATRIBUIÇÕES
 
-* Database creation
+#### Scrum Master
+* Carlos Eduardo de Sousa - 160057701
 
-* Database initialization
+#### Product Owner
+* Edilton Costa Alves - 170002365
 
-* How to run the test suite
+&nbsp;
+## Resultados para a Sprint 3
+&nbsp;
+|        |      Antes da refatoração      |  Depois da refatoração |
+| ------ | ------------------------------ | ---------------------- |
+| Code 1 |                                |                        |
+| Code 2 |                                |                        |
+| Code 3 |                                |                        |
 
-* Services (job queues, cache servers, search engines, etc.)
+### Saikuro
+As tabelas geradas pelo Saikuro estão nas pastas **app/controllers/saikuro** e **app/models/saikuro**. Não foi preciso mudar o código pois os resultados do Saikuro já eram satisfatórios
 
-* Deployment instructions
-
-* ...
+### SimpleCov
+A tabela gerada pelo SimpleCov está na pasta **coverage**.

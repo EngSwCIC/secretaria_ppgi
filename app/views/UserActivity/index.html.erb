@@ -1,0 +1,21 @@
+<h1>Minhas Atividades de Interesse</h1>
+
+<table>
+  <tr>
+    <th>Título</th>
+    <th>Prazo de execução</th>
+    <th>Descrição</th>
+    <th></th>
+  </tr>
+
+  <% @user_activities.each do |activity| %>
+    <tr>
+      <td><%= activity.title %></td>
+      <td><%= activity.due_date.to_formatted_s(:rfc822) %></td>
+      <td><%= activity.description %></td>
+      <td><%= link_to 'Remover Interesse', user_activity_path(user_activity), :method => :delete, :confirm => 'Tem certeza ?' %></td>
+    </tr>
+  <% end %>
+</table>
+<br>
+<%= link_to 'Voltar a Atividades', activities_path %>
