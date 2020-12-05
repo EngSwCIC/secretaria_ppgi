@@ -1,0 +1,860 @@
+{
+  "Cucumber Features": {
+    "coverage": {
+      "/home/alice/Documentos/EngSoft/secretaria_ppgi/app/models/wiki_comment.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null
+        ],
+        "branches": {
+        }
+      },
+      "/home/alice/Documentos/EngSoft/secretaria_ppgi/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ],
+        "branches": {
+        }
+      },
+      "/home/alice/Documentos/EngSoft/secretaria_ppgi/app/models/wiki_entry.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          20,
+          2,
+          null,
+          null,
+          null
+        ],
+        "branches": {
+          "[:if, 0, 18, 8, 20, 11]": {
+            "[:then, 1, 19, 8, 19, 73]": 2,
+            "[:else, 2, 18, 8, 20, 11]": 18
+          }
+        }
+      },
+      "/home/alice/Documentos/EngSoft/secretaria_ppgi/app/models/user.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null
+        ],
+        "branches": {
+        }
+      },
+      "/home/alice/Documentos/EngSoft/secretaria_ppgi/app/helpers/application_helper.rb": {
+        "lines": [
+          1,
+          null
+        ],
+        "branches": {
+        }
+      },
+      "/home/alice/Documentos/EngSoft/secretaria_ppgi/app/helpers/comentarios_helper.rb": {
+        "lines": [
+          1,
+          null
+        ],
+        "branches": {
+        }
+      },
+      "/home/alice/Documentos/EngSoft/secretaria_ppgi/app/helpers/home_helper.rb": {
+        "lines": [
+          1,
+          null
+        ],
+        "branches": {
+        }
+      },
+      "/home/alice/Documentos/EngSoft/secretaria_ppgi/app/helpers/wikis_helper.rb": {
+        "lines": [
+          1,
+          null
+        ],
+        "branches": {
+        }
+      },
+      "/home/alice/Documentos/EngSoft/secretaria_ppgi/app/controllers/wiki_entries_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          10,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          4,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          4,
+          null,
+          4,
+          2,
+          null,
+          2,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          4,
+          2,
+          null,
+          2,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          0,
+          0,
+          null,
+          null,
+          1,
+          null,
+          1,
+          null,
+          17,
+          null,
+          null,
+          null,
+          1,
+          null,
+          8,
+          null,
+          null
+        ],
+        "branches": {
+          "[:if, 0, 32, 4, 36, 7]": {
+            "[:then, 1, 33, 6, 33, 67]": 2,
+            "[:else, 2, 35, 6, 35, 17]": 2
+          },
+          "[:if, 3, 44, 4, 48, 7]": {
+            "[:then, 4, 45, 6, 45, 67]": 2,
+            "[:else, 5, 47, 6, 47, 18]": 2
+          }
+        }
+      },
+      "/home/alice/Documentos/EngSoft/secretaria_ppgi/app/controllers/wiki_comments_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          2,
+          null,
+          2,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          1,
+          null,
+          1,
+          null,
+          0,
+          null,
+          null,
+          null,
+          1,
+          null,
+          4,
+          null,
+          null,
+          null,
+          1,
+          null,
+          2,
+          null,
+          null
+        ],
+        "branches": {
+          "[:if, 0, 33, 4, 37, 7]": {
+            "[:then, 1, 34, 6, 34, 78]": 1,
+            "[:else, 2, 36, 6, 36, 17]": 1
+          },
+          "[:if, 3, 44, 4, 48, 7]": {
+            "[:then, 4, 45, 6, 45, 80]": 0,
+            "[:else, 5, 47, 6, 47, 18]": 0
+          }
+        }
+      }
+    },
+    "timestamp": 1606674257
+  },
+  "RSpec": {
+    "coverage": {
+      "/home/alice/Documentos/EngSoft/secretaria_ppgi/app/models/wiki_comment.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null
+        ],
+        "branches": {
+        }
+      },
+      "/home/alice/Documentos/EngSoft/secretaria_ppgi/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ],
+        "branches": {
+        }
+      },
+      "/home/alice/Documentos/EngSoft/secretaria_ppgi/app/models/wiki_entry.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          30,
+          0,
+          null,
+          null,
+          null
+        ],
+        "branches": {
+          "[:if, 0, 18, 8, 20, 11]": {
+            "[:then, 1, 19, 8, 19, 73]": 0,
+            "[:else, 2, 18, 8, 20, 11]": 30
+          }
+        }
+      },
+      "/home/alice/Documentos/EngSoft/secretaria_ppgi/app/models/user.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null
+        ],
+        "branches": {
+        }
+      },
+      "/home/alice/Documentos/EngSoft/secretaria_ppgi/app/helpers/application_helper.rb": {
+        "lines": [
+          1,
+          null
+        ],
+        "branches": {
+        }
+      },
+      "/home/alice/Documentos/EngSoft/secretaria_ppgi/app/helpers/comentarios_helper.rb": {
+        "lines": [
+          1,
+          null
+        ],
+        "branches": {
+        }
+      },
+      "/home/alice/Documentos/EngSoft/secretaria_ppgi/app/helpers/home_helper.rb": {
+        "lines": [
+          1,
+          null
+        ],
+        "branches": {
+        }
+      },
+      "/home/alice/Documentos/EngSoft/secretaria_ppgi/app/helpers/wikis_helper.rb": {
+        "lines": [
+          1,
+          null
+        ],
+        "branches": {
+        }
+      },
+      "/home/alice/Documentos/EngSoft/secretaria_ppgi/app/controllers/wiki_comments_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          3,
+          null,
+          3,
+          2,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          3,
+          2,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          2,
+          2,
+          null,
+          null,
+          1,
+          null,
+          1,
+          null,
+          7,
+          null,
+          null,
+          null,
+          1,
+          null,
+          5,
+          null,
+          null,
+          null,
+          1,
+          null,
+          6,
+          null,
+          null
+        ],
+        "branches": {
+          "[:if, 0, 33, 4, 37, 7]": {
+            "[:then, 1, 34, 6, 34, 78]": 2,
+            "[:else, 2, 36, 6, 36, 17]": 1
+          },
+          "[:if, 3, 44, 4, 48, 7]": {
+            "[:then, 4, 45, 6, 45, 80]": 2,
+            "[:else, 5, 47, 6, 47, 18]": 1
+          }
+        }
+      },
+      "/home/alice/Documentos/EngSoft/secretaria_ppgi/app/controllers/wiki_entries_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          3,
+          null,
+          3,
+          2,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          3,
+          2,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          2,
+          2,
+          null,
+          null,
+          1,
+          null,
+          1,
+          null,
+          7,
+          null,
+          null,
+          null,
+          1,
+          null,
+          6,
+          null,
+          null
+        ],
+        "branches": {
+          "[:if, 0, 32, 4, 36, 7]": {
+            "[:then, 1, 33, 6, 33, 67]": 2,
+            "[:else, 2, 35, 6, 35, 17]": 1
+          },
+          "[:if, 3, 44, 4, 48, 7]": {
+            "[:then, 4, 45, 6, 45, 67]": 2,
+            "[:else, 5, 47, 6, 47, 18]": 1
+          }
+        }
+      }
+    },
+    "timestamp": 1606674263
+  },
+  "Unknown Test Framework": {
+    "coverage": {
+      "/home/alice/Documentos/EngSoft/secretaria_ppgi/app/controllers/wiki_entries_controller.rb": {
+        "lines": [
+          0,
+          0,
+          null,
+          null,
+          null,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          0,
+          0,
+          null,
+          null,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          0,
+          null,
+          0,
+          null,
+          null,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          null,
+          null,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          0,
+          null,
+          null,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          0,
+          null,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/alice/Documentos/EngSoft/secretaria_ppgi/app/controllers/wiki_comments_controller.rb": {
+        "lines": [
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          0,
+          null,
+          0,
+          null,
+          null,
+          0,
+          0,
+          null,
+          null,
+          0,
+          null,
+          0,
+          null,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          0,
+          null,
+          null,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          0,
+          0,
+          null,
+          null,
+          0,
+          null,
+          null,
+          0,
+          null,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/alice/Documentos/EngSoft/secretaria_ppgi/app/helpers/home_helper.rb": {
+        "lines": [
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/alice/Documentos/EngSoft/secretaria_ppgi/app/helpers/comentarios_helper.rb": {
+        "lines": [
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/alice/Documentos/EngSoft/secretaria_ppgi/app/helpers/wikis_helper.rb": {
+        "lines": [
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/alice/Documentos/EngSoft/secretaria_ppgi/app/helpers/application_helper.rb": {
+        "lines": [
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/alice/Documentos/EngSoft/secretaria_ppgi/app/models/wiki_comment.rb": {
+        "lines": [
+          0,
+          null,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/alice/Documentos/EngSoft/secretaria_ppgi/app/models/wiki_entry.rb": {
+        "lines": [
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          null,
+          0,
+          null,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/alice/Documentos/EngSoft/secretaria_ppgi/app/models/application_record.rb": {
+        "lines": [
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/home/alice/Documentos/EngSoft/secretaria_ppgi/app/models/user.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      }
+    },
+    "timestamp": 1606673943
+  }
+}
