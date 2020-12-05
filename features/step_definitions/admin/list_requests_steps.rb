@@ -39,39 +39,33 @@
     expect(page).to have_text("Lista de Requisições")
   end
 
-  E('exista a Solicitação {string}') do |documents|
-    @requestType = {
-      id: '10',
-      title: 'Diaria'
-    }
-    @request = {
-      user_id: '10',
-      request_type_id: '10',
-      documents: 'teste'
-    }
-    RequestType.create!(@requestType)
-    Request.create!(@request)
-  end
-  
-  Então('eu devo estar em uma página com uma tabela mostrando os dados ordenados') do |table|
-    table_results = page.find('#tableResults')
+  Dado('que exista a passagem com entrada em {string} - {string} - {string} e a saída em {string} - {string} - {string}') do |day_in, month_in, year_in, day_out, month_out, year_out|
+    @ticket = Ticket.create(data_entrada: Date.parse("#{year_in}-#{month_in}-#{day_in}"), data_saida: Date.parse("#{year_out}-#{month_out}-#{day_out}"))
   end
 
-  Dado("que esteja cadastrado como usuario") do
+  E('que exista a diária com entrada em {string} - {string} - {string} e a saída em {string} - {string} - {string}') do |day_in, month_in, year_in, day_out, month_out, year_out|
+    @ticket = Booking.create(data_entrada: Date.parse("#{year_in}-#{month_in}-#{day_in}"), data_saida: Date.parse("#{year_out}-#{month_out}-#{day_out}"))
+  end
+  
+  Então('eu devo estar em uma página com uma tabela mostrando os dados ordenados') do
+    table_results = page.find('#bookings-table')
+    table_results = page.find('#tickets-table')
+  end
+
+  Dado("que esteja cadastrado como estudante com email {string}") do |email|
     visit(root_path)
     click_link("Sair")
     @user = {
-      id: '11',
       full_name: 'usuario',
-      email: 'user@email.com',
+      email: email,
       password: '123456',
       role: "student",
       registration: "000000000"
     }
-    User.create!(@user)
+    User.create(@user)
   end
 
-  Dado('que esteja autenticado e não seja administrador de email: {string} e senha: {string}') do |email,senha|
+  Dado('que esteja autenticado na página inicial com email {string} e senha {string}') do |email,senha|
     visit(new_user_session_path)
     fill_in "user[email]", with: email
     fill_in "user[password]", with: senha
@@ -79,7 +73,7 @@
   end
 
   E ("tente acessar pagina de que lista as requisições") do
-    visit(requests_path)
+    visit('admin/panel')
   end
 
   Então ("a tela deve mostrando a mensagem {string}") do |mensagem|

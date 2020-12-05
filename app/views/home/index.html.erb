@@ -11,10 +11,6 @@
   <p><strong>Cargo: </strong><%= current_user.role %></p>
 
   <% if current_user.role == 'administrator'%>
-    <a href=<%= admin_panel_path %>>
-      Painel de Administrador
-    </a><br>
-    
     <%= button_to "Editar requisitos de solicitação", '/requirements/new', method: :get, id: 'edit_requirements' %>
     <br>
     <%= button_to "Verificar orçamento", '/budgets', method: :get, id: 'verify_budget_button' %>

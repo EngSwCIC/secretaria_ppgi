@@ -10,16 +10,14 @@ Funcionalidade: Listar todas as solicitações de acordo com as suas prioridades
       E que eu realize login com o email "admin@admin.com" e a senha "admin123"
       E que esteja autenticado na página inicial
       E eu clicar no botão "Visualizar solicitações de diárias e passagens"
-      E eu clicar em na lista de solicitações
    
-   Cenário: Dado que Lista de Solicitações aparece adequadamente
-      E exista a Solicitação "teste"
+    Cenário: As listas de passagens e diárias aparecem corretamente
+      Dado que exista a passagem com entrada em "1" - "January" - "2021" e a saída em "2" - "January" - "2021"
+      E que exista a diária com entrada em "1" - "January" - "2021" e a saída em "2" - "January" - "2021"
       Então eu devo estar em uma página com uma tabela mostrando os dados ordenados
-      | Documentos | | Tipos de Requisição | | Nome do Requerente |
-      | teste      | | Diaria              | | Administrador2     |
-       
+
     Cenário: 
-      Dado que esteja cadastrado como usuario
-      Dado que esteja autenticado e não seja administrador de email: "user@email.com" e senha: "123456"
+      Dado que esteja cadastrado como estudante com email "student@student.com"
+      E que esteja autenticado na página inicial com email "student@student.com" e senha "admin123"
       E tente acessar pagina de que lista as requisições
-      Então a tela deve mostrando a mensagem "Você precisa ser administrador para acessar essa Pagina:"
+      Então a tela deve mostrando a mensagem "Você precisa ser administrador para acessar essa página"
