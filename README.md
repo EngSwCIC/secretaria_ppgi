@@ -1,6 +1,10 @@
 # README
-## SPRINT 1 Engenharia de Software
- Teste, tanto em nível de aceitação (BDD), quanto de testes unitários (RSpec), de 4 features da seção de acompanhamento de projetos do sistem da Secretaria do Programa de Pós-Graduação em Informática da Universidade de Brasília
+## SPRINT 1, 2 e 3 - Engenharia de Software
+ Teste, tanto em nível de aceitação (BDD), quanto de testes unitários (RSpec), de 4 features da seção de acompanhamento de projetos do sistem da Secretaria do Programa de Pós-Graduação em Informática da Universidade de Brasília.
+ 
+ Criação do Models, Migration e Testes das Tables do Banco de dados.
+ 
+ Implementação e teste de features referentes à seção de acompanhamento de processos.
 
 ### Integrantes
 * Bruno Murta Oliveira de Castro - 16/0069742
