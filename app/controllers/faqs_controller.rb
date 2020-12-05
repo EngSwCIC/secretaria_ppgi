@@ -62,12 +62,12 @@ class FaqsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+   
     def set_faq
       @faq = Faq.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+   
     def faq_params
       params.require(:faq).permit(:question, :answer, :topic_id)
     end
